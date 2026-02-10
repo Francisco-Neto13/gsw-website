@@ -1,5 +1,5 @@
-import Navbar from "@/app/components/navbar";
-import History from "@/app/components/history";
+import Navbar from "@/app/components/Navbar"; 
+import History from "@/app/components/History"; 
 
 export default function Home() {
   return (
