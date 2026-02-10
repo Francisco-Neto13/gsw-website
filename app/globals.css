@@ -65,3 +65,14 @@ body {
   background: var(--color-panel);
   backdrop-filter: blur(6px);
 }
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
