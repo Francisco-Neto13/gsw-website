@@ -34,7 +34,7 @@ export default function History() {
       year: "2026 — O Despertar",
       title: "A Promessa de Fruma e o Renascimento",
       description:
-        "Após anos de espera e sussurros, os portões de Fruma finalmente se abriram. O anúncio da nova província serviu como o clarim que convocou os antigos heróis de volta ao lar. Após um período de quietude, a GsW ressurge: novos rostos unem-se aos veteranos, trazendo uma vontade renovada e uma chama que nunca se apagou. Estamos prontos, renovados e preparados para o que quer que aguarde além das muralhas.",
+        "Após anos de espera e sussurros, os portões de Fruma finalmente se abriram. O anúncio da nova província serviu como o clarim que convocou os antigos heróis de volta ao lar. Após um período de quietude, a GsW ressurge: novos rostos unem-se aos veteranos, trazendo uma vontade renovada e uma chama que nunca se apagou.",
     },
   ];
 
@@ -43,12 +43,8 @@ export default function History() {
       id="historia"
       className="relative py-32 px-6 bg-zinc-950 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[url('/bg-guilda.jpeg')] bg-cover bg-center opacity-10" />
-      <div className="absolute inset-0 bg-black/80" />
-
-      <div className="relative max-w-5xl mx-auto">
-        
-        <div className="reveal-on-scroll mb-28 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <div className="mb-28 text-center reveal-on-scroll">
           <span className="block mb-6 text-xs font-bold tracking-[0.6em] uppercase text-gsw">
             Documento Oficial
           </span>
@@ -70,25 +66,26 @@ export default function History() {
             {eras.map((era, index) => (
               <div
                 key={index}
-                className={`reveal-on-scroll group relative flex flex-col sm:flex-row gap-12 items-start transition-all duration-500 ${
+                className={`reveal-on-scroll group relative flex flex-col sm:flex-row gap-12 items-start ${
                   index % 2 === 0 ? "sm:flex-row-reverse" : ""
                 }`}
-                style={{ transitionDelay: `${(index % 3) * 150}ms` }}
               >
-                <div className="hidden sm:block absolute left-1/2 top-8 w-3 h-3 rounded-full bg-black border-2 border-gsw -translate-x-1/2 shadow-[0_0_20px_#7116ad] transition-transform duration-500 group-hover:scale-150" />
+                <div className="hidden sm:block absolute left-1/2 top-8 w-3 h-3 rounded-full bg-zinc-950 border-2 border-gsw -translate-x-1/2 z-20 transition-transform duration-500 group-hover:scale-150 group-hover:bg-gsw" />
 
                 <div
                   className={`w-full sm:w-1/2 ${
-                    index % 2 === 0 ? "sm:text-left sm:pl-12" : "sm:text-right sm:pr-12"
+                    index % 2 === 0
+                      ? "sm:text-left sm:pl-12"
+                      : "sm:text-right sm:pr-12"
                   }`}
                 >
-                  <span className="block text-3xl font-black italic text-gsw/40 mb-4 transition-colors duration-500 group-hover:text-gsw group-hover:drop-shadow-[0_0_10px_rgba(113,22,173,0.5)]">
+                  <span className="block text-3xl font-black italic text-gsw/40 mb-4 transition-colors duration-500 group-hover:text-gsw">
                     {era.year}
                   </span>
                 </div>
 
-                <div className="w-full sm:w-1/2 p-8 rounded-2xl bg-black/50 border border-white/10 backdrop-blur-sm transition-all duration-500 group-hover:scale-[1.03] group-hover:border-gsw/40 group-hover:bg-zinc-900/60 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                  <h4 className="text-xl font-bold text-white mb-4 tracking-tight transition-colors duration-500 group-hover:text-gsw uppercase">
+                <div className="w-full sm:w-1/2 p-8 rounded-2xl bg-black border border-white/10 transition-all duration-500 group-hover:scale-[1.03] group-hover:border-gsw/40 group-hover:bg-zinc-900/50 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <h4 className="text-xl font-bold text-white mb-4 tracking-tight uppercase transition-colors duration-500 group-hover:text-gsw">
                     {era.title}
                   </h4>
 
@@ -101,7 +98,7 @@ export default function History() {
           </div>
         </div>
 
-        <div className="reveal-on-scroll mt-24 text-center" style={{ transitionDelay: '300ms' }}>
+        <div className="mt-24 text-center reveal-on-scroll">
           <p className="text-zinc-500 italic border-t border-white/5 pt-12 inline-block px-12">
             "O valor de um guardião não se mede apenas pelo seu nível, mas pela sua
             lealdade à bandeira."

@@ -3,6 +3,7 @@
 @theme {
   --color-gsw: #7116ad;
   --color-gsw-dark: #4c0e75;
+
   --color-arcane: #9d4edd;
   --color-gold: #e6c47a;
   --color-ink: #0b0b0f;
@@ -19,11 +20,11 @@
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
-  min-height: 100vh;
 }
 
 @keyframes fadeIn {
@@ -41,39 +42,17 @@ body {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-@keyframes idleFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-.animate-idle {
-  animation: idleFloat 7s ease-in-out infinite;
-}
-
-.reveal {
+.reveal-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-.reveal-visible {
+.reveal-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 .bg-panel {
   background: var(--color-panel);
-  backdrop-filter: blur(6px);
-}
-
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease-out;
-  will-change: transform, opacity;
-}
-
-.reveal-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
