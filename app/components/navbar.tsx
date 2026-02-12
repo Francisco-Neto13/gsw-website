@@ -2,7 +2,7 @@ export default function Navbar() {
   const links = [
     { name: "História", hash: "#historia" },
     { name: "Membros", hash: "#membros" },
-    { name: "Conquistas", hash: "#conquistas" },
+    { name: "Pilares", hash: "#pilares" },
     { name: "Galeria", hash: "#galeria" },
     { name: "Regras", hash: "#regras" },
   ];

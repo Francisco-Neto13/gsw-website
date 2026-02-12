@@ -1,5 +1,15 @@
+"use client";
+
+import { useRef, useEffect, useState } from 'react';
+
+interface Era {
+  year: string;
+  title: string;
+  description: string;
+}
+
 export default function History() {
-  const eras = [
+  const eras: Era[] = [
     {
       year: "2017 — 2019",
       title: "As Primeiras Chamas",
@@ -37,6 +47,38 @@ export default function History() {
         "Após anos de espera e sussurros, os portões de Fruma finalmente se abriram. O anúncio da nova província serviu como o clarim que convocou os antigos heróis de volta ao lar. Após um período de quietude, a GsW ressurge: novos rostos unem-se aos veteranos, trazendo uma vontade renovada e uma chama que nunca se apagou.",
     },
   ];
+
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15,
+      }
+    );
+
+    const elements = document.querySelectorAll('.reveal-on-scroll');
+    elements.forEach((el) => {
+      if (observerRef.current) {
+        observerRef.current.observe(el);
+      }
+    });
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <section

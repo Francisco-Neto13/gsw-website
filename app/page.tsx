@@ -1,6 +1,7 @@
 import Navbar from "@/app/components/Navbar"; 
 import History from "@/app/components/History"; 
 import Members from "./components/Members";
+import Pillars from "./components/Pillars";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       </section>
       <History />
       <Members />
+      <Pillars />
     </main>
   );
 }
