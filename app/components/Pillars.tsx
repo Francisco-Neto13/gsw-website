@@ -44,7 +44,6 @@ export default function Pillars() {
 
   return (
     <section id="pilares" className="relative py-32 px-6 bg-black overflow-hidden">
-      {/* Luz de fundo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gsw/5 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -62,11 +61,10 @@ export default function Pillars() {
             <div 
               key={index}
               className={`reveal-on-scroll group relative p-10 rounded-3xl border border-white/10 bg-zinc-900/20 backdrop-blur-md transition-all duration-500 hover:border-gsw/40 hover:-translate-y-2 text-center flex flex-col items-center ${
-                index >= 3 ? "lg:translate-x-[50%]" : "" // Ajuste visual para centralizar os últimos dois se quiser mantê-los alinhados
+                index >= 3 ? "lg:translate-x-[50%]" : ""
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Glow no Hover */}
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${pilar.color} rounded-3xl blur-xl -z-10`} />
 
               <div className="mb-8 inline-flex p-5 rounded-2xl bg-white/5 text-gsw group-hover:scale-110 group-hover:bg-gsw group-hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(113,22,173,0.2)]">

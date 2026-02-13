@@ -117,7 +117,7 @@ export default function Members() {
             changes.forEach((entry) => {
               const index = parseInt(entry.target.getAttribute('data-index') || '0');
               newStart = Math.min(newStart, Math.max(0, index - 1)); 
-              newEnd = Math.max(newEnd, Math.min(members.length, index + 8)); 
+              newEnd = Math.max(newEnd, Math.min(members.length - 1, index + 8));
             });
 
             if (newStart !== prev.start || newEnd !== prev.end) {
