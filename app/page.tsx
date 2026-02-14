@@ -1,5 +1,5 @@
-import Navbar from "@/app/components/Navbar"; 
-import History from "@/app/components/History"; 
+import Navbar from "./components/Navbar"; 
+import History from "./components/History"; 
 import Members from "./components/Members";
 import Pillars from "./components/Pillars";
 import Gallery from "./components/Gallery";
