@@ -170,7 +170,7 @@ export default function Members() {
             Elite de Wynn
           </span>
           <h2 className="text-5xl sm:text-7xl font-black tracking-tight text-white mb-8">
-            Os <span className="text-gsw">Guardiões</span>
+            Os <span className="text-gsw">Guardiões Principais</span>
           </h2>
           <p className="text-zinc-400 max-w-2xl mx-auto italic leading-relaxed">
             "Não são apenas nomes em uma lista, são as lendas que escrevem as crônicas da GsW a cada batalha."

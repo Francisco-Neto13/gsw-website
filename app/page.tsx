@@ -3,6 +3,7 @@ import History from "@/app/components/History";
 import Members from "./components/Members";
 import Pillars from "./components/Pillars";
 import Gallery from "./components/Gallery";
+import Essence from "./components/Essence";
 
 export default function Home() {
   return (
@@ -33,7 +34,8 @@ export default function Home() {
       <History />
       <Members />
       <Pillars />
-      <Gallery/ >
+      <Gallery />
+      <Essence />
     </main>
   );
 }

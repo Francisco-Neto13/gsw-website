@@ -4,7 +4,7 @@ export default function Navbar() {
     { name: "Membros", hash: "#membros" },
     { name: "Pilares", hash: "#pilares" },
     { name: "Galeria", hash: "#galeria" },
-    { name: "Regras", hash: "#regras" },
+    { name: "Essência", hash: "#essencia" },
   ];
 
   return (
