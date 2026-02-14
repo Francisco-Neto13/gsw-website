@@ -11,6 +11,7 @@ export default function Navbar() {
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
       <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-6 py-4">
         
+        {/* Logo e Nome da Guilda */}
         <a href="#gsw" className="group flex items-center gap-3 justify-self-start">
           <img
             src="/icon.png"
@@ -22,6 +23,7 @@ export default function Navbar() {
           </span>
         </a>
 
+        {/* Links de Navegação Centralizados */}
         <ul className="hidden justify-self-center gap-8 sm:flex">
           {links.map((link) => (
             <li key={link.name}>
@@ -35,10 +37,19 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="justify-self-end">
-          <button className="hidden rounded-md bg-gsw px-5 py-2 text-xs font-black uppercase tracking-widest text-white transition-transform hover:scale-105 hover:bg-gsw-dark sm:block">
+        <div className="relative flex justify-self-end group">
+          <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 scale-0 whitespace-nowrap rounded bg-zinc-800 px-3 py-1.5 text-[10px] font-medium text-zinc-300 transition-all duration-200 group-hover:scale-100">
+            Acessar o servidor no Discord
+          </span>
+
+          <a 
+            href="https://discord.gg/Ec2YPWTN9E"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-md bg-gsw px-5 py-2 text-xs font-black uppercase tracking-widest text-white transition-transform hover:scale-105 hover:bg-gsw-dark sm:block text-center"
+          >
             Comunidade
-          </button>
+          </a>
         </div>
 
       </div>
