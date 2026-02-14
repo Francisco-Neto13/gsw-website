@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar"; 
-import History from "./components/History"; 
-import Members from "./components/Members";
-import Pillars from "./components/Pillars";
-import Gallery from "./components/Gallery";
-import Essence from "./components/Essence";
-import Footer from "./components/Footer";
+import Navbar from "../components/Navbar"; 
+import History from "../components/History"; 
+import Members from "../components/Members";
+import Pillars from "../components/Pillars";
+import Gallery from "../components/Gallery";
+import Essence from "../components/Essence";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
