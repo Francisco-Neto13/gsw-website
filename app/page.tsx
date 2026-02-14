@@ -4,6 +4,7 @@ import Members from "./components/Members";
 import Pillars from "./components/Pillars";
 import Gallery from "./components/Gallery";
 import Essence from "./components/Essence";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <Pillars />
       <Gallery />
       <Essence />
+      <Footer />
     </main>
   );
 }

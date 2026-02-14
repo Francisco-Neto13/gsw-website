@@ -120,15 +120,6 @@ export default function Essence() {
             <span className="text-gsw font-medium italic"> e isso é o que realmente importa.</span>
           </p>
         </div>
-
-        <div className="mb-24 py-12 border-y border-white/10">
-            <blockquote className="text-2xl sm:text-3xl font-serif italic text-center text-white/90 leading-relaxed max-w-3xl mx-auto">
-                "Brigamos porque nos importamos. Amamos porque escolhemos estar aqui.
-                Cuidamos uns dos outros porque sabemos que <span className="text-gsw font-bold">juntos somos imbatíveis.</span>
-                {" "}Nos perdemos às vezes, mas sempre nos encontramos de novo — porque essa é a promessa
-                que fizemos quando vestimos a bandeira da GsW."
-            </blockquote>
-        </div>  
       </div>
     </section>
   );
