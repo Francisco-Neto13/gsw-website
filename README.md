@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GsW Website
 
-## Getting Started
+<div align="center">
+  <img src="./public/icon.png" width="120" alt="GsW Logo" style="border-radius: 50%">
+  <h3>União, Força e Lealdade</h3>
+  <p>Hub digital oficial da comunidade GsW.</p>
+  
+  <a href="https://gsw-website.vercel.app/"><strong>Acessar Plataforma »</strong></a>
+</div>
 
-First, run the development server:
+<br />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Sobre o Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este projeto foi desenvolvido para estabelecer uma presença digital robusta para a **GsW**. A plataforma atua como um repositório histórico e institucional da comunidade. O design utiliza uma estética *dark mode* de alta fidelidade, incorporando efeitos de refração (*glassmorphism*), tipografia técnica e uma arquitetura de componentes escalável, refletindo o prestígio e a organização da guilda.
 
-## Learn More
+## Especificações Técnicas
 
-To learn more about Next.js, take a look at the following resources:
+* **Otimização de Performance:** Implementação baseada em Next.js, utilizando renderização híbrida para tempos de resposta mínimos.
+* **Interface de Usuário (UI):** Design focado em usabilidade, com foco em hierarquia visual e responsividade total.
+* **Arquitetura de Dados:** Estruturação de seções modulares para preservação de registros históricos e valores fundamentais.
+* **Infraestrutura:** Integração de CI/CD via Vercel, garantindo alta disponibilidade e atualizações automatizadas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estrutura da Plataforma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Home:** Visão geral e introdução ao ecossistema da guilda.
+- **História:** Documentação cronológica dos eventos e marcos da GsW.
+- **Membros:** Listagem oficial dos integrantes e corpo administrativo.
+- **Pilares:** Fundamentos éticos, disciplinares e operacionais.
+- **Galeria:** Acervo visual de eventos e operações integradas.
+- **Essência:** Manifesto sobre os princípios de fraternidade e o propósito comunitário.
 
-## Deploy on Vercel
+## Endereço de Acesso
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Acesse a plataforma através do link oficial:
+> **[gsw-website.vercel.app](https://gsw-website.vercel.app/)**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Licença
+
+Este projeto é distribuído sob a licença **MIT**. Para mais informações, consulte o arquivo LICENSE no diretório raiz.
+
+<div align="center">
+  <hr />
+  Desenvolvido por <strong>Francisco Neto</strong>
+</div>
