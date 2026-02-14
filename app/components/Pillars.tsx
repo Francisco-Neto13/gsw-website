@@ -85,6 +85,11 @@ export default function Pillars() {
             </div>
           ))}
         </div>
+          <div className="mt-24 text-center reveal-on-scroll">
+            <p className="text-zinc-500 italic border-t border-white/5 pt-12 inline-block px-12 leading-relaxed max-w-2xl">
+              "Divididos em frentes, mas unidos por um propósito. Os <span className="text-gsw/60 font-bold text-sm tracking-widest uppercase">Pilares</span> não são apenas setores; são os alicerces de um império que se recusa a cair."
+            </p>
+        </div>
       </div>
     </section>
   );
