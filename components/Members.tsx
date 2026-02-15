@@ -32,7 +32,7 @@ const MemberCard = memo(({
     >
       <div className="relative aspect-square w-full mb-6 overflow-hidden rounded-xl bg-zinc-900">
         <img 
-          src={`/members/${member.img}`} 
+          src={member.img}
           alt={member.name}
           loading="lazy"
           decoding="async"
@@ -80,18 +80,18 @@ export default function Members() {
   const sentinelRefs = useRef<Map<number, HTMLDivElement>>(new Map());
 
   useEffect(() => {
-    async function fetchMembers() {
-      const { data, error } = await supabase
-        .from('membros')
-        .select('*')
-        .order('id', { ascending: true });
-      
-      if (!error && data) {
-        setMembers(data);
+      async function fetchMembers() {
+        const { data, error } = await supabase
+          .from('membros')
+          .select('*')
+          .order('ordem', { ascending: true }); 
+        
+        if (!error && data) {
+          setMembers(data);
+        }
       }
-    }
-    fetchMembers();
-  }, []);
+      fetchMembers();
+    }, []);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(

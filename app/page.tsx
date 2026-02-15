@@ -4,7 +4,7 @@ import Members from "../components/Members";
 import Pillars from "../components/Pillars";
 import Gallery from "../components/Gallery";
 import Essence from "../components/Essence";
-import Footer from "../components/Footer";
+import Footer from "../components/shared/Footer";
 
 export default function Home() {
   return (

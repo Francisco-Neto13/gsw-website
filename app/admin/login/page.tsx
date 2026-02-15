@@ -12,18 +12,30 @@ export default function AdminLogin() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    console.log("Tentando iniciar sessão...");
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    if (error) {
-      alert("Erro no acesso: " + error.message);
+      if (error) {
+        console.error("Erro retornado pelo Supabase:", error.message);
+        alert("Erro no acesso: " + error.message);
+        setLoading(false);
+        return;
+      }
+
+      if (data.session) {
+        console.log("Login realizado com sucesso!");
+        router.push("/admin");
+        router.refresh();
+      }
+    } catch (err) {
+      console.error("Erro inesperado:", err);
+      alert("Ocorreu um erro inesperado na conexão.");
       setLoading(false);
-    } else {
-      router.push("/admin");
-      router.refresh();
     }
   };
 
