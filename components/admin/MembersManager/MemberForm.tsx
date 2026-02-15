@@ -1,6 +1,7 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
+import imageCompression from 'browser-image-compression';
 import type { Membro } from "./index";
 
 interface MemberFormProps {
@@ -49,28 +50,62 @@ export default function MemberForm({
       setUploading(true);
       if (!e.target.files || e.target.files.length === 0) return;
 
-      const file = e.target.files[0];
+      let file = e.target.files[0];
       
-      if (file.type !== "image/webp") {
-        alert("Apenas imagens no formato .webp são permitidas!");
+      const validFormats = ['image/png', 'image/jpeg', 'image/jpg', 'image/webp'];
+      if (!validFormats.includes(file.type)) {
+        alert("Formato não suportado! Use PNG, JPG ou WebP");
+        if (fileInputRef.current) fileInputRef.current.value = "";
+        return;
+      }
+
+      console.log(`Imagem original: ${(file.size / 1024).toFixed(0)}KB`);
+
+      const compressionOptions = {
+        maxSizeMB: 0.15,              
+        maxWidthOrHeight: 800,        
+        useWebWorker: true,
+        fileType: 'image/webp',       
+        initialQuality: 0.8,          
+      };
+
+      try {
+        file = await imageCompression(file, compressionOptions);
+        console.log(`✅ Imagem comprimida: ${(file.size / 1024).toFixed(0)}KB`);
+        
+        if (file.size > 200 * 1024) {
+          alert(`⚠️ Imagem ainda grande após compressão: ${(file.size / 1024).toFixed(0)}KB\n\nTente usar uma imagem menor ou com menos detalhes.`);
+          if (fileInputRef.current) fileInputRef.current.value = "";
+          return;
+        }
+      } catch (compressionError: any) {
+        console.error("Erro na compressão:", compressionError);
+        alert("Erro ao comprimir imagem. Tente uma imagem diferente.");
         if (fileInputRef.current) fileInputRef.current.value = "";
         return;
       }
 
       const fileExt = "webp";
-      const fileName = `${Math.random()}.${fileExt}`;
-      const filePath = `${fileName}`;
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+      const filePath = fileName;
 
       const { error: uploadError } = await supabase.storage
         .from('members')
-        .upload(filePath, file);
+        .upload(filePath, file, {
+          contentType: 'image/webp',
+          cacheControl: '3600',
+          upsert: false
+        });
 
       if (uploadError) throw uploadError;
 
       const { data } = supabase.storage.from('members').getPublicUrl(filePath);
       setNewImg(data.publicUrl);
 
+      console.log(`Upload concluído: ${data.publicUrl}`);
+
     } catch (error: any) {
+      console.error("Erro no upload:", error);
       alert("Erro no upload: " + error.message);
     } finally {
       setUploading(false);
@@ -210,8 +245,12 @@ export default function MemberForm({
         </div>
 
         <div className="space-y-2">
-          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-            Imagem <span className="text-zinc-600 font-normal normal-case">(formato .webp)</span>
+          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+            Imagem 
+            <span className="text-zinc-600 font-normal normal-case">(PNG, JPG ou WebP)</span>
+            <span className="text-green-500 text-[10px] font-normal normal-case">
+              • Auto-compressão ativa
+            </span>
           </label>
           
           <div className="flex gap-4 items-start">
@@ -242,7 +281,7 @@ export default function MemberForm({
               <input 
                 type="file" 
                 ref={fileInputRef}
-                accept="image/webp" 
+                accept="image/png,image/jpeg,image/jpg,image/webp" 
                 onChange={handleImageUpload}
                 className="hidden" 
                 id="file-upload"
@@ -261,14 +300,14 @@ export default function MemberForm({
                   {uploading ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-2 border-blue-500 border-t-transparent"></div>
-                      <span className="text-blue-500 font-medium">Fazendo upload...</span>
+                      <span className="text-blue-500 font-medium">Comprimindo e enviando...</span>
                     </>
                   ) : newImg ? (
                     <>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      <span className="text-green-500 font-medium">Imagem carregada! Clique para alterar</span>
+                      <span className="text-green-500 font-medium">Imagem otimizada! Clique para alterar</span>
                     </>
                   ) : (
                     <>
@@ -277,7 +316,7 @@ export default function MemberForm({
                         <polyline points="17 8 12 3 7 8"></polyline>
                         <line x1="12" y1="3" x2="12" y2="15"></line>
                       </svg>
-                      <span className="text-zinc-400 font-medium">Selecionar imagem .WEBP</span>
+                      <span className="text-zinc-400 font-medium">Selecionar imagem (auto-comprime)</span>
                     </>
                   )}
                 </div>
