@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, memo } from 'react';
+import { supabase } from "@/lib/supabase"; 
 
 const MemberCard = memo(({ 
   member, 
@@ -54,7 +55,7 @@ const MemberCard = memo(({
         </h3>
 
         <div className="flex flex-wrap justify-center gap-2">
-          {member.tags.map((tag: string, tIndex: number) => (
+          {member.tags && member.tags.map((tag: string, tIndex: number) => (
             <span 
               key={tIndex}
               className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wider text-zinc-500 transition-all duration-300 group-hover:text-zinc-300 group-hover:border-gsw/20"
@@ -73,36 +74,24 @@ const MemberCard = memo(({
 MemberCard.displayName = 'MemberCard';
 
 export default function Members() {
-  const members = [
-    { name: "BadBoyCJ", role: "Eterno Líder", tags: ["Fundador"], img: "cj.webp" },
-    { name: "RafaelGomes", role: "Guild Leader", tags: ["Dev"], img: "rafael.webp" },
-    { name: "Julinho", role: "Alto Comando", tags: ["Vovô"], img: "julinho.webp" },
-    { name: "Six", role: "Alto Comando", tags: ["Carioca"], img: "six.webp" },
-    { name: "m4ninja", role: "Veterano", tags: ["Ditador"], img: "maninja.webp" },
-    { name: "P4gu", role: "Veterano", tags: ["Criativo"], img: "pagu.webp" },
-    { name: "K0tae", role: "Veterano", tags: ["Artista"], img: "k0tae.webp" },
-    { name: "Faye", role: "Veterano", tags: ["Divertida"], img: "faye.webp" },
-    { name: "Bigouslino", role: "Veterano", tags: ["Carismático"], img: "bigouslino.webp" },
-    { name: "Fustaco", role: "Veterano", tags: ["Dr.Fustaco"], img: "fustaco.webp" },
-    { name: "Killer", role: "Veterano", tags: ["Rico"], img: "killer.webp" },
-    { name: "Victo", role: "Veterano", tags: ["Dev"], img: "victo.webp" },
-    { name: "Mor7ee", role: "Veterano", tags: ["Sombria"], img: "mor7ee.webp" },
-    { name: "iYasuo_", role: "Veterano", tags: ["Animado"], img: "iyasuo.webp" },
-    { name: "Volkzz101", role: "Guardião", tags: ["Goat"], img: "volkzz.webp" },
-    { name: "Cavalheri", role: "Guardião", tags: ["Milionária"], img: "cavalheri.webp" },
-    { name: "Atmisuki", role: "Guardião", tags: ["Artista"], img: "atmisuki.webp" },
-    { name: "Closerapha", role: "Guardião", tags: ["Agitador"], img: "closerapha.webp" },
-    { name: "yFelipeMC", role: "Guardião", tags: ["Determinado"], img: "felipe.webp" },
-    { name: "Fallingo", role: "Guardião", tags: ["Engraçado"], img: "fallingo.webp" },
-    { name: "Kw", role: "Guardião", tags: ["Analista"], img: "kw.webp" },
-    { name: "Radicchi", role: "Guardião", tags: ["Comunicador"], img: "radicchi.webp" },
-    { name: "Frame", role: "Guardião", tags: ["Organizador"], img: "frame.webp" },
-    { name: "Eduus", role: "Guardião", tags: ["Builder"], img: "eduus.webp" },
-  ];
-
+  const [members, setMembers] = useState<any[]>([]);
   const [visibleRange, setVisibleRange] = useState({ start: 0, end: 8 }); 
   const observerRef = useRef<IntersectionObserver | null>(null);
   const sentinelRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+
+  useEffect(() => {
+    async function fetchMembers() {
+      const { data, error } = await supabase
+        .from('membros')
+        .select('*')
+        .order('id', { ascending: true });
+      
+      if (!error && data) {
+        setMembers(data);
+      }
+    }
+    fetchMembers();
+  }, []);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -150,7 +139,7 @@ export default function Members() {
         currentObserver.observe(sentinel);
       });
     }
-  }, [visibleRange]);
+  }, [visibleRange, members]); 
 
   const setSentinelRef = (index: number) => (el: HTMLDivElement | null) => {
     if (el) {
@@ -184,7 +173,7 @@ export default function Members() {
 
             return (
               <div
-                key={member.name}
+                key={member.id || member.name} 
                 ref={isSentinel ? setSentinelRef(index) : undefined}
                 data-index={index}
               >
