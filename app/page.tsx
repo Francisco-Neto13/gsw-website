@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar"; 
-import History from "../components/History"; 
-import Members from "../components/Members";
-import Pillars from "../components/Pillars";
-import Gallery from "../components/Gallery";
-import Essence from "../components/Essence";
+import Navbar from "../components/site/Navbar"; 
+import History from "../components/site/History"; 
+import Members from "../components/site/Members";
+import Pillars from "../components/site/Pillars";
+import Gallery from "../components/site/Gallery";
+import Essence from "../components/site/Essence";
 import Footer from "../components/shared/Footer";
 
 export default function Home() {
