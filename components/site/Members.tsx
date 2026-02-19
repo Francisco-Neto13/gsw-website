@@ -11,18 +11,20 @@ interface Member {
 }
 
 const MemberCard = memo(({ member }: { member: Member }) => {
+  const fallbackSrc = `https://ui-avatars.com/api/?name=${member.name}&background=7116ad&color=fff&size=200`;
+
   const handleError = useCallback(
     (e: React.SyntheticEvent<HTMLImageElement>) => {
-      e.currentTarget.src = `https://ui-avatars.com/api/?name=${member.name}&background=7116ad&color=fff&size=200`;
+      e.currentTarget.src = fallbackSrc;
     },
-    [member.name]
+    [fallbackSrc]
   );
 
   return (
     <div className="group relative bg-black/40 border border-white/10 rounded-2xl p-4 hover:border-gsw/40 hover:-translate-y-1 overflow-hidden transition-transform duration-200 will-change-transform">
       <div className="relative aspect-square w-full mb-6 overflow-hidden rounded-xl bg-zinc-900">
         <img
-          src={member.img}
+          src={member.img || fallbackSrc}
           alt={member.name}
           loading="lazy"
           decoding="async"
@@ -33,7 +35,6 @@ const MemberCard = memo(({ member }: { member: Member }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
       </div>
-
       <div className="text-center">
         <span className="text-[10px] font-bold uppercase tracking-widest text-gsw/80 mb-1 block">
           {member.role}

@@ -13,6 +13,15 @@ export interface Membro {
   ordem: number;
 }
 
+function extractStoragePath(url: string): string | null {
+  try {
+    const match = url.match(/\/storage\/v1\/object\/public\/members\/(.+)/);
+    return match ? match[1] : null;
+  } catch {
+    return null;
+  }
+}
+
 export default function MembersManager() {
   const [membros, setMembros] = useState<Membro[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
@@ -23,29 +32,67 @@ export default function MembersManager() {
       .from('membros')
       .select('*')
       .order('ordem', { ascending: true });
-    
+
     if (!error && data) {
       setMembros(data as Membro[]);
     }
   }
 
-  async function handleSaveMembro(membroData: Omit<Membro, 'id'>) {
-    const { error } = editingId 
-      ? await supabase.from('membros').update(membroData).eq('id', editingId)
-      : await supabase.from('membros').insert([membroData]);
+  async function deleteImageFromBucket(imgUrl: string) {
+    if (!imgUrl) return;
+    const path = extractStoragePath(imgUrl);
+    console.log("URL:", imgUrl);
+    console.log("Path extraído:", path);
+    if (!path) return;
+    const { error } = await supabase.storage.from('members').remove([path]);
+    console.log("Erro ao deletar:", error);
+  }
 
-    if (!error) {
-      showSuccessMessage(editingId ? "✅ Membro atualizado!" : "✅ Membro adicionado!");
-      setEditingId(null);
-      fetchMembros();
-      return true;
+  async function handleSaveMembro(membroData: Omit<Membro, 'id'>) {
+    if (editingId) {
+      const membroAtual = membros.find(m => m.id === editingId);
+      if (membroAtual && membroAtual.img && membroAtual.img !== membroData.img) {
+        await deleteImageFromBucket(membroAtual.img);
+      }
+
+      const { error } = await supabase
+        .from('membros')
+        .update(membroData)
+        .eq('id', editingId);
+
+      if (!error) {
+        showSuccessMessage("✅ Membro atualizado!");
+        setEditingId(null);
+        fetchMembros();
+        return true;
+      }
+    } else {
+      const { error } = await supabase
+        .from('membros')
+        .insert([membroData]);
+
+      if (!error) {
+        showSuccessMessage("✅ Membro adicionado!");
+        fetchMembros();
+        return true;
+      }
     }
+
     return false;
   }
 
   async function handleDeleteMembro(id: number) {
-    const { error } = await supabase.from('membros').delete().eq('id', id);
+    const membro = membros.find(m => m.id === id);
+
+    const { error } = await supabase
+      .from('membros')
+      .delete()
+      .eq('id', id);
+
     if (!error) {
+      if (membro?.img) {
+        await deleteImageFromBucket(membro.img);
+      }
       showSuccessMessage("🗑️ Membro removido!");
       fetchMembros();
     }
@@ -69,18 +116,17 @@ export default function MembersManager() {
     fetchMembros();
   }, []);
 
-  const membroEditando = editingId 
-    ? membros.find(m => m.id === editingId) 
+  const membroEditando = editingId
+    ? membros.find(m => m.id === editingId)
     : null;
 
   return (
     <div className="space-y-8">
       {successMessage && (
-        <div className="fixed top-6 right-6 z-50 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
+        <div className="fixed top-6 right-6 z-[110] bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
           {successMessage}
         </div>
       )}
-
       <MemberForm
         membros={membros}
         membroEditando={membroEditando}
@@ -88,7 +134,6 @@ export default function MembersManager() {
         onSave={handleSaveMembro}
         onCancel={handleCancelEdit}
       />
-
       <MembersList
         membros={membros}
         editingId={editingId}

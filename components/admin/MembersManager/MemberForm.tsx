@@ -112,8 +112,8 @@ export default function MemberForm({
       alert("Ordem inválida!");
       return;
     }
-    
-    if (!newImg) {
+
+    if (!editingId && !newImg) {
       alert("Por favor, faça upload de uma imagem!");
       return;
     }
@@ -121,7 +121,7 @@ export default function MemberForm({
     const payload = { 
       name: newName, 
       role: newRole, 
-      img: newImg, 
+      img: newImg,
       tags: newTags.split(',').map(t => t.trim()).filter(t => t !== ""),
       ordem: newOrdem 
     };
@@ -237,11 +237,16 @@ export default function MemberForm({
 
         <div className="space-y-2">
           <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2 cursor-default">
-            Imagem 
+            Imagem
             <span className="text-zinc-600 font-normal normal-case">(PNG, JPG ou WebP)</span>
             <span className="text-green-500 text-[10px] font-normal normal-case">
               • Auto-compressão ativa
             </span>
+            {editingId && (
+              <span className="text-zinc-600 font-normal normal-case text-[10px]">
+                — remover deixa o membro sem foto
+              </span>
+            )}
           </label>
           
           <div className="flex gap-4 items-start">
@@ -307,7 +312,9 @@ export default function MemberForm({
                         <polyline points="17 8 12 3 7 8"></polyline>
                         <line x1="12" y1="3" x2="12" y2="15"></line>
                       </svg>
-                      <span className="text-zinc-400 font-medium">Selecionar imagem (auto-comprime)</span>
+                      <span className="text-zinc-400 font-medium">
+                        {editingId ? "Adicionar imagem (opcional)" : "Selecionar imagem (auto-comprime)"}
+                      </span>
                     </>
                   )}
                 </div>
@@ -318,7 +325,7 @@ export default function MemberForm({
 
         <button 
           type="submit" 
-          disabled={uploading || !newImg} 
+          disabled={uploading || (!editingId && !newImg)}
           className={`w-full py-4 rounded-xl font-black uppercase tracking-wider transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
             editingId 
               ? 'bg-amber-600 hover:bg-amber-700 text-white' 

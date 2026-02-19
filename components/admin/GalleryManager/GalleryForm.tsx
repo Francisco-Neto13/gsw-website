@@ -22,7 +22,6 @@ export default function GalleryForm({
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newSrc, setNewSrc] = useState("");
-  const [newThumbSrc, setNewThumbSrc] = useState("");
   const [newOrdem, setNewOrdem] = useState(0);
   const [uploading, setUploading] = useState(false);
   
@@ -38,7 +37,6 @@ export default function GalleryForm({
       setNewTitle(itemEditando.title);
       setNewDescription(itemEditando.description);
       setNewSrc(itemEditando.src);
-      setNewThumbSrc(itemEditando.thumb_src || "");
       setNewOrdem(itemEditando.ordem);
     } else {
       resetForm();
@@ -59,74 +57,37 @@ export default function GalleryForm({
         return;
       }
 
-      const timestamp = Date.now();
-      const randomStr = Math.random().toString(36).substring(7);
-
-      const thumbOptions = {
-        maxSizeMB: 0.1,
-        maxWidthOrHeight: 600,
-        useWebWorker: true,
-        fileType: 'image/webp',
-        initialQuality: 0.75,
-      };
-
-      let thumbFile: File;
-      try {
-        thumbFile = await imageCompression(file, thumbOptions);
-      } catch (err) {
-        console.error("Erro ao criar thumbnail:", err);
-        alert("Erro ao criar miniatura da imagem");
-        if (fileInputRef.current) fileInputRef.current.value = "";
-        return;
-      }
-
-      const thumbPath = `thumbs/thumb-${timestamp}-${randomStr}.webp`;
-
-      const { error: thumbUploadError } = await supabase.storage
-        .from('gallery')
-        .upload(thumbPath, thumbFile, {
-          contentType: 'image/webp',
-          cacheControl: '3600',
-          upsert: false
-        });
-
-      if (thumbUploadError) throw thumbUploadError;
-
-      const { data: thumbData } = supabase.storage.from('gallery').getPublicUrl(thumbPath);
-      setNewThumbSrc(thumbData.publicUrl);
-
-      const fullOptions = {
-        maxSizeMB: 0.25,
+      const compressionOptions = {
+        maxSizeMB: 0.4,
         maxWidthOrHeight: 1200,
         useWebWorker: true,
         fileType: 'image/webp',
-        initialQuality: 0.85,
+        initialQuality: 0.82,
       };
 
-      let fullFile: File;
       try {
-        fullFile = await imageCompression(file, fullOptions);
-      } catch (err) {
-        console.error("Erro ao criar imagem full:", err);
-        alert("Erro ao processar imagem");
+        file = await imageCompression(file, compressionOptions);
+      } catch (compressionError: any) {
+        console.error("Erro na compressão:", compressionError);
+        alert("Erro ao comprimir imagem. Tente uma imagem diferente.");
         if (fileInputRef.current) fileInputRef.current.value = "";
         return;
       }
 
-      const fullPath = `full/full-${timestamp}-${randomStr}.webp`;
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.webp`;
 
-      const { error: fullUploadError } = await supabase.storage
+      const { error: uploadError } = await supabase.storage
         .from('gallery')
-        .upload(fullPath, fullFile, {
+        .upload(fileName, file, {
           contentType: 'image/webp',
           cacheControl: '3600',
           upsert: false
         });
 
-      if (fullUploadError) throw fullUploadError;
+      if (uploadError) throw uploadError;
 
-      const { data: fullData } = supabase.storage.from('gallery').getPublicUrl(fullPath);
-      setNewSrc(fullData.publicUrl);
+      const { data } = supabase.storage.from('gallery').getPublicUrl(fileName);
+      setNewSrc(data.publicUrl);
 
     } catch (error: any) {
       console.error("Erro no upload:", error);
@@ -139,7 +100,7 @@ export default function GalleryForm({
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     
-    if (!newSrc || !newThumbSrc) {
+    if (!newSrc) {
       alert("Por favor, faça upload de uma imagem!");
       return;
     }
@@ -153,7 +114,7 @@ export default function GalleryForm({
       title: newTitle, 
       description: newDescription, 
       src: newSrc,
-      thumb_src: newThumbSrc,
+      thumb_src: newSrc,
       ordem: newOrdem
     };
 
@@ -165,7 +126,6 @@ export default function GalleryForm({
     setNewTitle("");
     setNewDescription("");
     setNewSrc("");
-    setNewThumbSrc("");
     if (fileInputRef.current) fileInputRef.current.value = "";
     
     const maxOrdem = items.length > 0 
@@ -184,9 +144,7 @@ export default function GalleryForm({
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-black text-white flex items-center gap-3 cursor-default">
           {editingId ? (
-            <>
-              <span className="text-amber-500"></span> EDITAR FOTO
-            </>
+            <><span className="text-amber-500"></span> EDITAR FOTO</>
           ) : (
             <>NOVA FOTO PARA GALERIA</>
           )}
@@ -254,7 +212,7 @@ export default function GalleryForm({
 
         <div className="space-y-2">
           <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2 cursor-default">
-            Imagem 
+            Imagem
             <span className="text-zinc-600 font-normal normal-case">(PNG, JPG ou WebP)</span>
             <span className="text-green-500 text-[10px] font-normal normal-case">
               • Auto-compressão ativa
@@ -333,7 +291,7 @@ export default function GalleryForm({
 
         <button 
           type="submit" 
-          disabled={uploading || !newSrc || !newThumbSrc} 
+          disabled={uploading || !newSrc}
           className={`w-full py-4 rounded-xl font-black uppercase tracking-wider transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
             editingId 
               ? 'bg-amber-600 hover:bg-amber-700 text-white' 
