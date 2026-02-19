@@ -1,7 +1,7 @@
 # GsW Website
 
 <div align="center">
-  <img src="./public/icon.png" width="120" alt="GsW Logo" style="border-radius: 50%">
+  <img src="./public/icon.webp" width="120" alt="GsW Logo" style="border-radius: 50%">
   <p>Hub digital oficial da comunidade GsW.</p>
   <a href="https://gsw-website.vercel.app/"><strong>Acessar Plataforma</strong></a>
 </div>
