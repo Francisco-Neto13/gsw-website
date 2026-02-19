@@ -15,7 +15,7 @@ export default function Home() {
         <div
           className="absolute inset-0 z-0 bg-cover bg-center animate-fade-in"
           style={{
-            backgroundImage: "url('/bg-guilda.jpeg')",
+            backgroundImage: "url('/bg-guilda.webp')",
             animationDelay: "200ms",
           }}
         />

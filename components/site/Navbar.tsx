@@ -11,10 +11,9 @@ export default function Navbar() {
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
       <div className="mx-auto grid max-w-7xl grid-cols-3 items-center px-6 py-4">
         
-        {/* Logo e Nome da Guilda */}
         <a href="#gsw" className="group flex items-center gap-3 justify-self-start">
           <img
-            src="/icon.png"
+            src="/icon.webp"
             alt="GsW Logo"
             className="h-10 w-10 rounded-full transition-transform group-hover:scale-105"
           />
@@ -23,7 +22,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Links de Navegação Centralizados */}
         <ul className="hidden justify-self-center gap-8 sm:flex">
           {links.map((link) => (
             <li key={link.name}>
