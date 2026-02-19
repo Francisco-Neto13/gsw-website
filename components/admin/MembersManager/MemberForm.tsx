@@ -59,19 +59,16 @@ export default function MemberForm({
         return;
       }
 
-      console.log(`Imagem original: ${(file.size / 1024).toFixed(0)}KB`);
-
       const compressionOptions = {
-        maxSizeMB: 0.15,              
-        maxWidthOrHeight: 800,        
+        maxSizeMB: 0.15,
+        maxWidthOrHeight: 800,
         useWebWorker: true,
-        fileType: 'image/webp',       
-        initialQuality: 0.8,          
+        fileType: 'image/webp',
+        initialQuality: 0.8,
       };
 
       try {
         file = await imageCompression(file, compressionOptions);
-        console.log(`✅ Imagem comprimida: ${(file.size / 1024).toFixed(0)}KB`);
         
         if (file.size > 200 * 1024) {
           alert(`⚠️ Imagem ainda grande após compressão: ${(file.size / 1024).toFixed(0)}KB\n\nTente usar uma imagem menor ou com menos detalhes.`);
@@ -85,13 +82,11 @@ export default function MemberForm({
         return;
       }
 
-      const fileExt = "webp";
-      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-      const filePath = fileName;
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.webp`;
 
       const { error: uploadError } = await supabase.storage
         .from('members')
-        .upload(filePath, file, {
+        .upload(fileName, file, {
           contentType: 'image/webp',
           cacheControl: '3600',
           upsert: false
@@ -99,10 +94,8 @@ export default function MemberForm({
 
       if (uploadError) throw uploadError;
 
-      const { data } = supabase.storage.from('members').getPublicUrl(filePath);
+      const { data } = supabase.storage.from('members').getPublicUrl(fileName);
       setNewImg(data.publicUrl);
-
-      console.log(`Upload concluído: ${data.publicUrl}`);
 
     } catch (error: any) {
       console.error("Erro no upload:", error);
@@ -134,9 +127,7 @@ export default function MemberForm({
     };
 
     const success = await onSave(payload);
-    if (success) {
-      resetForm();
-    }
+    if (success) resetForm();
   }
 
   function resetForm() {
@@ -160,7 +151,7 @@ export default function MemberForm({
   return (
     <section className="bg-gradient-to-br from-zinc-900/80 to-zinc-900/50 p-8 rounded-3xl border border-zinc-800/50 shadow-2xl">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-black text-white flex items-center gap-3">
+        <h2 className="text-2xl font-black text-white flex items-center gap-3 cursor-default">
           {editingId ? (
             <>
               <span className="text-amber-500"></span> EDITAR MEMBRO
@@ -174,7 +165,7 @@ export default function MemberForm({
         {editingId && (
           <button
             onClick={handleCancel}
-            className="text-zinc-400 hover:text-white text-sm transition-colors flex items-center gap-2"
+            className="text-zinc-400 hover:text-white text-sm transition-colors flex items-center gap-2 cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -188,7 +179,7 @@ export default function MemberForm({
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Nome</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 cursor-default">Nome</label>
             <input 
               className="w-full bg-zinc-800/50 p-3 rounded-xl border border-zinc-700 outline-none focus:border-gsw focus:ring-2 focus:ring-gsw/20 text-white transition-all" 
               placeholder="BadBoyCJ" 
@@ -199,7 +190,7 @@ export default function MemberForm({
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Cargo</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 cursor-default">Cargo</label>
             <input 
               className="w-full bg-zinc-800/50 p-3 rounded-xl border border-zinc-700 outline-none focus:border-gsw focus:ring-2 focus:ring-gsw/20 text-white transition-all" 
               placeholder="Guild Leader" 
@@ -210,7 +201,7 @@ export default function MemberForm({
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+            <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 cursor-default">
               Posição {isOrdemDuplicada && <span className="text-yellow-500">⚠️</span>}
             </label>
             <input 
@@ -225,7 +216,7 @@ export default function MemberForm({
               onChange={(e) => setNewOrdem(Math.max(0, parseInt(e.target.value) || 0))} 
             />
             {isOrdemDuplicada && (
-              <p className="text-xs text-yellow-500 flex items-center gap-1">
+              <p className="text-xs text-yellow-500 flex items-center gap-1 cursor-default">
                 <span>⚠️</span> Posição ocupada por: <strong>{membroComMesmaOrdem?.name}</strong>
               </p>
             )}
@@ -233,7 +224,7 @@ export default function MemberForm({
         </div>
 
         <div className="space-y-2">
-          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 cursor-default">
             Tags <span className="text-zinc-600 font-normal normal-case">(separadas por vírgula)</span>
           </label>
           <input 
@@ -245,7 +236,7 @@ export default function MemberForm({
         </div>
 
         <div className="space-y-2">
-          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2 cursor-default">
             Imagem 
             <span className="text-zinc-600 font-normal normal-case">(PNG, JPG ou WebP)</span>
             <span className="text-green-500 text-[10px] font-normal normal-case">
@@ -267,7 +258,7 @@ export default function MemberForm({
                     setNewImg("");
                     if (fileInputRef.current) fileInputRef.current.value = "";
                   }}
-                  className="absolute -top-2 -right-2 bg-red-600 hover:bg-red-700 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute -top-2 -right-2 bg-red-600 hover:bg-red-700 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -283,7 +274,7 @@ export default function MemberForm({
                 ref={fileInputRef}
                 accept="image/png,image/jpeg,image/jpg,image/webp" 
                 onChange={handleImageUpload}
-                className="hidden" 
+                className="hidden cursor-pointer" 
                 id="file-upload"
               />
               <label 
@@ -300,7 +291,7 @@ export default function MemberForm({
                   {uploading ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-2 border-blue-500 border-t-transparent"></div>
-                      <span className="text-blue-500 font-medium">Comprimindo e enviando...</span>
+                      <span className="text-blue-500 font-medium cursor-default">Comprimindo e enviando...</span>
                     </>
                   ) : newImg ? (
                     <>
@@ -328,7 +319,7 @@ export default function MemberForm({
         <button 
           type="submit" 
           disabled={uploading || !newImg} 
-          className={`w-full py-4 rounded-xl font-black uppercase tracking-wider transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+          className={`w-full py-4 rounded-xl font-black uppercase tracking-wider transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
             editingId 
               ? 'bg-amber-600 hover:bg-amber-700 text-white' 
               : 'bg-gradient-to-r from-gsw to-purple-600 hover:from-purple-600 hover:to-gsw text-white shadow-lg hover:shadow-gsw/50'

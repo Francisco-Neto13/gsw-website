@@ -31,10 +31,9 @@ export default function MembersList({
   }
 
   return (
-    <section className="space-y-6">
+    <section className="space-y-6 cursor-default">
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
         <h3 className="text-xl font-black text-white flex items-center gap-2">
-          <span className="text-gsw"></span> 
           MEMBROS CADASTRADOS 
           <span className="text-zinc-600">({membros.length})</span>
         </h3>
@@ -58,29 +57,27 @@ export default function MembersList({
         {membrosFiltrados.map((m) => (
           <div 
             key={m.id} 
-            className={`group relative bg-zinc-900/50 p-4 rounded-2xl border transition-all hover:-translate-y-1 ${
+            className={`group relative bg-zinc-900/50 p-4 rounded-2xl border transition-all hover:-translate-y-1 cursor-default ${
               editingId === m.id 
                 ? 'border-amber-500/50 shadow-lg shadow-amber-500/20' 
                 : 'border-zinc-800 hover:border-zinc-700'
             }`}
           >
-            <div className="absolute -top-2 -right-2 bg-gsw text-white text-xs font-black px-2 py-1 rounded-full shadow-lg">
+            <div className="absolute -top-2 -right-2 bg-gsw text-white text-xs font-black px-2 py-1 rounded-full shadow-lg z-10">
               #{m.ordem}
             </div>
 
             <div className="flex items-start gap-4">
-                {m.img && m.img.trim() !== "" ? (
+              {m.img && m.img.trim() !== "" ? (
                 <img 
-                    src={m.img} 
-                    alt={m.name} 
-                    className="w-16 h-16 rounded-xl object-cover border-2 border-gsw/30 group-hover:border-gsw/60 transition-colors" 
-                    onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    }}
+                  src={m.img} 
+                  alt={m.name} 
+                  className="w-16 h-16 rounded-xl object-cover border-2 border-gsw/30 group-hover:border-gsw/60 transition-colors" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
-                ) : (
+              ) : (
                 <div className="w-16 h-16 rounded-xl bg-black border-2 border-zinc-700" />
-                )}
+              )}
               
               <div className="flex-1 min-w-0">
                 <h4 className="font-bold text-white truncate">{m.name}</h4>
@@ -106,7 +103,7 @@ export default function MembersList({
             <div className="flex gap-2 mt-4">
               <button
                 onClick={() => onEdit(m)}
-                className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2"
+                className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
@@ -116,7 +113,7 @@ export default function MembersList({
               
               <button
                 onClick={() => setConfirmDelete(m.id)}
-                className="bg-red-900/30 hover:bg-red-900/50 text-red-400 hover:text-red-300 p-2 rounded-lg transition-all"
+                className="bg-red-900/30 hover:bg-red-900/50 text-red-400 hover:text-red-300 p-2 rounded-lg transition-all cursor-pointer active:scale-95"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="3 6 5 6 21 6"></polyline>
@@ -131,17 +128,16 @@ export default function MembersList({
       {membrosFiltrados.length === 0 && (
         <div className="text-center py-12 text-zinc-500">
           <p className="text-lg mb-2">Nenhum membro encontrado</p>
-          <p className="text-sm">Tente ajustar sua busca ou adicione novos membros</p>
         </div>
       )}
 
       {confirmDelete !== null && (
         <div 
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 animate-fade-in"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[110] p-4 animate-in fade-in duration-300 cursor-default"
           onClick={() => setConfirmDelete(null)}
         >
           <div 
-            className="bg-zinc-900 rounded-2xl p-8 max-w-md w-full border border-red-500/20"
+            className="bg-zinc-900 rounded-2xl p-8 max-w-md w-full border border-zinc-800 shadow-2xl animate-in zoom-in-95 cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
             <h3 className="text-2xl font-black text-white mb-4">⚠️ Confirmar Exclusão</h3>
@@ -152,13 +148,13 @@ export default function MembersList({
             <div className="flex gap-3">
               <button
                 onClick={() => setConfirmDelete(null)}
-                className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl font-bold transition-all"
+                className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl font-bold transition-all cursor-pointer active:scale-95"
               >
                 Cancelar
               </button>
               <button
                 onClick={handleConfirmDelete}
-                className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold transition-all"
+                className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold transition-all cursor-pointer active:scale-95 shadow-lg shadow-red-900/20"
               >
                 Excluir
               </button>
