@@ -21,7 +21,7 @@ export default function Pillars() {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
       ),
-      description: "Lidam com o conteúdo próprio de Wynncraft: builds públicas, partys de Annie e ajuda a novatos. Sigam o exemplo do grande Volkzz101.",
+      description: "Lidam com o conteúdo próprio de Wynncraft: builds públicas, partys de Annie e ajuda a novatos.",
       color: "from-emerald-500/20 to-teal-500/20"
     },
     {
@@ -45,29 +45,29 @@ export default function Pillars() {
   return (
     <section id="pilares" className="relative py-32 px-6 bg-black overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gsw/5 blur-[120px] rounded-full pointer-events-none" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="reveal-on-scroll mb-20 text-center">
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white mb-6">
             Os 5 <span className="text-gsw">Pilares</span>
           </h2>
           <p className="text-zinc-400 max-w-3xl mx-auto leading-relaxed text-lg">
-            A estrutura que sustenta a GsW. Estas divisões são destinadas aos membros que alcançam o cargo de <span className="text-white font-bold underline decoration-gsw">Capitão</span>, permitindo que escolham em qual frente desejam integrar e fortalecer o legado da guilda.
+            A estrutura que sustenta a GsW. Estas divisões são destinadas aos membros que alcançam o cargo de{" "}
+            <span className="text-white font-bold underline decoration-gsw">Capitão</span>, permitindo que escolham em qual frente desejam integrar e fortalecer o legado da guilda.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pillars.map((pilar, index) => (
-            <div 
+            <div
               key={index}
-              className={`reveal-on-scroll group relative p-10 rounded-3xl border border-white/10 bg-zinc-900/20 backdrop-blur-md transition-all duration-500 hover:border-gsw/40 hover:-translate-y-2 text-center flex flex-col items-center ${
+              className={`reveal-on-scroll group relative p-10 rounded-3xl border border-white/10 bg-zinc-900/20 transition-transform duration-200 hover:border-gsw/40 hover:-translate-y-2 will-change-transform text-center flex flex-col items-center ${
                 index >= 3 ? "lg:translate-x-[50%]" : ""
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${pilar.color} rounded-3xl blur-xl -z-10`} />
+              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${pilar.color} rounded-3xl -z-10`} />
 
-              <div className="mb-8 inline-flex p-5 rounded-2xl bg-white/5 text-gsw group-hover:scale-110 group-hover:bg-gsw group-hover:text-white transition-all duration-500 shadow-[0_0_20px_rgba(113,22,173,0.2)]">
+              <div className="mb-8 inline-flex p-5 rounded-2xl bg-white/5 text-gsw group-hover:scale-110 group-hover:bg-gsw group-hover:text-white transition-all duration-200 shadow-[0_0_20px_rgba(113,22,173,0.2)]">
                 {pilar.icon}
               </div>
 
@@ -75,20 +75,23 @@ export default function Pillars() {
                 {pilar.title}
               </h3>
 
-              <p className="text-zinc-400 leading-relaxed group-hover:text-zinc-200 transition-colors">
+              <p className="text-zinc-400 leading-relaxed group-hover:text-zinc-200 transition-colors duration-200">
                 {pilar.description}
               </p>
 
-              <div className="absolute bottom-4 right-8 text-5xl font-black text-white/5 select-none transition-colors group-hover:text-gsw/10 italic">
+              <div className="absolute bottom-4 right-8 text-5xl font-black text-white/5 select-none group-hover:text-gsw/10 italic">
                 0{index + 1}
               </div>
             </div>
           ))}
         </div>
-          <div className="mt-24 text-center reveal-on-scroll">
-            <p className="text-zinc-500 italic border-t border-white/5 pt-12 inline-block px-12 leading-relaxed max-w-2xl">
-              "Divididos em frentes, mas unidos por um propósito. Os <span className="text-gsw/60 font-bold text-sm tracking-widest uppercase">Pilares</span> não são apenas setores; são os alicerces de um império que se recusa a cair."
-            </p>
+
+        <div className="mt-24 text-center reveal-on-scroll">
+          <p className="text-zinc-500 italic border-t border-white/5 pt-12 inline-block px-12 leading-relaxed max-w-2xl">
+            "Divididos em frentes, mas unidos por um propósito. Os{" "}
+            <span className="text-gsw/60 font-bold text-sm tracking-widest uppercase">Pilares</span>{" "}
+            não são apenas setores; são os alicerces de um império que se recusa a cair."
+          </p>
         </div>
       </div>
     </section>

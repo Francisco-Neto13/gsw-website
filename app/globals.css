@@ -3,7 +3,6 @@
 @theme {
   --color-gsw: #7116ad;
   --color-gsw-dark: #4c0e75;
-
   --color-arcane: #9d4edd;
   --color-gold: #e6c47a;
   --color-ink: #0b0b0f;
@@ -11,11 +10,7 @@
 }
 
 :root {
-  --background: radial-gradient(
-    ellipse at top,
-    #0c0c14 0%,
-    #050505 60%
-  );
+  --background: radial-gradient(ellipse at top, #0c0c14 0%, #050505 60%);
   --foreground: #ffffff;
 }
 
@@ -25,6 +20,7 @@ body {
   color: var(--foreground);
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 @keyframes fadeIn {
@@ -39,13 +35,13 @@ body {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .reveal-on-scroll.visible {
