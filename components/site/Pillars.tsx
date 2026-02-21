@@ -43,51 +43,51 @@ export default function Pillars() {
   ];
 
   return (
-    <section id="pilares" className="relative py-32 px-6 bg-black overflow-hidden">
+    <section id="pilares" className="relative py-16 sm:py-32 px-4 sm:px-6 bg-black overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gsw/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="reveal-on-scroll mb-20 text-center">
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white mb-6">
+        <div className="reveal-on-scroll mb-10 sm:mb-20 text-center">
+          <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white mb-4 sm:mb-6">
             Os 5 <span className="text-gsw">Pilares</span>
           </h2>
-          <p className="text-zinc-400 max-w-3xl mx-auto leading-relaxed text-lg">
+          <p className="text-zinc-400 max-w-3xl mx-auto leading-relaxed text-sm sm:text-lg px-2">
             A estrutura que sustenta a GsW. Estas divisões são destinadas aos membros que alcançam o cargo de{" "}
             <span className="text-white font-bold underline decoration-gsw">Capitão</span>, permitindo que escolham em qual frente desejam integrar e fortalecer o legado da guilda.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {pillars.map((pilar, index) => (
             <div
               key={index}
-              className={`reveal-on-scroll group relative p-10 rounded-3xl border border-white/10 bg-zinc-900/20 transition-transform duration-200 hover:border-gsw/40 hover:-translate-y-2 will-change-transform text-center flex flex-col items-center ${
+              className={`reveal-on-scroll group relative p-6 sm:p-10 rounded-3xl border border-white/10 bg-zinc-900/20 transition-transform duration-200 hover:border-gsw/40 hover:-translate-y-2 will-change-transform text-center flex flex-col items-center ${
                 index >= 3 ? "lg:translate-x-[50%]" : ""
               }`}
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${pilar.color} rounded-3xl -z-10`} />
 
-              <div className="mb-8 inline-flex p-5 rounded-2xl bg-white/5 text-gsw group-hover:scale-110 group-hover:bg-gsw group-hover:text-white transition-all duration-200 shadow-[0_0_20px_rgba(113,22,173,0.2)]">
+              <div className="mb-5 sm:mb-8 inline-flex p-4 sm:p-5 rounded-2xl bg-white/5 text-gsw group-hover:scale-110 group-hover:bg-gsw group-hover:text-white transition-all duration-200 shadow-[0_0_20px_rgba(113,22,173,0.2)]">
                 {pilar.icon}
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-4 tracking-tight uppercase">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 tracking-tight uppercase">
                 {pilar.title}
               </h3>
 
-              <p className="text-zinc-400 leading-relaxed group-hover:text-zinc-200 transition-colors duration-200">
+              <p className="text-zinc-400 leading-relaxed group-hover:text-zinc-200 transition-colors duration-200 text-sm sm:text-base">
                 {pilar.description}
               </p>
 
-              <div className="absolute bottom-4 right-8 text-5xl font-black text-white/5 select-none group-hover:text-gsw/10 italic">
+              <div className="absolute bottom-4 right-6 sm:right-8 text-4xl sm:text-5xl font-black text-white/5 select-none group-hover:text-gsw/10 italic">
                 0{index + 1}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-24 text-center reveal-on-scroll">
-          <p className="text-zinc-500 italic border-t border-white/5 pt-12 inline-block px-12 leading-relaxed max-w-2xl">
+        <div className="mt-16 sm:mt-24 text-center reveal-on-scroll">
+          <p className="text-zinc-500 italic border-t border-white/5 pt-10 sm:pt-12 inline-block px-6 sm:px-12 leading-relaxed max-w-2xl text-sm">
             "Divididos em frentes, mas unidos por um propósito. Os{" "}
             <span className="text-gsw/60 font-bold text-sm tracking-widest uppercase">Pilares</span>{" "}
             não são apenas setores; são os alicerces de um império que se recusa a cair."

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface Era {
   year: string;
@@ -59,43 +59,29 @@ export default function History() {
           }
         });
       },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15,
-      }
+      { root: null, rootMargin: '0px', threshold: 0.15 }
     );
 
     const elements = document.querySelectorAll('.reveal-on-scroll');
     elements.forEach((el) => {
-      if (observerRef.current) {
-        observerRef.current.observe(el);
-      }
+      if (observerRef.current) observerRef.current.observe(el);
     });
 
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
+    return () => { if (observerRef.current) observerRef.current.disconnect(); };
   }, []);
 
   return (
-    <section
-      id="historia"
-      className="relative py-32 px-6 bg-zinc-950 overflow-hidden"
-    >
+    <section id="historia" className="relative py-16 sm:py-32 px-4 sm:px-6 bg-zinc-950 overflow-hidden">
       <div className="relative z-10 max-w-5xl mx-auto">
-        <div className="mb-28 text-center reveal-on-scroll">
-          <span className="block mb-6 text-xs font-bold tracking-[0.6em] uppercase text-gsw">
+
+        <div className="mb-16 sm:mb-28 text-center reveal-on-scroll">
+          <span className="block mb-4 sm:mb-6 text-xs font-bold tracking-[0.6em] uppercase text-gsw">
             Documento Oficial
           </span>
-
-          <h2 className="text-5xl sm:text-7xl font-black tracking-tight text-white mb-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight text-white mb-6 sm:mb-8">
             Crônicas de <span className="text-gsw">Wynn</span>
           </h2>
-
-          <p className="text-zinc-400 italic max-w-xl mx-auto leading-relaxed">
+          <p className="text-zinc-400 italic max-w-xl mx-auto leading-relaxed text-sm sm:text-base px-2">
             "Um registro eterno das eras, das alianças e do sangue derramado pelos
             Guardiões na busca pela paz nas províncias."
           </p>
@@ -104,34 +90,36 @@ export default function History() {
         <div className="relative">
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gsw/40 via-white/10 to-transparent hidden sm:block -translate-x-1/2" />
 
-          <div className="space-y-28">
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-gsw/40 via-white/10 to-transparent sm:hidden" />
+
+          <div className="space-y-12 sm:space-y-28">
             {eras.map((era, index) => (
               <div
                 key={index}
-                className={`reveal-on-scroll group relative flex flex-col sm:flex-row gap-12 items-start ${
+                className={`reveal-on-scroll group relative flex flex-col sm:flex-row gap-4 sm:gap-12 items-start ${
                   index % 2 === 0 ? "sm:flex-row-reverse" : ""
                 }`}
               >
                 <div className="hidden sm:block absolute left-1/2 top-8 w-3 h-3 rounded-full bg-zinc-950 border-2 border-gsw -translate-x-1/2 z-20 transition-transform duration-500 group-hover:scale-150 group-hover:bg-gsw" />
 
-                <div
-                  className={`w-full sm:w-1/2 ${
-                    index % 2 === 0
-                      ? "sm:text-left sm:pl-12"
-                      : "sm:text-right sm:pr-12"
-                  }`}
-                >
+                <div className="sm:hidden absolute left-4 top-2 w-2.5 h-2.5 rounded-full bg-zinc-950 border-2 border-gsw -translate-x-1/2 z-20" />
+
+                <div className={`hidden sm:block w-full sm:w-1/2 ${
+                  index % 2 === 0 ? "sm:text-left sm:pl-12" : "sm:text-right sm:pr-12"
+                }`}>
                   <span className="block text-3xl font-black italic text-gsw/40 mb-4 transition-colors duration-500 group-hover:text-gsw">
                     {era.year}
                   </span>
                 </div>
 
-                <div className="w-full sm:w-1/2 p-8 rounded-2xl bg-black border border-white/10 transition-all duration-500 group-hover:scale-[1.03] group-hover:border-gsw/40 group-hover:bg-zinc-900/50 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                  <h4 className="text-xl font-bold text-white mb-4 tracking-tight uppercase transition-colors duration-500 group-hover:text-gsw">
+                <div className="w-full sm:w-1/2 pl-10 sm:pl-8 p-5 sm:p-8 rounded-2xl bg-black border border-white/10 transition-all duration-500 group-hover:scale-[1.03] group-hover:border-gsw/40 group-hover:bg-zinc-900/50 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <span className="sm:hidden block text-sm font-black italic text-gsw/60 mb-2">
+                    {era.year}
+                  </span>
+                  <h4 className="text-base sm:text-xl font-bold text-white mb-3 sm:mb-4 tracking-tight uppercase transition-colors duration-500 group-hover:text-gsw">
                     {era.title}
                   </h4>
-
-                  <p className="text-zinc-300 leading-relaxed text-sm sm:text-base transition-colors duration-500 group-hover:text-white">
+                  <p className="text-zinc-300 leading-relaxed text-sm transition-colors duration-500 group-hover:text-white">
                     {era.description}
                   </p>
                 </div>
@@ -140,8 +128,8 @@ export default function History() {
           </div>
         </div>
 
-        <div className="mt-24 text-center reveal-on-scroll">
-          <p className="text-zinc-500 italic border-t border-white/5 pt-12 inline-block px-12">
+        <div className="mt-16 sm:mt-24 text-center reveal-on-scroll">
+          <p className="text-zinc-500 italic border-t border-white/5 pt-10 sm:pt-12 inline-block px-6 sm:px-12 text-sm">
             "O valor de um guardião não se mede apenas pelo seu nível, mas pela sua
             lealdade à bandeira."
           </p>
