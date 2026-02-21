@@ -140,11 +140,11 @@ export default function GalleryForm({
   }
 
   return (
-    <section className="bg-gradient-to-br from-zinc-900/80 to-zinc-900/50 p-8 rounded-3xl border border-zinc-800/50 shadow-2xl">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-black text-white flex items-center gap-3 cursor-default">
+    <section className="bg-gradient-to-br from-zinc-900/80 to-zinc-900/50 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-zinc-800/50 shadow-2xl">
+      <div className="flex items-center justify-between mb-5 sm:mb-6">
+        <h2 className="text-lg sm:text-2xl font-black text-white flex items-center gap-2 sm:gap-3 cursor-default">
           {editingId ? (
-            <><span className="text-amber-500"></span> EDITAR FOTO</>
+            <>EDITAR FOTO</>
           ) : (
             <>NOVA FOTO PARA GALERIA</>
           )}
@@ -158,17 +158,17 @@ export default function GalleryForm({
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
-            Cancelar
+            <span className="hidden sm:inline">Cancelar</span>
           </button>
         )}
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 cursor-default">Título</label>
             <input 
-              className="w-full bg-zinc-800/50 p-3 rounded-xl border border-zinc-700 outline-none focus:border-gsw focus:ring-2 focus:ring-gsw/20 text-white transition-all" 
+              className="w-full bg-zinc-800/50 p-3 rounded-xl border border-zinc-700 outline-none focus:border-gsw focus:ring-2 focus:ring-gsw/20 text-white text-sm transition-all" 
               placeholder="Guerra em Rodoroc" 
               value={newTitle} 
               onChange={(e) => setNewTitle(e.target.value)} 
@@ -179,7 +179,7 @@ export default function GalleryForm({
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 cursor-default">Descrição</label>
             <input 
-              className="w-full bg-zinc-800/50 p-3 rounded-xl border border-zinc-700 outline-none focus:border-gsw focus:ring-2 focus:ring-gsw/20 text-white transition-all" 
+              className="w-full bg-zinc-800/50 p-3 rounded-xl border border-zinc-700 outline-none focus:border-gsw focus:ring-2 focus:ring-gsw/20 text-white text-sm transition-all" 
               placeholder="Conquista épica" 
               value={newDescription} 
               onChange={(e) => setNewDescription(e.target.value)} 
@@ -189,12 +189,12 @@ export default function GalleryForm({
 
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 cursor-default">
-              Posição {isOrdemDuplicada && <span className="text-yellow-500">⚠️</span>}
+              Posição {isOrdemDuplicada && <span className="text-yellow-500">!</span>}
             </label>
             <input 
               type="number" 
               min="0" 
-              className={`w-full bg-zinc-800/50 p-3 rounded-xl border outline-none transition-all ${
+              className={`w-full bg-zinc-800/50 p-3 rounded-xl border outline-none transition-all text-sm ${
                 isOrdemDuplicada 
                   ? 'border-yellow-500 focus:ring-2 focus:ring-yellow-500/20' 
                   : 'border-zinc-700 focus:border-gsw focus:ring-2 focus:ring-gsw/20'
@@ -204,28 +204,28 @@ export default function GalleryForm({
             />
             {isOrdemDuplicada && (
               <p className="text-xs text-yellow-500 flex items-center gap-1 cursor-default">
-                <span>⚠️</span> Posição ocupada por: <strong>{itemComMesmaOrdem?.title}</strong>
+                Posição ocupada por: <strong>{itemComMesmaOrdem?.title}</strong>
               </p>
             )}
           </div>
         </div>
 
         <div className="space-y-2">
-          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2 cursor-default">
+          <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex flex-wrap items-center gap-x-2 gap-y-1 cursor-default">
             Imagem
             <span className="text-zinc-600 font-normal normal-case">(PNG, JPG ou WebP)</span>
             <span className="text-green-500 text-[10px] font-normal normal-case">
-              • Auto-compressão ativa
+              Auto-compressão ativa
             </span>
           </label>
           
-          <div className="flex gap-4 items-start flex-col md:flex-row">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
             {newSrc && (
-              <div className="relative group shrink-0">
+              <div className="relative group w-full sm:w-auto shrink-0">
                 <img 
                   src={newSrc} 
                   alt="Preview" 
-                  className="w-full md:w-64 h-36 object-cover rounded-xl border-2 border-gsw/50 shadow-lg"
+                  className="w-full sm:w-64 h-36 object-cover rounded-xl border-2 border-gsw/50 shadow-lg"
                 />
                 <button
                   type="button"
@@ -235,7 +235,7 @@ export default function GalleryForm({
                   }}
                   className="absolute -top-2 -right-2 bg-red-600 hover:bg-red-700 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
@@ -264,24 +264,24 @@ export default function GalleryForm({
               >
                 {uploading ? (
                   <>
-                    <div className="animate-spin rounded-full h-8 w-8 border-2 border-blue-500 border-t-transparent mb-2"></div>
-                    <span className="text-blue-500 font-medium text-sm cursor-default">Comprimindo e enviando...</span>
+                    <div className="animate-spin rounded-full h-7 w-7 border-2 border-blue-500 border-t-transparent mb-2"></div>
+                    <span className="text-blue-500 font-medium text-sm cursor-default">Comprimindo...</span>
                   </>
                 ) : newSrc ? (
                   <>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500 mb-2">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
-                    <span className="text-green-500 font-medium text-sm">Imagem otimizada! Clique para alterar</span>
+                    <span className="text-green-500 font-medium text-sm">Clique para alterar</span>
                   </>
                 ) : (
                   <>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400 mb-2">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                       <polyline points="17 8 12 3 7 8"></polyline>
                       <line x1="12" y1="3" x2="12" y2="15"></line>
                     </svg>
-                    <span className="text-zinc-400 font-medium">Selecionar imagem (auto-comprime)</span>
+                    <span className="text-zinc-400 font-medium text-sm">Selecionar imagem</span>
                   </>
                 )}
               </label>
@@ -292,7 +292,7 @@ export default function GalleryForm({
         <button 
           type="submit" 
           disabled={uploading || !newSrc}
-          className={`w-full py-4 rounded-xl font-black uppercase tracking-wider transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
+          className={`w-full py-3 sm:py-4 rounded-xl font-black uppercase tracking-wider text-sm transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${
             editingId 
               ? 'bg-amber-600 hover:bg-amber-700 text-white' 
               : 'bg-gradient-to-r from-gsw to-purple-600 hover:from-purple-600 hover:to-gsw text-white shadow-lg hover:shadow-gsw/50'

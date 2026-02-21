@@ -49,27 +49,27 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="w-full max-w-md relative z-10">
+    <div className="w-full max-w-md relative z-10 px-4 sm:px-0">
       <div className="bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 rounded-2xl shadow-2xl overflow-hidden">
-        <div className="bg-gradient-to-r from-gsw/10 via-purple-600/10 to-gsw/10 border-b border-zinc-800/50 p-8 text-center cursor-default">
-          <div className="inline-block mb-4">
+        <div className="bg-gradient-to-r from-gsw/10 via-purple-600/10 to-gsw/10 border-b border-zinc-800/50 p-6 sm:p-8 text-center cursor-default">
+          <div className="inline-block mb-3 sm:mb-4">
             <Link href="/" className="group block cursor-pointer">
               <div className="relative">
                 <div className="absolute -inset-3 bg-gradient-to-r from-gsw/20 via-purple-600/20 to-gsw/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative bg-zinc-900 border border-gsw/30 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:border-gsw/60 transition-colors overflow-hidden">
-                  <Image src="/favicon.ico" alt="GsW" width={40} height={40} className="object-contain" />
+                <div className="relative bg-zinc-900 border border-gsw/30 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:border-gsw/60 transition-colors overflow-hidden">
+                  <Image src="/favicon.ico" alt="GsW" width={36} height={36} className="object-contain" />
                 </div>
               </div>
             </Link>
           </div>
-          <h1 className="text-3xl font-black text-white mb-2 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-black text-white mb-1 sm:mb-2 tracking-tight">
             Painel <span className="text-gsw">GsW</span>
           </h1>
           <p className="text-zinc-500 text-sm font-medium">Área Administrativa</p>
         </div>
 
-        <div className="p-8">
-          <form onSubmit={handleLogin} noValidate className="space-y-5">
+        <div className="p-6 sm:p-8">
+          <form onSubmit={handleLogin} noValidate className="space-y-4 sm:space-y-5">
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-2 cursor-default">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -78,7 +78,7 @@ export default function LoginForm() {
               <input
                 type="text"
                 placeholder="Digite seu e-mail"
-                className="w-full bg-zinc-950/50 border border-zinc-800 p-3 rounded-xl focus:border-gsw focus:ring-2 focus:ring-gsw/20 outline-none transition-all text-white placeholder:text-zinc-600"
+                className="w-full bg-zinc-950/50 border border-zinc-800 p-3 rounded-xl focus:border-gsw focus:ring-2 focus:ring-gsw/20 outline-none transition-all text-white placeholder:text-zinc-600 text-sm"
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); setError(""); }}
               />
@@ -102,7 +102,7 @@ export default function LoginForm() {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Digite sua senha"
-                  className="w-full bg-zinc-950/50 border border-zinc-800 p-3 pr-12 rounded-xl focus:border-gsw focus:ring-2 focus:ring-gsw/20 outline-none transition-all text-white placeholder:text-zinc-600"
+                  className="w-full bg-zinc-950/50 border border-zinc-800 p-3 pr-12 rounded-xl focus:border-gsw focus:ring-2 focus:ring-gsw/20 outline-none transition-all text-white placeholder:text-zinc-600 text-sm"
                   value={password}
                   onChange={(e) => { setPassword(e.target.value); setError(""); }}
                 />
@@ -130,7 +130,7 @@ export default function LoginForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-gsw to-purple-600 hover:from-purple-600 hover:to-gsw disabled:opacity-50 disabled:cursor-not-allowed text-white font-black text-sm uppercase tracking-wider py-4 rounded-xl transition-all shadow-lg shadow-gsw/30 hover:shadow-gsw/50 active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer"
+              className="w-full bg-gradient-to-r from-gsw to-purple-600 hover:from-purple-600 hover:to-gsw disabled:opacity-50 disabled:cursor-not-allowed text-white font-black text-sm uppercase tracking-wider py-3 sm:py-4 rounded-xl transition-all shadow-lg shadow-gsw/30 hover:shadow-gsw/50 active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer"
             >
               {loading ? (
                 <><div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Autenticando...</>
@@ -141,8 +141,8 @@ export default function LoginForm() {
           </form>
         </div>
 
-        <div className="bg-zinc-950/50 border-t border-zinc-800/50 px-8 py-5 cursor-default">
-          <div className="flex flex-col gap-3">
+        <div className="bg-zinc-950/50 border-t border-zinc-800/50 px-6 sm:px-8 py-4 sm:py-5 cursor-default">
+          <div className="flex flex-col gap-2 sm:gap-3">
             <div className="flex items-center justify-center gap-2 text-zinc-500 text-xs">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
               <span className="font-medium uppercase tracking-widest text-[10px]">Conexão Criptografada SSL/TLS</span>

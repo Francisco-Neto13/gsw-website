@@ -92,21 +92,21 @@ export default function AdminSettings() {
   };
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-700 max-w-7xl mx-auto py-10">
+    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-700 max-w-7xl mx-auto py-6 sm:py-10 px-0">
       
       {message && (
         <div className={`p-4 rounded-2xl flex items-center gap-3 border animate-in slide-in-from-top-2 duration-300 ${
           message.type === 'success' ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' : 'bg-red-500/10 border-red-500/20 text-red-400'
         }`}>
-          {message.type === 'success' ? <CheckCircle2 size={18}/> : <AlertCircle size={18}/>}
+          {message.type === 'success' ? <CheckCircle2 size={16}/> : <AlertCircle size={16}/>}
           <span className="text-[10px] font-black uppercase tracking-widest">{message.text}</span>
         </div>
       )}
 
-      <div className={`relative border rounded-[2rem] p-8 transition-all duration-500 ${verified ? 'bg-emerald-500/5 border-emerald-500/20' : 'bg-zinc-900/40 border-zinc-800'}`}>
-        <div className="flex flex-col md:flex-row items-end md:items-center gap-6">
+      <div className={`relative border rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 transition-all duration-500 ${verified ? 'bg-emerald-500/5 border-emerald-500/20' : 'bg-zinc-900/40 border-zinc-800'}`}>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
           <div className={`flex items-center gap-3 shrink-0 ${verified ? 'text-emerald-400' : 'text-zinc-400'}`}>
-            {verified ? <ShieldCheck size={20}/> : <ShieldAlert size={20}/>}
+            {verified ? <ShieldCheck size={18}/> : <ShieldAlert size={18}/>}
             <div className="flex flex-col text-left">
               <span className="text-[10px] font-black uppercase tracking-widest">{verified ? "Identidade Verificada" : "Sua Senha Atual"}</span>
               <span className="text-[8px] font-bold text-zinc-600 uppercase tracking-tighter">Obrigatório para qualquer alteração</span>
@@ -118,16 +118,16 @@ export default function AdminSettings() {
               placeholder="Digite sua senha atual para autorizar"
               value={currentPassword}
               onChange={(e) => { setCurrentPassword(e.target.value); setVerified(false); }}
-              className="w-full bg-black/40 border border-zinc-800 rounded-xl px-5 py-4 text-sm focus:outline-none focus:border-gsw transition-all text-white placeholder:text-zinc-700 pr-12"
+              className="w-full bg-black/40 border border-zinc-800 rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-sm focus:outline-none focus:border-gsw transition-all text-white placeholder:text-zinc-700 pr-12"
             />
             <button type="button" onClick={() => setShowCurrent(!showCurrent)} className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-600 hover:text-zinc-400">
-              {showCurrent ? <EyeOff size={18}/> : <Eye size={18}/>}
+              {showCurrent ? <EyeOff size={16}/> : <Eye size={16}/>}
             </button>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
         <EmailForm 
           currentEmail={currentEmail} 
           newEmail={email} 

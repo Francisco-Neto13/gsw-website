@@ -31,10 +31,10 @@ export default function MembersList({
   }
 
   return (
-    <section className="space-y-6 cursor-default">
-      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-        <h3 className="text-xl font-black text-white flex items-center gap-2">
-          MEMBROS CADASTRADOS 
+    <section className="space-y-4 sm:space-y-6 cursor-default">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center justify-between">
+        <h3 className="text-base sm:text-xl font-black text-white flex items-center gap-2">
+          MEMBROS CADASTRADOS
           <span className="text-zinc-600">({membros.length})</span>
         </h3>
         
@@ -53,11 +53,11 @@ export default function MembersList({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
         {membrosFiltrados.map((m) => (
           <div 
             key={m.id} 
-            className={`group relative bg-zinc-900/50 p-4 rounded-2xl border transition-all hover:-translate-y-1 cursor-default ${
+            className={`group relative bg-zinc-900/50 p-3 sm:p-4 rounded-2xl border transition-all hover:-translate-y-1 cursor-default ${
               editingId === m.id 
                 ? 'border-amber-500/50 shadow-lg shadow-amber-500/20' 
                 : 'border-zinc-800 hover:border-zinc-700'
@@ -67,20 +67,20 @@ export default function MembersList({
               #{m.ordem}
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-3">
               {m.img && m.img.trim() !== "" ? (
                 <img 
                   src={m.img} 
                   alt={m.name} 
-                  className="w-16 h-16 rounded-xl object-cover border-2 border-gsw/30 group-hover:border-gsw/60 transition-colors" 
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover border-2 border-gsw/30 group-hover:border-gsw/60 transition-colors flex-shrink-0" 
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
               ) : (
-                <div className="w-16 h-16 rounded-xl bg-black border-2 border-zinc-700" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-black border-2 border-zinc-700 flex-shrink-0" />
               )}
               
               <div className="flex-1 min-w-0">
-                <h4 className="font-bold text-white truncate">{m.name}</h4>
+                <h4 className="font-bold text-white truncate text-sm sm:text-base">{m.name}</h4>
                 <p className="text-xs text-zinc-500 uppercase tracking-wider">{m.role}</p>
                 
                 {m.tags && m.tags.length > 0 && (
@@ -100,7 +100,7 @@ export default function MembersList({
               </div>
             </div>
 
-            <div className="flex gap-2 mt-4">
+            <div className="flex gap-2 mt-3 sm:mt-4">
               <button
                 onClick={() => onEdit(m)}
                 className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
@@ -126,35 +126,35 @@ export default function MembersList({
       </div>
 
       {membrosFiltrados.length === 0 && (
-        <div className="text-center py-12 text-zinc-500">
-          <p className="text-lg mb-2">Nenhum membro encontrado</p>
+        <div className="text-center py-10 sm:py-12 text-zinc-500">
+          <p className="text-base sm:text-lg mb-2">Nenhum membro encontrado</p>
         </div>
       )}
 
       {confirmDelete !== null && (
         <div 
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[110] p-4 animate-in fade-in duration-300 cursor-default"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center z-[110] p-4 animate-in fade-in duration-300 cursor-default"
           onClick={() => setConfirmDelete(null)}
         >
           <div 
-            className="bg-zinc-900 rounded-2xl p-8 max-w-md w-full border border-zinc-800 shadow-2xl animate-in zoom-in-95 cursor-default"
+            className="bg-zinc-900 rounded-2xl p-6 sm:p-8 w-full max-w-md border border-zinc-800 shadow-2xl animate-in slide-in-from-bottom-4 sm:zoom-in-95 cursor-default"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-2xl font-black text-white mb-4">⚠️ Confirmar Exclusão</h3>
-            <p className="text-zinc-400 mb-6">
+            <h3 className="text-xl sm:text-2xl font-black text-white mb-3 sm:mb-4">⚠️ Confirmar Exclusão</h3>
+            <p className="text-zinc-400 text-sm sm:text-base mb-5 sm:mb-6">
               Tem certeza que deseja remover <strong className="text-white">{membros.find(m => m.id === confirmDelete)?.name}</strong>? 
               Esta ação não pode ser desfeita.
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => setConfirmDelete(null)}
-                className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl font-bold transition-all cursor-pointer active:scale-95"
+                className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl text-sm font-bold transition-all cursor-pointer active:scale-95"
               >
                 Cancelar
               </button>
               <button
                 onClick={handleConfirmDelete}
-                className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold transition-all cursor-pointer active:scale-95 shadow-lg shadow-red-900/20"
+                className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl text-sm font-bold transition-all cursor-pointer active:scale-95 shadow-lg shadow-red-900/20"
               >
                 Excluir
               </button>

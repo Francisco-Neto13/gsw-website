@@ -37,11 +37,13 @@ export default function AdminLogin() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col bg-black relative overflow-x-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(113,22,173,0.15)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.1)_0%,transparent_50%)] pointer-events-none" />
-      <div className="absolute top-20 right-20 w-96 h-96 bg-gsw/5 rounded-full blur-[100px] animate-pulse pointer-events-none" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-600/5 rounded-full blur-[100px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
+    <main className="min-h-screen flex flex-col bg-black relative">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(113,22,173,0.15)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.1)_0%,transparent_50%)]" />
+        <div className="absolute top-20 right-20 w-96 h-96 bg-gsw/5 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-600/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
 
       <div className="relative z-10 p-6">
         <Link href="/" className="inline-flex items-center gap-3 text-zinc-500 hover:text-white transition-all group cursor-pointer">
@@ -57,7 +59,7 @@ export default function AdminLogin() {
         </Link>
       </div>
 
-      <div className="flex-1 flex items-center justify-center p-6 relative">
+      <div className="flex-1 flex items-center justify-center p-6 relative z-10">
         <LoginForm />
       </div>
 
