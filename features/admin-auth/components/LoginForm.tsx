@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { getAdminStatus } from '@/lib/admin';
+import { getAdminStatus } from '@/features/admin-auth/lib/client';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import type { GalleryItem } from "./index";
+import type { GalleryItem } from "./GalleryManager";
 
 interface GalleryListProps {
   items: GalleryItem[];

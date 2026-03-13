@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { getAdminStatus } from '@/lib/admin';
+import { getAdminStatus } from '@/features/admin-auth/lib/client';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Footer from '@/components/shared/Footer';
-import LoginForm from '@/components/admin/LoginManager/LoginForm';
+import LoginForm from '@/features/admin-auth/components/LoginForm';
 
 export default function AdminLogin() {
   const [isChecking, setIsChecking] = useState(true);

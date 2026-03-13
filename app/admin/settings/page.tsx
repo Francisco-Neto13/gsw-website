@@ -1,6 +1,6 @@
 "use client"
 
-import AdminSettings from "@/components/admin/Dashboard/Settings/AdminSettings"; 
+import AdminSettings from "@/features/admin-settings/components/AdminSettings"; 
 
 export default function SettingsPage() {
   return (

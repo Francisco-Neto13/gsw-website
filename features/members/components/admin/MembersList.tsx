@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import type { Membro } from "./index";
+import type { Membro } from "./MembersManager";
 
 interface MembersListProps {
   membros: Membro[];

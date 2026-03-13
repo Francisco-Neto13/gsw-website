@@ -1,8 +1,8 @@
 import Navbar from "../components/site/Navbar"; 
 import History from "../components/site/History"; 
-import Members from "../components/site/Members";
+import MembersSection from "@/features/members/components/public/MembersSection";
 import Pillars from "../components/site/Pillars";
-import Gallery from "../components/site/Gallery";
+import GallerySection from "@/features/gallery/components/public/GallerySection";
 import Essence from "../components/site/Essence";
 import Footer from "../components/shared/Footer";
 
@@ -33,9 +33,9 @@ export default function Home() {
         </div>
       </section>
       <History />
-      <Members />
+      <MembersSection />
       <Pillars />
-      <Gallery />
+      <GallerySection />
       <Essence />
       <Footer />
     </main>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import imageCompression from "browser-image-compression";
 import { supabase } from "@/lib/supabase";
-import type { Membro } from "./index";
+import type { Membro } from "./MembersManager";
 
 interface MemberFormProps {
   membros: Membro[];

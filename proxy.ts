@@ -1,6 +1,6 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import { isAuthorizedAdmin } from "@/lib/admin/server";
+import { isAuthorizedAdmin } from "@/features/admin-auth/lib/server";
 import { getSupabaseEnv } from "@/lib/env";
 
 export default async function proxy(request: NextRequest) {

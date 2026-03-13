@@ -1,7 +1,7 @@
 "use client"
 import { usePathname } from "next/navigation";
 import Footer from "@/components/shared/Footer";
-import NavbarAdmin from "@/components/admin/NavbarAdmin";
+import NavbarAdmin from "@/features/admin-shell/components/NavbarAdmin";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

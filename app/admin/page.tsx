@@ -1,4 +1,4 @@
-import DashboardOverview from "@/components/admin/Dashboard/DashboardOverview";
+import DashboardOverview from "@/features/admin-shell/components/DashboardOverview";
 
 export const metadata = {
   title: "Admin | GsW Painel",

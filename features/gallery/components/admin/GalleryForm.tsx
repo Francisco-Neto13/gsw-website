@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import imageCompression from "browser-image-compression";
 import { supabase } from "@/lib/supabase";
-import type { GalleryItem } from "./index";
+import type { GalleryItem } from "./GalleryManager";
 
 interface GalleryFormProps {
   items: GalleryItem[];

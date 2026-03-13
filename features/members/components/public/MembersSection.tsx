@@ -92,7 +92,7 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
   );
 });
 
-export default function Members() {
+export default function MembersSection() {
   const [members, setMembers] = useState<Member[]>([]);
 
   useEffect(() => {

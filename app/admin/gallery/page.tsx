@@ -1,4 +1,4 @@
-import GalleryManager from "@/components/admin/Dashboard/GalleryManager";
+import GalleryManager from "@/features/gallery/components/admin/GalleryManager";
 
 export default function GalleryPage() {
   return <GalleryManager />;

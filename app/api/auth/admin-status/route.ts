@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createServerClient } from "@supabase/ssr";
-import { isAuthorizedAdmin } from "@/lib/admin/server";
+import { isAuthorizedAdmin } from "@/features/admin-auth/lib/server";
 import { getSupabaseEnv } from "@/lib/env";
 
 export const dynamic = "force-dynamic";

@@ -13,7 +13,7 @@ interface Photo {
   ordem?: number;
 }
 
-export default function Gallery() {
+export default function GallerySection() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
