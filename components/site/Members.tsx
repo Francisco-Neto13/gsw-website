@@ -1,5 +1,7 @@
 "use client";
-import { useState, useEffect, memo, useCallback } from "react";
+
+import Image from "next/image";
+import { memo, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 interface Member {
@@ -10,44 +12,75 @@ interface Member {
   tags?: string[];
 }
 
-const MemberCard = memo(({ member }: { member: Member }) => {
-  const fallbackSrc = `https://ui-avatars.com/api/?name=${member.name}&background=7116ad&color=fff&size=200`;
+function normalizeImageSrc(src: string) {
+  if (!src) {
+    return "";
+  }
 
-  const handleError = useCallback(
-    (e: React.SyntheticEvent<HTMLImageElement>) => {
-      e.currentTarget.src = fallbackSrc;
-    },
-    [fallbackSrc]
-  );
+  if (
+    src.startsWith("http://") ||
+    src.startsWith("https://") ||
+    src.startsWith("data:") ||
+    src.startsWith("blob:") ||
+    src.startsWith("/")
+  ) {
+    return src;
+  }
+
+  return `/${src}`;
+}
+
+function createFallbackAvatar(name: string) {
+  const initials = name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("") || "GS";
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+      <rect width="200" height="200" rx="24" fill="#7116ad" />
+      <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#ffffff">
+        ${initials}
+      </text>
+    </svg>
+  `;
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
+  const fallbackSrc = createFallbackAvatar(member.name);
+  const imageSrc = member.img?.trim() ? normalizeImageSrc(member.img.trim()) : fallbackSrc;
 
   return (
-    <div className="group relative bg-black/40 border border-white/10 rounded-2xl p-4 hover:border-gsw/40 hover:-translate-y-1 overflow-hidden transition-transform duration-200 will-change-transform">
-      <div className="relative aspect-square w-full mb-4 sm:mb-6 overflow-hidden rounded-xl bg-zinc-900">
-        <img
-          src={member.img || fallbackSrc}
+    <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 transition-transform duration-200 will-change-transform hover:-translate-y-1 hover:border-gsw/40">
+      <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-zinc-900 sm:mb-6">
+        <Image
+          src={imageSrc}
           alt={member.name}
-          loading="lazy"
-          decoding="async"
-          width="200"
-          height="200"
-          onError={handleError}
-          className="w-full h-full object-cover object-top"
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          className="object-cover object-top"
+          unoptimized={imageSrc.startsWith("data:")}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
       <div className="text-center">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-gsw/80 mb-1 block">
+        <span className="mb-1 block text-[10px] font-bold uppercase tracking-widest text-gsw/80">
           {member.role}
         </span>
-        <h3 className="text-lg sm:text-xl font-black text-white mb-3 sm:mb-4 tracking-tight group-hover:text-gsw italic transition-colors duration-200">
+        <h3 className="mb-3 text-lg font-black italic tracking-tight text-white transition-colors duration-200 group-hover:text-gsw sm:mb-4 sm:text-xl">
           {member.name}
         </h3>
         {member.tags && member.tags.length > 0 && (
           <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
-            {member.tags.map((tag, i) => (
+            {member.tags.map((tag) => (
               <span
-                key={i}
-                className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[9px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-zinc-300"
+                key={`${member.name}-${tag}`}
+                className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-zinc-300"
               >
                 {tag}
               </span>
@@ -59,42 +92,45 @@ const MemberCard = memo(({ member }: { member: Member }) => {
   );
 });
 
-MemberCard.displayName = "MemberCard";
-
 export default function Members() {
   const [members, setMembers] = useState<Member[]>([]);
 
   useEffect(() => {
-    let mounted = true;
-    async function fetchMembers() {
+    let active = true;
+
+    void (async () => {
       const { data, error } = await supabase
         .from("membros")
         .select("id, name, role, img, tags, ordem")
         .order("ordem", { ascending: true });
-      if (!error && data && mounted) {
+
+      if (!error && data && active) {
         setMembers(data);
       }
-    }
-    fetchMembers();
-    return () => { mounted = false; };
+    })();
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   return (
-    <section id="membros" className="relative py-16 sm:py-32 px-4 sm:px-6 bg-zinc-950 overflow-hidden">
+    <section id="membros" className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-32">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(113,22,173,0.03)_0%,transparent_50%)]" />
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="mb-10 sm:mb-20 text-center">
-          <span className="block mb-3 sm:mb-4 text-xs font-bold tracking-[0.6em] uppercase text-gsw">
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-10 text-center sm:mb-20">
+          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-4">
             Elite de Wynn
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight text-white mb-4 sm:mb-8">
+          <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
             Os <span className="text-gsw">Guardiões Principais</span>
           </h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto italic leading-relaxed text-sm sm:text-base px-2">
-            "Não são apenas nomes em uma lista, são as lendas que escrevem as crônicas da GsW a cada batalha."
+          <p className="mx-auto max-w-2xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
+            &ldquo;Não são apenas nomes em uma lista, são as lendas que escrevem as crônicas da
+            GsW a cada batalha.&rdquo;
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
           {members.map((member) => (
             <MemberCard key={member.id ?? member.name} member={member} />
           ))}

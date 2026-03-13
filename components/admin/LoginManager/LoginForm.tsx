@@ -1,26 +1,28 @@
-"use client"
-import { useState } from "react";
-import { supabase } from "@/lib/supabase";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import SupportModal from "./SupportModal";
+'use client';
+
+import { useState } from 'react';
+import { supabase } from '@/lib/supabase';
+import { getAdminStatus } from '@/lib/admin';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import SupportModal from './SupportModal';
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    setError('');
 
     if (!email.trim() || !password.trim()) {
-      setError("Por favor, preencha todos os campos para prosseguir.");
+      setError('Por favor, preencha todos os campos para prosseguir.');
       return;
     }
 
@@ -33,17 +35,26 @@ export default function LoginForm() {
       });
 
       if (authError) {
-        setError("E-mail ou senha incorretos. Verifique suas credenciais.");
+        setError('E-mail ou senha incorretos. Verifique suas credenciais.');
         setLoading(false);
         return;
       }
 
       if (data.session) {
-        router.replace("/admin");
+        const isAdmin = await getAdminStatus();
+
+        if (!isAdmin) {
+          await supabase.auth.signOut();
+          setError('Sua conta nao possui permissao de administrador.');
+          setLoading(false);
+          return;
+        }
+
+        router.replace('/admin');
         router.refresh();
       }
-    } catch (err) {
-      setError("Erro de conexão ou servidor. Tente novamente.");
+    } catch {
+      setError('Erro de conexao ou servidor. Tente novamente.');
       setLoading(false);
     }
   };
@@ -65,7 +76,7 @@ export default function LoginForm() {
           <h1 className="text-2xl sm:text-3xl font-black text-white mb-1 sm:mb-2 tracking-tight">
             Painel <span className="text-gsw">GsW</span>
           </h1>
-          <p className="text-zinc-500 text-sm font-medium">Área Administrativa</p>
+          <p className="text-zinc-500 text-sm font-medium">Area Administrativa</p>
         </div>
 
         <div className="p-6 sm:p-8">
@@ -80,7 +91,10 @@ export default function LoginForm() {
                 placeholder="Digite seu e-mail"
                 className="w-full bg-zinc-950/50 border border-zinc-800 p-3 rounded-xl focus:border-gsw focus:ring-2 focus:ring-gsw/20 outline-none transition-all text-white placeholder:text-zinc-600 text-sm"
                 value={email}
-                onChange={(e) => { setEmail(e.target.value); setError(""); }}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setError('');
+                }}
               />
             </div>
 
@@ -100,11 +114,14 @@ export default function LoginForm() {
               </div>
               <div className="relative">
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   placeholder="Digite sua senha"
                   className="w-full bg-zinc-950/50 border border-zinc-800 p-3 pr-12 rounded-xl focus:border-gsw focus:ring-2 focus:ring-gsw/20 outline-none transition-all text-white placeholder:text-zinc-600 text-sm"
                   value={password}
-                  onChange={(e) => { setPassword(e.target.value); setError(""); }}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setError('');
+                  }}
                 />
                 <button
                   type="button"
@@ -145,14 +162,14 @@ export default function LoginForm() {
           <div className="flex flex-col gap-2 sm:gap-3">
             <div className="flex items-center justify-center gap-2 text-zinc-500 text-xs">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              <span className="font-medium uppercase tracking-widest text-[10px]">Conexão Criptografada SSL/TLS</span>
+              <span className="font-medium uppercase tracking-widest text-[10px]">Conexao Criptografada SSL/TLS</span>
             </div>
             <div className="flex items-center justify-center gap-4 text-[10px] text-zinc-600">
               <div className="flex items-center gap-1">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                 <span>Sistema Ativo</span>
               </div>
-              <span>•</span>
+              <span>|</span>
               <div className="flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                 <span>Supabase Auth</span>

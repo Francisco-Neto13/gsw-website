@@ -82,8 +82,8 @@ export default function History() {
             Crônicas de <span className="text-gsw">Wynn</span>
           </h2>
           <p className="text-zinc-400 italic max-w-xl mx-auto leading-relaxed text-sm sm:text-base px-2">
-            "Um registro eterno das eras, das alianças e do sangue derramado pelos
-            Guardiões na busca pela paz nas províncias."
+            &ldquo;Um registro eterno das eras, das alianças e do sangue derramado pelos
+            Guardiões na busca pela paz nas províncias.&rdquo;
           </p>
         </div>
 
@@ -130,8 +130,8 @@ export default function History() {
 
         <div className="mt-16 sm:mt-24 text-center reveal-on-scroll">
           <p className="text-zinc-500 italic border-t border-white/5 pt-10 sm:pt-12 inline-block px-6 sm:px-12 text-sm">
-            "O valor de um guardião não se mede apenas pelo seu nível, mas pela sua
-            lealdade à bandeira."
+            &ldquo;O valor de um guardião não se mede apenas pelo seu nível, mas pela sua
+            lealdade à bandeira.&rdquo;
           </p>
         </div>
       </div>

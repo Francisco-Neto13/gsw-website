@@ -1,5 +1,6 @@
-"use client"
-import { useEffect, useState } from "react";
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import MemberForm from "./MemberForm";
 import MembersList from "./MembersList";
@@ -22,58 +23,62 @@ function extractStoragePath(url: string): string | null {
   }
 }
 
+async function fetchMembers(): Promise<Membro[]> {
+  const { data, error } = await supabase
+    .from("membros")
+    .select("*")
+    .order("ordem", { ascending: true });
+
+  if (error || !data) {
+    return [];
+  }
+
+  return data as Membro[];
+}
+
 export default function MembersManager() {
   const [membros, setMembros] = useState<Membro[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [successMessage, setSuccessMessage] = useState("");
 
-  async function fetchMembros() {
-    const { data, error } = await supabase
-      .from('membros')
-      .select('*')
-      .order('ordem', { ascending: true });
-
-    if (!error && data) {
-      setMembros(data as Membro[]);
-    }
-  }
+  const refreshMembers = useCallback(async () => {
+    const nextMembers = await fetchMembers();
+    setMembros(nextMembers);
+  }, []);
 
   async function deleteImageFromBucket(imgUrl: string) {
     if (!imgUrl) return;
+
     const path = extractStoragePath(imgUrl);
-    console.log("URL:", imgUrl);
-    console.log("Path extraído:", path);
     if (!path) return;
-    const { error } = await supabase.storage.from('members').remove([path]);
-    console.log("Erro ao deletar:", error);
+
+    await supabase.storage.from("members").remove([path]);
   }
 
-  async function handleSaveMembro(membroData: Omit<Membro, 'id'>) {
-    if (editingId) {
-      const membroAtual = membros.find(m => m.id === editingId);
-      if (membroAtual && membroAtual.img && membroAtual.img !== membroData.img) {
-        await deleteImageFromBucket(membroAtual.img);
+  async function handleSaveMembro(membroData: Omit<Membro, "id">) {
+    if (editingId !== null) {
+      const currentMember = membros.find((membro) => membro.id === editingId);
+      if (currentMember?.img && currentMember.img !== membroData.img) {
+        await deleteImageFromBucket(currentMember.img);
       }
 
       const { error } = await supabase
-        .from('membros')
+        .from("membros")
         .update(membroData)
-        .eq('id', editingId);
+        .eq("id", editingId);
 
       if (!error) {
-        showSuccessMessage("✅ Membro atualizado!");
+        showSuccessMessage("Membro atualizado.");
         setEditingId(null);
-        fetchMembros();
+        await refreshMembers();
         return true;
       }
     } else {
-      const { error } = await supabase
-        .from('membros')
-        .insert([membroData]);
+      const { error } = await supabase.from("membros").insert([membroData]);
 
       if (!error) {
-        showSuccessMessage("✅ Membro adicionado!");
-        fetchMembros();
+        showSuccessMessage("Membro adicionado.");
+        await refreshMembers();
         return true;
       }
     }
@@ -82,25 +87,23 @@ export default function MembersManager() {
   }
 
   async function handleDeleteMembro(id: number) {
-    const membro = membros.find(m => m.id === id);
+    const member = membros.find((membro) => membro.id === id);
 
-    const { error } = await supabase
-      .from('membros')
-      .delete()
-      .eq('id', id);
+    const { error } = await supabase.from("membros").delete().eq("id", id);
 
     if (!error) {
-      if (membro?.img) {
-        await deleteImageFromBucket(membro.img);
+      if (member?.img) {
+        await deleteImageFromBucket(member.img);
       }
-      showSuccessMessage("🗑️ Membro removido!");
-      fetchMembros();
+
+      showSuccessMessage("Membro removido.");
+      await refreshMembers();
     }
   }
 
   function handleStartEdit(membro: Membro) {
     setEditingId(membro.id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function handleCancelEdit() {
@@ -109,31 +112,44 @@ export default function MembersManager() {
 
   function showSuccessMessage(message: string) {
     setSuccessMessage(message);
-    setTimeout(() => setSuccessMessage(""), 3000);
+    window.setTimeout(() => setSuccessMessage(""), 3000);
   }
 
   useEffect(() => {
-    fetchMembros();
+    let active = true;
+
+    void (async () => {
+      const nextMembers = await fetchMembers();
+
+      if (active) {
+        setMembros(nextMembers);
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
   }, []);
 
-  const membroEditando = editingId
-    ? membros.find(m => m.id === editingId)
-    : null;
+  const currentMember =
+    editingId !== null ? membros.find((membro) => membro.id === editingId) : null;
 
   return (
     <div className="space-y-8">
       {successMessage && (
-        <div className="fixed top-6 right-6 z-[110] bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
+        <div className="fixed top-6 right-6 z-[110] rounded-lg bg-green-600 px-6 py-3 text-white shadow-lg animate-fade-in">
           {successMessage}
         </div>
       )}
+
       <MemberForm
         membros={membros}
-        membroEditando={membroEditando}
+        membroEditando={currentMember}
         editingId={editingId}
         onSave={handleSaveMembro}
         onCancel={handleCancelEdit}
       />
+
       <MembersList
         membros={membros}
         editingId={editingId}

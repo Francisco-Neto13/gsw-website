@@ -1,6 +1,5 @@
 "use client"
 import { createPortal } from "react-dom";
-import { useEffect, useState } from "react";
 
 interface SupportModalProps {
   isOpen: boolean;
@@ -8,14 +7,7 @@ interface SupportModalProps {
 }
 
 export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  }, []);
-
-  if (!isOpen || !mounted) return null;
+  if (!isOpen || typeof document === "undefined") return null;
 
   return createPortal(
     <div 

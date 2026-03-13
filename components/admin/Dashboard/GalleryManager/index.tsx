@@ -1,5 +1,6 @@
-"use client"
-import { useEffect, useState } from "react";
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import GalleryForm from "./GalleryForm";
 import GalleryList from "./GalleryList";
@@ -22,55 +23,62 @@ function extractStoragePath(url: string): string | null {
   }
 }
 
+async function fetchGalleryItems(): Promise<GalleryItem[]> {
+  const { data, error } = await supabase
+    .from("galeria")
+    .select("*")
+    .order("ordem", { ascending: true });
+
+  if (error || !data) {
+    return [];
+  }
+
+  return data as GalleryItem[];
+}
+
 export default function GalleryManager() {
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [successMessage, setSuccessMessage] = useState("");
 
-  async function fetchGallery() {
-    const { data, error } = await supabase
-      .from('galeria')
-      .select('*')
-      .order('ordem', { ascending: true });
-    
-    if (!error && data) {
-      setItems(data as GalleryItem[]);
-    }
-  }
+  const refreshGallery = useCallback(async () => {
+    const nextItems = await fetchGalleryItems();
+    setItems(nextItems);
+  }, []);
 
   async function deleteImageFromBucket(imgUrl: string) {
     if (!imgUrl) return;
+
     const path = extractStoragePath(imgUrl);
     if (!path) return;
-    await supabase.storage.from('gallery').remove([path]);
+
+    await supabase.storage.from("gallery").remove([path]);
   }
 
-  async function handleSaveItem(itemData: Omit<GalleryItem, 'id'>) {
-    if (editingId) {
-      const itemAtual = items.find(i => i.id === editingId);
-      if (itemAtual && itemAtual.src && itemAtual.src !== itemData.src) {
-        await deleteImageFromBucket(itemAtual.src);
+  async function handleSaveItem(itemData: Omit<GalleryItem, "id">) {
+    if (editingId !== null) {
+      const currentItem = items.find((item) => item.id === editingId);
+      if (currentItem?.src && currentItem.src !== itemData.src) {
+        await deleteImageFromBucket(currentItem.src);
       }
 
       const { error } = await supabase
-        .from('galeria')
+        .from("galeria")
         .update(itemData)
-        .eq('id', editingId);
+        .eq("id", editingId);
 
       if (!error) {
-        showSuccessMessage("✅ Galeria atualizada!");
+        showSuccessMessage("Galeria atualizada.");
         setEditingId(null);
-        fetchGallery();
+        await refreshGallery();
         return true;
       }
     } else {
-      const { error } = await supabase
-        .from('galeria')
-        .insert([itemData]);
+      const { error } = await supabase.from("galeria").insert([itemData]);
 
       if (!error) {
-        showSuccessMessage("✅ Foto adicionada!");
-        fetchGallery();
+        showSuccessMessage("Foto adicionada.");
+        await refreshGallery();
         return true;
       }
     }
@@ -79,23 +87,23 @@ export default function GalleryManager() {
   }
 
   async function handleDeleteItem(id: number) {
-    const item = items.find(i => i.id === id);
+    const item = items.find((currentItem) => currentItem.id === id);
 
-    const { error } = await supabase
-      .from('galeria')
-      .delete()
-      .eq('id', id);
+    const { error } = await supabase.from("galeria").delete().eq("id", id);
 
     if (!error) {
-      if (item?.src) await deleteImageFromBucket(item.src);
-      showSuccessMessage("🗑️ Foto removida!");
-      fetchGallery();
+      if (item?.src) {
+        await deleteImageFromBucket(item.src);
+      }
+
+      showSuccessMessage("Foto removida.");
+      await refreshGallery();
     }
   }
 
   function handleStartEdit(item: GalleryItem) {
     setEditingId(item.id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function handleCancelEdit() {
@@ -104,31 +112,44 @@ export default function GalleryManager() {
 
   function showSuccessMessage(message: string) {
     setSuccessMessage(message);
-    setTimeout(() => setSuccessMessage(""), 3000);
+    window.setTimeout(() => setSuccessMessage(""), 3000);
   }
 
   useEffect(() => {
-    fetchGallery();
+    let active = true;
+
+    void (async () => {
+      const nextItems = await fetchGalleryItems();
+
+      if (active) {
+        setItems(nextItems);
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
   }, []);
 
-  const itemEditando = editingId
-    ? items.find(i => i.id === editingId)
-    : null;
+  const currentItem =
+    editingId !== null ? items.find((item) => item.id === editingId) : null;
 
   return (
     <div className="space-y-8">
       {successMessage && (
-        <div className="fixed top-6 right-6 z-[110] bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
+        <div className="fixed top-6 right-6 z-[110] rounded-lg bg-green-600 px-6 py-3 text-white shadow-lg animate-fade-in">
           {successMessage}
         </div>
       )}
+
       <GalleryForm
         items={items}
-        itemEditando={itemEditando}
+        itemEditando={currentItem}
         editingId={editingId}
         onSave={handleSaveItem}
         onCancel={handleCancelEdit}
       />
+
       <GalleryList
         items={items}
         editingId={editingId}
