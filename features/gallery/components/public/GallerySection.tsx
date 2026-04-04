@@ -2,51 +2,11 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
-
-interface Photo {
-  id?: number;
-  src: string;
-  thumb_src?: string;
-  title: string;
-  description?: string;
-  ordem?: number;
-}
+import { galleryPhotos } from "@/features/gallery/data/gallery";
 
 export default function GallerySection() {
-  const [photos, setPhotos] = useState<Photo[]>([]);
+  const photos = galleryPhotos;
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let active = true;
-
-    void (async () => {
-      try {
-        const { data, error } = await supabase
-          .from("galeria")
-          .select("id, src, thumb_src, title, description, ordem")
-          .order("ordem", { ascending: true });
-
-        if (error) {
-          throw error;
-        }
-
-        if (active && data) {
-          setPhotos(data);
-        }
-      } catch {
-      } finally {
-        if (active) {
-          setLoading(false);
-        }
-      }
-    })();
-
-    return () => {
-      active = false;
-    };
-  }, []);
 
   const selectedPhoto = selectedPhotoIndex !== null ? photos[selectedPhotoIndex] : null;
 
@@ -99,20 +59,16 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {loading ? (
-          <div className="flex justify-center py-20">
-            <div className="h-12 w-12 animate-spin rounded-full border-t-2 border-b-2 border-gsw" />
-          </div>
-        ) : (
+        {photos.length > 0 ? (
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
             {photos.map((photo, index) => (
               <div
-                key={photo.id ?? index}
+                key={`${photo.title}-${index}`}
                 className="group relative aspect-video cursor-pointer overflow-hidden rounded-xl bg-zinc-900 transition-transform duration-200 will-change-transform hover:scale-[1.02]"
                 onClick={() => setSelectedPhotoIndex(index)}
               >
                 <Image
-                  src={photo.thumb_src || photo.src}
+                  src={photo.thumbSrc || photo.src}
                   alt={photo.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
@@ -126,6 +82,18 @@ export default function GallerySection() {
                 </div>
               </div>
             ))}
+          </div>
+        ) : (
+          <div className="rounded-3xl border border-dashed border-white/10 bg-zinc-900/20 px-6 py-12 text-center sm:px-10 sm:py-16">
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              Adicione as imagens em{" "}
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/gallery</code>{" "}
+              e preencha a lista em{" "}
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
+                features/gallery/data/gallery.ts
+              </code>
+              .
+            </p>
           </div>
         )}
 

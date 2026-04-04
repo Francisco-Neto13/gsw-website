@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# image workbench
+/image-workbench/input/*
+!/image-workbench/input/.gitkeep
+/image-workbench/output/*
+!/image-workbench/output/.gitkeep

@@ -8,7 +8,7 @@ const spots = [
     name: "Emerald Trail",
     range: "Lvl 1 - 10",
     coords: "-753, -1574",
-    image: "/leveling/emerald-trail.webp",
+    image: "/leveling/emerald_trail.webp",
     notes: [
       "Está logo após os portões de Ragni e funciona como a área de início do leveling.",
       "Nos primeiros levels o XP vem rápido, então totens ainda não são necessários.",
@@ -19,7 +19,7 @@ const spots = [
     name: "Pigman Ravines",
     range: "Lvl 5 - 25",
     coords: "-818, -1260",
-    image: "/leveling/pigman-ravines.webp",
+    image: "/leveling/pigman_ravines.webp",
     notes: [
       "Esteja bem equipado, porque os mobs conseguem te matar com facilidade.",
       "Primeiro spot onde totens passam a fazer bastante diferença.",
@@ -31,7 +31,7 @@ const spots = [
     name: "Mt. Wynn Spiders",
     range: "Lvl 20 - 35",
     coords: "-30, -1960",
-    image: "/leveling/mt-wynn-spiders.webp",
+    image: "/leveling/mt_wynn_spiders.webp",
     notes: [
       "Spot mais seguro do que o Saint's Row, mas com ganho de XP menor.",
       "Tome cuidado com a Spider Tamer e com as teias das aranhas.",
@@ -42,7 +42,7 @@ const spots = [
     name: "Saint's Row",
     range: "Lvl 20 - 40",
     coords: "320, -2048",
-    image: "/leveling/saints-row.webp",
+    image: "/leveling/saints_row.webp",
     notes: [
       "O ganho de XP é enorme, mas os mobs podem te matar muito rápido.",
       "É necessário completar a quest Grave Digger para entrar no spot.",
@@ -54,7 +54,7 @@ const spots = [
     name: "Llevigar Spiders",
     range: "Lvl 35 - 50",
     coords: "-2151, -4717",
-    image: "/leveling/llevigar-spiders.webp",
+    image: "/leveling/llevigar_spiders.webp",
     notes: [
       "Vale iniciar no level 35 para poder descobrir Llevigar e respawnar lá se morrer.",
       "Fique atento ao Holehold Orc Marathon, que pode aparecer após um totem ser usado.",
@@ -64,7 +64,7 @@ const spots = [
     name: "Herb Cave",
     range: "Lvl 40 - 70",
     coords: "-499, -810",
-    image: "/leveling/herb-cave.webp",
+    image: "/leveling/herb_cave.webp",
     notes: [
       "Spot muito bom que pode ser usado por bastante tempo.",
       "A parte de baixo costuma render mais XP.",
@@ -75,7 +75,7 @@ const spots = [
     name: "Flesh Cave",
     range: "Lvl 55 - 75",
     coords: "-996, -5558",
-    image: "/leveling/flesh-cave.webp",
+    image: "/leveling/flesh_cave.webp",
     notes: [
       "Por ser uma caverna, os mobs podem dropar itens e esmeraldas.",
       "Fique atento a itens como The Jingling Jester e Suppression.",
@@ -160,7 +160,7 @@ export default function LevelingPage() {
             <div className="mx-auto mb-10 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-16">
               <div className="relative aspect-video w-full">
                 <Image
-                  src="/leveling/party-example.webp"
+                  src="/leveling/party_example.webp"
                   alt="Exemplo de party de XP"
                   fill
                   className="object-cover"

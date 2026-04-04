@@ -1,16 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import { memo, useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
-
-interface Member {
-  id?: number;
-  name: string;
-  role: string;
-  img: string;
-  tags?: string[];
-}
+import { memo } from "react";
+import { members, type Member } from "@/features/members/data/members";
 
 function normalizeImageSrc(src: string) {
   if (!src) {
@@ -93,27 +83,6 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
 });
 
 export default function MembersSection() {
-  const [members, setMembers] = useState<Member[]>([]);
-
-  useEffect(() => {
-    let active = true;
-
-    void (async () => {
-      const { data, error } = await supabase
-        .from("membros")
-        .select("id, name, role, img, tags, ordem")
-        .order("ordem", { ascending: true });
-
-      if (!error && data && active) {
-        setMembers(data);
-      }
-    })();
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
   return (
     <section id="membros" className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-32">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(113,22,173,0.03)_0%,transparent_50%)]" />
@@ -130,11 +99,26 @@ export default function MembersSection() {
             GsW a cada batalha.&rdquo;
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
-          {members.map((member) => (
-            <MemberCard key={member.id ?? member.name} member={member} />
-          ))}
-        </div>
+
+        {members.length > 0 ? (
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+            {members.map((member) => (
+              <MemberCard key={member.name} member={member} />
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-3xl border border-dashed border-white/10 bg-black/30 px-6 py-12 text-center sm:px-10 sm:py-16">
+            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+              Adicione os retratos em{" "}
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/members</code>{" "}
+              e preencha a lista em{" "}
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
+                features/members/data/members.ts
+              </code>
+              .
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
