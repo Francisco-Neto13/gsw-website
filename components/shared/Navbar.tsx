@@ -1,23 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { sitePageLinks } from "@/lib/site-content";
 
-export default function Navbar() {
+type NavbarProps = {
+  currentPath: string;
+};
+
+export default function Navbar({ currentPath }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const links = [
-    { name: "História", hash: "#historia" },
-    { name: "Membros", hash: "#membros" },
-    { name: "Pilares", hash: "#pilares" },
-    { name: "Galeria", hash: "#galeria" },
-    { name: "Essência", hash: "#essencia" },
-  ];
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:grid sm:grid-cols-3">
-        <a href="#gsw" className="group flex items-center gap-3 justify-self-start">
+        <Link href="/" className="group flex items-center gap-3 justify-self-start">
           <Image
             src="/icon.webp"
             alt="GsW Logo"
@@ -29,19 +27,27 @@ export default function Navbar() {
           <span className="relative text-xs font-medium tracking-widest text-zinc-400 transition-colors group-hover:text-gsw">
             GsW
           </span>
-        </a>
+        </Link>
 
         <ul className="hidden justify-self-center gap-8 sm:flex">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.hash}
-                className="relative text-xs font-medium uppercase tracking-widest text-zinc-400 transition-colors hover:text-gsw after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-0 after:bg-gsw after:transition-all hover:after:w-full"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
+          {sitePageLinks.map((link) => {
+            const isActive = currentPath === link.href;
+
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`relative text-xs font-medium uppercase tracking-widest transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:transition-all ${
+                    isActive
+                      ? "text-white after:w-full after:bg-gsw"
+                      : "text-zinc-400 hover:text-gsw after:w-0 after:bg-gsw hover:after:w-full"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="flex items-center justify-end justify-self-end">
@@ -74,15 +80,17 @@ export default function Navbar() {
 
       <div className={`overflow-hidden bg-black/95 transition-all duration-300 sm:hidden ${menuOpen ? "max-h-96 border-t border-white/10" : "max-h-0"}`}>
         <ul className="flex flex-col gap-2 px-6 py-6">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.hash}
+          {sitePageLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest text-zinc-400 hover:text-gsw last:border-0"
+                className={`block border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest transition-colors last:border-0 ${
+                  currentPath === link.href ? "text-white" : "text-zinc-400 hover:text-gsw"
+                }`}
               >
-                {link.name}
-              </a>
+                {link.label}
+              </Link>
             </li>
           ))}
           <li className="pt-4">

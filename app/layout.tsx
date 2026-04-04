@@ -15,10 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="relative min-h-screen bg-[var(--background)]">
-          {children}
-        </div>
-
+        {children}
         <AnimationInitializer />
       </body>
     </html>

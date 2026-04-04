@@ -1,43 +1,5 @@
-import Navbar from "../components/site/Navbar"; 
-import History from "../components/site/History"; 
-import MembersSection from "@/features/members/components/public/MembersSection";
-import Pillars from "../components/site/Pillars";
-import GallerySection from "@/features/gallery/components/public/GallerySection";
-import Essence from "../components/site/Essence";
-import Footer from "../components/shared/Footer";
+import HomePage from "@/components/home/pages/HomePage";
 
 export default function Home() {
-  return (
-    <main id="gsw" className="relative min-h-screen bg-black"> 
-      <Navbar />
-
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center animate-fade-in"
-          style={{
-            backgroundImage: "url('/bg-guilda.webp')",
-            animationDelay: "200ms",
-          }}
-        />
-
-        <div className="absolute inset-0 z-[1] bg-black/75" />
-
-        <div className="relative z-10 mx-auto max-w-7xl text-center animate-fade-in -translate-y-10">
-          <h1 className="text-7xl font-black italic tracking-tight leading-none text-gsw sm:text-9xl">
-            GsW
-          </h1>
-
-          <p className="mx-auto -mt-0.5 max-w-md text-xs font-bold uppercase tracking-[0.35em] text-zinc-300">
-            Guardians of Wynn
-          </p>
-        </div>
-      </section>
-      <History />
-      <MembersSection />
-      <Pillars />
-      <GallerySection />
-      <Essence />
-      <Footer />
-    </main>
-  );
+  return <HomePage />;
 }
