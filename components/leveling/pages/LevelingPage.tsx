@@ -159,12 +159,7 @@ export default function LevelingPage() {
 
             <div className="mx-auto mb-10 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-16">
               <div className="relative aspect-video w-full">
-                <Image
-                  src="/leveling/party_example.webp"
-                  alt="Exemplo de party de XP"
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/leveling/party_example.webp" alt="Exemplo de party de XP" fill className="object-cover" />
               </div>
               <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
                 Exemplo de uma party de XP no party finder.
