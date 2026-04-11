@@ -34,10 +34,10 @@ export default function Navbar({ currentPath }: NavbarProps) {
             const isActive = currentPath === link.href;
 
             return (
-              <li key={link.href}>
+              <li key={link.href} className="shrink-0">
                 <Link
                   href={link.href}
-                  className={`relative text-xs font-medium uppercase tracking-widest transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:transition-all ${
+                  className={`relative whitespace-nowrap text-xs font-medium uppercase tracking-widest transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:transition-all ${
                     isActive
                       ? "text-white after:w-full after:bg-gsw"
                       : "text-zinc-400 hover:text-gsw after:w-0 after:bg-gsw hover:after:w-full"
@@ -82,10 +82,10 @@ export default function Navbar({ currentPath }: NavbarProps) {
         <ul className="flex flex-col gap-2 px-6 py-6">
           {sitePageLinks.map((link) => (
             <li key={link.href}>
-              <Link
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={`block border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest transition-colors last:border-0 ${
+                <Link
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`block whitespace-nowrap border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest transition-colors last:border-0 ${
                   currentPath === link.href ? "text-white" : "text-zinc-400 hover:text-gsw"
                 }`}
               >

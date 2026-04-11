@@ -14,6 +14,7 @@ export const sitePageLinks: SitePageLink[] = [
   { label: "Leveling", href: "/leveling" },
   { label: "Profissões", href: "/professions" },
   { label: "Modos", href: "/modos-especiais" },
+  { label: "World Events", href: "/world-events" },
   { label: "Raids", href: "/raids" },
 ];
 
