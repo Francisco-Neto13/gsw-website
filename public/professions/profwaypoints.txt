@@ -1,0 +1,521 @@
+[{
+  "name": "-----[ Farming ]----",
+  "color": "#666666ff",
+  "icon": "farming",
+  "visibility": "hidden",
+  "location": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  }
+}, {
+  "name": "Wheat ",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": -776,
+    "y": 67,
+    "z": -1736
+  }
+}, {
+  "name": "Barley",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": 541,
+    "y": 35,
+    "z": -2956
+  }
+}, {
+  "name": "Oat",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": 500,
+    "y": 35,
+    "z": -2838
+  }
+}, {
+  "name": "Malt",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": 385,
+    "y": 35,
+    "z": -2836
+  }
+}, {
+  "name": "Hops",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": -1630,
+    "y": 51,
+    "z": -5428
+  }
+}, {
+  "name": "Rye",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": -2068,
+    "y": 53,
+    "z": -5462
+  }
+}, {
+  "name": "Millet",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": -2041,
+    "y": 57,
+    "z": -5388
+  }
+}, {
+  "name": "Decay Roots",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": -724,
+    "y": 44,
+    "z": -5014
+  }
+}, {
+  "name": "Rice",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": 79,
+    "y": 42,
+    "z": -4838
+  }
+}, {
+  "name": "Sorghum",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": -1378,
+    "y": 123,
+    "z": -3013
+  }
+}, {
+  "name": "Hemp",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": 827,
+    "y": 42,
+    "z": -4877
+  }
+}, {
+  "name": "Dernic Seed",
+  "color": "#ffffffff",
+  "icon": "farming",
+  "visibility": "default",
+  "location": {
+    "x": 1089,
+    "y": 135,
+    "z": -1130
+  }
+}, {
+  "name": "----[ Woodcutting ]----",
+  "color": "#666666ff",
+  "icon": "woodcutting",
+  "visibility": "hidden",
+  "location": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  }
+}, {
+  "name": "Oak",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": -366,
+    "y": 67,
+    "z": -1729
+  }
+}, {
+  "name": "Birch",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": 335,
+    "y": 67,
+    "z": -1580
+  }
+}, {
+  "name": "Willow",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": 88,
+    "y": 46,
+    "z": -2132
+  }
+}, {
+  "name": "Acacia",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": 665,
+    "y": 73,
+    "z": -2016
+  }
+}, {
+  "name": "Spruce",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": 85,
+    "y": 68,
+    "z": -945
+  }
+}, {
+  "name": "Jungle",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": -941,
+    "y": 23,
+    "z": -725
+  }
+}, {
+  "name": "Dark",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": -1387,
+    "y": 44,
+    "z": -5051
+  }
+}, {
+  "name": "Light",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": -856,
+    "y": 45,
+    "z": -4990
+  }
+}, {
+  "name": "Pine",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": 693,
+    "y": 78,
+    "z": -5085
+  }
+}, {
+  "name": "Avo",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": -1362,
+    "y": 122,
+    "z": -3029
+  }
+}, {
+  "name": "Sky",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": 750,
+    "y": 113,
+    "z": -4600
+  }
+}, {
+  "name": "Dernic",
+  "color": "#ffffffff",
+  "icon": "woodcutting",
+  "visibility": "default",
+  "location": {
+    "x": 971,
+    "y": 74,
+    "z": -628
+  }
+}, {
+  "name": "----[ Mining ]----",
+  "color": "#666666ff",
+  "icon": "mining",
+  "visibility": "hidden",
+  "location": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  }
+}, {
+  "name": "Copper",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": -572,
+    "y": 69,
+    "z": -1556
+  }
+}, {
+  "name": "Granite",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": 786,
+    "y": 86,
+    "z": -1242
+  }
+}, {
+  "name": "Gold",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": 685,
+    "y": 89,
+    "z": -1217
+  }
+}, {
+  "name": "Sandstone",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": 1478,
+    "y": 91,
+    "z": -2178
+  }
+}, {
+  "name": "Iron",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": -1655,
+    "y": 76,
+    "z": -4347
+  }
+}, {
+  "name": "Silver",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": -620,
+    "y": 83,
+    "z": -1009
+  }
+}, {
+  "name": "Cobalt",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": -1444,
+    "y": 48,
+    "z": -5367
+  }
+}, {
+  "name": "Kanderstone",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": -790,
+    "y": 108,
+    "z": -5628
+  }
+}, {
+  "name": "Diamond",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": 1535,
+    "y": 61,
+    "z": -5339
+  }
+}, {
+  "name": "Molten",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": 1433,
+    "y": 142,
+    "z": -5106
+  }
+}, {
+  "name": "Voidstone",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": 13740,
+    "y": 114,
+    "z": -3935
+  }
+}, {
+  "name": "Dernic",
+  "color": "#ffffffff",
+  "icon": "mining",
+  "visibility": "default",
+  "location": {
+    "x": 492,
+    "y": 93,
+    "z": -525
+  }
+}, {
+  "name": "----[ Fishing ]----",
+  "color": "#666666ff",
+  "icon": "fishing",
+  "visibility": "hidden",
+  "location": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  }
+}, {
+  "name": "Gudgeon",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": -634,
+    "y": 67,
+    "z": -1536
+  }
+}, {
+  "name": "Trout",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": 53,
+    "y": 58,
+    "z": -1494
+  }
+}, {
+  "name": "Salmon",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": 371,
+    "y": 34,
+    "z": -2126
+  }
+}, {
+  "name": "Carp",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": 1182,
+    "y": 154,
+    "z": -2248
+  }
+}, {
+  "name": "Icefish",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": 891,
+    "y": 34,
+    "z": -3372
+  }
+}, {
+  "name": "Piranha",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": -2041,
+    "y": 57,
+    "z": -5388
+  }
+}, {
+  "name": "Koi",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": -1303,
+    "y": 51,
+    "z": -5194
+  }
+}, {
+  "name": "Gylia Fish",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": -207,
+    "y": 29,
+    "z": -5204
+  }
+}, {
+  "name": "Bass",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": -1860,
+    "y": 37,
+    "z": -2191
+  }
+}, {
+  "name": "Molten Eel",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": 1435,
+    "y": 139,
+    "z": -5091
+  }
+}, {
+  "name": "Skyfish",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": 688,
+    "y": 87,
+    "z": -4598
+  }
+}, {
+  "name": "Dernic Fish",
+  "color": "#ffffffff",
+  "icon": "fishing",
+  "visibility": "default",
+  "location": {
+    "x": 786,
+    "y": 148,
+    "z": -983
+  }
+}]
