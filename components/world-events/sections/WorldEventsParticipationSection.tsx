@@ -1,8 +1,10 @@
 import Image from "next/image";
 import {
   participationCards,
+  worldEventsParticipationDescription,
   participationImages,
 } from "@/components/world-events/data/world-events-content";
+import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function WorldEventsParticipationSection() {
   return (
@@ -18,8 +20,7 @@ export default function WorldEventsParticipationSection() {
             Como Participar
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Os eventos acontecem em diversas localidades do mapa e aparecem de forma aleatória com
-            uma notificação no chat, indicando nome, tempo disponível e localização.
+            {worldEventsParticipationDescription}
           </p>
         </div>
 
@@ -46,9 +47,11 @@ export default function WorldEventsParticipationSection() {
               <div className="border-b border-white/5 px-4 py-3 sm:px-5">
                 <h4 className="text-xs font-semibold uppercase tracking-widest text-gsw">{image.title}</h4>
               </div>
-              <div className="relative aspect-video w-full bg-black/60">
-                <Image src={image.src} alt={image.alt} fill className="object-contain p-2" />
-              </div>
+              <ClickableImagePreview src={image.src} alt={image.alt}>
+                <div className="relative aspect-video w-full bg-black/60">
+                  <Image src={image.src} alt={image.alt} fill className="object-contain p-2" />
+                </div>
+              </ClickableImagePreview>
             </article>
           ))}
         </div>

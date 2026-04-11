@@ -1,6 +1,7 @@
 import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
 import Navbar from "@/components/shared/Navbar";
+import { raidsIntroParagraphs } from "@/components/raids/data/raids-content";
 import GuildRaidsSection from "@/components/raids/sections/GuildRaidsSection";
 import RaidExtrasSection from "@/components/raids/sections/RaidExtrasSection";
 import RaidFirstStepsSection from "@/components/raids/sections/RaidFirstStepsSection";
@@ -16,10 +17,7 @@ export default function RaidsPage() {
         <GuideIntro
           eyebrow="Guia Oficial"
           title="Raids"
-          paragraphs={[
-            "Raids são conteúdos em grupo com salas de desafio, buffs intermediários e um chefe final. Além da dificuldade própria de cada mapa, elas também entregam recompensas únicas que não aparecem em outras partes do jogo.",
-            "Aqui você encontra o essencial para começar: como entrar, o que cada raid exige, como funciona a progressão interna e o que esperar das recompensas no final.",
-          ]}
+          paragraphs={raidsIntroParagraphs}
           sectionClassName="bg-zinc-950"
           decorations={
             <>

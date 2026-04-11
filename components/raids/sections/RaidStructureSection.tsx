@@ -1,3 +1,8 @@
+import {
+  raidStructureCards,
+  raidStructureDescription,
+} from "@/components/raids/data/raids-content";
+
 export default function RaidStructureSection() {
   return (
     <section className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
@@ -9,18 +14,12 @@ export default function RaidStructureSection() {
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">Estrutura</h2>
           <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Todas as raids seguem a mesma base: três salas de desafio, intervalos com buffs entre elas e um
-            boss final. O que realmente muda é a mecânica específica de cada mapa.
+            {raidStructureDescription}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-          {[
-            { title: "Desafios", desc: "São três salas com objetivos próprios. Em algumas raids, a dificuldade cresce; em outras, a ordem das salas pesa mais que o dano bruto." },
-            { title: "Buffs", desc: "Entre uma sala e outra existem baús de buffs. Escolher bem esses bônus ajuda bastante no boss final e em salas mais punidoras." },
-            { title: "Boss", desc: "Depois das três salas, a equipe enfrenta o chefe da raid. Cada boss pede leitura de mecânica, posicionamento e ritmo diferentes." },
-            { title: "Falha", desc: "Se a party falhar em qualquer etapa, a raid termina ali. A runa é consumida e você perde a recompensa de conclusão." },
-          ].map((item, index) => (
+          {raidStructureCards.map((item, index) => (
             <div
               key={item.title}
               className="group relative rounded-2xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8"
@@ -31,7 +30,7 @@ export default function RaidStructureSection() {
               <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">{item.desc}</p>
+              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">{item.description}</p>
             </div>
           ))}
         </div>

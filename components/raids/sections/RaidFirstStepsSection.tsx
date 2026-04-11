@@ -1,6 +1,13 @@
 import Image from "next/image";
 import RaidImageCard from "@/components/raids/sections/RaidImageCard";
-import { queueSteps, raids } from "@/components/raids/data/raids-content";
+import {
+  queueSteps,
+  raidFirstStepsDescription,
+  raidFirstStepsSupportImages,
+  silverbullNpcImage,
+  raids,
+} from "@/components/raids/data/raids-content";
+import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function RaidFirstStepsSection() {
   return (
@@ -15,23 +22,15 @@ export default function RaidFirstStepsSection() {
             Como Participar
           </h2>
           <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Antes de entrar em qualquer raid, você precisa se registrar no{" "}
-            <span className="font-medium text-white">Centro de Divisão Silverbull</span>, localizado a leste
-            de Cinfras. Depois disso, basta ter uma party com 4 pessoas, o nível e as quests exigidas, além
-            da runa correta para cada entrada.
+            {raidFirstStepsDescription}
           </p>
         </div>
 
         <div className="mx-auto mb-10 max-w-2xl sm:mb-14">
           <RaidImageCard
-            src="/raids/silverbull_npc.webp"
-            alt="NPC do Centro Silverbull"
-            caption={
-              <>
-                Centro de Divisão Silverbull. O NPC da raid é o da direita.{" "}
-                <code className="font-mono text-gsw">-159, 36, -4795</code>
-              </>
-            }
+            src={silverbullNpcImage.src}
+            alt={silverbullNpcImage.alt}
+            caption={silverbullNpcImage.caption}
           />
         </div>
 
@@ -41,18 +40,20 @@ export default function RaidFirstStepsSection() {
               key={raid.name}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
             >
-              <div className="relative aspect-video w-full">
-                <Image
-                  src={raid.image}
-                  alt={raid.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                <span className="absolute top-4 right-4 select-none text-4xl font-black italic text-white/10 transition-colors duration-300 group-hover:text-gsw/20">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
+              <ClickableImagePreview src={raid.image} alt={raid.name}>
+                <div className="relative aspect-video w-full">
+                  <Image
+                    src={raid.image}
+                    alt={raid.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  <span className="absolute top-4 right-4 select-none text-4xl font-black italic text-white/10 transition-colors duration-300 group-hover:text-gsw/20">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+              </ClickableImagePreview>
               <div className="p-5 sm:p-6">
                 <h3 className="mb-1 text-base font-bold tracking-tight text-white sm:text-lg">{raid.name}</h3>
                 <span className="mb-3 block text-xs font-semibold text-gsw">{raid.level}</span>
@@ -74,10 +75,7 @@ export default function RaidFirstStepsSection() {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6">
-          {[
-            { src: "/raids/rune_types.webp", alt: "Tipos de runa das raids", caption: "Tipos de runa usados nas raids: Az, Uth e Tol." },
-            { src: "/raids/party_finder_listing.webp", alt: "Lista de party finder", caption: "Exemplo de party aberta no finder para conteúdos em grupo." },
-          ].map((item) => (
+          {raidFirstStepsSupportImages.map((item) => (
             <RaidImageCard key={item.src} src={item.src} alt={item.alt} caption={item.caption} />
           ))}
         </div>

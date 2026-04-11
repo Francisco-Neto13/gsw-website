@@ -1,4 +1,7 @@
-import { worldEventsExtras } from "@/components/world-events/data/world-events-content";
+import {
+  worldEventsExtras,
+  worldEventsExtrasQuote,
+} from "@/components/world-events/data/world-events-content";
 
 export default function WorldEventsExtrasSection() {
   return (
@@ -29,9 +32,7 @@ export default function WorldEventsExtrasSection() {
 
         <div className="mt-16 text-center sm:mt-20">
           <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
-            &ldquo;O mundo não para de gerar eventos. A questão é se você vai estar lá quando o{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">Annihilation</span>{" "}
-            aparecer.&rdquo;
+            &ldquo;{worldEventsExtrasQuote}&rdquo;
           </p>
         </div>
       </div>

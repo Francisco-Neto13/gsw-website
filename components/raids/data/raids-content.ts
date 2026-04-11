@@ -48,6 +48,20 @@ export const queueSteps: RaidStepImage[] = [
   { src: "/raids/raid_queue_group_found.webp", alt: "Tela de grupo encontrado", caption: "" },
 ];
 
+export const silverbullNpcImage: RaidStepImage = {
+  src: "/raids/silverbull_npc.webp",
+  alt: "NPC do Centro Silverbull",
+  caption:
+    "Centro de Divisão Silverbull. O NPC da raid é o da direita. -159, 36, -4795",
+};
+
+export const guildRaidAvailableImage: RaidStepImage = {
+  src: "/raids/guild_raid_available.webp",
+  alt: "Indicador de guild raid disponível",
+  caption:
+    "Quando toda a party pertence à mesma guilda, a opção de guild raid fica disponível.",
+};
+
 export const notgRooms: RaidGuideRoom[] = [
   {
     room: "Sala 1",
@@ -520,4 +534,190 @@ export const supportImages: RaidStepImage[] = [
   { src: "/raids/character_info_menu.webp", alt: "Acesso ao menu de informações do personagem", caption: "Área usada para consultar informações e progresso relacionados às raids." },
   { src: "/raids/raid_ranking_progress.webp", alt: "Progresso do ranking de raid", caption: "Progresso acumulado no ranking de raid conforme você conclui runs." },
   { src: "/raids/raid_completed.webp", alt: "Mensagem de raid concluída", caption: "Confirmação visual de uma run concluída com sucesso." },
+];
+
+export type RaidInfoCard = {
+  title: string;
+  description: string;
+};
+
+export type RaidGuideGroup = {
+  eyebrow: string;
+  shortName: string;
+  description: string;
+  rooms: RaidGuideRoom[];
+};
+
+export const raidsIntroParagraphs = [
+  "Raids são conteúdos em grupo com salas de desafio, buffs intermediários e um chefe final. Além da dificuldade própria de cada mapa, elas também entregam recompensas únicas que não aparecem em outras partes do jogo.",
+  "Aqui você encontra o essencial para começar: como entrar, o que cada raid exige, como funciona a progressão interna e o que esperar das recompensas no final.",
+];
+
+export const raidFirstStepsDescription =
+  "Antes de entrar em qualquer raid, você precisa se registrar no Centro de Divisão Silverbull, localizado a leste de Cinfras. Depois disso, basta ter uma party com 4 pessoas, o nível e as quests exigidas, além da runa correta para cada entrada.";
+
+export const raidFirstStepsSupportImages: RaidStepImage[] = [
+  {
+    src: "/raids/rune_types.webp",
+    alt: "Tipos de runa das raids",
+    caption: "Tipos de runa usados nas raids: Az, Uth e Tol.",
+  },
+  {
+    src: "/raids/party_finder_listing.webp",
+    alt: "Lista de party finder",
+    caption: "Exemplo de party aberta no finder para conteúdos em grupo.",
+  },
+];
+
+export const raidStructureDescription =
+  "Todas as raids seguem a mesma base: três salas de desafio, intervalos com buffs entre elas e um boss final. O que realmente muda é a mecânica específica de cada mapa.";
+
+export const raidStructureCards: RaidInfoCard[] = [
+  {
+    title: "Desafios",
+    description:
+      "São três salas com objetivos próprios. Em algumas raids, a dificuldade cresce; em outras, a ordem das salas pesa mais que o dano bruto.",
+  },
+  {
+    title: "Buffs",
+    description:
+      "Entre uma sala e outra existem baús de buffs. Escolher bem esses bônus ajuda bastante no boss final e em salas mais punidoras.",
+  },
+  {
+    title: "Boss",
+    description:
+      "Depois das três salas, a equipe enfrenta o chefe da raid. Cada boss pede leitura de mecânica, posicionamento e ritmo diferentes.",
+  },
+  {
+    title: "Falha",
+    description:
+      "Se a party falhar em qualquer etapa, a raid termina ali. A runa é consumida e você perde a recompensa de conclusão.",
+  },
+];
+
+export const guildRaidsDescription =
+  "A versão da raid feita com membros da guilda aumenta a dificuldade, mas também melhora as recompensas entregues para a comunidade e para os participantes.";
+
+export const guildRaidRewards = [
+  "2048 esmeraldas, equivalentes a 32 blocos, por raid completa.",
+  "2 aspects distribuídos entre os participantes da guild raid.",
+  "As esmeraldas vão para o cofre da guilda como investimento comunitário.",
+  "Os aspects são entregues por um Chief ou Líder em ordem de requisição.",
+];
+
+export const guildRaidAspectDistribution = [
+  "Um Chief ou Líder precisa estar online para realizar a distribuição.",
+  "O limite de estoque para distribuição é 10.",
+  "A entrega segue a ordem de requisição combinada pela guilda.",
+  "Apenas jogadores que completaram a raid participam da decisão final.",
+];
+
+export const raidGuidesDescription =
+  "A partir daqui, cada raid passa a ter uma explicação própria com foco em salas, variações e vídeos.";
+
+export const raidGuideGroups: RaidGuideGroup[] = [
+  {
+    eyebrow: "Nest of the Grootslangs",
+    shortName: "NOTG",
+    description:
+      "Aqui fica a leitura completa da raid: as variações de cada sala, o que cada player precisa fazer e os vídeos de apoio para ver a execução na prática.",
+    rooms: notgRooms,
+  },
+  {
+    eyebrow: "Orphion's Nexus of Light",
+    shortName: "NOL",
+    description:
+      "A NOL mantém a mesma lógica de leitura por salas, mas com foco maior em coordenação, movimentação e reação rápida. A Sala 1 é fixa, enquanto a Sala 2 e a Sala 3 possuem duas variações cada.",
+    rooms: nolRooms,
+  },
+  {
+    eyebrow: "The Canyon Colossus",
+    shortName: "TCC",
+    description:
+      "A TCC entra no mesmo formato de leitura por salas, mas com uma dinâmica mais pesada em coordenação de caminhos, controle de mobs e divisão de funções dentro da party finder.",
+    rooms: tccRooms,
+  },
+  {
+    eyebrow: "The Nameless Anomaly",
+    shortName: "TNA",
+    description:
+      "A TNA fecha o ciclo das raids com uma mistura forte de cegueira, guidagem, coleta de recursos e salas que punem muito qualquer desorganização da party.",
+    rooms: tnaRooms,
+  },
+];
+
+export const raidRewardsDescription =
+  "Depois de concluir a raid, a party é enviada para a sala de recompensa. É ali que entram os pulls finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da equipe ao longo das salas.";
+
+export const raidRewardOutcomes = [
+  {
+    label: "Run Perfeita",
+    value: "+3 pulls por sala + 1 aspect",
+    description:
+      "Concluir a raid sem perder desempenho nas salas mantém o ganho máximo de pulls em cada etapa e libera o aspect no baú final.",
+  },
+  {
+    label: "Run com morte",
+    value: "+2 pulls por sala",
+    description:
+      "Se a party completa a raid com falha em algum desafio, cada sala passa a render menos pulls e o aspect deixa de cair.",
+  },
+  {
+    label: "Run falhada",
+    value: "Sem baú final",
+    description: "Sem conclusão, não existe recompensa final. A runa já foi consumida e a tentativa termina ali.",
+  },
+];
+
+export const raidFinalPullsTips = [
+  "Os pulls não dependem só do baú final: o desempenho da party ao longo das salas define o valor acumulado da run.",
+  "Manter a raid limpa preserva o total de pulls por sala e transforma cada clear em uma farm mais eficiente.",
+  "No fechamento da run, o baú ainda pode entregar tomes, esmeraldas, acessórios únicos, powders, corkian amplifier e outros drops relevantes.",
+];
+
+export const raidAspectDetails = [
+  "São aprimoramentos da árvore de habilidades e existem em versões mítica, fabled e lendária.",
+  "Variam do Tier I ao Tier IV. Quanto maior o tier, maior o bônus aplicado.",
+  "O aspect obtido não precisa ser da classe usada naquela run.",
+  "Eles podem ser usados em todas as classes compatíveis com o efeito.",
+];
+
+export const raidAspectExamples = [
+  "Área extra no Bash",
+  "Anjos e summons",
+  "Ice Snakes",
+  "Clones",
+  "Duração de Totem",
+];
+
+export const raidRewardImages: RaidStepImage[] = [
+  {
+    src: "/raids/reward_chest_location.webp",
+    alt: "Local do baú final da raid",
+    caption: "Baú final disponível na sala de recompensa após concluir a raid.",
+  },
+  {
+    src: "/raids/reward_chest_opened.webp",
+    alt: "Baú final aberto com rewards",
+    caption: "Exemplo do conteúdo de um baú final com aspects, pulls e tomes.",
+  },
+];
+
+export const raidExtrasDescription =
+  "Essa parte reúne tudo o que não está preso a uma sala específica, mas ainda pesa muito na experiência de raid: gambits, ranking, restrições de inventário e detalhes que influenciam a preparação da party antes e depois da run.";
+
+export const raidExtraHighlights: RaidInfoCard[] = [
+  {
+    title: "Gambits",
+    description: "Modificadores diários que aumentam o risco da run e podem melhorar o volume de recompensa.",
+  },
+  {
+    title: "Raid Ranking",
+    description: "Seu progresso sobe conforme você conclui raids. Sem clear, não existe avanço real no ranking.",
+  },
+  {
+    title: "Gestão da run",
+    description:
+      "Itens, inventory lock, composição de party e leitura da mecânica impactam muito mais do que parece.",
+  },
 ];

@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { levelingSpots } from "@/components/leveling/data/leveling-content";
+import {
+  levelingSpots,
+  levelingSpotsClosingQuote,
+  levelingSpotsDescription,
+} from "@/components/leveling/data/leveling-content";
+import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function LevelingSpotsSection() {
   return (
@@ -13,8 +18,7 @@ export default function LevelingSpotsSection() {
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">Spots</h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Alguns spots cobrem faixas de nível sobrepostas. Se um spot estiver difícil demais
-            ou pouco eficiente, sinta-se livre para mudar para outro mais adequado ao seu momento.
+            {levelingSpotsDescription}
           </p>
         </div>
 
@@ -48,9 +52,11 @@ export default function LevelingSpotsSection() {
                     </li>
                   ))}
                 </ul>
-                <div className="relative aspect-video w-full border-t border-white/5 lg:border-t-0 lg:border-l">
-                  <Image src={spot.image} alt={`Screenshot do spot ${spot.name}`} fill className="object-cover" />
-                </div>
+                <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
+                  <div className="relative aspect-video w-full border-t border-white/5 lg:border-t-0 lg:border-l">
+                    <Image src={spot.image} alt={`Screenshot do spot ${spot.name}`} fill className="object-cover" />
+                  </div>
+                </ClickableImagePreview>
               </div>
             </article>
           ))}
@@ -58,8 +64,7 @@ export default function LevelingSpotsSection() {
 
         <div className="mt-16 text-center sm:mt-20">
           <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm leading-relaxed text-zinc-500 italic sm:px-12 sm:pt-12">
-            &ldquo;Com a party certa e o spot certo, o level 106 é só uma questão de{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">tempo</span>.&rdquo;
+            &ldquo;{levelingSpotsClosingQuote}&rdquo;
           </p>
         </div>
       </div>

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import {
+  annihilationVideo,
   annihilationImages,
   annihilationPartyTips,
   annihilationSunTips,
+  worldEventsAnnihilationDescription,
 } from "@/components/world-events/data/world-events-content";
+import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function WorldEventsAnnihilationSection() {
   return (
@@ -20,23 +23,22 @@ export default function WorldEventsAnnihilationSection() {
             Annihilation
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            O Annihilation é o boss principal dos world events. Ele acontece em momentos específicos
-            e foi projetado para ser feito em party.
+            {worldEventsAnnihilationDescription}
           </p>
         </div>
 
         <div className="mx-auto mb-10 max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-14">
           <div className="relative aspect-video w-full">
             <iframe
-              src="https://www.youtube.com/embed/NEvfcrQujDI"
-              title="Speedrun do Annihilation"
+              src={`https://www.youtube.com/embed/${annihilationVideo.videoId}`}
+              title={annihilationVideo.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="absolute inset-0 h-full w-full"
             />
           </div>
           <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
-            Speedrun do boss Annihilation.
+            {annihilationVideo.caption}
           </p>
         </div>
 
@@ -73,9 +75,11 @@ export default function WorldEventsAnnihilationSection() {
         <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6">
           {annihilationImages.map((image) => (
             <article key={image.src} className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40">
-              <div className="relative aspect-video w-full">
-                <Image src={image.src} alt={image.alt} fill className="object-cover" />
-              </div>
+              <ClickableImagePreview src={image.src} alt={image.alt}>
+                <div className="relative aspect-video w-full">
+                  <Image src={image.src} alt={image.alt} fill className="object-cover" />
+                </div>
+              </ClickableImagePreview>
             </article>
           ))}
         </div>

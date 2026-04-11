@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { rewardCards } from "@/components/world-events/data/world-events-content";
+import {
+  rewardCards,
+  rewardChestCaption,
+  rewardChestImage,
+  worldEventsRewardsDescription,
+} from "@/components/world-events/data/world-events-content";
+import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function WorldEventsRewardsSection() {
   return (
@@ -15,8 +21,7 @@ export default function WorldEventsRewardsSection() {
             Recompensas
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Após derrotar o chefe, um baú aparece com recompensas que variam por região e nível do
-            evento.
+            {worldEventsRewardsDescription}
           </p>
         </div>
 
@@ -36,11 +41,13 @@ export default function WorldEventsRewardsSection() {
         </div>
 
         <div className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mt-10">
-          <div className="relative aspect-video w-full">
-            <Image src="/worldevents/bau_final_we.png" alt="Baú de recompensas do world event" fill className="object-cover" />
-          </div>
+          <ClickableImagePreview src={rewardChestImage.src} alt={rewardChestImage.alt}>
+            <div className="relative aspect-video w-full">
+              <Image src={rewardChestImage.src} alt={rewardChestImage.alt} fill className="object-cover" />
+            </div>
+          </ClickableImagePreview>
           <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
-            Baú de recompensas após finalizar um world event.
+            {rewardChestCaption}
           </p>
         </div>
       </div>

@@ -3,6 +3,7 @@ import {
   combinedModesParagraph,
   combinedModesRequirements,
 } from "@/components/special-modes/data/special-modes-content";
+import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function SpecialModesChallengeSection() {
   return (
@@ -48,14 +49,19 @@ export default function SpecialModesChallengeSection() {
             <h4 className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-zinc-500">
               Todos os modos de jogo
             </h4>
-            <div className="relative aspect-[25/9] w-full overflow-hidden rounded-xl border border-white/10 bg-black/60">
-              <Image
-                src="/gamemodes/gamemodes.png"
-                alt="Tabela de combinações dos modos especiais da comunidade"
-                fill
-                className="object-contain"
-              />
-            </div>
+            <ClickableImagePreview
+              src="/gamemodes/gamemodes.png"
+              alt="Tabela de combinações dos modos especiais da comunidade"
+            >
+              <div className="relative aspect-[25/9] w-full overflow-hidden rounded-xl border border-white/10 bg-black/60">
+                <Image
+                  src="/gamemodes/gamemodes.png"
+                  alt="Tabela de combinações dos modos especiais da comunidade"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </ClickableImagePreview>
           </div>
         </article>
       </div>

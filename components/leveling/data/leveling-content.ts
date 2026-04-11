@@ -11,6 +11,34 @@ export const levelingIntroParagraphs = [
   "As recomendações a seguir são baseadas em matar mobs e bônus de XP. Se for sua primeira classe, é fortemente recomendado que você faça quests, caves e descobertas antes de focar em grinding, porque o XP das quests ainda pesa bastante nos levels iniciais.",
 ];
 
+export const levelingPartyDescription =
+  "Upar em party é quase obrigatório. O ganho de XP é maior e a chance de sobreviver aumenta bastante. Para encontrar uma, use /pfinder no chat ou fale com um party finder em qualquer cidade.";
+
+export const levelingPartyImage = {
+  src: "/leveling/party_example.webp",
+  alt: "Exemplo de party de XP",
+  caption: "Exemplo de uma party de XP no party finder.",
+};
+
+export const levelingPartyCards = [
+  {
+    title: "Healers",
+    description:
+      "Sempre jogadores de nível 105 ou 106 com build dedicada à cura, normalmente de Shaman ou Mage. Em parties de nível baixo, também usam itens que removem seu dano para não roubar XP.",
+  },
+  {
+    title: "Totens",
+    description:
+      "Distribuídos diariamente para jogadores com ranks da loja, acessíveis via /totem. Duram 5 minutos cada e aumentam muito o spawn de mobs, elevando significativamente o ganho de XP da party.",
+  },
+];
+
+export const levelingSpotsDescription =
+  "Alguns spots cobrem faixas de nível sobrepostas. Se um spot estiver difícil demais ou pouco eficiente, sinta-se livre para mudar para outro mais adequado ao seu momento.";
+
+export const levelingSpotsClosingQuote =
+  "Com a party certa e o spot certo, o level 106 é só uma questão de tempo.";
+
 export const levelingSpots: LevelingSpot[] = [
   {
     name: "Emerald Trail",

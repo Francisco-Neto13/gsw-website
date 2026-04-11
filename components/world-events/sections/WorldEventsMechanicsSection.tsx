@@ -1,4 +1,7 @@
-import { mechanicsCards } from "@/components/world-events/data/world-events-content";
+import {
+  mechanicsCards,
+  worldEventsMechanicsDescription,
+} from "@/components/world-events/data/world-events-content";
 
 export default function WorldEventsMechanicsSection() {
   return (
@@ -14,8 +17,7 @@ export default function WorldEventsMechanicsSection() {
             Mecânicas
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            A estrutura dos world events segue a mesma lógica: waves de inimigos, chefe final e baú
-            de recompensa para quem conclui.
+            {worldEventsMechanicsDescription}
           </p>
         </div>
 

@@ -14,6 +14,24 @@ export const worldEventsIntroParagraphs = [
   "Comparado com Raids e LootRuns, participar é muito mais simples: eles aparecem de forma aleatória no mapa com notificação no chat. Neste guia você vai entender como funcionam, o que é o Annihilation e quais recompensas esperar.",
 ];
 
+export const worldEventsParticipationDescription =
+  "Os eventos acontecem em diversas localidades do mapa e aparecem de forma aleatória com uma notificação no chat, indicando nome, tempo disponível e localização.";
+
+export const worldEventsMechanicsDescription =
+  "A estrutura dos world events segue a mesma lógica: waves de inimigos, chefe final e baú de recompensa para quem conclui.";
+
+export const worldEventsAnnihilationDescription =
+  "O Annihilation é o boss principal dos world events. Ele acontece em momentos específicos e foi projetado para ser feito em party.";
+
+export const annihilationVideo = {
+  videoId: "NEvfcrQujDI",
+  title: "Speedrun do Annihilation",
+  caption: "Speedrun do boss Annihilation.",
+};
+
+export const worldEventsRewardsDescription =
+  "Após derrotar o chefe, um baú aparece com recompensas que variam por região e nível do evento.";
+
 export const participationCards: InfoCard[] = [
   {
     title: "Notificação no Chat",
@@ -30,12 +48,12 @@ export const participationCards: InfoCard[] = [
 export const participationImages: ImageCard[] = [
   {
     title: "World Event 1",
-    src: "/worldevents/we.png",
+    src: "/worldevents/world_event_1.png",
     alt: "Exemplo de world event em andamento",
   },
   {
     title: "World Event 2",
-    src: "/worldevents/we_2.png",
+    src: "/worldevents/world_event_2.png",
     alt: "Segundo exemplo de world event em andamento",
   },
 ];
@@ -110,9 +128,20 @@ export const rewardCards: InfoCard[] = [
   },
 ];
 
+export const rewardChestImage: ImageCard = {
+  title: "Baú final",
+  src: "/worldevents/bau_final_we.png",
+  alt: "Baú de recompensas do world event",
+};
+
+export const rewardChestCaption = "Baú de recompensas após finalizar um world event.";
+
 export const worldEventsExtras = [
   "World events de nível alto dão uma quantidade maior de esmeraldas, chegando a até 4 LE.",
   "World events lvl 90+ têm uma chance pequena de dropar itens míticos de forma aleatória.",
   "Quando for fazer o Annihilation com a party, certifiquem-se de levar scrolls de dano, vida, defesa, mana e outros buffs.",
   "Alguns ingredients importantes podem ser dropados em eventos globais específicos. Pergunte no chat da guilda e alguém capacitado irá responder.",
 ];
+
+export const worldEventsExtrasQuote =
+  "O mundo não para de gerar eventos. A questão é se você vai estar lá quando o Annihilation aparecer.";

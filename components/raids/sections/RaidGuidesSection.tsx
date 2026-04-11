@@ -2,52 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import {
-  notgRooms,
-  nolRooms,
-  tccRooms,
-  tnaRooms,
+  raidGuideGroups,
+  raidGuidesDescription,
   upcomingRaidGuides,
   type RaidGuideRoom,
   type RaidGuideVariant,
 } from "@/components/raids/data/raids-content";
-
-type GuideGroup = {
-  eyebrow: string;
-  shortName: string;
-  description: string;
-  rooms: RaidGuideRoom[];
-};
-
-const guideGroups: GuideGroup[] = [
-  {
-    eyebrow: "Nest of the Grootslangs",
-    shortName: "NOTG",
-    description:
-      "Aqui fica a leitura completa da raid: as variações de cada sala, o que cada player precisa fazer e os vídeos de apoio para ver a execução na prática.",
-    rooms: notgRooms,
-  },
-  {
-    eyebrow: "Orphion's Nexus of Light",
-    shortName: "NOL",
-    description:
-      "A NOL mantém a mesma lógica de leitura por salas, mas com foco maior em coordenação, movimentação e reação rápida. A Sala 1 é fixa, enquanto a Sala 2 e a Sala 3 possuem duas variações cada.",
-    rooms: nolRooms,
-  },
-  {
-    eyebrow: "The Canyon Colossus",
-    shortName: "TCC",
-    description:
-      "A TCC entra no mesmo formato de leitura por salas, mas com uma dinâmica mais pesada em coordenação de caminhos, controle de mobs e divisão de funções dentro da party finder.",
-    rooms: tccRooms,
-  },
-  {
-    eyebrow: "The Nameless Anomaly",
-    shortName: "TNA",
-    description:
-      "A TNA fecha o ciclo das raids com uma mistura forte de cegueira, guidagem, coleta de recursos e salas que punem muito qualquer desorganização da party.",
-    rooms: tnaRooms,
-  },
-];
 
 function RaidVariantCard({
   roomLabel,
@@ -212,12 +172,11 @@ export default function RaidGuidesSection() {
             Salas e Bossfights
           </h2>
           <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            A partir daqui, cada raid passa a ter uma explicação própria com foco em salas, variações e
-            vídeos.
+            {raidGuidesDescription}
           </p>
         </div>
 
-        {guideGroups.map((group, groupIndex) => (
+        {raidGuideGroups.map((group, groupIndex) => (
           <div
             key={group.shortName}
             className={groupIndex === 0 ? undefined : "mt-16 border-t border-white/5 pt-16 sm:mt-20 sm:pt-20"}

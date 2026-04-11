@@ -1,39 +1,12 @@
 import RaidImageCard from "@/components/raids/sections/RaidImageCard";
-
-const rewardOutcomes = [
-  {
-    label: "Run Perfeita",
-    value: "+3 pulls por sala + 1 aspect",
-    description:
-      "Concluir a raid sem perder desempenho nas salas mantém o ganho máximo de pulls em cada etapa e libera o aspect no baú final.",
-  },
-  {
-    label: "Run com morte",
-    value: "+2 pulls por sala",
-    description:
-      "Se a party completa a raid com falha em algum desafio, cada sala passa a render menos pulls e o aspect deixa de cair.",
-  },
-  {
-    label: "Run falhada",
-    value: "Sem baú final",
-    description: "Sem conclusão, não existe recompensa final. A runa já foi consumida e a tentativa termina ali.",
-  },
-];
-
-const aspectDetails = [
-  "São aprimoramentos da árvore de habilidades e existem em versões mítica, fabled e lendária.",
-  "Variam do Tier I ao Tier IV. Quanto maior o tier, maior o bônus aplicado.",
-  "O aspect obtido não precisa ser da classe usada naquela run.",
-  "Eles podem ser usados em todas as classes compatíveis com o efeito.",
-];
-
-const aspectExamples = [
-  "Área extra no Bash",
-  "Anjos e summons",
-  "Ice Snakes",
-  "Clones",
-  "Duração de Totem",
-];
+import {
+  raidAspectDetails,
+  raidAspectExamples,
+  raidFinalPullsTips,
+  raidRewardImages,
+  raidRewardOutcomes,
+  raidRewardsDescription,
+} from "@/components/raids/data/raids-content";
 
 export default function RaidRewardsSection() {
   return (
@@ -50,14 +23,12 @@ export default function RaidRewardsSection() {
             Recompensas
           </h2>
           <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Depois de concluir a raid, a party é enviada para a sala de recompensa. É ali que entram os pulls
-            finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da
-            equipe ao longo das salas.
+            {raidRewardsDescription}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
-          {rewardOutcomes.map((item) => (
+          {raidRewardOutcomes.map((item) => (
             <div
               key={item.label}
               className="group rounded-2xl border border-white/10 bg-zinc-900/20 p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-6"
@@ -77,11 +48,7 @@ export default function RaidRewardsSection() {
               Pulls Finais
             </span>
             <ul className="space-y-3">
-              {[
-                "Os pulls não dependem só do baú final: o desempenho da party ao longo das salas define o valor acumulado da run.",
-                "Manter a raid limpa preserva o total de pulls por sala e transforma cada clear em uma farm mais eficiente.",
-                "No fechamento da run, o baú ainda pode entregar tomes, esmeraldas, acessórios únicos, powders, corkian amplifier e outros drops relevantes.",
-              ].map((item) => (
+              {raidFinalPullsTips.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                   <span>{item}</span>
@@ -93,7 +60,7 @@ export default function RaidRewardsSection() {
           <div className="rounded-2xl border border-white/10 bg-black/40 p-6 sm:p-8">
             <span className="mb-4 block text-xs font-bold uppercase tracking-[0.4em] text-gsw">Aspects</span>
             <ul className="space-y-3">
-              {aspectDetails.map((item) => (
+              {raidAspectDetails.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                   <span>{item}</span>
@@ -106,7 +73,7 @@ export default function RaidRewardsSection() {
                 Exemplos de efeito
               </span>
               <div className="flex flex-wrap gap-2">
-                {aspectExamples.map((example) => (
+                {raidAspectExamples.map((example) => (
                   <span
                     key={example}
                     className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-zinc-300"
@@ -120,18 +87,7 @@ export default function RaidRewardsSection() {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6">
-          {[
-            {
-              src: "/raids/reward_chest_location.webp",
-              alt: "Local do baú final da raid",
-              caption: "Baú final disponível na sala de recompensa após concluir a raid.",
-            },
-            {
-              src: "/raids/reward_chest_opened.webp",
-              alt: "Baú final aberto com rewards",
-              caption: "Exemplo do conteúdo de um baú final com aspects, pulls e tomes.",
-            },
-          ].map((item) => (
+          {raidRewardImages.map((item) => (
             <RaidImageCard key={item.src} src={item.src} alt={item.alt} caption={item.caption} />
           ))}
         </div>

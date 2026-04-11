@@ -1,4 +1,10 @@
 import RaidImageCard from "@/components/raids/sections/RaidImageCard";
+import {
+  guildRaidAvailableImage,
+  guildRaidAspectDistribution,
+  guildRaidRewards,
+  guildRaidsDescription,
+} from "@/components/raids/data/raids-content";
 
 export default function GuildRaidsSection() {
   return (
@@ -13,8 +19,7 @@ export default function GuildRaidsSection() {
             Guild Raids
           </h2>
           <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            A versão da raid feita com membros da guilda aumenta a dificuldade, mas também melhora as
-            recompensas entregues para a comunidade e para os participantes.
+            {guildRaidsDescription}
           </p>
         </div>
 
@@ -24,12 +29,7 @@ export default function GuildRaidsSection() {
               Recompensas da Guilda
             </h3>
             <ul className="space-y-3">
-              {[
-                "2048 esmeraldas, equivalentes a 32 blocos, por raid completa.",
-                "2 aspects distribuídos entre os participantes da guild raid.",
-                "As esmeraldas vão para o cofre da guilda como investimento comunitário.",
-                "Os aspects são entregues por um Chief ou Líder em ordem de requisição.",
-              ].map((item) => (
+              {guildRaidRewards.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                   <span>{item}</span>
@@ -43,12 +43,7 @@ export default function GuildRaidsSection() {
               Distribuição de Aspects
             </h3>
             <ul className="space-y-3">
-              {[
-                "Um Chief ou Líder precisa estar online para realizar a distribuição.",
-                "O limite de estoque para distribuição é 10.",
-                "A entrega segue a ordem de requisição combinada pela guilda.",
-                "Apenas jogadores que completaram a raid participam da decisão final.",
-              ].map((item) => (
+              {guildRaidAspectDistribution.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                   <span>{item}</span>
@@ -60,9 +55,9 @@ export default function GuildRaidsSection() {
 
         <div className="mx-auto mt-8 max-w-2xl sm:mt-10">
           <RaidImageCard
-            src="/raids/guild_raid_available.webp"
-            alt="Indicador de guild raid disponível"
-            caption="Quando toda a party pertence à mesma guilda, a opção de guild raid fica disponível."
+            src={guildRaidAvailableImage.src}
+            alt={guildRaidAvailableImage.alt}
+            caption={guildRaidAvailableImage.caption}
           />
         </div>
       </div>

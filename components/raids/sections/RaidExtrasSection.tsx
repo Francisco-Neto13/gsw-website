@@ -1,20 +1,10 @@
 import RaidImageCard from "@/components/raids/sections/RaidImageCard";
-import { extras, supportImages } from "@/components/raids/data/raids-content";
-
-const extraHighlights = [
-  {
-    title: "Gambits",
-    description: "Modificadores diários que aumentam o risco da run e podem melhorar o volume de recompensa.",
-  },
-  {
-    title: "Raid Ranking",
-    description: "Seu progresso sobe conforme você conclui raids. Sem clear, não existe avanço real no ranking.",
-  },
-  {
-    title: "Gestão da run",
-    description: "Itens, inventory lock, composição de party e leitura da mecânica impactam muito mais do que parece.",
-  },
-];
+import {
+  extras,
+  raidExtraHighlights,
+  raidExtrasDescription,
+  supportImages,
+} from "@/components/raids/data/raids-content";
 
 export default function RaidExtrasSection() {
   return (
@@ -29,14 +19,12 @@ export default function RaidExtrasSection() {
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">Extra</h2>
           <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Essa parte reúne tudo o que não está preso a uma sala específica, mas ainda pesa muito na
-            experiência de raid: gambits, ranking, restrições de inventário e detalhes que influenciam a
-            preparação da party antes e depois da run.
+            {raidExtrasDescription}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
-          {extraHighlights.map((item) => (
+          {raidExtraHighlights.map((item) => (
             <div
               key={item.title}
               className="rounded-2xl border border-white/10 bg-black/40 p-5 text-center sm:p-6"
