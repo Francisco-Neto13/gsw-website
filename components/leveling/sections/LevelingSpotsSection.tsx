@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {
   levelingSpots,
-  levelingSpotsClosingQuote,
   levelingSpotsIntro,
 } from "@/components/leveling/data/leveling-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
@@ -64,11 +63,6 @@ export default function LevelingSpotsSection() {
           ))}
         </div>
 
-        <div className="mt-16 text-center sm:mt-20">
-          <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm leading-relaxed text-zinc-500 italic sm:px-12 sm:pt-12">
-            &ldquo;{levelingSpotsClosingQuote}&rdquo;
-          </p>
-        </div>
       </div>
     </section>
   );

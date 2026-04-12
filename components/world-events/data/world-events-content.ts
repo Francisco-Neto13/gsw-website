@@ -173,9 +173,6 @@ export const worldEventsExtras = [
   "Alguns ingredients importantes podem ser dropados em eventos globais específicos. Pergunte no chat da guilda e alguém capacitado irá responder.",
 ];
 
-export const worldEventsExtrasQuote =
-  "O mundo não para de gerar eventos. A questão é se você vai estar lá quando o Annihilation aparecer.";
-
 export const worldEventsExtrasIntro: SectionIntro = {
   eyebrow: "Informações adicionais",
   title: "Extra",
@@ -184,4 +181,8 @@ export const worldEventsExtrasIntro: SectionIntro = {
 export const worldEventsAnnihilationLabels = {
   partyTitle: "Composição da Party",
   sunTitle: "O Sol: mecânica principal",
+};
+
+export const worldEventsExtrasLabels = {
+  note: "Nota",
 };

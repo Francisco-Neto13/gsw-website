@@ -54,9 +54,6 @@ export const levelingSpotsIntro: SectionIntro = {
   description: levelingSpotsDescription,
 };
 
-export const levelingSpotsClosingQuote =
-  "Com a party certa e o spot certo, o level 106 é só uma questão de tempo.";
-
 export const levelingSpots: LevelingSpot[] = [
   {
     name: "Emerald Trail",

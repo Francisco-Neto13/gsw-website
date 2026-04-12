@@ -790,6 +790,4 @@ export const raidExtraHighlights: RaidInfoCard[] = [
 export const raidExtrasLabels = {
   highlight: "Destaque",
   note: "Nota",
-  closingQuote:
-    "Quem sobrevive às três salas, merece cada recompensa.",
 };

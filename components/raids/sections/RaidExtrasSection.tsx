@@ -66,11 +66,6 @@ export default function RaidExtrasSection() {
           ))}
         </div>
 
-        <div className="mt-16 text-center sm:mt-20">
-          <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
-            &ldquo;{raidExtrasLabels.closingQuote}&rdquo;
-          </p>
-        </div>
       </div>
     </section>
   );

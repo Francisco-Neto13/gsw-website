@@ -91,9 +91,6 @@ export const professionWaypointsLabels = {
     "Prévia do conteúdo. O arquivo .txt completo está disponível para download acima.",
 };
 
-export const professionsClosingQuote =
-  "Profissões são uma maratona, não uma corrida. Se precisar de ajuda, a guilda está aqui.";
-
 export const gatheringProfessions: GatheringProfession[] = [
   { name: "Farming", resources: "Colheita e Linha", tool: "Foice" },
   { name: "Fishing", resources: "Peixe e Óleo", tool: "Vara de Pesca" },

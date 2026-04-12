@@ -16,6 +16,7 @@ export const sitePageLinks: SitePageLink[] = [
   { label: "Modos", href: "/modos-especiais" },
   { label: "World Events", href: "/world-events" },
   { label: "Raids", href: "/raids" },
+  { label: "Dungeons", href: "/dungeons" },
 ];
 
 export const homeSectionLinks: SectionLink[] = [
