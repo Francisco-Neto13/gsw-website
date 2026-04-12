@@ -5,10 +5,23 @@ export type SpecialMode = {
   description: string[];
 };
 
+export type SectionIntro = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
 export const specialModesIntroParagraphs = [
   "Ao criar uma nova classe, você pode aplicar Modos Especiais para ter uma experiência mais desafiadora. Eles são desbloqueados durante o jogo e, depois de liberados, podem ser usados em qualquer nova classe.",
   "Você pode ativar um ou vários modos ao mesmo tempo, mas a decisão é definitiva para aquele personagem: não é possível desativar depois. Cada modo ativo também adiciona um ícone colorido na tag do personagem.",
 ];
+
+export const specialModesListIntro: SectionIntro = {
+  eyebrow: "Modos",
+  title: "Regras Especiais",
+  description:
+    "Cada modo altera como você progride no personagem. Escolha com cuidado, porque os efeitos ficam fixos até o fim daquela classe.",
+};
 
 export const specialModes: SpecialMode[] = [
   {
@@ -70,3 +83,22 @@ export const combinedModesRequirements = [
   "Legendary Island solo",
   "Emblema vermelho do Hardcore até a conclusão do mod",
 ];
+
+export const specialModesChallengeIntro: SectionIntro = {
+  eyebrow: "Comunidade",
+  title: "Combinações e Desafio",
+  description: combinedModesParagraph,
+};
+
+export const specialModesChallengeLabels = {
+  blockTitle: "Requisitos e referência visual",
+  blockDescription:
+    "Base usada pela comunidade para validar runs completas nos modos especiais.",
+  requirementsTitle: "Requisitos do desafio geral",
+  imageTitle: "Todos os modos de jogo",
+};
+
+export const specialModesReferenceImage = {
+  src: "/gamemodes/gamemodes.png",
+  alt: "Tabela de combinações dos modos especiais da comunidade",
+};

@@ -1,7 +1,9 @@
 import Image from "next/image";
 import {
-  combinedModesParagraph,
   combinedModesRequirements,
+  specialModesChallengeIntro,
+  specialModesChallengeLabels,
+  specialModesReferenceImage,
 } from "@/components/special-modes/data/special-modes-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
@@ -13,27 +15,29 @@ export default function SpecialModesChallengeSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Comunidade
+            {specialModesChallengeIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Combinações e Desafio
+            {specialModesChallengeIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {combinedModesParagraph}
+            {specialModesChallengeIntro.description}
           </p>
         </div>
 
         <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
           <div className="border-b border-white/5 px-6 py-5 sm:px-8 sm:py-6">
-            <h3 className="text-lg font-bold text-white sm:text-xl">Requisitos e referência visual</h3>
+            <h3 className="text-lg font-bold text-white sm:text-xl">
+              {specialModesChallengeLabels.blockTitle}
+            </h3>
             <p className="mt-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-              Base usada pela comunidade para validar runs completas nos modos especiais.
+              {specialModesChallengeLabels.blockDescription}
             </p>
           </div>
 
           <div className="px-6 py-6 sm:px-8 sm:py-8">
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest text-gsw">
-              Requisitos do desafio geral
+              {specialModesChallengeLabels.requirementsTitle}
             </h4>
             <ul className="space-y-3">
               {combinedModesRequirements.map((requirement) => (
@@ -47,16 +51,16 @@ export default function SpecialModesChallengeSection() {
 
           <div className="border-t border-white/10 bg-zinc-950/40 p-4 sm:p-5">
             <h4 className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-zinc-500">
-              Todos os modos de jogo
+              {specialModesChallengeLabels.imageTitle}
             </h4>
             <ClickableImagePreview
-              src="/gamemodes/gamemodes.png"
-              alt="Tabela de combinações dos modos especiais da comunidade"
+              src={specialModesReferenceImage.src}
+              alt={specialModesReferenceImage.alt}
             >
               <div className="relative aspect-[25/9] w-full overflow-hidden rounded-xl border border-white/10 bg-black/60">
                 <Image
-                  src="/gamemodes/gamemodes.png"
-                  alt="Tabela de combinações dos modos especiais da comunidade"
+                  src={specialModesReferenceImage.src}
+                  alt={specialModesReferenceImage.alt}
                   fill
                   className="object-contain"
                 />

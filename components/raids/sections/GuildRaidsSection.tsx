@@ -2,8 +2,9 @@ import RaidImageCard from "@/components/raids/sections/RaidImageCard";
 import {
   guildRaidAvailableImage,
   guildRaidAspectDistribution,
+  guildRaidCardTitles,
   guildRaidRewards,
-  guildRaidsDescription,
+  guildRaidsIntro,
 } from "@/components/raids/data/raids-content";
 
 export default function GuildRaidsSection() {
@@ -13,20 +14,20 @@ export default function GuildRaidsSection() {
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Conteúdo de guilda
+            {guildRaidsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Guild Raids
+            {guildRaidsIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {guildRaidsDescription}
+            {guildRaidsIntro.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           <div className="group rounded-2xl border border-white/10 bg-zinc-900/20 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
             <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
-              Recompensas da Guilda
+              {guildRaidCardTitles.rewards}
             </h3>
             <ul className="space-y-3">
               {guildRaidRewards.map((item) => (
@@ -40,7 +41,7 @@ export default function GuildRaidsSection() {
 
           <div className="group rounded-2xl border border-white/10 bg-zinc-900/20 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
             <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
-              Distribuição de Aspects
+              {guildRaidCardTitles.aspects}
             </h3>
             <ul className="space-y-3">
               {guildRaidAspectDistribution.map((item) => (

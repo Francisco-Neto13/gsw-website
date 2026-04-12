@@ -1,6 +1,8 @@
 import {
   bombTips,
   craftingXpTips,
+  professionToolsCardTitles,
+  professionToolsIntro,
   toolTips,
 } from "@/components/professions/data/professions-content";
 
@@ -12,14 +14,13 @@ export default function ProfessionToolsSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Otimização
+            {professionToolsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Ferramentas e Bombas
+            {professionToolsIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            A ferramenta certa e as bombas certas fazem uma diferença enorme no tempo gasto para
-            avançar nas profissões.
+            {professionToolsIntro.description}
           </p>
         </div>
 
@@ -28,7 +29,9 @@ export default function ProfessionToolsSection() {
             <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
               01
             </span>
-            <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">Ferramentas</h3>
+            <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
+              {professionToolsCardTitles.tools}
+            </h3>
             <ul className="space-y-3">
               {toolTips.map((tip) => (
                 <li key={tip} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
@@ -43,7 +46,9 @@ export default function ProfessionToolsSection() {
             <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
               02
             </span>
-            <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">Bombas de Prof</h3>
+            <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
+              {professionToolsCardTitles.bombs}
+            </h3>
             <ul className="space-y-3">
               {bombTips.map((tip) => (
                 <li key={tip} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
@@ -58,7 +63,9 @@ export default function ProfessionToolsSection() {
             <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
               03
             </span>
-            <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">XP de Crafting</h3>
+            <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
+              {professionToolsCardTitles.craftingXp}
+            </h3>
             <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {craftingXpTips.map((tip) => (
                 <li key={tip} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">

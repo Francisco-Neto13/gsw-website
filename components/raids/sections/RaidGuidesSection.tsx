@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react";
 import {
   raidGuideGroups,
-  raidGuidesDescription,
+  raidGuidesIntro,
+  raidGuidesLabels,
   upcomingRaidGuides,
   type RaidGuideRoom,
   type RaidGuideVariant,
@@ -23,7 +24,7 @@ function RaidVariantCard({
       <div data-raid-text className="flex flex-col">
         <div className="border-b border-white/5 px-5 py-5 sm:px-6">
           <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
-            Variação {String(variantIndex + 1).padStart(2, "0")}
+            {raidGuidesLabels.variant} {String(variantIndex + 1).padStart(2, "0")}
           </span>
           <h5 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{variant.name}</h5>
           <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{variant.summary}</p>
@@ -58,12 +59,12 @@ function RaidVariantCard({
         {variant.secondaryVideoId ? (
           <div className="space-y-3">
             <span className="block text-center text-xs font-bold uppercase tracking-[0.3em] text-zinc-500">
-              {variant.secondaryLabel ?? "Vídeo extra"}
+              {variant.secondaryLabel ?? raidGuidesLabels.extraVideo}
             </span>
             <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-zinc-900">
               <iframe
                 src={`https://www.youtube.com/embed/${variant.secondaryVideoId}`}
-                title={`${roomLabel} - ${variant.secondaryLabel ?? "Vídeo extra"}`}
+                title={`${roomLabel} - ${variant.secondaryLabel ?? raidGuidesLabels.extraVideo}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0 h-full w-full"
@@ -166,13 +167,13 @@ export default function RaidGuidesSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-12 text-center sm:mb-20">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Guias das raids
+            {raidGuidesIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Salas e Bossfights
+            {raidGuidesIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {raidGuidesDescription}
+            {raidGuidesIntro.description}
           </p>
         </div>
 
@@ -206,11 +207,11 @@ export default function RaidGuidesSection() {
             {upcomingRaidGuides.map((name) => (
               <div key={name} className="rounded-2xl border border-white/10 bg-black/35 p-5 text-center sm:p-6">
                 <span className="mb-3 block text-xs font-bold uppercase tracking-[0.4em] text-gsw">
-                  Próxima
+                  {raidGuidesLabels.upcoming}
                 </span>
                 <h4 className="text-lg font-bold tracking-tight text-white sm:text-xl">{name}</h4>
                 <p className="mt-3 text-sm leading-relaxed text-zinc-400">
-                  Estrutura reservada para receber a explicação completa dessa raid depois.
+                  {raidGuidesLabels.upcomingDescription}
                 </p>
               </div>
             ))}

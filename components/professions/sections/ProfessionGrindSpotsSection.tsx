@@ -1,4 +1,8 @@
-import { grindSpots } from "@/components/professions/data/professions-content";
+import {
+  grindSpots,
+  professionGrindSpotsIntro,
+  professionGrindSpotsTableHeaders,
+} from "@/components/professions/data/professions-content";
 
 export default function ProfessionGrindSpotsSection() {
   return (
@@ -8,16 +12,13 @@ export default function ProfessionGrindSpotsSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Crafting
+            {professionGrindSpotsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Grind Spots de Ingredients
+            {professionGrindSpotsIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Melhores spots por profissão com nível e coordenadas.{" "}
-            <span className="font-medium text-white">NPC</span> indica item comprado de vendedor.{" "}
-            <span className="font-medium text-white">Até 10</span> indica que o spot funciona até
-            cerca de 10 níveis além do indicado.
+            {professionGrindSpotsIntro.description}
           </p>
         </div>
 
@@ -46,16 +47,16 @@ export default function ProfessionGrindSpotsSection() {
                   <thead>
                     <tr className="border-b border-white/5">
                       <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500 sm:px-7">
-                        Nível
+                        {professionGrindSpotsTableHeaders.level}
                       </th>
                       <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500">
-                        Ingredient
+                        {professionGrindSpotsTableHeaders.ingredient}
                       </th>
                       <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500">
-                        Coordenadas
+                        {professionGrindSpotsTableHeaders.coords}
                       </th>
                       <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500 sm:px-7">
-                        Tags
+                        {professionGrindSpotsTableHeaders.tags}
                       </th>
                     </tr>
                   </thead>
@@ -80,12 +81,12 @@ export default function ProfessionGrindSpotsSection() {
                           <div className="flex flex-wrap gap-1">
                             {spot.isNpc ? (
                               <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-xs font-medium text-blue-400">
-                                NPC
+                                {professionGrindSpotsTableHeaders.npcTag}
                               </span>
                             ) : null}
                             {spot.maxLevel ? (
                               <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-xs font-medium text-amber-400">
-                                Até 10
+                                {professionGrindSpotsTableHeaders.maxLevelTag}
                               </span>
                             ) : null}
                           </div>

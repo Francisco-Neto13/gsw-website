@@ -1,4 +1,9 @@
-import { craftingProfessions, gatheringProfessions } from "@/components/professions/data/professions-content";
+import {
+  craftingProfessions,
+  gatheringProfessions,
+  professionCategoryTitles,
+  professionTypesIntro,
+} from "@/components/professions/data/professions-content";
 
 export default function ProfessionTypesSection() {
   return (
@@ -8,20 +13,21 @@ export default function ProfessionTypesSection() {
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Visão geral
+            {professionTypesIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Tipos de Profissão
+            {professionTypesIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Gathering coleta os recursos brutos do mundo. Crafting transforma esses recursos,
-            combinados com ingredients de mobs, em itens utilizáveis.
+            {professionTypesIntro.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-white/10 bg-zinc-900/20 p-6 sm:p-8">
-            <h3 className="mb-6 text-xl font-bold tracking-tight text-white sm:text-2xl">Gathering</h3>
+            <h3 className="mb-6 text-xl font-bold tracking-tight text-white sm:text-2xl">
+              {professionCategoryTitles.gathering}
+            </h3>
             <div className="space-y-3">
               {gatheringProfessions.map((profession) => (
                 <div
@@ -41,7 +47,9 @@ export default function ProfessionTypesSection() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-zinc-900/20 p-6 sm:p-8">
-            <h3 className="mb-6 text-xl font-bold tracking-tight text-white sm:text-2xl">Crafting</h3>
+            <h3 className="mb-6 text-xl font-bold tracking-tight text-white sm:text-2xl">
+              {professionCategoryTitles.crafting}
+            </h3>
             <div className="space-y-3">
               {craftingProfessions.map((profession) => (
                 <div

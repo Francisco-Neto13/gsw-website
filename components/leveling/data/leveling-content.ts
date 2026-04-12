@@ -6,6 +6,12 @@ export type LevelingSpot = {
   notes: string[];
 };
 
+export type SectionIntro = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
 export const levelingIntroParagraphs = [
   "O leveling no Wynncraft pode parecer simples à primeira vista, mas existe uma diferença enorme entre upar de forma aleatória e upar de forma eficiente e organizada. Escolher o spot errado para o seu nível, ignorar a importância de uma party ou não saber usar totens pode fazer com que você leve o dobro do tempo para chegar ao endgame.",
   "As recomendações a seguir são baseadas em matar mobs e bônus de XP. Se for sua primeira classe, é fortemente recomendado que você faça quests, caves e descobertas antes de focar em grinding, porque o XP das quests ainda pesa bastante nos levels iniciais.",
@@ -14,8 +20,14 @@ export const levelingIntroParagraphs = [
 export const levelingPartyDescription =
   "Upar em party é quase obrigatório. O ganho de XP é maior e a chance de sobreviver aumenta bastante. Para encontrar uma, use /pfinder no chat ou fale com um party finder em qualquer cidade.";
 
+export const levelingPartyIntro: SectionIntro = {
+  eyebrow: "Fundamentos",
+  title: "Parties",
+  description: levelingPartyDescription,
+};
+
 export const levelingPartyImage = {
-  src: "/leveling/party_example.webp",
+  src: "/raids/party_finder_listing.webp",
   alt: "Exemplo de party de XP",
   caption: "Exemplo de uma party de XP no party finder.",
 };
@@ -35,6 +47,12 @@ export const levelingPartyCards = [
 
 export const levelingSpotsDescription =
   "Alguns spots cobrem faixas de nível sobrepostas. Se um spot estiver difícil demais ou pouco eficiente, sinta-se livre para mudar para outro mais adequado ao seu momento.";
+
+export const levelingSpotsIntro: SectionIntro = {
+  eyebrow: "Do nível 1 ao 106",
+  title: "Spots",
+  description: levelingSpotsDescription,
+};
 
 export const levelingSpotsClosingQuote =
   "Com a party certa e o spot certo, o level 106 é só uma questão de tempo.";

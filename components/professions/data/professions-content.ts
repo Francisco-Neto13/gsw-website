@@ -24,10 +24,75 @@ export type ProfessionSpots = {
   spots: GrindSpot[];
 };
 
+export type SectionIntro = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
 export const professionsIntroParagraphs = [
   "Existem dois tipos de profissões no Wynncraft: Gathering e Crafting. As de Gathering são niveladas coletando recursos espalhados pelo mapa, cujo nível varia de acordo com a região. As de Crafting utilizam esses recursos combinados com ingredients dropados de mobs para produzir itens consumíveis e equipamentos.",
   "Nossa recomendação é sempre deixar as profissões para o fim da sua trajetória no jogo. É um conteúdo opcional que não afeta diretamente a gameplay e pode consumir bastante tempo. Se precisar de algum item craftado antes disso, peça ajuda aos membros mais experientes da guilda.",
 ];
+
+export const professionTypesIntro: SectionIntro = {
+  eyebrow: "Visão geral",
+  title: "Tipos de Profissão",
+  description:
+    "Gathering coleta os recursos brutos do mundo. Crafting transforma esses recursos, combinados com ingredients de mobs, em itens utilizáveis.",
+};
+
+export const professionCategoryTitles = {
+  gathering: "Gathering",
+  crafting: "Crafting",
+};
+
+export const professionToolsIntro: SectionIntro = {
+  eyebrow: "Otimização",
+  title: "Ferramentas e Bombas",
+  description:
+    "A ferramenta certa e as bombas certas fazem uma diferença enorme no tempo gasto para avançar nas profissões.",
+};
+
+export const professionToolsCardTitles = {
+  tools: "Ferramentas",
+  bombs: "Bombas de Prof",
+  craftingXp: "XP de Crafting",
+};
+
+export const professionGrindSpotsIntro: SectionIntro = {
+  eyebrow: "Crafting",
+  title: "Grind Spots de Ingredients",
+  description:
+    "Melhores spots por profissão com nível e coordenadas. NPC indica item comprado de vendedor. Até 10 indica que o spot funciona até cerca de 10 níveis além do indicado.",
+};
+
+export const professionGrindSpotsTableHeaders = {
+  level: "Nível",
+  ingredient: "Ingredient",
+  coords: "Coordenadas",
+  tags: "Tags",
+  npcTag: "NPC",
+  maxLevelTag: "Até 10",
+};
+
+export const professionWaypointsIntro: SectionIntro = {
+  eyebrow: "Wynntils",
+  title: "Waypoints de Profissão",
+  description:
+    "Se você usa o Wynntils, importe os waypoints de recursos diretamente pelo Content Book para facilitar a visualização no mapa.",
+};
+
+export const professionWaypointsLabels = {
+  importTitle: "Como importar",
+  fileTitle: "profwaypoints.txt",
+  download: "Download",
+  preview:
+    "Prévia do conteúdo. O arquivo .txt completo está disponível para download acima.",
+};
+
+export const professionsClosingQuote =
+  "Profissões são uma maratona, não uma corrida. Se precisar de ajuda, a guilda está aqui.";
 
 export const gatheringProfessions: GatheringProfession[] = [
   { name: "Farming", resources: "Colheita e Linha", tool: "Foice" },

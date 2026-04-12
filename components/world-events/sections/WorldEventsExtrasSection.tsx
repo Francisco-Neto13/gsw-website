@@ -1,5 +1,6 @@
 import {
   worldEventsExtras,
+  worldEventsExtrasIntro,
   worldEventsExtrasQuote,
 } from "@/components/world-events/data/world-events-content";
 
@@ -11,9 +12,11 @@ export default function WorldEventsExtrasSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Informações adicionais
+            {worldEventsExtrasIntro.eyebrow}
           </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">Extra</h2>
+          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+            {worldEventsExtrasIntro.title}
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">

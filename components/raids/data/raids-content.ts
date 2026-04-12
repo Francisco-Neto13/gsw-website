@@ -541,6 +541,12 @@ export type RaidInfoCard = {
   description: string;
 };
 
+export type SectionIntro = {
+  eyebrow: string;
+  title: string;
+  description?: string;
+};
+
 export type RaidGuideGroup = {
   eyebrow: string;
   shortName: string;
@@ -555,6 +561,17 @@ export const raidsIntroParagraphs = [
 
 export const raidFirstStepsDescription =
   "Antes de entrar em qualquer raid, você precisa se registrar no Centro de Divisão Silverbull, localizado a leste de Cinfras. Depois disso, basta ter uma party com 4 pessoas, o nível e as quests exigidas, além da runa correta para cada entrada.";
+
+export const raidFirstStepsIntro: SectionIntro = {
+  eyebrow: "Primeiros passos",
+  title: "Como Participar",
+  description: raidFirstStepsDescription,
+};
+
+export const raidFirstStepsLabels = {
+  quest: "Quest",
+  rune: "Runa",
+};
 
 export const raidFirstStepsSupportImages: RaidStepImage[] = [
   {
@@ -571,6 +588,12 @@ export const raidFirstStepsSupportImages: RaidStepImage[] = [
 
 export const raidStructureDescription =
   "Todas as raids seguem a mesma base: três salas de desafio, intervalos com buffs entre elas e um boss final. O que realmente muda é a mecânica específica de cada mapa.";
+
+export const raidStructureIntro: SectionIntro = {
+  eyebrow: "Dentro da raid",
+  title: "Estrutura",
+  description: raidStructureDescription,
+};
 
 export const raidStructureCards: RaidInfoCard[] = [
   {
@@ -598,6 +621,17 @@ export const raidStructureCards: RaidInfoCard[] = [
 export const guildRaidsDescription =
   "A versão da raid feita com membros da guilda aumenta a dificuldade, mas também melhora as recompensas entregues para a comunidade e para os participantes.";
 
+export const guildRaidsIntro: SectionIntro = {
+  eyebrow: "Conteúdo de guilda",
+  title: "Guild Raids",
+  description: guildRaidsDescription,
+};
+
+export const guildRaidCardTitles = {
+  rewards: "Recompensas da Guilda",
+  aspects: "Distribuição de Aspects",
+};
+
 export const guildRaidRewards = [
   "2048 esmeraldas, equivalentes a 32 blocos, por raid completa.",
   "2 aspects distribuídos entre os participantes da guild raid.",
@@ -614,6 +648,19 @@ export const guildRaidAspectDistribution = [
 
 export const raidGuidesDescription =
   "A partir daqui, cada raid passa a ter uma explicação própria com foco em salas, variações e vídeos.";
+
+export const raidGuidesIntro: SectionIntro = {
+  eyebrow: "Guias das raids",
+  title: "Salas e Bossfights",
+  description: raidGuidesDescription,
+};
+
+export const raidGuidesLabels = {
+  variant: "Variação",
+  extraVideo: "Vídeo extra",
+  upcoming: "Próxima",
+  upcomingDescription: "Estrutura reservada para receber a explicação completa dessa raid depois.",
+};
 
 export const raidGuideGroups: RaidGuideGroup[] = [
   {
@@ -648,6 +695,18 @@ export const raidGuideGroups: RaidGuideGroup[] = [
 
 export const raidRewardsDescription =
   "Depois de concluir a raid, a party é enviada para a sala de recompensa. É ali que entram os pulls finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da equipe ao longo das salas.";
+
+export const raidRewardsIntro: SectionIntro = {
+  eyebrow: "Ao final da raid",
+  title: "Recompensas",
+  description: raidRewardsDescription,
+};
+
+export const raidRewardsLabels = {
+  finalPulls: "Pulls Finais",
+  aspects: "Aspects",
+  aspectExamples: "Exemplos de efeito",
+};
 
 export const raidRewardOutcomes = [
   {
@@ -706,6 +765,12 @@ export const raidRewardImages: RaidStepImage[] = [
 export const raidExtrasDescription =
   "Essa parte reúne tudo o que não está preso a uma sala específica, mas ainda pesa muito na experiência de raid: gambits, ranking, restrições de inventário e detalhes que influenciam a preparação da party antes e depois da run.";
 
+export const raidExtrasIntro: SectionIntro = {
+  eyebrow: "Informações adicionais",
+  title: "Extra",
+  description: raidExtrasDescription,
+};
+
 export const raidExtraHighlights: RaidInfoCard[] = [
   {
     title: "Gambits",
@@ -721,3 +786,10 @@ export const raidExtraHighlights: RaidInfoCard[] = [
       "Itens, inventory lock, composição de party e leitura da mecânica impactam muito mais do que parece.",
   },
 ];
+
+export const raidExtrasLabels = {
+  highlight: "Destaque",
+  note: "Nota",
+  closingQuote:
+    "Quem sobrevive às três salas, merece cada recompensa.",
+};

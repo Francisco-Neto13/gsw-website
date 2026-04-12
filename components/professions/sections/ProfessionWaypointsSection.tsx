@@ -1,4 +1,7 @@
 import {
+  professionWaypointsIntro,
+  professionWaypointsLabels,
+  professionsClosingQuote,
   waypointImportSteps,
   waypointSnippet,
 } from "@/components/professions/data/professions-content";
@@ -11,20 +14,21 @@ export default function ProfessionWaypointsSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Wynntils
+            {professionWaypointsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Waypoints de Profissão
+            {professionWaypointsIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Se você usa o Wynntils, importe os waypoints de recursos diretamente pelo Content Book
-            para facilitar a visualização no mapa.
+            {professionWaypointsIntro.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
           <div className="rounded-2xl border border-white/10 bg-black/40 p-6 sm:p-8">
-            <h3 className="mb-6 text-lg font-bold text-white sm:text-xl">Como importar</h3>
+            <h3 className="mb-6 text-lg font-bold text-white sm:text-xl">
+              {professionWaypointsLabels.importTitle}
+            </h3>
             <ol className="space-y-4">
               {waypointImportSteps.map((step, index) => (
                 <li key={step} className="flex items-start gap-4">
@@ -39,7 +43,9 @@ export default function ProfessionWaypointsSection() {
 
           <div className="rounded-2xl border border-white/10 bg-black/40 p-6 sm:p-8">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-lg font-bold text-white sm:text-xl">profwaypoints.txt</h3>
+              <h3 className="text-lg font-bold text-white sm:text-xl">
+                {professionWaypointsLabels.fileTitle}
+              </h3>
               <a
                 href="/professions/profwaypoints.txt"
                 download
@@ -60,7 +66,7 @@ export default function ProfessionWaypointsSection() {
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
-                Download
+                {professionWaypointsLabels.download}
               </a>
             </div>
             <div className="overflow-hidden rounded-xl border border-white/5 bg-zinc-950">
@@ -69,16 +75,14 @@ export default function ProfessionWaypointsSection() {
               </pre>
             </div>
             <p className="mt-3 text-xs text-zinc-500">
-              Prévia do conteúdo. O arquivo .txt completo está disponível para download acima.
+              {professionWaypointsLabels.preview}
             </p>
           </div>
         </div>
 
         <div className="mt-16 text-center sm:mt-20">
           <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm leading-relaxed text-zinc-500 italic sm:px-12 sm:pt-12">
-            &ldquo;Profissões são uma maratona, não uma corrida. Se precisar de ajuda, a{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">guilda</span> está
-            aqui.&rdquo;
+            &ldquo;{professionsClosingQuote}&rdquo;
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import {
   levelingSpots,
   levelingSpotsClosingQuote,
-  levelingSpotsDescription,
+  levelingSpotsIntro,
 } from "@/components/leveling/data/leveling-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
@@ -14,11 +14,13 @@ export default function LevelingSpotsSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Do nível 1 ao 106
+            {levelingSpotsIntro.eyebrow}
           </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">Spots</h2>
+          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+            {levelingSpotsIntro.title}
+          </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {levelingSpotsDescription}
+            {levelingSpotsIntro.description}
           </p>
         </div>
 

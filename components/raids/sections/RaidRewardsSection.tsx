@@ -5,7 +5,8 @@ import {
   raidFinalPullsTips,
   raidRewardImages,
   raidRewardOutcomes,
-  raidRewardsDescription,
+  raidRewardsIntro,
+  raidRewardsLabels,
 } from "@/components/raids/data/raids-content";
 
 export default function RaidRewardsSection() {
@@ -17,13 +18,13 @@ export default function RaidRewardsSection() {
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Ao final da raid
+            {raidRewardsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Recompensas
+            {raidRewardsIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {raidRewardsDescription}
+            {raidRewardsIntro.description}
           </p>
         </div>
 
@@ -45,7 +46,7 @@ export default function RaidRewardsSection() {
         <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6">
           <div className="rounded-2xl border border-white/10 bg-zinc-900/20 p-6 sm:p-8">
             <span className="mb-4 block text-xs font-bold uppercase tracking-[0.4em] text-gsw">
-              Pulls Finais
+              {raidRewardsLabels.finalPulls}
             </span>
             <ul className="space-y-3">
               {raidFinalPullsTips.map((item) => (
@@ -58,7 +59,9 @@ export default function RaidRewardsSection() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-black/40 p-6 sm:p-8">
-            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.4em] text-gsw">Aspects</span>
+            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.4em] text-gsw">
+              {raidRewardsLabels.aspects}
+            </span>
             <ul className="space-y-3">
               {raidAspectDetails.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
@@ -70,7 +73,7 @@ export default function RaidRewardsSection() {
 
             <div className="mt-6 border-t border-white/5 pt-6">
               <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-zinc-500">
-                Exemplos de efeito
+                {raidRewardsLabels.aspectExamples}
               </span>
               <div className="flex flex-wrap gap-2">
                 {raidAspectExamples.map((example) => (

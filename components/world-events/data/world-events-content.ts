@@ -9,6 +9,12 @@ export type ImageCard = {
   alt: string;
 };
 
+export type SectionIntro = {
+  eyebrow: string;
+  title: string;
+  description?: string;
+};
+
 export const worldEventsIntroParagraphs = [
   "World Events são eventos que acontecem ao redor do mapa do Wynncraft em diversas localidades. São desafios compostos por waves e chefes que, após serem derrotados, recompensam o jogador com itens exclusivos e esmeraldas.",
   "Comparado com Raids e LootRuns, participar é muito mais simples: eles aparecem de forma aleatória no mapa com notificação no chat. Neste guia você vai entender como funcionam, o que é o Annihilation e quais recompensas esperar.",
@@ -17,11 +23,29 @@ export const worldEventsIntroParagraphs = [
 export const worldEventsParticipationDescription =
   "Os eventos acontecem em diversas localidades do mapa e aparecem de forma aleatória com uma notificação no chat, indicando nome, tempo disponível e localização.";
 
+export const worldEventsParticipationIntro: SectionIntro = {
+  eyebrow: "Primeiros passos",
+  title: "Como Participar",
+  description: worldEventsParticipationDescription,
+};
+
 export const worldEventsMechanicsDescription =
   "A estrutura dos world events segue a mesma lógica: waves de inimigos, chefe final e baú de recompensa para quem conclui.";
 
+export const worldEventsMechanicsIntro: SectionIntro = {
+  eyebrow: "Como funciona",
+  title: "Mecânicas",
+  description: worldEventsMechanicsDescription,
+};
+
 export const worldEventsAnnihilationDescription =
   "O Annihilation é o boss principal dos world events. Ele acontece em momentos específicos e foi projetado para ser feito em party.";
+
+export const worldEventsAnnihilationIntro: SectionIntro = {
+  eyebrow: "Atração principal",
+  title: "Annihilation",
+  description: worldEventsAnnihilationDescription,
+};
 
 export const annihilationVideo = {
   videoId: "NEvfcrQujDI",
@@ -31,6 +55,12 @@ export const annihilationVideo = {
 
 export const worldEventsRewardsDescription =
   "Após derrotar o chefe, um baú aparece com recompensas que variam por região e nível do evento.";
+
+export const worldEventsRewardsIntro: SectionIntro = {
+  eyebrow: "Ao final do evento",
+  title: "Recompensas",
+  description: worldEventsRewardsDescription,
+};
 
 export const participationCards: InfoCard[] = [
   {
@@ -48,12 +78,12 @@ export const participationCards: InfoCard[] = [
 export const participationImages: ImageCard[] = [
   {
     title: "World Event 1",
-    src: "/worldevents/world_event_1.png",
+    src: "/worldevents/we.png",
     alt: "Exemplo de world event em andamento",
   },
   {
     title: "World Event 2",
-    src: "/worldevents/world_event_2.png",
+    src: "/worldevents/we_2.png",
     alt: "Segundo exemplo de world event em andamento",
   },
 ];
@@ -145,3 +175,13 @@ export const worldEventsExtras = [
 
 export const worldEventsExtrasQuote =
   "O mundo não para de gerar eventos. A questão é se você vai estar lá quando o Annihilation aparecer.";
+
+export const worldEventsExtrasIntro: SectionIntro = {
+  eyebrow: "Informações adicionais",
+  title: "Extra",
+};
+
+export const worldEventsAnnihilationLabels = {
+  partyTitle: "Composição da Party",
+  sunTitle: "O Sol: mecânica principal",
+};

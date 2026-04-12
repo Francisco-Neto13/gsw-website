@@ -2,7 +2,8 @@ import RaidImageCard from "@/components/raids/sections/RaidImageCard";
 import {
   extras,
   raidExtraHighlights,
-  raidExtrasDescription,
+  raidExtrasIntro,
+  raidExtrasLabels,
   supportImages,
 } from "@/components/raids/data/raids-content";
 
@@ -15,11 +16,13 @@ export default function RaidExtrasSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Informações adicionais
+            {raidExtrasIntro.eyebrow}
           </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">Extra</h2>
+          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+            {raidExtrasIntro.title}
+          </h2>
           <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {raidExtrasDescription}
+            {raidExtrasIntro.description}
           </p>
         </div>
 
@@ -30,7 +33,7 @@ export default function RaidExtrasSection() {
               className="rounded-2xl border border-white/10 bg-black/40 p-5 text-center sm:p-6"
             >
               <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
-                Destaque
+                {raidExtrasLabels.highlight}
               </span>
               <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{item.description}</p>
@@ -46,7 +49,7 @@ export default function RaidExtrasSection() {
             >
               <div className="mb-4 flex items-center justify-between gap-4 border-b border-white/5 pb-4">
                 <span className="text-xs font-bold uppercase tracking-[0.35em] text-gsw/75">
-                  Nota {String(index + 1).padStart(2, "0")}
+                  {raidExtrasLabels.note} {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="select-none text-3xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/15">
                   {String(index + 1).padStart(2, "0")}
@@ -65,8 +68,7 @@ export default function RaidExtrasSection() {
 
         <div className="mt-16 text-center sm:mt-20">
           <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
-            &ldquo;Quem sobrevive às três salas, merece cada{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">recompensa</span>.&rdquo;
+            &ldquo;{raidExtrasLabels.closingQuote}&rdquo;
           </p>
         </div>
       </div>

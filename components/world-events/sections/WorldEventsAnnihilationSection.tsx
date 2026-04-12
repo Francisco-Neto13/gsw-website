@@ -1,10 +1,11 @@
 import Image from "next/image";
 import {
+  worldEventsAnnihilationLabels,
   annihilationVideo,
   annihilationImages,
   annihilationPartyTips,
   annihilationSunTips,
-  worldEventsAnnihilationDescription,
+  worldEventsAnnihilationIntro,
 } from "@/components/world-events/data/world-events-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
@@ -17,13 +18,13 @@ export default function WorldEventsAnnihilationSection() {
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Atração principal
+            {worldEventsAnnihilationIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Annihilation
+            {worldEventsAnnihilationIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {worldEventsAnnihilationDescription}
+            {worldEventsAnnihilationIntro.description}
           </p>
         </div>
 
@@ -45,7 +46,7 @@ export default function WorldEventsAnnihilationSection() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           <article className="group rounded-2xl border border-white/10 bg-zinc-900/20 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
             <h3 className="mb-4 text-xl font-bold tracking-tight text-white sm:text-2xl">
-              Composição da Party
+              {worldEventsAnnihilationLabels.partyTitle}
             </h3>
             <ul className="space-y-3">
               {annihilationPartyTips.map((item) => (
@@ -59,7 +60,7 @@ export default function WorldEventsAnnihilationSection() {
 
           <article className="group rounded-2xl border border-white/10 bg-zinc-900/20 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
             <h3 className="mb-4 text-xl font-bold tracking-tight text-white sm:text-2xl">
-              O Sol: mecânica principal
+              {worldEventsAnnihilationLabels.sunTitle}
             </h3>
             <ul className="space-y-3">
               {annihilationSunTips.map((item) => (

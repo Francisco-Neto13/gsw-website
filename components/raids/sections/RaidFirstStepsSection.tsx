@@ -2,7 +2,8 @@ import Image from "next/image";
 import RaidImageCard from "@/components/raids/sections/RaidImageCard";
 import {
   queueSteps,
-  raidFirstStepsDescription,
+  raidFirstStepsIntro,
+  raidFirstStepsLabels,
   raidFirstStepsSupportImages,
   silverbullNpcImage,
   raids,
@@ -16,13 +17,13 @@ export default function RaidFirstStepsSection() {
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            Primeiros passos
+            {raidFirstStepsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            Como Participar
+            {raidFirstStepsIntro.title}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {raidFirstStepsDescription}
+            {raidFirstStepsIntro.description}
           </p>
         </div>
 
@@ -60,12 +61,12 @@ export default function RaidFirstStepsSection() {
                 <ul className="space-y-2">
                   <li className="flex gap-3 text-sm leading-relaxed text-zinc-400">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
-                    <span>Quest: {raid.quest}</span>
+                    <span>{raidFirstStepsLabels.quest}: {raid.quest}</span>
                   </li>
                   <li className="flex gap-3 text-sm leading-relaxed text-zinc-400">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                     <span>
-                      Runa: <span className="font-medium text-white">{raid.rune}</span>
+                      {raidFirstStepsLabels.rune}: <span className="font-medium text-white">{raid.rune}</span>
                     </span>
                   </li>
                 </ul>
