@@ -13,6 +13,7 @@ export const sitePageLinks: SitePageLink[] = [
   { label: "História", href: "/historia" },
   { label: "Leveling", href: "/leveling" },
   { label: "Profissões", href: "/professions" },
+  { label: "Lootrun", href: "/lootrun" },
   { label: "Modos", href: "/modos-especiais" },
   { label: "World Events", href: "/world-events" },
   { label: "Raids", href: "/raids" },
