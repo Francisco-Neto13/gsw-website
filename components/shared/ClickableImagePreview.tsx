@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { type ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -75,13 +74,10 @@ export default function ClickableImagePreview({
             style={{ height: "calc(100vh - 160px)" }}
           >
             <div className="relative flex h-full w-full items-center justify-center rounded-lg bg-black/60 p-2 sm:p-3">
-              <Image
+              <img
                 src={src}
                 alt={alt}
-                width={2000}
-                height={1400}
                 className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-                sizes="100vw"
               />
             </div>
           </div>
