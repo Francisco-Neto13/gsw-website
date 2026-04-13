@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import { lootrunMechanicCards, lootrunMechanicsIntro } from "@/components/lootrun/data/lootrun-content";
 
@@ -32,7 +33,15 @@ export default function LootrunMechanicsSection() {
                 </div>
                 <div className="flex min-h-[300px] items-center justify-center border-t border-white/5 bg-zinc-950/50 p-4 lg:border-t-0 lg:border-l">
                   <ClickableImagePreview src={item.image} alt={item.title}>
-                    <img src={item.image} alt={item.title} className="max-h-[520px] w-full rounded-lg object-contain" />
+                    <div className="relative h-[260px] w-full overflow-hidden rounded-lg sm:h-[320px] lg:h-[360px]">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-contain"
+                      />
+                    </div>
                   </ClickableImagePreview>
                 </div>
               </div>

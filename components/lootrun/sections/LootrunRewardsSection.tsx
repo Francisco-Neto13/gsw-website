@@ -1,4 +1,6 @@
+import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
 import {
   lootrunRewardChest,
   lootrunRewardItems,
@@ -38,21 +40,15 @@ export default function LootrunRewardsSection() {
         </p>
 
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-          {lootrunRewardVideos.map((video) => (
+          {lootrunRewardVideos.map((video, index) => (
             <article key={video.title} className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
               <div className="border-b border-white/5 px-5 py-4">
                 <span className="block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
                   {video.title}
                 </span>
               </div>
-              <div className="relative aspect-video w-full">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 h-full w-full"
-                />
+              <div className="px-4 pt-4 sm:px-5 sm:pt-5">
+                <LazyYouTubeEmbed videoId={video.id} title={video.title} priority={index === 0} />
               </div>
               <p className="px-5 py-4 text-sm leading-relaxed text-zinc-400">{video.description}</p>
             </article>
@@ -60,9 +56,15 @@ export default function LootrunRewardsSection() {
         </div>
 
         <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-          <div className="relative aspect-video w-full">
+          <div className="relative aspect-video w-full bg-black/50">
             <ClickableImagePreview src={lootrunRewardChest.src} alt={lootrunRewardChest.alt}>
-              <img src={lootrunRewardChest.src} alt={lootrunRewardChest.alt} className="h-full w-full object-cover" />
+              <Image
+                src={lootrunRewardChest.src}
+                alt={lootrunRewardChest.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 768px"
+                className="object-cover"
+              />
             </ClickableImagePreview>
           </div>
           <p className="px-5 py-4 text-center text-sm leading-relaxed text-zinc-400">

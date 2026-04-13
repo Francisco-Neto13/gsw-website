@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import { lootrunParticipation } from "@/components/lootrun/data/lootrun-content";
 
@@ -23,9 +24,18 @@ export default function LootrunParticipationSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-          {lootrunParticipation.images.map((image) => (
+          {lootrunParticipation.images.map((image, index) => (
             <ClickableImagePreview key={image.src} src={image.src} alt={image.alt}>
-              <img src={image.src} alt={image.alt} className="h-full w-full rounded-2xl border border-white/10 object-cover" />
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/50">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </ClickableImagePreview>
           ))}
         </div>

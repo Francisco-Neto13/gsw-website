@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import {
   lootrunExtraSupportImages,
@@ -41,9 +42,15 @@ export default function LootrunExtrasSection() {
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {lootrunExtraSupportImages.map((image) => (
             <article key={image.src} className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40">
-              <div className="relative aspect-video w-full">
+              <div className="relative aspect-video w-full bg-black/50">
                 <ClickableImagePreview src={image.src} alt={image.alt}>
-                  <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </ClickableImagePreview>
               </div>
               <p className="px-4 py-3 text-center text-xs leading-relaxed text-zinc-500 sm:px-5">{image.caption}</p>

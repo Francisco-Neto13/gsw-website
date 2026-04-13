@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import {
   raidGuideGroups,
   raidGuidesIntro,
@@ -9,19 +6,22 @@ import {
   type RaidGuideRoom,
   type RaidGuideVariant,
 } from "@/components/raids/data/raids-content";
+import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
 
 function RaidVariantCard({
   roomLabel,
   variant,
   variantIndex,
+  priorityVideo = false,
 }: {
   roomLabel: string;
   variant: RaidGuideVariant;
   variantIndex: number;
+  priorityVideo?: boolean;
 }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-      <div data-raid-text className="flex flex-col">
+      <div className="flex flex-col">
         <div className="border-b border-white/5 px-5 py-5 sm:px-6">
           <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
             {raidGuidesLabels.variant} {String(variantIndex + 1).padStart(2, "0")}
@@ -45,31 +45,22 @@ function RaidVariantCard({
         </div>
       </div>
 
-      <div data-raid-media className="mt-auto space-y-5 px-5 pb-5 sm:px-6 sm:pb-6">
-        <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-zinc-900">
-          <iframe
-            src={`https://www.youtube.com/embed/${variant.videoId}`}
-            title={`${roomLabel} - ${variant.name}`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 h-full w-full"
-          />
-        </div>
+      <div className="mt-auto space-y-5 px-5 pb-5 sm:px-6 sm:pb-6">
+        <LazyYouTubeEmbed
+          videoId={variant.videoId}
+          title={`${roomLabel} - ${variant.name}`}
+          priority={priorityVideo}
+        />
 
         {variant.secondaryVideoId ? (
           <div className="space-y-3">
             <span className="block text-center text-xs font-bold uppercase tracking-[0.3em] text-zinc-500">
               {variant.secondaryLabel ?? raidGuidesLabels.extraVideo}
             </span>
-            <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-zinc-900">
-              <iframe
-                src={`https://www.youtube.com/embed/${variant.secondaryVideoId}`}
-                title={`${roomLabel} - ${variant.secondaryLabel ?? raidGuidesLabels.extraVideo}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
-            </div>
+            <LazyYouTubeEmbed
+              videoId={variant.secondaryVideoId}
+              title={`${roomLabel} - ${variant.secondaryLabel ?? raidGuidesLabels.extraVideo}`}
+            />
           </div>
         ) : null}
       </div>
@@ -78,53 +69,8 @@ function RaidVariantCard({
 }
 
 function RaidRoomCard({ room, roomIndex }: { room: RaidGuideRoom; roomIndex: number }) {
-  const roomRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const root = roomRef.current;
-    if (!root) return;
-
-    const syncHeights = () => {
-      const textBlocks = Array.from(root.querySelectorAll<HTMLElement>("[data-raid-text]"));
-      const mediaBlocks = Array.from(root.querySelectorAll<HTMLElement>("[data-raid-media]"));
-
-      [...textBlocks, ...mediaBlocks].forEach((element) => {
-        element.style.minHeight = "";
-      });
-
-      if (window.innerWidth < 1280) {
-        return;
-      }
-
-      const maxTextHeight = Math.max(...textBlocks.map((element) => element.offsetHeight), 0);
-      const maxMediaHeight = Math.max(...mediaBlocks.map((element) => element.offsetHeight), 0);
-
-      textBlocks.forEach((element) => {
-        element.style.minHeight = `${maxTextHeight}px`;
-      });
-
-      mediaBlocks.forEach((element) => {
-        element.style.minHeight = `${maxMediaHeight}px`;
-      });
-    };
-
-    const frame = requestAnimationFrame(syncHeights);
-    const resizeObserver = new ResizeObserver(syncHeights);
-    resizeObserver.observe(root);
-    window.addEventListener("resize", syncHeights);
-
-    return () => {
-      cancelAnimationFrame(frame);
-      resizeObserver.disconnect();
-      window.removeEventListener("resize", syncHeights);
-    };
-  }, [room]);
-
   return (
-    <div
-      ref={roomRef}
-      className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
-    >
+    <div className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30">
       <div className="border-b border-white/5 px-5 py-4 sm:px-7 sm:py-5">
         <div className="flex items-start gap-4">
           <span className="select-none text-3xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/15 sm:text-4xl">
@@ -153,6 +99,7 @@ function RaidRoomCard({ room, roomIndex }: { room: RaidGuideRoom; roomIndex: num
             roomLabel={room.room}
             variant={variant}
             variantIndex={variantIndex}
+            priorityVideo={roomIndex === 0 && variantIndex === 0}
           />
         ))}
       </div>

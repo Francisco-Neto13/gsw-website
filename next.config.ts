@@ -1,26 +1,21 @@
 import type { NextConfig } from "next";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const remotePatterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [];
-
-if (supabaseUrl) {
-  const { protocol, hostname, port } = new URL(supabaseUrl);
-
-  remotePatterns.push({
-    protocol: protocol.replace(":", "") as "http" | "https",
-    hostname,
-    port,
-    pathname: "/storage/v1/object/public/**",
-  });
-}
-
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  images: {
-    remotePatterns,
-  },
   async headers() {
     return [
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        source: "/:path*\\.(png|jpg|jpeg|webp|avif|gif|svg|ico|woff|woff2|ttf|otf)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
       {
         source: '/(.*)',
         headers: [
