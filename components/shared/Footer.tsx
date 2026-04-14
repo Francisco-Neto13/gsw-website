@@ -9,9 +9,14 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-3 items-center px-6 py-6 gap-6 md:gap-0">
         <div className="text-zinc-500 text-xs font-medium tracking-wide text-center md:text-left justify-self-center md:justify-self-start">
           Desenvolvido por
-          <span className="text-zinc-200 ml-1.5 hover:text-gsw transition-colors cursor-default font-semibold">
+          <a
+            href="https://github.com/Francisco-Neto13"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-200 ml-1.5 hover:text-gsw transition-colors cursor-pointer font-semibold"
+          >
             Francisco
-          </span>
+          </a>
         </div>
 
         <div className="text-zinc-400 text-[11px] uppercase tracking-[0.4em] font-bold text-center justify-self-center">
@@ -20,7 +25,7 @@ export default function Footer() {
 
         <div className="flex items-center gap-6 justify-self-center md:justify-self-end">
           <a
-            href="https://github.com/Francisco-Neto13"
+            href="https://github.com/Francisco-Neto13/gsw-website"
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-400 transition-all hover:scale-110 hover:text-white"
@@ -31,20 +36,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://www.instagram.com/cisscoo_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-400 transition-all hover:scale-110 hover:text-white"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-
-          <a
-            href="https://discord.com/users/iyasuo_"
+            href="https://discord.gg/Ec2YPWTN9E"
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-400 transition-all hover:scale-110 hover:text-[#5865F2]"
