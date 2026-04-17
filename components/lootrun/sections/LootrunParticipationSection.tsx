@@ -1,6 +1,5 @@
-import Image from "next/image";
-import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
-import { lootrunParticipation } from "@/components/lootrun/data/lootrun-content";
+﻿import { lootrunParticipation } from "@/components/lootrun/data/lootrun-content";
+import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
 
 export default function LootrunParticipationSection() {
   return (
@@ -13,9 +12,14 @@ export default function LootrunParticipationSection() {
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
             {lootrunParticipation.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {lootrunParticipation.description}
-          </p>
+          {lootrunParticipation.paragraphs.map((paragraph) => (
+            <p
+              key={paragraph}
+              className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base"
+            >
+              {paragraph}
+            </p>
+          ))}
           <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
             Localização: <span className="font-medium text-white">{lootrunParticipation.location}</span>.
             <br />
@@ -23,20 +27,13 @@ export default function LootrunParticipationSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-          {lootrunParticipation.images.map((image, index) => (
-            <ClickableImagePreview key={image.src} src={image.src} alt={image.alt}>
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/50">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            </ClickableImagePreview>
+        <div
+          className={`grid grid-cols-1 gap-4 ${
+            lootrunParticipation.media.length > 1 ? "sm:grid-cols-2 sm:gap-6" : ""
+          }`}
+        >
+          {lootrunParticipation.media.map((item) => (
+            <LootrunMediaPlaceholder key={item.name} item={item} kind="Imagem" />
           ))}
         </div>
       </div>

@@ -1,8 +1,12 @@
-import Footer from "@/components/shared/Footer";
+﻿import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
 import Navbar from "@/components/shared/Navbar";
 import { lootrunGuideIntro } from "@/components/lootrun/data/lootrun-content";
+import LootrunAdvancedSystemsSection from "@/components/lootrun/sections/LootrunAdvancedSystemsSection";
 import LootrunBeaconsSection from "@/components/lootrun/sections/LootrunBeaconsSection";
+import LootrunCampsSection from "@/components/lootrun/sections/LootrunCampsSection";
+import LootrunCombosSection from "@/components/lootrun/sections/LootrunCombosSection";
+import LootrunDivisionsSection from "@/components/lootrun/sections/LootrunDivisionsSection";
 import LootrunExtrasSection from "@/components/lootrun/sections/LootrunExtrasSection";
 import LootrunMechanicsSection from "@/components/lootrun/sections/LootrunMechanicsSection";
 import LootrunParticipationSection from "@/components/lootrun/sections/LootrunParticipationSection";
@@ -27,8 +31,12 @@ export default function LootrunPage() {
         />
 
         <LootrunParticipationSection />
+        <LootrunDivisionsSection />
+        <LootrunCampsSection />
         <LootrunMechanicsSection />
         <LootrunBeaconsSection />
+        <LootrunAdvancedSystemsSection />
+        <LootrunCombosSection />
         <LootrunRewardsSection />
         <LootrunExtrasSection />
       </main>
