@@ -54,8 +54,8 @@ export default function LevelingSpotsSection() {
                   ))}
                 </ul>
                 <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
-                  <div className="relative aspect-video w-full border-t border-white/5 lg:border-t-0 lg:border-l">
-                    <Image src={spot.image} alt={`Screenshot do spot ${spot.name}`} fill className="object-cover" />
+                  <div className="relative aspect-video w-full overflow-hidden border-t border-white/5 bg-zinc-950 p-1 sm:p-2 lg:border-t-0 lg:border-l">
+                    <Image src={spot.image} alt={`Screenshot do spot ${spot.name}`} fill className="object-contain" />
                   </div>
                 </ClickableImagePreview>
               </div>
