@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { memo } from "react";
-import { members, type Member } from "@/features/members/data/members";
+import { members, type Member } from "@/components/history/data/members";
 
 function normalizeImageSrc(src: string) {
   if (!src) {
@@ -113,7 +113,7 @@ export default function MembersSection() {
               <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/members</code>{" "}
               e preencha a lista em{" "}
               <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
-                features/members/data/members.ts
+                components/history/data/members.ts
               </code>
               .
             </p>

@@ -46,11 +46,24 @@ function RaidVariantCard({
       </div>
 
       <div className="mt-auto space-y-5 px-5 pb-5 sm:px-6 sm:pb-6">
-        <LazyYouTubeEmbed
-          videoId={variant.videoId}
-          title={`${roomLabel} - ${variant.name}`}
-          priority={priorityVideo}
-        />
+        {variant.videoId ? (
+          <LazyYouTubeEmbed
+            videoId={variant.videoId}
+            title={`${roomLabel} - ${variant.name}`}
+            priority={priorityVideo}
+          />
+        ) : (
+          <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-white/20 bg-zinc-900/60 p-6 text-center">
+            <div>
+              <span className="block text-xs font-bold uppercase tracking-[0.3em] text-zinc-500">
+                Video em breve
+              </span>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                {variant.videoPlaceholder ?? "Espaco reservado para o video desta estrategia."}
+              </p>
+            </div>
+          </div>
+        )}
 
         {variant.secondaryVideoId ? (
           <div className="space-y-3">

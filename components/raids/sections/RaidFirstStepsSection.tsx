@@ -86,6 +86,12 @@ export default function RaidFirstStepsSection() {
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                     <span>{raidFirstStepsLabels.quest}: {raid.quest}</span>
                   </li>
+                  {raid.location ? (
+                    <li className="flex gap-3 text-sm leading-relaxed text-zinc-400">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
+                      <span>{raidFirstStepsLabels.location}: {raid.location}</span>
+                    </li>
+                  ) : null}
                   <li className="flex gap-3 text-sm leading-relaxed text-zinc-400">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                     <span>

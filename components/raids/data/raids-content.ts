@@ -4,6 +4,7 @@ export type RaidCatalogItem = {
   quest: string;
   rune: string;
   image: string;
+  location?: string;
 };
 
 export type RaidStepImage = {
@@ -15,7 +16,8 @@ export type RaidStepImage = {
 export type RaidGuideVariant = {
   name: string;
   summary: string;
-  videoId: string;
+  videoId?: string;
+  videoPlaceholder?: string;
   secondaryVideoId?: string;
   secondaryLabel?: string;
   points: string[];
@@ -35,10 +37,11 @@ export type RaidCaptionImage = {
 };
 
 export const raids: RaidCatalogItem[] = [
-  { name: "Nest of the Grootslangs", level: "Lvl 55+", quest: "Realm of Light I — The Worm Holes", rune: "Az Rune", image: "/raids/notg.png" },
-  { name: "Orphion's Nexus of Light", level: "Lvl 80+", quest: "Realm of Light I até o V", rune: "Uth Rune", image: "/raids/nol.png" },
-  { name: "The Canyon Colossus", level: "Lvl 97+", quest: "The Thanos Repository, Dwarves and Doguns I–IV, The Envoy I e II, The Breaking Point", rune: "Tol Rune", image: "/raids/tcc.png" },
-  { name: "The Nameless Anomaly", level: "Lvl 103+", quest: "A Journey Beyond e A Journey Further", rune: "Tol Rune", image: "/raids/tna.png" },
+  { name: "Nest of the Grootslangs", level: "Lvl 55+", quest: "Realm of Light I — The Worm Holes", rune: "Az Rune", image: "/raids/notg.png", location: "X: -1977, Z: -5661" },
+  { name: "Orphion's Nexus of Light", level: "Lvl 80+", quest: "Realm of Light I até o V", rune: "Uth Rune", image: "/raids/nol.png", location: "X: -732, Z: -6499" },
+  { name: "The Canyon Colossus", level: "Lvl 97+", quest: "The Thanos Repository, Dwarves and Doguns I–IV, The Envoy I e II, The Breaking Point", rune: "Tol Rune", image: "/raids/tcc.png", location: "X: 721, Z: -4452" },
+  { name: "The Nameless Anomaly", level: "Lvl 103+", quest: "A Journey Beyond e A Journey Further", rune: "Tol Rune", image: "/raids/tna.png", location: "X: 1071, Z: -830" },
+  { name: "The Wartorn Palace", level: "Lvl 119+", quest: "Apotheosis", rune: "Ek Rune", image: "/raids/twp.png", location: "X: -1625, Z: -674" },
 ];
 
 export const queueSteps: RaidStepImage[] = [
@@ -58,7 +61,7 @@ export const silverbullNpcImage: RaidStepImage = {
 export const cinfrasSilverbullImage: RaidStepImage = {
   src: "/lootrun/Cinfras_silverbull.png",
   alt: "Entrada de Cinfras para o Centro Silverbull",
-  caption: "Entrada em Cinfras para acessar o Centro de Divisao Silverbull.",
+  caption: "Entrada em Cinfras para acessar o Centro de Divisão Silverbull.",
 };
 
 export const guildRaidAvailableImage: RaidStepImage = {
@@ -519,6 +522,89 @@ export const tnaRooms: RaidGuideRoom[] = [
   },
 ];
 
+export const twpRooms: RaidGuideRoom[] = [
+  {
+    room: "Sala 1",
+    title: "Desbloqueie as Portas Elementais ou Exploda os Mobs com Luz",
+    description:
+"A primeira sala da TWP possui duas variações. Em uma, a party escolhe elementos nas portas e limpa dois lados antes do boss da sala. Na outra, um player usa o Sonic Amplifier na parte de cima enquanto o resto controla os mobs embaixo.",
+        variants: [
+          {
+            name: "Desbloqueie as Portas Elementais",
+            summary:
+              "Todos limpam mobs para abrir portas, escolhem elementos e, no salão principal, se dividem em dois lados antes de juntar para o boss da sala.",
+            videoPlaceholder: "POV da sala. Vídeo será adicionado depois.",
+            points: [
+              "Cada porta mostra dois elementos e o elemento escolhido define o tipo de mob da próxima parte. São 8 portas no total.",
+              "Ao chegar no salão principal, o time divide em 2 players por lado para limpar as duas salas laterais.",
+              "A progressão só conta quando os dois lados são finalizados.",
+              "Depois, todos retornam para a porta principal para matar o mob principal e a horda que acompanha.",
+              "No fechamento da sala, ainda existem 3 hordas antes de concluir.",
+              "Na guild raid, a principal diferença aqui é a vida dos mobs.",
+            ],
+          },
+      {
+        name: "Exploda os Mobs com Luz",
+        summary:
+"Um player fica na parte de cima carregando e disparando o Sonic Amplifier, enquanto os players de baixo matam mobs e agrupam os alvos para os tiros de luz.",
+        videoPlaceholder: "POV de quem fica na parte de cima. Vídeo será adicionado depois.",
+        points: [
+          "Quem sobe pega o item Sonic Amplifier e quebra os blocos glowing no teto para carregar a arma.",
+          "Depois de carregar, o objetivo é atirar na maior quantidade de mobs possível.",
+          "O mob roxo puxa os Jagaubis ao morrer, então esse momento é ideal para disparar.",
+          "Buraco negro, batida no chão e agro de guardian também ajudam a juntar mobs para o tiro.",
+          "Quem fica embaixo prioriza matar mobs, especialmente o roxo, e tenta manter o pack no símbolo do disparo.",
+          "Na guild raid, a principal diferença aqui é a vida dos mobs.",
+        ],
+      },
+    ],
+  },
+  {
+    room: "Sala 2",
+    title: "Destrua os Escudos",
+    description:
+      "A segunda sala da TWP é única. Um player precisa subir para destruir escudos continuamente enquanto o restante da party mantém dano no boss embaixo.",
+    variants: [
+      {
+        name: "Destrua os Escudos",
+        summary:
+          "Um player sobe para destruir os escudos e remover resistência do boss; os outros players ficam embaixo focando o boss e controle da arena.",
+        videoPlaceholder: "POV de quem mata os escudos. Vídeo será adicionado depois.",
+        points: [
+          "Um player pisa nos ovos do centro para ser lançado para a parte de cima.",
+          "No alto, ele deve quebrar os escudos sem parar para reduzir a resistência do boss até 0%.",
+          "Os escudos respawnam muito rápido, então essa função precisa ser constante.",
+          "Embaixo, o time foca o boss com a melhor rota de posicionamento para reduzir risco de mobs.",
+          "Na versão de guild raid, são 6 escudos e cada um reduz menos resistência que na raid normal.",
+          "A outra diferença relevante entre normal e guild raid continua sendo a vida dos mobs.",
+        ],
+      },
+    ],
+  },
+  {
+    room: "Sala 3",
+    title: "Destrua os Buracos",
+    description:
+      "A terceira sala da TWP também é única. Um player usa o artefato para dar dash em caixas e espinhos, enquanto o restante ajuda a matar os buracos e manter as caixas expostas.",
+    variants: [
+      {
+        name: "Destrua os Buracos",
+        summary:
+          "Um player pega o artefato (spear), espera os buracos spawnarem e usa dash nas caixas para expor novos alvos até quebrar os 9 buracos da sala.",
+        videoPlaceholder: "POV de quem pega o artefato. Vídeo será adicionado depois.",
+        points: [
+          "Um player pega o artefato no meio e espera os buracos criarem nametag de mob antes da execução principal.",
+          "Depois que os buracos ficam ativos, os outros players ajudam a matar para as caixas surgirem.",
+          "Quem está com artefato dá dash nas caixas e nos espinhos para expor novos buracos e pode pegar mais de um por vez.",
+          "É necessário quebrar 9 buracos no total, incluindo o buraco central.",
+          "Quem não está com artefato deve ficar em cima das caixas para elas não se enterrarem novamente.",
+          "Cada dash spawna um Carnifex; ele precisa morrer rápido para restaurar o dash do artefato.",
+        ],
+      },
+    ],
+  },
+];
+
 export const upcomingRaidGuides: string[] = [];
 
 export const extras = [
@@ -577,13 +663,14 @@ export const raidFirstStepsIntro: SectionIntro = {
 export const raidFirstStepsLabels = {
   quest: "Quest",
   rune: "Runa",
+  location: "Localização",
 };
 
 export const raidFirstStepsSupportImages: RaidStepImage[] = [
   {
     src: "/raids/runas_.png",
     alt: "Tipos de runa das raids",
-    caption: "Tipos de runa usados nas raids: Az, Uth e Tol.",
+    caption: "Tipos de runa usados nas raids: Az, Uth, Tol e Ek.",
   },
 ];
 
@@ -691,6 +778,13 @@ export const raidGuideGroups: RaidGuideGroup[] = [
     description:
       "A TNA fecha o ciclo das raids com uma mistura forte de cegueira, guidagem, coleta de recursos e salas que punem muito qualquer desorganização da party.",
     rooms: tnaRooms,
+  },
+  {
+    eyebrow: "The Wartorn Palace",
+    shortName: "TWP",
+    description:
+      "A TWP segue o mesmo padrão por Salas. As gravações de referência são em raid normal e, na prática, a maior diferença para guild raid fica em vida dos mobs e alguns ajustes de resistência.",
+    rooms: twpRooms,
   },
 ];
 

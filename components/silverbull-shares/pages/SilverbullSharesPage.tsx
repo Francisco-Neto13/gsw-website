@@ -5,6 +5,7 @@ import { silverbullGuideIntro } from "@/components/silverbull-shares/data/silver
 import SilverbullBombsSection from "@/components/silverbull-shares/sections/SilverbullBombsSection";
 import SilverbullCratesSection from "@/components/silverbull-shares/sections/SilverbullCratesSection";
 import SilverbullExtrasSection from "@/components/silverbull-shares/sections/SilverbullExtrasSection";
+import SilverbullMembershipSection from "@/components/silverbull-shares/sections/SilverbullMembershipSection";
 import SilverbullOverviewSection from "@/components/silverbull-shares/sections/SilverbullOverviewSection";
 import SilverbullPetsSection from "@/components/silverbull-shares/sections/SilverbullPetsSection";
 import SilverbullRanksSection from "@/components/silverbull-shares/sections/SilverbullRanksSection";
@@ -30,6 +31,7 @@ export default function SilverbullSharesPage() {
 
         <SilverbullOverviewSection />
         <SilverbullRanksSection />
+        <SilverbullMembershipSection />
         <SilverbullCratesSection />
         <SilverbullBombsSection />
         <SilverbullPetsSection />

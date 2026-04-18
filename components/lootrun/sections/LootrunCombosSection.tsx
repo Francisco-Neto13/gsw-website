@@ -54,9 +54,9 @@ export default function LootrunCombosSection() {
               <p className="mb-5 text-sm leading-relaxed text-zinc-400 sm:text-base">{combo.summary}</p>
 
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <ComboList title="Miss\u00f5es necess\u00e1rias" items={combo.missionRequired} />
-                <ComboList title="Miss\u00f5es recomendadas" items={combo.missionRecommended} />
-                <ComboList title="Trials necess\u00e1rias" items={combo.trialRequired} />
+                <ComboList title="Missões necessárias" items={combo.missionRequired} />
+                <ComboList title="Missões recomendadas" items={combo.missionRecommended} />
+                <ComboList title="Trials necessárias" items={combo.trialRequired} />
                 <ComboList title="Trials recomendadas" items={combo.trialRecommended} />
               </div>
             </article>

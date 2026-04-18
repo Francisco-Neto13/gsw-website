@@ -27,6 +27,12 @@ export type BombCard = {
   description: string;
 };
 
+export type MembershipBenefit = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
 export type PetBundleCard = {
   colorLabel: string;
   name: string;
@@ -275,6 +281,67 @@ export const rankCards: RankCard[] = [
 export const rankTip =
   "Dica GsW: HERO tende a ser o melhor custo-benefício para a maioria dos jogadores (60 Shares), cobrindo os benefícios mais usados sem pagar o valor completo do Champion.";
 
+export const membershipIntro: SectionIntro = {
+  eyebrow: "Silverbull",
+  title: "Silverbull Membership",
+  description:
+    "E por fim, a queridinha de todos. Se quer estar na moda, vale conferir se voce ja e membro premium da maior organizacao capitalista do mundo.",
+};
+
+export const membershipSummary = [
+  "A assinatura e um rank nao permanente que custa 6 Tradable Shares e dura 14 dias.",
+  "Diferente dos demais ranks, ela traz beneficios unicos nao essenciais para a gameplay, mas que melhoram bastante a experiencia no dia a dia.",
+];
+
+export const membershipBenefits: MembershipBenefit[] = [
+  {
+    icon: "01",
+    title: "Chat Tag",
+    description: "Mostra a tag da assinatura em cada mensagem enviada no chat.",
+  },
+  {
+    icon: "02",
+    title: "Taxa menor do Trade Market",
+    description: "A taxa padrao de 5% dos itens comprados no Trade Market cai para 3%.",
+  },
+  {
+    icon: "03",
+    title: "Rodar mais cosmeticos",
+    description: "Agora sao necessarios apenas 3 cosmeticos para combinar em uma skin de tier maior.",
+  },
+  {
+    icon: "04",
+    title: "Crates em dobro",
+    description: "As crates gratis de eventos ou de ranks sao dobradas enquanto a assinatura estiver ativa.",
+  },
+  {
+    icon: "05",
+    title: "Bonus em dobro",
+    description: "Os bonus diarios de Lootrun ou Raid sao dobrados com a Membership ativa.",
+  },
+  {
+    icon: "06",
+    title: "Esconder armadura e visuais",
+    description: "Libera glints, chromas para cosmeticos e a opcao de esconder pecas da armadura.",
+  },
+  {
+    icon: "07",
+    title: "Shares gratis",
+    description: "Concede 5 shares mensais gratis, exigindo assinaturas ativas em sequencia.",
+  },
+  {
+    icon: "08",
+    title: "Acesso ao BETA",
+    description: "Garante acesso ao BETA fechado de futuras atualizacoes quando ele estiver ativo.",
+  },
+];
+
+export const membershipImage: MediaCard = {
+  src: "/shares/assinatura_silverbull.png",
+  alt: "Beneficios da assinatura Silverbull",
+  label: "Beneficios da assinatura Silverbull",
+};
+
 export const cratesIntro: SectionIntro = {
   eyebrow: "Crates",
   title: "Caixas e Tiers",
@@ -323,11 +390,6 @@ export const crateExtraImages: MediaCard[] = [
     src: "/shares/caixa_evento_sazonal.png",
     alt: "Exemplo de crate de evento sazonal",
     label: "Crate de Evento Sazonal",
-  },
-  {
-    src: "/shares/assinatura_silverbull.png",
-    alt: "Beneficios da assinatura Silverbull",
-    label: "Assinatura Silverbull",
   },
 ];
 

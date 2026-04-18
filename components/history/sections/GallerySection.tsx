@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { galleryPhotos } from "@/features/gallery/data/gallery";
+import { galleryPhotos } from "@/components/history/data/gallery";
 
 export default function GallerySection() {
   const photos = galleryPhotos;
@@ -90,7 +90,7 @@ export default function GallerySection() {
               <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/gallery</code>{" "}
               e preencha a lista em{" "}
               <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
-                features/gallery/data/gallery.ts
+                components/history/data/gallery.ts
               </code>
               .
             </p>

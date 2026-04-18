@@ -38,7 +38,11 @@ export default function SilverbullCratesSection() {
           <SilverbullImageSlot label={chestStoreImage.label} src={chestStoreImage.src} alt={chestStoreImage.alt} />
         </div>
 
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={`mt-4 grid grid-cols-1 gap-4 ${
+            crateExtraImages.length > 1 ? "sm:grid-cols-2" : ""
+          } ${crateExtraImages.length > 2 ? "lg:grid-cols-3" : ""}`}
+        >
           {crateExtraImages.map((item) => (
             <SilverbullImageSlot key={item.label} label={item.label} src={item.src} alt={item.alt} compact />
           ))}

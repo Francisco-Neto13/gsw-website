@@ -9,7 +9,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   { title: "Anti-Afk", description: "Annihilation e o tempo do AFK", src: "/gallery/anti_afk.png" },
   { title: "Annihilation", description: "O momento em que o servidor não aguentou", src: "/gallery/annihilation.png" },
   { title: "Annihilation 2", description: "O Retorno do LAG", src: "/gallery/annihilation2.png" },
-  { title: "Cache Annihilation", description: "2°Cache do Annihilation", src: "/gallery/2_cache_annihilation.png" },
+  { title: "Cache Annihilation", description: "2º Cache do Annihilation", src: "/gallery/2_cache_annihilation.png" },
   { title: "Evento Pagu", description: "Evento da P4gu", src: "/gallery/evento_pagu.png" },
   { title: "Faye Trem", description: "Faye e seu grande Trem-Crocodilo", src: "/gallery/faye_trem.png" },
   { title: "Final Season", description: "Final de Season", src: "/gallery/final_season.png" },
@@ -33,6 +33,5 @@ export const galleryPhotos: GalleryPhoto[] = [
   { title: "Reunião na Ilha III", description: "Comemoração Pós-evento", src: "/gallery/reuniao_ilha3.png" },
   { title: "Reunidos na Árvore", description: "Todos juntos", src: "/gallery/reunidos_na_arvore.png" },
   { title: "Sala de Gambling", description: "Rodando Míticas", src: "/gallery/sala_de_gambling.png" },
-  { title: "Gambling", description: "Sala de Gambling", src: "/gallery/sala_de_gambling.png" },
   { title: "War Antiga", description: "Primeiras Guerras", src: "/gallery/war_antiga.png" },
 ];
