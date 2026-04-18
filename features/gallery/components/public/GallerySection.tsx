@@ -107,10 +107,10 @@ export default function GallerySection() {
       </div>
 
       {selectedPhoto && (
-        <div
-          className="fixed inset-0 z-[110] flex items-center justify-center bg-black/95 p-2 animate-fade-in sm:p-4"
-          onClick={() => setSelectedPhotoIndex(null)}
-        >
+<div
+            className="fixed inset-0 z-[110] flex items-center justify-center bg-black/95 p-4 sm:p-8"
+            onClick={() => setSelectedPhotoIndex(null)}
+          >
           <button
             className="absolute top-4 right-4 z-50 text-3xl font-light text-white/60 transition-colors hover:text-white sm:top-6 sm:right-6"
             onClick={() => setSelectedPhotoIndex(null)}
@@ -120,7 +120,7 @@ export default function GallerySection() {
           </button>
 
           <button
-            className="absolute top-1/2 left-2 z-50 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white/60 transition-transform duration-200 hover:scale-110 hover:text-white sm:left-4 sm:p-3"
+            className="absolute left-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white/70 transition-transform duration-200 hover:scale-110 hover:text-white sm:left-6 sm:p-4"
             onClick={(event) => {
               event.stopPropagation();
               goToPrev();
@@ -133,7 +133,7 @@ export default function GallerySection() {
           </button>
 
           <button
-            className="absolute top-1/2 right-2 z-50 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white/60 transition-transform duration-200 hover:scale-110 hover:text-white sm:right-4 sm:p-3"
+            className="absolute right-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white/70 transition-transform duration-200 hover:scale-110 hover:text-white sm:right-6 sm:p-4"
             onClick={(event) => {
               event.stopPropagation();
               goToNext();
@@ -150,8 +150,8 @@ export default function GallerySection() {
             onClick={(event) => event.stopPropagation()}
           >
             <div
-              className="relative flex w-full items-center justify-center"
-              style={{ maxHeight: "calc(100vh - 160px)" }}
+              className="relative flex w-full items-center justify-center px-12"
+              style={{ maxHeight: "calc(100vh - 180px)" }}
             >
               <Image
                 src={selectedPhoto.src}
@@ -162,17 +162,17 @@ export default function GallerySection() {
               />
             </div>
 
-            <div className="mt-4 mb-2 max-w-2xl px-4 text-center sm:mt-8 sm:mb-4">
-              <h3 className="mb-1 text-lg font-black text-white sm:mb-2 sm:text-2xl">
+            <div className="mt-6 mb-4 max-w-2xl px-6 text-center sm:mt-10 sm:mb-6">
+              <h3 className="mb-2 text-xl font-black text-white sm:mb-3 sm:text-2xl">
                 {selectedPhoto.title}
               </h3>
               {selectedPhoto.description && (
-                <p className="text-xs italic text-zinc-400 sm:text-sm">{selectedPhoto.description}</p>
+                <p className="text-sm italic text-zinc-400">{selectedPhoto.description}</p>
               )}
             </div>
           </div>
 
-          <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-4 text-sm text-zinc-500 sm:bottom-6">
+          <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-6 text-sm text-zinc-500 sm:bottom-8">
             <span className="hidden sm:inline">
               Use <kbd className="rounded bg-white/10 px-2 py-1">←</kbd>{" "}
               <kbd className="rounded bg-white/10 px-2 py-1">→</kbd> para navegar

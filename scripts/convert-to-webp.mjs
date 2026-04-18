@@ -6,7 +6,8 @@ const INPUT_DIR = path.resolve(process.cwd(), "image-workbench", "input");
 const OUTPUT_DIR = path.resolve(process.cwd(), "image-workbench", "output");
 const SUPPORTED_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".webp"]);
 const MAX_DIMENSION = 800;
-const WEBP_QUALITY = 80;
+const WEBP_LOSSLESS = true;
+const WEBP_QUALITY = 90;
 const MAX_OUTPUT_BYTES = 200 * 1024;
 
 const args = process.argv.slice(2);
@@ -59,7 +60,7 @@ async function convertFile(filePath, sourceRoot) {
     withoutEnlargement: true,
   });
 
-  const buffer = await transformer.webp({ quality: WEBP_QUALITY }).toBuffer();
+  const buffer = await transformer.webp({ quality: WEBP_QUALITY, lossless: WEBP_LOSSLESS }).toBuffer();
 
   if (buffer.byteLength > MAX_OUTPUT_BYTES) {
     console.warn(
