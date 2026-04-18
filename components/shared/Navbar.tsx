@@ -11,6 +11,12 @@ type NavbarProps = {
 
 export default function Navbar({ currentPath }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const visiblePageLinks = sitePageLinks.filter((link) =>
+    !link.label.toLowerCase().includes("comunidade") &&
+    !link.href.toLowerCase().includes("comunidade") &&
+    !link.href.toLowerCase().includes("community")
+  );
+  const resolveNavLabel = (href: string, label: string) => (href === "/silverbull-shares" ? "Silverbull Shares" : label);
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
@@ -30,7 +36,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
         </Link>
 
         <ul className="hidden justify-self-center gap-8 sm:flex">
-          {sitePageLinks.map((link) => {
+          {visiblePageLinks.map((link) => {
             const isActive = currentPath === link.href;
 
             return (
@@ -43,7 +49,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
                       : "text-zinc-400 hover:text-gsw after:w-0 after:bg-gsw hover:after:w-full"
                   }`}
                 >
-                  {link.label}
+                  {resolveNavLabel(link.href, link.label)}
                 </Link>
               </li>
             );
@@ -66,7 +72,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
 
       <div className={`overflow-hidden bg-black/95 transition-all duration-300 sm:hidden ${menuOpen ? "max-h-96 border-t border-white/10" : "max-h-0"}`}>
         <ul className="flex flex-col gap-2 px-6 py-6">
-          {sitePageLinks.map((link) => (
+          {visiblePageLinks.map((link) => (
             <li key={link.href}>
                 <Link
                   href={link.href}
@@ -75,7 +81,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
                   currentPath === link.href ? "text-white" : "text-zinc-400 hover:text-gsw"
                 }`}
               >
-                {link.label}
+                {resolveNavLabel(link.href, link.label)}
               </Link>
             </li>
           ))}
