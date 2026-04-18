@@ -1,4 +1,4 @@
-﻿import { lootrunParticipation } from "@/components/lootrun/data/lootrun-content";
+import { lootrunParticipation } from "@/components/lootrun/data/lootrun-content";
 import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
 
 export default function LootrunParticipationSection() {
@@ -33,7 +33,7 @@ export default function LootrunParticipationSection() {
           }`}
         >
           {lootrunParticipation.media.map((item) => (
-            <LootrunMediaPlaceholder key={item.name} item={item} kind="Imagem" />
+            <LootrunMediaPlaceholder key={item.name} item={item} />
           ))}
         </div>
       </div>

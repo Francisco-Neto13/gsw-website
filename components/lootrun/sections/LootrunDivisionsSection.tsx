@@ -1,4 +1,4 @@
-﻿import { lootrunDivisions } from "@/components/lootrun/data/lootrun-content";
+import { lootrunDivisions } from "@/components/lootrun/data/lootrun-content";
 import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
 
 export default function LootrunDivisionsSection() {
@@ -34,7 +34,7 @@ export default function LootrunDivisionsSection() {
           }`}
         >
           {lootrunDivisions.media.map((item) => (
-            <LootrunMediaPlaceholder key={item.name} item={item} kind="Imagem" />
+            <LootrunMediaPlaceholder key={item.name} item={item} />
           ))}
         </div>
       </div>

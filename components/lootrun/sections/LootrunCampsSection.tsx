@@ -1,4 +1,4 @@
-﻿import {
+import {
   lootrunCamps,
   lootrunCampsIntro,
 } from "@/components/lootrun/data/lootrun-content";
@@ -50,7 +50,7 @@ export default function LootrunCampsSection() {
         {lootrunCampsIntro.media.length > 0 ? (
           <div className="mb-8 grid grid-cols-1 gap-4">
             {lootrunCampsIntro.media.map((item) => (
-              <LootrunMediaPlaceholder key={item.name} item={item} kind="Imagem" />
+              <LootrunMediaPlaceholder key={item.name} item={item} />
             ))}
           </div>
         ) : null}
@@ -99,13 +99,13 @@ export default function LootrunCampsSection() {
 
                 {featuredMedia ? (
                   <div className="mt-4 space-y-4">
-                    <LootrunMediaPlaceholder item={featuredMedia} kind="Imagem" />
+                    <LootrunMediaPlaceholder item={featuredMedia} />
 
                     {secondaryMedia.length > 0 ? (
                       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {secondaryMedia.map((item) => (
                           <div key={item.name} className="mx-auto w-full max-w-sm">
-                            <LootrunMediaPlaceholder item={item} kind="Imagem" />
+                            <LootrunMediaPlaceholder item={item} />
                           </div>
                         ))}
                       </div>

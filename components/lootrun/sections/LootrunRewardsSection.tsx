@@ -1,4 +1,4 @@
-﻿import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
+import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
 import {
   lootrunRewardItems,
   lootrunRewardMedia,
@@ -52,7 +52,7 @@ export default function LootrunRewardsSection() {
         </div>
 
         <div className="mt-6">
-          <LootrunMediaPlaceholder item={lootrunRewardMedia.image} kind="Imagem" />
+          <LootrunMediaPlaceholder item={lootrunRewardMedia.image} />
         </div>
       </div>
     </section>

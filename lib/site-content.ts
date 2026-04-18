@@ -9,11 +9,12 @@ export type SitePageLink = {
 };
 
 export const sitePageLinks: SitePageLink[] = [
-  { label: "Início", href: "/" },
-  { label: "História", href: "/historia" },
+  { label: "Inicio", href: "/" },
+  { label: "Historia", href: "/historia" },
   { label: "Leveling", href: "/leveling" },
-  { label: "Profissões", href: "/professions" },
+  { label: "Profissoes", href: "/professions" },
   { label: "Lootrun", href: "/lootrun" },
+  { label: "Shares", href: "/silverbull-shares" },
   { label: "Modos", href: "/modos-especiais" },
   { label: "World Events", href: "/world-events" },
   { label: "Raids", href: "/raids" },
@@ -21,15 +22,15 @@ export const sitePageLinks: SitePageLink[] = [
 ];
 
 export const homeSectionLinks: SectionLink[] = [
-  { label: "Início", href: "#gsw" },
+  { label: "Inicio", href: "#gsw" },
   { label: "Sobre", href: "#sobre" },
 ];
 
 export const historySectionLinks: SectionLink[] = [
-  { label: "Início", href: "#topo" },
-  { label: "História", href: "#historia" },
+  { label: "Inicio", href: "#topo" },
+  { label: "Historia", href: "#historia" },
   { label: "Membros", href: "#membros" },
   { label: "Pilares", href: "#pilares" },
   { label: "Galeria", href: "#galeria" },
-  { label: "Essência", href: "#essencia" },
+  { label: "Essencia", href: "#essencia" },
 ];

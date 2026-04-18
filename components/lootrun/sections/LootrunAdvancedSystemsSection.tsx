@@ -1,4 +1,4 @@
-﻿import {
+import {
   lootrunAdvancedSystems,
   lootrunAdvancedSystemsIntro,
 } from "@/components/lootrun/data/lootrun-content";
@@ -48,7 +48,7 @@ export default function LootrunAdvancedSystemsSection() {
                     }`}
                   >
                     {block.media.map((item) => (
-                      <LootrunMediaPlaceholder key={item.name} item={item} kind="Imagem" />
+                      <LootrunMediaPlaceholder key={item.name} item={item} />
                     ))}
                   </div>
                 ) : null}

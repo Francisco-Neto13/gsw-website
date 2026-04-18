@@ -1,4 +1,4 @@
-﻿import {
+import {
   lootrunMechanicBlocks,
   lootrunMechanicsIntro,
 } from "@/components/lootrun/data/lootrun-content";
@@ -39,7 +39,7 @@ export default function LootrunMechanicsSection() {
                     }`}
                   >
                     {block.media.map((item) => (
-                      <LootrunMediaPlaceholder key={item.name} item={item} kind="Imagem" />
+                      <LootrunMediaPlaceholder key={item.name} item={item} />
                     ))}
                   </div>
                 ) : null}

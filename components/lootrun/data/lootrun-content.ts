@@ -1,4 +1,4 @@
-﻿export type MediaPlaceholder = {
+export type MediaPlaceholder = {
   name: string;
   src?: string;
   alt?: string;

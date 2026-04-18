@@ -51,20 +51,6 @@ export default function Navbar({ currentPath }: NavbarProps) {
         </ul>
 
         <div className="flex items-center justify-end justify-self-end">
-          <div className="group relative hidden sm:block">
-            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 scale-0 whitespace-nowrap rounded bg-zinc-800 px-3 py-1.5 text-[10px] font-medium text-zinc-300 transition-all duration-200 group-hover:scale-100">
-              Acessar o servidor no Discord
-            </span>
-            <a
-              href="https://discord.gg/Ec2YPWTN9E"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-md bg-gsw px-5 py-2 text-center text-xs font-black uppercase tracking-widest text-white transition-transform hover:scale-105 hover:bg-gsw-dark"
-            >
-              Comunidade
-            </a>
-          </div>
-
           <button
             onClick={() => setMenuOpen((current) => !current)}
             className="flex h-8 w-8 cursor-pointer flex-col items-end justify-center gap-1.5 sm:hidden"
@@ -93,16 +79,6 @@ export default function Navbar({ currentPath }: NavbarProps) {
               </Link>
             </li>
           ))}
-          <li className="pt-4">
-            <a
-              href="https://discord.gg/Ec2YPWTN9E"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full rounded-md bg-gsw py-3 text-center text-[10px] font-black uppercase text-white"
-            >
-              Comunidade
-            </a>
-          </li>
         </ul>
       </div>
     </nav>

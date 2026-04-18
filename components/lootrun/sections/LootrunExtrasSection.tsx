@@ -1,4 +1,4 @@
-﻿import {
+import {
   lootrunExtraSupportMedia,
   lootrunExtras,
   lootrunExtrasIntro,
@@ -40,7 +40,7 @@ export default function LootrunExtrasSection() {
 
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {lootrunExtraSupportMedia.map((item) => (
-            <LootrunMediaPlaceholder key={item.name} item={item} kind="Imagem" />
+            <LootrunMediaPlaceholder key={item.name} item={item} />
           ))}
         </div>
       </div>
