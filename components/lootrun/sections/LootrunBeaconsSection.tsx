@@ -1,35 +1,35 @@
-﻿import { lootrunBeacons, lootrunBeaconsIntro } from "@/components/lootrun/data/lootrun-content";
+import { lootrunBeacons, lootrunBeaconsIntro } from "@/components/lootrun/data/lootrun-content";
 
 function getBeaconEmoji(color: string) {
   switch (color) {
     case "Blue":
-      return "🟦";
+      return "\u{1F7E6}";
     case "Purple":
-      return "🟪";
+      return "\u{1F7EA}";
     case "Yellow":
-      return "🟨";
+      return "\u{1F7E8}";
     case "Pink":
-      return "🟪";
+      return "\u{1F7EA}";
     case "Aqua":
-      return "🟦";
+      return "\u{1F7E6}";
     case "Orange":
-      return "🟧";
+      return "\u{1F7E7}";
     case "Green":
-      return "🟩";
+      return "\u{1F7E9}";
     case "Dark Grey":
-      return "⬛";
+      return "\u{2B1B}";
     case "White":
-      return "⬜";
+      return "\u{2B1C}";
     case "Grey":
-      return "◻️";
+      return "\u{25FB}\u{FE0F}";
     case "Red":
-      return "🟥";
+      return "\u{1F7E5}";
     case "Crimson":
-      return "🟥";
+      return "\u{1F7E5}";
     case "Rainbow":
-      return "🌈";
+      return "\u{1F308}";
     default:
-      return "🟧";
+      return "\u{1F7E7}";
   }
 }
 
@@ -38,13 +38,13 @@ export default function LootrunBeaconsSection() {
     <section className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
             {lootrunBeaconsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
             {lootrunBeaconsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
             {lootrunBeaconsIntro.description}
           </p>
         </div>
@@ -81,3 +81,4 @@ export default function LootrunBeaconsSection() {
     </section>
   );
 }
+

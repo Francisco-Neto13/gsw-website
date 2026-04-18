@@ -52,6 +52,7 @@ export default function WorldEventsParticipationSection() {
                   <Image src={image.src} alt={image.alt} fill className="object-contain p-2" />
                 </div>
               </ClickableImagePreview>
+              <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{image.alt}</p>
             </article>
           ))}
         </div>

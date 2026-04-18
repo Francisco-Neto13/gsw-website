@@ -1,4 +1,4 @@
-﻿import { lootrunCombos, lootrunCombosIntro } from "@/components/lootrun/data/lootrun-content";
+import { lootrunCombos, lootrunCombosIntro } from "@/components/lootrun/data/lootrun-content";
 
 function ComboList({ title, items }: { title: string; items?: string[] }) {
   if (!items || items.length === 0) {
@@ -24,13 +24,13 @@ export default function LootrunCombosSection() {
     <section className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
             {lootrunCombosIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
             {lootrunCombosIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
             {lootrunCombosIntro.description}
           </p>
         </div>
@@ -54,9 +54,9 @@ export default function LootrunCombosSection() {
               <p className="mb-5 text-sm leading-relaxed text-zinc-400 sm:text-base">{combo.summary}</p>
 
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <ComboList title="Missões necessárias" items={combo.missionRequired} />
-                <ComboList title="Missões recomendadas" items={combo.missionRecommended} />
-                <ComboList title="Trials necessárias" items={combo.trialRequired} />
+                <ComboList title="Miss\u00f5es necess\u00e1rias" items={combo.missionRequired} />
+                <ComboList title="Miss\u00f5es recomendadas" items={combo.missionRecommended} />
+                <ComboList title="Trials necess\u00e1rias" items={combo.trialRequired} />
                 <ComboList title="Trials recomendadas" items={combo.trialRecommended} />
               </div>
             </article>
@@ -66,3 +66,4 @@ export default function LootrunCombosSection() {
     </section>
   );
 }
+

@@ -21,16 +21,16 @@ export default function RaidFirstStepsSection() {
     <section className="bg-black px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
             {raidFirstStepsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
             {raidFirstStepsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
             {raidFirstStepsIntro.description}
           </p>
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-4 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
             Localizacao: <span className="font-medium text-white">-159, 36, -4795</span>.
             <br />
             O NPC da raid e o da direita.
@@ -52,7 +52,7 @@ export default function RaidFirstStepsSection() {
                 </div>
               </ClickableImagePreview>
               <div className="px-4 py-3 sm:px-5">
-                <p className="text-sm font-semibold text-zinc-200 sm:text-base">{item.title}</p>
+                <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{item.caption?.trim() || item.alt}</p>
               </div>
             </article>
           ))}
@@ -113,3 +113,4 @@ export default function RaidFirstStepsSection() {
     </section>
   );
 }
+

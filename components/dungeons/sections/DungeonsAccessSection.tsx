@@ -61,9 +61,7 @@ export default function DungeonsAccessSection() {
                   <Image src={image.src} alt={image.alt} fill className="object-contain p-2" />
                 </div>
               </ClickableImagePreview>
-              {image.caption ? (
-                <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{image.caption}</p>
-              ) : null}
+              <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{image.caption?.trim() || image.alt}</p>
             </article>
           ))}
         </div>

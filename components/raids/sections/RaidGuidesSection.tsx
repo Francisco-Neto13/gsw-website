@@ -130,13 +130,13 @@ export default function RaidGuidesSection() {
             className={groupIndex === 0 ? undefined : "mt-16 border-t border-white/5 pt-16 sm:mt-20 sm:pt-20"}
           >
             <div className="mb-10 text-center sm:mb-14">
-              <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
+              <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
                 {group.eyebrow}
               </span>
               <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl lg:text-5xl">
                 {group.shortName}
               </h3>
-              <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+              <p className="mx-auto mt-4 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
                 {group.description}
               </p>
             </div>
@@ -168,3 +168,4 @@ export default function RaidGuidesSection() {
     </section>
   );
 }
+

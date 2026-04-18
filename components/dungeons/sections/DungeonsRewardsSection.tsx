@@ -45,9 +45,9 @@ export default function DungeonsRewardsSection() {
               <Image src={dungeonsRewardsImage.src} alt={dungeonsRewardsImage.alt} fill className="object-contain p-2" />
             </div>
           </ClickableImagePreview>
-          {dungeonsRewardsImage.caption ? (
-            <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{dungeonsRewardsImage.caption}</p>
-          ) : null}
+          <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
+            {dungeonsRewardsImage.caption?.trim() || dungeonsRewardsImage.alt}
+          </p>
         </div>
       </div>
     </section>

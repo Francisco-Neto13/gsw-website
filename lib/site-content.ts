@@ -9,10 +9,10 @@ export type SitePageLink = {
 };
 
 export const sitePageLinks: SitePageLink[] = [
-  { label: "In\u00edcio", href: "/" },
-  { label: "Hist\u00f3ria", href: "/historia" },
+  { label: "Início", href: "/" },
+  { label: "História", href: "/historia" },
   { label: "Leveling", href: "/leveling" },
-  { label: "Profiss\u00f5es", href: "/professions" },
+  { label: "Profissões", href: "/professions" },
   { label: "Lootrun", href: "/lootrun" },
   { label: "Silverbull Shares", href: "/silverbull-shares" },
   { label: "Modos", href: "/modos-especiais" },
@@ -22,15 +22,15 @@ export const sitePageLinks: SitePageLink[] = [
 ];
 
 export const homeSectionLinks: SectionLink[] = [
-  { label: "In\u00edcio", href: "#gsw" },
+  { label: "Início", href: "#gsw" },
   { label: "Sobre", href: "#sobre" },
 ];
 
 export const historySectionLinks: SectionLink[] = [
-  { label: "In\u00edcio", href: "#topo" },
-  { label: "Hist\u00f3ria", href: "#historia" },
+  { label: "Início", href: "#topo" },
+  { label: "História", href: "#historia" },
   { label: "Membros", href: "#membros" },
   { label: "Pilares", href: "#pilares" },
   { label: "Galeria", href: "#galeria" },
-  { label: "Ess\u00eancia", href: "#essencia" },
+  { label: "Essência", href: "#essencia" },
 ];

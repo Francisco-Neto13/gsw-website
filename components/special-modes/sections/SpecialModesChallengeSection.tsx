@@ -66,6 +66,9 @@ export default function SpecialModesChallengeSection() {
                 />
               </div>
             </ClickableImagePreview>
+            <p className="mt-3 px-1 text-center text-xs leading-relaxed text-zinc-500">
+              {specialModesReferenceImage.alt}
+            </p>
           </div>
         </article>
       </div>

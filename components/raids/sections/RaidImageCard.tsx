@@ -15,6 +15,9 @@ export default function RaidImageCard({
   caption,
   aspectClassName = "aspect-video",
 }: RaidImageCardProps) {
+  const normalizedCaption =
+    typeof caption === "string" ? caption.trim() || alt : caption ?? alt;
+
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40">
       <ClickableImagePreview src={src} alt={alt}>
@@ -22,7 +25,10 @@ export default function RaidImageCard({
           <Image src={src} alt={alt} fill className="object-contain p-2 sm:p-3" />
         </div>
       </ClickableImagePreview>
-      {caption ? <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{caption}</p> : null}
+      {normalizedCaption ? (
+        <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{normalizedCaption}</p>
+      ) : null}
     </div>
   );
 }
+

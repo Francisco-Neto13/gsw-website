@@ -53,11 +53,16 @@ export default function LevelingSpotsSection() {
                     </li>
                   ))}
                 </ul>
-                <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
-                  <div className="relative aspect-video w-full overflow-hidden border-t border-white/5 bg-zinc-950 p-1 sm:p-2 lg:border-t-0 lg:border-l">
-                    <Image src={spot.image} alt={`Screenshot do spot ${spot.name}`} fill className="object-contain" />
-                  </div>
-                </ClickableImagePreview>
+                <div className="overflow-hidden border-t border-white/5 bg-zinc-950 lg:border-t-0 lg:border-l">
+                  <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
+                    <div className="relative aspect-video w-full p-1 sm:p-2">
+                      <Image src={spot.image} alt={`Screenshot do spot ${spot.name}`} fill className="object-contain" />
+                    </div>
+                  </ClickableImagePreview>
+                  <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
+                    Imagem de referência do spot {spot.name}.
+                  </p>
+                </div>
               </div>
             </article>
           ))}

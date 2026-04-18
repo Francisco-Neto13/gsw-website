@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
@@ -8,10 +8,30 @@ type LootrunMediaPlaceholderProps = {
   item: MediaPlaceholder;
 };
 
+function resolveMediaDescription(item: MediaPlaceholder) {
+  const caption = item.caption?.trim();
+  if (caption) {
+    return caption;
+  }
+
+  const alt = item.alt?.trim();
+  if (alt) {
+    return alt;
+  }
+
+  const note = item.note?.trim();
+  if (note) {
+    return note;
+  }
+
+  return `Visual de apoio: ${item.name}.`;
+}
+
 export default function LootrunMediaPlaceholder({
   item,
 }: LootrunMediaPlaceholderProps) {
   const isLocalVideo = item.src?.startsWith("/") && item.src.toLowerCase().endsWith(".mp4");
+  const mediaDescription = resolveMediaDescription(item);
 
   if (isLocalVideo && item.src) {
     return (
@@ -29,9 +49,8 @@ export default function LootrunMediaPlaceholder({
             controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
           />
         </div>
-        <div className="space-y-1 px-4 py-3 sm:px-5">
-          <p className="text-sm font-semibold text-zinc-200 sm:text-base">{item.name}</p>
-          {item.caption ? <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{item.caption}</p> : null}
+        <div className="px-4 py-3 sm:px-5">
+          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -51,9 +70,8 @@ export default function LootrunMediaPlaceholder({
             />
           </div>
         </ClickableImagePreview>
-        <div className="space-y-1 px-4 py-3 sm:px-5">
-          <p className="text-sm font-semibold text-zinc-200 sm:text-base">{item.name}</p>
-          {item.caption ? <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{item.caption}</p> : null}
+        <div className="px-4 py-3 sm:px-5">
+          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -62,16 +80,15 @@ export default function LootrunMediaPlaceholder({
   if (item.src && item.src.startsWith("http")) {
     return (
       <article className="rounded-2xl border border-white/10 bg-black/40 p-4 sm:p-5">
-        <p className="text-sm font-semibold text-zinc-200 sm:text-base">{item.name}</p>
         <a
           href={item.src}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-2 block break-all text-xs text-zinc-400 underline decoration-white/20 underline-offset-2 transition-colors hover:text-white sm:text-sm"
+          className="block break-all text-xs text-zinc-400 underline decoration-white/20 underline-offset-2 transition-colors hover:text-white sm:text-sm"
         >
           {item.src}
         </a>
-        {item.note ? <p className="mt-3 text-xs leading-relaxed text-zinc-500">{item.note}</p> : null}
+        <p className="mt-3 text-xs leading-relaxed text-zinc-500">{mediaDescription}</p>
       </article>
     );
   }
@@ -81,7 +98,8 @@ export default function LootrunMediaPlaceholder({
       <div className="rounded-xl border border-white/10 bg-zinc-900/50 px-3 py-6 text-center text-sm font-semibold text-zinc-300 sm:px-4 sm:py-7 sm:text-base">
         {item.name}
       </div>
-      {item.note ? <p className="mt-3 text-xs leading-relaxed text-zinc-500">{item.note}</p> : null}
+      <p className="mt-3 text-xs leading-relaxed text-zinc-500">{mediaDescription}</p>
     </div>
   );
 }
+

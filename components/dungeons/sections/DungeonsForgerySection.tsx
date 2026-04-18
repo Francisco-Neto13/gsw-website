@@ -47,9 +47,9 @@ export default function DungeonsForgerySection() {
               <Image src={dungeonsForgeryImage.src} alt={dungeonsForgeryImage.alt} fill className="object-contain p-2" />
             </div>
           </ClickableImagePreview>
-          {dungeonsForgeryImage.caption ? (
-            <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{dungeonsForgeryImage.caption}</p>
-          ) : null}
+          <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
+            {dungeonsForgeryImage.caption?.trim() || dungeonsForgeryImage.alt}
+          </p>
         </div>
       </div>
     </section>

@@ -10,6 +10,7 @@ type SilverbullImageSlotProps = {
 
 export default function SilverbullImageSlot({ label, src, alt, compact = false }: SilverbullImageSlotProps) {
   const frameClass = compact ? "aspect-[4/3]" : "aspect-video";
+  const imageDescription = alt && alt.trim() !== label.trim() ? alt : label;
 
   if (src) {
     return (
@@ -26,9 +27,7 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
           </div>
         </ClickableImagePreview>
         <div className={`px-4 ${compact ? "py-2.5" : "py-3"} sm:px-5`}>
-          <p className={`font-semibold text-zinc-200 ${compact ? "text-xs sm:text-sm" : "text-sm sm:text-base"}`}>
-            {label}
-          </p>
+          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{imageDescription}</p>
         </div>
       </article>
     );
