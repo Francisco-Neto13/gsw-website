@@ -1,6 +1,7 @@
 import Image from "next/image";
 import RaidImageCard from "@/components/raids/sections/RaidImageCard";
 import {
+  cinfrasSilverbullImage,
   queueSteps,
   raidFirstStepsIntro,
   raidFirstStepsLabels,
@@ -11,28 +12,50 @@ import {
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function RaidFirstStepsSection() {
+  const firstStepsMedia = [
+    { ...cinfrasSilverbullImage, title: "Centro de Divisão Silverbull" },
+    { ...silverbullNpcImage, title: "NPC de inscrição da Raid" },
+  ];
+
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 right-0 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-gsw/5 blur-[150px]" />
-      <div className="relative z-10 mx-auto w-full max-w-5xl">
+    <section className="bg-black px-4 py-16 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
             {raidFirstStepsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
             {raidFirstStepsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
             {raidFirstStepsIntro.description}
+          </p>
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+            Localizacao: <span className="font-medium text-white">-159, 36, -4795</span>.
+            <br />
+            O NPC da raid e o da direita.
           </p>
         </div>
 
-        <div className="mx-auto mb-10 max-w-2xl sm:mb-14">
-          <RaidImageCard
-            src={silverbullNpcImage.src}
-            alt={silverbullNpcImage.alt}
-            caption={silverbullNpcImage.caption}
-          />
+        <div className={`mb-10 grid grid-cols-1 gap-4 sm:mb-14 ${firstStepsMedia.length > 1 ? "sm:grid-cols-2 sm:gap-6" : ""}`}>
+          {firstStepsMedia.map((item) => (
+            <article key={item.src} className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+              <ClickableImagePreview src={item.src} alt={item.alt}>
+                <div className="relative aspect-video w-full bg-zinc-900/50 p-1 sm:p-2">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-contain"
+                  />
+                </div>
+              </ClickableImagePreview>
+              <div className="px-4 py-3 sm:px-5">
+                <p className="text-sm font-semibold text-zinc-200 sm:text-base">{item.title}</p>
+              </div>
+            </article>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
@@ -75,7 +98,7 @@ export default function RaidFirstStepsSection() {
           ))}
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-6">
           {raidFirstStepsSupportImages.map((item) => (
             <RaidImageCard key={item.src} src={item.src} alt={item.alt} caption={item.caption} />
           ))}

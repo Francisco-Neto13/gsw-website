@@ -35,28 +35,34 @@ export type RaidCaptionImage = {
 };
 
 export const raids: RaidCatalogItem[] = [
-  { name: "Nest of the Grootslangs", level: "Lvl 55+", quest: "Realm of Light I — The Worm Holes", rune: "Az Rune", image: "/raids/nest_of_the_grootslangs.webp" },
-  { name: "Orphion's Nexus of Light", level: "Lvl 80+", quest: "Realm of Light I até o V", rune: "Uth Rune", image: "/raids/orphions_nexus_of_light.webp" },
-  { name: "The Canyon Colossus", level: "Lvl 97+", quest: "The Thanos Repository, Dwarves and Doguns I–IV, The Envoy I e II, The Breaking Point", rune: "Tol Rune", image: "/raids/the_canyon_colossus.webp" },
-  { name: "The Nameless Anomaly", level: "Lvl 103+", quest: "A Journey Beyond e A Journey Further", rune: "Tol Rune", image: "/raids/the_nameless_anomaly.webp" },
+  { name: "Nest of the Grootslangs", level: "Lvl 55+", quest: "Realm of Light I — The Worm Holes", rune: "Az Rune", image: "/raids/notg.png" },
+  { name: "Orphion's Nexus of Light", level: "Lvl 80+", quest: "Realm of Light I até o V", rune: "Uth Rune", image: "/raids/nol.png" },
+  { name: "The Canyon Colossus", level: "Lvl 97+", quest: "The Thanos Repository, Dwarves and Doguns I–IV, The Envoy I e II, The Breaking Point", rune: "Tol Rune", image: "/raids/tcc.png" },
+  { name: "The Nameless Anomaly", level: "Lvl 103+", quest: "A Journey Beyond e A Journey Further", rune: "Tol Rune", image: "/raids/tna.png" },
 ];
 
 export const queueSteps: RaidStepImage[] = [
-  { src: "/raids/party_queue_menu.webp", alt: "Menu da Party Queue", caption: "" },
-  { src: "/raids/raid_queue_selection.webp", alt: "Seleção da raid na fila", caption: "" },
-  { src: "/raids/raid_queue_ready_up.webp", alt: "Tela de ready up da raid", caption: "" },
-  { src: "/raids/raid_queue_group_found.webp", alt: "Tela de grupo encontrado", caption: "" },
+  { src: "/raids/party_queue.png", alt: "Menu da Party Queue", caption: "" },
+  { src: "/raids/party_queue2.png", alt: "Party Queue com 4 pessoas", caption: "" },
+  { src: "/raids/iniciar_raid.png", alt: "Tela de iniciar raid", caption: "" },
+  { src: "/raids/raid_encontrada.png", alt: "Seleção da raid na fila", caption: "" },
 ];
 
 export const silverbullNpcImage: RaidStepImage = {
-  src: "/raids/silverbull_npc.webp",
+  src: "/raids/raid_chief.png",
   alt: "NPC do Centro Silverbull",
   caption:
     "Centro de Divisão Silverbull. O NPC da raid é o da direita. -159, 36, -4795",
 };
 
+export const cinfrasSilverbullImage: RaidStepImage = {
+  src: "/lootrun/Cinfras_silverbull.png",
+  alt: "Entrada de Cinfras para o Centro Silverbull",
+  caption: "Entrada em Cinfras para acessar o Centro de Divisao Silverbull.",
+};
+
 export const guildRaidAvailableImage: RaidStepImage = {
-  src: "/raids/guild_raid_available.webp",
+  src: "/raids/guild_raid.png",
   alt: "Indicador de guild raid disponível",
   caption:
     "Quando toda a party pertence à mesma guilda, a opção de guild raid fica disponível.",
@@ -529,11 +535,11 @@ export const extras = [
 ];
 
 export const supportImages: RaidStepImage[] = [
-  { src: "/raids/gambit_slots.webp", alt: "Tela com os slots de gambit", caption: "Tela inicial com os slots de gambit disponíveis para a run." },
-  { src: "/raids/gambit_details.webp", alt: "Detalhes de um gambit", caption: "Leitura detalhada dos efeitos e das penalidades de um gambit ativo." },
-  { src: "/raids/character_info_menu.webp", alt: "Acesso ao menu de informações do personagem", caption: "Área usada para consultar informações e progresso relacionados às raids." },
-  { src: "/raids/raid_ranking_progress.webp", alt: "Progresso do ranking de raid", caption: "Progresso acumulado no ranking de raid conforme você conclui runs." },
-  { src: "/raids/raid_completed.webp", alt: "Mensagem de raid concluída", caption: "Confirmação visual de uma run concluída com sucesso." },
+  { src: "/raids/start_raid.png", alt: "Tela de iniciar raid", caption: "Party completa com 4 jogadores." },
+  { src: "/raids/gambit.png", alt: "Tela com os slots de gambit", caption: "Tela inicial com os slots de gambit disponíveis para a run." },
+  { src: "/raids/character_info.png", alt: "Acesso ao menu de informações do personagem", caption: "Área usada para consultar informações e progresso relacionados às raids." },
+  { src: "/raids/nivel_raid.png", alt: "Nível e rank da raid", caption: "Visualização do nível de raid e posição no ranking." },
+  { src: "/raids/raid_completa.png", alt: "Mensagem de raid concluída", caption: "Confirmação visual de uma run concluída com sucesso." },
 ];
 
 export type RaidInfoCard = {
@@ -575,14 +581,9 @@ export const raidFirstStepsLabels = {
 
 export const raidFirstStepsSupportImages: RaidStepImage[] = [
   {
-    src: "/raids/rune_types.webp",
+    src: "/raids/runas_.png",
     alt: "Tipos de runa das raids",
     caption: "Tipos de runa usados nas raids: Az, Uth e Tol.",
-  },
-  {
-    src: "/raids/party_finder_listing.webp",
-    alt: "Lista de party finder",
-    caption: "Exemplo de party aberta no finder para conteúdos em grupo.",
   },
 ];
 
@@ -751,12 +752,12 @@ export const raidAspectExamples = [
 
 export const raidRewardImages: RaidStepImage[] = [
   {
-    src: "/raids/reward_chest_location.webp",
+    src: "/raids/reward_chest.png",
     alt: "Local do baú final da raid",
     caption: "Baú final disponível na sala de recompensa após concluir a raid.",
   },
   {
-    src: "/raids/reward_chest_opened.webp",
+    src: "/raids/rewards_raid.png",
     alt: "Baú final aberto com rewards",
     caption: "Exemplo do conteúdo de um baú final com aspects, pulls e tomes.",
   },
