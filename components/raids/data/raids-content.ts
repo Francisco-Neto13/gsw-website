@@ -668,7 +668,7 @@ export const raidFirstStepsLabels = {
 
 export const raidFirstStepsSupportImages: RaidStepImage[] = [
   {
-    src: "/raids/runas_.png",
+    src: "/raids/runas.png",
     alt: "Tipos de runa das raids",
     caption: "Tipos de runa usados nas raids: Az, Uth, Tol e Ek.",
   },

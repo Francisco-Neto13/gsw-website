@@ -234,7 +234,7 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     className: "Assassin",
     archetype: "Acrobat",
     icon: "/abilitytree/abilityTree.acrobat_active.png",
-    treeUrl: "https://hppeng-wynn.github.io/builder/?v=8#9_2SG2SH2SI2SJ2SK2SL2SM2SN03D00000000001g000000z0z0+0+0+0+0-1TldxaULQ431",
+    treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000mrJox1-5-Tpp50",
     notes: [
       "Pegue Weightless, Righting Reflex e Wall Jump para manter mana com mobilidade aérea.",
       "Pegue Swan Dive e Jasmine Bloom para maximizar dano em área.",
@@ -262,7 +262,7 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     className: "Warrior",
     archetype: "Fallen",
     icon: "/abilitytree/abilityTree.fallen_active.png",
-    treeUrl: "https://hppeng-wynn.github.io/builder/?v=8#9_2SG2SH2SI2SJ2SK2SL2SM2SN03H00000000001g000000z0z0+0+0+0+0-1Tltuova6ER0",
+    treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000GsJIl-q-UR4T1",
     notes: [
       "Pegue Blood Pact cedo para castar spells sem depender de mana.",
       "Pegue Enraged Blow rápido para elevar o dano total.",

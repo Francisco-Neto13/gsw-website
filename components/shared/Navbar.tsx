@@ -16,7 +16,6 @@ export default function Navbar({ currentPath }: NavbarProps) {
     !link.href.toLowerCase().includes("comunidade") &&
     !link.href.toLowerCase().includes("community")
   );
-  const resolveNavLabel = (href: string, label: string) => (href === "/silverbull-shares" ? "Silverbull Shares" : label);
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
@@ -49,7 +48,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
                       : "text-zinc-400 hover:text-gsw after:w-0 after:bg-gsw hover:after:w-full"
                   }`}
                 >
-                  {resolveNavLabel(link.href, link.label)}
+                  {link.label}
                 </Link>
               </li>
             );
@@ -81,7 +80,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
                   currentPath === link.href ? "text-white" : "text-zinc-400 hover:text-gsw"
                 }`}
               >
-                {resolveNavLabel(link.href, link.label)}
+                {link.label}
               </Link>
             </li>
           ))}

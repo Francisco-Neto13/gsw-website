@@ -8,6 +8,7 @@ import {
   worldEventsAnnihilationIntro,
 } from "@/components/world-events/data/world-events-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
 
 export default function WorldEventsAnnihilationSection() {
   return (
@@ -29,15 +30,7 @@ export default function WorldEventsAnnihilationSection() {
         </div>
 
         <div className="mx-auto mb-10 max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-14">
-          <div className="relative aspect-video w-full">
-            <iframe
-              src={`https://www.youtube.com/embed/${annihilationVideo.videoId}`}
-              title={annihilationVideo.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute inset-0 h-full w-full"
-            />
-          </div>
+          <LazyYouTubeEmbed videoId={annihilationVideo.videoId} title={annihilationVideo.title} />
           <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
             {annihilationVideo.caption}
           </p>
