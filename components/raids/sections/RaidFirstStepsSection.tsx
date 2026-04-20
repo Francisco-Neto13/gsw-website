@@ -31,9 +31,9 @@ export default function RaidFirstStepsSection() {
             {raidFirstStepsIntro.description}
           </p>
           <p className="mx-auto mt-4 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Localizacao: <span className="font-medium text-white">-159, 36, -4795</span>.
+            Localização: <span className="font-medium text-white">-159, 36, -4795</span>.
             <br />
-            O NPC da raid e o da direita.
+            O NPC da raid é o da direita.
           </p>
         </div>
 
@@ -65,12 +65,12 @@ export default function RaidFirstStepsSection() {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
             >
               <ClickableImagePreview src={raid.image} alt={raid.name}>
-                <div className="relative aspect-video w-full">
+                <div className="relative aspect-video w-full bg-black">
                   <Image
                     src={raid.image}
                     alt={raid.name}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   <span className="absolute top-4 right-4 select-none text-4xl font-black italic text-white/10 transition-colors duration-300 group-hover:text-gsw/20">

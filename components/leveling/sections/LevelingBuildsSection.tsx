@@ -19,7 +19,7 @@ const classShowcaseImages: Record<string, string> = {
   Warrior: "/leveling/warrior.webp",
   Shaman: "/leveling/shaman.webp",
 };
-const wynncraftGenericItemIconUrl = "https://wynncraft.com/favicon.ico";
+const localGenericItemIconUrl = "/icon.webp";
 
 type ParsedArmorPiece = {
   level: number;
@@ -114,8 +114,29 @@ function parseArmorPiece(piece: string): ParsedArmorPiece {
 }
 
 function getItemIconBackground(iconName: string) {
+  const normalized = iconName.toLowerCase();
+  const usesArmorSprite =
+    normalized.startsWith("helmet.") ||
+    normalized.startsWith("chestplate.") ||
+    normalized.startsWith("leggings.") ||
+    normalized.startsWith("boots.");
+
+  if (usesArmorSprite) {
+    return {
+      backgroundImage: `url("${localGenericItemIconUrl}")`,
+      imageRendering: "auto" as const,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    };
+  }
+
   const primary = buildLevelingItemGuideIconUrl(iconName);
-  return `url("${primary}"), url("${wynncraftGenericItemIconUrl}")`;
+  return {
+    backgroundImage: `url("${primary}")`,
+    imageRendering: "pixelated" as const,
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+  };
 }
 
 export default function LevelingBuildsSection() {
@@ -252,8 +273,8 @@ export default function LevelingBuildsSection() {
                           >
                             <span
                               aria-hidden
-                              className="inline-block h-4 w-4 shrink-0 bg-contain bg-center bg-no-repeat"
-                              style={{ backgroundImage: getItemIconBackground(option.iconName), imageRendering: "pixelated" }}
+                              className="inline-block h-[18px] w-[18px] shrink-0 self-center rounded-[2px] bg-center bg-no-repeat"
+                              style={getItemIconBackground(option.iconName)}
                             />
                             <span>{option.name}</span>
                             {option.tag ? (
@@ -302,22 +323,24 @@ export default function LevelingBuildsSection() {
           <ul className="grid grid-cols-1 gap-3 px-5 py-5 sm:px-7 sm:py-6 lg:grid-cols-2">
             {parsedArmorPieces.map((piece) => (
               <li key={`${piece.level}-${piece.item}`} className="rounded-xl border border-white/10 bg-black/30 p-3 sm:p-4">
-                <span className="inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-gsw">
-                  Lvl {piece.level}
-                </span>
-                <a
-                  href={buildLevelingItemGuideLink(piece.guideQuery)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-flex items-center gap-2 text-sm font-medium leading-relaxed text-zinc-200 transition-colors hover:text-white sm:text-base"
-                >
-                  <span
-                    aria-hidden
-                    className="inline-block h-4 w-4 shrink-0 bg-contain bg-center bg-no-repeat"
-                    style={{ backgroundImage: getItemIconBackground(piece.iconName), imageRendering: "pixelated" }}
-                  />
-                  <span>{piece.item}</span>
-                </a>
+                <div className="flex items-center gap-2.5">
+                  <span className="inline-flex h-[24px] items-center rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-gsw">
+                    Lvl {piece.level}
+                  </span>
+                  <a
+                    href={buildLevelingItemGuideLink(piece.guideQuery)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-w-0 items-center gap-2 text-sm font-medium leading-relaxed text-zinc-200 transition-colors hover:text-white sm:text-base"
+                  >
+                    <span
+                      aria-hidden
+                      className="inline-block h-[18px] w-[18px] shrink-0 rounded-[2px] bg-center bg-no-repeat"
+                      style={getItemIconBackground(piece.iconName)}
+                    />
+                    <span className="truncate">{piece.item}</span>
+                  </a>
+                </div>
                 {piece.source ? (
                   <p className="mt-1 text-xs uppercase tracking-[0.12em] text-zinc-500 sm:text-sm">{piece.source}</p>
                 ) : null}

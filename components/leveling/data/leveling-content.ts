@@ -365,7 +365,7 @@ export const levelingWeapons: WeaponRoute[] = [
         level: "Lvl 95 - 97",
         options: [
           { name: "Spring", guideQuery: "Spring", iconName: "bow.water3", tag: "Mythic" },
-          { name: "Gale's Force", guideQuery: "Gale's Force", iconName: "helmet.diamond" },
+          { name: "Gale's Force", guideQuery: "Gale's Force", iconName: "bow.air3" },
         ],
       },
       {

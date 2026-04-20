@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { usePathname } from "next/navigation";
 import { sitePageLinks } from "@/lib/site-content";
 
 type NavbarProps = {
@@ -80,6 +81,12 @@ function scrollToSection(sectionId: string) {
 }
 
 export default function Navbar({ currentPath }: NavbarProps) {
+  const pathname = usePathname();
+  const hasMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
   const [menuOpen, setMenuOpen] = useState(false);
   const [sectionsOpen, setSectionsOpen] = useState(false);
   const [inPageLinks, setInPageLinks] = useState<InPageLink[]>([]);
@@ -145,7 +152,8 @@ export default function Navbar({ currentPath }: NavbarProps) {
     };
   }, [sectionsOpen]);
 
-  const showInPageDropdown = inPageLinks.length >= 2;
+  const activePath = hasMounted ? (pathname ?? currentPath) : "";
+  const showInPageDropdown = hasMounted && inPageLinks.length >= 2;
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
@@ -166,7 +174,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
 
         <ul className="hidden justify-self-center gap-8 sm:flex">
           {visiblePageLinks.map((link) => {
-            const isActive = currentPath === link.href;
+            const isActive = activePath === link.href;
             const canShowSections = isActive && showInPageDropdown;
 
             return (
@@ -178,7 +186,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
                 <div className="flex items-center gap-1.5">
                   <Link
                     href={link.href}
-                    aria-current={isActive ? "page" : undefined}
+                    aria-current={hasMounted && isActive ? "page" : undefined}
                     onClick={() => {
                       if (!isActive) {
                         setSectionsOpen(false);
@@ -290,19 +298,18 @@ export default function Navbar({ currentPath }: NavbarProps) {
         <ul className="flex flex-col gap-2 px-6 py-6">
           {visiblePageLinks.map((link) => (
             <li key={link.href}>
-              {currentPath === link.href ? (
-                <span className="block whitespace-nowrap border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest text-white last:border-0">
-                  {link.label}
-                </span>
-              ) : (
-                <Link
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block whitespace-nowrap border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest text-zinc-400 transition-colors hover:text-gsw last:border-0"
-                >
-                  {link.label}
-                </Link>
-              )}
+              <Link
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                aria-current={hasMounted && activePath === link.href ? "page" : undefined}
+                className={`block whitespace-nowrap border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest transition-colors last:border-0 ${
+                  hasMounted && activePath === link.href
+                    ? "pointer-events-none text-white"
+                    : "text-zinc-400 hover:text-gsw"
+                }`}
+              >
+                {link.label}
+              </Link>
             </li>
           ))}
         </ul>
