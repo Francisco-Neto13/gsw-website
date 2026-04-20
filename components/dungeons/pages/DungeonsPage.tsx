@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { dungeonsIntroParagraphs } from "@/components/dungeons/data/dungeons-content";
 import DungeonsAccessSection from "@/components/dungeons/sections/DungeonsAccessSection";
@@ -25,6 +26,8 @@ export default function DungeonsPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <DungeonsAccessSection />
         <DungeonsForgerySection />

@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { worldEventsIntroParagraphs } from "@/components/world-events/data/world-events-content";
 import WorldEventsAnnihilationSection from "@/components/world-events/sections/WorldEventsAnnihilationSection";
@@ -25,6 +26,8 @@ export default function WorldEventsPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <WorldEventsParticipationSection />
         <WorldEventsMechanicsSection />

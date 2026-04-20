@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { specialModesIntroParagraphs } from "@/components/special-modes/data/special-modes-content";
 import SpecialModesChallengeSection from "@/components/special-modes/sections/SpecialModesChallengeSection";
@@ -22,6 +23,8 @@ export default function SpecialModesPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <SpecialModesListSection />
         <SpecialModesChallengeSection />

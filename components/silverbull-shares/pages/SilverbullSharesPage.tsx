@@ -1,5 +1,6 @@
-﻿import Footer from "@/components/shared/Footer";
+import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { silverbullGuideIntro } from "@/components/silverbull-shares/data/silverbull-shares-content";
 import SilverbullBombsSection from "@/components/silverbull-shares/sections/SilverbullBombsSection";
@@ -28,6 +29,8 @@ export default function SilverbullSharesPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <SilverbullOverviewSection />
         <SilverbullRanksSection />

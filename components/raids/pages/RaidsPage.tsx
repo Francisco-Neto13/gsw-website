@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { raidsIntroParagraphs } from "@/components/raids/data/raids-content";
 import GuildRaidsSection from "@/components/raids/sections/GuildRaidsSection";
@@ -26,6 +27,8 @@ export default function RaidsPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <RaidFirstStepsSection />
         <RaidStructureSection />

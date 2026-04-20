@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { levelingIntroParagraphs } from "@/components/leveling/data/leveling-content";
 import LevelingBuildsSection from "@/components/leveling/sections/LevelingBuildsSection";
@@ -23,6 +24,8 @@ export default function LevelingPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <LevelingPartySection />
         <LevelingSpotsSection />

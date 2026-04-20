@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { professionsIntroParagraphs } from "@/components/professions/data/professions-content";
 import ProfessionGrindSpotsSection from "@/components/professions/sections/ProfessionGrindSpotsSection";
@@ -24,6 +25,8 @@ export default function ProfessionsPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <ProfessionTypesSection />
         <ProfessionToolsSection />

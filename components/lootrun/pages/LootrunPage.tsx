@@ -1,5 +1,6 @@
-﻿import Footer from "@/components/shared/Footer";
+import Footer from "@/components/shared/Footer";
 import GuideIntro from "@/components/shared/GuideIntro";
+import InPageNavigation from "@/components/shared/InPageNavigation";
 import Navbar from "@/components/shared/Navbar";
 import { lootrunGuideIntro } from "@/components/lootrun/data/lootrun-content";
 import LootrunAdvancedSystemsSection from "@/components/lootrun/sections/LootrunAdvancedSystemsSection";
@@ -29,6 +30,8 @@ export default function LootrunPage() {
             </>
           }
         />
+
+        <InPageNavigation />
 
         <LootrunParticipationSection />
         <LootrunDivisionsSection />
