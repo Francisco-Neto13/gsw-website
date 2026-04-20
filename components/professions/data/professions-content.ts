@@ -69,7 +69,7 @@ export const professionGrindSpotsIntro: SectionIntro = {
 
 export const professionGrindSpotsTableHeaders = {
   level: "Nível",
-  ingredient: "Ingredient",
+  ingredient: "Ingrediente",
   coords: "Coordenadas",
   tags: "Tags",
   npcTag: "NPC",

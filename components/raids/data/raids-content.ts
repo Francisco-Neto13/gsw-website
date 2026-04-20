@@ -695,9 +695,9 @@ export const raidStructureCards: RaidInfoCard[] = [
       "Entre uma sala e outra existem baús de buffs. Escolher bem esses bônus ajuda bastante no boss final e em salas mais punidoras.",
   },
   {
-    title: "Boss",
+    title: "Chefe",
     description:
-      "Depois das três salas, a equipe enfrenta o chefe da raid. Cada boss pede leitura de mecânica, posicionamento e ritmo diferentes.",
+      "Depois das três salas, a equipe enfrenta o chefe da raid. Cada chefe pede leitura de mecânica, posicionamento e ritmo diferentes.",
   },
   {
     title: "Falha",

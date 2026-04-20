@@ -4,8 +4,8 @@ export default function HomeHeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24">
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center animate-fade-in"
-        style={{ backgroundImage: `url('${homeHeroContent.backgroundImage}')`, animationDelay: "200ms" }}
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('${homeHeroContent.backgroundImage}')` }}
       />
       <div className="absolute inset-0 z-[1] bg-black/75" />
       <div className="absolute inset-x-0 bottom-0 z-[2] h-48 bg-gradient-to-b from-transparent to-zinc-950" />

@@ -90,9 +90,9 @@ export const participationImages: ImageCard[] = [
 
 export const mechanicsCards: InfoCard[] = [
   {
-    title: "Waves",
+    title: "Ondas",
     description:
-      "Cada evento tem um número pré-determinado de waves que precisam ser eliminadas antes de o chefe final aparecer. A dificuldade varia de acordo com a região e o nível do evento.",
+      "Cada evento tem um número pré-determinado de ondas que precisam ser eliminadas antes de o chefe final aparecer. A dificuldade varia de acordo com a região e o nível do evento.",
   },
   {
     title: "Party",
@@ -102,7 +102,7 @@ export const mechanicsCards: InfoCard[] = [
   {
     title: "Chefe Final",
     description:
-      "Após eliminar todas as waves, o chefe do evento surge. Derrotá-lo libera o baú de recompensas para todos os participantes presentes.",
+      "Após eliminar todas as ondas, o chefe do evento surge. Derrotá-lo libera o baú de recompensas para todos os participantes presentes.",
   },
   {
     title: "Recompensas",
@@ -141,7 +141,7 @@ export const annihilationImages: ImageCard[] = [
 
 export const rewardCards: InfoCard[] = [
   {
-    title: "Ingredients",
+    title: "Ingredientes",
     description: "Normais e exclusivos do evento, variando por região.",
   },
   {
