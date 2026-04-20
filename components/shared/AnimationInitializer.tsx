@@ -31,9 +31,11 @@ export default function AnimationInitializer() {
 
     const collectRevealTargets = () => {
       const manualTargets = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
-      const autoTargets = Array.from(document.querySelectorAll<HTMLElement>("main section, main article"));
+      const autoTargets = Array.from(document.querySelectorAll<HTMLElement>("main section, main article")).filter(
+        (element) => !element.closest("[data-reveal-ignore='true']")
+      );
       const targetSet = new Set<HTMLElement>([...autoTargets, ...manualTargets]);
-      return Array.from(targetSet).filter((element) => !element.closest("[data-reveal-ignore='true']"));
+      return Array.from(targetSet);
     };
 
     const prepareTarget = (element: HTMLElement) => {
@@ -83,12 +85,10 @@ export default function AnimationInitializer() {
         prepareTarget(element);
         if (element.getBoundingClientRect().top > window.innerHeight * 0.88) {
           element.classList.remove("visible");
-        } else if (!element.classList.contains("visible")) {
-          observedElements.add(element);
-          element.classList.add("visible");
         }
 
         if (!observedElements.has(element)) {
+          observedElements.add(element);
           observer.observe(element);
         }
       });

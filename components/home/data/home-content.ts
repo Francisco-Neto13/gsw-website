@@ -6,86 +6,176 @@ export type HomePillar = {
   description: string;
 };
 
-export type HomeContentCategory = {
+export type HeroSpotlight = {
+  label: string;
+  note: string;
+  href: string;
+  image: string;
+};
+
+export type HomeGuideCard = {
   label: string;
   description: string;
+  href: string;
+  image: string;
+  eyebrow: string;
 };
 
 export const homeHeroContent = {
-  title: "GsW",
-  subtitle: "Guardians Of Wynn",
+  brand: "GsW",
+  brandSubtitle: "Guardians Of Wynn",
+  eyebrow: "Portal brasileiro de Wynncraft",
+  title: "Conhecimento de guilda em formato de guia,",
+  titleHighlight: "pronto para usar",
+  subtitle: "Conhecimento de guilda transformado em guia para toda a comunidade.",
+  description:
+    "Da progressão inicial ao endgame, reunimos mecânicas, rotas e sistemas em português com foco prático para quem quer evoluir sem perder tempo.",
   backgroundImage: "/bg-guilda.webp",
+  secondaryCta: {
+    label: "Explorar conteúdos",
+    href: "#conteudo",
+  },
 };
 
+export const homeHeroSpotlights: HeroSpotlight[] = [
+  {
+    label: "Lootrun",
+    note: "Rotas, beacons, camps e setups de tempo.",
+    href: "/lootrun",
+    image: "/lootrun/Niveis.png",
+  },
+  {
+    label: "Raids",
+    note: "Entrada, runas, leitura de mecânica e recompensas.",
+    href: "/raids",
+    image: "/raids/raid_chief.png",
+  },
+  {
+    label: "Shares",
+    note: "Ranks, crates, bombas, tokens e ofertas.",
+    href: "/silverbull-shares",
+    image: "/shares/loja_ingame.png",
+  },
+];
+
 export const homeAboutContent = {
-  eyebrow: "Sobre o portal",
-  title: "Um portal simples",
-  titleHighlight: "e direto",
+  eyebrow: "Visão do projeto",
+  title: "Um hub vivo que",
+  titleHighlight: "acompanha seu ritmo",
   paragraphs: [
-    "Wynncraft é um jogo rico e complexo, mas boa parte do seu conteúdo nunca foi documentado em português de forma acessível. Quem começa hoje depende de wikis em inglês, vídeos desatualizados ou de perguntar para alguém da comunidade — e nem sempre há alguém disponível.",
-    "O objetivo deste portal é mudar isso. Aqui a ideia é reunir guias, tutoriais e referências traduzidas para a comunidade brasileira, escritos com uma linguagem clara e sem enrolação. Seja você alguém que acabou de entrar no servidor ou um veterano que quer consultar uma mecânica específica, este espaço foi pensado para ser útil.",
-    "Além dos guias, o portal também carrega um pouco da história da GsW — a guilda brasileira que existe desde 2017 e que deu origem a este projeto. Não é o foco principal, mas faz parte de quem somos.",
+    "Wynncraft tem profundidade, mas muita informação ainda fica espalhada. Este portal organiza tudo em uma estrutura clara, com linguagem direta e foco em execução.",
+    "A proposta é simples: abrir uma página e sair com um plano de ação. Por isso cada guia combina explicação curta, print real e referência rápida.",
+    "O conteúdo evolui junto com a comunidade GsW. Sempre que um sistema muda, o material é revisado para manter consistência entre páginas.",
   ],
-  closingQuote: "Nenhum jogador deveria travar num conteúdo por falta de informação em",
-  closingQuoteHighlight: "português",
 };
 
 export const homePillars: HomePillar[] = [
   {
     icon: "book",
-    title: "Tutoriais em Português",
+    title: "Guias acionáveis",
     description:
-      "Conteúdos traduzidos e explicados com foco na comunidade brasileira. Aqui você encontra guias detalhados sobre os sistemas mais complexos do Wynncraft.",
+      "Nada de texto vazio. Cada bloco foi pensado para virar ação imediata dentro do jogo.",
   },
   {
     icon: "clock",
-    title: "História da GsW",
+    title: "Atualização contínua",
     description:
-      "Um registro vivo da trajetória da guilda desde 2017. Não é o foco principal do portal, mas continua sendo parte importante da identidade da comunidade.",
+      "As páginas acompanham o estado atual do projeto, evitando conteúdo desatualizado e quebra de contexto.",
   },
   {
     icon: "users",
-    title: "Feito pela Comunidade",
+    title: "Construído em comunidade",
     description:
-      "Todo o conteúdo aqui foi pensado por e para jogadores brasileiros de Wynncraft. O objetivo é tornar o jogo mais acessível para quem fala português.",
+      "O portal nasce da prática real de jogadores brasileiros e mantém o padrão visual em todas as seções.",
+  },
+];
+
+export const homeAboutShowcase = [
+  {
+    src: "/lootrun/Cinfras_silverbull.png",
+    alt: "Entrada do centro de divisão",
+    caption: "Ponto de entrada para sistemas avançados",
+  },
+  {
+    src: "/worldevents/we.png",
+    alt: "World event em andamento",
+    caption: "Cobertura de conteúdo para jogo ativo",
+  },
+  {
+    src: "/shares/loja_ingame.png",
+    alt: "Menu da loja in-game",
+    caption: "Sistema de shares e ofertas in-game",
+  },
+  {
+    src: "/leveling/party_finder.png",
+    alt: "Party finder para leveling",
+    caption: "Fluxo inicial para progressão e party",
   },
 ];
 
 export const homeContentSection = {
-  eyebrow: "O que você vai encontrar",
-  title: "Conteúdo",
-  titleHighlight: "explicado",
+  eyebrow: "Cobertura do portal",
+  title: "Escolha o seu",
+  titleHighlight: "próximo foco",
   description:
-    "O foco é cobrir os sistemas do jogo de forma completa e em português. Cada guia é pensado para funcionar tanto para quem está começando quanto para quem quer se aprofundar.",
-  closingQuote: "O conhecimento que a comunidade constrói juntos não pertence a ninguém. Pertence a",
-  closingQuoteHighlight: "todos",
+    "Cada bloco aponta para um guia com imagem real do próprio conteúdo e objetivo claro.",
 };
 
-export const homeContentCategories: HomeContentCategory[] = [
+export const homeGuideCards: HomeGuideCard[] = [
   {
-    label: "Profissões",
-    description:
-      "Fishing, Mining, Farming e todas as outras. Entenda como funcionam e como evoluir com mais eficiência.",
+    label: "Lootrun",
+    description: "Mostra divisões, camps, beacons e otimização de tempo por rota.",
+    href: "/lootrun",
+    image: "/lootrun/lootrun_start.png",
+    eyebrow: "Sistema",
   },
   {
     label: "Raids",
-    description:
-      "Guias das raids do jogo, com dicas de builds, mecânicas e estratégias para grupos e iniciantes.",
+    description: "Mostra pre-requisitos, estrutura das runs e leitura de boss.",
+    href: "/raids",
+    image: "/raids/raid_completa.png",
+    eyebrow: "PvE",
   },
   {
-    label: "Lootruns",
-    description: "Rotas, chests e tudo que você precisa saber para aproveitar melhor os runs de loot.",
+    label: "Leveling",
+    description: "Mostra spots por faixa de nível, party finder e builds de grind.",
+    href: "/leveling",
+    image: "/leveling/scrapward.png",
+    eyebrow: "Progressão",
+  },
+  {
+    label: "World Events",
+    description: "Mostra participação, ondas, annihilation e recompensas finais.",
+    href: "/world-events",
+    image: "/worldevents/Annihilation.png",
+    eyebrow: "Evento",
   },
   {
     label: "Dungeons",
-    description: "Passo a passo das dungeons com mecânicas explicadas de forma clara.",
+    description: "Mostra acesso, merchant, forgery e fluxo completo de rewards.",
+    href: "/dungeons",
+    image: "/dungeons/rewards.png",
+    eyebrow: "Instâncias",
   },
   {
-    label: "XP e Progressão",
-    description: "As melhores estratégias para upar personagens sem desperdício de tempo.",
+    label: "Shares",
+    description: "Mostra loja, ranks, bundles e uso eficiente de tokens.",
+    href: "/silverbull-shares",
+    image: "/shares/loja_virtual.png",
+    eyebrow: "Economia",
   },
   {
-    label: "E muito mais",
-    description: "Outros sistemas do jogo também podem ser cobertos aqui ao longo do tempo.",
+    label: "Modos Especiais",
+    description: "Mostra regras, limitações e escolhas por perfil de jogador.",
+    href: "/modos-especiais",
+    image: "/gamemodes/gamemodes.png",
+    eyebrow: "Desafio",
+  },
+  {
+    label: "História da GsW",
+    description: "Mostra linha do tempo, membros e marcos que moldaram o projeto.",
+    href: "/historia",
+    image: "/gallery/final_season_2.png",
+    eyebrow: "Comunidade",
   },
 ];

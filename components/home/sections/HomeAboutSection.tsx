@@ -1,4 +1,10 @@
-import { type HomePillarIcon, homeAboutContent, homePillars } from "@/components/home/data/home-content";
+import Image from "next/image";
+import {
+  type HomePillarIcon,
+  homeAboutContent,
+  homeAboutShowcase,
+  homePillars,
+} from "@/components/home/data/home-content";
 
 function PillarIcon({ icon }: { icon: HomePillarIcon }) {
   if (icon === "book") {
@@ -31,53 +37,56 @@ function PillarIcon({ icon }: { icon: HomePillarIcon }) {
 
 export default function HomeAboutSection() {
   return (
-    <section id="sobre" className="relative -mt-px overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-32">
-      <div className="pointer-events-none absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-gsw/5 blur-[150px]" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-purple-900/5 blur-[150px]" />
+    <section id="sobre" className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-28">
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div className="reveal-on-scroll">
+            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.45em] text-gsw">
+              {homeAboutContent.eyebrow}
+            </span>
+            <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl">
+              {homeAboutContent.title} <span className="text-gsw">{homeAboutContent.titleHighlight}</span>
+            </h2>
 
-      <div className="relative z-10 mx-auto max-w-6xl">
-        <div className="mx-auto max-w-3xl text-center reveal-on-scroll">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.45em] text-gsw">
-            {homeAboutContent.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl">
-            {homeAboutContent.title} <span className="text-gsw">{homeAboutContent.titleHighlight}</span>
-          </h2>
+            <div className="mt-7 space-y-4 text-sm leading-relaxed text-zinc-300 sm:text-base">
+              {homeAboutContent.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {homeAboutShowcase.map((item) => (
+              <article
+                key={item.src}
+                className="reveal-on-scroll overflow-hidden rounded-3xl border border-white/10 bg-black/50"
+              >
+                <div className="relative aspect-[16/10] w-full">
+                  <Image src={item.src} alt={item.alt} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                  <p className="absolute right-4 bottom-4 left-4 text-sm font-semibold text-white">{item.caption}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl space-y-5 text-sm leading-relaxed text-zinc-400 reveal-on-scroll sm:mt-14 sm:text-base">
-          {homeAboutContent.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-
-        <div className="mt-14 grid gap-4 md:grid-cols-3 sm:mt-20">
+        <div className="mt-12 grid gap-4 md:grid-cols-3 sm:mt-16">
           {homePillars.map((item, index) => (
             <article
               key={item.title}
-              className="reveal-on-scroll group relative rounded-3xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8"
+              className="reveal-on-scroll group relative rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40"
             >
               <div className="mb-4 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw transition-all duration-200 group-hover:bg-gsw group-hover:text-white">
                 <PillarIcon icon={item.icon} />
               </div>
-              <h3 className="mb-3 text-lg font-bold tracking-tight text-white sm:text-xl">{item.title}</h3>
-              <p className="text-sm leading-relaxed text-zinc-400 transition-colors duration-200 group-hover:text-zinc-300">
-                {item.description}
-              </p>
-              <div className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 group-hover:text-gsw/10">
+              <h3 className="mb-2 text-lg font-bold tracking-tight text-white">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-zinc-400">{item.description}</p>
+              <span className="absolute right-5 bottom-4 select-none text-4xl font-black italic text-white/5 group-hover:text-gsw/15">
                 0{index + 1}
-              </div>
+              </span>
             </article>
           ))}
-        </div>
-
-        <div className="reveal-on-scroll mt-14 text-center sm:mt-20">
-          <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
-            &ldquo;{homeAboutContent.closingQuote}{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">
-              {homeAboutContent.closingQuoteHighlight}
-            </span>.&rdquo;
-          </p>
         </div>
       </div>
     </section>
