@@ -27,6 +27,7 @@ export type RaidGuideRoom = {
   room: string;
   title: string;
   description: string;
+  cardLabel?: string;
   variants: RaidGuideVariant[];
 };
 
@@ -111,9 +112,10 @@ export const notgRooms: RaidGuideRoom[] = [
     title: "Colete os Materiais",
     description:
       "Aqui a party precisa juntar Slimey Goos para alimentar a torre central. Existem três caminhos possíveis para fazer isso: puzzle, parkour e miniboss.",
+    cardLabel: "POV",
     variants: [
       {
-        name: "Puzzle e Parkour",
+        name: "POV de Puzzle/Parkour",
         summary:
           "O caminho da esquerda mistura sequência de canhão com deslocamento até o fim da rota e rende duas Slimey Goos. O caminho da frente é um parkour mais rápido que entrega uma unidade por conclusão.",
         videoId: "CxngMx49H9o",
@@ -126,7 +128,7 @@ export const notgRooms: RaidGuideRoom[] = [
         ],
       },
       {
-        name: "Miniboss",
+        name: "POV de Miniboss",
         summary:
           "O caminho da direita leva a um miniboss simples de entender, mas perigoso no impacto. Derrotá-lo pode conceder uma Slimey Goo para alguém da equipe.",
         videoId: "Xf5M5WOg2ag",
@@ -527,13 +529,13 @@ export const twpRooms: RaidGuideRoom[] = [
     room: "Sala 1",
     title: "Desbloqueie as Portas Elementais ou Exploda os Mobs com Luz",
     description:
-"A primeira sala da TWP possui duas variações. Em uma, a party escolhe elementos nas portas e limpa dois lados antes do boss da sala. Na outra, um player usa o Sonic Amplifier na parte de cima enquanto o resto controla os mobs embaixo.",
+      "A primeira sala da TWP possui duas rotas possiveis: Caminho (portas elementais) e Raio (Sonic Amplifier).",
         variants: [
           {
-            name: "Desbloqueie as Portas Elementais",
+            name: "Caminho",
             summary:
               "Todos limpam mobs para abrir portas, escolhem elementos e, no salão principal, se dividem em dois lados antes de juntar para o boss da sala.",
-            videoPlaceholder: "POV da sala. Vídeo será adicionado depois.",
+            videoId: "jX0N8feSN5g",
             points: [
               "Cada porta mostra dois elementos e o elemento escolhido define o tipo de mob da próxima parte. São 8 portas no total.",
               "Ao chegar no salão principal, o time divide em 2 players por lado para limpar as duas salas laterais.",
@@ -544,10 +546,10 @@ export const twpRooms: RaidGuideRoom[] = [
             ],
           },
       {
-        name: "Exploda os Mobs com Luz",
+        name: "Raio",
         summary:
 "Um player fica na parte de cima carregando e disparando o Sonic Amplifier, enquanto os players de baixo matam mobs e agrupam os alvos para os tiros de luz.",
-        videoPlaceholder: "POV de quem fica na parte de cima. Vídeo será adicionado depois.",
+        videoId: "BJZSJJ347nM",
         points: [
           "Quem sobe pega o item Sonic Amplifier e quebra os blocos glowing no teto para carregar a arma.",
           "Depois de carregar, o objetivo é atirar na maior quantidade de mobs possível.",
@@ -569,7 +571,7 @@ export const twpRooms: RaidGuideRoom[] = [
         name: "Destrua os Escudos",
         summary:
           "Um player sobe para destruir os escudos e remover resistência do boss; os outros players ficam embaixo focando o boss e controle da arena.",
-        videoPlaceholder: "POV de quem mata os escudos. Vídeo será adicionado depois.",
+        videoId: "HxMRVscZ1Ss",
         points: [
           "Um player pisa nos ovos do centro para ser lançado para a parte de cima.",
           "No alto, ele deve quebrar os escudos sem parar para reduzir a resistência do boss até 0%.",
@@ -591,7 +593,7 @@ export const twpRooms: RaidGuideRoom[] = [
         name: "Destrua os Buracos",
         summary:
           "Um player pega o artefato (spear), espera os buracos spawnarem e usa dash nas caixas para expor novos alvos até quebrar os 9 buracos da sala.",
-        videoPlaceholder: "POV de quem pega o artefato. Vídeo será adicionado depois.",
+        videoId: "QLMhujRIH8k",
         points: [
           "Um player pega o artefato no meio e espera os buracos criarem nametag de mob antes da execução principal.",
           "Depois que os buracos ficam ativos, os outros players ajudam a matar para as caixas surgirem.",

@@ -10,11 +10,13 @@ import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
 
 function RaidVariantCard({
   roomLabel,
+  cardLabel,
   variant,
   variantIndex,
   priorityVideo = false,
 }: {
   roomLabel: string;
+  cardLabel: string;
   variant: RaidGuideVariant;
   variantIndex: number;
   priorityVideo?: boolean;
@@ -24,7 +26,7 @@ function RaidVariantCard({
       <div className="flex flex-col">
         <div className="border-b border-white/5 px-5 py-5 sm:px-6">
           <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
-            {raidGuidesLabels.variant} {String(variantIndex + 1).padStart(2, "0")}
+            {cardLabel} {String(variantIndex + 1).padStart(2, "0")}
           </span>
           <h5 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{variant.name}</h5>
           <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{variant.summary}</p>
@@ -110,6 +112,7 @@ function RaidRoomCard({ room, roomIndex }: { room: RaidGuideRoom; roomIndex: num
           <RaidVariantCard
             key={variant.name}
             roomLabel={room.room}
+            cardLabel={room.cardLabel ?? raidGuidesLabels.variant}
             variant={variant}
             variantIndex={variantIndex}
             priorityVideo={roomIndex === 0 && variantIndex === 0}
