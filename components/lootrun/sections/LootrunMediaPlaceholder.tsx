@@ -61,12 +61,13 @@ export default function LootrunMediaPlaceholder({
       <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <ClickableImagePreview src={item.src} alt={item.alt ?? item.name}>
           <div className="relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2">
-            <Image
+<Image
               src={item.src}
               alt={item.alt ?? item.name}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-contain"
+              unoptimized
             />
           </div>
         </ClickableImagePreview>
