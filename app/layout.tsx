@@ -13,8 +13,26 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
+    <html lang="pt-BR" className="scroll-smooth theme-dark" data-theme="dark" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  var stored = window.localStorage.getItem("gsw-theme");
+                  var theme = stored === "light" || stored === "dark"
+                    ? stored
+                    : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+                  var root = document.documentElement;
+                  root.dataset.theme = theme;
+                  root.classList.remove("theme-dark", "theme-light");
+                  root.classList.add(theme === "light" ? "theme-light" : "theme-dark");
+                } catch (error) {}
+              })();
+            `,
+          }}
+        />
         <AnimationInitializer />
         {children}
       </body>

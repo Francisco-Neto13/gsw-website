@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { sitePageLinks } from "@/lib/site-content";
+import ThemeToggle from "@/components/shared/ThemeToggle";
 
 type NavbarProps = {
   currentPath: string;
@@ -257,7 +258,8 @@ export default function Navbar({ currentPath }: NavbarProps) {
           })}
         </ul>
 
-        <div className="flex items-center justify-end justify-self-end">
+        <div className="flex items-center justify-end justify-self-end gap-2">
+          <ThemeToggle />
           <button
             onClick={() => setMenuOpen((current) => !current)}
             className="flex h-8 w-8 cursor-pointer flex-col items-end justify-center gap-1.5 xl:hidden"
@@ -291,6 +293,9 @@ export default function Navbar({ currentPath }: NavbarProps) {
         }`}
       >
         <ul className="flex flex-col gap-2 px-6 py-6">
+          <li className="mb-1 flex items-center justify-end">
+            <ThemeToggle />
+          </li>
           {visiblePageLinks.map((link) => (
             <li key={link.href}>
               <Link
