@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -153,7 +153,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 xl:grid xl:h-[72px] xl:grid-cols-3">
-        <Link href="/" className="group flex items-center justify-self-start gap-3">
+        <div className="group flex items-center justify-self-start gap-3">
           <Image
             src="/icon.webp"
             alt="GsW Logo"
@@ -165,7 +165,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
           <span className="relative text-xs font-medium tracking-widest text-zinc-400 transition-colors group-hover:text-gsw">
             GsW
           </span>
-        </Link>
+        </div>
 
         <ul className="hidden justify-self-center gap-4 2xl:gap-8 xl:flex">
           {visiblePageLinks.map((link) => {

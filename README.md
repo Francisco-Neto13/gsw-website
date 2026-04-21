@@ -19,44 +19,54 @@
 
 ## Visão geral
 
-O site da GsW funciona como o portal oficial da comunidade. Ele reúne a identidade da guilda, preserva a sua história e abre espaço para páginas de guia que ajudam novos e antigos membros a navegar melhor pelo universo de Wynncraft.
+O site da GsW funciona como o portal oficial da comunidade. Ele reúne a identidade da guilda, preserva a sua história e oferece guias completos que ajudam novos e antigos membros a navegar melhor pelo universo de Wynncraft.
 
-Mais do que uma landing page, o projeto foi pensado para servir como um ponto central de referência da comunidade: um lugar onde a história da guilda, seus membros, seus registros visuais e seus futuros tutoriais convivem dentro da mesma linguagem visual.
+Mais do que uma landing page, o projeto foi pensado para servir como um ponto central de referência da comunidade: um lugar onde a história da guilda, seus guias de jogo e seu conteúdo institucional convivem dentro da mesma linguagem visual.
 
 ## O que o site entrega
 
 - uma página inicial que apresenta a proposta do portal e o posicionamento da GsW
 - uma página de história dedicada ao legado da guilda, com crônicas, pilares, membros e galeria
-- uma base para páginas de guia, começando pela área de leveling
+- guias completos de gameplay: Lootrun, Dungeons, Raids, World Events, Professions, Leveling e Modos Especiais
+- uma seção sobre a economy game da guilda em Silverbull Shares
 - uma navegação pública simples e direta, focada apenas na experiência frontend
 - conteúdo visual servido localmente, sem dependência de banco de dados ou painel administrativo
 
-## Conteúdo da comunidade
+## Guias do jogo
 
-O projeto mantém a galeria e os membros diretamente no repositório, para que o conteúdo da comunidade continue acessível e fácil de editar sem depender de serviços externos.
+O projeto mantém guias detalhados para as principais atividades de Wynncraft diretamente no repositório, para que o conteúdo continue acessível e fácil de editar sem depender de serviços externos.
 
-### Membros
+### Lootrun
 
-A seção de membros exibe os nomes, cargos, tags e retratos que representam a estrutura viva da guilda. Esses dados são mantidos localmente, preservando a ordem e a identidade definida pela própria comunidade.
+Guia completo sobre o sistema de Lootrun, incluindo camps, mecânicas, combos, divisions, beacons e recompensas.
 
-### Galeria
+### Dungeons
 
-A galeria registra momentos importantes da GsW, como reuniões, finais de season, guerras antigas e eventos internos. Cada item pode carregar título, descrição e imagem local, mantendo o tom memorial que o site precisa transmitir.
+Informações sobre dungeons, estratégias e dicas para diferentes níveis de dificuldade.
 
-## Fluxo de imagens
+### Raids
 
-O site usa imagens locais em `.webp` para manter o carregamento leve e o visual consistente. Para apoiar esse fluxo, o projeto inclui uma área dedicada de conversão:
+Cobertura completa das raids disponíveis no jogo, com detalhes sobre chefes e rotas.
 
-- entradas em `image-workbench/input`
-- saídas em `image-workbench/output`
-- script em `scripts/convert-to-webp.mjs`
+### World Events
 
-O conversor segue a lógica usada anteriormente no projeto, mantendo:
+Guias para os world events de Wynncraft, incluindo farm routes e recompensas.
 
-- saída em `.webp`
-- limite visual de até `800px`
-- qualidade equivalente ao padrão anterior
-- aviso quando o arquivo final ultrapassa a faixa que antes era tratada como referência de otimização
+### Professions
+
+Informações sobre sistemas de profissão do jogo, com focus em herbalism e mining.
+
+### Leveling
+
+Guia de level up, com advice de stats, dungeons recomendadas e tips de progressão.
+
+### Modos Especiais
+
+Documentação sobre os modos especiais do jogo: Ironman, Hardcore e Ultimate.
+
+### Silverbull Shares
+
+Seção dedicada à economia da guilda, documentando o sistema de shares do servidor Silverbull.
 
 ## Direção atual do projeto
 
