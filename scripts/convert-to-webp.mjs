@@ -5,9 +5,14 @@ import sharp from "sharp";
 const INPUT_DIR = path.resolve(process.cwd(), "image-workbench", "input");
 const OUTPUT_DIR = path.resolve(process.cwd(), "image-workbench", "output");
 const SUPPORTED_EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".webp"]);
-const MAX_DIMENSION = 800;
+const SOURCE_PRIORITY = {
+  ".png": 3,
+  ".jpg": 2,
+  ".jpeg": 2,
+  ".webp": 1,
+};
 const WEBP_LOSSLESS = true;
-const WEBP_QUALITY = 90;
+const WEBP_QUALITY = 100;
 const MAX_OUTPUT_BYTES = 200 * 1024;
 
 const args = process.argv.slice(2);
@@ -47,18 +52,18 @@ function buildOutputPath(filePath, sourceRoot) {
   return path.join(OUTPUT_DIR, parsed.dir, `${parsed.name}.webp`);
 }
 
+function getPriority(filePath) {
+  return SOURCE_PRIORITY[path.extname(filePath).toLowerCase()] ?? 0;
+}
+
 async function convertFile(filePath, sourceRoot) {
   const outputPath = buildOutputPath(filePath, sourceRoot);
   const outputDir = path.dirname(outputPath);
 
   await fs.mkdir(outputDir, { recursive: true });
 
-  const transformer = sharp(filePath, { animated: true }).resize({
-    width: MAX_DIMENSION,
-    height: MAX_DIMENSION,
-    fit: "inside",
-    withoutEnlargement: true,
-  });
+  // Conversion only: preserve original dimensions and just change format to WebP.
+  const transformer = sharp(filePath, { animated: true });
 
   const buffer = await transformer.webp({ quality: WEBP_QUALITY, lossless: WEBP_LOSSLESS }).toBuffer();
 
@@ -95,9 +100,21 @@ async function main() {
     const targetFiles = files.filter((file) =>
       targetStats.isFile() ? file === target : file.startsWith(target)
     );
+    const sourceRoot = targetStats.isFile() ? path.dirname(target) : target;
+    const selectedSources = new Map();
 
+    // Avoid degrading quality by reconverting existing .webp when a better original exists.
     for (const file of targetFiles) {
-      await convertFile(file, targetStats.isFile() ? path.dirname(target) : target);
+      const outputPath = buildOutputPath(file, sourceRoot);
+      const current = selectedSources.get(outputPath);
+
+      if (!current || getPriority(file) > getPriority(current)) {
+        selectedSources.set(outputPath, file);
+      }
+    }
+
+    for (const file of selectedSources.values()) {
+      await convertFile(file, sourceRoot);
     }
   }
 }

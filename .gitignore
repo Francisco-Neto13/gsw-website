@@ -46,3 +46,6 @@ next-env.d.ts
 !/image-workbench/input/.gitkeep
 /image-workbench/output/*
 !/image-workbench/output/.gitkeep
+
+# local backups
+/backup/
