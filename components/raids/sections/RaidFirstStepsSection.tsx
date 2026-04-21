@@ -111,7 +111,7 @@ export default function RaidFirstStepsSection() {
           ))}
         </div>
 
-        <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {queueSteps.map((step) => (
             <RaidImageCard key={step.src} src={step.src} alt={step.alt} aspectClassName="aspect-[4/3]" />
           ))}

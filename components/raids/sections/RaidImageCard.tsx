@@ -14,7 +14,7 @@ export default function RaidImageCard({
   src,
   alt,
   caption,
-  aspectClassName = "aspect-video",
+  aspectClassName = "aspect-[2/1] sm:aspect-video",
   sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw",
 }: RaidImageCardProps) {
   const normalizedCaption =

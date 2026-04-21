@@ -5,7 +5,10 @@ import { homeHeroContent, homeHeroSpotlights } from "@/components/home/data/home
 export default function HomeHeroSection() {
   return (
     <>
-      <section data-reveal-ignore="true" className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24">
+      <section
+        data-reveal-ignore="true"
+        className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24 sm:px-6 lg:px-8"
+      >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: `url('${homeHeroContent.backgroundImage}')` }}
@@ -14,7 +17,7 @@ export default function HomeHeroSection() {
         <div className="absolute inset-x-0 bottom-0 z-[2] h-48 bg-gradient-to-b from-transparent to-zinc-950" />
 
         <div className="relative z-10 mx-auto max-w-7xl -translate-y-10 text-center">
-          <h1 className="text-7xl font-black italic leading-none tracking-tight text-gsw sm:text-9xl">
+          <h1 className="text-6xl font-black italic leading-none tracking-tight text-gsw sm:text-8xl lg:text-9xl">
             {homeHeroContent.brand}
           </h1>
           <p className="mx-auto -mt-0.5 max-w-md text-xs font-bold uppercase tracking-[0.35em] text-zinc-300">
@@ -25,14 +28,13 @@ export default function HomeHeroSection() {
 
       <section
         data-reveal-ignore="true"
-        className="relative isolate overflow-hidden bg-black px-4 pb-16 pt-8 sm:px-6 sm:pb-24 sm:pt-12"
+        className="relative isolate overflow-hidden bg-black px-4 pb-14 pt-8 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 lg:pb-24"
       >
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div
-              data-reveal="left"
               data-reveal-delay="40"
-              className="reveal-on-scroll rounded-3xl border border-white/10 bg-black/45 p-6 backdrop-blur sm:p-8"
+              className="reveal-on-scroll mx-1 rounded-3xl border border-white/10 bg-black/45 p-5 backdrop-blur sm:mx-0 sm:p-8"
             >
               <span className="mb-4 inline-block text-[11px] font-bold uppercase tracking-[0.45em] text-gsw/90">
                 {homeHeroContent.eyebrow}
@@ -55,9 +57,8 @@ export default function HomeHeroSection() {
             </div>
 
             <aside
-              data-reveal="right"
               data-reveal-delay="140"
-              className="reveal-on-scroll rounded-3xl border border-white/10 bg-black/50 p-3 backdrop-blur sm:p-4"
+              className="reveal-on-scroll mx-1 rounded-3xl border border-white/10 bg-black/50 p-2.5 backdrop-blur sm:mx-0 sm:p-4"
             >
               <p className="mb-3 px-1 text-[10px] font-semibold uppercase tracking-[0.4em] text-gsw/85">Em destaque</p>
               <div className="space-y-3">
@@ -65,9 +66,9 @@ export default function HomeHeroSection() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="group grid grid-cols-[112px_1fr] gap-3 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/65 p-2 transition hover:border-gsw/45 hover:bg-black/80"
+                    className="group grid grid-cols-[96px_1fr] gap-3 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/65 p-2 transition hover:border-gsw/45 hover:bg-black/80 sm:grid-cols-[112px_1fr]"
                   >
-                    <div className="relative h-24 overflow-hidden rounded-xl bg-black">
+                    <div className="relative h-20 overflow-hidden rounded-xl bg-black sm:h-24">
                       <Image
                         src={item.image}
                         alt={item.label}

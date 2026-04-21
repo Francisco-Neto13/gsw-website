@@ -84,7 +84,7 @@ export default function ProfessionToolsSection() {
           ))}
         </div>
 
-        <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-3 sm:gap-6">
+        <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {professionFlowMedia.map((item) => (
             <article key={item.src} className="overflow-hidden rounded-2xl border border-white/10 bg-black/35">
               <ClickableImagePreview src={item.src} alt={item.alt}>

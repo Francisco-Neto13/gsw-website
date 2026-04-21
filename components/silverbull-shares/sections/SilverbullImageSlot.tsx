@@ -9,7 +9,7 @@ type SilverbullImageSlotProps = {
 };
 
 export default function SilverbullImageSlot({ label, src, alt, compact = false }: SilverbullImageSlotProps) {
-  const frameClass = compact ? "aspect-[4/3]" : "aspect-video";
+  const frameClass = compact ? "aspect-[4/3]" : "aspect-[2/1] sm:aspect-video";
   const imageDescription = alt && alt.trim() !== label.trim() ? alt : label;
 
   if (src) {

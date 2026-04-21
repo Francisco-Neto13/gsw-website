@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { galleryPhotos } from "@/components/history/data/gallery";
 
 export default function GallerySection() {
@@ -41,6 +42,19 @@ export default function GallerySection() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedPhotoIndex, goToNext, goToPrev]);
 
+  useEffect(() => {
+    if (selectedPhotoIndex === null) {
+      return;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [selectedPhotoIndex]);
+
   return (
     <section id="galeria" className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-32">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_bottom,rgba(113,22,173,0.03)_0%,transparent_50%)]" />
@@ -60,11 +74,11 @@ export default function GallerySection() {
         </div>
 
         {photos.length > 0 ? (
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
             {photos.map((photo, index) => (
               <div
                 key={`${photo.title}-${index}`}
-                className="group relative aspect-video cursor-pointer overflow-hidden rounded-xl bg-zinc-900 transition-transform duration-200 will-change-transform hover:scale-[1.02]"
+                className="group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-xl bg-zinc-900 transition-transform duration-200 will-change-transform hover:scale-[1.02] sm:aspect-video"
                 onClick={() => setSelectedPhotoIndex(index)}
               >
                 <Image
@@ -106,8 +120,9 @@ export default function GallerySection() {
         </div>
       </div>
 
-      {selectedPhoto && (
-<div
+      {selectedPhoto && typeof document !== "undefined"
+        ? createPortal(
+            <div
             className="fixed inset-0 z-[110] flex items-center justify-center bg-black/95 p-4 sm:p-8"
             onClick={() => setSelectedPhotoIndex(null)}
           >
@@ -186,8 +201,10 @@ export default function GallerySection() {
           <div className="absolute top-4 left-4 text-xs font-medium text-white/60 sm:top-6 sm:left-6 sm:text-sm">
             {selectedPhotoIndex !== null && `${selectedPhotoIndex + 1} / ${photos.length}`}
           </div>
-        </div>
-      )}
+        </div>,
+            document.body
+          )
+        : null}
     </section>
   );
 }

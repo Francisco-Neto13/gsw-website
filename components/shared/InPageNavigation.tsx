@@ -161,7 +161,7 @@ export default function InPageNavigation({ minSections = 2 }: InPageNavigationPr
   }
 
   return (
-    <div className="sticky top-[72px] z-30 border-y border-white/10 bg-black/90 px-4 py-3 backdrop-blur lg:hidden">
+    <div className="sticky top-[65px] z-30 border-b border-white/10 bg-black/90 px-4 py-3 backdrop-blur sm:px-6 lg:px-8 xl:hidden">
       <div className="mx-auto max-w-5xl">
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.4em] text-gsw/90">Nesta página</p>
         <div className="flex gap-2 overflow-x-auto pb-1">

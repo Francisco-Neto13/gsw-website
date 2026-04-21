@@ -19,7 +19,7 @@ export default function LazyYouTubeEmbed({
 
   if (isPlaying) {
     return (
-      <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-zinc-900">
+      <div className="relative aspect-[2/1] overflow-hidden rounded-xl border border-white/10 bg-zinc-900 sm:aspect-video">
         <iframe
           src={embedSrc}
           title={title}
@@ -35,7 +35,7 @@ export default function LazyYouTubeEmbed({
     <button
       type="button"
       onClick={() => setIsPlaying(true)}
-      className="group relative aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-zinc-900"
+      className="group relative aspect-[2/1] w-full overflow-hidden rounded-xl border border-white/10 bg-zinc-900 sm:aspect-video"
       aria-label={`Reproduzir vídeo: ${title}`}
     >
       <img

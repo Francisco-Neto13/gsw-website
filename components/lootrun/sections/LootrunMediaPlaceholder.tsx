@@ -36,7 +36,7 @@ export default function LootrunMediaPlaceholder({
   if (isLocalVideo && item.src) {
     return (
       <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-        <div className="relative aspect-video w-full bg-zinc-900/50 p-1 sm:p-2">
+        <div className="relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2">
           <video
             src={item.src}
             className="pointer-events-none h-full w-full rounded-lg object-contain"
@@ -60,7 +60,7 @@ export default function LootrunMediaPlaceholder({
     return (
       <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <ClickableImagePreview src={item.src} alt={item.alt ?? item.name}>
-          <div className="relative aspect-video w-full bg-zinc-900/50 p-1 sm:p-2">
+          <div className="relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2">
             <Image
               src={item.src}
               alt={item.alt ?? item.name}

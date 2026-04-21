@@ -24,19 +24,19 @@ export default function GuideIntro({
   return (
     <section
       id={id}
-      className={`relative flex min-h-screen items-center overflow-hidden px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-32 ${sectionClassName}`.trim()}
+      className={`relative flex min-h-[88svh] items-center overflow-hidden px-4 pb-14 pt-24 sm:min-h-screen sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-24 ${sectionClassName}`.trim()}
     >
       {decorations}
 
       <div className={`relative z-10 mx-auto max-w-5xl ${contentClassName}`.trim()}>
-        <div className="reveal-on-scroll mx-auto flex min-h-[420px] max-w-3xl flex-col justify-center text-center sm:h-[520px] sm:justify-start sm:pt-24">
+        <div className="reveal-on-scroll mx-auto flex min-h-[360px] max-w-3xl flex-col justify-center text-center sm:min-h-[420px] sm:h-[520px] sm:justify-start sm:pt-24">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
             {eyebrow}
           </span>
-          <h1 className="mb-6 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
+          <h1 className="mb-6 text-[2.15rem] font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
             {title}
           </h1>
-          <div className="mx-auto flex min-h-[168px] max-w-3xl flex-col justify-start sm:h-[220px]">
+          <div className="mx-auto flex max-w-3xl flex-col justify-start sm:min-h-[168px] sm:h-[220px]">
             {paragraphs.map((paragraph, index) => (
               <p
                 key={index}

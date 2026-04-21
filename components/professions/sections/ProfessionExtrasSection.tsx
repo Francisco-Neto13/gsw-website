@@ -23,7 +23,7 @@ export default function ProfessionExtrasSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {professionExtraHighlights.map((item) => (
             <article
               key={item.title}

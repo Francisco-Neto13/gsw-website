@@ -24,7 +24,7 @@ export default function LootrunExtrasSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {lootrunExtraHighlights.map((item) => (
             <article key={item.title} className="rounded-2xl border border-white/10 bg-zinc-900/20 p-5 text-center sm:p-6">
               <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">

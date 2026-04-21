@@ -53,7 +53,7 @@ export default function ProfessionGrindSpotsSection() {
           </p>
         </div>
 
-        <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-3 sm:gap-6">
+        <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {professionSpotMedia.map((item) => (
             <article key={item.src} className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20">
               <ClickableImagePreview src={item.src} alt={item.alt}>

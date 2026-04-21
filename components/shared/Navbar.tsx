@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { sitePageLinks } from "@/lib/site-content";
 
@@ -82,11 +82,6 @@ function scrollToSection(sectionId: string) {
 
 export default function Navbar({ currentPath }: NavbarProps) {
   const pathname = usePathname();
-  const hasMounted = useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false
-  );
   const [menuOpen, setMenuOpen] = useState(false);
   const [sectionsOpen, setSectionsOpen] = useState(false);
   const [inPageLinks, setInPageLinks] = useState<InPageLink[]>([]);
@@ -152,12 +147,12 @@ export default function Navbar({ currentPath }: NavbarProps) {
     };
   }, [sectionsOpen]);
 
-  const activePath = hasMounted ? (pathname ?? currentPath) : "";
-  const showInPageDropdown = hasMounted && inPageLinks.length >= 2;
+  const activePath = pathname ?? currentPath;
+  const showInPageDropdown = inPageLinks.length >= 2;
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:grid sm:grid-cols-3">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 xl:grid xl:h-[72px] xl:grid-cols-3">
         <Link href="/" className="group flex items-center justify-self-start gap-3">
           <Image
             src="/icon.webp"
@@ -172,7 +167,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
           </span>
         </Link>
 
-        <ul className="hidden justify-self-center gap-8 sm:flex">
+        <ul className="hidden justify-self-center gap-4 2xl:gap-8 xl:flex">
           {visiblePageLinks.map((link) => {
             const isActive = activePath === link.href;
             const canShowSections = isActive && showInPageDropdown;
@@ -186,13 +181,13 @@ export default function Navbar({ currentPath }: NavbarProps) {
                 <div className="flex items-center gap-1.5">
                   <Link
                     href={link.href}
-                    aria-current={hasMounted && isActive ? "page" : undefined}
+                    aria-current={isActive ? "page" : undefined}
                     onClick={() => {
                       if (!isActive) {
                         setSectionsOpen(false);
                       }
                     }}
-                    className={`inline-flex h-6 items-center whitespace-nowrap border-b text-xs font-medium uppercase tracking-widest transition-colors ${
+                    className={`inline-flex h-7 items-center whitespace-nowrap border-b text-[11px] font-medium uppercase tracking-[0.18em] transition-colors 2xl:text-xs ${
                       isActive
                         ? "pointer-events-none border-gsw text-white"
                         : "border-transparent text-zinc-400 hover:border-gsw/80 hover:text-gsw"
@@ -206,7 +201,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
                       type="button"
                       onClick={() => setSectionsOpen((current) => !current)}
                       className="flex h-5 w-5 items-center justify-center text-zinc-400 transition-colors hover:text-gsw"
-                      aria-label="Abrir seções da página atual"
+                      aria-label="Abrir secoes da pagina atual"
                       aria-haspopup="menu"
                       aria-expanded={sectionsOpen}
                       aria-controls="navbar-in-page-menu"
@@ -215,7 +210,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
                         className={`text-[10px] transition-transform duration-200 ${sectionsOpen ? "rotate-180 text-gsw" : ""}`}
                         aria-hidden="true"
                       >
-                        ▾
+                        v
                       </span>
                     </button>
                   ) : null}
@@ -265,7 +260,7 @@ export default function Navbar({ currentPath }: NavbarProps) {
         <div className="flex items-center justify-end justify-self-end">
           <button
             onClick={() => setMenuOpen((current) => !current)}
-            className="flex h-8 w-8 cursor-pointer flex-col items-end justify-center gap-1.5 sm:hidden"
+            className="flex h-8 w-8 cursor-pointer flex-col items-end justify-center gap-1.5 xl:hidden"
             aria-label="Menu"
             aria-expanded={menuOpen}
           >
@@ -289,9 +284,9 @@ export default function Navbar({ currentPath }: NavbarProps) {
       </div>
 
       <div
-        className={`bg-black/95 transition-[max-height] duration-300 sm:hidden ${
+        className={`bg-black/95 transition-[max-height] duration-300 xl:hidden ${
           menuOpen
-            ? "max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 overscroll-contain"
+            ? "max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 overscroll-contain"
             : "max-h-0 overflow-hidden"
         }`}
       >
@@ -301,9 +296,9 @@ export default function Navbar({ currentPath }: NavbarProps) {
               <Link
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                aria-current={hasMounted && activePath === link.href ? "page" : undefined}
+                aria-current={activePath === link.href ? "page" : undefined}
                 className={`block whitespace-nowrap border-b border-white/5 py-4 text-xs font-medium uppercase tracking-widest transition-colors last:border-0 ${
-                  hasMounted && activePath === link.href
+                  activePath === link.href
                     ? "pointer-events-none text-white"
                     : "text-zinc-400 hover:text-gsw"
                 }`}
@@ -317,3 +312,4 @@ export default function Navbar({ currentPath }: NavbarProps) {
     </nav>
   );
 }
+
