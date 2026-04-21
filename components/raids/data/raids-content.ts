@@ -266,7 +266,7 @@ export const nolRooms: RaidGuideRoom[] = [
           "Quem está com a orb não vê o feixe de luz, então depende totalmente da call ou da orientação do time.",
           "Normalmente um jogador fica responsável por guiar, enquanto os outros limpam os mobs para evitar multihit.",
           "O processo passa por três pisos até chegar ao último trecho, onde a saída já fica próxima.",
-          "? uma sala longa, então disciplina de posicionamento e comunicação fazem muita diferença.",
+          "É uma sala longa, então disciplina de posicionamento e comunicação fazem muita diferença.",
         ],
       },
     ],
@@ -303,7 +303,7 @@ export const tccRooms: RaidGuideRoom[] = [
         points: [
           "Logo no início, a party vai para a esquerda pegar água e se divide entre as lavas principais.",
           "Um jogador costuma ficar responsável pela lava isolada, enquanto os demais cobrem as outras posições.",
-          "? melhor matar os mobs antes de usar a água, porque eles causam bastante dano e atrapalham a execução.",
+          "É melhor matar os mobs antes de usar a água, porque eles causam bastante dano e atrapalham a execução.",
           "Depois que os primeiros 60 segundos passam, um jogador precisa subir na plataforma. Sem alguém lá em cima, o tempo ganho nas lavas não conta.",
           "Dois minibosses aparecem ao longo da sala. O objetivo do player da plataforma é continuar segurando até a conclusão, enquanto o restante mantém as lavas sob controle.",
         ],
@@ -334,7 +334,7 @@ export const tccRooms: RaidGuideRoom[] = [
       {
         name: "Escolte o Golem",
         summary:
-          "Ative os golems, abra os portões com as alavancas e não deixe os molten monsters baterem neles. ? uma sala mais lenta, mas toda ela gira em torno de proteger a escolta.",
+          "Ative os golems, abra os portões com as alavancas e não deixe os molten monsters baterem neles. É uma sala mais lenta, mas toda ela gira em torno de proteger a escolta.",
         videoId: "IHhdZ6p4q4U",
         points: [
           "Os molten monsters laranjas são a principal prioridade. Quando ficam bravos, recebem glowing e focam o golem.",
@@ -351,11 +351,12 @@ export const tccRooms: RaidGuideRoom[] = [
     title: "Ative os Selos",
     description:
       "A terceira sala da TCC é fixa, mas se divide em vários desafios paralelos. Enquanto parte da equipe cuida dos selos, alguém também precisa defender o Elder Astal dos meteoros.",
+    cardLabel: "POV",
     variants: [
       {
         name: "Primeval Machine",
         summary:
-          "? um dos minibosses da sala. O padrão gira entre girar o martelo, lançar uma pedra e pular em uma direção aleatória.",
+          "É um dos minibosses da sala. O padrão gira entre girar o martelo, lançar uma pedra e pular em uma direção aleatória.",
         videoId: "_OhHZxYHE-Y",
         points: [
           "A pedra lançada sempre é direcionada ao player, então vale antecipar esse movimento.",
@@ -380,11 +381,11 @@ export const tccRooms: RaidGuideRoom[] = [
       {
         name: "Desvie das Pedras",
         summary:
-          "? um dos desafios mais simples depois que o padrão das pedras entra na memória. Também costuma ser um dos mais rápidos para liberar alguém para defender o Elder.",
+          "É um dos desafios mais simples depois que o padrão das pedras entra na memória. Também costuma ser um dos mais rápidos para liberar alguém para defender o Elder.",
         videoId: "q397DxEKJ30",
         points: [
           "Depois que você entende a sequência das pedras, esse desafio fica muito consistente.",
-          "? uma das melhores opções para terminar rápido e voltar para ajudar na defesa do Elder Astal.",
+          "É uma das melhores opções para terminar rápido e voltar para ajudar na defesa do Elder Astal.",
           "Mesmo quando o Elder cai para 3 ou 2 de vida, ainda costuma ser possível segurar a defesa se alguém chegar logo depois.",
         ],
       },
@@ -470,7 +471,7 @@ export const tnaRooms: RaidGuideRoom[] = [
           "Dentro da árvore existem vários caminhos que levam a grottos diferentes, e a isoptera pode aparecer em qualquer um deles.",
           "Quando o jogador encontra e derrota a isoptera, ele precisa voltar até o início da árvore ou fechar o loop pelo final para depositar um dos corações no altar.",
           "Os jogadores de fora devem gastar todas as almas disponíveis antes de matar os soul shrubs para repor recurso com eficiência.",
-          "? importante lembrar que só recebe alma quem acerta o soul shrub pelo menos uma vez, então todo mundo deve hitá-lo ao entrar na sala.",
+          "É importante lembrar que só recebe alma quem acerta o soul shrub pelo menos uma vez, então todo mundo deve hitá-lo ao entrar na sala.",
         ],
       },
       {
@@ -500,7 +501,7 @@ export const tnaRooms: RaidGuideRoom[] = [
           "A party coleta void matters por meio de dois parkours e dois minibosses, entrega tudo no portal e então derrota os portais corrompidos e o boss final para conseguir a última void matter.",
         videoId: "pdZI7LGvH8c",
         points: [
-          "ì esquerda e à direita existem dois parkours, sendo o longo o da esquerda e o curto o da direita.",
+          "À esquerda e à direita existem dois parkours, sendo o longo o da esquerda e o curto o da direita.",
           "No parkour longo, parte da mecânica envolve cair no void, avançar e aproveitar o rollback para acertar a void matter real.",
           "Além disso, a sala também tem dois minibosses: o vermelho, mais simples, e o dos void holes, onde normalmente só o da direita precisa morrer porque é ele que dropa a void matter.",
           "Depois que 4 das 5 void matters são entregues, os 3 portais da área inicial viram minibosses que precisam ser derrotados algumas vezes.",
@@ -598,7 +599,7 @@ export const twpRooms: RaidGuideRoom[] = [
           "Um player pega o artefato no meio e espera os buracos criarem nametag de mob antes da execução principal.",
           "Depois que os buracos ficam ativos, os outros players ajudam a matar para as caixas surgirem.",
           "Quem está com artefato dá dash nas caixas e nos espinhos para expor novos buracos e pode pegar mais de um por vez.",
-          "? necessário quebrar 9 buracos no total, incluindo o buraco central.",
+          "É necessário quebrar 9 buracos no total, incluindo o buraco central.",
           "Quem não está com artefato deve ficar em cima das caixas para elas não se enterrarem novamente.",
           "Cada dash spawna um Carnifex; ele precisa morrer rápido para restaurar o dash do artefato.",
         ],
@@ -614,7 +615,7 @@ export const extras = [
   "Cada raid tem um tipo mítico diferente de aspect, que muda toda sexta-feira às 14h no horário de Brasília. As rotações também afetam versões fabled e lendária.",
   "Só é possível utilizar 1 aspect mítico por classe.",
   "Qualquer aspect obtido pode ser usado em todas as classes compatíveis com aquele aspect.",
-  "? possível aumentar a quantidade de aspects e recompensas ativando os Gambits na tela inicial da raid. Cada gambit traz um desafio ou consequência.",
+  "É possível aumentar a quantidade de aspects e recompensas ativando os Gambits na tela inicial da raid. Cada gambit traz um desafio ou consequência.",
   "Os Gambits são aleatórios, funcionam para todas as raids e mudam diariamente.",
   "Todos têm acesso ao primeiro gambit. O segundo e o terceiro só são liberados nos ranks Admiral e Master.",
   "Para verificar seu ranking de raid, clique na bússola e passe o mouse no ícone de machado.",
@@ -791,7 +792,7 @@ export const raidGuideGroups: RaidGuideGroup[] = [
 ];
 
 export const raidRewardsDescription =
-  "Depois de concluir a raid, a party é enviada para a sala de recompensa. ? ali que entram os pulls finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da equipe ao longo das salas.";
+  "Depois de concluir a raid, a party é enviada para a sala de recompensa. É ali que entram os pulls finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da equipe ao longo das salas.";
 
 export const raidRewardsIntro: SectionIntro = {
   eyebrow: "Ao final da raid",
