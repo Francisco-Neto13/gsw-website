@@ -1,4 +1,4 @@
-export type HomePillarIcon = "book" | "clock" | "users";
+﻿export type HomePillarIcon = "book" | "clock" | "users";
 
 export type HomePillar = {
   icon: HomePillarIcon;
@@ -42,19 +42,19 @@ export const homeHeroSpotlights: HeroSpotlight[] = [
     label: "Lootrun",
     note: "Rotas, beacons, camps e setups de tempo.",
     href: "/lootrun",
-    image: "/lootrun/Niveis.png",
+    image: "/lootrun/Niveis.webp",
   },
   {
     label: "Raids",
     note: "Entrada, runas, leitura de mecânica e recompensas.",
     href: "/raids",
-    image: "/raids/raid_chief.png",
+    image: "/raids/raid_chief.webp",
   },
   {
     label: "Shares",
     note: "Ranks, crates, bombas, tokens e ofertas.",
     href: "/silverbull-shares",
-    image: "/shares/loja_ingame.png",
+    image: "/shares/loja_ingame.webp",
   },
 ];
 
@@ -92,22 +92,22 @@ export const homePillars: HomePillar[] = [
 
 export const homeAboutShowcase = [
   {
-    src: "/lootrun/Cinfras_silverbull.png",
+    src: "/lootrun/Cinfras_silverbull.webp",
     alt: "Entrada do centro de divisão",
     caption: "Ponto de entrada para sistemas avançados",
   },
   {
-    src: "/worldevents/we.png",
+    src: "/worldevents/we.webp",
     alt: "World event em andamento",
     caption: "Cobertura de conteúdo para jogo ativo",
   },
   {
-    src: "/shares/loja_ingame.png",
+    src: "/shares/loja_ingame.webp",
     alt: "Menu da loja in-game",
     caption: "Sistema de shares e ofertas in-game",
   },
   {
-    src: "/leveling/party_finder.png",
+    src: "/leveling/party_finder.webp",
     alt: "Party finder para leveling",
     caption: "Fluxo inicial para progressão e party",
   },
@@ -126,56 +126,64 @@ export const homeGuideCards: HomeGuideCard[] = [
     label: "Lootrun",
     description: "Mostra divisões, camps, beacons e otimização de tempo por rota.",
     href: "/lootrun",
-    image: "/lootrun/lootrun_start.png",
+    image: "/lootrun/lootrun_start.webp",
     eyebrow: "Sistema",
   },
   {
     label: "Raids",
     description: "Mostra pre-requisitos, estrutura das runs e leitura de boss.",
     href: "/raids",
-    image: "/raids/raid_completa.png",
+    image: "/raids/raid_completa.webp",
     eyebrow: "PvE",
   },
   {
     label: "Leveling",
     description: "Mostra spots por faixa de nível, party finder e builds de grind.",
     href: "/leveling",
-    image: "/leveling/scrapward.png",
+    image: "/leveling/scrapward.webp",
     eyebrow: "Progressão",
+  },
+  {
+    label: "Profissões",
+    description: "Mostra gathering, crafting, ingredients e fluxo de progressão por profissão.",
+    href: "/professions",
+    image: "/professions/professions.webp",
+    eyebrow: "Crafting",
   },
   {
     label: "World Events",
     description: "Mostra participação, ondas, annihilation e recompensas finais.",
     href: "/world-events",
-    image: "/worldevents/Annihilation.png",
+    image: "/worldevents/Annihilation.webp",
     eyebrow: "Evento",
   },
   {
     label: "Dungeons",
     description: "Mostra acesso, merchant, forgery e fluxo completo de rewards.",
     href: "/dungeons",
-    image: "/dungeons/rewards.png",
+    image: "/dungeons/rewards.webp",
     eyebrow: "Instâncias",
   },
   {
     label: "Shares",
     description: "Mostra loja, ranks, bundles e uso eficiente de tokens.",
     href: "/silverbull-shares",
-    image: "/shares/loja_virtual.png",
+    image: "/shares/loja_virtual.webp",
     eyebrow: "Economia",
   },
   {
     label: "Modos Especiais",
     description: "Mostra regras, limitações e escolhas por perfil de jogador.",
     href: "/modos-especiais",
-    image: "/gamemodes/gamemodes.png",
+    image: "/gamemodes/gamemodes.webp",
     eyebrow: "Desafio",
   },
   {
     label: "História da GsW",
     description: "Mostra linha do tempo, membros e marcos que moldaram o projeto.",
     href: "/historia",
-    image: "/gallery/final_season_2.png",
+    image: "/gallery/final_season_2.webp",
     eyebrow: "Comunidade",
   },
 ];
+

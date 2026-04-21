@@ -44,7 +44,13 @@ export default function DungeonsMerchantSection() {
             <article key={image.src} className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40">
               <ClickableImagePreview src={image.src} alt={image.alt}>
                 <div className="relative aspect-video w-full">
-                  <Image src={image.src} alt={image.alt} fill className="object-contain p-2" />
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                    className="object-contain p-2"
+                  />
                 </div>
               </ClickableImagePreview>
               <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{image.caption?.trim() || image.alt}</p>

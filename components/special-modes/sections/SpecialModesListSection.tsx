@@ -31,7 +31,13 @@ export default function SpecialModesListSection() {
               <div className="border-b border-white/5 px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3">
                   <div className="relative h-9 w-9 overflow-hidden rounded-md border border-white/10 bg-black/40 sm:h-10 sm:w-10">
-                    <Image src={mode.icon} alt={`Ícone do modo ${mode.name}`} fill className="object-contain p-1" />
+                    <Image
+                      src={mode.icon}
+                      alt={`Ícone do modo ${mode.name}`}
+                      fill
+                      sizes="(max-width: 640px) 36px, 40px"
+                      className="object-contain p-1"
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{mode.name}</h3>

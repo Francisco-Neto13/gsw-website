@@ -1,4 +1,4 @@
-export type SectionIntro = {
+﻿export type SectionIntro = {
   eyebrow: string;
   title: string;
   description?: string;
@@ -83,7 +83,7 @@ export const tradableVsUntradable: InfoCard[] = [
   {
     title: "Tradable Shares",
     description:
-      "Podem ser vendidas no Trade Market e usadas normalmente em cosméticos e consumíveis. É o tipo mais comum.",
+      "Podem ser vendidas no Trade Market e usadas normalmente em cosméticos e consumíveis. ? o tipo mais comum.",
   },
   {
     title: "Untradable Shares",
@@ -101,12 +101,12 @@ export const inGameStoreIntro: SectionIntro = {
 
 export const storeEntryImages: MediaCard[] = [
   {
-    src: "/shares/loja_ingame.png",
+    src: "/shares/loja_ingame.webp",
     alt: "Tela da loja in-game do Wynncraft",
     label: "Loja In-game",
   },
   {
-    src: "/shares/loja_virtual.png",
+    src: "/shares/loja_virtual.webp",
     alt: "Tela da loja virtual do Wynncraft",
     label: "Loja Virtual",
   },
@@ -114,41 +114,41 @@ export const storeEntryImages: MediaCard[] = [
 
 export const inGameStoreCategoryImages: MediaCard[] = [
   {
-    src: "/shares/bombs.png",
+    src: "/shares/bombs.webp",
     alt: "Aba de bombas na loja in-game",
     label: "Bombs",
   },
   {
-    src: "/shares/chests.png",
+    src: "/shares/chests.webp",
     alt: "Aba de chests e crates na loja in-game",
     label: "Chests e Crates",
   },
   {
-    src: "/shares/pets.png",
+    src: "/shares/pets.webp",
     alt: "Aba de pets na loja in-game",
     label: "Pets",
   },
   {
-    src: "/shares/tokens.png",
+    src: "/shares/tokens.webp",
     alt: "Aba de tokens na loja in-game",
     label: "Tokens",
   },
 ];
 
 export const inGameStoreSupportImage: MediaCard = {
-  src: "/shares/silverbull.png",
+  src: "/shares/silverbull.webp",
   alt: "Tela principal do menu de shares",
   label: "Silverbull",
 };
 
 export const offerImage: MediaCard = {
-  src: "/shares/ofertas.png",
+  src: "/shares/ofertas.webp",
   alt: "Tela de oferta aleatoria na loja",
   label: "Ofertas aleatorias",
 };
 
 export const localAccessImage: MediaCard = {
-  src: "/shares/local.png",
+  src: "/shares/local.webp",
   alt: "Acesso local da loja em cidade",
   label: "Acesso local em cidades",
 };
@@ -208,7 +208,7 @@ export const rankCards: RankCard[] = [
     summary: "Primeiro tier pago, focado em qualidade de vida básica.",
     bestFor: "Jogador novo que quer começar com utilidades sem alto investimento.",
     badge: {
-      src: "/shares/vip.png",
+      src: "/shares/vip.webp",
       alt: "Rank VIP",
     },
     highlights: [
@@ -222,7 +222,7 @@ export const rankCards: RankCard[] = [
     summary: "Upgrade direto do VIP com mais economia no dia a dia.",
     bestFor: "Quem joga com frequência e quer fluxo constante de crates e mercado.",
     badge: {
-      src: "/shares/vip+.png",
+      src: "/shares/vip+.webp",
       alt: "Rank VIP+",
     },
     highlights: [
@@ -237,7 +237,7 @@ export const rankCards: RankCard[] = [
     summary: "Tier de meio de progressão com ferramentas muito usadas.",
     bestFor: "Perfil ativo que troca de servidor e quer praticidade em atualizações.",
     badge: {
-      src: "/shares/hero.png",
+      src: "/shares/hero.webp",
       alt: "Rank HERO",
     },
     highlights: [
@@ -252,7 +252,7 @@ export const rankCards: RankCard[] = [
     summary: "Expande o HERO com mais personalização e gestão de classe.",
     bestFor: "Jogador veterano que roda várias classes e valoriza conveniência premium.",
     badge: {
-      src: "/shares/hero+.png",
+      src: "/shares/hero+.webp",
       alt: "Rank HERO+",
     },
     highlights: [
@@ -267,7 +267,7 @@ export const rankCards: RankCard[] = [
     summary: "Tier máximo com foco em status e utilidade global.",
     bestFor: "Quem quer acesso completo ao topo dos benefícios permanentes.",
     badge: {
-      src: "/shares/champion.png",
+      src: "/shares/champion.webp",
       alt: "Rank CHAMPION",
     },
     highlights: [
@@ -337,7 +337,7 @@ export const membershipBenefits: MembershipBenefit[] = [
 ];
 
 export const membershipImage: MediaCard = {
-  src: "/shares/assinatura_silverbull.png",
+  src: "/shares/assinatura_silverbull.webp",
   alt: "Beneficios da assinatura Silverbull",
   label: "Beneficios da assinatura Silverbull",
 };
@@ -369,25 +369,25 @@ export const cratePricingNotes = [
 ];
 
 export const crateTierImage = {
-  src: "/shares/crates.png",
+  src: "/shares/crates.webp",
   alt: "Tabela de tiers e pacotes de crates",
   label: "Tiers e pacotes de Crates",
 };
 
 export const chestStoreImage = {
-  src: "/shares/chests.png",
+  src: "/shares/chests.webp",
   alt: "Secao de chests na loja in-game",
   label: "Aba de Chests na loja in-game",
 };
 
 export const crateExtraImages: MediaCard[] = [
   {
-    src: "/shares/crates_gratuitas.png",
+    src: "/shares/crates_gratuitas.webp",
     alt: "Exemplo de crate gratuita na loja",
     label: "Crate Gratuita",
   },
   {
-    src: "/shares/caixa_evento_sazonal.png",
+    src: "/shares/caixa_evento_sazonal.webp",
     alt: "Exemplo de crate de evento sazonal",
     label: "Crate de Evento Sazonal",
   },
@@ -401,7 +401,7 @@ export const bombsIntro: SectionIntro = {
 };
 
 export const bombStoreImage = {
-  src: "/shares/bombs.png",
+  src: "/shares/bombs.webp",
   alt: "Secao de bombs na loja in-game",
   label: "Aba de Bombs na loja in-game",
 };
@@ -429,13 +429,13 @@ export const petsIntro: SectionIntro = {
 };
 
 export const petsStoreImage = {
-  src: "/shares/pets.png",
+  src: "/shares/pets.webp",
   alt: "Secao de pets na loja in-game",
   label: "Aba de Pets na loja in-game",
 };
 
 export const bundlesStoreImage = {
-  src: "/shares/bundle.png",
+  src: "/shares/bundle.webp",
   alt: "Vitrine de bundles na loja",
   label: "Vitrine de Bundles",
 };
@@ -446,7 +446,7 @@ export const petBundles: PetBundleCard[] = [
     name: "Crimson Bundle",
     notes: ["Pacote completo custa 35 Shares.", "Fiery Dragonling custa 25 Shares (demais pets: 15)."],
     image: {
-      src: "/shares/crimson_bundles.png",
+      src: "/shares/crimson_bundles.webp",
       alt: "Crimson bundle de pets",
       label: "Crimson Bundle",
     },
@@ -456,7 +456,7 @@ export const petBundles: PetBundleCard[] = [
     name: "Frostpaw Bundle",
     notes: ["Pacote completo custa 35 Shares.", "Water Dragonling custa 25 Shares (demais pets: 15)."],
     image: {
-      src: "/shares/Frostpaw_bundles.png",
+      src: "/shares/Frostpaw_bundles.webp",
       alt: "Frostpaw bundle de pets",
       label: "Frostpaw Bundle",
     },
@@ -466,7 +466,7 @@ export const petBundles: PetBundleCard[] = [
     name: "Verdant Bundle",
     notes: ["Pacote completo custa 35 Shares.", "Emerald Dragonling custa 25 Shares (demais pets: 15)."],
     image: {
-      src: "/shares/Verdant_bundles.png",
+      src: "/shares/Verdant_bundles.webp",
       alt: "Verdant bundle de pets",
       label: "Verdant Bundle",
     },
@@ -481,7 +481,7 @@ export const tokensIntro: SectionIntro = {
 };
 
 export const tokenStoreImage = {
-  src: "/shares/tokens.png",
+  src: "/shares/tokens.webp",
   alt: "Secao de tokens na loja in-game",
   label: "Aba de Tokens na loja in-game",
 };
@@ -508,3 +508,4 @@ export const tokenCards: BombCard[] = [
     description: "Reseta bônus diário de Lootrun ou Raid. Com Silverbull ativa, efeito é dobrado.",
   },
 ];
+

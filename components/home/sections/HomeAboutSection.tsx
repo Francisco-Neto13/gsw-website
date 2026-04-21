@@ -62,7 +62,13 @@ export default function HomeAboutSection() {
                 className="reveal-on-scroll overflow-hidden rounded-3xl border border-white/10 bg-black/50"
               >
                 <div className="relative aspect-[16/10] w-full">
-                  <Image src={item.src} alt={item.alt} fill className="object-cover" />
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                   <p className="absolute right-4 bottom-4 left-4 text-sm font-semibold text-white">{item.caption}</p>
                 </div>

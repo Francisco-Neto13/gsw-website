@@ -43,7 +43,13 @@ export default function WorldEventsRewardsSection() {
         <div className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mt-10">
           <ClickableImagePreview src={rewardChestImage.src} alt={rewardChestImage.alt}>
             <div className="relative aspect-video w-full">
-              <Image src={rewardChestImage.src} alt={rewardChestImage.alt} fill className="object-cover" />
+              <Image
+                src={rewardChestImage.src}
+                alt={rewardChestImage.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 42rem"
+                className="object-cover"
+              />
             </div>
           </ClickableImagePreview>
           <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">

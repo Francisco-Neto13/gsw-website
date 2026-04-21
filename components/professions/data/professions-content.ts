@@ -1,4 +1,4 @@
-export type GatheringProfession = {
+﻿export type GatheringProfession = {
   name: string;
   resources: string;
   tool: string;
@@ -32,7 +32,7 @@ export type SectionIntro = {
 
 export const professionsIntroParagraphs = [
   "Existem dois tipos de profissões no Wynncraft: Gathering e Crafting. As de Gathering são niveladas coletando recursos espalhados pelo mapa, cujo nível varia de acordo com a região. As de Crafting utilizam esses recursos combinados com ingredients dropados de mobs para produzir itens consumíveis e equipamentos.",
-  "Nossa recomendação é sempre deixar as profissões para o fim da sua trajetória no jogo. É um conteúdo opcional que não afeta diretamente a gameplay e pode consumir bastante tempo. Se precisar de algum item craftado antes disso, peça ajuda aos membros mais experientes da guilda.",
+  "Nossa recomendação é sempre deixar as profissões para o fim da sua trajetória no jogo. ? um conteúdo opcional que não afeta diretamente a gameplay e pode consumir bastante tempo. Se precisar de algum item craftado antes disso, peça ajuda aos membros mais experientes da guilda.",
 ];
 
 export const professionTypesIntro: SectionIntro = {
@@ -93,7 +93,7 @@ export const professionWaypointsLabels = {
 
 export const gatheringProfessions: GatheringProfession[] = [
   { name: "Farming", resources: "Colheita e Linha", tool: "Foice" },
-  { name: "Fishing", resources: "Peixe e Óleo", tool: "Vara de Pesca" },
+  { name: "Fishing", resources: "Peixe e ?leo", tool: "Vara de Pesca" },
   { name: "Mining", resources: "Minério e Gema", tool: "Picareta" },
   { name: "Woodcutting", resources: "Madeira e Papel", tool: "Machado" },
 ];
@@ -135,7 +135,7 @@ export const grindSpots: ProfessionSpots[] = [
     profession: "Cooking",
     resources: "Fishing + Farming",
     spots: [
-      { level: "1", name: "Potato", coords: "—", isNpc: true },
+      { level: "1", name: "Potato", coords: "-", isNpc: true },
       { level: "2", name: "Egg", coords: "-534, 59, -1830", isNpc: true },
       { level: "11", name: "Pigman Meat", coords: "-821, 80, -1262" },
       { level: "23", name: "Seagrass", coords: "751, 39, -2440" },
@@ -273,3 +273,91 @@ export const waypointSnippet = `[{
   "visibility": "hidden",
   "location": { ... }
 }]`;
+
+export type ProfessionExtraCard = {
+  title: string;
+  description: string;
+};
+
+export type ProfessionExtraReference = {
+  label: string;
+  href: string;
+  source: string;
+};
+
+export type ProfessionExtraMedia = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+export const professionExtrasIntro: SectionIntro = {
+  eyebrow: "Informações adicionais",
+  title: "Extra",
+  description:
+    "Regras e detalhes de profissões que normalmente passam batido, mas impactam muito o planejamento de rota, crafting e economia.",
+};
+
+export const professionExtraHighlights: ProfessionExtraCard[] = [
+  {
+    title: "Marcos de Level",
+    description:
+      "O último grande unlock é level 110 em Gathering e 103 em Crafting. Depois disso ainda dá para subir até 132, mas sem novos desbloqueios importantes.",
+  },
+  {
+    title: "Tiers de Material",
+    description:
+      "Materiais de gathering vêm em tiers diferentes e isso influencia força do craft. A distribuição padrão é majoritariamente Tier 1, com Tier 2 e Tier 3 mais raros.",
+  },
+  {
+    title: "Receita e Ingredientes",
+    description:
+      "Cada craft usa materiais da receita e até 6 ingredientes. Os ingredientes precisam ser compatíveis com a profissão e respeitar o nível da receita.",
+  },
+];
+
+export const professionExtraNotes = [
+  "Crafting acontece em Crafting Stations espalhadas pelo mapa, principalmente em cidades.",
+  "Ingredients podem vir de mob drops, loot chests, quests e também de merchants específicos.",
+  "Use ingredients no craft sempre que possível: eles aumentam bastante o XP de Crafting.",
+  "Powders funcionam no craft de equipamentos (armas, armaduras e acessórios), aplicam efeito elemental e reduzem durabilidade.",
+  "Em powders Tier 3+, também podem aumentar requirement de skill points no item craftado.",
+  "Itens craftados de equipamento têm durabilidade e perdem eficiência quando a durabilidade cai muito; consumíveis funcionam por cargas/duração.",
+];
+
+export const professionExtraReferences: ProfessionExtraReference[] = [
+  {
+    label: "Professions",
+    href: "https://wynncraft.wiki.gg/wiki/Professions",
+    source: "wiki.gg",
+  },
+  {
+    label: "Crafting Ingredients",
+    href: "https://wynncraft.wiki.gg/wiki/Crafting_Ingredients",
+    source: "wiki.gg",
+  },
+  {
+    label: "Crafting",
+    href: "https://wynncraft.wiki.gg/wiki/Crafting",
+    source: "wiki.gg",
+  },
+];
+
+export const professionExtraSupportImages: ProfessionExtraMedia[] = [
+  {
+    src: "/professions/professions.webp",
+    alt: "Visão geral das profissões de crafting",
+    caption: "Resumo das profissões e tipos de item craftado.",
+  },
+  {
+    src: "/professions/ingredientes.webp",
+    alt: "Ingredientes de crafting em professions",
+    caption: "Exemplo de ingredients usados para gerar efeitos no craft.",
+  },
+  {
+    src: "/professions/exemplo_de_craftado.webp",
+    alt: "Exemplo de item craftado em professions",
+    caption: "Resultado final com materiais e ingredients aplicados.",
+  },
+];
+

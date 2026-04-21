@@ -7,6 +7,7 @@ type RaidImageCardProps = {
   alt: string;
   caption?: ReactNode;
   aspectClassName?: string;
+  sizes?: string;
 };
 
 export default function RaidImageCard({
@@ -14,6 +15,7 @@ export default function RaidImageCard({
   alt,
   caption,
   aspectClassName = "aspect-video",
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw",
 }: RaidImageCardProps) {
   const normalizedCaption =
     typeof caption === "string" ? caption.trim() || alt : caption ?? alt;
@@ -22,7 +24,7 @@ export default function RaidImageCard({
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40">
       <ClickableImagePreview src={src} alt={alt}>
         <div className={`relative w-full overflow-hidden bg-zinc-950 ${aspectClassName}`}>
-          <Image src={src} alt={alt} fill className="object-contain p-2 sm:p-3" />
+          <Image src={src} alt={alt} fill sizes={sizes} className="object-contain p-2 sm:p-3" />
         </div>
       </ClickableImagePreview>
       {normalizedCaption ? (

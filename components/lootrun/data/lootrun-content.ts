@@ -1,4 +1,4 @@
-export type MediaPlaceholder = {
+﻿export type MediaPlaceholder = {
   name: string;
   src?: string;
   alt?: string;
@@ -65,12 +65,12 @@ export const lootrunParticipation = {
   media: [
     {
       name: "Centro de Divisão Silverbull",
-      src: "/lootrun/Cinfras_silverbull.png",
+      src: "/lootrun/Cinfras_silverbull.webp",
       alt: "Centro de Divisão Silverbull no leste de Cinfras",
     },
     {
       name: "NPC de inscrição da Lootrun",
-      src: "/lootrun/NPCCinfras_silverbull.png",
+      src: "/lootrun/NPCCinfras_silverbull.webp",
       alt: "NPC da lootrun no Centro de Divisão Silverbull",
     },
   ],
@@ -86,7 +86,7 @@ export const lootrunCamps: LootrunCamp[] = [
       "Bom campo para praticar ritmo de desafios e leitura de beacon.",
     ],
     media: [
-      { name: "Canyon Camp", src: "/lootrun/canyon_camp.png", alt: "Lootcamp Canyon" },
+      { name: "Canyon Camp", src: "/lootrun/canyon_camp.webp", alt: "Lootcamp Canyon" },
       { name: "Jump Pads", src: "/lootrun/jump_pads.gif", alt: "Jump pads em Canyon" },
     ],
   },
@@ -105,7 +105,7 @@ export const lootrunCamps: LootrunCamp[] = [
       "Fanatic Nest (Slay)",
     ],
     media: [
-      { name: "Corkus Camp", src: "/lootrun/corkus_camp.png", alt: "Lootcamp Corkus" },
+      { name: "Corkus Camp", src: "/lootrun/corkus_camp.webp", alt: "Lootcamp Corkus" },
       { name: "Fast Travels em Corkus", src: "/lootrun/fast_travels_corkus.gif", alt: "Atalhos de Corkus" },
     ],
   },
@@ -118,7 +118,7 @@ export const lootrunCamps: LootrunCamp[] = [
       "As opcionais dão loot adicional, sem objetivo obrigatório de challenge.",
     ],
     media: [
-      { name: "Molten Camp", src: "/lootrun/molten_camp.png", alt: "Lootcamp Molten Heights" },
+      { name: "Molten Camp", src: "/lootrun/molten_camp.webp", alt: "Lootcamp Molten Heights" },
       { name: "Rota em Molten", src: "/lootrun/gif_molten.gif", alt: "Exemplo de rota em Molten Heights" },
     ],
   },
@@ -137,8 +137,8 @@ export const lootrunCamps: LootrunCamp[] = [
       "Ovine Spire (Spelunk)",
     ],
     media: [
-      { name: "Sky Camp", src: "/lootrun/sky_camp.png", alt: "Lootcamp Sky Islands" },
-      { name: "Nuvens de mobilidade", src: "/lootrun/nuvens_espalhadas.png", alt: "Nuvens de mobilidade em Sky" },
+      { name: "Sky Camp", src: "/lootrun/sky_camp.webp", alt: "Lootcamp Sky Islands" },
+      { name: "Nuvens de mobilidade", src: "/lootrun/nuvens_espalhadas.webp", alt: "Nuvens de mobilidade em Sky" },
     ],
   },
   {
@@ -156,9 +156,9 @@ export const lootrunCamps: LootrunCamp[] = [
       "The Place Conglomerated/Coalesced (Spelunk)",
     ],
     media: [
-      { name: "Silent Expanse Camp", src: "/lootrun/se_camp.png", alt: "Lootcamp Silent Expanse" },
-      { name: "Fool Eater (spawn 1)", src: "/lootrun/fool_eater1.png", alt: "Rare Mob Fool Eater" },
-      { name: "Fool Eater (spawn 2)", src: "/lootrun/fool_eater2.png", alt: "Rare Mob Fool Eater no mapa" },
+      { name: "Silent Expanse Camp", src: "/lootrun/se_camp.webp", alt: "Lootcamp Silent Expanse" },
+      { name: "Fool Eater (spawn 1)", src: "/lootrun/fool_eater1.webp", alt: "Rare Mob Fool Eater" },
+      { name: "Fool Eater (spawn 2)", src: "/lootrun/fool_eater2.webp", alt: "Rare Mob Fool Eater no mapa" },
     ],
   },
   {
@@ -170,7 +170,7 @@ export const lootrunCamps: LootrunCamp[] = [
       "Na Weapons Factory, evite entrada frontal para não tomar burst.",
     ],
     dangerousChallenges: ["Escalonamento de curses em todos os desafios"],
-    media: [{ name: "Fruma West Camp", src: "/lootrun/fruma_west_camp.png", alt: "Lootcamp Fruma West" }],
+    media: [{ name: "Fruma West Camp", src: "/lootrun/fruma_west_camp.webp", alt: "Lootcamp Fruma West" }],
   },
   {
     name: "The Fruma Foray (East)",
@@ -181,7 +181,7 @@ export const lootrunCamps: LootrunCamp[] = [
       "Priorize consistência de rota, puzzles memorizados e gestão de tempo.",
     ],
     dangerousChallenges: ["Escalonamento de curses em todos os desafios"],
-    media: [{ name: "Fruma East Camp", src: "/lootrun/fruma_east_camp.png", alt: "Lootcamp Fruma East" }],
+    media: [{ name: "Fruma East Camp", src: "/lootrun/fruma_east_camp.webp", alt: "Lootcamp Fruma East" }],
   },
 ];
 
@@ -198,7 +198,7 @@ export const lootrunCampsIntro = {
   media: [
     {
       name: "Exemplo de requisitos de unlock",
-      src: "/lootrun/missoes_necessarias.png",
+      src: "/lootrun/missoes_necessarias.webp",
       alt: "Requisitos de cave e quest para liberar lootrun",
     },
   ],
@@ -219,7 +219,7 @@ export const lootrunDivisions = {
   media: [
     {
       name: "Tela de divisões de Lootrun",
-      src: "/lootrun/Niveis.png",
+      src: "/lootrun/Niveis.webp",
       alt: "Tela de níveis e divisões de lootrun",
     },
   ],
@@ -275,7 +275,7 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
       "Se o timer zerar, a lootrun termina imediatamente.",
     ],
     media: [
-      { name: "Timer da lootrun", src: "/lootrun/timer.png", alt: "Timer da lootrun no HUD" },
+      { name: "Timer da lootrun", src: "/lootrun/timer.webp", alt: "Timer da lootrun no HUD" },
       {
         name: "Tempo ao chegar no desafio",
         src: "/lootrun/GanhandoTempoChegando_no_desafio.gif",
@@ -290,7 +290,7 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
       },
       {
         name: "Pausa de tempo ao abrir baú de challenge",
-        src: "/lootrun/challenge_reward.png",
+        src: "/lootrun/challenge_reward.webp",
         alt: "Baú de challenge com timer pausado",
         caption: "Ao abrir certos baús de challenge, o tempo pode ser pausado temporariamente.",
       },
@@ -306,14 +306,14 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
         alt: "Tempo diminuindo ao morrer",
         caption: "A morte fora de desafio ainda consome tempo da run.",
       },
-      { name: "Cap de 15 minutos", src: "/lootrun/timer_15_minutos.png", alt: "Limite de timer em 15 minutos" },
-      { name: "Timer em 13 minutos", src: "/lootrun/timer_13minutos.png", alt: "Exemplo de timer durante a run" },
+      { name: "Cap de 15 minutos", src: "/lootrun/timer_15_minutos.webp", alt: "Limite de timer em 15 minutos" },
+      { name: "Timer em 13 minutos", src: "/lootrun/timer_13minutos.webp", alt: "Exemplo de timer durante a run" },
       {
         name: "Extrapolando timer com green beacon",
-        src: "/lootrun/timer_15+_minutos.png",
+        src: "/lootrun/timer_15+_minutos.webp",
         alt: "Timer acima de 15 minutos com green beacon",
       },
-      { name: "Flying chest", src: "/lootrun/flying_chest.png", alt: "Exemplo de flying chest" },
+      { name: "Flying chest", src: "/lootrun/flying_chest.webp", alt: "Exemplo de flying chest" },
     ],
   },
 ];
@@ -354,7 +354,7 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
     media: [
       {
         name: "Curses ativos",
-        src: "/lootrun/radiance.png",
+        src: "/lootrun/radiance.webp",
         alt: "Exemplo de curses e radiance ativos",
       },
     ],
@@ -370,9 +370,9 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
     ],
     media: [
       { name: "Seleção de boons", src: "/lootrun/boons_escolhas.gif", alt: "Escolha de boons na lootrun" },
-      { name: "Boons gerais", src: "/lootrun/boons_gerais.png", alt: "Visão geral de boons ativos" },
-      { name: "Boons detalhe 1", src: "/lootrun/boon1.png", alt: "Detalhes de boons (exemplo 1)" },
-      { name: "Boons detalhe 2", src: "/lootrun/boon2.png", alt: "Detalhes de boons (exemplo 2)" },
+      { name: "Boons gerais", src: "/lootrun/boons_gerais.webp", alt: "Visão geral de boons ativos" },
+      { name: "Boons detalhe 1", src: "/lootrun/boon1.webp", alt: "Detalhes de boons (exemplo 1)" },
+      { name: "Boons detalhe 2", src: "/lootrun/boon2.webp", alt: "Detalhes de boons (exemplo 2)" },
     ],
   },
   {
@@ -384,7 +384,7 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
       "Combinar missão e trial corretamente é o principal diferencial de runs longas.",
     ],
     media: [
-      { name: "Escolha de missão", src: "/lootrun/missao_exemplo.png", alt: "Escolha de missão na lootrun" },
+      { name: "Escolha de missão", src: "/lootrun/missao_exemplo.webp", alt: "Escolha de missão na lootrun" },
     ],
   },
 ];
@@ -499,7 +499,7 @@ export const lootrunRewardMedia = {
   ],
   image: {
     name: "Baú final da Lootrun",
-    src: "/lootrun/bau_final.png",
+    src: "/lootrun/bau_final.webp",
     alt: "Baú final da lootrun",
     caption: "Baú final de recompensa ao concluir a lootrun.",
   },
@@ -581,6 +581,8 @@ export const lootrunCombos: LootrunCombo[] = [
 export const lootrunExtrasIntro = {
   eyebrow: "Informações adicionais",
   title: "Extra",
+  description:
+    "Checklist final para evitar perda de run por preparo incompleto, má leitura de sistema ou execução fora da área jogável.",
 };
 
 export const lootrunExtras = [
@@ -596,6 +598,29 @@ export const lootrunExtras = [
   "Inscrição Silverbull dobra os valores do bônus diário de lootrun.",
 ];
 
+export const lootrunExtraHighlights = [
+  {
+    title: "Preparo antes de iniciar",
+    description:
+      "Com inventário bloqueado e sem compra de poções durante a run, tudo precisa estar pronto antes do primeiro desafio.",
+  },
+  {
+    title: "Tempo e cooldown",
+    description:
+      "Sair da área jogável ou finalizar cedo pode encerrar a run e ativar cooldown, afetando ritmo de progressão.",
+  },
+  {
+    title: "Leitura de status",
+    description:
+      "Rank, XP, curses, boons, missões e histórico de beacons devem ser acompanhados para decisões melhores no interlúdio.",
+  },
+];
+
+export const lootrunExtrasLabels = {
+  highlight: "Destaque",
+  note: "Nota",
+};
+
 export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   {
     name: "Mensagem de área jogável",
@@ -609,7 +634,7 @@ export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   },
   {
     name: "Cooldown por run curta",
-    src: "/lootrun/cooldown_lootrun.png",
+    src: "/lootrun/cooldown_lootrun.webp",
     alt: "Cooldown ao finalizar lootrun antes de 4 desafios",
   },
   {
@@ -629,7 +654,8 @@ export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   },
   {
     name: "Bônus diário com inscrição Silverbull",
-    src: "/lootrun/pulls_salvas.png",
+    src: "/lootrun/pulls_salvas.webp",
     alt: "Indicador de bônus diário com inscrição Silverbull",
   },
 ];
+

@@ -39,7 +39,13 @@ export default function SilverbullRanksSection() {
               <div className="border-b border-white/5 px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3">
                   <div className="relative h-12 w-12 overflow-hidden rounded-md border border-white/10 bg-black/40 sm:h-14 sm:w-14">
-                    <Image src={rank.badge.src} alt={rank.badge.alt} fill className="object-contain p-1" />
+                    <Image
+                      src={rank.badge.src}
+                      alt={rank.badge.alt}
+                      fill
+                      sizes="(max-width: 640px) 48px, 56px"
+                      className="object-contain p-1"
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{rank.name}</h3>

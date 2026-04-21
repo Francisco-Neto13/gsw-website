@@ -1,3 +1,5 @@
+﻿import Image from "next/image";
+import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import {
   bombTips,
   craftingXpTips,
@@ -5,6 +7,42 @@ import {
   professionToolsIntro,
   toolTips,
 } from "@/components/professions/data/professions-content";
+
+const professionFlowMedia = [
+  {
+    src: "/professions/materiais.webp",
+    alt: "Materiais base das profissões de gathering",
+    title: "1. Materiais",
+    description: "Recursos coletados com Mining, Woodcutting, Farming e Fishing.",
+  },
+  {
+    src: "/professions/ingredientes.webp",
+    alt: "Ingredientes de crafting",
+    title: "2. Ingredientes",
+    description: "Drops de mobs, quests e loot chests que adicionam status e efeitos no craft.",
+  },
+  {
+    src: "/professions/exemplo_de_craftado.webp",
+    alt: "Exemplo de item craftado",
+    title: "3. Item Craftado",
+    description: "Combinação de materiais e ingredientes define nível, duração e desempenho do item.",
+  },
+];
+
+const optimizationMedia = [
+  {
+    src: "/professions/tools.webp",
+    alt: "Ferramentas de coleta das profissões",
+    title: "Ferramentas",
+    description: "A qualidade da ferramenta melhora o ritmo de gathering e reduz tempo total de rota.",
+  },
+  {
+    src: "/professions/tiers_percent.webp",
+    alt: "Tabela de tiers e chance dos materiais",
+    title: "Tiers de Material",
+    description: "Materiais vêm em diferentes tiers e isso impacta o resultado final do crafting.",
+  },
+];
 
 export default function ProfessionToolsSection() {
   return (
@@ -22,6 +60,50 @@ export default function ProfessionToolsSection() {
           <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
             {professionToolsIntro.description}
           </p>
+        </div>
+
+        <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-10 sm:grid-cols-2 sm:gap-6">
+          {optimizationMedia.map((item) => (
+            <article key={item.src} className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+              <ClickableImagePreview src={item.src} alt={item.alt}>
+                <div className="relative aspect-video w-full bg-black">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                    className="object-contain p-1 sm:p-2"
+                  />
+                </div>
+              </ClickableImagePreview>
+              <div className="p-4 sm:p-5">
+                <h3 className="text-base font-bold tracking-tight text-white sm:text-lg">{item.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-zinc-400">{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-3 sm:gap-6">
+          {professionFlowMedia.map((item) => (
+            <article key={item.src} className="overflow-hidden rounded-2xl border border-white/10 bg-black/35">
+              <ClickableImagePreview src={item.src} alt={item.alt}>
+                <div className="relative aspect-[4/3] w-full bg-black">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-contain p-1 sm:p-2"
+                  />
+                </div>
+              </ClickableImagePreview>
+              <div className="p-4 sm:p-5">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-gsw">{item.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-zinc-400">{item.description}</p>
+              </div>
+            </article>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
@@ -80,3 +162,4 @@ export default function ProfessionToolsSection() {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-export type RaidCatalogItem = {
+﻿export type RaidCatalogItem = {
   name: string;
   level: string;
   quest: string;
@@ -37,35 +37,35 @@ export type RaidCaptionImage = {
 };
 
 export const raids: RaidCatalogItem[] = [
-  { name: "Nest of the Grootslangs", level: "Lvl 55+", quest: "Realm of Light I — The Worm Holes", rune: "Az Rune", image: "/raids/notg.png", location: "X: -1977, Z: -5661" },
-  { name: "Orphion's Nexus of Light", level: "Lvl 80+", quest: "Realm of Light I até o V", rune: "Uth Rune", image: "/raids/nol.png", location: "X: -732, Z: -6499" },
-  { name: "The Canyon Colossus", level: "Lvl 97+", quest: "The Thanos Repository, Dwarves and Doguns I–IV, The Envoy I e II, The Breaking Point", rune: "Tol Rune", image: "/raids/tcc.png", location: "X: 721, Z: -4452" },
-  { name: "The Nameless Anomaly", level: "Lvl 103+", quest: "A Journey Beyond e A Journey Further", rune: "Tol Rune", image: "/raids/tna.png", location: "X: 1071, Z: -830" },
-  { name: "The Wartorn Palace", level: "Lvl 119+", quest: "Apotheosis", rune: "Ek Rune", image: "/raids/twp.png", location: "X: -1625, Z: -674" },
+  { name: "Nest of the Grootslangs", level: "Lvl 55+", quest: "Realm of Light I - The Worm Holes", rune: "Az Rune", image: "/raids/notg.webp", location: "X: -1977, Z: -5661" },
+  { name: "Orphion's Nexus of Light", level: "Lvl 80+", quest: "Realm of Light I até o V", rune: "Uth Rune", image: "/raids/nol.webp", location: "X: -732, Z: -6499" },
+  { name: "The Canyon Colossus", level: "Lvl 97+", quest: "The Thanos Repository, Dwarves and Doguns I-IV, The Envoy I e II, The Breaking Point", rune: "Tol Rune", image: "/raids/tcc.webp", location: "X: 721, Z: -4452" },
+  { name: "The Nameless Anomaly", level: "Lvl 103+", quest: "A Journey Beyond e A Journey Further", rune: "Tol Rune", image: "/raids/tna.webp", location: "X: 1071, Z: -830" },
+  { name: "The Wartorn Palace", level: "Lvl 119+", quest: "Apotheosis", rune: "Ek Rune", image: "/raids/twp.webp", location: "X: -1625, Z: -674" },
 ];
 
 export const queueSteps: RaidStepImage[] = [
-  { src: "/raids/party_queue.png", alt: "Menu da Party Queue", caption: "" },
-  { src: "/raids/party_queue2.png", alt: "Party Queue com 4 pessoas", caption: "" },
-  { src: "/raids/iniciar_raid.png", alt: "Tela de iniciar raid", caption: "" },
-  { src: "/raids/raid_encontrada.png", alt: "Seleção da raid na fila", caption: "" },
+  { src: "/raids/party_queue.webp", alt: "Menu da Party Queue", caption: "" },
+  { src: "/raids/party_queue2.webp", alt: "Party Queue com 4 pessoas", caption: "" },
+  { src: "/raids/iniciar_raid.webp", alt: "Tela de iniciar raid", caption: "" },
+  { src: "/raids/raid_encontrada.webp", alt: "Seleção da raid na fila", caption: "" },
 ];
 
 export const silverbullNpcImage: RaidStepImage = {
-  src: "/raids/raid_chief.png",
+  src: "/raids/raid_chief.webp",
   alt: "NPC do Centro Silverbull",
   caption:
     "Centro de Divisão Silverbull. O NPC da raid é o da direita. -159, 36, -4795",
 };
 
 export const cinfrasSilverbullImage: RaidStepImage = {
-  src: "/lootrun/Cinfras_silverbull.png",
+  src: "/lootrun/Cinfras_silverbull.webp",
   alt: "Entrada de Cinfras para o Centro Silverbull",
   caption: "Entrada em Cinfras para acessar o Centro de Divisão Silverbull.",
 };
 
 export const guildRaidAvailableImage: RaidStepImage = {
-  src: "/raids/guild_raid.png",
+  src: "/raids/guild_raid.webp",
   alt: "Indicador de guild raid disponível",
   caption:
     "Quando toda a party pertence à mesma guilda, a opção de guild raid fica disponível.",
@@ -264,7 +264,7 @@ export const nolRooms: RaidGuideRoom[] = [
           "Quem está com a orb não vê o feixe de luz, então depende totalmente da call ou da orientação do time.",
           "Normalmente um jogador fica responsável por guiar, enquanto os outros limpam os mobs para evitar multihit.",
           "O processo passa por três pisos até chegar ao último trecho, onde a saída já fica próxima.",
-          "É uma sala longa, então disciplina de posicionamento e comunicação fazem muita diferença.",
+          "? uma sala longa, então disciplina de posicionamento e comunicação fazem muita diferença.",
         ],
       },
     ],
@@ -301,7 +301,7 @@ export const tccRooms: RaidGuideRoom[] = [
         points: [
           "Logo no início, a party vai para a esquerda pegar água e se divide entre as lavas principais.",
           "Um jogador costuma ficar responsável pela lava isolada, enquanto os demais cobrem as outras posições.",
-          "É melhor matar os mobs antes de usar a água, porque eles causam bastante dano e atrapalham a execução.",
+          "? melhor matar os mobs antes de usar a água, porque eles causam bastante dano e atrapalham a execução.",
           "Depois que os primeiros 60 segundos passam, um jogador precisa subir na plataforma. Sem alguém lá em cima, o tempo ganho nas lavas não conta.",
           "Dois minibosses aparecem ao longo da sala. O objetivo do player da plataforma é continuar segurando até a conclusão, enquanto o restante mantém as lavas sob controle.",
         ],
@@ -332,7 +332,7 @@ export const tccRooms: RaidGuideRoom[] = [
       {
         name: "Escolte o Golem",
         summary:
-          "Ative os golems, abra os portões com as alavancas e não deixe os molten monsters baterem neles. É uma sala mais lenta, mas toda ela gira em torno de proteger a escolta.",
+          "Ative os golems, abra os portões com as alavancas e não deixe os molten monsters baterem neles. ? uma sala mais lenta, mas toda ela gira em torno de proteger a escolta.",
         videoId: "IHhdZ6p4q4U",
         points: [
           "Os molten monsters laranjas são a principal prioridade. Quando ficam bravos, recebem glowing e focam o golem.",
@@ -353,7 +353,7 @@ export const tccRooms: RaidGuideRoom[] = [
       {
         name: "Primeval Machine",
         summary:
-          "É um dos minibosses da sala. O padrão gira entre girar o martelo, lançar uma pedra e pular em uma direção aleatória.",
+          "? um dos minibosses da sala. O padrão gira entre girar o martelo, lançar uma pedra e pular em uma direção aleatória.",
         videoId: "_OhHZxYHE-Y",
         points: [
           "A pedra lançada sempre é direcionada ao player, então vale antecipar esse movimento.",
@@ -378,11 +378,11 @@ export const tccRooms: RaidGuideRoom[] = [
       {
         name: "Desvie das Pedras",
         summary:
-          "É um dos desafios mais simples depois que o padrão das pedras entra na memória. Também costuma ser um dos mais rápidos para liberar alguém para defender o Elder.",
+          "? um dos desafios mais simples depois que o padrão das pedras entra na memória. Também costuma ser um dos mais rápidos para liberar alguém para defender o Elder.",
         videoId: "q397DxEKJ30",
         points: [
           "Depois que você entende a sequência das pedras, esse desafio fica muito consistente.",
-          "É uma das melhores opções para terminar rápido e voltar para ajudar na defesa do Elder Astal.",
+          "? uma das melhores opções para terminar rápido e voltar para ajudar na defesa do Elder Astal.",
           "Mesmo quando o Elder cai para 3 ou 2 de vida, ainda costuma ser possível segurar a defesa se alguém chegar logo depois.",
         ],
       },
@@ -468,7 +468,7 @@ export const tnaRooms: RaidGuideRoom[] = [
           "Dentro da árvore existem vários caminhos que levam a grottos diferentes, e a isoptera pode aparecer em qualquer um deles.",
           "Quando o jogador encontra e derrota a isoptera, ele precisa voltar até o início da árvore ou fechar o loop pelo final para depositar um dos corações no altar.",
           "Os jogadores de fora devem gastar todas as almas disponíveis antes de matar os soul shrubs para repor recurso com eficiência.",
-          "É importante lembrar que só recebe alma quem acerta o soul shrub pelo menos uma vez, então todo mundo deve hitá-lo ao entrar na sala.",
+          "? importante lembrar que só recebe alma quem acerta o soul shrub pelo menos uma vez, então todo mundo deve hitá-lo ao entrar na sala.",
         ],
       },
       {
@@ -498,7 +498,7 @@ export const tnaRooms: RaidGuideRoom[] = [
           "A party coleta void matters por meio de dois parkours e dois minibosses, entrega tudo no portal e então derrota os portais corrompidos e o boss final para conseguir a última void matter.",
         videoId: "pdZI7LGvH8c",
         points: [
-          "À esquerda e à direita existem dois parkours, sendo o longo o da esquerda e o curto o da direita.",
+          "ì esquerda e à direita existem dois parkours, sendo o longo o da esquerda e o curto o da direita.",
           "No parkour longo, parte da mecânica envolve cair no void, avançar e aproveitar o rollback para acertar a void matter real.",
           "Além disso, a sala também tem dois minibosses: o vermelho, mais simples, e o dos void holes, onde normalmente só o da direita precisa morrer porque é ele que dropa a void matter.",
           "Depois que 4 das 5 void matters são entregues, os 3 portais da área inicial viram minibosses que precisam ser derrotados algumas vezes.",
@@ -596,7 +596,7 @@ export const twpRooms: RaidGuideRoom[] = [
           "Um player pega o artefato no meio e espera os buracos criarem nametag de mob antes da execução principal.",
           "Depois que os buracos ficam ativos, os outros players ajudam a matar para as caixas surgirem.",
           "Quem está com artefato dá dash nas caixas e nos espinhos para expor novos buracos e pode pegar mais de um por vez.",
-          "É necessário quebrar 9 buracos no total, incluindo o buraco central.",
+          "? necessário quebrar 9 buracos no total, incluindo o buraco central.",
           "Quem não está com artefato deve ficar em cima das caixas para elas não se enterrarem novamente.",
           "Cada dash spawna um Carnifex; ele precisa morrer rápido para restaurar o dash do artefato.",
         ],
@@ -612,7 +612,7 @@ export const extras = [
   "Cada raid tem um tipo mítico diferente de aspect, que muda toda sexta-feira às 14h no horário de Brasília. As rotações também afetam versões fabled e lendária.",
   "Só é possível utilizar 1 aspect mítico por classe.",
   "Qualquer aspect obtido pode ser usado em todas as classes compatíveis com aquele aspect.",
-  "É possível aumentar a quantidade de aspects e recompensas ativando os Gambits na tela inicial da raid. Cada gambit traz um desafio ou consequência.",
+  "? possível aumentar a quantidade de aspects e recompensas ativando os Gambits na tela inicial da raid. Cada gambit traz um desafio ou consequência.",
   "Os Gambits são aleatórios, funcionam para todas as raids e mudam diariamente.",
   "Todos têm acesso ao primeiro gambit. O segundo e o terceiro só são liberados nos ranks Admiral e Master.",
   "Para verificar seu ranking de raid, clique na bússola e passe o mouse no ícone de machado.",
@@ -621,11 +621,11 @@ export const extras = [
 ];
 
 export const supportImages: RaidStepImage[] = [
-  { src: "/raids/start_raid.png", alt: "Tela de iniciar raid", caption: "Party completa com 4 jogadores." },
-  { src: "/raids/gambit.png", alt: "Tela com os slots de gambit", caption: "Tela inicial com os slots de gambit disponíveis para a run." },
-  { src: "/raids/character_info.png", alt: "Acesso ao menu de informações do personagem", caption: "Área usada para consultar informações e progresso relacionados às raids." },
-  { src: "/raids/nivel_raid.png", alt: "Nível e rank da raid", caption: "Visualização do nível de raid e posição no ranking." },
-  { src: "/raids/raid_completa.png", alt: "Mensagem de raid concluída", caption: "Confirmação visual de uma run concluída com sucesso." },
+  { src: "/raids/start_raid.webp", alt: "Tela de iniciar raid", caption: "Party completa com 4 jogadores." },
+  { src: "/raids/gambit.webp", alt: "Tela com os slots de gambit", caption: "Tela inicial com os slots de gambit disponíveis para a run." },
+  { src: "/raids/character_info.webp", alt: "Acesso ao menu de informações do personagem", caption: "Área usada para consultar informações e progresso relacionados às raids." },
+  { src: "/raids/nivel_raid.webp", alt: "Nível e rank da raid", caption: "Visualização do nível de raid e posição no ranking." },
+  { src: "/raids/raid_completa.webp", alt: "Mensagem de raid concluída", caption: "Confirmação visual de uma run concluída com sucesso." },
 ];
 
 export type RaidInfoCard = {
@@ -668,7 +668,7 @@ export const raidFirstStepsLabels = {
 
 export const raidFirstStepsSupportImages: RaidStepImage[] = [
   {
-    src: "/raids/runas.png",
+    src: "/raids/runas.webp",
     alt: "Tipos de runa das raids",
     caption: "Tipos de runa usados nas raids: Az, Uth, Tol e Ek.",
   },
@@ -789,7 +789,7 @@ export const raidGuideGroups: RaidGuideGroup[] = [
 ];
 
 export const raidRewardsDescription =
-  "Depois de concluir a raid, a party é enviada para a sala de recompensa. É ali que entram os pulls finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da equipe ao longo das salas.";
+  "Depois de concluir a raid, a party é enviada para a sala de recompensa. ? ali que entram os pulls finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da equipe ao longo das salas.";
 
 export const raidRewardsIntro: SectionIntro = {
   eyebrow: "Ao final da raid",
@@ -846,12 +846,12 @@ export const raidAspectExamples = [
 
 export const raidRewardImages: RaidStepImage[] = [
   {
-    src: "/raids/reward_chest.png",
+    src: "/raids/reward_chest.webp",
     alt: "Local do baú final da raid",
     caption: "Baú final disponível na sala de recompensa após concluir a raid.",
   },
   {
-    src: "/raids/rewards_raid.png",
+    src: "/raids/rewards_raid.webp",
     alt: "Baú final aberto com rewards",
     caption: "Exemplo do conteúdo de um baú final com aspects, pulls e tomes.",
   },
@@ -886,3 +886,4 @@ export const raidExtrasLabels = {
   highlight: "Destaque",
   note: "Nota",
 };
+

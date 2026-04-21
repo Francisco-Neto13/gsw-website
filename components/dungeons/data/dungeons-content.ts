@@ -1,4 +1,4 @@
-export type SectionIntro = {
+﻿export type SectionIntro = {
   eyebrow: string;
   title: string;
   description?: string;
@@ -56,12 +56,12 @@ export const dungeonsAccessModes: AccessMode[] = [
 
 export const dungeonsAccessImages: ImageCard[] = [
   {
-    src: "/dungeons/key.png",
+    src: "/dungeons/key.webp",
     alt: "Exemplo de chave de dungeon normal",
     caption: "Exemplo de chave para entrada em dungeon normal.",
   },
   {
-    src: "/dungeons/corrupted_key.png",
+    src: "/dungeons/corrupted_key.webp",
     alt: "Exemplo de chave de dungeon corrupta",
     caption: "Exemplo de chave corrupta com requisitos adicionais.",
   },
@@ -98,7 +98,7 @@ export const dungeonsForgeryCards: InfoCard[] = [
 ];
 
 export const dungeonsForgeryImage: ImageCard = {
-  src: "/dungeons/forgery_chest.png",
+  src: "/dungeons/forgery_chest.webp",
   alt: "Forgery Chest com progressão de run",
   caption: "Forgery Chest e progressão acumulada da run corrupta.",
 };
@@ -130,12 +130,12 @@ export const dungeonsMerchantCards: InfoCard[] = [
 
 export const dungeonsMerchantImages: ImageCard[] = [
   {
-    src: "/dungeons/dungeon_merchangt.png",
+    src: "/dungeons/dungeon_merchangt.webp",
     alt: "NPC Dungeon Merchant",
     caption: "NPC do Dungeon Merchant disponível na dungeon.",
   },
   {
-    src: "/dungeons/merchant_itens.png",
+    src: "/dungeons/merchant_itens.webp",
     alt: "Itens do Dungeon Merchant",
     caption: "Exemplo de itens disponíveis para compra com fragmentos.",
   },
@@ -176,7 +176,7 @@ export const dungeonsRewardsCards: InfoCard[] = [
 ];
 
 export const dungeonsRewardsImage: ImageCard = {
-  src: "/dungeons/rewards.png",
+  src: "/dungeons/rewards.webp",
   alt: "Recompensas ao final de dungeon",
   caption: "Exemplo de recompensa após conclusão de dungeon.",
 };
@@ -191,12 +191,50 @@ export const dungeonsExtrasIntro: SectionIntro = {
 export const dungeonsExtras = [
   "Morrer durante o ciclo da Forgery interrompe a progressão perfeita. Para 8/8, a run precisa ser concluída sem mortes.",
   "Após concluir a primeira corrupta, o cronômetro global da run continua por até 3 horas, mesmo com pausas.",
-  "É possível abrir o baú antes do 8/8, mas o resultado será proporcional ao progresso acumulado.",
+  "? possível abrir o baú antes do 8/8, mas o resultado será proporcional ao progresso acumulado.",
   "Para iniciar o fluxo completo, tenha as chaves fragmentadas necessárias e as runas de craft já preparadas.",
   "Em grupo organizado, runs completas costumam ficar em torno de 30 minutos.",
   "Se o boss cair e não contar, confirme se o requisito mínimo de mobs daquela dungeon foi finalizado.",
 ];
 
+export const dungeonsExtraHighlights: InfoCard[] = [
+  {
+    title: "Run sem morte",
+    description:
+      "A consistência da run é o que define o potencial máximo da Forgery. Uma morte já quebra a progressão perfeita.",
+  },
+  {
+    title: "Janela de 3 horas",
+    description:
+      "Depois da primeira corrupta finalizada, o cronômetro global segue ativo. Planejamento de rota é essencial.",
+  },
+  {
+    title: "Checagem de requisito",
+    description:
+      "Quando a run não contabiliza, quase sempre falta requisito de mob. Sempre confirme o contador da dungeon.",
+  },
+];
+
+export const dungeonsExtraSupportImages: ImageCard[] = [
+  {
+    src: "/dungeons/corrupted_key.webp",
+    alt: "Chave de dungeon corrupta",
+    caption: "Preparação de chave corrupta para manter o ciclo de runs.",
+  },
+  {
+    src: "/dungeons/forgery_chest.webp",
+    alt: "Baú da Forgery",
+    caption: "Progressão do Forgery Chest depende de runs limpas e consistentes.",
+  },
+  {
+    src: "/dungeons/rewards.webp",
+    alt: "Recompensas de dungeon",
+    caption: "Resultado final proporcional ao progresso acumulado da sequência.",
+  },
+];
+
 export const dungeonsExtrasLabels = {
+  highlight: "Destaque",
   note: "Nota",
 };
+

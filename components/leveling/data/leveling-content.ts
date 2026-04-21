@@ -1,4 +1,4 @@
-export type LevelingSpot = {
+﻿export type LevelingSpot = {
   name: string;
   range: string;
   coords: string;
@@ -55,7 +55,7 @@ export const levelingPartyIntro: SectionIntro = {
 };
 
 export const levelingPartyImage = {
-  src: "/leveling/party_finder.png",
+  src: "/leveling/party_finder.webp",
   alt: "Exemplo de party de XP no Party Finder",
   caption: "Exemplo de party de XP",
 };
@@ -74,7 +74,7 @@ export const levelingPartyCards: LevelingInfoCard[] = [
   {
     title: "Bombas de XP",
     description:
-      "Dobram o XP do servidor por 20 minutos. É um investimento caro, então vale usar quando a party está bem organizada e matando em bom ritmo.",
+      "Dobram o XP do servidor por 20 minutos. ? um investimento caro, então vale usar quando a party está bem organizada e matando em bom ritmo.",
   },
 ];
 
@@ -90,7 +90,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Emerald Trail",
     range: "Lvl 1 - 10",
     coords: "-753, -1574",
-    image: "/leveling/emerald_trail.png",
+    image: "/leveling/emerald_trail.webp",
     notes: [
       "Fica logo após os portões de Ragni e funciona como área inicial de leveling.",
       "Nesses primeiros levels, o XP sobe muito rápido e totem ainda não é necessário.",
@@ -101,10 +101,10 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Pigman Ravines",
     range: "Lvl 5 - 25",
     coords: "-818, -1260",
-    image: "/leveling/pigman_ravine.png",
+    image: "/leveling/pigman_ravine.webp",
     notes: [
       "Aqui vale estar bem equipado, porque os mobs conseguem matar com facilidade.",
-      "É o primeiro spot onde totems ficam realmente importantes para manter o ritmo.",
+      "? o primeiro spot onde totems ficam realmente importantes para manter o ritmo.",
       "Healer e party completa ainda não são obrigatórios nesse ponto.",
       "Tome cuidado com o Pigman Overlord, que tem mais dano e vida que os mobs comuns.",
     ],
@@ -113,7 +113,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Mt Wynn Spiders",
     range: "Lvl 20 - 35",
     coords: "-30, -1960",
-    image: "/leveling/mount_wynn.png",
+    image: "/leveling/mount_wynn.webp",
     notes: [
       "Mais seguro que Saint's Row, mas com ganho de XP menor.",
       "Tome cuidado com a Spider Tamer e com as teias jogadas pelas aranhas.",
@@ -124,7 +124,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Saint's Row",
     range: "Lvl 20 - 40",
     coords: "320, -2048",
-    image: "/leveling/saints_row.png",
+    image: "/leveling/saints_row.webp",
     notes: [
       "Spot com XP muito alto, mas quase todos os mobs podem te matar muito rápido.",
       "Precisa completar a quest Grave Digger para acessar.",
@@ -136,9 +136,9 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Llevigar Spiders",
     range: "Lvl 35 - 50",
     coords: "-2151, -4717",
-    image: "/leveling/llevigar_spiders.png",
+    image: "/leveling/llevigar_spiders.webp",
     notes: [
-      "É recomendado começar no level 35 para já descobrir Llevigar e respawnar lá em caso de morte.",
+      "? recomendado começar no level 35 para já descobrir Llevigar e respawnar lá em caso de morte.",
       "Fique atento ao Holehold Orc Marathon, que pode spawnar após uso de totem.",
     ],
   },
@@ -146,7 +146,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Herb Cave",
     range: "Lvl 40 - 70",
     coords: "-499, -810",
-    image: "/leveling/herb_cave.png",
+    image: "/leveling/herb_cave.webp",
     notes: [
       "Spot muito forte que pode ser usado por bastante tempo, dividido em parte superior e inferior.",
       "A parte de baixo costuma render mais XP.",
@@ -157,7 +157,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Flesh Cave",
     range: "Lvl 55 - 75",
     coords: "-996, -5558",
-    image: "/leveling/flesh-cave.png",
+    image: "/leveling/flesh-cave.webp",
     notes: [
       "Como é uma cave, os mobs podem dropar itens e esmeraldas durante o grind.",
       "Fique de olho em drops como The Jingling Jester e Suppression.",
@@ -168,7 +168,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Waterfall",
     range: "Lvl 65 - 80",
     coords: "-106, -4592",
-    image: "/leveling/waterfall.png",
+    image: "/leveling/waterfall.webp",
     notes: [
       "Tem XP superior a Flesh Cave, mas é bem mais difícil de sobreviver.",
       "Healer é altamente necessário e a party deve ficar próximo dele no meio.",
@@ -179,7 +179,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Scrapyard",
     range: "Lvl 75 - 105",
     coords: "-1445, -2522",
-    image: "/leveling/scrapward.png",
+    image: "/leveling/scrapward.webp",
     notes: [
       "Pode ser usado com tranquilidade até o level 105.",
       "Cuidado com inimigos ao redor do spot, que podem matar rápido se puxar errado.",
@@ -190,7 +190,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Church",
     range: "Lvl 100 - 120",
     coords: "1023, -390",
-    image: "/leveling/church.png",
+    image: "/leveling/church.webp",
     notes: [
       "Spot pouco usado por causa da popularidade de Scrapyard e Bat Cave.",
       "Exige a quest A Journey Beyond para acesso.",
@@ -201,7 +201,7 @@ export const levelingSpots: LevelingSpot[] = [
     name: "Bat Cave",
     range: "Lvl 105 - 121",
     coords: "-1714, -994",
-    image: "/leveling/bat_cave.png",
+    image: "/leveling/bat_cave.webp",
     notes: [
       "Recomendado grindar em party maior por causa da vida alta dos mobs.",
       "Exige as quests Queen's Recruit e A Journey Home para liberar o acesso.",
@@ -233,7 +233,7 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
   {
     className: "Assassin",
     archetype: "Acrobat",
-    icon: "/abilitytree/abilityTree.acrobat_active.png",
+    icon: "/abilitytree/abilityTree.acrobat_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000mrJox1-5-Tpp50",
     notes: [
       "Pegue Weightless, Righting Reflex e Wall Jump para manter mana com mobilidade aérea.",
@@ -243,7 +243,7 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
   {
     className: "Archer",
     archetype: "Boltslinger",
-    icon: "/abilitytree/abilityTree.boltslinger_active.png",
+    icon: "/abilitytree/abilityTree.boltslinger_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000WrJo-uz3pu1V740",
     notes: [
       "Priorize Guardian Angels e Arrow Wall para ampliar AOE.",
@@ -254,14 +254,14 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
   {
     className: "Mage",
     archetype: "Arcanist",
-    icon: "/abilitytree/abilityTree.arcanist_active.png",
+    icon: "/abilitytree/abilityTree.arcanist_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000WsJoxnNtsyFE",
     notes: ["Pegue Arcane Transfer e Chaos Explosion o mais cedo possível para dano e sustain de mana."],
   },
   {
     className: "Warrior",
     archetype: "Fallen",
-    icon: "/abilitytree/abilityTree.fallen_active.png",
+    icon: "/abilitytree/abilityTree.fallen_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000GsJIl-q-UR4T1",
     notes: [
       "Pegue Blood Pact cedo para castar spells sem depender de mana.",
@@ -272,7 +272,7 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
   {
     className: "Shaman",
     archetype: "Summoner",
-    icon: "/abilitytree/abilityTree.summoner_active.png",
+    icon: "/abilitytree/abilityTree.summoner_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT0000000000000000000000sJI-JDy7cNQo0",
 notes: [
     "Priorize Double Totem, Triple Totem, Rebound e Storm Dance para aumentar AOE.",
@@ -533,3 +533,4 @@ export const levelingArmorPieces = [
   "Lvl 107: Dragon's Tear (2x)",
   "Lvl 119: Due Debts",
 ];
+

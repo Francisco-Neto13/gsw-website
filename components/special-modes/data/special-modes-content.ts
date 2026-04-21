@@ -1,4 +1,4 @@
-export type SpecialMode = {
+﻿export type SpecialMode = {
   name: string;
   icon: string;
   unlock: string;
@@ -99,6 +99,7 @@ export const specialModesChallengeLabels = {
 };
 
 export const specialModesReferenceImage = {
-  src: "/gamemodes/gamemodes.png",
+  src: "/gamemodes/gamemodes.webp",
   alt: "Tabela de combinações dos modos especiais da comunidade",
 };
+

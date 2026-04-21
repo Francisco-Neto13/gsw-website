@@ -72,6 +72,7 @@ export default function HomeHeroSection() {
                         src={item.image}
                         alt={item.label}
                         fill
+                        sizes="112px"
                         className="object-cover"
                       />
                     </div>

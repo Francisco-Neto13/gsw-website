@@ -1,4 +1,4 @@
-export type InfoCard = {
+﻿export type InfoCard = {
   title: string;
   description: string;
 };
@@ -78,12 +78,12 @@ export const participationCards: InfoCard[] = [
 export const participationImages: ImageCard[] = [
   {
     title: "World Event 1",
-    src: "/worldevents/we.png",
+    src: "/worldevents/we.webp",
     alt: "Exemplo de world event em andamento",
   },
   {
     title: "World Event 2",
-    src: "/worldevents/we_2.png",
+    src: "/worldevents/we_2.webp",
     alt: "Segundo exemplo de world event em andamento",
   },
 ];
@@ -97,7 +97,7 @@ export const mechanicsCards: InfoCard[] = [
   {
     title: "Party",
     description:
-      "Você pode fazer o evento sozinho ou em party com amigos. É importante saber que a porcentagem de vida dos mobs escala com a quantidade de membros na party.",
+      "Você pode fazer o evento sozinho ou em party com amigos. ? importante saber que a porcentagem de vida dos mobs escala com a quantidade de membros na party.",
   },
   {
     title: "Chefe Final",
@@ -129,12 +129,12 @@ export const annihilationSunTips = [
 export const annihilationImages: ImageCard[] = [
   {
     title: "Annihilation 1",
-    src: "/worldevents/Annihilation.png",
+    src: "/worldevents/Annihilation.webp",
     alt: "Arena do Annihilation durante a luta",
   },
   {
     title: "Annihilation 2",
-    src: "/worldevents/annihilation_portal.png",
+    src: "/worldevents/annihilation_portal.webp",
     alt: "Portal do Annihilation em world events",
   },
 ];
@@ -160,7 +160,7 @@ export const rewardCards: InfoCard[] = [
 
 export const rewardChestImage: ImageCard = {
   title: "Baú final",
-  src: "/worldevents/bau_final_we.png",
+  src: "/worldevents/bau_final_we.webp",
   alt: "Baú de recompensas do world event",
 };
 
@@ -176,7 +176,45 @@ export const worldEventsExtras = [
 export const worldEventsExtrasIntro: SectionIntro = {
   eyebrow: "Informações adicionais",
   title: "Extra",
+  description:
+    "Resumo rápido para melhorar preparo de party, consistência nas runs e leitura do retorno de recompensa em eventos de nível alto.",
 };
+
+export const worldEventsExtraHighlights: InfoCard[] = [
+  {
+    title: "Escala de recompensa",
+    description:
+      "Eventos de nível alto aumentam bastante o retorno em esmeraldas e podem chegar a patamares de farm relevantes.",
+  },
+  {
+    title: "Annihilation em party",
+    description:
+      "Levar buffs certos e uma composição estável reduz risco de wipe e acelera o clear do boss principal.",
+  },
+  {
+    title: "Ingredients estratégicos",
+    description:
+      "Alguns drops de ingredients em eventos específicos valem muito para crafting e builds de profissão.",
+  },
+];
+
+export const worldEventsExtraSupportImages: ImageCard[] = [
+  {
+    title: "Evento Global",
+    src: "/worldevents/we.webp",
+    alt: "World event em andamento",
+  },
+  {
+    title: "Annihilation",
+    src: "/worldevents/annihilation_portal.webp",
+    alt: "Portal do Annihilation",
+  },
+  {
+    title: "Baú Final",
+    src: "/worldevents/bau_final_we.webp",
+    alt: "Baú final de world event",
+  },
+];
 
 export const worldEventsAnnihilationLabels = {
   partyTitle: "Composição da Party",
@@ -184,5 +222,7 @@ export const worldEventsAnnihilationLabels = {
 };
 
 export const worldEventsExtrasLabels = {
+  highlight: "Destaque",
   note: "Nota",
 };
+

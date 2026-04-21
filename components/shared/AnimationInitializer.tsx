@@ -28,14 +28,28 @@ export default function AnimationInitializer() {
 
   useEffect(() => {
     const observedElements = new WeakSet<Element>();
+    const viewportRevealThreshold = 0.92;
 
     const collectRevealTargets = () => {
       const manualTargets = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
-      const autoTargets = Array.from(document.querySelectorAll<HTMLElement>("main section, main article")).filter(
+      const autoTargets = Array.from(document.querySelectorAll<HTMLElement>("main > section, main > article")).filter(
         (element) => !element.closest("[data-reveal-ignore='true']")
       );
       const targetSet = new Set<HTMLElement>([...autoTargets, ...manualTargets]);
       return Array.from(targetSet);
+    };
+
+    const revealIfInViewport = (element: HTMLElement) => {
+      const rect = element.getBoundingClientRect();
+      const isInViewport = rect.top <= window.innerHeight * viewportRevealThreshold && rect.bottom >= 0;
+      if (!isInViewport) {
+        return false;
+      }
+
+      if (!element.classList.contains("visible")) {
+        element.classList.add("visible");
+      }
+      return true;
     };
 
     const prepareTarget = (element: HTMLElement) => {
@@ -72,8 +86,8 @@ export default function AnimationInitializer() {
         }
 
         observedElements.add(element);
-        if (!element.classList.contains("visible")) {
-          element.classList.remove("visible");
+        if (revealIfInViewport(element)) {
+          return;
         }
         observer.observe(element);
       });
@@ -83,14 +97,25 @@ export default function AnimationInitializer() {
       const targets = collectRevealTargets();
       targets.forEach((element) => {
         prepareTarget(element);
-        if (element.getBoundingClientRect().top > window.innerHeight * 0.88) {
+        if (element.getBoundingClientRect().top > window.innerHeight * viewportRevealThreshold) {
           element.classList.remove("visible");
+        } else {
+          revealIfInViewport(element);
         }
 
         if (!observedElements.has(element)) {
           observedElements.add(element);
-          observer.observe(element);
+          if (!revealIfInViewport(element)) {
+            observer.observe(element);
+          }
         }
+      });
+    };
+
+    const handleScroll = () => {
+      const targets = collectRevealTargets();
+      targets.forEach((element) => {
+        revealIfInViewport(element);
       });
     };
 
@@ -100,11 +125,15 @@ export default function AnimationInitializer() {
     });
     const mutationObserver = new MutationObserver(registerTargets);
     mutationObserver.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
 
     return () => {
       window.cancelAnimationFrame(frame);
       mutationObserver.disconnect();
       observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, [pathname]);
 

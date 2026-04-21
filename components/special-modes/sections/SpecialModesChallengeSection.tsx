@@ -62,6 +62,7 @@ export default function SpecialModesChallengeSection() {
                   src={specialModesReferenceImage.src}
                   alt={specialModesReferenceImage.alt}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 80vw"
                   className="object-contain"
                 />
               </div>

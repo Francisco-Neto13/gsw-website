@@ -27,7 +27,13 @@ export default function LevelingPartySection() {
         <div className="mx-auto mb-10 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-16">
           <ClickableImagePreview src={levelingPartyImage.src} alt={levelingPartyImage.alt}>
             <div className="relative aspect-video w-full">
-              <Image src={levelingPartyImage.src} alt={levelingPartyImage.alt} fill className="object-cover" />
+              <Image
+                src={levelingPartyImage.src}
+                alt={levelingPartyImage.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 42rem"
+                className="object-cover"
+              />
             </div>
           </ClickableImagePreview>
           <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">

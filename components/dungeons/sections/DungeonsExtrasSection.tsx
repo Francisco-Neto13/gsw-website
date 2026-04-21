@@ -1,4 +1,5 @@
 import {
+  dungeonsExtraHighlights,
   dungeonsExtras,
   dungeonsExtrasIntro,
   dungeonsExtrasLabels,
@@ -22,7 +23,19 @@ export default function DungeonsExtrasSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+          {dungeonsExtraHighlights.map((item) => (
+            <article key={item.title} className="rounded-2xl border border-white/10 bg-black/40 p-5 text-center sm:p-6">
+              <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
+                {dungeonsExtrasLabels.highlight}
+              </span>
+              <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{item.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4">
           {dungeonsExtras.map((item, index) => (
             <article
               key={item}
@@ -40,6 +53,7 @@ export default function DungeonsExtrasSection() {
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
