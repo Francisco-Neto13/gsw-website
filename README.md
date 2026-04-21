@@ -54,7 +54,7 @@ Guias para os world events de Wynncraft, incluindo farm routes e recompensas.
 
 ### Professions
 
-Informações sobre sistemas de profissão do jogo, com focus em herbalism e mining.
+Informações sobre sistemas de profissão do jogo.
 
 ### Leveling
 
