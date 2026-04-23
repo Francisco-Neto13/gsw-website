@@ -201,17 +201,21 @@ export default function Navbar({ currentPath }: NavbarProps) {
                     <button
                       type="button"
                       onClick={() => setSectionsOpen((current) => !current)}
-                      className="flex h-5 w-5 items-center justify-center text-zinc-400 transition-colors hover:text-gsw"
+                      className={`flex h-6 w-6 items-center justify-center rounded-full border transition-all ${
+                        sectionsOpen
+                          ? "border-gsw/70 bg-gsw/15 text-gsw"
+                          : "border-gsw/25 bg-gsw/10 text-gsw/90 hover:border-gsw/55 hover:bg-gsw/15 hover:text-gsw"
+                      }`}
                       aria-label="Abrir secoes da pagina atual"
                       aria-haspopup="menu"
                       aria-expanded={sectionsOpen}
                       aria-controls="navbar-in-page-menu"
                     >
                       <span
-                        className={`text-[10px] transition-transform duration-200 ${sectionsOpen ? "rotate-180 text-gsw" : ""}`}
+                        className={`text-xs leading-none transition-transform duration-200 ${sectionsOpen ? "rotate-180" : ""}`}
                         aria-hidden="true"
                       >
-                        v
+                        ▾
                       </span>
                     </button>
                   ) : null}

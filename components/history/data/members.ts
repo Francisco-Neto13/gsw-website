@@ -33,4 +33,5 @@ export const members: Member[] = [
   { name: "Pandade", role: "Guardião", img: "/members/pandade.webp", tags: ["Pandade"] },
   { name: "FurionSpeed", role: "Guardião", img: "/members/furionspeed.webp", tags: ["Paraguayano"] },
   { name: "RFL_C", role: "Guardião", img: "/members/rfl.webp", tags: ["Caipira"] },
+  { name: "GST3", role: "Guardião", img: "/members/gst3.webp", tags: ["Lootruner"] },
 ];
