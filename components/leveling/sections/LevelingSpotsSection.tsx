@@ -27,11 +27,13 @@ export default function LevelingSpotsSection() {
           {levelingSpots.map((spot, index) => (
             <article
               key={spot.name}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
+              className={`leveling-card-medium group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30 ${
+                index % 2 === 0 ? "leveling-tilt-right" : "leveling-tilt-left"
+              }`}
             >
               <div className="flex flex-col gap-2 border-b border-white/5 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
-                  <span className="select-none text-3xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/15 sm:text-4xl">
+                  <span className="leveling-badge-pop select-none text-3xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/15 sm:text-4xl">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
@@ -39,7 +41,7 @@ export default function LevelingSpotsSection() {
                     <span className="text-xs font-semibold text-gsw">{spot.range}</span>
                   </div>
                 </div>
-                <code className="w-fit rounded-lg bg-white/5 px-3 py-1.5 text-xs font-mono text-zinc-400">
+                <code className="leveling-badge-pop w-fit rounded-lg bg-white/5 px-3 py-1.5 text-xs font-mono text-zinc-400">
                   {spot.coords}
                 </code>
               </div>
@@ -55,7 +57,7 @@ export default function LevelingSpotsSection() {
                 </ul>
                 <div className="overflow-hidden border-t border-white/5 bg-zinc-950 lg:border-t-0 lg:border-l">
                   <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
-                    <div className="relative aspect-video w-full p-1 sm:p-2">
+                    <div className="leveling-media-pop relative aspect-video w-full p-1 sm:p-2">
                       <Image
                         src={spot.image}
                         alt={`Screenshot do spot ${spot.name}`}

@@ -162,7 +162,7 @@ export default function LevelingBuildsSection() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {levelingBuildHighlights.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-white/10 bg-zinc-900/20 p-5 sm:p-6">
+            <article key={item.title} className="leveling-card-soft rounded-2xl border border-white/10 bg-zinc-900/20 p-5 sm:p-6">
               <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{item.description}</p>
             </article>
@@ -170,10 +170,12 @@ export default function LevelingBuildsSection() {
         </div>
 
         <div className="mt-10 space-y-4 sm:mt-12 sm:space-y-6">
-          {levelingAbilityTrees.map((tree) => (
+          {levelingAbilityTrees.map((tree, treeIndex) => (
             <article
               key={tree.className}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
+              className={`leveling-card-medium group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30 ${
+                treeIndex % 2 === 0 ? "leveling-tilt-left" : "leveling-tilt-right"
+              }`}
             >
               <div className="border-b border-white/5 px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
@@ -231,10 +233,12 @@ export default function LevelingBuildsSection() {
         </div>
 
         <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-6">
-          {levelingWeapons.map((weapon) => (
+          {levelingWeapons.map((weapon, weaponIndex) => (
             <article
               key={weapon.className}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
+              className={`leveling-card-medium group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30 ${
+                weaponIndex % 2 === 0 ? "leveling-tilt-right" : "leveling-tilt-left"
+              }`}
             >
               <div className="border-b border-white/5 bg-zinc-900/40 px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3 sm:gap-4">
@@ -257,7 +261,7 @@ export default function LevelingBuildsSection() {
                 {weapon.entries.map((entry) => (
                   <li
                     key={`${weapon.className}-${entry.level}`}
-                    className="rounded-xl border border-white/10 bg-black/30 p-3 text-sm leading-relaxed sm:p-4 sm:text-base"
+                    className="leveling-card-soft rounded-xl border border-white/10 bg-black/30 p-3 text-sm leading-relaxed sm:p-4 sm:text-base"
                   >
                     <span className="mb-2 inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-gsw">
                       {entry.level}
@@ -298,7 +302,7 @@ export default function LevelingBuildsSection() {
           ))}
         </div>
 
-        <article className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 sm:mt-10">
+        <article className="leveling-panel-3d mt-8 overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 sm:mt-10">
           <div className="border-b border-white/5 bg-zinc-900/40 px-5 py-4 sm:px-7 sm:py-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h3 className="text-lg font-bold tracking-tight text-white sm:text-2xl">Armaduras</h3>
@@ -322,7 +326,7 @@ export default function LevelingBuildsSection() {
 
           <ul className="grid grid-cols-1 gap-3 px-5 py-5 sm:px-7 sm:py-6 lg:grid-cols-2">
             {parsedArmorPieces.map((piece) => (
-              <li key={`${piece.level}-${piece.item}`} className="rounded-xl border border-white/10 bg-black/30 p-3 sm:p-4">
+              <li key={`${piece.level}-${piece.item}`} className="leveling-card-soft rounded-xl border border-white/10 bg-black/30 p-3 sm:p-4">
                 <div className="flex items-center gap-2.5">
                   <span className="inline-flex h-[24px] items-center rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-gsw">
                     Lvl {piece.level}

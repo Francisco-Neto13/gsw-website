@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 800ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-on-scroll[data-reveal="left"] {
+  transform: translate3d(-36px, 0, 0);
+}
+
+.reveal-on-scroll[data-reveal="right"] {
+  transform: translate3d(36px, 0, 0);
+}
+
+.reveal-on-scroll[data-reveal="up"] {
+  transform: translate3d(0, -36px, 0);
+}
+
+.bg-panel {
+  background: var(--color-panel);
+}

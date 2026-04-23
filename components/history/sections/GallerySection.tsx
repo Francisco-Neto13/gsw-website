@@ -133,15 +133,15 @@ export default function GallerySection() {
               aria-modal="true"
               aria-labelledby={modalTitleId}
               aria-describedby={modalDescriptionId}
-              className="history-gallery-modal-overlay fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-8"
+              className="history-gallery-modal-overlay fixed inset-0 z-[110] flex items-center justify-center p-2 sm:p-4 md:p-6 lg:p-8"
               onClick={() => setSelectedPhotoIndex(null)}
             >
               <div
                 className="history-gallery-modal-shell relative w-full max-w-6xl"
                 onClick={(event) => event.stopPropagation()}
               >
-                <div className="history-gallery-modal-frame relative flex w-full flex-col rounded-3xl border border-white/10 bg-black/55 p-3 sm:p-5 lg:p-6">
-                  <div className="history-gallery-modal-header mb-3 flex items-center justify-between border-b border-white/10 pb-3 sm:mb-4 sm:pb-4">
+                <div className="history-gallery-modal-frame relative flex max-h-[92vh] w-full flex-col overflow-y-auto rounded-3xl border border-white/10 bg-black/55 p-2.5 sm:max-h-[90vh] sm:p-4 md:max-h-[88vh] lg:p-6">
+                  <div className="history-gallery-modal-header mb-2.5 flex items-center justify-between border-b border-white/10 pb-2.5 sm:mb-3 sm:pb-3">
                     <div className="min-w-0">
                       <p className="history-gallery-modal-label text-[10px] font-bold uppercase tracking-[0.35em] sm:text-xs">
                         Arquivo Visual
@@ -157,14 +157,14 @@ export default function GallerySection() {
                       aria-label="Fechar"
                       type="button"
                     >
-                      <span>Fechar</span>
+                      <span className="hidden sm:inline">Fechar</span>
                       <span aria-hidden="true">×</span>
                     </button>
                   </div>
 
-                  <div className="history-gallery-modal-content grid gap-4 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
+                  <div className="history-gallery-modal-content grid gap-3 md:grid-cols-[minmax(0,1.15fr)_minmax(220px,0.85fr)] lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
                     <div className="history-gallery-modal-media relative flex items-center justify-center">
-                      <div className="history-gallery-modal-canvas relative h-[52vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/45 sm:h-[60vh]">
+                      <div className="history-gallery-modal-canvas relative h-[33vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/45 sm:h-[40vh] md:h-[44vh] lg:h-[60vh]">
                         <Image
                           src={selectedPhoto.src}
                           alt={selectedPhoto.title}
@@ -175,19 +175,19 @@ export default function GallerySection() {
                       </div>
                     </div>
 
-                    <aside className="history-gallery-modal-info rounded-2xl border border-white/10 bg-black/35 p-4 sm:p-5">
+                    <aside className="history-gallery-modal-info rounded-2xl border border-white/10 bg-black/35 p-3 sm:p-4 lg:p-5">
                       <h3
                         id={modalTitleId}
-                        className="mb-2 text-lg font-black tracking-tight text-white sm:text-2xl"
+                        className="mb-1.5 text-base font-black tracking-tight text-white sm:mb-2 sm:text-xl lg:text-2xl"
                       >
                         {selectedPhoto.title}
                       </h3>
 
-                      <p id={modalDescriptionId} className="mb-4 text-sm leading-relaxed text-zinc-300 sm:mb-5">
+                      <p id={modalDescriptionId} className="mb-3 text-xs leading-relaxed text-zinc-300 sm:mb-4 sm:text-sm">
                         {selectedPhoto.description || "Registro histórico da galeria oficial da GsW."}
                       </p>
 
-                      <div className="history-gallery-modal-meta mb-4 flex flex-wrap gap-2 sm:mb-5">
+                      <div className="history-gallery-modal-meta mb-3 hidden flex-wrap gap-2 sm:mb-4 sm:flex">
                         <span className="history-gallery-modal-chip">←/→ Navegar</span>
                         <span className="history-gallery-modal-chip">ESC Fechar</span>
                         <span className="history-gallery-modal-chip">Clique fora para sair</span>

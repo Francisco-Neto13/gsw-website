@@ -24,9 +24,9 @@ export default function LevelingPartySection() {
           </p>
         </div>
 
-        <div className="mx-auto mb-10 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-16">
+        <div className="leveling-panel-3d mx-auto mb-10 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-16">
           <ClickableImagePreview src={levelingPartyImage.src} alt={levelingPartyImage.alt}>
-            <div className="relative aspect-video w-full">
+            <div className="leveling-media-pop relative aspect-video w-full">
               <Image
                 src={levelingPartyImage.src}
                 alt={levelingPartyImage.alt}
@@ -45,7 +45,7 @@ export default function LevelingPartySection() {
           {levelingPartyCards.map((card) => (
             <div
               key={card.title}
-              className="group rounded-2xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8"
+              className="leveling-card-soft group rounded-2xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:border-gsw/40 sm:p-8"
             >
               <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
                 {card.title}
