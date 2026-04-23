@@ -10,6 +10,10 @@ export default function GallerySection() {
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
 
   const selectedPhoto = selectedPhotoIndex !== null ? photos[selectedPhotoIndex] : null;
+  const modalTitleId =
+    selectedPhotoIndex !== null ? `history-gallery-modal-title-${selectedPhotoIndex}` : undefined;
+  const modalDescriptionId =
+    selectedPhotoIndex !== null ? `history-gallery-modal-description-${selectedPhotoIndex}` : undefined;
 
   const goToNext = useCallback(() => {
     if (photos.length === 0) return;
@@ -73,43 +77,45 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {photos.length > 0 ? (
-          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
-            {photos.map((photo, index) => (
-              <div
-                key={`${photo.title}-${index}`}
-                className="group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-xl bg-zinc-900 transition-transform duration-200 will-change-transform hover:scale-[1.02] sm:aspect-video"
-                onClick={() => setSelectedPhotoIndex(index)}
-              >
-                <Image
-                  src={photo.thumbSrc || photo.src}
-                  alt={photo.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:p-4">
-                  <h3 className="mb-1 text-xs font-bold text-white sm:text-sm">{photo.title}</h3>
-                  {photo.description && (
-                    <p className="hidden text-xs text-zinc-300 sm:block">{photo.description}</p>
-                  )}
+        <div className="history-gallery-frame reveal-on-scroll rounded-3xl border border-white/10 bg-black/35 p-3 sm:p-5 lg:p-6">
+          {photos.length > 0 ? (
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+              {photos.map((photo, index) => (
+                <div
+                  key={`${photo.title}-${index}`}
+                  className="history-sheen-card history-tilt-gallery group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-zinc-900 transition-colors duration-200 hover:border-gsw/35 sm:aspect-video"
+                  onClick={() => setSelectedPhotoIndex(index)}
+                >
+                  <Image
+                    src={photo.thumbSrc || photo.src}
+                    alt={photo.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    className="history-tilt-media object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:p-4">
+                    <h3 className="mb-1 text-xs font-bold text-white sm:text-sm">{photo.title}</h3>
+                    {photo.description && (
+                      <p className="hidden text-xs text-zinc-300 sm:block">{photo.description}</p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="rounded-3xl border border-dashed border-white/10 bg-zinc-900/20 px-6 py-12 text-center sm:px-10 sm:py-16">
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
-              Adicione as imagens em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/gallery</code>{" "}
-              e preencha a lista em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
-                components/history/data/gallery.ts
-              </code>
-              .
-            </p>
-          </div>
-        )}
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-white/10 bg-zinc-900/20 px-6 py-12 text-center sm:px-10 sm:py-16">
+              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+                Adicione as imagens em{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/gallery</code>{" "}
+                e preencha a lista em{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
+                  components/history/data/gallery.ts
+                </code>
+                .
+              </p>
+            </div>
+          )}
+        </div>
 
         <div className="reveal-on-scroll mt-16 text-center sm:mt-24">
           <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
@@ -123,85 +129,91 @@ export default function GallerySection() {
       {selectedPhoto && typeof document !== "undefined"
         ? createPortal(
             <div
-            className="fixed inset-0 z-[110] flex items-center justify-center bg-black/95 p-4 sm:p-8"
-            onClick={() => setSelectedPhotoIndex(null)}
-          >
-          <button
-            className="absolute top-4 right-4 z-50 text-3xl font-light text-white/60 transition-colors hover:text-white sm:top-6 sm:right-6"
-            onClick={() => setSelectedPhotoIndex(null)}
-            aria-label="Fechar"
-          >
-            x
-          </button>
-
-          <button
-            className="absolute left-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white/70 transition-transform duration-200 hover:scale-110 hover:text-white sm:left-6 sm:p-4"
-            onClick={(event) => {
-              event.stopPropagation();
-              goToPrev();
-            }}
-            aria-label="Foto anterior"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-
-          <button
-            className="absolute right-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white/70 transition-transform duration-200 hover:scale-110 hover:text-white sm:right-6 sm:p-4"
-            onClick={(event) => {
-              event.stopPropagation();
-              goToNext();
-            }}
-            aria-label="Próxima foto"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-
-          <div
-            className="relative flex w-full max-w-5xl flex-col items-center"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div
-              className="relative flex w-full items-center justify-center px-12"
-              style={{ maxHeight: "calc(100vh - 180px)" }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={modalTitleId}
+              aria-describedby={modalDescriptionId}
+              className="history-gallery-modal-overlay fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-8"
+              onClick={() => setSelectedPhotoIndex(null)}
             >
-              <Image
-                src={selectedPhoto.src}
-                alt={selectedPhoto.title}
-                width={1600}
-                height={1200}
-                className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-              />
-            </div>
+              <div
+                className="history-gallery-modal-shell relative w-full max-w-6xl"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="history-gallery-modal-frame relative flex w-full flex-col rounded-3xl border border-white/10 bg-black/55 p-3 sm:p-5 lg:p-6">
+                  <div className="history-gallery-modal-header mb-3 flex items-center justify-between border-b border-white/10 pb-3 sm:mb-4 sm:pb-4">
+                    <div className="min-w-0">
+                      <p className="history-gallery-modal-label text-[10px] font-bold uppercase tracking-[0.35em] sm:text-xs">
+                        Arquivo Visual
+                      </p>
+                      <p className="history-gallery-modal-counter mt-1 text-xs font-semibold sm:text-sm">
+                        {selectedPhotoIndex !== null && `${selectedPhotoIndex + 1} de ${photos.length}`}
+                      </p>
+                    </div>
 
-            <div className="mt-6 mb-4 max-w-2xl px-6 text-center sm:mt-10 sm:mb-6">
-              <h3 className="mb-2 text-xl font-black text-white sm:mb-3 sm:text-2xl">
-                {selectedPhoto.title}
-              </h3>
-              {selectedPhoto.description && (
-                <p className="text-sm italic text-zinc-400">{selectedPhoto.description}</p>
-              )}
-            </div>
-          </div>
+                    <button
+                      className="history-gallery-modal-close-button inline-flex items-center gap-2 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors sm:text-sm"
+                      onClick={() => setSelectedPhotoIndex(null)}
+                      aria-label="Fechar"
+                      type="button"
+                    >
+                      <span>Fechar</span>
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
 
-          <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-6 text-sm text-zinc-500 sm:bottom-8">
-            <span className="hidden sm:inline">
-              Use <kbd className="rounded bg-white/10 px-2 py-1">←</kbd>{" "}
-              <kbd className="rounded bg-white/10 px-2 py-1">→</kbd> para navegar
-            </span>
-            <span className="hidden border-l border-white/20 pl-4 sm:block" />
-            <span className="hidden sm:inline">
-              Pressione <kbd className="rounded bg-white/10 px-2 py-1">ESC</kbd> para fechar
-            </span>
-          </div>
+                  <div className="history-gallery-modal-content grid gap-4 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
+                    <div className="history-gallery-modal-media relative flex items-center justify-center">
+                      <div className="history-gallery-modal-canvas relative h-[52vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/45 sm:h-[60vh]">
+                        <Image
+                          src={selectedPhoto.src}
+                          alt={selectedPhoto.title}
+                          fill
+                          sizes="(max-width: 1024px) 92vw, 72vw"
+                          className="object-contain p-2 sm:p-4"
+                        />
+                      </div>
+                    </div>
 
-          <div className="absolute top-4 left-4 text-xs font-medium text-white/60 sm:top-6 sm:left-6 sm:text-sm">
-            {selectedPhotoIndex !== null && `${selectedPhotoIndex + 1} / ${photos.length}`}
-          </div>
-        </div>,
+                    <aside className="history-gallery-modal-info rounded-2xl border border-white/10 bg-black/35 p-4 sm:p-5">
+                      <h3
+                        id={modalTitleId}
+                        className="mb-2 text-lg font-black tracking-tight text-white sm:text-2xl"
+                      >
+                        {selectedPhoto.title}
+                      </h3>
+
+                      <p id={modalDescriptionId} className="mb-4 text-sm leading-relaxed text-zinc-300 sm:mb-5">
+                        {selectedPhoto.description || "Registro histórico da galeria oficial da GsW."}
+                      </p>
+
+                      <div className="history-gallery-modal-meta mb-4 flex flex-wrap gap-2 sm:mb-5">
+                        <span className="history-gallery-modal-chip">←/→ Navegar</span>
+                        <span className="history-gallery-modal-chip">ESC Fechar</span>
+                        <span className="history-gallery-modal-chip">Clique fora para sair</span>
+                      </div>
+
+                      <div className="history-gallery-modal-actions flex flex-col gap-2">
+                        <button
+                          className="history-gallery-modal-action-btn"
+                          onClick={goToNext}
+                          type="button"
+                        >
+                          Próxima →
+                        </button>
+                        <button
+                          className="history-gallery-modal-action-btn"
+                          onClick={goToPrev}
+                          type="button"
+                        >
+                          ← Anterior
+                        </button>
+                      </div>
+                    </aside>
+                  </div>
+                </div>
+              </div>
+            </div>,
             document.body
           )
         : null}

@@ -46,8 +46,8 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
   const imageSrc = member.img?.trim() ? normalizeImageSrc(member.img.trim()) : fallbackSrc;
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 transition-transform duration-200 will-change-transform hover:-translate-y-1 hover:border-gsw/40">
-      <div className="relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-zinc-900 sm:mb-6">
+    <div className="history-sheen-card history-tilt-soft group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 transition-colors duration-200 hover:border-gsw/40">
+      <div className="history-tilt-media relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-zinc-900 sm:mb-6">
         <Image
           src={imageSrc}
           alt={member.name}

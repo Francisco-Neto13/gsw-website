@@ -61,13 +61,13 @@ export default function Pillars() {
           {pillars.map((pillar, index) => (
             <div
               key={pillar.title}
-              className={`reveal-on-scroll group relative flex flex-col items-center rounded-3xl border border-white/10 bg-zinc-900/20 p-6 text-center transition-transform duration-200 will-change-transform hover:-translate-y-2 hover:border-gsw/40 sm:p-10 ${
+              className={`history-sheen-card history-tilt-strong reveal-on-scroll group relative flex flex-col items-center rounded-3xl border border-white/10 bg-zinc-900/20 p-6 text-center transition-colors duration-200 hover:border-gsw/40 sm:p-10 ${
                 index >= 3 ? "lg:translate-x-[50%]" : ""
               }`}
             >
               <div className={`absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${pillar.color}`} />
 
-              <div className="mb-5 inline-flex rounded-2xl bg-white/5 p-4 text-gsw shadow-[0_0_20px_rgba(113,22,173,0.2)] transition-all duration-200 group-hover:scale-110 group-hover:bg-gsw group-hover:text-white sm:mb-8 sm:p-5">
+              <div className="history-tilt-pop mb-5 inline-flex rounded-2xl bg-white/5 p-4 text-gsw shadow-[0_0_20px_rgba(113,22,173,0.2)] transition-all duration-200 group-hover:scale-110 group-hover:bg-gsw group-hover:text-white sm:mb-8 sm:p-5">
                 {pillar.icon}
               </div>
 

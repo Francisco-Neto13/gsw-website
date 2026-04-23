@@ -81,14 +81,14 @@ export default function History() {
           </div>
 
           <div className="relative">
-            <div className="absolute bottom-0 top-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-gsw/40 via-white/10 to-transparent sm:block" />
-            <div className="absolute bottom-0 top-0 left-4 w-px bg-gradient-to-b from-gsw/40 via-white/10 to-transparent sm:hidden" />
+            <div className="history-timeline-line-desktop absolute bottom-0 top-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-gsw/40 via-white/10 to-transparent sm:block" />
+            <div className="history-timeline-line-mobile absolute bottom-0 top-0 left-4 w-px bg-gradient-to-b from-gsw/40 via-white/10 to-transparent sm:hidden" />
 
             <div className="space-y-12 sm:space-y-28">
               {eras.map((era, index) => (
                 <div
                   key={index}
-                  className={`reveal-on-scroll group relative flex flex-col items-start gap-4 sm:flex-row sm:gap-12 ${
+                  className={`reveal-on-scroll group history-era-group relative flex flex-col items-start gap-4 sm:flex-row sm:gap-12 ${
                     index % 2 === 0 ? "sm:flex-row-reverse" : ""
                   }`}
                 >
@@ -100,21 +100,25 @@ export default function History() {
                       index % 2 === 0 ? "sm:pl-12 sm:text-left" : "sm:pr-12 sm:text-right"
                     }`}
                   >
-                    <span className="mb-4 block text-3xl font-black italic text-gsw/40 transition-colors duration-500 group-hover:text-gsw">
+                    <span className="history-year-emphasis mb-4 block transform-gpu text-3xl font-black italic text-gsw/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-gsw">
                       {era.year}
                     </span>
                   </div>
 
-                  <div className="w-full rounded-2xl border border-white/10 bg-black p-5 pl-10 transition-all duration-500 group-hover:scale-[1.03] group-hover:border-gsw/40 group-hover:bg-zinc-900/50 group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] sm:w-1/2 sm:p-8 sm:pl-8">
-                    <span className="mb-2 block text-sm font-black italic text-gsw/60 sm:hidden">
-                      {era.year}
-                    </span>
-                    <h4 className="mb-3 text-base font-bold uppercase tracking-tight text-white transition-colors duration-500 group-hover:text-gsw sm:mb-4 sm:text-xl">
-                      {era.title}
-                    </h4>
-                    <p className="text-sm leading-relaxed text-zinc-300 transition-colors duration-500 group-hover:text-white">
-                      {era.description}
-                    </p>
+                  <div className={`history-era-card history-sheen-card history-tilt-timeline w-full rounded-2xl border border-white/10 bg-black p-5 pl-10 transition-all duration-500 group-hover:border-gsw/40 group-hover:bg-zinc-900/50 sm:w-1/2 sm:p-8 sm:pl-8 ${
+                    index % 2 === 0 ? "history-tilt-right" : "history-tilt-left"
+                  }`}>
+                    <div className="history-era-card-inner transform-gpu transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105">
+                      <span className="history-year-emphasis mb-2 block transform-gpu text-sm font-black italic text-gsw/60 transition-all duration-500 group-hover:scale-110 group-hover:text-gsw sm:hidden">
+                        {era.year}
+                      </span>
+                      <h4 className="mb-3 text-base font-bold uppercase tracking-tight text-white transition-colors duration-500 group-hover:text-gsw sm:mb-4 sm:text-xl">
+                        {era.title}
+                      </h4>
+                      <p className="text-sm leading-relaxed text-zinc-300 transition-colors duration-500 group-hover:text-white">
+                        {era.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -132,3 +136,4 @@ export default function History() {
     </>
   );
 }
+

@@ -222,6 +222,370 @@ body {
   text-shadow: 0 10px 38px rgba(0, 0, 0, 0.45);
 }
 
+.home-panel-3d {
+  transform-style: preserve-3d;
+  transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.home-card-3d {
+  transform-style: preserve-3d;
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 220ms ease, box-shadow 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-panel-3d:hover {
+    transform: translateY(-4px) scale(1.006);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+  }
+
+  .home-card-3d:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  }
+
+  .home-card-3d > div:last-child {
+    transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .home-card-3d:hover > div:last-child {
+    transform: translateY(-1px);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .home-panel-3d:hover,
+  .home-card-3d:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.history-sheen-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 260ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 260ms ease, box-shadow 260ms ease;
+  will-change: transform;
+}
+
+.history-gallery-frame {
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+}
+
+.history-gallery-modal-overlay {
+  background: rgba(3, 5, 10, 0.94);
+  backdrop-filter: blur(3px);
+}
+
+.history-gallery-modal-frame {
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(6px);
+}
+
+.history-gallery-modal-shell {
+  position: relative;
+}
+
+.history-gallery-modal-label {
+  color: rgba(212, 212, 216, 0.78);
+}
+
+.history-gallery-modal-counter {
+  color: rgba(228, 228, 231, 0.86);
+}
+
+.history-gallery-modal-close-button {
+  color: rgba(244, 244, 245, 0.88);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.history-gallery-modal-close-button:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.history-gallery-modal-info {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.history-gallery-modal-chip {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(228, 228, 231, 0.92);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.28rem 0.62rem;
+}
+
+.history-gallery-modal-action-btn {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(244, 244, 245, 0.92);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.62rem 0.85rem;
+  text-transform: uppercase;
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.history-gallery-modal-action-btn:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--color-gsw) 48%, rgba(255, 255, 255, 0.2));
+  background: color-mix(in srgb, var(--color-gsw) 14%, rgba(255, 255, 255, 0.08));
+  color: #fff;
+}
+
+.history-era-card {
+  transform-origin: center;
+}
+
+.history-era-group:hover .history-era-card {
+  border-color: color-mix(in srgb, var(--color-gsw) 46%, rgba(255, 255, 255, 0.16)) !important;
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.26);
+}
+
+.history-era-group:hover .history-year-emphasis {
+  color: var(--color-gsw) !important;
+  text-shadow: 0 10px 24px rgba(113, 22, 173, 0.18);
+}
+
+.history-tilt-media,
+.history-tilt-pop {
+  transition: transform 260ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.history-tilt-right {
+  --history-tilt-y: 2.2deg;
+}
+
+.history-tilt-left {
+  --history-tilt-y: -2.2deg;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .history-tilt-soft:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 3px), 0)
+      perspective(1160px)
+      rotateX(1.5deg)
+      rotateY(-1.9deg)
+      scale(1.006);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .history-tilt-gallery:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 4px), 0)
+      perspective(980px)
+      rotateX(2.2deg)
+      rotateY(-2.6deg)
+      scale(1.008);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.24);
+  }
+
+  .history-tilt-timeline:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 5px), 0)
+      perspective(1100px)
+      rotateX(1.7deg)
+      rotateY(var(--history-tilt-y, -2deg))
+      scale(1.012);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+  }
+
+  .history-era-group:hover .history-era-card-inner {
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  .history-era-group:hover .history-year-emphasis {
+    transform: translateY(-2px) scale(1.1);
+  }
+
+  .history-tilt-strong:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 5px), 0)
+      perspective(920px)
+      rotateX(2.6deg)
+      rotateY(-3.2deg)
+      scale(1.01);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.26);
+  }
+
+  .history-sheen-card:hover .history-tilt-media {
+    transform: translateZ(18px) scale(1.04);
+  }
+
+  .history-sheen-card:hover .history-tilt-pop {
+    transform: translateZ(22px) scale(1.07);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .history-tilt-soft:hover,
+  .history-tilt-gallery:hover,
+  .history-tilt-timeline:hover,
+  .history-tilt-strong:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .history-sheen-card,
+  .history-tilt-media,
+  .history-tilt-pop {
+    transition: none !important;
+  }
+
+  .history-tilt-soft:hover,
+  .history-tilt-gallery:hover,
+  .history-tilt-timeline:hover,
+  .history-tilt-strong:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.theme-light .history-timeline-line-desktop {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-gsw) 44%, transparent),
+    rgba(15, 23, 42, 0.18),
+    transparent
+  );
+}
+
+.theme-light .history-timeline-line-mobile {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-gsw) 44%, transparent),
+    rgba(15, 23, 42, 0.18),
+    transparent
+  );
+}
+
+.theme-light .history-gallery-frame {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(241, 243, 255, 0.86) 100%);
+  border-color: color-mix(in srgb, var(--line-soft) 78%, #7e3ac0 22%) !important;
+  box-shadow: 0 18px 34px rgba(66, 16, 106, 0.11), 0 8px 20px rgba(15, 23, 42, 0.07);
+  backdrop-filter: blur(5px);
+}
+
+.theme-light .history-gallery-modal-overlay {
+  background: rgba(15, 23, 42, 0.88);
+}
+
+.theme-light .history-gallery-modal-frame {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86) 0%, rgba(241, 243, 255, 0.94) 100%);
+  border-color: color-mix(in srgb, var(--line-soft) 72%, #7e3ac0 28%) !important;
+  box-shadow: 0 20px 36px rgba(66, 16, 106, 0.14), 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.theme-light .history-gallery-modal-label {
+  color: rgba(226, 232, 240, 0.86);
+}
+
+.theme-light .history-gallery-modal-counter {
+  color: rgba(241, 245, 249, 0.95);
+}
+
+.theme-light .history-gallery-modal-close-button {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(248, 250, 252, 0.98);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.theme-light .history-gallery-modal-close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.theme-light .history-gallery-modal-info {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(241, 243, 255, 0.22) 100%);
+  border-color: rgba(255, 255, 255, 0.26) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.theme-light .history-gallery-modal-chip {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.18);
+  color: rgba(248, 250, 252, 0.98);
+}
+
+.theme-light .history-gallery-modal-action-btn {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(248, 250, 252, 0.98);
+}
+
+.theme-light .history-gallery-modal-action-btn:hover {
+  border-color: color-mix(in srgb, var(--color-gsw) 50%, rgba(255, 255, 255, 0.35));
+  background: color-mix(in srgb, var(--color-gsw) 18%, rgba(255, 255, 255, 0.2));
+}
+
+.theme-light .history-era-group:hover .history-era-card {
+  box-shadow: 0 16px 28px rgba(66, 16, 106, 0.15), 0 8px 16px rgba(15, 23, 42, 0.07);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .theme-light .history-tilt-soft:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 2px), 0)
+      perspective(1220px)
+      rotateX(1deg)
+      rotateY(-1.2deg)
+      scale(1.004);
+    box-shadow: 0 10px 22px rgba(66, 16, 106, 0.12), 0 4px 10px rgba(15, 23, 42, 0.08);
+  }
+
+  .theme-light .history-tilt-gallery:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 2px), 0)
+      perspective(1100px)
+      rotateX(1.2deg)
+      rotateY(-1.4deg)
+      scale(1.005);
+    box-shadow: 0 12px 24px rgba(66, 16, 106, 0.13), 0 4px 10px rgba(15, 23, 42, 0.08);
+  }
+
+  .theme-light .history-tilt-timeline:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 3px), 0)
+      perspective(1180px)
+      rotateX(1.1deg)
+      rotateY(calc(var(--history-tilt-y, -2deg) * 0.55))
+      scale(1.009);
+    box-shadow: 0 14px 26px rgba(66, 16, 106, 0.14), 0 5px 12px rgba(15, 23, 42, 0.08);
+  }
+
+  .theme-light .history-era-group:hover .history-year-emphasis {
+    text-shadow: 0 10px 20px rgba(66, 16, 106, 0.16);
+  }
+
+  .theme-light .history-tilt-strong:hover {
+    transform:
+      translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 3px), 0)
+      perspective(1040px)
+      rotateX(1.4deg)
+      rotateY(-1.8deg)
+      scale(1.006);
+    box-shadow: 0 14px 26px rgba(66, 16, 106, 0.14), 0 4px 10px rgba(15, 23, 42, 0.08);
+  }
+
+  .theme-light .history-sheen-card:hover .history-tilt-media {
+    transform: translateZ(10px) scale(1.02);
+  }
+
+  .theme-light .history-sheen-card:hover .history-tilt-pop {
+    transform: translateZ(12px) scale(1.04);
+  }
+}
+
 .theme-light .hero-image {
   filter: saturate(1.02) contrast(1.02) brightness(0.96);
 }

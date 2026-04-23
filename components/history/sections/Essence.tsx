@@ -34,8 +34,8 @@ export default function Essence() {
         </div>
 
         <div className="mb-12 grid grid-cols-1 gap-4 sm:mb-24 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
-          <div className="group rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
-            <div className="mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
+          <div className="history-sheen-card history-tilt-soft group rounded-2xl border border-white/10 bg-black/40 p-6 transition-colors duration-300 hover:border-gsw/40 sm:p-8">
+            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
@@ -52,8 +52,8 @@ export default function Essence() {
             </p>
           </div>
 
-          <div className="group rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
-            <div className="mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
+          <div className="history-sheen-card history-tilt-soft group rounded-2xl border border-white/10 bg-black/40 p-6 transition-colors duration-300 hover:border-gsw/40 sm:p-8">
+            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
@@ -68,8 +68,8 @@ export default function Essence() {
             </p>
           </div>
 
-          <div className="group rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:col-span-2 sm:p-8 md:col-span-1">
-            <div className="mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
+          <div className="history-sheen-card history-tilt-soft group rounded-2xl border border-white/10 bg-black/40 p-6 transition-colors duration-300 hover:border-gsw/40 sm:col-span-2 sm:p-8 md:col-span-1">
+            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>

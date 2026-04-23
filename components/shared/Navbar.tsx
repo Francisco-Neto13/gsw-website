@@ -297,9 +297,6 @@ export default function Navbar({ currentPath }: NavbarProps) {
         }`}
       >
         <ul className="flex flex-col gap-2 px-6 py-6">
-          <li className="mb-1 flex items-center justify-end">
-            <ThemeToggle />
-          </li>
           {visiblePageLinks.map((link) => (
             <li key={link.href}>
               <Link

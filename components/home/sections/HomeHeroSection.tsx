@@ -32,10 +32,10 @@ export default function HomeHeroSection() {
         className="relative isolate overflow-hidden bg-black px-4 pb-14 pt-8 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 lg:pb-24"
       >
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
             <div
               data-reveal-delay="40"
-              className="reveal-on-scroll mx-1 rounded-3xl border border-white/10 bg-black/45 p-5 backdrop-blur sm:mx-0 sm:p-8"
+              className="home-panel-3d reveal-on-scroll mx-1 h-full rounded-3xl border border-white/10 bg-black/45 p-5 backdrop-blur sm:mx-0 sm:p-8"
             >
               <span className="mb-4 inline-block text-[11px] font-bold uppercase tracking-[0.45em] text-gsw/90">
                 {homeHeroContent.eyebrow}
@@ -59,7 +59,7 @@ export default function HomeHeroSection() {
 
             <aside
               data-reveal-delay="140"
-              className="reveal-on-scroll mx-1 rounded-3xl border border-white/10 bg-black/50 p-2.5 backdrop-blur sm:mx-0 sm:p-4"
+              className="home-panel-3d reveal-on-scroll mx-1 h-full rounded-3xl border border-white/10 bg-black/50 p-2.5 backdrop-blur sm:mx-0 sm:p-4"
             >
               <p className="mb-3 px-1 text-[10px] font-semibold uppercase tracking-[0.4em] text-gsw/85">Em destaque</p>
               <div className="space-y-3">
@@ -67,7 +67,7 @@ export default function HomeHeroSection() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="group grid grid-cols-[96px_1fr] gap-3 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/65 p-2 transition hover:border-gsw/45 hover:bg-black/80 sm:grid-cols-[112px_1fr]"
+                    className="home-card-3d group grid grid-cols-[96px_1fr] gap-3 overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/65 p-2 transition hover:border-gsw/45 hover:bg-black/80 sm:grid-cols-[112px_1fr]"
                   >
                     <div className="relative h-20 overflow-hidden rounded-xl bg-black sm:h-24">
                       <Image

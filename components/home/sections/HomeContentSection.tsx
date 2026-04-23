@@ -23,7 +23,7 @@ export default function HomeContentSection() {
             <Link
               key={card.label}
               href={card.href}
-              className="reveal-on-scroll group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black transition-all duration-300 hover:-translate-y-1 hover:border-gsw/45"
+              className="home-card-3d reveal-on-scroll group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black transition-all duration-300 hover:border-gsw/45"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
                 <Image

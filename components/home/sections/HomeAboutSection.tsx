@@ -59,7 +59,7 @@ export default function HomeAboutSection() {
             {homeAboutShowcase.map((item) => (
               <article
                 key={item.src}
-                className="reveal-on-scroll overflow-hidden rounded-3xl border border-white/10 bg-black/50"
+                className="home-card-3d reveal-on-scroll overflow-hidden rounded-3xl border border-white/10 bg-black/50"
               >
                 <div className="relative aspect-[16/10] w-full">
                   <Image
@@ -81,7 +81,7 @@ export default function HomeAboutSection() {
           {homePillars.map((item, index) => (
             <article
               key={item.title}
-              className="reveal-on-scroll group relative rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40"
+              className="home-card-3d reveal-on-scroll group relative rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:border-gsw/40"
             >
               <div className="mb-4 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw transition-all duration-200 group-hover:bg-gsw group-hover:text-white">
                 <PillarIcon icon={item.icon} />
