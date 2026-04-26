@@ -35,13 +35,13 @@ export default function LootrunMediaPlaceholder({
   const isLocalVideo = item.src?.startsWith("/") && item.src.toLowerCase().endsWith(".mp4");
   const mediaDescription = resolveMediaDescription(item);
   const frameClassName = compact
-    ? "relative aspect-[4/3] w-full bg-zinc-900/50 p-1"
+    ? "relative aspect-[4/3] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2"
     : "relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2";
   const captionClassName = compact ? "px-3 py-2.5 sm:px-4" : "px-4 py-3 sm:px-5";
 
   if (isLocalVideo && item.src) {
     return (
-      <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+      <article className="h-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <div className={frameClassName}>
           <video
             src={item.src}
@@ -64,7 +64,7 @@ export default function LootrunMediaPlaceholder({
 
   if (item.src && item.src.startsWith("/")) {
     return (
-      <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+      <article className="h-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <ClickableImagePreview src={item.src} alt={item.alt ?? item.name}>
           <div className={frameClassName}>
             <Image
@@ -86,7 +86,7 @@ export default function LootrunMediaPlaceholder({
 
   if (item.src && item.src.startsWith("http")) {
     return (
-      <article className="rounded-2xl border border-white/10 bg-black/40 p-4 sm:p-5">
+      <article className="h-full rounded-2xl border border-white/10 bg-black/40 p-4 sm:p-5">
         <a
           href={item.src}
           target="_blank"
@@ -101,7 +101,7 @@ export default function LootrunMediaPlaceholder({
   }
 
   return (
-    <div className="flex min-h-36 flex-col justify-between rounded-2xl border border-dashed border-white/20 bg-black/40 p-4 sm:min-h-40 sm:p-5">
+    <div className="flex h-full min-h-36 flex-col justify-between rounded-2xl border border-dashed border-white/20 bg-black/40 p-4 sm:min-h-40 sm:p-5">
       <div className="rounded-xl border border-white/10 bg-zinc-900/50 px-3 py-6 text-center text-sm font-semibold text-zinc-300 sm:px-4 sm:py-7 sm:text-base">
         {item.name}
       </div>

@@ -104,7 +104,9 @@ export default function LootrunCampsSection() {
                     {secondaryMedia.length > 0 ? (
                       <div
                         className={`grid gap-4 ${
-                          secondaryMedia.length > 1 ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+                          secondaryMedia.length > 1
+                            ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-3"
+                            : "grid-cols-1 sm:grid-cols-2"
                         }`}
                       >
                         {secondaryMedia.map((item) => (
