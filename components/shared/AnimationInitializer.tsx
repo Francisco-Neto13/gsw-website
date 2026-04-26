@@ -28,12 +28,28 @@ export default function AnimationInitializer() {
 
   useEffect(() => {
     const observedElements = new WeakSet<Element>();
-    const viewportRevealThreshold = 0.92;
+    const viewportRevealThreshold = 0.82;
 
     const collectRevealTargets = () => {
       const manualTargets = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
-      const autoTargets = Array.from(document.querySelectorAll<HTMLElement>("main > section, main > article")).filter(
-        (element) => !element.closest("[data-reveal-ignore='true']")
+      const autoSelectors = [
+        "main > section",
+        "main > article",
+        "main section > div",
+        "main section > article",
+        "main section article",
+        "main section li",
+        "main section .home-card-3d",
+        "main section .home-panel-3d",
+        "main section .leveling-panel-3d",
+        "main section .leveling-card-soft",
+        "main section .leveling-card-medium",
+        "main section .history-sheen-card",
+        "main section .history-era-card",
+        "main section .history-gallery-frame",
+      ].join(", ");
+      const autoTargets = Array.from(document.querySelectorAll<HTMLElement>(autoSelectors)).filter(
+        (element) => !element.closest("[data-reveal-ignore='true'], [data-reveal-ignore]")
       );
       const targetSet = new Set<HTMLElement>([...autoTargets, ...manualTargets]);
       return Array.from(targetSet);
