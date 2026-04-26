@@ -102,11 +102,13 @@ export default function LootrunCampsSection() {
                     <LootrunMediaPlaceholder item={featuredMedia} />
 
                     {secondaryMedia.length > 0 ? (
-                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                      <div
+                        className={`grid gap-4 ${
+                          secondaryMedia.length > 1 ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+                        }`}
+                      >
                         {secondaryMedia.map((item) => (
-                          <div key={item.name} className="mx-auto w-full max-w-sm">
-                            <LootrunMediaPlaceholder item={item} />
-                          </div>
+                          <LootrunMediaPlaceholder key={item.name} item={item} compact />
                         ))}
                       </div>
                     ) : null}

@@ -6,6 +6,7 @@ import type { MediaPlaceholder } from "@/components/lootrun/data/lootrun-content
 
 type LootrunMediaPlaceholderProps = {
   item: MediaPlaceholder;
+  compact?: boolean;
 };
 
 function resolveMediaDescription(item: MediaPlaceholder) {
@@ -29,14 +30,19 @@ function resolveMediaDescription(item: MediaPlaceholder) {
 
 export default function LootrunMediaPlaceholder({
   item,
+  compact = false,
 }: LootrunMediaPlaceholderProps) {
   const isLocalVideo = item.src?.startsWith("/") && item.src.toLowerCase().endsWith(".mp4");
   const mediaDescription = resolveMediaDescription(item);
+  const frameClassName = compact
+    ? "relative aspect-[4/3] w-full bg-zinc-900/50 p-1"
+    : "relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2";
+  const captionClassName = compact ? "px-3 py-2.5 sm:px-4" : "px-4 py-3 sm:px-5";
 
   if (isLocalVideo && item.src) {
     return (
       <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-        <div className="relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2">
+        <div className={frameClassName}>
           <video
             src={item.src}
             className="pointer-events-none h-full w-full rounded-lg object-contain"
@@ -49,7 +55,7 @@ export default function LootrunMediaPlaceholder({
             controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
           />
         </div>
-        <div className="px-4 py-3 sm:px-5">
+        <div className={captionClassName}>
           <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
         </div>
       </article>
@@ -60,18 +66,18 @@ export default function LootrunMediaPlaceholder({
     return (
       <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <ClickableImagePreview src={item.src} alt={item.alt ?? item.name}>
-          <div className="relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2">
-<Image
+          <div className={frameClassName}>
+            <Image
               src={item.src}
               alt={item.alt ?? item.name}
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes={compact ? "(max-width: 768px) 50vw, 33vw" : "(max-width: 1024px) 100vw, 50vw"}
               className="object-contain"
               unoptimized
             />
           </div>
         </ClickableImagePreview>
-        <div className="px-4 py-3 sm:px-5">
+        <div className={captionClassName}>
           <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
         </div>
       </article>

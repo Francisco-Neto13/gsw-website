@@ -28,6 +28,30 @@
   transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 220ms ease, box-shadow 220ms ease;
 }
 
+.home-panel-3d.reveal-on-scroll {
+  transition:
+    opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.home-card-3d.reveal-on-scroll {
+  transition:
+    opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.home-panel-3d.reveal-on-scroll.visible {
+  transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.home-card-3d.reveal-on-scroll.visible {
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 220ms ease, box-shadow 220ms ease;
+}
+
 /* Shared hover pulse for guide cards outside Home/History/Leveling specialized classes */
 main section .rounded-2xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium),
 main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium) {

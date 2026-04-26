@@ -28,13 +28,11 @@ export default function AnimationInitializer() {
 
   useEffect(() => {
     const observedElements = new WeakSet<Element>();
-    const viewportRevealThreshold = 0.82;
+    const viewportRevealThreshold = 0.74;
 
     const collectRevealTargets = () => {
       const manualTargets = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
       const autoSelectors = [
-        "main > section",
-        "main > article",
         "main section > div",
         "main section > article",
         "main section article",
@@ -88,8 +86,8 @@ export default function AnimationInitializer() {
         }
       });
     }, {
-      threshold: 0.01,
-      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.05,
+      rootMargin: "0px 0px -12% 0px",
     });
 
     const registerTargets = () => {
@@ -115,15 +113,11 @@ export default function AnimationInitializer() {
         prepareTarget(element);
         if (element.getBoundingClientRect().top > window.innerHeight * viewportRevealThreshold) {
           element.classList.remove("visible");
-        } else {
-          revealIfInViewport(element);
         }
 
         if (!observedElements.has(element)) {
           observedElements.add(element);
-          if (!revealIfInViewport(element)) {
-            observer.observe(element);
-          }
+          observer.observe(element);
         }
       });
     };

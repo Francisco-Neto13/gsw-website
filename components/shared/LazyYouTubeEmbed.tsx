@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type LazyYouTubeEmbedProps = {
@@ -38,11 +39,12 @@ export default function LazyYouTubeEmbed({
       className="group relative aspect-[2/1] w-full overflow-hidden rounded-xl border border-white/10 bg-zinc-900 sm:aspect-video"
       aria-label={`Reproduzir vídeo: ${title}`}
     >
-      <img
+      <Image
         src={thumbnail}
         alt={title}
-        loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
+        fill
+        priority={priority}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
       />
       <span className="pointer-events-none absolute inset-0 bg-black/30 transition-colors group-hover:bg-black/40" />

@@ -7,7 +7,7 @@ export default function HomeHeroSection() {
     <>
       <section
         data-reveal-ignore="true"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24 sm:px-6 lg:px-8"
+        className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-10 pt-24 sm:px-6 sm:pb-14 lg:px-8"
       >
         <div
           className="hero-image absolute inset-0 z-0 bg-cover bg-center"
@@ -29,7 +29,7 @@ export default function HomeHeroSection() {
 
       <section
         data-reveal-ignore="true"
-        className="relative isolate overflow-hidden bg-black px-4 pb-14 pt-8 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 lg:pb-24"
+        className="relative isolate overflow-hidden bg-black px-4 pb-14 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24"
       >
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">

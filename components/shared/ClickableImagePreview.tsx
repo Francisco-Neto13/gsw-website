@@ -74,6 +74,7 @@ export default function ClickableImagePreview({
             style={{ height: "calc(100vh - 160px)" }}
           >
             <div className="relative flex h-full w-full items-center justify-center rounded-lg bg-black/60 p-2 sm:p-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={src}
                 alt={alt}
