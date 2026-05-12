@@ -1,4 +1,4 @@
-# GsW Website
+﻿# GsW Website
 
 <div align="center">
   <img src="./public/icon.webp" width="120" alt="GsW Logo" style="border-radius: 50%">
@@ -19,60 +19,66 @@
 
 ## Visão geral
 
-O site da GsW funciona como o portal oficial da comunidade. Ele reúne a identidade da guilda, preserva a sua história e oferece guias completos que ajudam novos e antigos membros a navegar melhor pelo universo de Wynncraft.
+O site da GsW funciona como o portal oficial da comunidade. Ele reúne a identidade da guilda, preserva sua história e organiza guias que ajudam membros novos e antigos a navegar melhor pelo universo de Wynncraft.
 
-Mais do que uma landing page, o projeto foi pensado para servir como um ponto central de referência da comunidade: um lugar onde a história da guilda, seus guias de jogo e seu conteúdo institucional convivem dentro da mesma linguagem visual.
+Mais do que uma landing page, o projeto foi pensado como um ponto central de referência da comunidade: um lugar onde história, guias e conteúdo institucional convivem dentro da mesma linguagem visual.
 
 ## O que o site entrega
 
 - uma página inicial que apresenta a proposta do portal e o posicionamento da GsW
 - uma página de história dedicada ao legado da guilda, com crônicas, pilares, membros e galeria
-- guias completos de gameplay: Lootrun, Dungeons, Raids, World Events, Professions, Leveling e Modos Especiais
-- uma seção sobre a economy game da guilda em Silverbull Shares
-- uma navegação pública simples e direta, focada apenas na experiência frontend
-- conteúdo visual servido localmente, sem dependência de banco de dados ou painel administrativo
+- guias públicos de progressão, endgame e modos especiais
+- uma seção dedicada à economia da guilda em Silverbull Shares
+- navegação simples entre páginas e também por seções dentro de cada guia
+- conteúdo visual local, sem dependência de painel administrativo
 
 ## Guias do jogo
 
-O projeto mantém guias detalhados para as principais atividades de Wynncraft diretamente no repositório, para que o conteúdo continue acessível e fácil de editar sem depender de serviços externos.
+O projeto mantém guias detalhados para as principais atividades de Wynncraft diretamente no repositório, para que o conteúdo continue acessível e fácil de evoluir.
 
 ### Lootrun
 
-Guia completo sobre o sistema de Lootrun, incluindo camps, mecânicas, combos, divisions, beacons e recompensas.
+Guia completo sobre o sistema de Lootrun, incluindo participação, divisions, camps, mecânicas, beacons, combos e recompensas.
 
 ### Dungeons
 
-Informações sobre dungeons, estratégias e dicas para diferentes níveis de dificuldade.
+Informações sobre acesso, forgery, merchant, recompensas e materiais de apoio para diferentes níveis de progressão.
 
 ### Raids
 
-Cobertura completa das raids disponíveis no jogo, com detalhes sobre chefes e rotas.
+Cobertura das raids da guilda com primeiros passos, estrutura, guias por raid, recompensas e extras.
 
 ### World Events
 
-Guias para os world events de Wynncraft, incluindo farm routes e recompensas.
+Guia sobre participação, mecânicas, annihilation, recompensas e orientações complementares.
 
 ### Professions
 
-Informações sobre sistemas de profissão do jogo.
+Conteúdo sobre tipos de profissão, ferramentas, spots de grind, waypoints e extras.
 
 ### Leveling
 
-Guia de level up, com advice de stats, dungeons recomendadas e tips de progressão.
+Guia de evolução com foco em party, spots e builds ao longo da progressão.
 
 ### Modos Especiais
 
-Documentação sobre os modos especiais do jogo: Ironman, Hardcore e Ultimate.
+Documentação sobre os modos especiais do jogo, incluindo proposta de desafio e visão geral de cada modo.
 
 ### Silverbull Shares
 
-Seção dedicada à economia da guilda, documentando o sistema de shares do servidor Silverbull.
+Seção dedicada à economia da guilda no Silverbull, com overview, ranks, membership, crates, bombs, pets, tokens e extras.
+
+### Montarias
+
+Área reservada para o guia de montarias, com estrutura já publicada para receber o conteúdo oficial.
+
+### Festivais
+
+Área reservada para festivais e eventos sazonais, com estrutura já publicada para receber o conteúdo oficial.
 
 ## Direção atual do projeto
 
-Hoje o site está intencionalmente orientado a frontend. A proposta é evoluir o portal com novas páginas, guias e conteúdos institucionais, sem carregar a complexidade de autenticação, banco de dados ou dashboard interno.
-
-Isso deixa o projeto mais simples de manter, mais previsível visualmente e mais alinhado ao objetivo principal: comunicar a identidade da GsW e organizar seu conteúdo público.
+Hoje o site está intencionalmente orientado à experiência pública do portal. A proposta é continuar evoluindo com novas páginas, guias e conteúdos institucionais, mantendo a manutenção simples e a identidade visual da comunidade.
 
 ## Licença
 
