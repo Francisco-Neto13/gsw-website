@@ -1,7 +1,7 @@
 "use client";
 
-import { type ReactNode, useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import { X } from "lucide-react";
+import { type ReactNode, useRef, useState } from "react";
 
 type ClickableImagePreviewProps = {
   src: string;
@@ -10,82 +10,60 @@ type ClickableImagePreviewProps = {
   buttonClassName?: string;
 };
 
-export default function ClickableImagePreview({
-  src,
-  alt,
-  children,
-  buttonClassName,
-}: ClickableImagePreviewProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const portalTarget = typeof document !== "undefined" ? document.body : null;
+/**
+ * Amplia uma imagem em tela cheia. Usa o <dialog> nativo: o foco entra no modal e fica preso nele,
+ * Esc fecha e o foco volta para a miniatura (achado P1 da auditoria).
+ */
+export default function ClickableImagePreview({ src, alt, children, buttonClassName }: ClickableImagePreviewProps) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const [aberto, setAberto] = useState(false);
 
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [isOpen]);
+  const abrir = () => {
+    setAberto(true);
+    dialogRef.current?.showModal();
+  };
+  const fechar = () => dialogRef.current?.close();
 
   return (
     <>
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={abrir}
         className={buttonClassName ?? "block w-full cursor-zoom-in"}
         aria-label={`Ampliar imagem: ${alt}`}
       >
         {children}
       </button>
 
-      {isOpen && portalTarget
-        ? createPortal(
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={alt}
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-2 sm:p-4"
-          onClick={() => setIsOpen(false)}
-        >
+      <dialog
+        ref={dialogRef}
+        aria-label={alt}
+        onClose={() => setAberto(false)}
+        onClick={(evento) => {
+          if (evento.target === dialogRef.current) fechar();
+        }}
+        className="m-auto h-[calc(100dvh-2rem)] max-h-none w-[calc(100vw-2rem)] max-w-6xl bg-transparent p-0 backdrop:bg-black/90"
+      >
+        <div className="relative flex h-full w-full items-center justify-center" onClick={fechar}>
           <button
             type="button"
-            className="absolute top-4 right-4 z-50 text-3xl font-light text-white/60 transition-colors hover:text-white sm:top-6 sm:right-6"
-            onClick={() => setIsOpen(false)}
-            aria-label="Fechar"
+            onClick={fechar}
+            className="absolute right-2 top-2 z-10 flex h-11 w-11 items-center justify-center rounded-md bg-black/60 text-texto hover:bg-black/80"
+            aria-label="Fechar imagem ampliada"
           >
-            x
+            <X aria-hidden size={22} strokeWidth={1.75} />
           </button>
-
-          <div
-            className="relative flex w-full max-w-5xl items-center justify-center"
-            onClick={(event) => event.stopPropagation()}
-            style={{ height: "calc(100vh - 160px)" }}
-          >
-            <div className="relative flex h-full w-full items-center justify-center rounded-lg bg-black/60 p-2 sm:p-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={src}
-                alt={alt}
-                className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>,
-        portalTarget
-      )
-        : null}
+          {aberto ? (
+            // eslint-disable-next-line @next/next/no-img-element -- tamanho original para ampliar; só baixa ao abrir
+            <img
+              src={src}
+              alt={alt}
+              onClick={(evento) => evento.stopPropagation()}
+              className="max-h-full max-w-full rounded-md object-contain"
+            />
+          ) : null}
+        </div>
+      </dialog>
     </>
   );
 }
