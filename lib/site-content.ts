@@ -137,6 +137,19 @@ export const levelingSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const lootrunSecoes: GuiaSecao[] = [
+  { id: "participar", titulo: "Como participar", busca: "inscrição silverbull cinfras npc" },
+  { id: "divisoes", titulo: "Divisões", busca: "rank xp lootrun rookie assistant sentinel elite admiral commander master" },
+  { id: "camps", titulo: "Camps", busca: "canyon corkus molten sky islands silent expanse fruma coordenadas" },
+  { id: "mecanicas", titulo: "Desafios e tempo", busca: "desafio challenge timer tempo 15 minutos" },
+  { id: "beacons", titulo: "Beacons", busca: "beacon blue purple yellow aqua orange green grey white red pink crimson rainbow vibrant" },
+  { id: "sistemas", titulo: "Rerolls, Curses, Boons e Trials", busca: "reroll curse radiance boon missão trial" },
+  { id: "combos", titulo: "Combos de missões e trials", busca: "opal offering chronotrigger jester porphyrophobia gambling beast dying light" },
+  { id: "recompensas", titulo: "Recompensas", busca: "baú final pulls mítico tome" },
+  { id: "dicas", titulo: "Antes de começar", busca: "inventário área jogável cooldown lootpool" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -176,6 +189,7 @@ export const guias: Guia[] = [
     grupo: "endgame",
     estado: "completo",
     rotaAntiga: "/lootrun",
+    secoes: lootrunSecoes,
   },
   {
     slug: "raids",

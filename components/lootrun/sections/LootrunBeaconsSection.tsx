@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CreditoImagem from "@/components/guias/CreditoImagem";
+import SecaoGuia from "@/components/guias/SecaoGuia";
 import { dimensoesDe } from "@/lib/imagens";
 import {
   lootrunBeacons,
@@ -36,16 +37,12 @@ function MarcadorDesenhado({ beacon }: { beacon: LootrunBeacon }) {
 
 export default function LootrunBeaconsSection() {
   return (
-    <section className="px-4 py-14 sm:px-6 lg:px-10">
-      <div className="max-w-leitura">
-        <h2 className="text-titulo-2 text-texto">{lootrunBeaconsIntro.title}</h2>
-        <p className="mt-3 text-texto-2">{lootrunBeaconsIntro.description}</p>
-        <ul className="mt-4 flex list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
-          {lootrunBeaconsRegras.map((regra) => (
-            <li key={regra}>{regra}</li>
-          ))}
-        </ul>
-      </div>
+    <SecaoGuia id="beacons" titulo="Beacons" introducao={lootrunBeaconsIntro.description}>
+      <ul className="flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+        {lootrunBeaconsRegras.map((regra) => (
+          <li key={regra}>{regra}</li>
+        ))}
+      </ul>
 
       <div className="mt-8 max-w-[60rem] overflow-x-auto rounded-md border border-linha">
         <table className="w-full min-w-[44rem] border-collapse text-left text-apoio">
@@ -107,6 +104,6 @@ export default function LootrunBeaconsSection() {
           "A cor do Crimson é aproximada."
         )}
       </p>
-    </section>
+    </SecaoGuia>
   );
 }

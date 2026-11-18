@@ -1,64 +1,16 @@
-import {
-  lootrunExtraHighlights,
-  lootrunExtrasLabels,
-  lootrunExtraSupportMedia,
-  lootrunExtras,
-  lootrunExtrasIntro,
-} from "@/components/lootrun/data/lootrun-content";
-import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
-import type { CSSProperties } from "react";
-import { tamanhos } from "@/lib/tamanhos";
+import SecaoGuia from "@/components/guias/SecaoGuia";
+import { lootrunExtraSupportMedia, lootrunExtras, lootrunExtrasIntro } from "@/components/lootrun/data/lootrun-content";
+import MidiasLootrun from "@/components/lootrun/sections/MidiasLootrun";
 
 export default function LootrunExtrasSection() {
   return (
-    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <div className="relative">
-        <div className="mb-8 max-w-leitura">
-          <h2 className="text-titulo-2 text-texto">
-            {lootrunExtrasIntro.title}
-          </h2>
-          <p className="mt-3 text-texto-2">
-            {lootrunExtrasIntro.description}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {lootrunExtraHighlights.map((item) => (
-            <article key={item.title} className="rounded-md border border-linha bg-carvao p-5 sm:p-6">
-              <span className="mb-3 block text-detalhe font-bold uppercase tracking-[0.35em] text-violeta/80">
-                {lootrunExtrasLabels.highlight}
-              </span>
-              <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{item.title}</h3>
-              <p className="mt-3 text-texto-2">{item.description}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4">
-          {lootrunExtras.map((item, index) => (
-            <article
-              key={item}
-              className="group relative rounded-md border border-linha bg-carvao p-5 transition-all duration-200 hover:border-gsw/40 hover:bg-black/60 sm:p-6"
-            >
-              <div className="mb-4 flex items-center justify-between gap-4 border-b border-linha pb-4">
-                <span className="text-detalhe font-bold uppercase tracking-[0.35em] text-violeta/75">
-                  {lootrunExtrasLabels.note} {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
-              <p className="text-texto-2">{item}</p>
-            </article>
-          ))}
-        </div>
-
-        <ul className="galeria mt-8 sm:mt-10" style={{ "--colunas": 4 } as CSSProperties}>
-          {lootrunExtraSupportMedia.map((item) => (
-            <li key={item.name}>
-              <LootrunMediaPlaceholder item={item} compact sizes={tamanhos.quarto} />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <SecaoGuia id="dicas" titulo="Antes de começar" introducao={lootrunExtrasIntro}>
+      <ul className="flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+        {lootrunExtras.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <MidiasLootrun itens={lootrunExtraSupportMedia} className="mt-8" />
+    </SecaoGuia>
   );
 }
-

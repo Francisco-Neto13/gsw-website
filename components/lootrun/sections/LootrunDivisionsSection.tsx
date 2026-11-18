@@ -1,42 +1,44 @@
-import { lootrunDivisions } from "@/components/lootrun/data/lootrun-content";
-import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
-import { tamanhos } from "@/lib/tamanhos";
+import SecaoGuia from "@/components/guias/SecaoGuia";
+import { lootrunDivisions, lootrunDivisoesTabela } from "@/components/lootrun/data/lootrun-content";
 
 export default function LootrunDivisionsSection() {
   return (
-    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <div>
-        <div className="mb-8 max-w-leitura">
-          <h2 className="text-titulo-2 text-texto">
-            {lootrunDivisions.title}
-          </h2>
-          <p className="mt-3 text-texto-2">
-            {lootrunDivisions.description}
-          </p>
-        </div>
+    <SecaoGuia id="divisoes" titulo="Divisões" introducao={lootrunDivisions.description}>
+      <ul className="flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+        {lootrunDivisions.points.map((ponto) => (
+          <li key={ponto}>{ponto}</li>
+        ))}
+      </ul>
 
-        <div className="rounded-md border border-linha bg-carvao p-5 sm:p-7">
-          <div className="space-y-3">
-            {lootrunDivisions.points.map((point) => (
-              <div key={point} className="flex gap-3 text-texto-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
-                <span>{point}</span>
-              </div>
+      <div className="mt-8 overflow-x-auto rounded-md border border-linha">
+        <table className="w-full min-w-[34rem] border-collapse text-left text-apoio">
+          <caption className="sr-only">Divisões da lootrun, XP total para chegar e o que cada uma libera</caption>
+          <thead className="bg-carvao text-texto">
+            <tr>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Divisão
+              </th>
+              <th scope="col" className="px-4 py-2.5 text-right font-bold">
+                XP total
+              </th>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Libera
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {lootrunDivisoesTabela.map((divisao) => (
+              <tr key={divisao.rank} className="border-t border-linha">
+                <th scope="row" className="px-4 py-2 font-medium text-texto">
+                  {divisao.rank}
+                </th>
+                <td className="numeros px-4 py-2 text-right font-mono text-texto">{divisao.xpTotal.toLocaleString("pt-BR")}</td>
+                <td className="px-4 py-2 text-texto-2">{divisao.libera}</td>
+              </tr>
             ))}
-          </div>
-        </div>
-
-        <div
-          className={`mt-6 grid grid-cols-1 gap-4 ${
-            lootrunDivisions.media.length > 1 ? "sm:grid-cols-2 sm:gap-6" : ""
-          }`}
-        >
-          {lootrunDivisions.media.map((item) => (
-            <LootrunMediaPlaceholder key={item.name} item={item} sizes={lootrunDivisions.media.length > 1 ? tamanhos.metade : tamanhos.artigo} />
-          ))}
-        </div>
+          </tbody>
+        </table>
       </div>
-    </section>
+    </SecaoGuia>
   );
 }
-

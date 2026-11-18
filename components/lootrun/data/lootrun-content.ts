@@ -10,7 +10,13 @@ export type MediaPlaceholder = {
 
 export type LootrunCamp = {
   name: string;
+  /** Cidade ou marco perto do camp (wiki, Lootrunning). */
+  perto: string;
   coordinates: string;
+  /** Segundos ganhos ao chegar e ao concluir um desafio (wiki). */
+  tempo: [number, number];
+  /** Quanto os mobs ganham de dano e de vida a cada desafio (wiki). */
+  escala: [string, string];
   difficulty: "Fácil" | "Médio" | "Difícil" | "Infernal";
   notes: string[];
   dangerousChallenges?: string[];
@@ -53,16 +59,21 @@ export type LootrunCombo = {
 };
 
 export const lootrunGuideIntro = {
-  eyebrow: "Guia GsW",
   title: "Lootrunning",
   paragraphs: [
     "Lootrunning é uma atividade de endgame focada em saquear cavernas, concluir desafios e maximizar recompensas como míticos, esmeraldas e itens valiosos.",
-    "Este guia foi reformulado para cobrir o fluxo completo: participação, divisões, lootcamps, mecânicas (tempo, desafios, beacons, curses, boons, missões e trials), recompensas, combos e extras.",
+    "Aqui está o fluxo completo: como se inscrever, as divisões, os camps, as mecânicas da run (tempo, desafios, beacons, curses, boons, missões e trials), as recompensas e os combos que a guilda usa.",
   ],
 };
 
+export const lootrunResumo = [
+  "Inscreva-se na divisão de Lootrun do Silverbull, a leste de Cinfras.",
+  "A run acaba quando o tempo zera ou quando você atinge o limite de desafios (12 no começo, até 100).",
+  "Depois de cada desafio você escolhe um beacon; ele define o que a run ganha a seguir.",
+  "Curses deixam os mobs mais fortes, mas aumentam os pulls do baú final.",
+];
+
 export const lootrunParticipation = {
-  eyebrow: "Primeiros passos",
   title: "Como Participar",
   paragraphs: [
     "Para começar, vá ao Centro de Divisão Silverbull, ao leste de Cinfras, e faça sua inscrição na divisão de Lootrun.",
@@ -87,6 +98,9 @@ export const lootrunParticipation = {
 export const lootrunCamps: LootrunCamp[] = [
   {
     name: "Canyon of the Lost Excursion (South)",
+    perto: "Thesead",
+    tempo: [60, 90],
+    escala: ["5%", "15%"],
     coordinates: "575, 78, -5025",
     difficulty: "Médio",
     notes: [
@@ -100,6 +114,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "The Corkus Traversal",
+    perto: "Corkus City",
+    tempo: [60, 120],
+    escala: ["5%", "15%"],
     coordinates: "-1560, 97, -2675",
     difficulty: "Difícil",
     notes: [
@@ -119,6 +136,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "Molten Heights Hike",
+    perto: "Rodoroc",
+    tempo: [60, 90],
+    escala: ["10%", "20%"],
     coordinates: "1270, 10, -5130",
     difficulty: "Médio",
     notes: [
@@ -132,6 +152,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "Sky Islands Exploration",
+    perto: "Ahmsord",
+    tempo: [60, 90],
+    escala: ["5%", "15%"],
     coordinates: "1035, 135, -4420",
     difficulty: "Médio",
     notes: [
@@ -151,6 +174,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "Silent Expanse Expedition",
+    perto: "Lutho",
+    tempo: [60, 90],
+    escala: ["10%", "15%"],
     coordinates: "990, 77, -785",
     difficulty: "Médio",
     notes: [
@@ -171,6 +197,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "The Fruma Foray (West)",
+    perto: "Industrial District",
+    tempo: [90, 210],
+    escala: ["5%", "5%"],
     coordinates: "-2002, 4, -775",
     difficulty: "Difícil",
     notes: [
@@ -182,6 +211,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "The Fruma Foray (East)",
+    perto: "Hyloch",
+    tempo: [90, 210],
+    escala: ["5%", "5%"],
     coordinates: "-1294, 75, -1146",
     difficulty: "Infernal",
     notes: [
@@ -194,7 +226,6 @@ export const lootrunCamps: LootrunCamp[] = [
 ];
 
 export const lootrunCampsIntro = {
-  eyebrow: "Lootcamps",
   title: "Campos e Desbloqueios",
   description:
     "Depois da inscrição, o próximo passo é escolher em qual lootcamp rodar. Cada campo tem requisitos de quests e cavernas para liberação completa.",
@@ -213,7 +244,6 @@ export const lootrunCampsIntro = {
 };
 
 export const lootrunDivisions = {
-  eyebrow: "Progressão",
   title: "Divisões e Desbloqueios",
   description:
     "A progressão de Lootrun funciona por XP próprio da atividade. Completar runs libera divisões e melhora sua capacidade de controlar as escolhas da run.",
@@ -224,17 +254,29 @@ export const lootrunDivisions = {
     "As divisões possuem faixas I, II e III, com exceções nos ranks mais altos.",
     "A progressão de rank libera mais consistência para controlar decisões da run.",
   ],
-  media: [
-    {
-      name: "Tela de divisões de Lootrun",
-      src: "/lootrun/Niveis.webp",
-      alt: "Tela de níveis e divisões de lootrun",
-    },
-  ],
 };
 
+/** Divisões da Lootrun: XP total para chegar e o que cada uma libera (wiki, Lootrunning). */
+export const lootrunDivisoesTabela = [
+  { rank: "Rookie I", xpTotal: 0, libera: "—" },
+  { rank: "Rookie II", xpTotal: 100, libera: "Beacon Aqua" },
+  { rank: "Rookie III", xpTotal: 200, libera: "Beacon Orange" },
+  { rank: "Assistant I", xpTotal: 300, libera: "+1 reroll de beacon por run" },
+  { rank: "Assistant II", xpTotal: 400, libera: "Beacon Green" },
+  { rank: "Assistant III", xpTotal: 520, libera: "+50% de velocidade nos interlúdios; 5% de chance de beacon Vibrant" },
+  { rank: "Sentinel I", xpTotal: 670, libera: "Beacon Dark Grey" },
+  { rank: "Sentinel II", xpTotal: 860, libera: "+1 opção de beacon e +1 opção de boon" },
+  { rank: "Sentinel III", xpTotal: 1100, libera: "Beacon White" },
+  { rank: "Elite I", xpTotal: 1400, libera: "Beacon Grey" },
+  { rank: "Elite II", xpTotal: 1780, libera: "Vibrant sobe para 10%; 1 reroll grátis por dia da recompensa final" },
+  { rank: "Elite III", xpTotal: 2260, libera: "Beacon Red" },
+  { rank: "Admiral", xpTotal: 2860, libera: "Beacon Pink; +1 reroll de beacon por run" },
+  { rank: "Commander", xpTotal: 3610, libera: "Beacon Rainbow" },
+  { rank: "Master", xpTotal: 4610, libera: "Beacon Crimson" },
+  { rank: "Grandmaster", xpTotal: 8610, libera: "—" },
+];
+
 export const lootrunMechanicsIntro = {
-  eyebrow: "Mecânicas",
   title: "Fundamentos da Run",
   description:
     "As mecânicas abaixo definem o ritmo, o risco e o potencial de recompensa da sua lootrun.",
@@ -327,7 +369,6 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
 ];
 
 export const lootrunAdvancedSystemsIntro = {
-  eyebrow: "Sistemas da Run",
   title: "Rerolls, Curses, Boons e Trials",
   description:
     "Depois de dominar desafios, timer e beacons, estes sistemas definem o teto da sua run.",
@@ -398,7 +439,6 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
 ];
 
 export const lootrunBeaconsIntro = {
-  eyebrow: "Beacons",
   title: "Beacons",
   description:
     "Depois de cada desafio, o jogo oferece beacons para escolher. Cada beacon tem 4 tiers: o tier base e mais três. Um beacon pode vir Vibrant (+1 tier), e o Aqua sobe o tier do próximo beacon; os dois acumulam até o tier máximo.",
@@ -427,7 +467,6 @@ export const lootrunBeacons: LootrunBeacon[] = [
 ];
 
 export const lootrunRewardsIntro = {
-  eyebrow: "Recompensas",
   title: "Fim da Lootrun",
   lead: "Ao concluir a run, você volta para o início do camp e resgata o baú final.",
   body:
@@ -447,14 +486,14 @@ export const lootrunRewardMedia = {
   videos: <LootrunRewardVideo[]>[
     {
       id: "XqDErIU1fQU",
-      title: "Vídeo I - Abrindo o baú final da LR",
+      title: "Abrindo o baú final (vídeo antigo)",
       description:
-        "O vídeo é um pouco antigo, mas a temática continua a mesma. Mas de qualquer forma, vou colocar outro vídeo logo abaixo mostrando um mais recente.",
+        "Um vídeo mais antigo: o baú mudou pouco desde então.",
     },
     {
       id: "pv5HhUWO79k",
-      title: "Vídeo II - Abrindo o baú final da LR",
-      description: "Esse vídeo já é um pouco mais recente, como podem ver não tem tanta diferença assim.",
+      title: "Abrindo o baú final (vídeo recente)",
+      description: "Um vídeo mais recente, para comparar.",
     },
   ],
   image: {
@@ -466,10 +505,9 @@ export const lootrunRewardMedia = {
 };
 
 export const lootrunCombosIntro = {
-  eyebrow: "Combos",
   title: "Sinergias de Missões e Trials",
   description:
-    "As combinações abaixo são baseadas no seu material e servem como base de execução. Ajuste conforme ofertas reais de beacons/missões/trials durante a run.",
+    "As combinações que a guilda usa como ponto de partida. Ajuste conforme os beacons, missões e trials que aparecerem na run.",
 };
 
 export const lootrunCombos: LootrunCombo[] = [
@@ -538,12 +576,8 @@ export const lootrunCombos: LootrunCombo[] = [
   },
 ];
 
-export const lootrunExtrasIntro = {
-  eyebrow: "Informações adicionais",
-  title: "Extra",
-  description:
-    "Checklist final para evitar perda de run por preparo incompleto, má leitura de sistema ou execução fora da área jogável.",
-};
+export const lootrunExtrasIntro =
+  "O que vale saber antes de começar, para não perder a run por falta de preparo ou por sair da área.";
 
 export const lootrunExtras = [
   "Ao entrar em uma lootrun, seu inventário é bloqueado. Leve todos os itens essenciais antes de começar.",
@@ -557,29 +591,6 @@ export const lootrunExtras = [
   "Status completos da run (curses, boons, missões, trials e histórico de beacons) podem ser consultados no NPC do camp e em interlúdios.",
   "Inscrição Silverbull dobra os valores do bônus diário de lootrun.",
 ];
-
-export const lootrunExtraHighlights = [
-  {
-    title: "Preparo antes de iniciar",
-    description:
-      "Com inventário bloqueado e sem compra de poções durante a run, tudo precisa estar pronto antes do primeiro desafio.",
-  },
-  {
-    title: "Tempo e cooldown",
-    description:
-      "Sair da área jogável ou finalizar cedo pode encerrar a run e ativar cooldown, afetando ritmo de progressão.",
-  },
-  {
-    title: "Leitura de status",
-    description:
-      "Rank, XP, curses, boons, missões e histórico de beacons devem ser acompanhados para decisões melhores no interlúdio.",
-  },
-];
-
-export const lootrunExtrasLabels = {
-  highlight: "Destaque",
-  note: "Nota",
-};
 
 export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   {
@@ -619,3 +630,8 @@ export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   },
 ];
 
+
+export const lootrunFontes = [
+  { rotulo: "Lootrunning, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Lootrunning" },
+  { rotulo: "Lootrun Beacons, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Lootrunning#Beacons" },
+];
