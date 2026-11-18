@@ -49,6 +49,8 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 | World Events: "até 4 LE" nos eventos mais altos e "chance pequena de mítico" a partir do nível 90 vêm do texto antigo, sem fonte na wiki. Ficaram como experiência da guilda | World Events, Recompensas |
 | Dungeons: "run completa em uns 30 minutos" vem do texto antigo, sem fonte. Ficou como Dica da GsW | Dungeons, Dicas |
 | Shares: o preço da assinatura em Shares (6 Tradable; a print da loja confirma os 14 dias) e o dos pets (15, Dragonling 25, pacote 35) vêm do texto antigo; a wiki só traz o preço em dólar do site | Silverbull Shares, Assinatura e Pets |
+| Profissões: o passo a passo de importar waypoints (Content Book, Overlay Management, Info Box) parece ser o das Info Boxes, não o de waypoints do Wynntils. Conferir no mod e corrigir | Profissões, Waypoints |
+| Profissões: "mais de uma ferramenta do mesmo tipo no inventário reduz a eficiência" vem do texto antigo, sem fonte na wiki. Ficou como experiência da guilda | Profissões, Coleta |
 
 ## Próxima etapa (depois da validação)
 

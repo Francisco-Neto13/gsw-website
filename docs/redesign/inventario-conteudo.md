@@ -145,7 +145,7 @@ Ação recomendada: trocar os emojis dos beacons por um círculo ou quadrado em 
 **Mídia:**
 - professions/: 23 arquivos, 2,0 MB. spot1/2/3 (440 a 880 KB) são prints próprios: **manter**.
 - Os 12 ícones de profissão têm cerca de 220 bytes cada. São webp lossless válidos (pixel art): OK.
-- professions.webp, professions2.webp, tiers_percent e exemplo_de_craftado estão OK.
+- exemplo_de_craftado está OK. professions.webp, professions2.webp e tiers_percent eram prints de tabelas da wiki e foram removidas: as tabelas viraram HTML no guia.
 - **Falta:** print da estação de criação e da tela de receita.
 
 ---
