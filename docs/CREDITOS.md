@@ -107,6 +107,52 @@ O link de origem de cada arquivo fica em `lib/terceiros.ts` e aparece na legenda
 | dungeon-ice-barrows-corrompida.webp | [Wiki: CorruptedIceBarrowsEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedIceBarrowsEntrance.png), entrada | Dungeons, Corrupted Ice Barrows |
 | dungeon-undergrowth-ruins-corrompida.webp | [Wiki: CorruptedUndergrowthRuinsEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedUndergrowthRuinsEntrance.png), entrada | Dungeons, Corrupted Undergrowth Ruins |
 | dungeon-galleons-graveyard-corrompida.webp | [Wiki: CorruptedGalleon'sGraveyardEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedGalleon%27sGraveyardEntrance.png), entrada | Dungeons, Corrupted Galleon's Graveyard |
+| item-bow-air3.webp | [CDN do guia de itens: bow.air3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bow.air3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bow-earth2.webp | [CDN do guia de itens: bow.earth2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bow.earth2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bow-earth3.webp | [CDN do guia de itens: bow.earth3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bow.earth3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bow-multi2.webp | [CDN do guia de itens: bow.multi2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bow.multi2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bow-multi3.webp | [CDN do guia de itens: bow.multi3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bow.multi3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bow-thunder3.webp | [CDN do guia de itens: bow.thunder3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bow.thunder3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bow-water3.webp | [CDN do guia de itens: bow.water3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bow.water3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bracelet-basic-iron.webp | [CDN do guia de itens: bracelet.basicIron.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bracelet.basicIron.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bracelet-multi2.webp | [CDN do guia de itens: bracelet.multi2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bracelet.multi2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bracelet-water1.webp | [CDN do guia de itens: bracelet.water1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bracelet.water1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-bracelet-water2.webp | [CDN do guia de itens: bracelet.water2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/bracelet.water2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-dagger-air3.webp | [CDN do guia de itens: dagger.air3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/dagger.air3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-dagger-fire2.webp | [CDN do guia de itens: dagger.fire2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/dagger.fire2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-dagger-multi2.webp | [CDN do guia de itens: dagger.multi2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/dagger.multi2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-dagger-thunder1.webp | [CDN do guia de itens: dagger.thunder1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/dagger.thunder1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-dagger-thunder2.webp | [CDN do guia de itens: dagger.thunder2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/dagger.thunder2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-dagger-thunder3.webp | [CDN do guia de itens: dagger.thunder3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/dagger.thunder3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-dagger-water3.webp | [CDN do guia de itens: dagger.water3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/dagger.water3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-necklace-basic-cross.webp | [CDN do guia de itens: necklace.basicCross.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/necklace.basicCross.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-necklace-earth1.webp | [CDN do guia de itens: necklace.earth1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/necklace.earth1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-necklace-multi2.webp | [CDN do guia de itens: necklace.multi2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/necklace.multi2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-relik-air2.webp | [CDN do guia de itens: relik.air2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/relik.air2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-relik-basic-gold.webp | [CDN do guia de itens: relik.basicGold.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/relik.basicGold.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-relik-earth2.webp | [CDN do guia de itens: relik.earth2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/relik.earth2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-relik-fire3.webp | [CDN do guia de itens: relik.fire3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/relik.fire3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-relik-thunder3.webp | [CDN do guia de itens: relik.thunder3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/relik.thunder3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-relik-water1.webp | [CDN do guia de itens: relik.water1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/relik.water1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-relik-water3.webp | [CDN do guia de itens: relik.water3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/relik.water3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-ring-basic-gem.webp | [CDN do guia de itens: ring.basicGem.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/ring.basicGem.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-ring-fire2.webp | [CDN do guia de itens: ring.fire2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/ring.fire2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-ring-thunder2.webp | [CDN do guia de itens: ring.thunder2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/ring.thunder2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-spear-air2.webp | [CDN do guia de itens: spear.air2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/spear.air2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-spear-air3.webp | [CDN do guia de itens: spear.air3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/spear.air3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-spear-fire3.webp | [CDN do guia de itens: spear.fire3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/spear.fire3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-spear-multi3.webp | [CDN do guia de itens: spear.multi3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/spear.multi3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-spear-water1.webp | [CDN do guia de itens: spear.water1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/spear.water1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-spear-water2.webp | [CDN do guia de itens: spear.water2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/spear.water2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-spear-water3.webp | [CDN do guia de itens: spear.water3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/spear.water3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-air3.webp | [CDN do guia de itens: wand.air3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.air3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-basic-gold.webp | [CDN do guia de itens: wand.basicGold.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.basicGold.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-multi1.webp | [CDN do guia de itens: wand.multi1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.multi1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-multi2.webp | [CDN do guia de itens: wand.multi2.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.multi2.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-multi3.webp | [CDN do guia de itens: wand.multi3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.multi3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-thunder3.webp | [CDN do guia de itens: wand.thunder3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.thunder3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-water1.webp | [CDN do guia de itens: wand.water1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.water1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
+| item-wand-water3.webp | [CDN do guia de itens: wand.water3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.water3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
 
 ## Imagens de itens (CDN oficial)
 
@@ -118,8 +164,7 @@ das imagens de terceiros (acima): baixados para `public/terceiros/wynncraft/`, l
 com crédito; **nunca puxados direto da CDN** (hotlink). A autorização escrita da Wynncraft continua
 desejável (pendência em `docs/PENDENCIAS.md`) e, se vier, nada mais precisa mudar.
 
-Exceção herdada: o guia de Leveling (modelo antigo) ainda usa ícones da CDN na rota de armas
-(`buildLevelingItemGuideIconUrl`). Sai ou é trocado quando o Leveling for refeito.
+O Leveling usava ícones da CDN direto na rota de armas; desde 18/11/2026 eles são cópias locais (`item-*.webp`, na tabela acima). As peças de armadura ficam sem ícone: a CDN não tem esses arquivos e a wiki só os tem em folha de sprites.
 
 ## Ícones e tipografia em uso
 
