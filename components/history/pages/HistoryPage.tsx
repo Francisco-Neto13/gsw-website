@@ -6,7 +6,7 @@ import GallerySection from "@/components/history/sections/GallerySection";
 
 export default function HistoryPage() {
   return (
-    <div id="topo" className="min-h-screen bg-black">
+    <div id="topo">
         <History />
         <MembersSection />
         <Pillars />

@@ -60,30 +60,26 @@ export default function GallerySection() {
   }, [selectedPhotoIndex]);
 
   return (
-    <section id="galeria" className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-32">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_bottom,rgba(113,22,173,0.03)_0%,transparent_50%)]" />
+    <section id="galeria" className="border-t border-linha py-16 sm:py-20">
 
-      <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="reveal-on-scroll mb-10 text-center sm:mb-20">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-4">
-            Memórias Eternas
-          </span>
-          <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-            Galeria dos <span className="text-violeta">Guardiões</span>
+      <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
+        <div className="reveal-on-scroll mb-10 max-w-[60ch]">
+          <h2 className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+            Galeria dos Guardiões
           </h2>
-          <p className="mx-auto max-w-2xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             &ldquo;Cada imagem conta uma história, cada momento eternizado na memória dos
             Guardiões.&rdquo;
           </p>
         </div>
 
-        <div className="history-gallery-frame reveal-on-scroll rounded-3xl border border-white/10 bg-black/35 p-3 sm:p-5 lg:p-6">
+        <div>
           {photos.length > 0 ? (
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-3">
               {photos.map((photo, index) => (
                 <div
                   key={`${photo.title}-${index}`}
-                  className="history-sheen-card history-tilt-gallery group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-zinc-900 transition-colors duration-200 hover:border-gsw/35 sm:aspect-video"
+                  className="group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-xl border border-linha bg-zinc-900 transition-colors duration-200 hover:border-gsw/35 sm:aspect-video"
                   onClick={() => setSelectedPhotoIndex(index)}
                 >
                   <Image
@@ -91,20 +87,20 @@ export default function GallerySection() {
                     alt={photo.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                    className="history-tilt-media object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:p-4">
-                    <h3 className="mb-1 text-xs font-bold text-white sm:text-sm">{photo.title}</h3>
+                    <h3 className="mb-1 text-xs font-bold text-texto sm:text-sm">{photo.title}</h3>
                     {photo.description && (
-                      <p className="hidden text-xs text-zinc-300 sm:block">{photo.description}</p>
+                      <p className="hidden text-xs text-texto-2 sm:block">{photo.description}</p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-white/10 bg-zinc-900/20 px-6 py-12 text-center sm:px-10 sm:py-16">
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+            <div className="rounded-md border border-dashed border-linha bg-carvao px-6 py-12 text-center sm:px-10 sm:py-16">
+              <p className="text-texto-2">
                 Adicione as imagens em{" "}
                 <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">public/gallery</code>{" "}
                 e preencha a lista em{" "}
@@ -117,10 +113,10 @@ export default function GallerySection() {
           )}
         </div>
 
-        <div className="reveal-on-scroll mt-16 text-center sm:mt-24">
-          <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
+        <div className="mt-12 max-w-[60ch]">
+          <p className="border-l border-linha-forte pl-4 italic text-texto-2">
             &ldquo;Onde houver uma batalha, haverá um{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-violeta/60">Guardião</span>.
+            <span className="font-medium text-texto">Guardião</span>.
             O legado da GsW é eterno.&rdquo;
           </p>
         </div>
@@ -140,8 +136,8 @@ export default function GallerySection() {
                 className="history-gallery-modal-shell relative w-full max-w-6xl"
                 onClick={(event) => event.stopPropagation()}
               >
-                <div className="history-gallery-modal-frame relative flex max-h-[92vh] w-full flex-col overflow-y-auto rounded-3xl border border-white/10 bg-black/55 p-2.5 sm:max-h-[90vh] sm:p-4 md:max-h-[88vh] lg:p-6">
-                  <div className="history-gallery-modal-header mb-2.5 flex items-center justify-between border-b border-white/10 pb-2.5 sm:mb-3 sm:pb-3">
+                <div className="history-gallery-modal-frame relative flex max-h-[92vh] w-full flex-col overflow-y-auto rounded-md border border-linha bg-black/55 p-2.5 sm:max-h-[90vh] sm:p-4 md:max-h-[88vh] lg:p-6">
+                  <div className="history-gallery-modal-header mb-2.5 flex items-center justify-between border-b border-linha pb-2.5 sm:mb-3 sm:pb-3">
                     <div className="min-w-0">
                       <p className="history-gallery-modal-label text-[10px] font-bold uppercase tracking-[0.35em] sm:text-xs">
                         Arquivo Visual
@@ -164,7 +160,7 @@ export default function GallerySection() {
 
                   <div className="history-gallery-modal-content grid gap-3 md:grid-cols-[minmax(0,1.15fr)_minmax(220px,0.85fr)] lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
                     <div className="history-gallery-modal-media relative flex items-center justify-center">
-                      <div className="history-gallery-modal-canvas relative h-[33vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/45 sm:h-[40vh] md:h-[44vh] lg:h-[60vh]">
+                      <div className="history-gallery-modal-canvas relative h-[33vh] w-full overflow-hidden rounded-md border border-linha bg-black/45 sm:h-[40vh] md:h-[44vh] lg:h-[60vh]">
                         <Image
                           src={selectedPhoto.src}
                           alt={selectedPhoto.title}
@@ -175,7 +171,7 @@ export default function GallerySection() {
                       </div>
                     </div>
 
-                    <aside className="history-gallery-modal-info rounded-2xl border border-white/10 bg-black/35 p-3 sm:p-4 lg:p-5">
+                    <aside className="history-gallery-modal-info rounded-md border border-linha bg-carvao p-3 sm:p-4 lg:p-5">
                       <h3
                         id={modalTitleId}
                         className="mb-1.5 text-base font-black tracking-tight text-white sm:mb-2 sm:text-xl lg:text-2xl"
@@ -183,7 +179,7 @@ export default function GallerySection() {
                         {selectedPhoto.title}
                       </h3>
 
-                      <p id={modalDescriptionId} className="mb-3 text-xs leading-relaxed text-zinc-300 sm:mb-4 sm:text-sm">
+                      <p id={modalDescriptionId} className="mb-3 text-xs leading-relaxed text-texto-2 sm:mb-4 sm:text-sm">
                         {selectedPhoto.description || "Registro histórico da galeria da guilda da GsW."}
                       </p>
 
