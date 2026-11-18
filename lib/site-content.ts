@@ -106,6 +106,18 @@ export const worldEventsSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const sharesSecoes: GuiaSecao[] = [
+  { id: "o-que-sao", titulo: "O que são Shares", busca: "tradable untradable trade market comprar" },
+  { id: "ranks", titulo: "Ranks", busca: "vip hero champion preço slots fila switch" },
+  { id: "assinatura", titulo: "Assinatura Silverbull", busca: "membership subscription taxa glint" },
+  { id: "crates", titulo: "Crates", busca: "caixa tier raridade black market godly scrap" },
+  { id: "bombas", titulo: "Bombas", busca: "bomb xp loot dungeon profession" },
+  { id: "pets", titulo: "Pets", busca: "bundle dragonling crimson frostpaw verdant" },
+  { id: "tokens", titulo: "Tokens", busca: "tracker reroll reset guild rename daily bonus" },
+  { id: "dicas", titulo: "Dicas", busca: "ofertas" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -184,6 +196,7 @@ export const guias: Guia[] = [
     grupo: "economia",
     estado: "completo",
     rotaAntiga: "/silverbull-shares",
+    secoes: sharesSecoes,
   },
   {
     slug: "modos-especiais",

@@ -1,61 +1,67 @@
+import DicaGsw from "@/components/guias/DicaGsw";
+import Galeria from "@/components/guias/Galeria";
+import SecaoGuia from "@/components/guias/SecaoGuia";
 import {
-  chestStoreImage,
-  crateExtraImages,
-  cratePricingNotes,
-  crateSources,
-  crateTierImage,
+  cratesChances,
+  cratesImagens,
   cratesIntro,
+  cratesOrigem,
+  dicaDeCrate,
+  raridades,
+  scrap,
 } from "@/components/silverbull-shares/data/silverbull-shares-content";
-import SilverbullImageSlot from "@/components/silverbull-shares/sections/SilverbullImageSlot";
+import { dimensoesDe } from "@/lib/imagens";
 
 export default function SilverbullCratesSection() {
+  const imagens = cratesImagens.filter((imagem) => dimensoesDe(imagem.src));
   return (
-    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <div>
-        <div className="mb-8 max-w-leitura">
-          <h2 className="text-titulo-2 text-texto">
-            {cratesIntro.title}
-          </h2>
-          <p className="mt-3 text-texto-2">
-            {cratesIntro.description}
-          </p>
-        </div>
+    <SecaoGuia id="crates" titulo="Crates" introducao={cratesIntro}>
+      <h3 className="text-titulo-4 font-bold text-texto">De onde vêm</h3>
+      <ul className="mt-3 flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+        {cratesOrigem.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-          {crateSources.map((card) => (
-            <article key={card.title} className="rounded-md border border-linha bg-carvao p-5 sm:p-6">
-              <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{card.title}</h3>
-              <p className="mt-3 text-texto-2">{card.description}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <SilverbullImageSlot label={crateTierImage.label} src={crateTierImage.src} alt={crateTierImage.alt} />
-          <SilverbullImageSlot label={chestStoreImage.label} src={chestStoreImage.src} alt={chestStoreImage.alt} />
-        </div>
-
-        <div
-          className={`mt-4 grid grid-cols-1 gap-4 ${
-            crateExtraImages.length > 1 ? "sm:grid-cols-2" : ""
-          } ${crateExtraImages.length > 2 ? "lg:grid-cols-3" : ""}`}
-        >
-          {crateExtraImages.map((item) => (
-            <SilverbullImageSlot key={item.label} label={item.label} src={item.src} alt={item.alt} compact />
-          ))}
-        </div>
-
-        <div className="mt-6 rounded-md border border-linha bg-carvao p-5 sm:p-6">
-          <span className="mb-3 block text-detalhe font-bold uppercase tracking-[0.35em] text-violeta/80">Detalhe importante</span>
-          <div className="space-y-2">
-            {cratePricingNotes.map((note) => (
-              <p key={note} className="text-texto-2">
-                - {note}
-              </p>
+      <h3 className="mt-10 text-titulo-4 font-bold text-texto">Chance de cada raridade</h3>
+      <div className="mt-4 overflow-x-auto rounded-md border border-linha">
+        <table className="w-full min-w-[36rem] border-collapse text-left text-apoio">
+          <caption className="sr-only">Chance de cada raridade de cosmético por tier de crate</caption>
+          <thead className="bg-carvao text-texto">
+            <tr>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Crate
+              </th>
+              {raridades.map((raridade) => (
+                <th key={raridade} scope="col" className="px-4 py-2.5 text-right font-bold">
+                  {raridade}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="numeros font-mono">
+            {cratesChances.map((linha) => (
+              <tr key={linha.tier} className="border-t border-linha">
+                <th scope="row" className="px-4 py-2 text-left font-medium text-texto">
+                  {linha.tier}
+                </th>
+                {linha.valores.map((valor, indice) => (
+                  <td key={raridades[indice]} className="px-4 py-2 text-right text-texto-2">
+                    {valor}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </div>
-        </div>
+          </tbody>
+        </table>
       </div>
-    </section>
+      <p className="mt-4 max-w-leitura text-texto-2">{scrap}</p>
+
+      <div className="mt-8">
+        <DicaGsw titulo="Dica da GsW">{dicaDeCrate}</DicaGsw>
+      </div>
+
+      {imagens.length > 0 ? <Galeria className="mt-8" proporcao="3 / 2" itens={imagens} /> : null}
+    </SecaoGuia>
   );
 }

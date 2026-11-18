@@ -35,7 +35,6 @@ const arquivoDoGuia: Record<string, string> = {
   leveling: "components/leveling/data/leveling-content.ts",
   profissoes: "components/professions/data/professions-content.ts",
   lootrun: "components/lootrun/data/lootrun-content.ts",
-  "silverbull-shares": "components/silverbull-shares/data/silverbull-shares-content.ts",
   "modos-especiais": "components/special-modes/data/special-modes-content.ts",
 };
 
