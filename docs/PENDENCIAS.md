@@ -7,7 +7,7 @@ Raids). Ao resolver um item, apague-o daqui no mesmo PR.
 
 | Item | Detalhe |
 |---|---|
-| E-mail de contato do aviso de site não oficial | A Mojang exige um contato real (Discord não basta). Conferido em 18/11/2026 nas [Minecraft Usage Guidelines](https://www.minecraft.net/en-us/usage-guidelines), seção "Essential guidelines", que vale para todo uso: deixar claro "whom to contact … and the contact method (chat and forum links are not acceptable methods)". Preencher `contatoEmail` em `lib/site-content.ts`; até lá o rodapé mostra "Contato: a definir" |
+| Contato do aviso de site não oficial | O rodapé aponta para as issues do repositório no GitHub, porque a guilda não tem e-mail próprio. As [Minecraft Usage Guidelines](https://www.minecraft.net/en-us/usage-guidelines) pedem um contato real e dizem que chat e fórum não valem; um e-mail seria o mais seguro. Se a Mojang cobrar, trocar `contato` em `lib/site-content.ts` |
 | Hospedagem de produção | A Vercel não será mais usada. O `deploy.yml` atual publica na Vercel e está desligado; precisa ser trocado pelo destino novo (provavelmente a VPS, como o Portfolio) antes de ligar o deploy |
 | Autorização da Wynncraft para ícones oficiais | Sem ela, nada da CDN oficial entra no site (`docs/CREDITOS.md`). Pedido pelo Discord de desenvolvedores |
 | Links das ferramentas de alimentação (Montarias) | Faltam o link da Tabela de Materiais e Atributos e o da Calculadora (Wynnhub); os cartões aparecem tracejados com "Link a definir". Preencher `href` em `recursosDeAlimentacao` |

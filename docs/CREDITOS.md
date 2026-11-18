@@ -9,7 +9,8 @@ Não é parecer jurídico.
 ## Regras do site
 
 1. **Site de fã, não oficial.** O rodapé de todas as páginas mantém o aviso abaixo e um contato
-   real (e-mail ou formulário; link de Discord não basta para a Mojang). O endereço fica em `contatoEmail`, em `lib/site-content.ts`.
+   real (link de Discord não basta para a Mojang). Hoje o contato são as issues do repositório no GitHub
+   (`contato`, em `lib/site-content.ts`); a guilda não tem e-mail próprio.
 2. **Texto próprio.** Nenhum texto é copiado da wiki, do site oficial ou de outro guia. Fatos do
    jogo (números, nomes, requisitos) são reescritos com as nossas palavras, e a página aponta para
    a fonte original na seção "Fontes" do guia.
