@@ -3,6 +3,21 @@
 Coisas notadas na etapa 1 (estrutura) e deixadas para as próximas etapas. Ao resolver um item,
 apague-o daqui no mesmo PR.
 
+## Redesign (Fase 2, aguardando aprovação)
+
+O diagnóstico completo e a proposta estão em `docs/redesign/`. Os itens abaixo são os que a Fase 3
+precisa resolver qualquer que seja a direção escolhida.
+
+| Prioridade | Item | Detalhe |
+|---|---|---|
+| Alta | Aviso de site não oficial | Trocar "Guia Oficial", "Documento Oficial" e "Guilda oficial" e pôr o aviso no rodapé (`docs/CREDITOS.md`). Falta decidir o **contato real** (e-mail ou formulário) |
+| Alta | Fonte nunca aplicada | A Geist é carregada mas o texto sai em `system-ui` |
+| Alta | Teclado e foco | Galeria sem teclado, menu mobile fechado no Tab, modais sem foco preso |
+| Alta | Dados de jogo errados | Beacons, níveis de raid, gambits, Dungeons sem lista, acentos quebrados (`docs/redesign/inventario-conteudo.md`) |
+| Média | Permissão da Wynncraft para ícones de itens | Pedir pelo Discord de desenvolvedores (`docs/redesign/fontes-e-licencas.md`) |
+| Média | Logo pesada | `public/icon.webp` tem 282 KB e cerca de 1.600 px para ser exibida a 120 px |
+| Média | 404 próprio | Hoje é o padrão do Next, em inglês |
+
 ## Front (reestruturação)
 
 | Prioridade | Item | Detalhe |

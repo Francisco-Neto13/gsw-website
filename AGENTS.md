@@ -122,6 +122,7 @@ type(scope): imperative lowercase summary in english
 3. **Rota nova** = `app/<rota>/page.tsx` + `components/<area>/pages/` + entrada em
    `sitePageLinks` e `navbarItems` de `lib/site-content.ts`. O `npm test` falha se faltar algo.
 4. **Imagem nova**: passe por `npm run convert:webp` e salve em `public/<area>/` como `.webp`.
+   Fonte, imagem, ícone ou fonte tipográfica de terceiro entra em `docs/CREDITOS.md` no mesmo PR.
 5. **Documentação na mesma tarefa**: mudou estrutura, comando, rota, fluxo ou infraestrutura,
    atualize o arquivo de `docs/` correspondente (e este, se a regra for geral) no mesmo PR.
    Pendência encontrada e não resolvida vai para `docs/PENDENCIAS.md`.
@@ -145,4 +146,7 @@ type(scope): imperative lowercase summary in english
 - Nunca adicionar dependência para o que o Next, o React ou o Node já fazem.
 - Nunca subir imagem `.png`/`.jpg` em `public/` (use `.webp`) nem GIF novo acima de 2 MB.
 - Nunca colocar texto de guia direto nos componentes de `sections/`.
+- Nunca copiar ou adaptar texto da wiki ou do site oficial (a wiki é CC BY-NC-SA): reescreva e
+  linke a fonte. Nunca usar imagens da wiki, logos ou arte oficial do Minecraft e da Wynncraft, nem
+  chamar o site de "oficial" (`docs/CREDITOS.md`).
 - Nunca alterar `LICENSE` nem trechos de direitos autorais.
