@@ -197,14 +197,26 @@ Todas servidas pelo `next/font` a partir do próprio site.
 **Character:** Pixelify é a voz do nome do item: pixel, mas desenhada para tela. Alegreya Sans é humanista e calorosa para leitura longa em pt-BR, sem cair no medieval. O mono existe para que coordenadas e contagens se alinhem e se leiam sem ambiguidade.
 
 ### Hierarchy
-- **Display** (Pixelify 600, `clamp(2.25rem, 5vw, 3.75rem)`, 1,05): a frase de abertura da Início.
-- **Headline** (Pixelify 600, `clamp(2rem, 4vw, 2.75rem)`, 1,15): H1 de guia.
-- **Title** (Pixelify 600, `clamp(1.5rem, 2.4vw, 1.875rem)`, 1,15): H2 de seção. Na Início, os H2 sobem até `clamp(1.6rem, 2.6vw, 2.1rem)`. O H3 de cada raid usa Pixelify em `clamp(1.35rem, 2.2vw, 1.65rem)`.
+Escala por papel, em tokens do `@theme` (`text-<papel>`). Componente usa o papel, nunca um tamanho solto nem um tamanho responsivo (`sm:text-*`).
+
+| Papel | Tamanho | Uso |
+|---|---|---|
+| `exibicao` | `clamp(2.25rem, 5vw, 3.75rem)`, 1,05 | a frase de abertura da Início |
+| `titulo-1` | `clamp(2rem, 4vw, 2.75rem)`, 1,15 | H1 de página (Pixelify 600) |
+| `titulo-2` | `clamp(1.625rem, 2.6vw, 2.125rem)`, 1,2 | H2 de seção (Pixelify 600) |
+| `titulo-3` | 1,5 rem, 1,25 | nome da raid, grupo da lista de guias |
+| `titulo-4` | 1,25 rem, 1,3 | sala, título de card, "Resumo rápido", nomes de guia na Início |
+| `titulo-5` | 1,125 rem, 1,35 | variação da sala, subtítulo dentro de painel |
+| `lede` | 1,1875 rem, 1,6 | parágrafo de abertura, no secundário |
+| `corpo` | 1,0625 rem (17 px), 1,7 | texto corrido |
+| `apoio` | 0,9375 rem, 1,55 | legenda, navegação, metadado, listas dentro de painel |
+| `detalhe` | 0,8125 rem, 1,45 | chip, tecla, rótulo pequeno; é o piso |
+
+- O título se separa do texto por tamanho, peso e cor ao mesmo tempo: títulos em `texto` e 700 (ou Pixelify), corpo em `texto-2` e 400. Dois papéis vizinhos nunca usam o mesmo tamanho.
 - **Item Name** (Pixelify, 1,25 rem, violeta): o nome dentro da ficha do guia.
-- **Subtitle** (Alegreya 700, 1,125 rem): H3 a H5 dentro de seções (sala, variação, "Resumo rápido" em 1,25 rem).
-- **Body** (Alegreya 400, 1,0625 rem = 17 px, 1,7): texto corrido, com largura máxima de 60ch. Lide de abertura em 1,125 rem no secundário.
-- **Label** (Alegreya 700, 0,8125 rem): rótulo de grupo na sidebar e "Nesta página". Metadados e legendas em 0,9 a 0,95 rem no terciário. Sem caixa alta, sem tracking.
-- **Numeric** (JetBrains Mono, tabular): coordenadas, níveis, contagens; `font-variant-numeric: tabular-nums` em tabelas e na classe de números. Atalhos de teclado (`Ctrl K`, `Esc`) em mono 0,7 rem.
+- **Label** (Alegreya 700, `detalhe`): rótulo de grupo na sidebar e "Nesta página". Sem caixa alta, sem tracking.
+- **Numeric** (JetBrains Mono, tabular): coordenadas, níveis, contagens; `font-variant-numeric: tabular-nums` em tabelas e na classe de números.
+- **Medida:** texto corrido em até 70ch (`max-w-leitura`, token `--container-leitura`).
 
 H1 e H2 têm `text-wrap: balance`; parágrafos, itens, legendas e `dd` têm `text-wrap: pretty`.
 
@@ -219,15 +231,14 @@ H1 e H2 têm `text-wrap: balance`; parágrafos, itens, legendas e `dd` têm `tex
 
 - **Moldura do site:** top bar fixa de 3,5 rem (56 px, `--topbar-h`); `scroll-padding-top` igual à top bar mais 1 rem para âncoras.
 - **Casca (`.casca`):** o contêiner único do site, até 120 rem (`--casca-max`), com margem lateral `--casca-x` de 16, 24, 32 e 48 px (a partir de 0, 640, 1024 e 1536 px). Top bar, rodapé, Início, `/guias` e as colunas dos guias usam a mesma casca: logo, títulos e o texto da sidebar começam no mesmo x em todas as páginas. Nenhuma página define outro `max-w` + `px` de moldura.
-- **Dois tipos de página:** as de entrada (Início e `/guias`) ocupam a casca inteira, com grades; as de leitura (guias e História) usam a coluna de artigo de 64 rem, centrada (nos guias, entre a sidebar e o índice), com texto a 60ch alinhado à esquerda dentro dela.
-- **Página de guia:** três colunas a partir de 1280 px: sidebar de guias de 16 rem (a partir de 1024 px) encostada na margem da casca, artigo de até 64 rem centrado no espaço do meio e índice "Nesta página" de 15 rem encostado na margem direita. O espaço que sobra em telas largas se divide dos dois lados do artigo, nunca nas bordas da tela. Sidebar e índice são `sticky` sob a top bar, com rolagem própria. Abaixo de 1280 px o índice vira uma barra fixa "Nesta página: <seção atual>" que abre em lista; abaixo de 768 px a navegação de áreas e os guias vão para uma gaveta lateral (`<dialog>`, até 22 rem).
-- **Coluna de leitura:** 60ch para texto; mídia e blocos de sala vão até 56 a 60 rem.
+- **Sem faixa vazia:** nenhuma página centraliza uma coluna estreita na casca. Início e `/guias` usam grades na casca inteira. Nos guias, o artigo ocupa todo o espaço entre a sidebar e o índice: texto corrido em 70ch, e tabelas, painéis e grades de mídia na largura do artigo. Na abertura do guia, a ficha vira quadro lateral a partir de 1280 px. A História usa duas colunas na casca (1:2): título e lide de cada seção fixos à esquerda, conteúdo à direita.
+- **Página de guia:** três colunas a partir de 1280 px: sidebar de guias de 16 rem (a partir de 1024 px) encostada na margem da casca, artigo ocupando todo o espaço do meio e índice "Nesta página" de 15 rem encostado na margem direita. Sidebar e índice são `sticky` sob a top bar, com rolagem própria. Abaixo de 1280 px o índice vira uma barra fixa "Nesta página: <seção atual>" que abre em lista; abaixo de 768 px a navegação de áreas e os guias vão para uma gaveta lateral (`<dialog>`, até 22 rem).
 - **Ritmo:** seções de guia com 48 px de respiro vertical e da História com 64 a 80 px, separadas por régua de 1 px. Cabeçalho de seção sempre à esquerda: H2 no tamanho de título, lide em 60ch, sem rótulo acima. Dentro das caixas, 16 a 20 px de respiro.
 - **Grades sem órfão:** um número ímpar de itens não deixa um card sozinho numa linha (o último ocupa a linha toda, como nos pilares), e texto de card nunca é centralizado.
 - **Etapas:** salas numeradas em lista, ligadas por um traço vertical de 1 px na régua forte.
 - **Onde parei:** o guia guarda no navegador a última seção visível e oferece "Continuar de" só para quem volta pelo topo.
 - **Breakpoints:** os do Tailwind (640, 768, 1024, 1280 px).
-- **Divergência do plano:** a direção pedia coluna de 68ch e sidebar de 264 px; o build fixou 60ch e 16 rem (256 px), e este documento segue o build.
+- **Divergência do plano:** a direção pedia coluna de 68ch e sidebar de 264 px; o build usa 70ch e 16 rem (256 px), e este documento segue o build.
 - **Atalho temporário:** os guias ainda no modelo antigo pintam cada seção de preto puro; `app/styles/foundation.css` deixa esses fundos transparentes dentro da área de guias. Não é regra do sistema: sai quando cada guia for refeito no modelo de Raids, e nenhuma superfície nova deve depender dele.
 
 ## Elevation & Depth
