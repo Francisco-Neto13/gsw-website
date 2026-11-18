@@ -11,7 +11,7 @@ export default function ProfessionWaypointsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {professionWaypointsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -21,13 +21,13 @@ export default function ProfessionWaypointsSection() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
           <div className="rounded-md border border-linha bg-carvao p-6 sm:p-8">
-            <h3 className="mb-6 text-lg font-bold text-texto sm:text-xl">
+            <h3 className="text-titulo-4 mb-6 font-bold text-texto">
               {professionWaypointsLabels.importTitle}
             </h3>
             <ol className="space-y-4">
               {waypointImportSteps.map((step, index) => (
                 <li key={step} className="flex items-start gap-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gsw/15 text-xs font-bold text-violeta">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gsw/15 text-detalhe font-bold text-violeta">
                     {index + 1}
                   </span>
                   <span className="text-texto-2">{step}</span>
@@ -38,13 +38,13 @@ export default function ProfessionWaypointsSection() {
 
           <div className="rounded-md border border-linha bg-carvao p-6 sm:p-8">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="text-lg font-bold text-texto sm:text-xl">
+              <h3 className="text-titulo-4 font-bold text-texto">
                 {professionWaypointsLabels.fileTitle}
               </h3>
               <a
                 href="/professions/profwaypoints.txt"
                 download
-                className="inline-flex items-center gap-2 rounded-lg bg-gsw/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-violeta transition-colors duration-200 hover:bg-gsw hover:text-white"
+                className="inline-flex items-center gap-2 rounded-lg bg-gsw/10 px-3 py-1.5 text-detalhe font-bold uppercase tracking-widest text-violeta transition-colors duration-200 hover:bg-gsw hover:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,11 +65,11 @@ export default function ProfessionWaypointsSection() {
               </a>
             </div>
             <div className="overflow-hidden rounded-xl border border-linha bg-zinc-950">
-              <pre className="overflow-x-auto p-4 text-xs leading-relaxed text-texto-2">
+              <pre className="overflow-x-auto p-4 text-detalhe leading-relaxed text-texto-2">
                 <code>{waypointSnippet}</code>
               </pre>
             </div>
-            <p className="mt-3 text-xs text-texto-3">
+            <p className="mt-3 text-detalhe text-texto-3">
               {professionWaypointsLabels.preview}
             </p>
           </div>

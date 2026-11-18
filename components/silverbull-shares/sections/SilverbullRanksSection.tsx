@@ -7,13 +7,13 @@ export default function SilverbullRanksSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {rankIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
             {rankIntro.description}
           </p>
-          <p className="mx-auto mt-3 max-w-3xl text-xs leading-relaxed text-texto-3 sm:text-sm">
+          <p className="mx-auto mt-3 max-w-3xl text-detalhe leading-relaxed text-texto-3">
             Referência de benefícios no site da Wynncraft:{" "}
             <a
               href="https://wynncraft.com/store/ranks"
@@ -44,8 +44,8 @@ export default function SilverbullRanksSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{rank.name}</h3>
-                    <p className="mt-1 text-xs font-semibold text-violeta sm:text-sm">Custa {rank.costShares} Shares.</p>
+                    <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{rank.name}</h3>
+                    <p className="mt-1 text-detalhe font-semibold text-violeta">Custa {rank.costShares} Shares.</p>
                   </div>
                 </div>
               </div>

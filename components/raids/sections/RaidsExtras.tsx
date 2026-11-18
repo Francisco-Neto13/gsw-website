@@ -12,7 +12,7 @@ export default function RaidsExtras() {
       titulo="Gambits, ranking e dicas"
       introducao="O que não depende de uma sala específica, mas pesa na preparação da party."
     >
-      <h3 className="max-w-[60ch] text-lg font-bold text-texto">
+      <h3 className="text-titulo-4 max-w-[60ch] font-bold text-texto">
         <TextoComTermos texto="[[gambit|Gambits]]" />
       </h3>
       <ul className="mt-3 flex max-w-[60ch] list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
@@ -27,13 +27,13 @@ export default function RaidsExtras() {
         <span>{raidGambits.ativos}</span>
       </p>
 
-      <h3 className="mt-10 max-w-[60ch] text-lg font-bold text-texto">Ranking da divisão de raids</h3>
+      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">Ranking da divisão de raids</h3>
       <p className="mt-2 max-w-[60ch] text-texto-2">
         O rank sobe com XP de divisão, ganho a cada raid concluída. Depois de Sentinel vem Admiral: na divisão de
         raids não existe Elite.
       </p>
       <div className="mt-4 max-w-[44rem] overflow-x-auto rounded-md border border-linha">
-        <table className="w-full min-w-[30rem] border-collapse text-left text-[0.95rem]">
+        <table className="w-full min-w-[30rem] border-collapse text-left text-apoio">
           <caption className="sr-only">Ranks da divisão de raids, XP total e o que cada um libera</caption>
           <thead className="bg-carvao text-texto">
             <tr>
@@ -62,7 +62,7 @@ export default function RaidsExtras() {
         </table>
       </div>
 
-      <h3 className="mt-10 max-w-[60ch] text-lg font-bold text-texto">Antes de entrar</h3>
+      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">Antes de entrar</h3>
       <ul className="mt-3 flex max-w-[60ch] list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
         {extras.map((item) => (
           <li key={item}>{item}</li>

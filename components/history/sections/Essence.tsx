@@ -6,7 +6,7 @@ export default function Essence() {
 
       <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
         <div className="mb-10 max-w-[60ch]">
-          <h2 className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             Além de uma Guilda
           </h2>
           <p className="mt-3 text-texto-2">
@@ -38,7 +38,7 @@ export default function Essence() {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             </div>
-            <h3 className="mb-2 font-titulo text-xl text-texto">Conexões Reais</h3>
+            <h3 className="text-titulo-4 mb-2 font-titulo text-texto">Conexões Reais</h3>
             <p className="text-texto-2">
               Alguns já se encontraram pessoalmente. Outros planejam o próximo encontro. Porque o que
               criamos aqui não é efêmero - é vínculo genuíno, amizade que resiste ao teste do tempo
@@ -54,7 +54,7 @@ export default function Essence() {
                 <polyline points="12 6 12 12 16 14" />
               </svg>
             </div>
-            <h3 className="mb-2 font-titulo text-xl text-texto">Evolução Constante</h3>
+            <h3 className="text-titulo-4 mb-2 font-titulo text-texto">Evolução Constante</h3>
             <p className="text-texto-2">
               De simples jogadores a estrategistas, líderes, criadores de conteúdo e desenvolvedores.
               A GsW estimula cada membro a crescer, explorar novos talentos e se superar. Nossos Pilares
@@ -69,7 +69,7 @@ export default function Essence() {
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
             </div>
-            <h3 className="mb-2 font-titulo text-xl text-texto">Além de Mundos</h3>
+            <h3 className="text-titulo-4 mb-2 font-titulo text-texto">Além de Mundos</h3>
             <p className="text-texto-2">
               Wynncraft foi nossa origem, mas não nosso limite. Exploramos inúmeros universos juntos,
               enfrentamos novos desafios em diferentes jogos e sempre levamos a essência da GsW conosco.

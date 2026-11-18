@@ -13,7 +13,7 @@ export default function SecaoGuia({ id, titulo, introducao, children }: SecaoGui
   return (
     <section id={id} aria-labelledby={`${id}-titulo`} className="scroll-mt-28 border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <header className="max-w-[60ch]">
-        <h2 id={`${id}-titulo`} className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+        <h2 id={`${id}-titulo`} className="text-titulo-2 text-texto">
           {titulo}
         </h2>
         {introducao ? (

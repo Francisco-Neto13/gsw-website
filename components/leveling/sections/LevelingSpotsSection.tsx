@@ -11,7 +11,7 @@ export default function LevelingSpotsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {levelingSpotsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -30,11 +30,11 @@ export default function LevelingSpotsSection() {
               <div className="flex flex-col gap-2 border-b border-linha px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
                   <div>
-                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-xl">{spot.name}</h3>
-                    <span className="text-xs font-semibold text-violeta">{spot.range}</span>
+                    <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{spot.name}</h3>
+                    <span className="text-detalhe font-semibold text-violeta">{spot.range}</span>
                   </div>
                 </div>
-                <code className="leveling-badge-pop w-fit rounded-lg bg-white/5 px-3 py-1.5 text-xs font-mono text-texto-2">
+                <code className="leveling-badge-pop w-fit rounded-lg bg-white/5 px-3 py-1.5 text-detalhe font-mono text-texto-2">
                   {spot.coords}
                 </code>
               </div>
@@ -60,7 +60,7 @@ export default function LevelingSpotsSection() {
                       />
                     </div>
                   </ClickableImagePreview>
-                  <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">
+                  <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">
                     Imagem de referência do spot {spot.name}.
                   </p>
                 </div>

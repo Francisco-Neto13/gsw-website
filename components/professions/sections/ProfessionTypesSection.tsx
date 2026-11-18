@@ -46,7 +46,7 @@ export default function ProfessionTypesSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {professionTypesIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -69,8 +69,8 @@ export default function ProfessionTypesSection() {
                 </div>
               </ClickableImagePreview>
               <div className="p-4 sm:p-5">
-                <h3 className="text-base font-bold tracking-tight text-texto sm:text-lg">{item.title}</h3>
-                <p className="mt-1 text-[0.95rem] text-texto-2">{item.description}</p>
+                <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{item.title}</h3>
+                <p className="mt-1 text-apoio text-texto-2">{item.description}</p>
               </div>
             </article>
           ))}
@@ -78,7 +78,7 @@ export default function ProfessionTypesSection() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div className="rounded-md border border-linha bg-carvao p-6 sm:p-8">
-            <h3 className="mb-6 text-xl font-bold tracking-tight text-texto sm:text-2xl">
+            <h3 className="text-titulo-4 mb-6 font-bold tracking-tight text-texto">
               {professionCategoryTitles.gathering}
             </h3>
             <div className="space-y-3">
@@ -98,11 +98,11 @@ export default function ProfessionTypesSection() {
                       />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-sm font-bold text-white">{profession.name}</span>
-                      <span className="text-xs text-texto-3">{profession.resources}</span>
+                      <span className="block text-apoio font-bold text-white">{profession.name}</span>
+                      <span className="text-detalhe text-texto-3">{profession.resources}</span>
                     </div>
                   </div>
-                  <span className="rounded-lg bg-gsw/10 px-3 py-1 text-xs font-semibold text-violeta">
+                  <span className="rounded-lg bg-gsw/10 px-3 py-1 text-detalhe font-semibold text-violeta">
                     {profession.tool}
                   </span>
                 </div>
@@ -111,7 +111,7 @@ export default function ProfessionTypesSection() {
           </div>
 
           <div className="rounded-md border border-linha bg-carvao p-6 sm:p-8">
-            <h3 className="mb-6 text-xl font-bold tracking-tight text-texto sm:text-2xl">
+            <h3 className="text-titulo-4 mb-6 font-bold tracking-tight text-texto">
               {professionCategoryTitles.crafting}
             </h3>
             <div className="space-y-3">
@@ -131,11 +131,11 @@ export default function ProfessionTypesSection() {
                       />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-sm font-bold text-white">{profession.name}</span>
-                      <span className="text-xs text-texto-3">{profession.produces}</span>
+                      <span className="block text-apoio font-bold text-white">{profession.name}</span>
+                      <span className="text-detalhe text-texto-3">{profession.produces}</span>
                     </div>
                   </div>
-                  <span className="shrink-0 rounded-lg bg-white/5 px-3 py-1 text-xs font-medium text-texto-2">
+                  <span className="shrink-0 rounded-lg bg-white/5 px-3 py-1 text-detalhe font-medium text-texto-2">
                     {profession.resources}
                   </span>
                 </div>

@@ -6,7 +6,7 @@ export default function LootrunDivisionsSection() {
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {lootrunDivisions.title}
           </h2>
           <p className="mt-3 text-texto-2">

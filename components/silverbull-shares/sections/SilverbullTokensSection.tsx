@@ -7,7 +7,7 @@ export default function SilverbullTokensSection() {
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {tokensIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -27,7 +27,7 @@ export default function SilverbullTokensSection() {
             >
               <div className="mb-3 flex items-center gap-2 border-b border-linha pb-3">
                 <IconeShares nome={token.icon} />
-                <h3 className="text-sm font-bold tracking-tight text-texto sm:text-base">{token.name}</h3>
+                <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{token.name}</h3>
               </div>
               <p className="text-texto-2">{token.description}</p>
             </article>

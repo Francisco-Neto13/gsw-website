@@ -41,7 +41,7 @@ export default function ProfessionGrindSpotsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {professionGrindSpotsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -64,8 +64,8 @@ export default function ProfessionGrindSpotsSection() {
                 </div>
               </ClickableImagePreview>
               <div className="px-4 py-3 sm:px-5">
-                <p className="text-sm font-semibold tracking-tight text-texto-2">{item.title}</p>
-                <p className="mt-1 text-xs leading-relaxed text-texto-3">
+                <p className="text-apoio font-semibold tracking-tight text-texto-2">{item.title}</p>
+                <p className="mt-1 text-detalhe leading-relaxed text-texto-3">
                   Referência visual do tipo de spot. Use a tabela abaixo para coordenadas e progressão.
                 </p>
               </div>
@@ -91,28 +91,28 @@ export default function ProfessionGrindSpotsSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-xl">
+                    <h3 className="text-titulo-4 font-bold tracking-tight text-texto">
                       {professionSpots.profession}
                     </h3>
-                    <span className="text-xs font-semibold text-violeta">{professionSpots.resources}</span>
+                    <span className="text-detalhe font-semibold text-violeta">{professionSpots.resources}</span>
                   </div>
                 </div>
               </div>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-sm">
+                <table className="w-full text-apoio">
                   <thead>
                     <tr className="border-b border-linha">
-                      <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3 sm:px-7">
+                      <th className="px-5 py-3 text-left text-detalhe font-bold uppercase tracking-widest text-texto-3 sm:px-7">
                         {professionGrindSpotsTableHeaders.level}
                       </th>
-                      <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3">
+                      <th className="px-3 py-3 text-left text-detalhe font-bold uppercase tracking-widest text-texto-3">
                         {professionGrindSpotsTableHeaders.ingredient}
                       </th>
-                      <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3">
+                      <th className="px-3 py-3 text-left text-detalhe font-bold uppercase tracking-widest text-texto-3">
                         {professionGrindSpotsTableHeaders.coords}
                       </th>
-                      <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3 sm:px-7">
+                      <th className="px-5 py-3 text-left text-detalhe font-bold uppercase tracking-widest text-texto-3 sm:px-7">
                         {professionGrindSpotsTableHeaders.tags}
                       </th>
                     </tr>
@@ -124,25 +124,25 @@ export default function ProfessionGrindSpotsSection() {
                         className="border-b border-linha transition-colors duration-150 hover:bg-white/[0.02] last:border-0"
                       >
                         <td className="px-5 py-3 sm:px-7">
-                          <span className="font-mono text-xs font-semibold text-violeta">{spot.level}</span>
+                          <span className="font-mono text-detalhe font-semibold text-violeta">{spot.level}</span>
                         </td>
                         <td className="px-3 py-3">
-                          <span className="text-sm text-white">{spot.name}</span>
+                          <span className="text-apoio text-white">{spot.name}</span>
                         </td>
                         <td className="px-3 py-3">
-                          <code className="rounded bg-white/5 px-2 py-0.5 text-xs font-mono text-texto-2">
+                          <code className="rounded bg-white/5 px-2 py-0.5 text-detalhe font-mono text-texto-2">
                             {spot.coords}
                           </code>
                         </td>
                         <td className="px-5 py-3 sm:px-7">
                           <div className="flex flex-wrap gap-1">
                             {spot.isNpc ? (
-                              <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-xs font-medium text-blue-400">
+                              <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-detalhe font-medium text-blue-400">
                                 {professionGrindSpotsTableHeaders.npcTag}
                               </span>
                             ) : null}
                             {spot.maxLevel ? (
-                              <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-xs font-medium text-amber-400">
+                              <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-detalhe font-medium text-amber-400">
                                 {professionGrindSpotsTableHeaders.maxLevelTag}
                               </span>
                             ) : null}

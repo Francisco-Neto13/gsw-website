@@ -50,8 +50,8 @@ export default function History() {
     <>
       <header id="historia" className="mx-auto w-full max-w-[64rem] px-4 pb-12 pt-8 sm:px-6 lg:px-10 lg:pt-10">
         <div className="max-w-[60ch]">
-          <h1 className="text-[clamp(2rem,4vw,2.75rem)] text-texto">História da GsW</h1>
-          <div className="mt-5 flex flex-col gap-4 text-lg text-texto-2">
+          <h1 className="text-titulo-1 text-texto">História da GsW</h1>
+          <div className="mt-5 flex flex-col gap-4 text-lede text-texto-2">
             <p>Mais do que uma linha do tempo, esta página guarda a memória da GsW: os períodos de ascensão, as guerras que marcaram a guilda, os líderes que conduziram cada era e os membros que ajudaram a transformar a comunidade em uma das presenças brasileiras mais fortes de Wynncraft.</p>
             <p>Aqui ficam registrados os momentos que definiram a identidade da guilda, desde as primeiras chamas até a fase atual, para que cada conquista, ruptura e renascimento continue fazendo parte do legado da GsW.</p>
           </div>
@@ -61,7 +61,7 @@ export default function History() {
       <section className="border-t border-linha py-16 sm:py-20">
         <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
           <div className="reveal-on-scroll mb-10 max-w-[60ch]">
-            <h2 className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+            <h2 className="text-titulo-2 text-texto">
               Crônicas de Wynn
             </h2>
             <p className="mt-3 text-texto-2">
@@ -74,8 +74,8 @@ export default function History() {
             {eras.map((era) => (
               <li key={era.year} className="relative pb-10 pl-6 last:pb-0 sm:pl-8">
                 <span aria-hidden className="absolute -left-[5px] top-2 h-[9px] w-[9px] rounded-full border-2 border-violeta-borda bg-chao" />
-                <p className="numeros font-mono text-[0.95rem] text-violeta">{era.year}</p>
-                <h3 className="mt-1 font-titulo text-xl text-texto">{era.title}</h3>
+                <p className="numeros font-mono text-apoio text-violeta">{era.year}</p>
+                <h3 className="text-titulo-4 mt-1 font-titulo text-texto">{era.title}</h3>
                 <p className="mt-2 text-texto-2">{era.description}</p>
               </li>
             ))}

@@ -12,7 +12,7 @@ export default function LevelingPartySection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {levelingPartyIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -32,7 +32,7 @@ export default function LevelingPartySection() {
               />
             </div>
           </ClickableImagePreview>
-          <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">
+          <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">
             {levelingPartyImage.caption}
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function LevelingPartySection() {
               key={card.title}
               className="leveling-card-soft group rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8"
             >
-              <h3 className="mb-3 text-xl font-bold tracking-tight text-texto sm:mb-4 sm:text-2xl">
+              <h3 className="text-titulo-4 mb-3 font-bold tracking-tight text-texto sm:mb-4">
                 {card.title}
               </h3>
               <p className="text-texto-2">{card.description}</p>

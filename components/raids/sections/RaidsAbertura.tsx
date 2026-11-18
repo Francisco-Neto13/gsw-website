@@ -13,8 +13,8 @@ export default function RaidsAbertura() {
     <section className="px-4 pb-12 pt-8 sm:px-6 lg:px-10 lg:pt-10">
       <div className="max-w-[60ch]">
         <Breadcrumb guia={guia} />
-        <h1 className="mt-3 text-[clamp(2rem,4vw,2.75rem)] text-texto">Raids</h1>
-        <p className="mt-3 text-lg text-texto-2">
+        <h1 className="mt-3 text-titulo-1 text-texto">Raids</h1>
+        <p className="mt-3 text-lede text-texto-2">
           As cinco raids do Wynncraft sala a sala, com as variações de cada uma e vídeos em POV da guilda.
         </p>
       </div>
@@ -40,7 +40,7 @@ export default function RaidsAbertura() {
             {paragrafo}
           </p>
         ))}
-        <h2 className="mt-8 text-xl text-texto">Resumo rápido</h2>
+        <h2 className="mt-8 text-titulo-4 text-texto">Resumo rápido</h2>
         <ul className="mt-3 flex list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
           {raidsResumo.map((item) => (
             <li key={item}>

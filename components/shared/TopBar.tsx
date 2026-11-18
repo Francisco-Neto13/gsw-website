@@ -34,7 +34,7 @@ export default function TopBar() {
       <div className="casca flex h-full items-center gap-4">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 rounded-md" aria-label="GsW, página inicial">
           <Image src="/icon.webp" alt="" width={32} height={32} priority className="rounded-full" />
-          <span className="font-titulo text-xl leading-none text-texto">GsW</span>
+          <span className="font-titulo text-titulo-4 leading-none text-texto">GsW</span>
         </Link>
 
         <nav aria-label="Áreas do site" className="ml-4 hidden md:block">
@@ -46,7 +46,7 @@ export default function TopBar() {
                   <Link
                     href={area.href}
                     aria-current={ativo ? "page" : undefined}
-                    className={`relative flex h-[var(--topbar-h)] items-center px-3 text-[0.95rem] transition-colors duration-150 ${
+                    className={`relative flex h-[var(--topbar-h)] items-center px-3 text-apoio transition-colors duration-150 ${
                       ativo ? "text-texto" : "text-texto-2 hover:text-texto"
                     }`}
                   >
@@ -67,7 +67,7 @@ export default function TopBar() {
             href={discordUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden h-9 items-center gap-2 rounded-md px-3 text-sm text-texto-2 transition-colors duration-150 hover:bg-elevada hover:text-texto sm:flex"
+            className="hidden h-9 items-center gap-2 rounded-md px-3 text-apoio text-texto-2 transition-colors duration-150 hover:bg-elevada hover:text-texto sm:flex"
           >
             <IconeDiscord />
             Discord
@@ -92,7 +92,7 @@ export default function TopBar() {
         }}
       >
         <div className="flex h-[var(--topbar-h)] items-center justify-between border-b border-linha px-4">
-          <span className="font-titulo text-xl">Menu</span>
+          <span className="font-titulo text-titulo-4">Menu</span>
           <button
             type="button"
             onClick={() => menuRef.current?.close()}
@@ -109,14 +109,14 @@ export default function TopBar() {
                 <Link
                   href={area.href}
                   aria-current={areaAtiva(area.href, pathname) ? "page" : undefined}
-                  className="flex min-h-11 items-center rounded-md px-3 text-base text-texto-2 hover:bg-elevada hover:text-texto aria-[current=page]:text-texto aria-[current=page]:underline aria-[current=page]:decoration-violeta-borda aria-[current=page]:decoration-2"
+                  className="flex min-h-11 items-center rounded-md px-3 text-corpo text-texto-2 hover:bg-elevada hover:text-texto aria-[current=page]:text-texto aria-[current=page]:underline aria-[current=page]:decoration-violeta-borda aria-[current=page]:decoration-2"
                 >
                   {area.label}
                 </Link>
               </li>
             ))}
             <li>
-              <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center gap-2 rounded-md px-3 text-base text-texto-2 hover:bg-elevada hover:text-texto">
+              <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center gap-2 rounded-md px-3 text-corpo text-texto-2 hover:bg-elevada hover:text-texto">
                 <IconeDiscord />
                 Discord
               </a>

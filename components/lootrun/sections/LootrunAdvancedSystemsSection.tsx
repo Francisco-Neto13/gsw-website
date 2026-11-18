@@ -9,7 +9,7 @@ export default function LootrunAdvancedSystemsSection() {
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {lootrunAdvancedSystemsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -29,7 +29,7 @@ export default function LootrunAdvancedSystemsSection() {
                 className="overflow-hidden rounded-md border border-linha bg-carvao"
               >
                 <div className="border-b border-linha px-5 py-5 sm:px-7">
-                  <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{block.title}</h3>
+                  <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{block.title}</h3>
                   <p className="mt-2 text-texto-2">{block.description}</p>
                 </div>
 

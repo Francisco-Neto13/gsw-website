@@ -64,7 +64,7 @@ export default function GallerySection() {
 
       <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
         <div className="reveal-on-scroll mb-10 max-w-[60ch]">
-          <h2 className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             Galeria dos Guardiões
           </h2>
           <p className="mt-3 text-texto-2">
@@ -90,9 +90,9 @@ export default function GallerySection() {
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:p-4">
-                    <h3 className="mb-1 text-xs font-bold text-texto sm:text-sm">{photo.title}</h3>
+                    <h3 className="text-titulo-4 mb-1 font-bold text-texto">{photo.title}</h3>
                     {photo.description && (
-                      <p className="hidden text-xs text-texto-2 sm:block">{photo.description}</p>
+                      <p className="hidden text-detalhe text-texto-2 sm:block">{photo.description}</p>
                     )}
                   </div>
                 </div>
@@ -102,9 +102,9 @@ export default function GallerySection() {
             <div className="rounded-md border border-dashed border-linha bg-carvao px-6 py-12 text-center sm:px-10 sm:py-16">
               <p className="text-texto-2">
                 Adicione as imagens em{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">public/gallery</code>{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-detalhe text-violeta">public/gallery</code>{" "}
                 e preencha a lista em{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-detalhe text-violeta">
                   components/history/data/gallery.ts
                 </code>
                 .
@@ -139,16 +139,16 @@ export default function GallerySection() {
                 <div className="history-gallery-modal-frame relative flex max-h-[92vh] w-full flex-col overflow-y-auto rounded-md border border-linha bg-black/55 p-2.5 sm:max-h-[90vh] sm:p-4 md:max-h-[88vh] lg:p-6">
                   <div className="history-gallery-modal-header mb-2.5 flex items-center justify-between border-b border-linha pb-2.5 sm:mb-3 sm:pb-3">
                     <div className="min-w-0">
-                      <p className="history-gallery-modal-label text-[10px] font-bold uppercase tracking-[0.35em] sm:text-xs">
+                      <p className="history-gallery-modal-label text-detalhe font-bold uppercase tracking-[0.35em]">
                         Arquivo Visual
                       </p>
-                      <p className="history-gallery-modal-counter mt-1 text-xs font-semibold sm:text-sm">
+                      <p className="history-gallery-modal-counter mt-1 text-detalhe font-semibold">
                         {selectedPhotoIndex !== null && `${selectedPhotoIndex + 1} de ${photos.length}`}
                       </p>
                     </div>
 
                     <button
-                      className="history-gallery-modal-close-button inline-flex items-center gap-2 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors sm:text-sm"
+                      className="history-gallery-modal-close-button inline-flex items-center gap-2 rounded-lg border border-white/20 px-3 py-1.5 text-detalhe font-bold uppercase tracking-wide transition-colors"
                       onClick={() => setSelectedPhotoIndex(null)}
                       aria-label="Fechar"
                       type="button"
@@ -174,12 +174,12 @@ export default function GallerySection() {
                     <aside className="history-gallery-modal-info rounded-md border border-linha bg-carvao p-3 sm:p-4 lg:p-5">
                       <h3
                         id={modalTitleId}
-                        className="mb-1.5 text-base font-black tracking-tight text-white sm:mb-2 sm:text-xl lg:text-2xl"
+                        className="text-titulo-4 mb-1.5 font-black tracking-tight text-white sm:mb-2"
                       >
                         {selectedPhoto.title}
                       </h3>
 
-                      <p id={modalDescriptionId} className="mb-3 text-xs leading-relaxed text-texto-2 sm:mb-4 sm:text-sm">
+                      <p id={modalDescriptionId} className="mb-3 text-detalhe leading-relaxed text-texto-2 sm:mb-4">
                         {selectedPhoto.description || "Registro histórico da galeria da guilda da GsW."}
                       </p>
 

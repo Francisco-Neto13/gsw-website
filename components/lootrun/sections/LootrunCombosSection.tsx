@@ -7,7 +7,7 @@ function ComboList({ title, items }: { title: string; items?: string[] }) {
 
   return (
     <div>
-      <p className="text-[0.9rem] font-bold text-texto-3">{title}</p>
+      <p className="text-apoio font-bold text-texto-3">{title}</p>
       <div className="mt-2 space-y-1.5">
         {items.map((item) => (
           <p key={item} className="text-texto-2">
@@ -24,7 +24,7 @@ export default function LootrunCombosSection() {
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {lootrunCombosIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -39,11 +39,11 @@ export default function LootrunCombosSection() {
               className="rounded-md border border-linha bg-carvao p-5 sm:p-7"
             >
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <span className="text-xs font-bold uppercase tracking-[0.35em] text-violeta/80">
+                <span className="text-detalhe font-bold uppercase tracking-[0.35em] text-violeta/80">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{combo.title}</h3>
-                <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-xs text-texto-2">
+                <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{combo.title}</h3>
+                <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-detalhe text-texto-2">
                   {combo.challengeRange}
                 </span>
               </div>

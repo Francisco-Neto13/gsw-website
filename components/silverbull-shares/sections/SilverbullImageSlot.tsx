@@ -27,7 +27,7 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
           </div>
         </ClickableImagePreview>
         <div className={`px-4 ${compact ? "py-2.5" : "py-3"} sm:px-5`}>
-          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{imageDescription}</p>
+          <p className="text-detalhe leading-relaxed text-texto-3">{imageDescription}</p>
         </div>
       </article>
     );
@@ -35,7 +35,7 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
 
   return (
     <div className="rounded-md border border-dashed border-white/20 bg-carvao p-6 text-center">
-      <p className="text-sm font-semibold text-texto-2 sm:text-base">{label}</p>
+      <p className="text-apoio font-semibold text-texto-2">{label}</p>
     </div>
   );
 }

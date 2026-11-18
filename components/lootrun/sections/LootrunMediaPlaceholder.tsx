@@ -57,7 +57,7 @@ export default function LootrunMediaPlaceholder({
           />
         </div>
         <div className={captionClassName}>
-          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{mediaDescription}</p>
+          <p className="text-detalhe leading-relaxed text-texto-3">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -70,7 +70,7 @@ export default function LootrunMediaPlaceholder({
           <AnimacaoSobDemanda src={item.src} alt={item.alt ?? item.name} className="h-full w-full rounded-lg object-contain" />
         </div>
         <div className={captionClassName}>
-          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{mediaDescription}</p>
+          <p className="text-detalhe leading-relaxed text-texto-3">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -92,7 +92,7 @@ export default function LootrunMediaPlaceholder({
           </div>
         </ClickableImagePreview>
         <div className={captionClassName}>
-          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{mediaDescription}</p>
+          <p className="text-detalhe leading-relaxed text-texto-3">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -105,21 +105,21 @@ export default function LootrunMediaPlaceholder({
           href={item.src}
           target="_blank"
           rel="noopener noreferrer"
-          className="block break-all text-xs text-texto-2 underline decoration-white/20 underline-offset-2 transition-colors hover:text-white sm:text-sm"
+          className="block break-all text-detalhe text-texto-2 underline decoration-white/20 underline-offset-2 transition-colors hover:text-white"
         >
           {item.src}
         </a>
-        <p className="mt-3 text-xs leading-relaxed text-texto-3">{mediaDescription}</p>
+        <p className="mt-3 text-detalhe leading-relaxed text-texto-3">{mediaDescription}</p>
       </article>
     );
   }
 
   return (
     <div className="flex h-full min-h-36 flex-col justify-between rounded-md border border-dashed border-white/20 bg-carvao p-4 sm:min-h-40 sm:p-5">
-      <div className="rounded-xl border border-linha bg-zinc-900/50 px-3 py-6 text-center text-sm font-semibold text-texto-2 sm:px-4 sm:py-7 sm:text-base">
+      <div className="rounded-xl border border-linha bg-zinc-900/50 px-3 py-6 text-center text-apoio font-semibold text-texto-2 sm:px-4 sm:py-7">
         {item.name}
       </div>
-      <p className="mt-3 text-xs leading-relaxed text-texto-3">{mediaDescription}</p>
+      <p className="mt-3 text-detalhe leading-relaxed text-texto-3">{mediaDescription}</p>
     </div>
   );
 }

@@ -93,12 +93,12 @@ export default function Busca() {
       <button
         type="button"
         onClick={abrir}
-        className="flex h-9 items-center gap-2 rounded-md border border-linha bg-carvao px-2.5 text-sm text-texto-2 transition-colors duration-150 hover:border-linha-forte hover:text-texto md:w-56"
+        className="flex h-9 items-center gap-2 rounded-md border border-linha bg-carvao px-2.5 text-apoio text-texto-2 transition-colors duration-150 hover:border-linha-forte hover:text-texto md:w-56"
         aria-label="Buscar nos guias (Ctrl+K)"
       >
         <Search aria-hidden size={16} strokeWidth={1.75} />
         <span className="hidden md:inline">Buscar</span>
-        <kbd className="ml-auto hidden rounded border border-linha px-1.5 font-mono text-[0.7rem] text-texto-3 md:inline">
+        <kbd className="ml-auto hidden rounded border border-linha px-1.5 font-mono text-detalhe text-texto-3 md:inline">
           Ctrl K
         </kbd>
       </button>
@@ -138,9 +138,9 @@ export default function Busca() {
             aria-activedescendant={resultados[ativo] ? `${listaId}-${ativo}` : undefined}
             aria-autocomplete="list"
             placeholder="Raid, sala, beacon, guia…"
-            className="h-14 w-full bg-transparent text-base text-texto placeholder:text-texto-3 focus:outline-none focus-visible:outline-none"
+            className="h-14 w-full bg-transparent text-corpo text-texto placeholder:text-texto-3 focus:outline-none focus-visible:outline-none"
           />
-          <kbd className="rounded border border-linha px-1.5 font-mono text-[0.7rem] text-texto-3">Esc</kbd>
+          <kbd className="rounded border border-linha px-1.5 font-mono text-detalhe text-texto-3">Esc</kbd>
         </div>
 
         <ul id={listaId} role="listbox" className="max-h-[50vh] overflow-y-auto p-2">
@@ -168,7 +168,7 @@ export default function Busca() {
                 )}
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-medium">{item.titulo}</span>
-                  <span className={`block truncate text-sm ${indiceItem === ativo ? "text-white/85" : "text-texto-3"}`}>
+                  <span className={`block truncate text-apoio ${indiceItem === ativo ? "text-white/85" : "text-texto-3"}`}>
                     {item.contexto}
                   </span>
                 </span>

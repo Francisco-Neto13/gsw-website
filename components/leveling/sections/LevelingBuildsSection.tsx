@@ -149,7 +149,7 @@ export default function LevelingBuildsSection() {
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {levelingBuildsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -160,7 +160,7 @@ export default function LevelingBuildsSection() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {levelingBuildHighlights.map((item) => (
             <article key={item.title} className="leveling-card-soft rounded-md border border-linha bg-carvao p-5 sm:p-6">
-              <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{item.title}</h3>
+              <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{item.title}</h3>
               <p className="mt-3 text-texto-2">{item.description}</p>
             </article>
           ))}
@@ -184,14 +184,14 @@ export default function LevelingBuildsSection() {
                     className="h-8 w-8 object-contain"
                   />
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-2xl">{tree.className}</h3>
-                    <p className="text-xs font-semibold text-violeta sm:text-sm">{tree.archetype}</p>
+                    <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{tree.className}</h3>
+                    <p className="text-detalhe font-semibold text-violeta">{tree.archetype}</p>
                   </div>
                   <a
                     href={tree.treeUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex shrink-0 items-center rounded-md border border-gsw/40 bg-gsw/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-violeta transition-colors hover:border-gsw hover:text-white"
+                    className="inline-flex shrink-0 items-center rounded-md border border-gsw/40 bg-gsw/10 px-3 py-1.5 text-detalhe font-semibold uppercase tracking-[0.15em] text-violeta transition-colors hover:border-gsw hover:text-white"
                   >
                     Ver Tree
                   </a>
@@ -247,8 +247,8 @@ export default function LevelingBuildsSection() {
                     className="h-12 w-12 object-contain sm:h-14 sm:w-14"
                   />
                   <div>
-                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-2xl">{weapon.className}</h3>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violeta/80">
+                    <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{weapon.className}</h3>
+                    <p className="text-detalhe font-semibold uppercase tracking-[0.2em] text-violeta/80">
                       {weapon.entries.length} recomendacoes
                     </p>
                   </div>
@@ -258,9 +258,9 @@ export default function LevelingBuildsSection() {
                 {weapon.entries.map((entry) => (
                   <li
                     key={`${weapon.className}-${entry.level}`}
-                    className="leveling-card-soft rounded-xl border border-linha bg-carvao p-3 text-sm leading-relaxed sm:p-4 sm:text-base"
+                    className="leveling-card-soft rounded-xl border border-linha bg-carvao p-3 text-apoio leading-relaxed sm:p-4"
                   >
-                    <span className="mb-2 inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-violeta">
+                    <span className="mb-2 inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-violeta">
                       {entry.level}
                     </span>
                     <div className="space-y-1.5">
@@ -279,13 +279,13 @@ export default function LevelingBuildsSection() {
                             />
                             <span>{option.name}</span>
                             {option.tag ? (
-                              <span className="text-xs text-violeta">
+                              <span className="text-detalhe text-violeta">
                                 {option.tag}
                               </span>
                             ) : null}
                           </a>
                           {index < entry.options.length - 1 ? (
-                            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-texto-3">
+                            <p className="text-detalhe font-semibold uppercase tracking-[0.15em] text-texto-3">
                               ou
                             </p>
                           ) : null}
@@ -302,12 +302,12 @@ export default function LevelingBuildsSection() {
         <article className="leveling-panel-3d mt-8 overflow-hidden rounded-md border border-linha bg-carvao sm:mt-10">
           <div className="border-b border-linha bg-carvao px-5 py-4 sm:px-7 sm:py-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <h3 className="text-lg font-bold tracking-tight text-texto sm:text-2xl">Armaduras</h3>
+              <h3 className="text-titulo-4 font-bold tracking-tight text-texto">Armaduras</h3>
               <div className="flex flex-wrap gap-2">
-                <span className="inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-violeta">
+                <span className="inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2.5 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-violeta">
                   {parsedArmorPieces.length} pecas
                 </span>
-                <span className="inline-flex rounded-md border border-white/15 bg-carvao px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-texto-2">
+                <span className="inline-flex rounded-md border border-white/15 bg-carvao px-2.5 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-texto-2">
                   Lvl {armorMinLevel} - {armorMaxLevel}
                 </span>
               </div>
@@ -325,14 +325,14 @@ export default function LevelingBuildsSection() {
             {parsedArmorPieces.map((piece) => (
               <li key={`${piece.level}-${piece.item}`} className="leveling-card-soft rounded-xl border border-linha bg-carvao p-3 sm:p-4">
                 <div className="flex items-center gap-2.5">
-                  <span className="inline-flex h-[24px] items-center rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-violeta">
+                  <span className="inline-flex h-[24px] items-center rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-violeta">
                     Lvl {piece.level}
                   </span>
                   <a
                     href={buildLevelingItemGuideLink(piece.guideQuery)}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex min-w-0 items-center gap-2 text-sm font-medium leading-relaxed text-zinc-200 transition-colors hover:text-white sm:text-base"
+                    className="inline-flex min-w-0 items-center gap-2 text-apoio font-medium leading-relaxed text-zinc-200 transition-colors hover:text-white"
                   >
                     <span
                       aria-hidden
@@ -343,7 +343,7 @@ export default function LevelingBuildsSection() {
                   </a>
                 </div>
                 {piece.source ? (
-                  <p className="mt-1 text-xs uppercase tracking-[0.12em] text-texto-3 sm:text-sm">{piece.source}</p>
+                  <p className="mt-1 text-detalhe uppercase tracking-[0.12em] text-texto-3">{piece.source}</p>
                 ) : null}
               </li>
             ))}

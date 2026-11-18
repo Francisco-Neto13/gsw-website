@@ -13,7 +13,7 @@ export default function WorldEventsRewardsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {worldEventsRewardsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -27,8 +27,8 @@ export default function WorldEventsRewardsSection() {
               key={item.title}
               className="group relative rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8"
             >
-              <h3 className="mb-3 text-lg font-bold tracking-tight text-texto sm:text-xl">{item.title}</h3>
-              <p className="text-[0.95rem] text-texto-2">{item.description}</p>
+              <h3 className="text-titulo-4 mb-3 font-bold tracking-tight text-texto">{item.title}</h3>
+              <p className="text-apoio text-texto-2">{item.description}</p>
             </article>
           ))}
         </div>
@@ -45,7 +45,7 @@ export default function WorldEventsRewardsSection() {
               />
             </div>
           </ClickableImagePreview>
-          <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">
+          <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">
             {rewardChestCaption}
           </p>
         </div>

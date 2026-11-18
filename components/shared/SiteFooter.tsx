@@ -6,18 +6,18 @@ export default function SiteFooter() {
     <footer className="border-t border-caixa-fora bg-carvao shadow-[inset_0_1px_0_rgba(113,22,173,0.45)]">
       <div className="casca grid gap-8 py-10 md:grid-cols-[1.4fr_1fr]">
         <div className="max-w-[60ch]">
-          <p className="font-titulo text-xl text-texto">GsW · Guardians of Wynn</p>
+          <p className="font-titulo text-titulo-4 text-texto">GsW · Guardians of Wynn</p>
           <p className="mt-2 text-texto-2">
             Guia de Wynncraft em português, escrito e mantido pela guilda GsW.
           </p>
 
           {/* Aviso exigido pelas Minecraft Usage Guidelines (docs/CREDITOS.md). */}
-          <p className="mt-6 max-w-[56ch] text-[0.95rem] leading-relaxed text-texto-2">
+          <p className="mt-6 max-w-[56ch] text-apoio leading-relaxed text-texto-2">
             <strong className="text-texto">Site de fãs.</strong> Não é um site oficial do Minecraft. Não aprovado por
             nem associado à Mojang ou à Microsoft. Não afiliado à Wynncraft Studios. Wynncraft e seus assets ©
             Wynncraft Studios; Minecraft © Mojang AB.
           </p>
-          <p className="mt-3 text-[0.95rem] text-texto-2">
+          <p className="mt-3 text-apoio text-texto-2">
             Responsável: guilda GsW.{" "}
             {contatoEmail ? (
               <>
@@ -32,7 +32,7 @@ export default function SiteFooter() {
           </p>
         </div>
 
-        <nav aria-label="Rodapé" className="grid grid-cols-2 gap-6 text-[0.95rem] md:justify-self-end">
+        <nav aria-label="Rodapé" className="grid grid-cols-2 gap-6 text-apoio md:justify-self-end">
           <ul className="flex flex-col gap-2">
             {areas.map((area) => (
               <li key={area.href}>
@@ -66,7 +66,7 @@ export default function SiteFooter() {
           </ul>
         </nav>
       </div>
-      <p className="border-t border-linha px-4 py-4 text-center text-sm text-texto-3 sm:px-6">
+      <p className="border-t border-linha px-4 py-4 text-center text-apoio text-texto-3 sm:px-6">
         © 2024–2026 GsW. Textos próprios; fontes citadas em cada guia.
       </p>
     </footer>

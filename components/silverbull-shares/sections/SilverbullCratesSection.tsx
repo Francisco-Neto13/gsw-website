@@ -13,7 +13,7 @@ export default function SilverbullCratesSection() {
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {cratesIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -24,7 +24,7 @@ export default function SilverbullCratesSection() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {crateSources.map((card) => (
             <article key={card.title} className="rounded-md border border-linha bg-carvao p-5 sm:p-6">
-              <h3 className="text-lg font-bold tracking-tight text-texto sm:text-xl">{card.title}</h3>
+              <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{card.title}</h3>
               <p className="mt-3 text-texto-2">{card.description}</p>
             </article>
           ))}
@@ -46,7 +46,7 @@ export default function SilverbullCratesSection() {
         </div>
 
         <div className="mt-6 rounded-md border border-linha bg-carvao p-5 sm:p-6">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.35em] text-violeta/80">Detalhe importante</span>
+          <span className="mb-3 block text-detalhe font-bold uppercase tracking-[0.35em] text-violeta/80">Detalhe importante</span>
           <div className="space-y-2">
             {cratePricingNotes.map((note) => (
               <p key={note} className="text-texto-2">

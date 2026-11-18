@@ -23,7 +23,7 @@ export default function LootrunBeaconsSection() {
   return (
     <section className="px-4 py-14 sm:px-6 lg:px-10">
       <div className="max-w-[60ch]">
-        <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">{lootrunBeaconsIntro.title}</h2>
+        <h2 className="text-titulo-2 text-texto">{lootrunBeaconsIntro.title}</h2>
         <p className="mt-3 text-texto-2">{lootrunBeaconsIntro.description}</p>
         <ul className="mt-4 flex list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
           {lootrunBeaconsRegras.map((regra) => (
@@ -33,7 +33,7 @@ export default function LootrunBeaconsSection() {
       </div>
 
       <div className="mt-8 max-w-[60rem] overflow-x-auto rounded-md border border-linha">
-        <table className="w-full min-w-[44rem] border-collapse text-left text-[0.95rem]">
+        <table className="w-full min-w-[44rem] border-collapse text-left text-apoio">
           <caption className="sr-only">Beacons da lootrun: efeito, valores por tier e rank que libera</caption>
           <thead className="bg-carvao text-texto">
             <tr>
@@ -64,9 +64,9 @@ export default function LootrunBeaconsSection() {
                 </th>
                 <td className="px-4 py-3 text-texto-2">
                   {beacon.effect}
-                  {beacon.usos ? <span className="block text-[0.9rem] text-texto-3">Limite: {beacon.usos}</span> : null}
+                  {beacon.usos ? <span className="block text-apoio text-texto-3">Limite: {beacon.usos}</span> : null}
                   {beacon.notes?.map((nota) => (
-                    <span key={nota} className="mt-1 block text-[0.9rem] text-texto-3">
+                    <span key={nota} className="mt-1 block text-apoio text-texto-3">
                       {nota}
                     </span>
                   ))}
@@ -82,7 +82,7 @@ export default function LootrunBeaconsSection() {
           </tbody>
         </table>
       </div>
-      <p className="mt-2 max-w-[60ch] text-[0.9rem] text-texto-3">
+      <p className="mt-2 max-w-[60ch] text-apoio text-texto-3">
         Valores conferidos na wiki da Wynncraft para a versão 2.2.4. A cor do Crimson é aproximada.
       </p>
     </section>

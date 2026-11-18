@@ -16,7 +16,7 @@ export default function WorldEventsAnnihilationSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {worldEventsAnnihilationIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -26,14 +26,14 @@ export default function WorldEventsAnnihilationSection() {
 
         <div className="mx-auto mb-10 max-w-3xl overflow-hidden rounded-md border border-linha bg-carvao sm:mb-14">
           <LazyYouTubeEmbed videoId={annihilationVideo.videoId} title={annihilationVideo.title} />
-          <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">
+          <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">
             {annihilationVideo.caption}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           <article className="group rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8">
-            <h3 className="mb-4 text-xl font-bold tracking-tight text-texto sm:text-2xl">
+            <h3 className="text-titulo-4 mb-4 font-bold tracking-tight text-texto">
               {worldEventsAnnihilationLabels.partyTitle}
             </h3>
             <ul className="space-y-3">
@@ -47,7 +47,7 @@ export default function WorldEventsAnnihilationSection() {
           </article>
 
           <article className="group rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8">
-            <h3 className="mb-4 text-xl font-bold tracking-tight text-texto sm:text-2xl">
+            <h3 className="text-titulo-4 mb-4 font-bold tracking-tight text-texto">
               {worldEventsAnnihilationLabels.sunTitle}
             </h3>
             <ul className="space-y-3">
@@ -75,7 +75,7 @@ export default function WorldEventsAnnihilationSection() {
                   />
                 </div>
               </ClickableImagePreview>
-              <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">{image.alt}</p>
+              <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">{image.alt}</p>
             </article>
           ))}
         </div>

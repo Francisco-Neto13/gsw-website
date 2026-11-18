@@ -15,7 +15,7 @@ export default function SilverbullOverviewSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {silverbullOverviewIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -29,7 +29,7 @@ export default function SilverbullOverviewSection() {
               key={card.title}
               className="group relative rounded-md border border-linha bg-carvao p-5 transition-all duration-200 hover:border-gsw/40 sm:p-6"
             >
-              <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{card.title}</h3>
+              <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{card.title}</h3>
               <p className="mt-3 text-texto-2">{card.description}</p>
             </article>
           ))}
@@ -38,14 +38,14 @@ export default function SilverbullOverviewSection() {
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {tradableVsUntradable.map((card) => (
             <article key={card.title} className="rounded-md border border-linha bg-carvao p-5 sm:p-6">
-              <h3 className="text-lg font-bold tracking-tight text-texto sm:text-xl">{card.title}</h3>
+              <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{card.title}</h3>
               <p className="mt-3 text-texto-2">{card.description}</p>
             </article>
           ))}
         </div>
 
         <div className="mt-8 rounded-md border border-linha bg-carvao p-5 sm:p-7">
-          <h3 className="text-2xl font-bold tracking-tight text-texto sm:text-3xl">{inGameStoreIntro.title}</h3>
+          <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{inGameStoreIntro.title}</h3>
           <p className="mt-3 text-texto-2">{inGameStoreIntro.description}</p>
 
           <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">

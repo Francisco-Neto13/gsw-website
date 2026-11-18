@@ -58,14 +58,14 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
         />
       </div>
       <div>
-        <h3 className="text-lg font-bold text-texto">{member.name}</h3>
-        <p className="text-[0.9rem] text-texto-3">{member.role}</p>
+        <h3 className="text-titulo-4 font-bold text-texto">{member.name}</h3>
+        <p className="text-apoio text-texto-3">{member.role}</p>
         {member.tags && member.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">
             {member.tags.map((tag) => (
               <span
                 key={`${member.name}-${tag}`}
-                className="rounded border border-linha px-1.5 py-px text-[0.75rem] text-texto-2"
+                className="rounded border border-linha px-1.5 py-px text-detalhe text-texto-2"
               >
                 {tag}
               </span>
@@ -82,7 +82,7 @@ export default function MembersSection() {
     <section id="membros" className="border-t border-linha py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
         <div className="mb-10 max-w-[60ch]">
-          <h2 className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             Os Guardiões Principais
           </h2>
           <p className="mt-3 text-texto-2">
@@ -101,9 +101,9 @@ export default function MembersSection() {
           <div className="rounded-md border border-dashed border-linha bg-carvao px-6 py-12 text-center sm:px-10 sm:py-16">
             <p className="text-texto-2">
               Adicione os retratos em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">public/members</code>{" "}
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-detalhe text-violeta">public/members</code>{" "}
               e preencha a lista em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-detalhe text-violeta">
                 components/history/data/members.ts
               </code>
               .

@@ -47,7 +47,7 @@ export default function Pillars() {
 
       <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
         <div className="reveal-on-scroll mb-10 max-w-[60ch]">
-          <h2 className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             Os <span className="numeros font-mono">5</span> Pilares
           </h2>
           <p className="mt-3 text-texto-2">
@@ -67,7 +67,7 @@ export default function Pillars() {
                 {pillar.icon}
               </div>
 
-              <h3 className="mb-2 font-titulo text-xl text-texto">
+              <h3 className="text-titulo-4 mb-2 font-titulo text-texto">
                 {pillar.title}
               </h3>
 

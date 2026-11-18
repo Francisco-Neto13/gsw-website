@@ -67,9 +67,9 @@ export default function Termo({ id, children }: TermoProps) {
           acima ? "bottom-full mb-2 starting:translate-y-1" : "top-full mt-2 starting:-translate-y-1"
         } ${aberto ? "block translate-y-0 opacity-100" : "hidden"}`}
       >
-        <span className="block font-titulo text-xl leading-tight text-violeta">{item.termo}</span>
-        <span className="mt-0.5 block text-[0.85rem] italic text-texto-3">{item.tipo}</span>
-        <span className="mt-2 block text-[0.95rem] leading-snug text-texto-2">{item.explicacao}</span>
+        <span className="block font-titulo text-titulo-4 leading-tight text-violeta">{item.termo}</span>
+        <span className="mt-0.5 block text-apoio italic text-texto-3">{item.tipo}</span>
+        <span className="mt-2 block text-apoio leading-snug text-texto-2">{item.explicacao}</span>
       </span>
     </span>
   );

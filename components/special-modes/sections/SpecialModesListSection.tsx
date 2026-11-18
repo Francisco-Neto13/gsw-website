@@ -10,7 +10,7 @@ export default function SpecialModesListSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {specialModesListIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -36,8 +36,8 @@ export default function SpecialModesListSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{mode.name}</h3>
-                    <p className="mt-1 text-xs font-semibold text-violeta sm:text-sm">{mode.unlock}</p>
+                    <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{mode.name}</h3>
+                    <p className="mt-1 text-detalhe font-semibold text-violeta">{mode.unlock}</p>
                   </div>
                 </div>
               </div>

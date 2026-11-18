@@ -14,7 +14,7 @@ export default function RaidsPrimeirosPassos() {
   return (
     <SecaoGuia id="primeiros-passos" titulo="Primeiros passos" introducao={raidFirstStepsDescription}>
       <div className="max-w-[56rem] overflow-x-auto rounded-md border border-linha">
-        <table className="w-full min-w-[40rem] border-collapse text-left text-[0.95rem]">
+        <table className="w-full min-w-[40rem] border-collapse text-left text-apoio">
           <caption className="sr-only">Requisitos de cada raid</caption>
           <thead className="bg-carvao text-texto">
             <tr>
@@ -39,7 +39,7 @@ export default function RaidsPrimeirosPassos() {
                   <a href={`#${raid.id}`} className="text-violeta underline decoration-violeta/40 hover:decoration-violeta">
                     {raid.sigla}
                   </a>
-                  <span className="block text-[0.85rem] text-texto-3">{raid.name}</span>
+                  <span className="block text-apoio text-texto-3">{raid.name}</span>
                 </th>
                 <td className="numeros whitespace-nowrap px-4 py-3 font-mono text-texto">{raid.level}+</td>
                 <td className="px-4 py-3 text-texto">{raid.rune}</td>
@@ -49,7 +49,7 @@ export default function RaidsPrimeirosPassos() {
           </tbody>
         </table>
       </div>
-      <p className="mt-2 text-[0.9rem] text-texto-3">
+      <p className="mt-2 text-apoio text-texto-3">
         Níveis mínimos conferidos na wiki para a versão 2.2.4.
       </p>
 
@@ -70,7 +70,7 @@ export default function RaidsPrimeirosPassos() {
         />
       </div>
 
-      <h3 className="mt-10 max-w-[60ch] text-lg font-bold text-texto">Entrando pela fila de party</h3>
+      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">Entrando pela fila de party</h3>
       <ol className="mt-4 grid max-w-[56rem] gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {queueSteps.map((passo, indice) => (
           <li key={passo.src}>

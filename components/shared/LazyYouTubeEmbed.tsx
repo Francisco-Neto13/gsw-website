@@ -52,7 +52,7 @@ export default function LazyYouTubeEmbed({
       />
       <span className="pointer-events-none absolute inset-0 bg-black/35 transition-colors duration-150 group-hover:bg-black/15" />
       <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <span className="flex items-center gap-2 rounded-md bg-gsw px-3 py-2 text-[0.95rem] font-medium text-white shadow-[0_8px_24px_-8px_rgba(0,0,0,0.8)]">
+        <span className="flex items-center gap-2 rounded-md bg-gsw px-3 py-2 text-apoio font-medium text-white shadow-[0_8px_24px_-8px_rgba(0,0,0,0.8)]">
           <Play aria-hidden size={16} strokeWidth={1.75} fill="currentColor" />
           Ver POV
         </span>

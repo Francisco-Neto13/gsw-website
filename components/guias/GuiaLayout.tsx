@@ -128,7 +128,7 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
       onClick={aoClicar}
       aria-current={ativa === secao.id ? "location" : undefined}
       className={`block border-l py-1.5 leading-snug transition-colors duration-150 ${
-        secao.nivel === 3 ? "pl-6 text-[0.9rem]" : "pl-3 text-[0.95rem]"
+        secao.nivel === 3 ? "pl-6 text-apoio" : "pl-3 text-apoio"
       } ${
         ativa === secao.id
           ? "border-violeta-borda text-texto"
@@ -143,7 +143,7 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
     <a
       href={`#${retomar.id}`}
       onClick={() => setRetomar(null)}
-      className="flex items-center gap-2 rounded-md border border-violeta-borda/60 bg-caixa px-3 py-2 text-[0.9rem] text-texto hover:border-violeta-borda"
+      className="flex items-center gap-2 rounded-md border border-violeta-borda/60 bg-caixa px-3 py-2 text-apoio text-texto hover:border-violeta-borda"
     >
       <History aria-hidden size={16} strokeWidth={1.75} className="shrink-0 text-violeta" />
       <span>
@@ -171,7 +171,7 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
               onClick={() => setAbertoNoCelular((aberto) => !aberto)}
               aria-expanded={abertoNoCelular}
               aria-controls="indice-celular"
-              className="flex min-h-11 w-full items-center gap-2 px-4 text-left text-[0.95rem] sm:px-6"
+              className="flex min-h-11 w-full items-center gap-2 px-4 text-left text-apoio sm:px-6"
             >
               <span className="text-texto-3">Nesta página:</span>
               <span className="min-w-0 flex-1 truncate text-texto">{tituloAtivo ?? secoes[0]?.titulo}</span>
@@ -203,14 +203,14 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
       {secoes.length > 0 ? (
         <aside className="sticky top-[var(--topbar-h)] hidden h-[calc(100vh-var(--topbar-h))] w-60 shrink-0 overflow-y-auto py-8 pl-6 xl:block">
           <nav aria-label="Nesta página">
-            <p className="mb-3 text-[0.8125rem] font-bold text-texto-3">Nesta página</p>
+            <p className="mb-3 text-detalhe font-bold text-texto-3">Nesta página</p>
             {botaoRetomar ? <div className="mb-4">{botaoRetomar}</div> : null}
             <ul>
               {secoes.map((secao) => (
                 <li key={secao.id}>{linkDaSecao(secao)}</li>
               ))}
             </ul>
-            <a href="#conteudo" className="mt-6 flex items-center gap-1.5 text-[0.9rem] text-texto-3 hover:text-texto-2">
+            <a href="#conteudo" className="mt-6 flex items-center gap-1.5 text-apoio text-texto-3 hover:text-texto-2">
               <ArrowUp aria-hidden size={14} strokeWidth={1.75} />
               Voltar ao topo
             </a>

@@ -35,6 +35,28 @@
   --color-raridade-mythic: #c80db1;
   --color-raridade-mythic-texto: #edb7e7;
 
+  /* Escala de tipo por papel (DESIGN.md, Typography). Componentes usam o papel, nunca um tamanho solto. */
+  --text-exibicao: clamp(2.25rem, 5vw, 3.75rem);
+  --text-exibicao--line-height: 1.05;
+  --text-titulo-1: clamp(2rem, 4vw, 2.75rem);
+  --text-titulo-1--line-height: 1.15;
+  --text-titulo-2: clamp(1.625rem, 2.6vw, 2.125rem);
+  --text-titulo-2--line-height: 1.2;
+  --text-titulo-3: 1.5rem;
+  --text-titulo-3--line-height: 1.25;
+  --text-titulo-4: 1.25rem;
+  --text-titulo-4--line-height: 1.3;
+  --text-titulo-5: 1.125rem;
+  --text-titulo-5--line-height: 1.35;
+  --text-lede: 1.1875rem;
+  --text-lede--line-height: 1.6;
+  --text-corpo: 1.0625rem;
+  --text-corpo--line-height: 1.7;
+  --text-apoio: 0.9375rem;
+  --text-apoio--line-height: 1.55;
+  --text-detalhe: 0.8125rem;
+  --text-detalhe--line-height: 1.45;
+
   --font-titulo: var(--font-pixelify), ui-sans-serif, system-ui, sans-serif;
   --font-texto: var(--font-alegreya), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;

@@ -19,15 +19,15 @@ function Variacao({ sala, variacao, rotulo }: { sala: string; variacao: RaidGuid
     <div className="grid gap-4 rounded-md border border-linha bg-carvao p-4 sm:p-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-6">
       <div className="flex flex-col gap-4">
       <div>
-        <h5 className="text-lg font-bold text-texto">
+        <h5 className="text-titulo-5 font-bold text-texto">
           {variacao.name}
-          <span className="ml-2 text-[0.9rem] font-normal text-texto-3">· {rotulo}</span>
+          <span className="ml-2 text-apoio font-normal text-texto-3">· {rotulo}</span>
         </h5>
         <p className="mt-2 text-texto-2">
           <TextoComTermos texto={variacao.summary} />
         </p>
       </div>
-      <ul className="flex list-disc flex-col gap-1.5 pl-5 text-[0.98rem] text-texto-2 marker:text-violeta">
+      <ul className="flex list-disc flex-col gap-1.5 pl-5 text-apoio text-texto-2 marker:text-violeta">
         {variacao.points.map((ponto) => (
           <li key={ponto}>
             <TextoComTermos texto={ponto} />
@@ -46,7 +46,7 @@ function Variacao({ sala, variacao, rotulo }: { sala: string; variacao: RaidGuid
         )}
         {variacao.secondaryVideoId ? (
           <div>
-            <p className="mb-2 text-[0.9rem] text-texto-3">{variacao.secondaryLabel ?? raidGuidesLabels.extraVideo}</p>
+            <p className="mb-2 text-apoio text-texto-3">{variacao.secondaryLabel ?? raidGuidesLabels.extraVideo}</p>
             <LazyYouTubeEmbed
               videoId={variacao.secondaryVideoId}
               title={`${sala}: ${variacao.secondaryLabel ?? raidGuidesLabels.extraVideo}`}
@@ -70,7 +70,7 @@ function Sala({ sala, numero, raid }: { sala: RaidGuideRoom; numero: number; rai
         {numero}
       </span>
       <div className="min-w-0 flex-1 pt-0.5">
-        <h4 className="text-lg font-bold text-texto">
+        <h4 className="text-titulo-4 font-bold text-texto">
           <span className="sr-only">{raid}, </span>
           {sala.room}: {sala.title}
         </h4>
@@ -97,10 +97,10 @@ function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
   return (
     <article id={raid.id} aria-labelledby={`${raid.id}-titulo`} className="scroll-mt-28 pt-12 first:pt-0">
       <header className="max-w-[56rem]">
-        <h3 id={`${raid.id}-titulo`} className="font-titulo text-[clamp(1.35rem,2.2vw,1.65rem)] leading-tight text-texto">
+        <h3 id={`${raid.id}-titulo`} className="font-titulo text-titulo-3 leading-tight text-texto">
           {raid.name} <span className="text-texto-3">({raid.sigla})</span>
         </h3>
-        <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[0.95rem] text-texto-2">
+        <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-apoio text-texto-2">
           <div className="flex gap-1.5">
             <dt className="text-texto-3">Nível</dt>
             <dd className="numeros font-mono text-texto">{raid.level}+</dd>
@@ -141,7 +141,7 @@ function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
               sizes="(min-width: 1280px) 56rem, 100vw"
               className="h-auto w-full rounded-md border border-linha"
             />
-            <figcaption className="mt-2 text-[0.95rem] text-texto-3">{grupo.print.legenda}</figcaption>
+            <figcaption className="mt-2 text-apoio text-texto-3">{grupo.print.legenda}</figcaption>
           </figure>
         ) : (
           <Figura

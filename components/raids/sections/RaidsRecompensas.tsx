@@ -27,12 +27,12 @@ export default function RaidsRecompensas() {
       </ul>
       <p className="mt-6 max-w-[60ch] text-texto-2">{raidDailyBonus}</p>
 
-      <h3 className="mt-10 max-w-[60ch] text-lg font-bold text-texto">
+      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">
         <TextoComTermos texto="[[aspect|Aspects]]" />
       </h3>
       <div className="mt-4 grid max-w-[56rem] items-start gap-8 lg:grid-cols-2">
         <div>
-          <p className="mb-3 flex flex-wrap gap-2 text-[0.9rem]" aria-label="Raridades de aspect">
+          <p className="mb-3 flex flex-wrap gap-2 text-apoio" aria-label="Raridades de aspect">
             <span className="rounded border border-raridade-legendary/60 px-2 py-0.5 text-raridade-legendary">Legendary</span>
             <span className="rounded border border-raridade-fabled/60 px-2 py-0.5 text-raridade-fabled">Fabled</span>
             <span className="rounded border border-raridade-mythic px-2 py-0.5 text-raridade-mythic-texto">Mythic</span>
@@ -56,7 +56,7 @@ export default function RaidsRecompensas() {
             sizes="(min-width: 1024px) 28rem, 100vw"
             className="h-auto w-full rounded-md border border-linha"
           />
-          <figcaption className="mt-2 text-[0.95rem] text-texto-3">
+          <figcaption className="mt-2 text-apoio text-texto-3">
             Um aspect mítico no baú final, com a caixa de item aberta. Print da guilda.
           </figcaption>
         </figure>
@@ -73,7 +73,7 @@ export default function RaidsRecompensas() {
             sizes="(min-width: 768px) 18rem, 100vw"
             className="h-auto w-full rounded-md border border-linha"
           />
-          <figcaption className="mt-2 text-[0.95rem] text-texto-3">O baú final por dentro. Print da guilda.</figcaption>
+          <figcaption className="mt-2 text-apoio text-texto-3">O baú final por dentro. Print da guilda.</figcaption>
         </figure>
         {raidRewardImages.map((imagem) => (
           <Figura

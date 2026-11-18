@@ -28,7 +28,7 @@ export default function RaidImageCard({
         </div>
       </ClickableImagePreview>
       {normalizedCaption ? (
-        <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">{normalizedCaption}</p>
+        <p className="px-4 py-3 text-center text-detalhe text-zinc-500 sm:px-5">{normalizedCaption}</p>
       ) : null}
     </div>
   );

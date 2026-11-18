@@ -6,7 +6,7 @@ export default function Breadcrumb({ guia }: { guia: Guia }) {
   const grupo = grupos.find((item) => item.id === guia.grupo);
   return (
     <nav aria-label="Você está em">
-      <ol className="flex flex-wrap items-center gap-1 text-[0.9rem] text-texto-3">
+      <ol className="flex flex-wrap items-center gap-1 text-apoio text-texto-3">
         <li>
           <Link href="/guias" className="hover:text-texto-2">
             Guias

@@ -13,7 +13,7 @@ export default function LootrunCampsSection() {
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {lootrunCampsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -22,7 +22,7 @@ export default function LootrunCampsSection() {
         </div>
 
         <div className="mb-8 rounded-md border border-linha bg-carvao p-5 sm:p-7">
-          <p className="mb-4 text-[0.9rem] font-bold text-texto-3">Lista literal de camps</p>
+          <p className="mb-4 text-apoio font-bold text-texto-3">Lista literal de camps</p>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {lootrunCamps.map((camp, index) => (
               <article
@@ -30,15 +30,15 @@ export default function LootrunCampsSection() {
                 className="rounded-xl border border-linha bg-carvao px-4 py-3"
               >
                 <div className="mb-1.5 flex items-center justify-between gap-3">
-                  <span className="text-[0.9rem] font-bold text-texto-3">
+                  <span className="text-apoio font-bold text-texto-3">
                     Camp {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-xs font-semibold text-texto-2">
+                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-detalhe font-semibold text-texto-2">
                     {camp.difficulty}
                   </span>
                 </div>
-                <p className="text-sm font-semibold leading-relaxed text-zinc-200">{camp.name}</p>
-                <p className="mt-1 text-xs text-texto-2 sm:text-sm">[{camp.coordinates}]</p>
+                <p className="text-apoio font-semibold leading-relaxed text-zinc-200">{camp.name}</p>
+                <p className="mt-1 text-detalhe text-texto-2">[{camp.coordinates}]</p>
               </article>
             ))}
           </div>
@@ -72,16 +72,16 @@ export default function LootrunCampsSection() {
             return (
               <article key={camp.name} className="rounded-md border border-linha bg-carvao p-4 sm:p-5">
                 <div className="mb-3 flex flex-wrap items-center gap-3">
-                  <span className="text-xs font-bold uppercase tracking-[0.35em] text-violeta/80">
+                  <span className="text-detalhe font-bold uppercase tracking-[0.35em] text-violeta/80">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-base font-bold text-texto sm:text-lg">{camp.name}</h3>
-                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-xs text-texto-2">
+                  <h3 className="text-titulo-4 font-bold text-texto">{camp.name}</h3>
+                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-detalhe text-texto-2">
                     {camp.difficulty}
                   </span>
                 </div>
 
-                <p className="text-sm text-texto-2 sm:text-base">
+                <p className="text-apoio text-texto-2">
                   Coordenadas: <span className="font-medium text-zinc-200">{camp.coordinates}</span>
                 </p>
 
@@ -116,10 +116,10 @@ export default function LootrunCampsSection() {
 
                 {camp.dangerousChallenges && camp.dangerousChallenges.length > 0 ? (
                   <div className="mt-4 rounded-xl border border-linha bg-carvao p-3 sm:p-4">
-                    <p className="text-[0.9rem] font-bold text-texto-3">Desafios de atenção</p>
+                    <p className="text-apoio font-bold text-texto-3">Desafios de atenção</p>
                     <div className="mt-2 space-y-1.5">
                       {camp.dangerousChallenges.map((challenge) => (
-                        <p key={challenge} className="text-sm text-texto-2 sm:text-base">
+                        <p key={challenge} className="text-apoio text-texto-2">
                           - {challenge}
                         </p>
                       ))}

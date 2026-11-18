@@ -17,7 +17,7 @@ export default function FimDoGuia({ slug, fontes }: FimDoGuiaProps) {
     <>
       <section id="fontes" className="scroll-mt-24 px-4 py-12 sm:px-6 lg:px-10">
         <div className="max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">Fontes</h2>
+          <h2 className="text-titulo-2 text-texto">Fontes</h2>
           <p className="mt-3 text-texto-2">
             Texto escrito pela GsW. Números e regras do jogo conferidos nas fontes abaixo; se algo mudou num patch,
             avise a guilda no Discord.
@@ -46,10 +46,10 @@ export default function FimDoGuia({ slug, fontes }: FimDoGuiaProps) {
             href={guiaHref(anterior.slug)}
             className="group flex flex-col rounded-md border border-linha px-4 py-3 hover:border-violeta-borda"
           >
-            <span className="flex items-center gap-1.5 text-[0.9rem] text-texto-3">
+            <span className="flex items-center gap-1.5 text-apoio text-texto-3">
               <ArrowLeft aria-hidden size={14} strokeWidth={1.75} /> Guia anterior
             </span>
-            <span className="mt-1 font-titulo text-xl text-texto">{anterior.titulo}</span>
+            <span className="mt-1 font-titulo text-titulo-4 text-texto">{anterior.titulo}</span>
           </Link>
         ) : (
           <span />
@@ -59,10 +59,10 @@ export default function FimDoGuia({ slug, fontes }: FimDoGuiaProps) {
             href={guiaHref(proximo.slug)}
             className="group flex flex-col items-end rounded-md border border-linha px-4 py-3 text-right hover:border-violeta-borda"
           >
-            <span className="flex items-center gap-1.5 text-[0.9rem] text-texto-3">
+            <span className="flex items-center gap-1.5 text-apoio text-texto-3">
               Próximo guia <ArrowRight aria-hidden size={14} strokeWidth={1.75} />
             </span>
-            <span className="mt-1 font-titulo text-xl text-texto">{proximo.titulo}</span>
+            <span className="mt-1 font-titulo text-titulo-4 text-texto">{proximo.titulo}</span>
           </Link>
         ) : null}
       </nav>

@@ -17,7 +17,7 @@ export default function GuiaNavLista({ onNavigate }: GuiaNavListaProps) {
     <div className="flex flex-col gap-6">
       {grupos.map((grupo) => (
         <div key={grupo.id}>
-          <p className="mb-1.5 px-3 text-[0.8125rem] font-bold text-texto-3">{grupo.titulo}</p>
+          <p className="mb-1.5 px-3 text-detalhe font-bold text-texto-3">{grupo.titulo}</p>
           <ul className="flex flex-col gap-0.5">
             {guiasDoGrupo(grupo.id).map((guia) => {
               const href = guiaHref(guia.slug);
@@ -28,7 +28,7 @@ export default function GuiaNavLista({ onNavigate }: GuiaNavListaProps) {
                     href={href}
                     onClick={onNavigate}
                     aria-current={ativo ? "page" : undefined}
-                    className={`flex items-center justify-between gap-2 rounded-md px-3 py-2 text-[0.95rem] leading-tight transition-colors duration-150 ${
+                    className={`flex items-center justify-between gap-2 rounded-md px-3 py-2 text-apoio leading-tight transition-colors duration-150 ${
                       ativo
                         ? "bg-gsw font-medium text-white"
                         : "text-texto-2 hover:bg-elevada hover:text-texto"
@@ -37,7 +37,7 @@ export default function GuiaNavLista({ onNavigate }: GuiaNavListaProps) {
                     <span>{guia.titulo}</span>
                     {guia.estado === "em-construcao" ? (
                       <span
-                        className={`rounded border border-dashed px-1.5 py-px text-[0.7rem] ${
+                        className={`rounded border border-dashed px-1.5 py-px text-detalhe ${
                           ativo ? "border-white/60 text-white" : "border-texto-3/60 text-texto-3"
                         }`}
                       >

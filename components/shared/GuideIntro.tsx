@@ -26,7 +26,7 @@ export default function GuideIntro({ id, title, paragraphs }: GuideIntroProps) {
     <section id={id} className="px-4 pb-10 pt-8 sm:px-6 lg:px-10 lg:pt-10">
       <header className="max-w-[60ch]">
         {guia ? <Breadcrumb guia={guia} /> : null}
-        <h1 className="mt-3 text-[clamp(2rem,4vw,2.75rem)] text-texto">{title}</h1>
+        <h1 className="mt-3 text-titulo-1 text-texto">{title}</h1>
         {guia ? (
           <div className="mt-4">
             <SeloVersao guia={guia} />

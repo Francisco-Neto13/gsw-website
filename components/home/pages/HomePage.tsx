@@ -39,13 +39,13 @@ export default function HomePage() {
         </div>
         <div className="casca pb-20 pt-16 sm:pt-24 lg:pb-28 lg:pt-32">
           <div className="max-w-[36rem]">
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] text-texto">{homeHero.titulo}</h1>
-            <p className="mt-5 text-lg text-texto-2">{homeHero.texto}</p>
+            <h1 className="text-exibicao leading-[1.05] text-texto">{homeHero.titulo}</h1>
+            <p className="mt-5 text-lede text-texto-2">{homeHero.texto}</p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <BotaoBuscar>
                 <Search aria-hidden size={18} strokeWidth={1.75} />
                 Buscar um guia
-                <kbd className="ml-1 rounded border border-white/30 px-1.5 font-mono text-[0.75rem] text-white/80">Ctrl K</kbd>
+                <kbd className="ml-1 rounded border border-white/30 px-1.5 font-mono text-detalhe text-white/80">Ctrl K</kbd>
               </BotaoBuscar>
               <Link
                 href="/guias"
@@ -61,7 +61,7 @@ export default function HomePage() {
 
       {/* Por onde começar: os grupos de guias, na ordem do jogo. */}
       <section aria-labelledby="comeco" className="casca py-16">
-        <h2 id="comeco" className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+        <h2 id="comeco" className="text-titulo-2 text-texto">
           {homeComeco.titulo}
         </h2>
         <p className="mt-3 max-w-[60ch] text-texto-2">{homeComeco.texto}</p>
@@ -73,15 +73,15 @@ export default function HomePage() {
                 {guiasDoGrupo(grupo.id).map((guia) => (
                   <li key={guia.slug}>
                     <Link href={guiaHref(guia.slug)} className="group block">
-                      <span className="flex items-center gap-2 font-titulo text-xl text-texto group-hover:text-violeta">
+                      <span className="flex items-center gap-2 font-titulo text-titulo-4 text-texto group-hover:text-violeta">
                         {guia.titulo}
                         {guia.estado === "em-construcao" ? (
-                          <span className="rounded border border-dashed border-texto-3/60 px-1.5 font-texto text-[0.75rem] text-texto-3">
+                          <span className="rounded border border-dashed border-texto-3/60 px-1.5 font-texto text-detalhe text-texto-3">
                             em breve
                           </span>
                         ) : null}
                       </span>
-                      <span className="block text-[0.95rem] text-texto-2">{guia.resumo}</span>
+                      <span className="block text-apoio text-texto-2">{guia.resumo}</span>
                     </Link>
                   </li>
                 ))}
@@ -95,7 +95,7 @@ export default function HomePage() {
       <section aria-labelledby="destaque" className="casca pb-16">
         <div className="grid overflow-hidden rounded-md border border-linha bg-carvao lg:grid-cols-[1fr_1.1fr]">
           <div className="px-6 py-8 sm:px-8 sm:py-10">
-            <h2 id="destaque" className="text-[clamp(1.5rem,2.4vw,2rem)] text-texto">
+            <h2 id="destaque" className="text-titulo-2 text-texto">
               {homeDestaque.titulo}
             </h2>
             <p className="mt-4 max-w-[52ch] text-texto-2">{homeDestaque.texto}</p>
@@ -132,7 +132,7 @@ export default function HomePage() {
           {/* Cabeçalho numa faixa (texto à esquerda, ações à direita); embaixo, a arte e os retratos com alturas parecidas. */}
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <h2 id="comunidade" className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+              <h2 id="comunidade" className="text-titulo-2 text-texto">
                 {homeComunidade.titulo}
               </h2>
               <p className="mt-3 max-w-[56ch] text-texto-2">{homeComunidade.texto}</p>
@@ -175,8 +175,8 @@ export default function HomePage() {
                     sizes="(min-width: 1024px) 9vw, 22vw"
                     className="aspect-square w-full rounded-md border border-linha object-cover"
                   />
-                  <span className="mt-1.5 block truncate text-[0.9rem] text-texto">{membro.name}</span>
-                  <span className="block truncate text-[0.8rem] text-texto-3">{membro.role}</span>
+                  <span className="mt-1.5 block truncate text-apoio text-texto">{membro.name}</span>
+                  <span className="block truncate text-detalhe text-texto-3">{membro.role}</span>
                 </li>
               ))}
             </ul>

@@ -12,7 +12,7 @@ export default function DungeonsAccessSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-8 max-w-[60ch]">
-          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
+          <h2 className="text-titulo-2 text-texto">
             {dungeonsAccessIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
@@ -27,7 +27,7 @@ export default function DungeonsAccessSection() {
               className="group overflow-hidden rounded-md border border-linha bg-carvao transition-all duration-300 hover:border-gsw/30"
             >
               <div className="border-b border-linha p-6 sm:p-8">
-                <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{mode.title}</h3>
+                <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{mode.title}</h3>
               </div>
               <div className="p-6 sm:p-8">
                 <ul className="space-y-3">
@@ -39,7 +39,7 @@ export default function DungeonsAccessSection() {
                   ))}
                 </ul>
                 {mode.notes ? (
-                  <p className="mt-5 text-sm leading-relaxed text-texto-3">{mode.notes}</p>
+                  <p className="mt-5 text-apoio leading-relaxed text-texto-3">{mode.notes}</p>
                 ) : null}
               </div>
             </article>
@@ -60,7 +60,7 @@ export default function DungeonsAccessSection() {
                   />
                 </div>
               </ClickableImagePreview>
-              <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">{image.caption?.trim() || image.alt}</p>
+              <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">{image.caption?.trim() || image.alt}</p>
             </article>
           ))}
         </div>
