@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function PaginaDosGuias() {
   return (
-    <div className="mx-auto max-w-[64rem] px-4 pb-16 pt-10 sm:px-6">
+    <div className="casca pb-16 pt-8 lg:pt-10">
       <h1 className="text-[clamp(2rem,4vw,2.75rem)] text-texto">Guias</h1>
       <p className="mt-3 max-w-[60ch] text-lg text-texto-2">
         Tudo o que a guilda já escreveu sobre o Wynncraft, por etapa do jogo. Guias marcados como em construção estão
@@ -18,7 +18,8 @@ export default function PaginaDosGuias() {
         podem ter dados desatualizados.
       </p>
 
-      <div className="mt-10 flex flex-col gap-12">
+      {/* Dois grupos por linha no desktop largo: a lista usa a tela sem esticar cada linha. */}
+      <div className="mt-10 grid gap-12 xl:grid-cols-2 xl:gap-x-16">
         {grupos.map((grupo) => (
           <section key={grupo.id} aria-labelledby={`grupo-${grupo.id}`}>
             <h2 id={`grupo-${grupo.id}`} className="text-[clamp(1.4rem,2.2vw,1.75rem)] text-texto">

@@ -56,6 +56,27 @@
   --foreground: var(--text-1);
   --topbar-h: 3.5rem;
   --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Margem lateral do site: a mesma na top bar, nas páginas e no rodapé, para tudo começar no mesmo x. */
+  --casca-x: 1rem;
+  --casca-max: 120rem;
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --casca-x: 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --casca-x: 2rem;
+  }
+}
+
+@media (min-width: 96rem) {
+  :root {
+    --casca-x: 3rem;
+  }
 }
 
 /* Regras de elemento na camada base: utilitários do Tailwind (outline-none, font-*) continuam vencendo. */
@@ -126,6 +147,14 @@ table,
 }
 
 @layer components {
+  /* Contêiner único do site (top bar, seções, guias, rodapé): largura e margem iguais em todas as páginas. */
+  .casca {
+    width: 100%;
+    max-width: var(--casca-max);
+    margin-inline: auto;
+    padding-inline: var(--casca-x);
+  }
+
   /* A caixa de item: fundo roxo-escuro, borda dupla (fora escura, dentro violeta a 1px). */
   .caixa-item {
     background: var(--color-caixa);

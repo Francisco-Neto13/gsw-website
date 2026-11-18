@@ -156,8 +156,8 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
   if (pathname === "/guias") return <>{children}</>;
 
   return (
-    <div className="mx-auto flex max-w-[96rem]">
-      <aside className="sticky top-[var(--topbar-h)] hidden h-[calc(100vh-var(--topbar-h))] w-64 shrink-0 overflow-y-auto border-r border-linha px-3 py-8 lg:block">
+    <div className="mx-auto flex w-full max-w-[var(--casca-max)] lg:px-[var(--casca-x)]">
+      <aside className="sticky top-[var(--topbar-h)] -ml-6 hidden h-[calc(100vh-var(--topbar-h))] w-64 shrink-0 overflow-y-auto border-r border-linha px-3 py-8 lg:block">
         <nav aria-label="Guias">
           <GuiaNavLista />
         </nav>
@@ -195,13 +195,13 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
           </div>
         ) : null}
 
-        <div ref={conteudoRef} data-guia-conteudo>
+        <div ref={conteudoRef} data-guia-conteudo className="mx-auto w-full max-w-[64rem]">
           {children}
         </div>
       </div>
 
       {secoes.length > 0 ? (
-        <aside className="sticky top-[var(--topbar-h)] hidden h-[calc(100vh-var(--topbar-h))] w-60 shrink-0 overflow-y-auto px-4 py-8 xl:block">
+        <aside className="sticky top-[var(--topbar-h)] hidden h-[calc(100vh-var(--topbar-h))] w-60 shrink-0 overflow-y-auto py-8 pl-6 xl:block">
           <nav aria-label="Nesta página">
             <p className="mb-3 text-[0.8125rem] font-bold text-texto-3">Nesta página</p>
             {botaoRetomar ? <div className="mb-4">{botaoRetomar}</div> : null}

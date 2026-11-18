@@ -4,7 +4,7 @@ import { areas, contatoEmail, discordUrl } from "@/lib/site-content";
 export default function SiteFooter() {
   return (
     <footer className="border-t border-caixa-fora bg-carvao shadow-[inset_0_1px_0_rgba(113,22,173,0.45)]">
-      <div className="mx-auto grid max-w-[96rem] gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.4fr_1fr]">
+      <div className="casca grid gap-8 py-10 md:grid-cols-[1.4fr_1fr]">
         <div className="max-w-[60ch]">
           <p className="font-titulo text-xl text-texto">GsW · Guardians of Wynn</p>
           <p className="mt-2 text-texto-2">
