@@ -87,21 +87,25 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
     const elementos = secoes
       .map((secao) => document.getElementById(secao.id))
       .filter((elemento): elemento is HTMLElement => Boolean(elemento));
-    const visiveis = new Map<string, boolean>();
-    const observador = new IntersectionObserver(
-      (entradas) => {
-        entradas.forEach((entrada) => visiveis.set(entrada.target.id, entrada.isIntersecting));
-        // A seção mais interna visível vence: lendo a NOL, marca a NOL e não o "Guia sala a sala" que a contém.
-        const atual = secoes.findLast((secao) => visiveis.get(secao.id));
-        if (atual) {
-          setAtivaEm({ caminho: pathname, id: atual.id });
-          gravarOndeParei(pathname, atual.id);
-        }
-      },
-      { rootMargin: "-20% 0px -70% 0px" },
-    );
-    elementos.forEach((elemento) => observador.observe(elemento));
-    return () => observador.disconnect();
+    // Ativa é a última seção (em ordem de documento) cujo topo já passou de 25% da tela: lendo a NOL, marca a NOL
+    // e não o "Guia sala a sala" que a contém; acima da primeira seção, nenhuma.
+    let quadro = 0;
+    const calcular = () => {
+      quadro = 0;
+      const limite = window.innerHeight * 0.25;
+      const atual = elementos.findLast((elemento) => elemento.getBoundingClientRect().top <= limite);
+      setAtivaEm({ caminho: pathname, id: atual?.id ?? "" });
+      if (atual) gravarOndeParei(pathname, atual.id);
+    };
+    const aoRolar = () => {
+      if (!quadro) quadro = window.requestAnimationFrame(calcular);
+    };
+    aoRolar();
+    window.addEventListener("scroll", aoRolar, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", aoRolar);
+      window.cancelAnimationFrame(quadro);
+    };
   }, [secoes, pathname]);
 
   // Oferece retomar só para quem volta ao guia pelo topo.
