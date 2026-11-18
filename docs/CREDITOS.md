@@ -101,10 +101,10 @@ WebP 90 (antes 50 / 78), com versão de 1920 px quando a fonte tem.
 | `raids/prints/raid-twp-chefe-anathema-{640,1280,1920}` | 2026-04-05_04.18.04_2 | Nenhum | Raids (TWP) e destaque da Início |
 | `raids/prints/raid-nol-palacio-nexus-{640,1280}` | 2026-05-01_14.41.02 | Recorte sem chat e HUD; desfoque no scoreboard | Raids (NOL) |
 | `raids/prints/raid-ui-bau-recompensa-{640,1280}` | 2026-03-07_23.23.21 | Recorte sem chat | Raids, recompensas |
-| `inicio/categorias/categoria-progressao-mineracao-{640,1280}` | 2026-03-08_03.34.28 | Recorte 16:9 sem minimapa, HUD, chat e picareta | Início, prévia de Progressão |
-| `inicio/categorias/categoria-endgame-lootrun-{640,1280}` | 2026-04-21_06.39.31 | Recorte 16:9 sem minimapa, lista de loot e painel de estatísticas | Início, prévia de Endgame |
+| `inicio/categorias/categoria-progressao-treino-{640,1280}` | 2026-04-22_10.35.55 | Recorte 16:9; desfoque nas nametags ao fundo | Início, prévia de Progressão |
+| `inicio/categorias/categoria-endgame-anathema-{640,1280}` | 2026-04-13_02.16.18 | Nenhum (sem HUD na print) | Início, prévia de Endgame |
 | `inicio/categorias/categoria-economia-token-{640,1280}` | 2026-04-17_20.50.55 | Recorte 16:9 das bordas | Início, prévia de Economia |
-| `inicio/categorias/categoria-especiais-pavao-{640,1280}` | 2026-04-06_18.20.43 | Nenhum (só o nome do mob, que é do jogo) | Início, prévia de Especiais |
+| `inicio/categorias/categoria-especiais-traje-{640,1280}` | 2026-04-05_01.54.51 | Recorte 16:9; desfoque num rótulo de nível | Início, prévia de Especiais (provisória: nenhuma das 187 prints mostra modo especial ou festival) |
 | `raids/prints/raid-ui-aspecto-mitico-{640,1280}` | 2026-04-21_15.33.06 | Recorte sem chat | Raids, aspects |
 
 Os 16 GIFs do Lootrun viraram pôster estático + animação WebP (`scripts/gif-para-webp.mjs`); o
