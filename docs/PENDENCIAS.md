@@ -10,6 +10,9 @@ Raids). Ao resolver um item, apague-o daqui no mesmo PR.
 | E-mail de contato do aviso de site não oficial | A Mojang exige um contato real (Discord não basta). Conferido em 18/11/2026 nas [Minecraft Usage Guidelines](https://www.minecraft.net/en-us/usage-guidelines), seção "Essential guidelines", que vale para todo uso: deixar claro "whom to contact … and the contact method (chat and forum links are not acceptable methods)". Preencher `contatoEmail` em `lib/site-content.ts`; até lá o rodapé mostra "Contato: a definir" |
 | Hospedagem de produção | A Vercel não será mais usada. O `deploy.yml` atual publica na Vercel e está desligado; precisa ser trocado pelo destino novo (provavelmente a VPS, como o Portfolio) antes de ligar o deploy |
 | Autorização da Wynncraft para ícones oficiais | Sem ela, nada da CDN oficial entra no site (`docs/CREDITOS.md`). Pedido pelo Discord de desenvolvedores |
+| Imagens do guia de Montarias | Os arquivos das 14 prints (3 montarias, tooltip de Level/Limit/Max e 10 PowerUps) ainda não estão no repositório. Os caminhos esperados estão em `components/mounts/data/mounts-content.ts`; cada imagem aparece sozinha assim que for convertida para `public/montarias/` e medida (`node scripts/medir-imagens.mjs`) |
+| Links das ferramentas de alimentação (Montarias) | Faltam o link da Tabela de Materiais e Atributos e o da Calculadora (Wynnhub); os cartões aparecem tracejados com "Link a definir". Preencher `href` em `recursosDeAlimentacao` |
+| Crédito de autor do guia de Montarias | Decidir entre creditar o texto a gabu322 (Betinha) no fim do guia ou não creditar |
 | Vídeos repetidos na TCC Sala 3 | "Agate Axon" usa o mesmo vídeo de "Primeval Machine" e "Elder Astal" o de "Desvie das Pedras". Pode ser o mesmo POV mostrando dois caminhos ou erro; confirmar ou gravar os certos |
 
 ## Dados do jogo a confirmar no jogo
@@ -25,6 +28,10 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 | Cor da raridade Crafted (não está na paleta do guia oficial de itens) | Não usada ainda |
 | Coordenadas de entrada das raids: as do site divergem das da API em 20 a 170 blocos (TNA a maior) | Raids. Mantidas as do site, anotadas pela guilda; conferir no jogo |
 | Recompensa de guild raid em esmeraldas (o site antigo dizia 2048) | Removida por não constar nas fontes |
+| Montarias: nível do Wyvern (guia 85; wiki e tooltip do jogo 84) | Montarias, tipos. Mantido o texto da guilda até decisão |
+| Montarias: Y do curral do Adasaur (guia 83; wiki e Wynntils 59 a 60) | Montarias, tipos |
+| Montarias: bônus do breeding (+10~15, +20~40) e chances de cor (50/48/4%) sem fonte; a wiki diz que a mecânica exata é desconhecida | Montarias, breeding |
+| Montarias: o que limita o tier do material (guia: o Level; wiki: o maior atributo individual) | Montarias, alimentação |
 
 ## Próxima etapa (depois da validação)
 
