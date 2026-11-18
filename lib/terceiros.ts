@@ -108,6 +108,7 @@ export const origemDasImagens: Record<string, string> = {
   "item-wand-water3.webp": `${ITEM}wand.water3.webp`,
   // Prévias dos Sites úteis: imagem de compartilhamento (og:image) do site ou captura da página inicial
   "site-wynncraft-logo.webp": "https://cdn.wynncraft.com/nextgen/themes/classic/assets/wynncraft_icon.png",
+  "site-wiki.webp": "https://wynncraft.wiki.gg/",
   "wynnpool.webp": "https://www.wynnpool.com/images/og-image.png",
   "nori-fish.webp": "https://nori.fish/resources/nori_logo.png",
   "wynnbuilder.webp": "https://wynnbuilder.github.io/",

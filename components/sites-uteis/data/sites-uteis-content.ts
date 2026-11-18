@@ -59,26 +59,6 @@ export const sites: SiteUtil[] = [
     imagem: "/terceiros/sites/wynnbuilder.webp",
   },
   {
-    id: "wynnxr",
-    nome: "WynnXR",
-    url: "https://www.wynnxr.com/",
-    categorias: ["builds", "economia"],
-    resumo: "Plataforma completa, com foco em economia.",
-    dentro: [
-      "Market com preços em tempo real",
-      "Histórico e análise da economia",
-      "Acompanhamento de lootruns: drops, rotas e lucro",
-      "Raids: recompensas e mecânicas",
-      "Planejador de builds (em desenvolvimento, segundo o próprio site)",
-      "Painel da economia",
-    ],
-    serve: ["Farmar com eficiência (loot e esmeraldas)", "Acompanhar a economia", "Planejar a build pensando no lucro"],
-    destaque: { texto: "Segundo o próprio site, os dados são atualizados em tempo real, 24 horas por dia." },
-    aviso:
-      "Em 18/11/2026, o endereço respondia com um certificado de segurança inválido e o navegador mostrava um aviso antes de abrir.",
-    criadores: "a equipe do WynnXR",
-  },
-  {
     id: "wynncraft",
     nome: "Wynncraft",
     url: "https://wynncraft.com/",
@@ -99,6 +79,7 @@ export const sites: SiteUtil[] = [
     serve: ["Aprender o jogo a fundo", "Tirar dúvidas específicas", "Ler guias completos"],
     destaque: { texto: "São milhares de páginas, mantidas e atualizadas pela comunidade." },
     criadores: "os editores da Wynncraft Wiki, no wiki.gg",
+    imagem: "/terceiros/wynncraft/site-wiki.webp",
   },
   {
     id: "wynnventory",
