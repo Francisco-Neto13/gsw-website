@@ -125,7 +125,8 @@ type(scope): imperative lowercase summary in english
 2. **Texto de guia mora em `data/`**, nunca escrito direto na seção (`docs/PADROES.md`).
 3. **Guia novo** = `app/guias/<slug>/page.tsx` (com `metadataDoGuia`) + `components/<area>/` +
    entrada em `guias` de `lib/site-content.ts`, no modelo de Raids. O `npm test` falha se faltar algo.
-4. **Imagem nova**: passe por `npm run convert:webp` e salve em `public/<area>/` como `.webp`.
+4. **Imagem nova**: passe por `npm run convert:webp`, salve em `public/<area>/` como `.webp` e rode
+   `node scripts/medir-imagens.mjs` (atualiza `lib/dimensoes-imagens.json`; o `npm test` cobra).
    Fonte, imagem, ícone ou fonte tipográfica de terceiro entra em `docs/CREDITOS.md` no mesmo PR.
 5. **Documentação na mesma tarefa**: mudou estrutura, comando, rota, fluxo ou infraestrutura,
    atualize o arquivo de `docs/` correspondente (e este, se a regra for geral) no mesmo PR.
