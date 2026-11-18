@@ -7,7 +7,7 @@ import {
 
 function TabelaDeDungeons({ titulo, lista }: { titulo: string; lista: DungeonDaLista[] }) {
   return (
-    <div className="max-w-[56rem] overflow-x-auto rounded-md border border-linha">
+    <div className="overflow-x-auto rounded-md border border-linha">
       <table className="w-full min-w-[38rem] border-collapse text-left text-apoio">
         <caption className="bg-carvao px-4 py-2.5 text-left font-bold text-texto">{titulo}</caption>
         <thead className="border-t border-linha text-texto-3">

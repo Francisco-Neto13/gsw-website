@@ -19,9 +19,8 @@ export default function SilverbullMembershipSection() {
           </p>
         </div>
 
-        <div className="mb-6 max-w-3xl">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
           <SilverbullImageSlot label={membershipImage.label} src={membershipImage.src} alt={membershipImage.alt} />
-        </div>
 
         <div className="rounded-md border border-linha bg-carvao p-5 sm:p-6">
           <h3 className="text-titulo-4 font-bold tracking-tight text-texto">Sobre a assinatura</h3>
@@ -32,6 +31,7 @@ export default function SilverbullMembershipSection() {
               </p>
             ))}
           </div>
+        </div>
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
