@@ -30,7 +30,7 @@ export const festivaisIntroParagraphs = [
 ];
 
 export const imagemPromocional: Imagem = {
-  src: "/festivais/festival-bonfire-promocional.webp",
+  src: "/terceiros/wynncraft/festival-bonfire-promocional.webp",
   alt: "Imagem promocional do Festival of the Bonfire, com uma fogueira acesa",
   legenda: "Imagem promocional do Festival of the Bonfire.",
 };
@@ -157,7 +157,7 @@ export const festivais: Festival[] = [
       "Quando o evento começa, três caixas Fiery Bonfire são oferecidas de graça a todos os jogadores pela loja do Wynncraft, várias cidades e ilhas recebem uma fogueira, Detlas ganha a sua decoração e diversos NPCs chegam à cidade.",
       "A principal mudança é uma fogueira gigante no centro da cidade, no antigo lugar do Item Identifier. O NPC principal deste festival é o Bonfire Keeper, que inicia o minigame e também cuida da missão principal.",
     ],
-    imagemAbertura: { src: "/festivais/bonfire-keeper.webp", alt: "Bonfire Keeper, NPC principal do Festival of the Bonfire", legenda: "Bonfire Keeper." },
+    imagemAbertura: { src: "/terceiros/wynncraft/bonfire-keeper.webp", alt: "Bonfire Keeper, NPC principal do Festival of the Bonfire", legenda: "Bonfire Keeper." },
     missao: {
       nome: "Hearthflame Hunt",
       paragrafos: [
@@ -219,7 +219,7 @@ export const festivais: Festival[] = [
       ],
       recompensa:
         "Cada alma levada até Detlas rende um Spectral Ticket, além das milestones resgatadas conversando com o guia.",
-      imagem: { src: "/festivais/spirits-alma.webp", alt: "Uma das almas perdidas da Guiding of the Spirits", legenda: "Uma alma perdida." },
+      imagem: { src: "/terceiros/wynncraft/spirits-alma.webp", alt: "Uma das almas perdidas da Guiding of the Spirits", legenda: "Uma alma perdida." },
       wiki: {
         titulo: "Guiding of the Spirits, na wiki",
         descricao: "Onde está cada alma, com descrição e coordenada.",
@@ -290,14 +290,14 @@ export const festivais: Festival[] = [
       "Quando o evento começa, três caixas Icy Blizzard são oferecidas de graça a todos os jogadores pela loja do Wynncraft, Detlas ganha uma decoração de Natal, começa a nevar e diversos NPCs chegam à cidade.",
       "A principal mudança é uma grande árvore de Natal no centro da cidade, no antigo lugar do Item Identifier. O NPC principal, The Traveler, fica no centro da cidade durante o festival.",
     ],
-    imagemAbertura: { src: "/festivais/blizzard-the-traveler.webp", alt: "The Traveler, NPC principal do Festival of the Blizzard", legenda: "The Traveler." },
+    imagemAbertura: { src: "/terceiros/wynncraft/blizzard-the-traveler.webp", alt: "The Traveler, NPC principal do Festival of the Blizzard", legenda: "The Traveler." },
     missao: {
       nome: "Festival Invitations",
       paragrafos: [
         "Conversando com The Traveler, você começa as Festival Invitations. Nelas, você segue as dicas do Traveler para achar um NPC aleatório pelo mapa e convencê-lo a visitar Detlas para as festividades. Depois de convidado, o NPC aparece em Detlas e te dá um presente quando você fala com ele.",
       ],
       recompensa: "Cada NPC dá um presente diferente, além das milestones resgatadas conversando com o Traveler.",
-      imagem: { src: "/festivais/blizzard-convites.webp", alt: "Quadro das Wynnter Invitations em Detlas", legenda: "Quadro dos convites." },
+      imagem: { src: "/terceiros/wynncraft/blizzard-convites.webp", alt: "Quadro das Wynnter Invitations em Detlas", legenda: "Quadro dos convites." },
       extra: {
         tipo: "dica",
         titulo: "Missão demorada",
@@ -315,7 +315,7 @@ export const festivais: Festival[] = [
         "No lado sudoeste da cidade, perto do balão da housing, há um caminho com tapetes coloridos. Siga por ele, suba as escadas e entre no dirigível para ir até Mountainside, um lugar escondido entre as montanhas perto de Lusuco. Lá você lê as regras e puxa uma partida (pelo NPC de party finder ou pelo comando /pf).",
         "É um 3v3 inspirado em hero shooters: você e o seu time escolhem um herói/classe antes da partida (Tank, DPS ou Suporte) e, ao sair do spawn, o objetivo é capturar os pontos de controle. Ganha o time que capturar 4 pontos no total ou 3 seguidos.",
       ],
-      imagem: { src: "/festivais/blizzard-brawl-mapa.webp", alt: "Mapa do Blizzard Brawl com os pontos de controle de A a E", legenda: "Mapa com os pontos de controle." },
+      imagem: { src: "/terceiros/wynncraft/blizzard-brawl-mapa.webp", alt: "Mapa do Blizzard Brawl com os pontos de controle de A a E", legenda: "Mapa com os pontos de controle." },
     },
     recompensas: {
       paragrafos: [

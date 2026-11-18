@@ -8,10 +8,16 @@ import TextoComTermos from "@/components/guias/TextoComTermos";
 import TextoGlitch from "@/components/guias/TextoGlitch";
 import { festivais, type Festival, type Imagem } from "@/components/festivals/data/festivals-content";
 import { visualDoFestival } from "@/components/festivals/festivais-visual";
-import { dimensoesDe, ehPrintPequena } from "@/lib/imagens";
+import { dimensoesDe } from "@/lib/imagens";
 import { tamanhos } from "@/lib/tamanhos";
 
-const Paragrafos = ({ textos }: { textos: string[] }) => (
+/** Cena larga (paisagem) ocupa a largura do artigo; retrato de NPC e print quadrada vão para a coluna lateral. */
+const ehPaisagem = (src?: string) => {
+  const medida = src ? dimensoesDe(src) : null;
+  return medida ? medida[0] / medida[1] >= 1.4 : false;
+};
+
+const Paragrafos =({ textos }: { textos: string[] }) => (
   <>
     {textos.map((texto) => (
       <p key={texto} className="mt-3 max-w-leitura text-texto-2 first:mt-0">
@@ -25,15 +31,18 @@ const Paragrafos = ({ textos }: { textos: string[] }) => (
 function ComImagem({ imagem, lateral, children }: { imagem?: Imagem; lateral: boolean; children: ReactNode }) {
   const medida = imagem ? dimensoesDe(imagem.src) : null;
   if (!imagem || !medida) return <div>{children}</div>;
+  // O quadro nunca passa da largura real da imagem: sem faixa preta em volta de miniatura pequena.
   const figura = (
+    <div className="w-full justify-self-center" style={{ maxWidth: `${medida[0]}px` }}>
     <Figura
       src={imagem.src}
       alt={imagem.alt}
       legenda={imagem.legenda}
-      largura={medida[0]}
-      altura={medida[1]}
+      // Quadro na proporção da própria imagem: miniaturas pequenas ficam no tamanho real, sem esticar.
+      proporcao={`${medida[0]} / ${medida[1]}`}
       sizes={lateral ? tamanhos.lateral : tamanhos.artigo}
     />
+    </div>
   );
   return lateral ? (
     <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
@@ -87,7 +96,7 @@ export default function FestivalSecao({ festival }: { festival: Festival }) {
       </header>
 
       <div className="mt-8">
-        <ComImagem imagem={festival.imagemAbertura} lateral={ehPrintPequena(festival.imagemAbertura?.src)}>
+        <ComImagem imagem={festival.imagemAbertura} lateral={!ehPaisagem(festival.imagemAbertura?.src)}>
           <Paragrafos textos={festival.abertura} />
           {festival.avisoAbertura ? <Destaque {...festival.avisoAbertura} className="mt-6" /> : null}
         </ComImagem>
