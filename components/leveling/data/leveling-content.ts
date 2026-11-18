@@ -1,4 +1,4 @@
-﻿export type LevelingSpot = {
+export type LevelingSpot = {
   name: string;
   range: string;
   coords: string;
@@ -74,7 +74,7 @@ export const levelingPartyCards: LevelingInfoCard[] = [
   {
     title: "Bombas de XP",
     description:
-      "Dobram o XP do servidor por 20 minutos. ? um investimento caro, então vale usar quando a party está bem organizada e matando em bom ritmo.",
+      "Dobram o XP do servidor por 20 minutos. É um investimento caro, então vale usar quando a party está bem organizada e matando em bom ritmo.",
   },
 ];
 
@@ -104,7 +104,7 @@ export const levelingSpots: LevelingSpot[] = [
     image: "/leveling/pigman_ravine.webp",
     notes: [
       "Aqui vale estar bem equipado, porque os mobs conseguem matar com facilidade.",
-      "? o primeiro spot onde totems ficam realmente importantes para manter o ritmo.",
+      "É o primeiro spot onde totems ficam realmente importantes para manter o ritmo.",
       "Healer e party completa ainda não são obrigatórios nesse ponto.",
       "Tome cuidado com o Pigman Overlord, que tem mais dano e vida que os mobs comuns.",
     ],
@@ -138,7 +138,7 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-2151, -4717",
     image: "/leveling/llevigar_spiders.webp",
     notes: [
-      "? recomendado começar no level 35 para já descobrir Llevigar e respawnar lá em caso de morte.",
+      "É recomendado começar no level 35 para já descobrir Llevigar e respawnar lá em caso de morte.",
       "Fique atento ao Holehold Orc Marathon, que pode spawnar após uso de totem.",
     ],
   },

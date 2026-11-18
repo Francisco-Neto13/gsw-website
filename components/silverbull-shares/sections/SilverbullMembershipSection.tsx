@@ -11,7 +11,7 @@ export default function SilverbullMembershipSection() {
     <section className="bg-black px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta">
             {membershipIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -41,7 +41,7 @@ export default function SilverbullMembershipSection() {
           {membershipBenefits.map((benefit) => (
             <article key={benefit.title} className="rounded-2xl border border-white/10 bg-black/35 p-4 sm:p-5">
               <div className="mb-2 flex items-center gap-2 border-b border-white/5 pb-2">
-                <span className="text-xs font-bold tracking-[0.25em] text-gsw/80">{benefit.icon}</span>
+                <span className="text-xs font-bold tracking-[0.25em] text-violeta/80">{benefit.icon}</span>
                 <h3 className="text-sm font-bold tracking-tight text-white sm:text-base">{benefit.title}</h3>
               </div>
               <p className="text-sm leading-relaxed text-zinc-400">{benefit.description}</p>

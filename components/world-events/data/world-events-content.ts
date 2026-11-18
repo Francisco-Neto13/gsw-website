@@ -1,4 +1,4 @@
-﻿export type InfoCard = {
+export type InfoCard = {
   title: string;
   description: string;
 };
@@ -97,7 +97,7 @@ export const mechanicsCards: InfoCard[] = [
   {
     title: "Party",
     description:
-      "Você pode fazer o evento sozinho ou em party com amigos. ? importante saber que a porcentagem de vida dos mobs escala com a quantidade de membros na party.",
+      "Você pode fazer o evento sozinho ou em party com amigos. É importante saber que a porcentagem de vida dos mobs escala com a quantidade de membros na party.",
   },
   {
     title: "Chefe Final",

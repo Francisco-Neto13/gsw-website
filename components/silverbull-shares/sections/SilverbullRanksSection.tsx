@@ -8,7 +8,7 @@ export default function SilverbullRanksSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {rankIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -18,12 +18,12 @@ export default function SilverbullRanksSection() {
             {rankIntro.description}
           </p>
           <p className="mx-auto mt-3 max-w-3xl text-xs leading-relaxed text-zinc-500 sm:text-sm">
-            Referencia oficial de beneficios:{" "}
+            Referência de benefícios no site da Wynncraft:{" "}
             <a
               href="https://wynncraft.com/store/ranks"
               target="_blank"
               rel="noreferrer"
-              className="text-gsw transition-colors hover:text-white"
+              className="text-violeta transition-colors hover:text-white"
             >
               wynncraft.com/store/ranks
             </a>
@@ -49,7 +49,7 @@ export default function SilverbullRanksSection() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{rank.name}</h3>
-                    <p className="mt-1 text-xs font-semibold text-gsw sm:text-sm">Custa {rank.costShares} Shares.</p>
+                    <p className="mt-1 text-xs font-semibold text-violeta sm:text-sm">Custa {rank.costShares} Shares.</p>
                   </div>
                 </div>
               </div>

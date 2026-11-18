@@ -1,3 +1,4 @@
+import IconeShares from "@/components/silverbull-shares/sections/IconeShares";
 import { tokenCards, tokenStoreImage, tokensIntro } from "@/components/silverbull-shares/data/silverbull-shares-content";
 import SilverbullImageSlot from "@/components/silverbull-shares/sections/SilverbullImageSlot";
 
@@ -7,7 +8,7 @@ export default function SilverbullTokensSection() {
       <div className="pointer-events-none absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gsw/5 blur-[120px]" />
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta">
             {tokensIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -29,11 +30,11 @@ export default function SilverbullTokensSection() {
               className="group relative rounded-2xl border border-white/10 bg-black/40 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gsw/40"
             >
               <div className="mb-3 flex items-center gap-2 border-b border-white/5 pb-3">
-                <span className="text-xl">{token.icon}</span>
+                <IconeShares nome={token.icon} />
                 <h3 className="text-sm font-bold tracking-tight text-white sm:text-base">{token.name}</h3>
               </div>
               <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">{token.description}</p>
-              <span className="pointer-events-none absolute right-4 bottom-3 select-none text-3xl font-black italic text-white/5 group-hover:text-gsw/15">
+              <span className="pointer-events-none absolute right-4 bottom-3 select-none text-3xl font-black italic text-white/5 group-hover:text-violeta/15">
                 {String(index + 1).padStart(2, "0")}
               </span>
             </article>

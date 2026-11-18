@@ -1,4 +1,4 @@
-﻿export type SectionIntro = {
+export type SectionIntro = {
   eyebrow: string;
   title: string;
   description?: string;
@@ -38,7 +38,7 @@ export const dungeonsAccessModes: AccessMode[] = [
     title: "Versão Normal",
     steps: [
       "Dropar a chave de acesso em monstros específicos da dungeon.",
-      "Comprar a chave de acesso no Market Place.",
+      "Comprar a chave de acesso no Trade Market.",
       "Concluir a quest que libera o conteúdo (quando aplicável).",
     ],
   },
@@ -71,7 +71,7 @@ export const dungeonsForgeryIntro: SectionIntro = {
   eyebrow: "Desafio máximo",
   title: "Forgery System",
   description:
-    "A Forgery exige concluir as 8 dungeons corruptas sem morrer, dentro de uma janela de 3 horas. Quanto mais progresso sem falhas, melhor o resultado do Forgery Chest.",
+    "A Forgery recompensa quem conclui as 8 dungeons corrompidas diferentes. Cada corrompida concluída sobe a progressão do Forgery Chest (x/8); repetir a mesma não conta. O progresso zera se você morrer ou passar 3 horas sem concluir uma corrompida.",
 };
 
 export const dungeonsForgeryCards: InfoCard[] = [
@@ -83,7 +83,7 @@ export const dungeonsForgeryCards: InfoCard[] = [
   {
     title: "Mythic Chance",
     description:
-      "Uma run completa pode alcançar até 1,5% de chance de mítico. Sem drop, a chance acumula 0,01% por run.",
+      "A chance de mítico no baú vai de 0,2% (3/8) até 1,5% (8/8). Em 8/8, cada baú sem mítico multiplica a chance por 1,01, até sair um.",
   },
   {
     title: "Contagem de Mobs",
@@ -93,7 +93,7 @@ export const dungeonsForgeryCards: InfoCard[] = [
   {
     title: "Tempo Limite",
     description:
-      "O cronômetro começa após a primeira corrupta concluída e segue por até 3 horas totais.",
+      "Você tem até 3 horas entre uma corrompida concluída e a próxima; passou disso, o baú zera.",
   },
 ];
 
@@ -107,7 +107,7 @@ export const dungeonsMerchantIntro: SectionIntro = {
   eyebrow: "Loja exclusiva",
   title: "Dungeon Merchant",
   description:
-    "Cada dungeon possui um merchant com itens específicos comprados com fragmentos obtidos no próprio conteúdo.",
+    "Na entrada de cada dungeon há um merchant. Cada conclusão rende 3 fragmentos daquela dungeon e 1 Boss Token. Os fragmentos compram equipamento, powders, ferramentas e poções; pela wiki, os itens intransferíveis custam Boss Tokens, mas as páginas dela divergem nesse ponto.",
 };
 
 export const dungeonsMerchantCards: InfoCard[] = [
@@ -159,7 +159,7 @@ export const dungeonsRewardsCards: InfoCard[] = [
   },
   {
     title: "Fragmentos",
-    description: "Moeda exclusiva para o Dungeon Merchant.",
+    description: "Moeda do Dungeon Merchant, junto com o Boss Token que cada conclusão dá.",
   },
   {
     title: "Equipamentos",
@@ -190,8 +190,8 @@ export const dungeonsExtrasIntro: SectionIntro = {
 
 export const dungeonsExtras = [
   "Morrer durante o ciclo da Forgery interrompe a progressão perfeita. Para 8/8, a run precisa ser concluída sem mortes.",
-  "Após concluir a primeira corrupta, o cronômetro global da run continua por até 3 horas, mesmo com pausas.",
-  "? possível abrir o baú antes do 8/8, mas o resultado será proporcional ao progresso acumulado.",
+  "O Forgery Chest zera se você morrer ou passar 3 horas sem concluir uma corrompida.",
+  "É possível abrir o baú antes do 8/8, mas o resultado será proporcional ao progresso acumulado.",
   "Para iniciar o fluxo completo, tenha as chaves fragmentadas necessárias e as runas de craft já preparadas.",
   "Em grupo organizado, runs completas costumam ficar em torno de 30 minutos.",
   "Se o boss cair e não contar, confirme se o requisito mínimo de mobs daquela dungeon foi finalizado.",
@@ -206,7 +206,7 @@ export const dungeonsExtraHighlights: InfoCard[] = [
   {
     title: "Janela de 3 horas",
     description:
-      "Depois da primeira corrupta finalizada, o cronômetro global segue ativo. Planejamento de rota é essencial.",
+      "Cada corrompida concluída abre um novo prazo de 3 horas para a próxima. Planeje a rota antes de começar.",
   },
   {
     title: "Checagem de requisito",
@@ -238,3 +238,43 @@ export const dungeonsExtrasLabels = {
   note: "Nota",
 };
 
+
+// Lista de dungeons. Nível mínimo e chefe: wiki (Dungeons); nomes e local: API oficial (marcadores do mapa).
+// Conferido em 18/11/2026, jogo 2.2.4. A região foi deduzida da coordenada.
+export type DungeonDaLista = {
+  nome: string;
+  nivel: number;
+  chefe: string;
+  regiao: string;
+  quest?: string;
+};
+
+export const dungeonsNormais: DungeonDaLista[] = [
+  { nome: "Decrepit Sewers", nivel: 3, chefe: "Witherhead", regiao: "Ragni" },
+  { nome: "Infested Pit", nivel: 12, chefe: "Arakadicus", regiao: "Wynn" },
+  { nome: "Underworld Crypt", nivel: 18, chefe: "Charon", regiao: "Wynn" },
+  { nome: "Timelost Sanctum", nivel: 22, chefe: "Garoth, Keeper of the Sanctum", regiao: "Wynn" },
+  { nome: "Sand-Swept Tomb", nivel: 31, chefe: "Hashr", regiao: "Deserto de Almuj" },
+  { nome: "Ice Barrows", nivel: 40, chefe: "Theorick", regiao: "Nesaak" },
+  { nome: "Undergrowth Ruins", nivel: 49, chefe: "Slykaar", regiao: "Selva de Troms" },
+  { nome: "Galleon's Graveyard", nivel: 58, chefe: "Captain Redbeard e tripulação", regiao: "Oceano" },
+  { nome: "Fallen Factory", nivel: 89, chefe: "Wynnston e Antikythera Supercomputer", regiao: "Corkus", quest: "The Envoy Part II" },
+  { nome: "Eldritch Outlook", nivel: 101, chefe: "The Eye", regiao: "Silent Expanse", quest: "A Journey Further" },
+];
+
+export const dungeonsCorrompidas: DungeonDaLista[] = [
+  { nome: "Corrupted Decrepit Sewers", nivel: 65, chefe: "Corrupted Witherhead", regiao: "Forgery" },
+  { nome: "Corrupted Infested Pit", nivel: 69, chefe: "Corrupted Arakadicus", regiao: "Forgery" },
+  { nome: "Corrupted Lost Sanctuary", nivel: 73, chefe: "Corrupted Garoth", regiao: "Forgery" },
+  { nome: "Corrupted Underworld Crypt", nivel: 77, chefe: "Corrupted Charon", regiao: "Forgery" },
+  { nome: "Corrupted Sand-Swept Tomb", nivel: 81, chefe: "Corrupted Hashr", regiao: "Forgery" },
+  { nome: "Corrupted Ice Barrows", nivel: 85, chefe: "Corrupted Theorick", regiao: "Forgery" },
+  { nome: "Corrupted Undergrowth Ruins", nivel: 89, chefe: "Corrupted Slykaar", regiao: "Forgery" },
+  { nome: "Corrupted Galleon's Graveyard", nivel: 93, chefe: "Corrupted Captain Redbeard e os Mutineers", regiao: "Forgery" },
+];
+
+export const dungeonsListaIntro = {
+  title: "Todas as dungeons",
+  description:
+    "Desde a 2.1, as dungeons normais não exigem quest, exceto Fallen Factory e Eldritch Outlook. As corrompidas ficam na Forgery, em Gavel, e não têm Second Chance.",
+};

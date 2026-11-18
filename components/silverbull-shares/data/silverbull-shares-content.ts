@@ -1,4 +1,4 @@
-﻿export type SectionIntro = {
+export type SectionIntro = {
   eyebrow: string;
   title: string;
   description?: string;
@@ -51,7 +51,7 @@ export type MediaCard = {
 };
 
 export const silverbullGuideIntro = {
-  eyebrow: "Guia Oficial",
+  eyebrow: "Guia GsW",
   title: "Silverbull Shares",
   paragraphs: [
     "Silverbull Share é uma moeda alternativa do Wynncraft usada para adquirir cosméticos, consumíveis especiais, pets, ranks permanentes e assinatura mensal Silverbull.",
@@ -83,7 +83,7 @@ export const tradableVsUntradable: InfoCard[] = [
   {
     title: "Tradable Shares",
     description:
-      "Podem ser vendidas no Trade Market e usadas normalmente em cosméticos e consumíveis. ? o tipo mais comum.",
+      "Podem ser vendidas no Trade Market e usadas normalmente em cosméticos e consumíveis. É o tipo mais comum.",
   },
   {
     title: "Untradable Shares",
@@ -407,18 +407,18 @@ export const bombStoreImage = {
 };
 
 export const bombCards: BombCard[] = [
-{ icon: "\u2694\uFE0F", name: "Combat XP Bomb", description: "Dobra XP de mobs por 20 minutos." },
-  { icon: "\u26CF\uFE0F", name: "Profession XP Bomb", description: "Dobra XP de profissões por 20 minutos." },
-  { icon: "\u26CF\uFE0F\uD83D\uDCA8", name: "Profession Speed Bomb", description: "Acelera coleta e crafting por 10 minutos e reduz custo de craft." },
-  { icon: "\uD83D\uDCAC", name: "Shout Bomb", description: "Mensagem no chat global para todos online." },
-  { icon: "\uD83D\uDCA0", name: "Loot Bomb", description: "Dobra loot dropado por mobs por 20 minutos." },
-  { icon: "\uD83D\uDCE8", name: "Item Bomb", description: "Entrega bau com itens aleatórios no mundo." },
-  { icon: "\uD83D\uDD11", name: "Dungeon Bomb", description: "Entrada grátis em dungeons por 10 minutos." },
-  { icon: "\uD83D\uDCE6", name: "Loot Chest Bomb", description: "Aumenta quantidade de itens em baús por 20 minutos." },
-  { icon: "\uD83C\uDF10", name: "World Event Bomb", description: "Ativa world events comuns (sem Annihilation)." },
-  { icon: "\uD83D\uDCDC", name: "Scroll Charge Bomb", description: "Restaura 2 cargas de teleport scrolls." },
-  { icon: "\uD83C\uDF44", name: "Ingredient Bomb", description: "Envia 16 ingredientes aleatórios para todos no mundo." },
-  { icon: "\uD83C\uDF89", name: "Party Crackers", description: "Evento visual de celebração no entorno do jogador." },
+  { icon: "espadas", name: "Combat XP Bomb", description: "Dobra XP de mobs por 20 minutos." },
+  { icon: "picareta", name: "Profession XP Bomb", description: "Dobra XP de profissões por 20 minutos." },
+  { icon: "velocidade", name: "Profession Speed Bomb", description: "Acelera coleta e crafting por 10 minutos e reduz custo de craft." },
+  { icon: "grito", name: "Shout Bomb", description: "Mensagem no chat global para todos online." },
+  { icon: "gema", name: "Loot Bomb", description: "Dobra loot dropado por mobs por 20 minutos." },
+  { icon: "presente", name: "Item Bomb", description: "Entrega baú com itens aleatórios no mundo." },
+  { icon: "chave", name: "Dungeon Bomb", description: "Entrada grátis em dungeons por 10 minutos." },
+  { icon: "bau", name: "Loot Chest Bomb", description: "Aumenta quantidade de itens em baús por 20 minutos." },
+  { icon: "mundo", name: "World Event Bomb", description: "Ativa world events comuns (sem Annihilation)." },
+  { icon: "pergaminho", name: "Scroll Charge Bomb", description: "Restaura 2 cargas de teleport scrolls." },
+  { icon: "ingrediente", name: "Ingredient Bomb", description: "Envia 16 ingredientes aleatórios para todos no mundo." },
+  { icon: "festa", name: "Party Crackers", description: "Evento visual de celebração no entorno do jogador." },
 ];
 
 export const petsIntro: SectionIntro = {
@@ -488,22 +488,22 @@ export const tokenStoreImage = {
 
 export const tokenCards: BombCard[] = [
   {
-    icon: "\uD83D\uDFE1",
-    name: "Traker Reroll Token",
+    icon: "rerolar",
+    name: "Tracker Reroll Token",
     description: "Rerolla o identificador shiny de uma mítica para outro valor aleatório.",
   },
   {
-    icon: "\uD83D\uDD34",
-    name: "Traker Reset Token",
+    icon: "resetar",
+    name: "Tracker Reset Token",
     description: "Reseta o identificador shiny de uma mítica para 0.",
   },
   {
-    icon: "\uD83D\uDD35",
+    icon: "renomear",
     name: "Guild Rename Token",
     description: "Permite renomear uma guilda.",
   },
   {
-    icon: "\uD83D\uDFE2",
+    icon: "recarregar",
     name: "Daily Bonus Refresh",
     description: "Reseta bônus diário de Lootrun ou Raid. Com Silverbull ativa, efeito é dobrado.",
   },

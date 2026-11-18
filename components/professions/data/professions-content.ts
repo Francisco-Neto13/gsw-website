@@ -1,4 +1,4 @@
-﻿export type GatheringProfession = {
+export type GatheringProfession = {
   name: string;
   resources: string;
   tool: string;
@@ -32,7 +32,7 @@ export type SectionIntro = {
 
 export const professionsIntroParagraphs = [
   "Existem dois tipos de profissões no Wynncraft: Gathering e Crafting. As de Gathering são niveladas coletando recursos espalhados pelo mapa, cujo nível varia de acordo com a região. As de Crafting utilizam esses recursos combinados com ingredients dropados de mobs para produzir itens consumíveis e equipamentos.",
-  "Nossa recomendação é sempre deixar as profissões para o fim da sua trajetória no jogo. ? um conteúdo opcional que não afeta diretamente a gameplay e pode consumir bastante tempo. Se precisar de algum item craftado antes disso, peça ajuda aos membros mais experientes da guilda.",
+  "Nossa recomendação é sempre deixar as profissões para o fim da sua trajetória no jogo. É um conteúdo opcional que não afeta diretamente a gameplay e pode consumir bastante tempo. Se precisar de algum item craftado antes disso, peça ajuda aos membros mais experientes da guilda.",
 ];
 
 export const professionTypesIntro: SectionIntro = {
@@ -93,7 +93,7 @@ export const professionWaypointsLabels = {
 
 export const gatheringProfessions: GatheringProfession[] = [
   { name: "Farming", resources: "Colheita e Linha", tool: "Foice" },
-  { name: "Fishing", resources: "Peixe e ?leo", tool: "Vara de Pesca" },
+  { name: "Fishing", resources: "Peixe e Óleo", tool: "Vara de Pesca" },
   { name: "Mining", resources: "Minério e Gema", tool: "Picareta" },
   { name: "Woodcutting", resources: "Madeira e Papel", tool: "Machado" },
 ];

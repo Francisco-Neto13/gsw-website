@@ -13,7 +13,7 @@ export default function DungeonsAccessSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {dungeonsAccessIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -31,7 +31,7 @@ export default function DungeonsAccessSection() {
               className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
             >
               <div className="border-b border-white/5 p-6 sm:p-8">
-                <span className="mb-3 block select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/15">
+                <span className="mb-3 block select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/15">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{mode.title}</h3>

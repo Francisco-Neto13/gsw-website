@@ -6,7 +6,7 @@ export default function SilverbullPetsSection() {
     <section className="bg-black px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta">
             {petsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -24,7 +24,7 @@ export default function SilverbullPetsSection() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {petBundles.map((bundle) => (
             <article key={bundle.name} className="rounded-2xl border border-white/10 bg-zinc-900/20 p-5 sm:p-6">
-              <span className="mb-2 block text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">{bundle.colorLabel}</span>
+              <span className="mb-2 block text-xs font-bold uppercase tracking-[0.35em] text-violeta/80">{bundle.colorLabel}</span>
               <h3 className="text-xl font-bold tracking-tight text-white">{bundle.name}</h3>
               <div className="mt-4 space-y-2">
                 {bundle.notes.map((note) => (

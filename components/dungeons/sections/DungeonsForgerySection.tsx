@@ -13,7 +13,7 @@ export default function DungeonsForgerySection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {dungeonsForgeryIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -30,7 +30,7 @@ export default function DungeonsForgerySection() {
               key={item.title}
               className="group relative rounded-2xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8"
             >
-              <span className="absolute right-4 bottom-3 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
+              <span className="absolute right-4 bottom-3 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/10">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
