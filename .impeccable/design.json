@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T07:54:32.544Z",
+  "title": "Design System: GsW · Guia de Wynncraft em português",
+  "extensions": {
+    "colorMeta": {
+      "gsw": {
+        "role": "primary",
+        "displayName": "Violeta GsW",
+        "canonical": "#7116ad",
+        "tonalRamp": [
+          "#220734",
+          "#390b57",
+          "#561183",
+          "#7116ad",
+          "#934ec1",
+          "#b586d4",
+          "#d4b9e6",
+          "#f1e8f7"
+        ]
+      },
+      "violeta": {
+        "role": "primary",
+        "displayName": "Violeta de Texto",
+        "canonical": "#c79bf2",
+        "tonalRamp": [
+          "#3c2f49",
+          "#644e79",
+          "#9776b8",
+          "#c79bf2",
+          "#d4b3f5",
+          "#e2cbf8",
+          "#eee1fb",
+          "#f9f5fe"
+        ]
+      },
+      "violeta-borda": {
+        "role": "primary",
+        "displayName": "Violeta de Borda",
+        "canonical": "#9b4ddb",
+        "tonalRamp": [
+          "#2f1742",
+          "#4e276e",
+          "#763ba6",
+          "#9b4ddb",
+          "#b378e4",
+          "#cba2ec",
+          "#e1caf4",
+          "#f5edfb"
+        ]
+      },
+      "chao": {
+        "role": "neutral",
+        "displayName": "Chão",
+        "canonical": "#0f0d11",
+        "tonalRamp": [
+          "#050405",
+          "#080709",
+          "#0b0a0d",
+          "#0f0d11",
+          "#49474a",
+          "#828183",
+          "#b7b6b8",
+          "#e7e7e7"
+        ]
+      },
+      "carvao": {
+        "role": "neutral",
+        "displayName": "Carvão",
+        "canonical": "#191819",
+        "tonalRamp": [
+          "#080708",
+          "#0d0c0d",
+          "#131213",
+          "#191819",
+          "#504f50",
+          "#878787",
+          "#bababa",
+          "#e8e8e8"
+        ]
+      },
+      "elevada": {
+        "role": "neutral",
+        "displayName": "Superfície Elevada",
+        "canonical": "#221f24",
+        "tonalRamp": [
+          "#0a090b",
+          "#111012",
+          "#1a181b",
+          "#221f24",
+          "#575559",
+          "#8c8b8d",
+          "#bdbcbd",
+          "#e9e9e9"
+        ]
+      },
+      "caixa": {
+        "role": "neutral",
+        "displayName": "Fundo da Caixa",
+        "canonical": "#160c20",
+        "tonalRamp": [
+          "#07040a",
+          "#0b0610",
+          "#110918",
+          "#160c20",
+          "#4e4656",
+          "#86818b",
+          "#b9b6bc",
+          "#e8e7e9"
+        ]
+      },
+      "caixa-fora": {
+        "role": "neutral",
+        "displayName": "Borda Externa da Caixa",
+        "canonical": "#2a0f40",
+        "tonalRamp": [
+          "#0d0513",
+          "#150820",
+          "#200b31",
+          "#2a0f40",
+          "#5d496e",
+          "#90829c",
+          "#bfb7c6",
+          "#eae7ec"
+        ]
+      },
+      "texto": {
+        "role": "neutral",
+        "displayName": "Texto",
+        "canonical": "#eee9f3",
+        "tonalRamp": [
+          "#474649",
+          "#77757a",
+          "#b5b1b9",
+          "#eee9f3",
+          "#f2eef6",
+          "#f6f4f9",
+          "#faf8fb",
+          "#fdfdfe"
+        ]
+      },
+      "texto-2": {
+        "role": "neutral",
+        "displayName": "Texto Secundário",
+        "canonical": "#bdb4c8",
+        "tonalRamp": [
+          "#39363c",
+          "#5f5a64",
+          "#908998",
+          "#bdb4c8",
+          "#cdc6d5",
+          "#ddd8e2",
+          "#ebe9ef",
+          "#f8f8fa"
+        ]
+      },
+      "texto-3": {
+        "role": "neutral",
+        "displayName": "Texto Terciário",
+        "canonical": "#9a90a6",
+        "tonalRamp": [
+          "#2e2b32",
+          "#4d4853",
+          "#756d7e",
+          "#9a90a6",
+          "#b2abbb",
+          "#cac5d1",
+          "#e1dee4",
+          "#f5f4f6"
+        ]
+      },
+      "linha": {
+        "role": "neutral",
+        "displayName": "Régua",
+        "canonical": "rgba(238, 233, 243, 0.1)",
+        "tonalRamp": [
+          "#474649",
+          "#77757a",
+          "#b5b1b9",
+          "#eee9f3",
+          "#f2eef6",
+          "#f6f4f9",
+          "#faf8fb",
+          "#fdfdfe"
+        ]
+      },
+      "linha-forte": {
+        "role": "neutral",
+        "displayName": "Régua Forte",
+        "canonical": "rgba(238, 233, 243, 0.18)",
+        "tonalRamp": [
+          "#474649",
+          "#77757a",
+          "#b5b1b9",
+          "#eee9f3",
+          "#f2eef6",
+          "#f6f4f9",
+          "#faf8fb",
+          "#fdfdfe"
+        ]
+      },
+      "ambar": {
+        "role": "neutral",
+        "displayName": "Âmbar de Alerta",
+        "canonical": "#f2c063",
+        "tonalRamp": [
+          "#493a1e",
+          "#796032",
+          "#b8924b",
+          "#f2c063",
+          "#f5cf88",
+          "#f8deae",
+          "#fbecd0",
+          "#fef9ef"
+        ]
+      },
+      "raridade-normal": {
+        "role": "tertiary",
+        "displayName": "Normal",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#4d4d4d",
+          "#808080",
+          "#c2c2c2",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "raridade-unique": {
+        "role": "tertiary",
+        "displayName": "Unique",
+        "canonical": "#fcfc48",
+        "tonalRamp": [
+          "#4c4c16",
+          "#7e7e24",
+          "#c0c037",
+          "#fcfc48",
+          "#fdfd74",
+          "#fdfda0",
+          "#fefec8",
+          "#ffffed"
+        ]
+      },
+      "raridade-rare": {
+        "role": "tertiary",
+        "displayName": "Rare",
+        "canonical": "#ff5cff",
+        "tonalRamp": [
+          "#4d1c4d",
+          "#802e80",
+          "#c246c2",
+          "#ff5cff",
+          "#ff83ff",
+          "#ffaaff",
+          "#ffceff",
+          "#ffefff"
+        ]
+      },
+      "raridade-legendary": {
+        "role": "tertiary",
+        "displayName": "Legendary",
+        "canonical": "#0dfcfc",
+        "tonalRamp": [
+          "#044c4c",
+          "#077e7e",
+          "#0ac0c0",
+          "#0dfcfc",
+          "#47fdfd",
+          "#81fdfd",
+          "#b6fefe",
+          "#e7ffff"
+        ]
+      },
+      "raridade-fabled": {
+        "role": "tertiary",
+        "displayName": "Fabled",
+        "canonical": "#ff5c5c",
+        "tonalRamp": [
+          "#4d1c1c",
+          "#802e2e",
+          "#c24646",
+          "#ff5c5c",
+          "#ff8383",
+          "#ffaaaa",
+          "#ffcece",
+          "#ffefef"
+        ]
+      },
+      "raridade-mythic": {
+        "role": "tertiary",
+        "displayName": "Mythic (borda)",
+        "canonical": "#c80db1",
+        "tonalRamp": [
+          "#3c0435",
+          "#640759",
+          "#980a87",
+          "#c80db1",
+          "#d547c4",
+          "#e281d6",
+          "#efb6e8",
+          "#fae7f7"
+        ]
+      },
+      "raridade-mythic-texto": {
+        "role": "tertiary",
+        "displayName": "Mythic (texto)",
+        "canonical": "#edb7e7",
+        "tonalRamp": [
+          "#473745",
+          "#775c74",
+          "#b48bb0",
+          "#edb7e7",
+          "#f1c8ed",
+          "#f6daf3",
+          "#fae9f8",
+          "#fdf8fd"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Frase de abertura da Início."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "H1 de guia."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "H2 de seção."
+      },
+      "item-name": {
+        "displayName": "Nome do item",
+        "purpose": "Nome na ficha do guia, em violeta de texto."
+      },
+      "subtitle": {
+        "displayName": "Subtítulo",
+        "purpose": "H3 a H5 dentro de seções; qualquer título abaixo de 20 px."
+      },
+      "body": {
+        "displayName": "Texto",
+        "purpose": "Texto corrido, até 60ch."
+      },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Rótulo de grupo e de índice; sem caixa alta."
+      },
+      "numeric": {
+        "displayName": "Números",
+        "purpose": "Todo número: coordenadas, níveis, contagens, etapas."
+      }
+    },
+    "shadows": [
+      {
+        "name": "assento-caixa",
+        "value": "inset 0 0 0 1px rgba(113,22,173,0.85), 0 18px 40px -24px rgba(0,0,0,0.9)",
+        "purpose": "Borda interna violeta e assento da caixa de item."
+      },
+      {
+        "name": "traco-topbar",
+        "value": "inset 0 -1px 0 rgba(113,22,173,0.55)",
+        "purpose": "Borda dupla inferior da top bar."
+      },
+      {
+        "name": "traco-rodape",
+        "value": "inset 0 1px 0 rgba(113,22,173,0.45)",
+        "purpose": "Borda dupla superior do rodapé."
+      },
+      {
+        "name": "barra-fixa",
+        "value": "0 12px 24px -16px rgba(0,0,0,0.9)",
+        "purpose": "Barra 'Nesta página' fixa no celular."
+      },
+      {
+        "name": "botao-sobre-midia",
+        "value": "0 8px 24px -8px rgba(0,0,0,0.8)",
+        "purpose": "Botão de play sobre pôster e miniatura."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-saida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Curva única de todo o site."
+      },
+      {
+        "name": "duracao-hover",
+        "value": "150ms",
+        "purpose": "Hover e troca de cor (120 a 150 ms)."
+      },
+      {
+        "name": "duracao-caixa",
+        "value": "200ms",
+        "purpose": "Caixa do termo (opacidade e 4 px, sem escala), menus, fade-in."
+      },
+      {
+        "name": "duracao-entrada",
+        "value": "360ms",
+        "purpose": "Entrada de seção: opacidade e 12 px, uma vez."
+      },
+      {
+        "name": "movimento-reduzido",
+        "value": "opacity 120ms linear",
+        "purpose": "Com prefers-reduced-motion, só opacidade; a caixa do termo aparece sem transição."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal: preenchimento violeta GsW, texto branco.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Abrir o guia de Raids <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:6px;background:#7116ad;color:#fff;font-family:'Alegreya Sans',sans-serif;font-weight:500;font-size:17px;text-decoration:none;transition:background-color 150ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-primary:hover{background:#7f1bc2}.ds-btn-primary:focus-visible{outline:2px solid #9b4ddb;outline-offset:3px;}"
+    },
+    {
+      "name": "Botão secundário",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ação secundária: só borda de régua forte; hover na borda violeta.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Ver todos os guias</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:6px;border:1px solid rgba(238,233,243,0.18);color:#eee9f3;font-family:'Alegreya Sans',sans-serif;font-size:17px;text-decoration:none;transition:border-color 150ms cubic-bezier(0.16,1,0.3,1)}.ds-btn-secondary:hover{border-color:#9b4ddb}.ds-btn-secondary:focus-visible{outline:2px solid #9b4ddb;outline-offset:3px;}"
+    },
+    {
+      "name": "Gatilho da busca",
+      "kind": "input",
+      "refersTo": "busca-gatilho",
+      "description": "Campo falso da top bar que abre a busca (Ctrl+K ou /).",
+      "html": "<button class=\"ds-busca\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><span>Buscar</span><kbd class=\"ds-kbd\">Ctrl K</kbd></button>",
+      "css": ".ds-busca{display:flex;align-items:center;gap:8px;height:36px;width:224px;padding:0 10px;border-radius:6px;border:1px solid rgba(238,233,243,0.1);background:#191819;color:#bdb4c8;font-family:'Alegreya Sans',sans-serif;font-size:14px;cursor:pointer;transition:border-color 150ms,color 150ms}.ds-busca:hover{border-color:rgba(238,233,243,0.18);color:#eee9f3}.ds-busca:focus-visible{outline:2px solid #9b4ddb;outline-offset:3px;}.ds-kbd{margin-left:auto;border:1px solid rgba(238,233,243,0.1);border-radius:4px;padding:0 6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#9a90a6}"
+    },
+    {
+      "name": "Sidebar de guias",
+      "kind": "nav",
+      "refersTo": "nav-item-guia",
+      "description": "Grupo com rótulo pequeno; item ativo preenchido em violeta GsW.",
+      "html": "<nav class=\"ds-side\"><p class=\"ds-side-rotulo\">Conteúdo de grupo</p><a href=\"#\" class=\"ds-side-item ds-ativo\">Raids</a><a href=\"#\" class=\"ds-side-item\">Dungeons</a><a href=\"#\" class=\"ds-side-item\">Montarias <span class=\"ds-embreve\">em breve</span></a></nav>",
+      "css": ".ds-side{display:flex;flex-direction:column;gap:2px;width:232px;font-family:'Alegreya Sans',sans-serif;}.ds-side-rotulo{margin:0 0 6px;padding:0 12px;font-size:13px;font-weight:700;color:#9a90a6}.ds-side-item{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-radius:6px;font-size:15px;color:#bdb4c8;text-decoration:none;transition:background-color 150ms,color 150ms}.ds-side-item:hover{background:#221f24;color:#eee9f3}.ds-side-item:focus-visible{outline:2px solid #9b4ddb;outline-offset:3px;}.ds-ativo,.ds-ativo:hover{background:#7116ad;color:#fff;font-weight:500}.ds-embreve{border:1px dashed rgba(154,144,166,0.6);border-radius:4px;padding:0 6px;font-size:11px;color:#9a90a6}"
+    },
+    {
+      "name": "Ficha do guia",
+      "kind": "card",
+      "refersTo": "caixa-item",
+      "description": "A caixa de item: uma por página, logo abaixo do H1.",
+      "html": "<aside class=\"ds-caixa\"><p class=\"ds-caixa-nome\">Raids</p><p class=\"ds-caixa-tipo\">Conteúdo de grupo · Endgame</p><dl class=\"ds-caixa-linhas\"><dt>Party</dt><dd>4 jogadores</dd><dt>Nível</dt><dd><span class=\"ds-num\">80</span> a <span class=\"ds-num\">105</span>, conforme a raid</dd><dt>Onde</dt><dd>Centro de Divisão Silverbull</dd></dl></aside>",
+      "css": ".ds-caixa{max-width:60ch;padding:20px 24px;background:#160c20;border:1px solid #2a0f40;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(113,22,173,0.85),0 18px 40px -24px rgba(0,0,0,0.9);font-family:'Alegreya Sans',sans-serif;font-size:17px;line-height:1.7}.ds-caixa-nome{margin:0;font-family:'Pixelify Sans',sans-serif;font-size:20px;line-height:1.25;color:#c79bf2}.ds-caixa-tipo{margin:2px 0 0;font-size:15px;font-style:italic;color:#9a90a6}.ds-caixa-linhas{display:grid;grid-template-columns:max-content 1fr;gap:10px 24px;margin:16px 0 0}.ds-caixa-linhas dt{font-size:15px;color:#9a90a6}.ds-caixa-linhas dd{margin:0;color:#eee9f3}.ds-num{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Termo do jogo",
+      "kind": "custom",
+      "description": "Termo sublinhado em pontilhado que abre a caixa de item com a explicação.",
+      "html": "<p class=\"ds-p\">Cada sala concluída rende um <span class=\"ds-termo-ancora\"><button class=\"ds-termo\">Aspect</button><span class=\"ds-termo-caixa\" role=\"tooltip\"><span class=\"ds-termo-nome\">Aspect</span><span class=\"ds-termo-tipo\">Recompensa de raid</span><span class=\"ds-termo-texto\">Melhoria para uma habilidade da árvore. Sai no baú final das raids.</span></span></span> a mais.</p>",
+      "css": ".ds-p{max-width:60ch;font-family:'Alegreya Sans',sans-serif;font-size:17px;line-height:1.7;color:#bdb4c8;padding-bottom:140px}.ds-termo-ancora{position:relative;display:inline-block}.ds-termo{all:unset;cursor:help;color:#eee9f3;text-decoration:underline dotted 2px rgba(199,155,242,0.7);text-underline-offset:4px}.ds-termo:hover{text-decoration-color:#c79bf2}.ds-termo:focus-visible{outline:2px solid #9b4ddb;outline-offset:3px;border-radius:4px}.ds-termo-caixa{display:none;position:absolute;top:100%;left:0;z-index:5;margin-top:8px;width:288px;padding:12px 16px;background:#160c20;border:1px solid #2a0f40;border-radius:6px;box-shadow:inset 0 0 0 1px rgba(113,22,173,0.85),0 18px 40px -24px rgba(0,0,0,0.9);}.ds-termo-ancora:hover .ds-termo-caixa,.ds-termo:focus-visible+.ds-termo-caixa{display:block}.ds-termo-nome{display:block;font-family:'Pixelify Sans',sans-serif;font-size:20px;line-height:1.2;color:#c79bf2}.ds-termo-tipo{display:block;font-size:13.6px;font-style:italic;color:#9a90a6}.ds-termo-texto{display:block;margin-top:8px;font-size:15px;line-height:1.4;color:#bdb4c8}"
+    },
+    {
+      "name": "Selo de versão",
+      "kind": "chip",
+      "refersTo": "selo",
+      "description": "Estado do guia por ícone e texto, nunca só por cor.",
+      "html": "<span class=\"ds-selo\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#c79bf2\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/></svg>Revisado para a 2.2.4<span class=\"ds-selo-data\">· nov/2026</span></span>",
+      "css": ".ds-selo{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border:1px solid rgba(238,233,243,0.18);border-radius:4px;font-family:'Alegreya Sans',sans-serif;font-size:15px;color:#bdb4c8}.ds-selo-data{color:#9a90a6}"
+    },
+    {
+      "name": "Etapas numeradas",
+      "kind": "custom",
+      "refersTo": "numero-de-etapa",
+      "description": "Salas numeradas ligadas por traço vertical de 1 px; número em mono.",
+      "html": "<ol class=\"ds-etapas\"><li><span class=\"ds-etapa-n\">1</span><span class=\"ds-etapa-t\">Sala 1: Entrada</span></li><li><span class=\"ds-etapa-n\">2</span><span class=\"ds-etapa-t\">Sala 2: Labirinto</span></li></ol>",
+      "css": ".ds-etapas{list-style:none;margin:0;padding:0;font-family:'Alegreya Sans',sans-serif;}.ds-etapas li{position:relative;display:flex;gap:16px;padding-bottom:24px}.ds-etapas li:not(:last-child)::before{content:\"\";position:absolute;left:17px;top:40px;bottom:0;width:1px;background:rgba(238,233,243,0.18)}.ds-etapa-n{display:flex;width:36px;height:36px;flex-shrink:0;align-items:center;justify-content:center;border-radius:6px;background:#7116ad;color:#fff;font-family:'JetBrains Mono',monospace;font-weight:500}.ds-etapa-t{padding-top:4px;font-size:18px;font-weight:700;color:#eee9f3}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Caixa de Item",
+    "overview": "No Wynncraft, toda informação que importa chega numa caixa de item: fundo roxo-escuro, borda dupla, o nome na cor certa e as linhas de atributo em ordem fixa. O site pega só esse gesto e o aplica à informação de consulta (a ficha do guia, a explicação de um termo, a dica da guilda, a busca). O texto de leitura fica fora da moldura, numa coluna calma de 60 caracteres, em fonte humanista e com contraste alto.\n\nO sistema é escuro e só escuro: o tema claro foi removido de propósito, porque a cena de uso é noturna, com o jogo aberto ao lado, e as cores de raridade foram feitas para fundo escuro. Os neutros são carvões levemente tingidos de violeta; o violeta da marca aparece como preenchimento de ação e estado ativo, nunca como texto. A densidade é de guia de referência: réguas de 1 px, rótulos pequenos, valores em mono, nada animado atrás do texto.\n\nA direção recusa o template escuro genérico da categoria (cards iguais com brilho neon, títulos medievais, eyebrow acima de cada título) e também não imita a interface do jogo: a fonte pixel é genérica (não a do Minecraft) e a caixa aparece só onde há informação de consulta.",
+    "keyCharacteristics": [
+      "Só escuro, com `color-scheme: dark` e `theme-color` no chão da página.",
+      "Uma moldura (a caixa de item) para consulta; uma coluna sem moldura para leitura.",
+      "Violeta da marca só como preenchimento; violeta claro para texto e link; violeta médio para foco e indicador ativo.",
+      "Pixelify Sans para nomes e títulos grandes, Alegreya Sans para ler, JetBrains Mono para números.",
+      "Estado comunicado por ícone, traço ou texto, nunca só por cor."
+    ],
+    "rules": [
+      {
+        "name": "The Fill-Only Rule",
+        "body": "O violeta GsW nunca é cor de texto nem de borda decorativa. Se o elemento não é ação nem estado ativo, ele não leva esse preenchimento.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Violets Rule",
+        "body": "Preencher é `gsw`, ler é `violeta`, contornar e indicar é `violeta-borda`. Nenhuma das três substitui a outra.",
+        "section": "colors"
+      },
+      {
+        "name": "The Rarity Is Signal Rule",
+        "body": "Cor de raridade só onde há raridade de verdade (item, aspect, tier) e sempre com o nome escrito ao lado. Nunca como enfeite.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark Only Rule",
+        "body": "Não existe tema claro nem botão de tema. Se um claro voltar, ele sai dos mesmos tokens com `light-dark()`, como tema próprio, nunca como inversão à mão.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pixel Floor Rule",
+        "body": "Pixelify só a partir de 20 px. Abaixo disso, o título vai em Alegreya Sans 700.",
+        "section": "typography"
+      },
+      {
+        "name": "The Digit Rule",
+        "body": "Pixelify nunca carrega números: o 5 dela se lê como S. Todo número (nível, coordenada, contagem, número de etapa) vai em JetBrains Mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Measure Rule",
+        "body": "Texto de leitura nunca passa de 60ch, inclusive dentro de cabeçalhos e caixas.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonal First Rule",
+        "body": "Para separar um nível do outro, troque o tom ou desenhe uma régua de 1 px. Sombra é para a caixa de item e para o que flutua sobre conteúdo.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** usar o violeta GsW só como preenchimento de ação e estado ativo, com texto branco por cima.",
+      "**Do** usar o violeta de texto para links e nomes, e o violeta de borda para foco e indicadores ativos.",
+      "**Do** manter texto de leitura em até 60ch, Alegreya Sans 17 px com entrelinha 1,7.",
+      "**Do** escrever todo número em JetBrains Mono, com algarismos tabulares.",
+      "**Do** colocar uma ficha do guia por página, logo abaixo do H1, e reservar a caixa de item para consulta e sobreposições.",
+      "**Do** marcar termos do jogo com `[[chave|texto]]` nos arquivos de dados, e acrescentar a explicação em `lib/glossario.ts`.",
+      "**Do** mostrar estado por ícone, traço ou texto além da cor (tracejado para o que ainda não existe).",
+      "**Do** servir prints próprios em AVIF com WebP de reserva e GIFs como pôster mais animação sob demanda.",
+      "**Do** desenhar réguas e bordas com 1 px exato."
+    ],
+    "donts": [
+      "**Don't** usar o violeta GsW como cor de texto (2,0:1).",
+      "**Don't** criar tema claro ou botão de tema.",
+      "**Don't** usar Pixelify abaixo de 20 px nem para números.",
+      "**Don't** pôr eyebrow ou kicker (rótulo pequeno em caixa alta) acima de títulos.",
+      "**Don't** usar emoji; use Lucide a 1,75 px de traço.",
+      "**Don't** usar cor de raridade como enfeite, nem Mythic `#c80db1` em texto pequeno.",
+      "**Don't** emoldurar texto corrido em caixa de item, nem usar mais de uma ficha por página.",
+      "**Don't** usar logo ou arte oficial do Minecraft ou da Wynncraft, nem a fonte do Minecraft.",
+      "**Don't** animar texto de leitura nem cada item de lista; a entrada é só na abertura de seção."
+    ]
+  }
+}

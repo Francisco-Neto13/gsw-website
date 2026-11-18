@@ -1,0 +1,319 @@
+---
+name: GsW · Guia de Wynncraft em português
+description: Guia de Wynncraft em pt-BR da guilda GsW; a informação de consulta chega numa caixa de item, o texto corrido numa coluna calma.
+colors:
+  gsw: "#7116ad"
+  violeta: "#c79bf2"
+  violeta-borda: "#9b4ddb"
+  chao: "#0f0d11"
+  carvao: "#191819"
+  elevada: "#221f24"
+  caixa: "#160c20"
+  caixa-fora: "#2a0f40"
+  texto: "#eee9f3"
+  texto-2: "#bdb4c8"
+  texto-3: "#9a90a6"
+  linha: "rgba(238, 233, 243, 0.1)"
+  linha-forte: "rgba(238, 233, 243, 0.18)"
+  ambar: "#f2c063"
+  raridade-normal: "#ffffff"
+  raridade-unique: "#fcfc48"
+  raridade-rare: "#ff5cff"
+  raridade-legendary: "#0dfcfc"
+  raridade-fabled: "#ff5c5c"
+  raridade-mythic: "#c80db1"
+  raridade-mythic-texto: "#edb7e7"
+typography:
+  display:
+    fontFamily: "Pixelify Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.25rem, 5vw, 3.75rem)"
+    fontWeight: 600
+    lineHeight: 1.05
+    letterSpacing: "0.01em"
+  headline:
+    fontFamily: "Pixelify Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2rem, 4vw, 2.75rem)"
+    fontWeight: 600
+    lineHeight: 1.15
+    letterSpacing: "0.01em"
+  title:
+    fontFamily: "Pixelify Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.5rem, 2.4vw, 1.875rem)"
+    fontWeight: 600
+    lineHeight: 1.15
+    letterSpacing: "0.01em"
+  item-name:
+    fontFamily: "Pixelify Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.25rem"
+    lineHeight: 1.25
+  subtitle:
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 700
+    lineHeight: 1.4
+  body:
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 400
+    lineHeight: 1.7
+  label:
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 700
+    lineHeight: 1.4
+  numeric:
+    fontFamily: "JetBrains Mono, ui-monospace, monospace"
+    fontSize: "1em"
+    fontWeight: 400
+    fontFeature: "\"tnum\" 1"
+rounded:
+  sm: "4px"
+  md: "6px"
+  full: "9999px"
+spacing:
+  xs: "8px"
+  sm: "16px"
+  md: "24px"
+  lg: "40px"
+  xl: "48px"
+components:
+  button-primary:
+    backgroundColor: "{colors.gsw}"
+    textColor: "#ffffff"
+    rounded: "{rounded.md}"
+    padding: "0 16px"
+    height: "44px"
+  button-primary-hover:
+    backgroundColor: "#7f1bc2"
+    textColor: "#ffffff"
+  button-secondary:
+    backgroundColor: "transparent"
+    textColor: "{colors.texto}"
+    rounded: "{rounded.md}"
+    padding: "0 16px"
+    height: "44px"
+  nav-item-guia:
+    backgroundColor: "transparent"
+    textColor: "{colors.texto-2}"
+    rounded: "{rounded.md}"
+    padding: "8px 12px"
+  nav-item-guia-hover:
+    backgroundColor: "{colors.elevada}"
+    textColor: "{colors.texto}"
+  nav-item-guia-active:
+    backgroundColor: "{colors.gsw}"
+    textColor: "#ffffff"
+  caixa-item:
+    backgroundColor: "{colors.caixa}"
+    textColor: "{colors.texto}"
+    rounded: "{rounded.md}"
+    padding: "16px 20px"
+  ficha-guia-titulo:
+    textColor: "{colors.violeta}"
+    typography: "{typography.item-name}"
+  busca-gatilho:
+    backgroundColor: "{colors.carvao}"
+    textColor: "{colors.texto-2}"
+    rounded: "{rounded.md}"
+    height: "36px"
+    width: "224px"
+  selo:
+    backgroundColor: "transparent"
+    textColor: "{colors.texto-2}"
+    rounded: "{rounded.sm}"
+    padding: "2px 8px"
+  numero-de-etapa:
+    backgroundColor: "{colors.gsw}"
+    textColor: "#ffffff"
+    rounded: "{rounded.md}"
+    size: "36px"
+  painel-variacao:
+    backgroundColor: "{colors.carvao}"
+    textColor: "{colors.texto-2}"
+    rounded: "{rounded.md}"
+    padding: "20px"
+---
+
+# Design System: GsW · Guia de Wynncraft em português
+
+## Overview
+
+**Creative North Star: "A Caixa de Item"**
+
+No Wynncraft, toda informação que importa chega numa caixa de item: fundo roxo-escuro, borda dupla, o nome na cor certa e as linhas de atributo em ordem fixa. O site pega só esse gesto e o aplica à informação de consulta (a ficha do guia e a explicação de um termo). O texto de leitura fica fora da moldura, numa coluna calma de 60 caracteres, em fonte humanista e com contraste alto.
+
+O sistema é escuro e só escuro: o tema claro foi removido de propósito, porque a cena de uso é noturna, com o jogo aberto ao lado, e as cores de raridade foram feitas para fundo escuro. Os neutros são carvões levemente tingidos de violeta; o violeta da marca aparece como preenchimento de ação e estado ativo, nunca como texto. A densidade é de guia de referência: réguas de 1 px, rótulos pequenos, valores em mono, nada animado atrás do texto.
+
+A direção recusa o template escuro genérico da categoria (cards iguais com brilho neon, títulos medievais, eyebrow acima de cada título) e também não imita a interface do jogo: a fonte pixel é genérica (não a do Minecraft) e a caixa aparece só onde há informação de consulta.
+
+**Key Characteristics:**
+- Só escuro, com `color-scheme: dark` e `theme-color` no chão da página.
+- Uma moldura (a caixa de item) para consulta; uma coluna sem moldura para leitura.
+- Violeta da marca só como preenchimento; violeta claro para texto e link; violeta médio para foco e indicador ativo.
+- Pixelify Sans para nomes e títulos grandes, Alegreya Sans para ler, JetBrains Mono para números.
+- Estado comunicado por ícone, traço ou texto, nunca só por cor.
+
+## Colors
+
+Paleta contida: carvões tingidos de violeta, um violeta de ação em três funções e as cores de raridade como sinal funcional.
+
+### Primary
+- **Violeta GsW** (`gsw`): a cor da guilda, medida na logo. Só preenchimento: botão principal, item ativo da sidebar, resultado ativo da busca, número da etapa, seleção de texto, link "Pular para o conteúdo". Texto branco por cima dá 8,7:1. Como texto sobre o carvão dá 2,0:1 e reprova.
+- **Violeta de Texto** (`violeta`): links, nome do item na ficha e na caixa do termo, ícones de destaque, marcadores de lista. 7,9:1 sobre o carvão.
+- **Violeta de Borda** (`violeta-borda`): contorno de foco (`:focus-visible`, 2 px, afastado 3 px), indicador da área ativa na top bar, régua ativa do índice "Nesta página", borda de hover dos cartões de navegação. 3,8:1, acima do mínimo de 3:1 para componente.
+
+### Neutral
+- **Chão** (`chao`): fundo da página, da top bar e das barras fixas; também a `theme-color` do navegador.
+- **Carvão** (`carvao`): carvão da marca. Superfícies um nível acima: rodapé, painel de variação, fundo de mídia, gatilho da busca, faixa da Comunidade.
+- **Superfície Elevada** (`elevada`): só hover de itens de menu e de botões sem preenchimento.
+- **Fundo da Caixa** (`caixa`): o roxo-escuro da caixa de item; também o botão "Continuar de".
+- **Borda Externa da Caixa** (`caixa-fora`): a borda de fora da caixa e a borda inferior da top bar e da gaveta do celular.
+- **Texto** (`texto`), **Texto Secundário** (`texto-2`), **Texto Terciário** (`texto-3`): 14,8:1, 8,9:1 e 5,8:1 sobre o carvão. O terciário é o mínimo para qualquer texto (rótulos, legendas, metadados).
+- **Régua** (`linha`) e **Régua Forte** (`linha-forte`): toda divisória, borda de mídia e de cartão. A forte marca hover e o traço vertical que liga as etapas.
+- **Âmbar** (`ambar`): só o selo "Revisão pendente", sempre com ícone e texto.
+
+### Tertiary: cores de raridade
+Tiradas do guia oficial de itens da Wynncraft (paleta do nome do item), conferidas em 18/11/2026: Normal, Unique, Rare, Legendary, Fabled e Mythic. Set deixou de ser raridade na 2.2 e não entra; Crafted não está na paleta oficial e fica pendente.
+- **Mythic** tem duas entradas: `raridade-mythic` (3,5:1) só para borda e texto grande; `raridade-mythic-texto`, a secundária oficial, para qualquer texto corrido ou pequeno.
+- Uso hoje: chips de raridade em Recompensas (borda da cor a 60%, texto na cor, fundo transparente).
+
+### Named Rules
+**The Fill-Only Rule.** O violeta GsW nunca é cor de texto nem de borda decorativa. Se o elemento não é ação nem estado ativo, ele não leva esse preenchimento.
+
+**The Three Violets Rule.** Preencher é `gsw`, ler é `violeta`, contornar e indicar é `violeta-borda`. Nenhuma das três substitui a outra.
+
+**The Rarity Is Signal Rule.** Cor de raridade só onde há raridade de verdade (item, aspect, tier) e sempre com o nome escrito ao lado. Nunca como enfeite.
+
+**The Dark Only Rule.** Não existe tema claro nem botão de tema. Se um claro voltar, ele sai dos mesmos tokens com `light-dark()`, como tema próprio, nunca como inversão à mão.
+
+## Typography
+
+**Display Font:** Pixelify Sans 500/600/700 (com ui-sans-serif, system-ui), latin-ext para os acentos.
+**Body Font:** Alegreya Sans 400/500/700 com itálico (com ui-sans-serif, system-ui).
+**Label/Mono Font:** JetBrains Mono 400/500 (com ui-monospace), sem preload.
+
+Todas servidas pelo `next/font` a partir do próprio site.
+
+**Character:** Pixelify é a voz do nome do item: pixel, mas desenhada para tela. Alegreya Sans é humanista e calorosa para leitura longa em pt-BR, sem cair no medieval. O mono existe para que coordenadas e contagens se alinhem e se leiam sem ambiguidade.
+
+### Hierarchy
+- **Display** (Pixelify 600, `clamp(2.25rem, 5vw, 3.75rem)`, 1,05): a frase de abertura da Início.
+- **Headline** (Pixelify 600, `clamp(2rem, 4vw, 2.75rem)`, 1,15): H1 de guia.
+- **Title** (Pixelify 600, `clamp(1.5rem, 2.4vw, 1.875rem)`, 1,15): H2 de seção. Na Início, os H2 sobem até `clamp(1.6rem, 2.6vw, 2.1rem)`. O H3 de cada raid usa Pixelify em `clamp(1.35rem, 2.2vw, 1.65rem)`.
+- **Item Name** (Pixelify, 1,25 rem, violeta): o nome dentro da ficha do guia.
+- **Subtitle** (Alegreya 700, 1,125 rem): H3 a H5 dentro de seções (sala, variação, "Resumo rápido" em 1,25 rem).
+- **Body** (Alegreya 400, 1,0625 rem = 17 px, 1,7): texto corrido, com largura máxima de 60ch. Lide de abertura em 1,125 rem no secundário.
+- **Label** (Alegreya 700, 0,8125 rem): rótulo de grupo na sidebar e "Nesta página". Metadados e legendas em 0,9 a 0,95 rem no terciário. Sem caixa alta, sem tracking.
+- **Numeric** (JetBrains Mono, tabular): coordenadas, níveis, contagens; `font-variant-numeric: tabular-nums` em tabelas e na classe de números. Atalhos de teclado (`Ctrl K`, `Esc`) em mono 0,7 rem.
+
+H1 e H2 têm `text-wrap: balance`; parágrafos, itens, legendas e `dd` têm `text-wrap: pretty`.
+
+### Named Rules
+**The Pixel Floor Rule.** Pixelify só a partir de 20 px. Abaixo disso, o título vai em Alegreya Sans 700.
+
+**The Digit Rule.** Pixelify nunca carrega números: o 5 dela se lê como S. Todo número (nível, coordenada, contagem, número de etapa) vai em JetBrains Mono.
+
+**The Measure Rule.** Texto de leitura nunca passa de 60ch, inclusive dentro de cabeçalhos e caixas.
+
+## Layout
+
+- **Moldura do site:** top bar fixa de 3,5 rem (56 px, `--topbar-h`); conteúdo centrado em até 96 rem; `scroll-padding-top` igual à top bar mais 1 rem para âncoras.
+- **Página de guia:** três colunas a partir de 1280 px: sidebar de guias de 16 rem (a partir de 1024 px), coluna central flexível e índice "Nesta página" de 15 rem. Sidebar e índice são `sticky` sob a top bar, com rolagem própria. Abaixo de 1280 px o índice vira uma barra fixa "Nesta página: <seção atual>" que abre em lista; abaixo de 768 px a navegação de áreas e os guias vão para uma gaveta lateral (`<dialog>`, até 22 rem).
+- **Coluna de leitura:** 60ch para texto; mídia e blocos de sala vão até 56 a 60 rem.
+- **Ritmo:** seções com 48 px de respiro vertical, separadas por régua de 1 px; margens laterais de 16, 24 e 40 px (celular, tablet, desktop). Dentro das caixas, 16 a 20 px de respiro.
+- **Etapas:** salas numeradas em lista, ligadas por um traço vertical de 1 px na régua forte.
+- **Onde parei:** o guia guarda no navegador a última seção visível e oferece "Continuar de" só para quem volta pelo topo.
+- **Breakpoints:** os do Tailwind (640, 768, 1024, 1280 px).
+- **Divergência do plano:** a direção pedia coluna de 68ch e sidebar de 264 px; o build fixou 60ch e 16 rem (256 px), e este documento segue o build.
+- **Atalho temporário:** os guias ainda no modelo antigo pintam cada seção de preto puro; `app/styles/foundation.css` deixa esses fundos transparentes dentro da área de guias. Não é regra do sistema: sai quando cada guia for refeito no modelo de Raids, e nenhuma superfície nova deve depender dele.
+
+## Elevation & Depth
+
+O sistema é plano e em camadas tonais: chão, carvão, elevada e caixa se distinguem por tom, não por sombra. A profundidade aparece em três lugares só: a sombra baixa e difusa que assenta a caixa de item, a sombra sob a barra fixa do índice no celular e a sombra do botão sobre vídeo e animação. A borda interna violeta da top bar e do rodapé é um traço de luz de 1 px, não sombra.
+
+### Shadow Vocabulary
+- **Assento da Caixa** (`box-shadow: inset 0 0 0 1px rgba(113,22,173,0.85), 0 18px 40px -24px rgba(0,0,0,0.9)`): a borda interna violeta mais a sombra de assento da caixa de item.
+- **Traço da Moldura** (`box-shadow: inset 0 -1px 0 rgba(113,22,173,0.55)` na top bar; `inset 0 1px 0 rgba(113,22,173,0.45)` no rodapé): repete a borda dupla da caixa nas bordas do site.
+- **Barra Fixa** (`box-shadow: 0 12px 24px -16px rgba(0,0,0,0.9)`): separa a barra "Nesta página" do texto que rola por baixo.
+- **Botão sobre Mídia** (`box-shadow: 0 8px 24px -8px rgba(0,0,0,0.8)`): o botão "Ver POV" e "Ver animação" sobre o pôster.
+
+### Named Rules
+**The Tonal First Rule.** Para separar um nível do outro, troque o tom ou desenhe uma régua de 1 px. Sombra é para a caixa de item e para o que flutua sobre conteúdo.
+
+## Shapes
+
+Cantos discretamente arredondados: 6 px na caixa, em botões, itens de menu, mídia e painéis; 4 px em selos, chips e teclas (`kbd`) e no contorno de foco; círculo só no emblema da guilda. Toda régua e borda tem exatamente 1 px. O tracejado tem significado próprio: marca o que ainda não existe ("em breve", "Em construção", vídeo em produção). A forma assinatura é a borda dupla: escura por fora (`caixa-fora`), violeta a 1 px por dentro.
+
+## Components
+
+### Buttons
+Diretos e sem enfeite.
+- **Shape:** cantos suaves (6 px), altura de 44 px para alvo de toque.
+- **Primary:** preenchimento violeta GsW, texto branco 500, 16 px de respiro lateral, ícone Lucide à direita ou à esquerda. Hover escurece levemente o violeta.
+- **Secondary:** sem fundo, borda na régua forte, texto principal; hover troca a borda para o violeta de borda.
+- **Ícone (menu, fechar):** 44 por 44 px, texto secundário; hover em superfície elevada.
+- **Sobre mídia ("Ver POV", "Ver animação"):** pílula violeta GsW com ícone de play, véu preto a 35% (25% na animação) que clareia no hover.
+
+### Chips e selos
+- **Selo de versão:** borda na régua forte, cantos de 4 px, ícone Lucide de 14 px; estado por ícone e texto: check violeta "Revisado para a <versão> · <data>", martelo com borda tracejada "Em construção", alerta âmbar "Revisão pendente".
+- **"em breve":** borda tracejada no terciário, 0,7 rem; em branco quando o item está ativo.
+- **Chip de raridade:** borda da cor da raridade, texto na cor (Mythic com a secundária), fundo transparente.
+
+### Cards / Containers
+- **Painel de variação:** carvão, régua de 1 px, 6 px de canto, 16 a 20 px de respiro; texto à esquerda e vídeo à direita a partir de 1024 px.
+- **Cartão de navegação (anterior/próximo):** só borda de régua, nome do guia em Pixelify, hover na borda violeta.
+- **Mídia:** borda de régua, 6 px, fundo carvão enquanto carrega, legenda no terciário em 0,95 rem.
+
+### Inputs / Fields
+- **Gatilho da busca:** campo falso de 36 px na top bar (224 px no desktop), carvão com régua, lupa, "Buscar" e `Ctrl K` em mono.
+- **Busca aberta:** `<dialog>` em painel carvão com borda `linha-forte` (não em caixa de item), entrando com opacidade e 4 px em 200 ms, campo de 56 px sem contorno próprio, lista de resultados onde o ativo leva preenchimento violeta GsW e texto branco. Abre com Ctrl+K ou "/"; setas e Enter navegam.
+
+### Navigation
+- **Top bar:** chão, borda dupla inferior, emblema e "GsW", três áreas (Início, Guias, Comunidade) em 0,95 rem; área ativa com texto principal e barra de 2 px no violeta de borda; busca e Discord à direita.
+- **Sidebar de guias:** grupos com rótulo pequeno em negrito no terciário; item ativo com preenchimento violeta GsW e texto branco 500; hover em superfície elevada.
+- **Índice "Nesta página":** links com régua à esquerda; a seção visível ganha a régua no violeta de borda e o texto principal; subseções recuadas. Botão "Continuar de" em fundo de caixa com borda violeta.
+- **Breadcrumb:** Guias › grupo › guia, em 0,9 rem, separador chevron de 14 px.
+
+### Caixa de Item (componente assinatura)
+Fundo `caixa`, borda dupla, 6 px de canto. Usada só para informação de consulta e para o que flutua sobre a página:
+- **Ficha do guia:** uma por página, logo abaixo do H1. Nome em Pixelify violeta, tipo em itálico terciário, linhas de atributo em ordem fixa (rótulo terciário, valor principal) em duas colunas a partir de 640 px, selo de versão no rodapé.
+- **Dica da GsW:** opinião ou regra da guilda, separada dos fatos do jogo, com o emblema de 28 px, em painel carvão com borda `linha` (não em caixa de item).
+- **Termo do jogo:** palavra do glossário sublinhada em pontilhado violeta; ao passar o mouse, focar ou tocar, abre uma caixa de 288 px com nome, tipo e explicação em português. Esc fecha; a caixa recua para caber na tela. Os textos marcam termos com `[[chave]]` ou `[[chave|texto]]` nos arquivos de dados; o glossário fica em `lib/glossario.ts`, e uma chave desconhecida sai como texto simples.
+- **Também:** páginas de caixa única: o bloco "O que este guia vai cobrir" do guia em construção e a 404. Dica da GsW, busca e o destaque da Início ficam em painel carvão, para a caixa continuar significando "informação de consulta".
+
+### Ícones
+Lucide em toda a interface, traço de 1,75 px, em 14, 16, 18 ou 22 px, sempre `aria-hidden` com texto ao lado. O Discord é o único SVG de marca, desenhado à mão. Nada de emoji.
+
+### Imagens e animações
+- **Prints próprios:** AVIF com WebP de reserva, em larguras geradas fora do build, com largura e altura reais e carga sob demanda (`ImagemDoJogo`). Na Início, o print grande recebe um véu em gradiente do chão.
+- **GIFs:** viram pôster WebP leve mais animação WebP que só baixa quando o leitor pede (`AnimacaoSobDemanda`).
+- **Vídeos POV:** miniatura do YouTube com botão; o iframe só carrega no clique e recebe o foco.
+- **Ampliar:** prints de guia ampliam no clique.
+
+### Motion
+Uma curva só, `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease-saida`). 120 a 150 ms para hover e cor, 200 ms para a caixa do termo (opacidade e 4 px, sem escala, entrando com `@starting-style`) e menus, 360 ms para a entrada de seção, que só existe na História (opacidade e 12 px, uma vez); guias e Início não animam a entrada. Com `prefers-reduced-motion: reduce`, os deslocamentos saem e fica só a opacidade em 120 ms; a caixa do termo aparece sem transição; nada fica escondido esperando animação.
+
+## Do's and Don'ts
+
+### Do:
+- **Do** usar o violeta GsW só como preenchimento de ação e estado ativo, com texto branco por cima.
+- **Do** usar o violeta de texto para links e nomes, e o violeta de borda para foco e indicadores ativos.
+- **Do** manter texto de leitura em até 60ch, Alegreya Sans 17 px com entrelinha 1,7.
+- **Do** escrever todo número em JetBrains Mono, com algarismos tabulares.
+- **Do** colocar uma ficha do guia por página, logo abaixo do H1, e reservar a caixa de item para consulta e sobreposições.
+- **Do** marcar termos do jogo com `[[chave|texto]]` nos arquivos de dados, e acrescentar a explicação em `lib/glossario.ts`.
+- **Do** mostrar estado por ícone, traço ou texto além da cor (tracejado para o que ainda não existe).
+- **Do** servir prints próprios em AVIF com WebP de reserva e GIFs como pôster mais animação sob demanda.
+- **Do** desenhar réguas e bordas com 1 px exato.
+
+### Don't:
+- **Don't** usar o violeta GsW como cor de texto (2,0:1).
+- **Don't** criar tema claro ou botão de tema.
+- **Don't** usar Pixelify abaixo de 20 px nem para números.
+- **Don't** pôr eyebrow ou kicker (rótulo pequeno em caixa alta) acima de títulos.
+- **Don't** usar emoji; use Lucide a 1,75 px de traço.
+- **Don't** usar cor de raridade como enfeite, nem Mythic `#c80db1` em texto pequeno.
+- **Don't** emoldurar texto corrido em caixa de item, nem usar mais de uma ficha por página.
+- **Don't** usar logo ou arte oficial do Minecraft ou da Wynncraft, nem a fonte do Minecraft.
+- **Don't** animar texto de leitura nem cada item de lista; nos guias e na Início não há entrada animada, e na História ela é só na abertura de seção.
+- **Don't** pôr rótulo acima de título nem montar "número grande + rótulo": a contagem vai na frase, em mono; a ordem de uma variação vai depois do nome ("Fique na Plataforma · Variação 1 de 2").

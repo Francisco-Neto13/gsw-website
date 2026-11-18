@@ -37,7 +37,8 @@ instalação num clone novo e o que é versionado: `docs/GRAFO.md`.
 | ESLint (`eslint-config-next` core-web-vitals + typescript) | 9 |
 | sharp (só no script de conversão de imagens) | 0.34 |
 
-Hospedagem: Vercel, publicada pelo workflow `Deploy` (desligado por padrão). Ver `docs/INFRAESTRUTURA.md`.
+Hospedagem: a definir (a Vercel não será mais usada; o `deploy.yml` está desligado e precisa ser
+reescrito). Ver `docs/INFRAESTRUTURA.md`. Sistema visual: `DESIGN.md`.
 
 ## Comandos
 
@@ -61,9 +62,11 @@ npm run convert:webp # converte imagens de image-workbench/input/ para webp em o
 | `components/<area>/pages/` | Componente de página de cada área (compõe as seções) |
 | `components/<area>/sections/` | Blocos visuais da página |
 | `components/<area>/data/` | Textos, listas e caminhos de mídia da área (`*-content.ts`) |
-| `components/shared/` | Navbar, Footer, tema, animação de entrada, embed do YouTube, preview de imagem |
-| `lib/site-content.ts` | Links do menu e das seções; toda rota nova entra aqui |
-| `public/<area>/` | Imagens e vídeos de cada área (webp, gif, mp4) |
+| `components/shared/` | Top bar, busca, rodapé, imagens do jogo, animação sob demanda, vídeo, zoom |
+| `components/guias/` | Peças do modelo de guia (layout com sidebar e índice, ficha, termo, seção) |
+| `lib/site-content.ts` | Registro de guias e áreas: navegação, busca, redirects; toda rota nova entra aqui |
+| `lib/glossario.ts` | Termos do jogo usados pelo `<Termo>` (`[[chave]]` nos textos) |
+| `public/<area>/` | Imagens e vídeos de cada área; prints novas em AVIF + WebP |
 | `scripts/` | `convert-to-webp.mjs` (pipeline de imagens) |
 | `image-workbench/` | Entrada e saída locais do conversor (conteúdo fora do git) |
 | `tests/` | Testes `*.test.mjs` do `node --test` |
@@ -110,8 +113,8 @@ type(scope): imperative lowercase summary in english
 
 - `ci.yml`, em todo PR para `develop`/`main` e push nelas: branch de origem, tipos, lint, testes,
   build e gitleaks no histórico; depois mescla na `develop` e promove a `main`.
-- `deploy.yml`: Vercel CLI, só na `main`, só com a variável `DEPLOY_HABILITADO = true`
-  (`dry_run` funciona sempre). A integração Git da Vercel está desligada: nada vai para a produção
+- `deploy.yml`: **obsoleto** (escrito para a Vercel, que não será mais usada), desligado por
+  `DEPLOY_HABILITADO`; reescrever para a hospedagem nova antes de ligar. Nada vai para a produção
   por outro caminho.
 - `.githooks/pre-push`: recusa push em `main`/`develop` e roda tipos, lint e testes.
 
@@ -119,8 +122,8 @@ type(scope): imperative lowercase summary in english
 
 1. **Leia antes de mudar**: o componente, o `*-content.ts` da área e os usos em `lib/site-content.ts`.
 2. **Texto de guia mora em `data/`**, nunca escrito direto na seção (`docs/PADROES.md`).
-3. **Rota nova** = `app/<rota>/page.tsx` + `components/<area>/pages/` + entrada em
-   `sitePageLinks` e `navbarItems` de `lib/site-content.ts`. O `npm test` falha se faltar algo.
+3. **Guia novo** = `app/guias/<slug>/page.tsx` (com `metadataDoGuia`) + `components/<area>/` +
+   entrada em `guias` de `lib/site-content.ts`, no modelo de Raids. O `npm test` falha se faltar algo.
 4. **Imagem nova**: passe por `npm run convert:webp` e salve em `public/<area>/` como `.webp`.
    Fonte, imagem, ícone ou fonte tipográfica de terceiro entra em `docs/CREDITOS.md` no mesmo PR.
 5. **Documentação na mesma tarefa**: mudou estrutura, comando, rota, fluxo ou infraestrutura,
@@ -141,6 +144,8 @@ type(scope): imperative lowercase summary in english
 - Nunca escrever valor de secret, token ou ID da Vercel no repositório, nem em `docs/`; só os nomes.
 - Nunca commitar `.env*`, `.vercel/`, `node_modules/`, `.next/` nem o conteúdo de `image-workbench/`.
 - Nunca ligar a integração Git da Vercel de novo nem criar `DEPLOY_HABILITADO` sem pedido explícito.
+- Nunca usar ícones ou imagens da CDN oficial da Wynncraft sem autorização escrita dela; nunca usar
+  emoji como ícone; nunca reintroduzir tema claro sem pedido explícito.
 - Nunca adicionar back-end, banco, painel administrativo ou dependência de runtime sem pedido
   explícito: o projeto é só front de propósito (o Supabase e o painel foram removidos).
 - Nunca adicionar dependência para o que o Next, o React ou o Node já fazem.

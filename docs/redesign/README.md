@@ -1,6 +1,9 @@
 # Redesign do site da GsW: proposta (Fase 2)
 
-Estado: **aguardando aprovação**. Nada do front foi alterado.
+Estado: **aprovada em 18/11/2026**. Decisões do dono: direção Caixa de Item; só escuro; guias em
+`/guias/<guia>` com redirect permanente das rotas antigas; só arte própria até a Wynncraft autorizar
+os ícones oficiais; Raids como guia modelo. Fase 3 em andamento: base, navegação, Início e Raids
+feitos (ver `docs/PENDENCIAS.md` para o que segue). O sistema construído está em `DESIGN.md`.
 
 ## Leia nesta ordem
 

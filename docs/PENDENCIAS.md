@@ -1,44 +1,49 @@
 # Pendências
 
-Coisas notadas na etapa 1 (estrutura) e deixadas para as próximas etapas. Ao resolver um item,
-apague-o daqui no mesmo PR.
+Atualizado em 18/11/2026, ao fim da primeira parte da Fase 3 (base, navegação, Início e guia de
+Raids). Ao resolver um item, apague-o daqui no mesmo PR.
 
-## Redesign (Fase 2, aguardando aprovação)
+## Precisa de decisão ou ação do dono
 
-O diagnóstico completo e a proposta estão em `docs/redesign/`. Os itens abaixo são os que a Fase 3
-precisa resolver qualquer que seja a direção escolhida.
+| Item | Detalhe |
+|---|---|
+| E-mail de contato do aviso de site não oficial | A Mojang exige um contato real (Discord não basta). Preencher `contatoEmail` em `lib/site-content.ts`; até lá o rodapé mostra "Contato: a definir" |
+| Hospedagem de produção | A Vercel não será mais usada. O `deploy.yml` atual publica na Vercel e está desligado; precisa ser trocado pelo destino novo (provavelmente a VPS, como o Portfolio) antes de ligar o deploy |
+| Autorização da Wynncraft para ícones oficiais | Sem ela, nada da CDN oficial entra no site (`docs/CREDITOS.md`). Pedido pelo Discord de desenvolvedores |
+| Vídeos repetidos na TCC Sala 3 | "Agate Axon" usa o mesmo vídeo de "Primeval Machine" e "Elder Astal" o de "Desvie das Pedras". Pode ser o mesmo POV mostrando dois caminhos ou erro; confirmar ou gravar os certos |
+
+## Dados do jogo a confirmar no jogo
+
+A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um lado.
+
+| Item | Onde aparece |
+|---|---|
+| Rank que libera o beacon Crimson (Admiral ou Master) e o Rainbow (Commander ou Master) | Lootrun, tabela de beacons |
+| Quantos gambits ficam ativos ao mesmo tempo (4 slots, mas a wiki fala em 3) | Raids, gambits |
+| Moeda do Dungeon Merchant para itens intransferíveis (Boss Token ou fragmentos) | Dungeons, Merchant |
+| Cor exata do beacon Crimson (usada uma aproximada) | Lootrun |
+| Cor da raridade Crafted (não está na paleta do guia oficial de itens) | Não usada ainda |
+| Coordenadas de entrada das raids: as do site divergem das da API em 20 a 170 blocos (TNA a maior) | Raids. Mantidas as do site, anotadas pela guilda; conferir no jogo |
+| Recompensa de guild raid em esmeraldas (o site antigo dizia 2048) | Removida por não constar nas fontes |
+
+## Próxima etapa (depois da validação)
 
 | Prioridade | Item | Detalhe |
 |---|---|---|
-| Alta | Aviso de site não oficial | Trocar "Guia Oficial", "Documento Oficial" e "Guilda oficial" e pôr o aviso no rodapé (`docs/CREDITOS.md`). Falta decidir o **contato real** (e-mail ou formulário) |
-| Alta | Fonte nunca aplicada | A Geist é carregada mas o texto sai em `system-ui` |
-| Alta | Teclado e foco | Galeria sem teclado, menu mobile fechado no Tab, modais sem foco preso |
-| Alta | Dados de jogo errados | Beacons, níveis de raid, gambits, Dungeons sem lista, acentos quebrados (`docs/redesign/inventario-conteudo.md`) |
-| Média | Permissão da Wynncraft para ícones de itens | Pedir pelo Discord de desenvolvedores (`docs/redesign/fontes-e-licencas.md`) |
-| Média | Logo pesada | `public/icon.webp` tem 282 KB e cerca de 1.600 px para ser exibida a 120 px |
-| Média | 404 próprio | Hoje é o padrão do Next, em inglês |
-
-## Front (reestruturação)
-
-| Prioridade | Item | Detalhe |
-|---|---|---|
-| Alta | GIFs pesados no Lootrun | 16 GIFs somam 91 MB (até 10 MB cada) e vão sem otimização. Trocar por `<video autoplay muted loop playsinline>` em mp4/webm reduz em torno de 90% |
-| Alta | SEO por página | Só o `layout` tem `metadata`: todas as páginas saem com o mesmo título. Faltam `metadata` por rota, `sitemap`, `robots`, imagem Open Graph e `not-found` próprio |
-| Média | `AnimationInitializer` caro | A cada rolagem refaz um `querySelectorAll` de 12 seletores na página inteira, além do `IntersectionObserver` e de um `MutationObserver` no `body`. Provável travada em celular nas páginas longas |
-| Média | `Navbar.tsx` com 455 linhas | Separar desktop e mobile |
-| Baixa | Codificação mista | Alguns `.ts` têm BOM (`raids-content.ts`) e o histórico já teve texto corrompido (`fix(raids)... broken accented text`). Padronizar UTF-8 sem BOM e adicionar no `.gitattributes` |
-| Baixa | Sem CSP | `next.config.ts` tem os outros cabeçalhos de segurança, mas não `Content-Security-Policy` (precisa liberar YouTube e `i.ytimg.com`) |
-| Baixa | Rotas em dois idiomas | `/historia` e `/professions` convivem. Se renomear, criar `redirects` no `next.config.ts` |
-| Baixa | Páginas vazias | `/montarias` e `/festivais` ainda estão "Em desenvolvimento" |
+| Alta | Aplicar o modelo de Raids aos outros guias | Lootrun, Dungeons, Leveling, Profissões, World Events, Shares, Modos especiais. Hoje eles têm a moldura nova (top bar, sidebar, índice, intro compacta), mas o miolo ainda é o antigo, com rótulos acima dos títulos e cards aninhados |
+| Alta | Comunidade | `/comunidade` como hub (história, membros, galeria, Shares, Discord). Galeria ainda não abre pelo teclado; saltos de H2 para H4 na História; cargos dos membros em 9–10 px |
+| Alta | Conteúdo desatualizado restante | Leveling sem spots de Fruma; marcos de Profissões (115/117) e níveis de ferramenta; World Events (Subjugates, party de 10, Corrupted Cache); textos sem acento do bloco Membership do Shares (`docs/redesign/inventario-conteudo.md`) |
+| Média | Prints que faltam | Não há prints de NOTG, TCC, TNA, dungeons, montarias nem festivais entre as 187 conferidas. Reservadas para os próximos guias (já tratadas, fora do repositório): Lootrun (baú e escolha de beacon), World Events (Annihilation), Profissões (mineração), missões de Apotheosis, boneco de treino |
+| Média | Montarias e Festivais | Páginas "em construção" com o que vão cobrir; escrever o conteúdo |
+| Média | Peso de mídia | `public/` ainda tem webp grandes (camps do Lootrun, galeria da História, retratos de 500 KB) servidos pelo otimizador do Next; reduzir as fontes. Logo `public/icon.webp` com 282 KB e 1.600 px |
+| Baixa | Sem CSP | `next.config.ts` não define `Content-Security-Policy` (precisa liberar YouTube e `i.ytimg.com`) |
+| Baixa | Guias antigos com fundo preto | Neutralizado por um `shortcut:` em `app/styles/foundation.css`; sai quando cada guia for refeito |
 
 ## CI/CD e repositório
 
 | Item | Detalhe |
 |---|---|
-| Ativar o deploy | Seguir `docs/CI-CD.md`, "Ativar o deploy". Até lá a produção fica no commit `f8063b4` |
-| Criar a `develop` no GitHub | `docs/CI-CD.md`, "Primeira vez no GitHub" |
-| Dependabot | Não adicionado. Se entrar: uma PR agrupada por mês, `target-branch: develop`, como no Guardian-Of-Wynn |
-| `npm audit` na CI | Não adicionado: o único pacote de runtime fora do Next/React é o `sharp`, usado só no script local |
+| Dependabot | Não adicionado. Se entrar: uma PR agrupada por mês, `target-branch: develop` |
 | Rulesets do GitHub | Opcionais (repositório público). Ver `docs/CI-CD.md` |
-| README | Não cita `docs/`, os comandos novos nem o fluxo de PR. Atualizar junto com a reestruturação |
-| Testes de interface | Só existe o teste de rotas. Na reestruturação, avaliar Playwright para navegação e tema |
+| README | Não cita `docs/`, os comandos novos nem o fluxo de PR |
+| Testes de interface | Só os testes de rotas e redirects. Avaliar Playwright para navegação, busca e índice |

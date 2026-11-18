@@ -60,6 +60,11 @@ Verificação nova entra como passo do job `front` (ou job novo no `needs` de `m
 
 ## Deploy
 
+> **Obsoleto desde 18/11/2026:** a Vercel não será mais usada. O `deploy.yml` abaixo continua
+> desligado e precisa ser reescrito para a hospedagem nova antes de qualquer ativação
+> (`docs/INFRAESTRUTURA.md`, `docs/PENDENCIAS.md`). Não cadastre os secrets da Vercel. Esta seção
+> descreve o arquivo como ele está hoje.
+
 - `deploy.yml` roda só por `workflow_dispatch` na `main`: disparado pela promoção ou à mão.
   Um deploy por vez (`concurrency: deploy-producao`).
 - Passos: confere `DEPLOY_HABILITADO` (exceto em `dry_run`), confere os secrets, `npm ci`,

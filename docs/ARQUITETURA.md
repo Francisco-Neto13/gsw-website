@@ -1,6 +1,7 @@
 # Arquitetura
 
-Estado em 18/11/2026, antes da reestruturação do front.
+Estado em 18/11/2026, depois da primeira parte da Fase 3 do redesign (base, navegação, Início e o
+guia modelo de Raids). Sistema visual: `DESIGN.md`. Produto: `PRODUCT.md`.
 
 ## Stack
 
@@ -9,102 +10,103 @@ Estado em 18/11/2026, antes da reestruturação do front.
 | Framework | Next.js 16.1.6, App Router, todas as rotas pré-renderizadas como estáticas (`○ Static` no build) |
 | UI | React 19.2.3, componentes de função, sem biblioteca de componentes |
 | Linguagem | TypeScript 5, `strict: true`, alias `@/*` para a raiz (`tsconfig.json`) |
-| Estilo | Tailwind CSS 4 (`@tailwindcss/postcss`) + CSS global em `app/styles/` |
-| Fontes | Geist e Geist Mono por `next/font/google` (`display: swap`) |
-| Imagens | `next/image`; GIFs com `unoptimized` (o otimizador do Next quebra a animação) |
+| Estilo | Tailwind CSS 4 (`@tailwindcss/postcss`); tokens em `app/styles/foundation.css` (`@theme`) |
+| Fontes | Pixelify Sans (títulos), Alegreya Sans (texto), JetBrains Mono (números), por `next/font/google` (hospedadas no próprio site) |
+| Ícones | `lucide-react` (sem emoji em lugar nenhum) |
+| Imagens | `next/image` para as imagens antigas; `ImagemDoJogo` (`<picture>` AVIF + WebP) para as prints novas; GIFs viraram pôster + animação WebP carregada no clique |
 | Lint | ESLint 9, `eslint-config-next` (core-web-vitals + typescript) |
 | Testes | `node --test` nativo do Node 24 (`tests/*.test.mjs`) |
 
-Dependências de runtime: só `next`, `react`, `react-dom` e `sharp`.
+Dependências de runtime: `next`, `react`, `react-dom`, `lucide-react` e `sharp` (este só nos
+scripts de imagem).
 
 ## Pastas
 
 ```text
-app/                    rotas (page.tsx de uma linha) + layout + globals.css
-app/styles/             foundation, motion, theme-remaps, surface-effects, history-effects,
-                        leveling-effects, hero-light
-components/<area>/
-  pages/                <Area>Page.tsx: monta Navbar, intro, seções e Footer
-  sections/             blocos visuais
-  data/                 <area>-content.ts: textos, listas, caminhos de mídia, tipos
-components/shared/      peças usadas por várias áreas
-lib/site-content.ts     navegação (menu e links de seção)
-public/<area>/          mídia de cada área
-scripts/                convert-to-webp.mjs
-image-workbench/        input/ e output/ do conversor (fora do git)
-tests/                  testes do node --test
+app/
+  layout.tsx            fontes, top bar, <main id="conteudo">, rodapé, link "pular para o conteúdo"
+  page.tsx              Início
+  not-found.tsx         404 própria
+  guias/
+    layout.tsx          GuiaLayout: sidebar + conteúdo + índice "Nesta página"
+    page.tsx            /guias: índice de todos os guias
+    <guia>/page.tsx     uma linha: metadata do guia + componente da página
+  historia/page.tsx     Comunidade (ainda no modelo antigo)
+  styles/               foundation (tokens, base, caixa-item), motion, efeitos dos modelos antigos
+components/
+  shared/               TopBar, Busca, GuiaNavLista, SiteFooter, ImagemDoJogo, AnimacaoSobDemanda,
+                        ClickableImagePreview, LazyYouTubeEmbed, GuideIntro, AnimationInitializer
+  guias/                peças do modelo de guia: GuiaLayout, FichaGuia, DicaGsw, Termo,
+                        TextoComTermos, SecaoGuia, Figura, FimDoGuia, Breadcrumb, SeloVersao,
+                        GuiaEmConstrucao
+  <area>/pages|sections|data/   cada guia (Raids já no modelo novo; os outros com o miolo antigo)
+lib/
+  site-content.ts       registro de guias e áreas: navegação, busca, redirects, metadata
+  glossario.ts          termos do jogo com explicação própria (usados pelo <Termo>)
+public/<area>/          mídia de cada área; prints novas em public/inicio/ e public/raids/prints/
+scripts/                convert-to-webp.mjs, gif-para-webp.mjs
+tests/                  rotas.test.mjs
 ```
-
-Áreas em `components/`: `home`, `history`, `leveling`, `professions`, `mounts`, `festivals`,
-`lootrun`, `silverbull-shares`, `special-modes`, `world-events`, `raids`, `dungeons`.
 
 ## Rotas
 
 | Rota | Página | Situação |
 |---|---|---|
-| `/` | `home/pages/HomePage` | Pronta |
-| `/historia` | `history/pages/HistoryPage` | Pronta (crônicas, membros, pilares, galeria, essência) |
-| `/leveling` | `leveling/pages/LevelingPage` | Pronta |
-| `/professions` | `professions/pages/ProfessionsPage` | Pronta |
-| `/montarias` | `mounts/pages/MountsPage` | "Em desenvolvimento" |
-| `/festivais` | `festivals/pages/FestivalsPage` | "Em desenvolvimento" |
-| `/lootrun` | `lootrun/pages/LootrunPage` | Pronta |
-| `/silverbull-shares` | `silverbull-shares/pages/SilverbullSharesPage` | Pronta |
-| `/modos-especiais` | `special-modes/pages/SpecialModesPage` | Pronta |
-| `/world-events` | `world-events/pages/WorldEventsPage` | Pronta |
-| `/raids` | `raids/pages/RaidsPage` | Pronta |
-| `/dungeons` | `dungeons/pages/DungeonsPage` | Pronta |
+| `/` | `home/pages/HomePage` | Modelo novo |
+| `/guias` | `app/guias/page.tsx` | Modelo novo |
+| `/guias/raids` | `raids/pages/RaidsPage` | **Guia modelo** |
+| `/guias/leveling`, `/guias/profissoes`, `/guias/lootrun`, `/guias/dungeons`, `/guias/world-events`, `/guias/silverbull-shares`, `/guias/modos-especiais` | `<area>/pages/*` | Moldura nova, miolo antigo |
+| `/guias/montarias`, `/guias/festivais` | `GuiaEmConstrucao` | Em construção |
+| `/historia` | `history/pages/HistoryPage` | Modelo antigo (Comunidade, próxima etapa) |
 
-Nomes de rota misturam português e inglês (`/historia`, `/professions`); manter os existentes,
-porque mudar quebra links compartilhados.
+As rotas antigas (`/raids`, `/lootrun`, `/professions`...) redirecionam com **308 permanente**
+para `/guias/<guia>`. Os redirects saem do registro (`redirecionamentos` em `lib/site-content.ts`,
+lidos pelo `next.config.ts`), e o teste garante que cada rota antiga aponta para um guia existente.
 
 ## Navegação
 
-`lib/site-content.ts` define:
-
-- `sitePageLinks`: todas as páginas;
-- `navbarItems`: menu agrupado (Início, Guias › Progressão/Endgame/Especiais, Comunidade);
-- `homeSectionLinks`, `historySectionLinks`: âncoras dentro da página.
-
-`tests/rotas.test.mjs` garante que esses links e as pastas de `app/` batem.
-
-## Componentes compartilhados
-
-| Componente | Papel |
-|---|---|
-| `Navbar` | Menu desktop e mobile, dropdowns, atalho para seções da página atual (client) |
-| `Footer` | Links do autor, do repositório e do Discord |
-| `GuideIntro` | Cabeçalho padrão dos guias (client) |
-| `InPageNavigation` | Navegação entre seções no mobile (client) |
-| `AnimationInitializer` | Animação de entrada ao rolar e volta ao topo na troca de rota; montado no `layout` (client) |
-| `ThemeToggle` | Alterna claro/escuro (client) |
-| `LazyYouTubeEmbed` | Miniatura que só carrega o iframe do YouTube no clique (client) |
-| `ClickableImagePreview` | Abre imagem em tela cheia (client) |
+- **Top bar** (todas as páginas): Início, Guias, Comunidade, busca e Discord. No celular, menu em
+  gaveta com as áreas e a lista de guias.
+- **Sidebar** (dentro de `/guias/*`, exceto o índice `/guias`): guias por grupo, guia atual
+  preenchido, selo "em breve" nos vazios.
+- **"Nesta página"**: lista do registro (`guia.secoes`, caso de Raids) ou, nos guias antigos,
+  montada no navegador a partir dos `<section>` com `<h2>`. Marca a seção visível mais interna.
+  No celular vira uma barra fixa com a seção atual.
+- **Busca** (Ctrl+K, `/` ou o botão da Início): `<dialog>` nativo; índice montado do registro
+  (títulos, resumos, `palavrasChave`, seções e siglas). Sem servidor.
 
 ## Estado
 
-Não há estado global, store nem contexto. O que existe:
+Não há store nem contexto global.
 
-- `useState` local em poucos componentes (embed tocando, modal da galeria, menu aberto);
-- **tema**: `localStorage` (`gsw-theme`) + `data-theme` e classe `theme-dark`/`theme-light` no
-  `<html>`. Um script inline no `layout` aplica o tema antes da pintura, para não piscar;
-- **animação de entrada**: classes `reveal-on-scroll`/`visible` aplicadas pelo
-  `AnimationInitializer`; `data-reveal-ignore` exclui um bloco, `data-reveal-delay` atrasa.
+- `useState` local nos componentes interativos (busca, menu, termo, índice, zoom, vídeo).
+- **Onde parei**: `GuiaLayout` grava a seção visível no `localStorage` (`gsw:onde-parei:<rota>`)
+  e oferece "Continuar de …" quando o leitor volta pelo topo. Leituras e escritas em try/catch.
+- **Tema**: só escuro. O tema claro, o botão e o script de tema foram removidos.
+- **Animação de entrada**: só a abertura de cada seção, 12 px e 360 ms; `prefers-reduced-motion`
+  troca por opacidade em 120 ms.
+
+## Conteúdo dos guias
+
+- Texto, tabelas e caminhos de mídia em `components/<area>/data/*-content.ts`.
+- Termos do jogo marcados no texto como `[[chave]]` ou `[[chave|texto exibido]]`; o
+  `TextoComTermos` troca pela caixa de item do `<Termo>`. As chaves ficam em `lib/glossario.ts`.
+- Cada guia declara no registro: `estado`, `versaoDoJogo`, `atualizadoEm`, `secoes` e
+  `palavrasChave`.
 
 ## Integrações externas
 
-Nenhuma API. Só recursos de terceiros no navegador:
+Nenhuma API em tempo de execução.
 
-- miniaturas `i.ytimg.com` (liberadas em `images.remotePatterns` do `next.config.ts`) e iframe
-  `youtube.com/embed`, carregado só no clique;
-- Google Fonts, baixadas no build pelo `next/font` (não no navegador).
+- Miniaturas `i.ytimg.com` (liberadas em `images.remotePatterns`) e iframe `youtube.com/embed`,
+  só depois do clique.
+- Google Fonts baixadas no build pelo `next/font`.
+- Leveling (modelo antigo) ainda usa ícones da CDN oficial; ver `docs/CREDITOS.md`.
 
 ## Configuração do Next (`next.config.ts`)
 
-- `poweredByHeader: false`;
-- cache de 1 ano (`immutable`) em `/_next/static` e em arquivos de imagem e fonte;
-- cabeçalhos de segurança em todas as rotas: `X-Frame-Options: DENY`, `nosniff`,
-  `Referrer-Policy`, `Permissions-Policy`, `COOP`, `CORP` e outros. Não há CSP.
+`poweredByHeader: false`; redirects do registro; cache de 1 ano em `/_next/static` e em arquivos
+de mídia; cabeçalhos de segurança em todas as rotas. Não há CSP.
 
 ## Padrões de código
 
