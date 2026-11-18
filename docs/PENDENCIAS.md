@@ -24,7 +24,6 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 |---|---|
 | Rank que libera o beacon Crimson (Admiral ou Master) e o Rainbow (Commander ou Master) | Lootrun, tabela de beacons |
 | Quantos gambits ficam ativos ao mesmo tempo (4 slots, mas a wiki fala em 3) | Raids, gambits |
-| Moeda do Dungeon Merchant para itens intransferíveis (Boss Token ou fragmentos) | Dungeons, Merchant |
 | Cor exata do beacon Crimson (usada uma aproximada) | Lootrun |
 | Cor da raridade Crafted (não está na paleta do guia oficial de itens) | Não usada ainda |
 | Coordenadas de entrada das raids: as do site divergem das da API em 20 a 170 blocos (TNA a maior) | Raids. Mantidas as do site, anotadas pela guilda; conferir no jogo |
@@ -47,12 +46,14 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 | Modos especiais: na 1.19 o Hunted também podia ser ligado e desligado (soul points, depois só em cidades com espera de 15 min); a wiki atual só descreve o modo escolhido na criação. Conferir se a opção ainda existe | Modos especiais, Hunted |
 | Modos especiais: espera para atacar depois de entrar no servidor no Hunted (1 min na 1.19; 10 s na 2.0.3) | Fora do guia até confirmar |
 | Modos especiais: se o Ingredient Pouch "guarda tudo" vale para o Ironman normal ou só para o Ultimate (a wiki diverge) | Modos especiais, Ironman |
+| World Events: "até 4 LE" nos eventos mais altos e "chance pequena de mítico" a partir do nível 90 vêm do texto antigo, sem fonte na wiki. Ficaram como experiência da guilda | World Events, Recompensas |
+| Dungeons: "run completa em uns 30 minutos" vem do texto antigo, sem fonte. Ficou como Dica da GsW | Dungeons, Dicas |
 
 ## Próxima etapa (depois da validação)
 
 | Prioridade | Item | Detalhe |
 |---|---|---|
-| Alta | Aplicar o modelo de Raids aos outros guias | Lootrun, Dungeons, Leveling, Profissões, World Events, Shares, Modos especiais. Cabeçalhos de seção, superfícies e alinhamento já seguem o sistema; falta o miolo: tabelas que são imagem (ranks do Lootrun, Profissões, Modos) viram `<table>`, cards dentro de painéis (camps do Lootrun) e grades com card sozinho (Bombas de XP, Camp 07, galeria do Shares) |
+| Alta | Aplicar o modelo de Raids aos outros guias | Faltam Lootrun, Leveling, Profissões e Shares (Dungeons, World Events e Modos especiais já migraram). Cabeçalhos de seção, superfícies e alinhamento já seguem o sistema; falta o miolo: tabelas que são imagem (ranks do Lootrun, Profissões, Modos) viram `<table>`, cards dentro de painéis (camps do Lootrun) e grades com card sozinho (Bombas de XP, Camp 07, galeria do Shares) |
 | Média | Mídia solta na Raids | As 4 telas da fila de party têm alturas diferentes; a print ao lado da Dica em "Raids da guilda" fica órfã. Imagens soltas dos guias antigos ficam à esquerda no tamanho original (ampliar prints pequenas as borra) |
 | Alta | Comunidade | `/comunidade` como hub (história, membros, galeria, Shares, Discord). A galeria abre pelo teclado num <dialog> no padrão do site. A História já está na coluna de leitura e no sistema (linha do tempo em trilho, cards de membro, pilares); falta o índice "Nesta página" quando virar hub, e decidir se as citações em itálico continuam |
 | Alta | Conteúdo desatualizado restante | Leveling sem spots de Fruma; marcos de Profissões (115/117) e níveis de ferramenta; World Events (Subjugates, party de 10, Corrupted Cache); textos sem acento do bloco Membership do Shares (`docs/redesign/inventario-conteudo.md`) |

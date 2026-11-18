@@ -39,11 +39,13 @@ components/
                         movimento), TransicaoDePagina, TextoAnimado
   (lib/previas.ts)      tópicos e tempo de leitura de cada guia, tirados do conteúdo, para a Início
   guias/                peças do modelo de guia: GuiaLayout, FichaGuia, DicaGsw, Termo,
-                        TextoComTermos ([[termo]] e {{x, y, z}}), SecaoGuia, Figura, Galeria, Destaque (informação,
+                        TextoComTermos ([[termo]] e {{x, y, z}}), SecaoGuia, Figura, FiguraNoTamanho (print solta no
+                        tamanho real), Galeria, Destaque (informação,
                         atenção, dica), Coordenada (copiável), RecursoExterno, TextoGlitch,
                         FimDoGuia, Breadcrumb, SeloVersao,
                         GuiaEmConstrucao
-  <area>/pages|sections|data/   cada guia (Raids, Montarias e Festivais no modelo novo; os outros com o miolo antigo)
+  <area>/pages|sections|data/   cada guia (Raids, Montarias, Festivais, Modos especiais, Dungeons e
+                                World Events no modelo novo; os outros com o miolo antigo)
 lib/
   site-content.ts       registro de guias e áreas: navegação, busca, redirects, metadata
   glossario.ts          termos do jogo com explicação própria (usados pelo <Termo>)
