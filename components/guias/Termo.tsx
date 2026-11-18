@@ -60,12 +60,11 @@ export default function Termo({ id, children }: TermoProps) {
       <span
         id={caixaId}
         role="tooltip"
-        // Fechada, sai do layout (não empurra a página para o lado); a entrada anima com @starting-style.
+        // Fechada, sai do layout; ao abrir, .caixa-abre roda o surgimento e o recorte em degraus (motion.css).
         style={{ left: deslocamento }}
-        // Movimento reduzido: só a opacidade, em 120ms, sem deslocamento (direcao-visual.md).
-        className={`caixa-item absolute z-50 w-72 max-w-[calc(100vw-2rem)] px-4 py-3 text-left transition-[opacity,translate] duration-200 [transition-timing-function:var(--ease-saida)] starting:opacity-0 motion-reduce:transition-opacity motion-reduce:duration-[120ms] motion-reduce:starting:translate-y-0 ${
-          acima ? "bottom-full mb-2 starting:translate-y-1" : "top-full mt-2 starting:-translate-y-1"
-        } ${aberto ? "block translate-y-0 opacity-100" : "hidden"}`}
+        className={`caixa-item caixa-abre absolute z-50 w-72 max-w-[calc(100vw-2rem)] px-4 py-3 text-left ${
+          acima ? "bottom-full mb-2 [--caixa-y:6px]" : "top-full mt-2 [--caixa-y:-6px]"
+        } ${aberto ? "block" : "hidden"}`}
       >
         <span className="block font-titulo text-titulo-4 leading-tight text-violeta">{item.termo}</span>
         <span className="mt-0.5 block text-apoio italic text-texto-3">{item.tipo}</span>

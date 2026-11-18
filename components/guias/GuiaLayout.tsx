@@ -195,7 +195,7 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
           </div>
         ) : null}
 
-        <div ref={conteudoRef} data-guia-conteudo className="w-full">
+        <div ref={conteudoRef} key={pathname} data-guia-conteudo className="pagina-entra w-full">
           {children}
         </div>
       </div>

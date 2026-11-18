@@ -1,63 +1,539 @@
+/*
+ * Linguagem de movimento do site (docs/redesign/ANIMACOES.md).
+ * Só transform, opacity, filter e clip-path. Tudo nasce no estado inicial já no primeiro desenho:
+ * entradas de topo são keyframes CSS com fill "both" no HTML do servidor; revelações ao rolar
+ * dependem da classe `js` que o script do <head> põe antes do primeiro desenho (sem JS, tudo aparece).
+ * Movimento reduzido: só fades curtos.
+ */
+:root {
+  --ease-meio: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-ui: 180ms;
+  --dur-hover: 400ms;
+  --dur-entrada: 800ms;
+  --subida: 24px;
+  --escalonar: 70ms;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes entrar {
+  from {
+    opacity: 0.01;
+    transform: translate3d(0, var(--subida), 0);
+  }
+}
+
+@keyframes palavra-sobe {
+  from {
+    transform: translate3d(0, 110%, 0) rotate(4deg);
+  }
+}
+
+@keyframes pagina-entra {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+}
+
+/* Sem filter: animar blur numa camada com imagem grande deixava o Chrome preso no quadro escuro inicial. */
+@keyframes imagem-abre {
+  from {
+    opacity: 0;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes caixa-surge {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--caixa-y, 6px), 0) scale(0.96);
+  }
+}
+
+/* Recorte em degraus: a caixa "desenha" de cima para baixo como uma interface de jogo. */
+@keyframes caixa-pixel {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes particula {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    opacity: var(--brilho, 0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--deriva, 12px), -60vh, 0);
+  }
+}
+
+@keyframes fita {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes rolar-dica {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+@property --feixe {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes feixe-gira {
+  to {
+    --feixe: 360deg;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.2s var(--ease-saida) forwards;
+/* ---------- Entradas de topo (CSS puro, primeiro desenho) ---------- */
+.entra {
+  animation: entrar var(--dur-entrada) var(--ease-saida) both;
+  animation-delay: calc(120ms + var(--i, 0) * var(--escalonar));
 }
 
-/* Entrada só na abertura das seções da História (AnimationInitializer): 12px e 360ms, uma vez.
-   O estado escondido só existe com movimento liberado; com movimento reduzido o conteúdo nasce visível. */
-.reveal-on-scroll {
-  transition-property: opacity, transform;
-  transition-duration: 360ms;
-  transition-timing-function: var(--ease-saida);
-  transition-delay: var(--reveal-delay, 0ms);
+/* Texto em palavras com máscara: cada palavra sobe de dentro da própria linha. */
+.palavras .palavra {
+  display: inline-block;
+  overflow: hidden;
+  /* respiro para acentos e descendentes não serem cortados pela máscara */
+  padding: 0.12em 0.04em 0.16em;
+  margin: -0.12em -0.04em -0.16em;
+  vertical-align: top;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .reveal-on-scroll:not(.visible) {
-    opacity: 0;
-    transform: translate3d(0, 12px, 0);
-  }
+.palavras .palavra > span {
+  display: inline-block;
+  animation: palavra-sobe 900ms var(--ease-saida) both;
+  animation-delay: calc(80ms + var(--i, 0) * 55ms);
+  transform-origin: 0 100%;
+}
 
-  .reveal-on-scroll[data-reveal="left"]:not(.visible) {
-    transform: translate3d(-12px, 0, 0);
-  }
+.pagina-entra {
+  animation: pagina-entra 450ms var(--ease-saida) both;
+}
 
-  .reveal-on-scroll[data-reveal="right"]:not(.visible) {
-    transform: translate3d(12px, 0, 0);
-  }
+/* ---------- Revelação ao rolar (script do <head> + IntersectionObserver) ----------
+   Manter a lista igual a SELETORES_REVELAR em lib/movimento.ts. */
+html.js
+  :is(
+    main section h2,
+    main section h3,
+    main figure,
+    main picture,
+    main table,
+    main section article:not([id]),
+    main .caixa-item:not(.caixa-abre),
+    main section ol > li,
+    main section ul.grid > li,
+    main [data-revelar-item]
+  ):not([data-visto]):not([data-sem-revelar] *) {
+  opacity: 0;
+  transform: translate3d(0, var(--subida), 0);
+}
 
-  .reveal-on-scroll[data-reveal="up"]:not(.visible) {
-    transform: translate3d(0, -12px, 0);
-  }
+html.js [data-visto] {
+  transition:
+    opacity var(--dur-entrada) var(--ease-saida),
+    transform var(--dur-entrada) var(--ease-saida);
+  transition-delay: calc(var(--i, 0) * var(--escalonar));
+}
+
+[data-i="1"] { --i: 1; }
+[data-i="2"] { --i: 2; }
+[data-i="3"] { --i: 3; }
+[data-i="4"] { --i: 4; }
+[data-i="5"] { --i: 5; }
+
+/* Imagens revelam com máscara: abrem de dentro, sem o bloco subir junto. */
+html.js :is(main figure, main picture):not([data-visto]):not([data-sem-revelar] *) {
+  transform: none;
+  clip-path: inset(6% 6% 6% 6% round 6px);
+}
+
+html.js :is(main figure, main picture)[data-visto]:not([data-sem-revelar] *) {
+  clip-path: inset(0 0 0 0 round 0);
+  transition:
+    opacity 600ms var(--ease-saida),
+    clip-path 1100ms var(--ease-saida);
+}
+
+html.js :is(main figure, main picture):not([data-visto]):not([data-sem-revelar] *) img {
+  transform: scale(1.12);
+}
+
+html.js :is(main figure, main picture)[data-visto]:not([data-sem-revelar] *) img {
+  transition: transform 1400ms var(--ease-saida);
+}
+
+/* A caixa de item "desenha" em degraus ao aparecer, como no jogo. */
+html.js main .caixa-item:not(.caixa-abre)[data-visto] {
+  animation: caixa-pixel 420ms steps(7, end) both;
+  animation-delay: calc(var(--i, 0) * var(--escalonar));
+}
+
+/* Trilho da linha do tempo da História: desenha de cima para baixo ao aparecer. */
+.trilho-desenha {
+  position: relative;
+}
+
+.trilho-desenha::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(var(--color-violeta-borda), var(--color-linha-forte) 40%);
+  transform-origin: top;
+  transition: transform 1200ms var(--ease-saida);
+}
+
+html.js .trilho-desenha:not([data-visto])::before {
+  transform: scaleY(0);
+}
+
+/* ---------- Microinterações ---------- */
+:is(a, button).bg-gsw:not([aria-current]) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform var(--dur-hover) var(--ease-saida),
+    box-shadow var(--dur-hover) var(--ease-saida),
+    background-color var(--dur-ui) var(--ease-saida);
+}
+
+/* Brilho que atravessa o botão no hover. */
+:is(a, button).bg-gsw:not([aria-current])::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.28) 48%, transparent 66%);
+  transform: translate3d(-120%, 0, 0);
+  transition: transform 700ms var(--ease-saida);
+  pointer-events: none;
+}
+
+:is(a, button).bg-gsw:not([aria-current]):hover {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 0 14px 30px -14px rgba(113, 22, 173, 0.9);
+}
+
+:is(a, button).bg-gsw:not([aria-current]):hover::after {
+  transform: translate3d(120%, 0, 0);
+}
+
+:is(a, button):is(.bg-gsw, .border-linha-forte):active {
+  transform: translate3d(0, 0, 0) scale(0.97);
+  transition-duration: 80ms;
+}
+
+a.border-linha-forte,
+button.border-linha-forte {
+  transition:
+    transform var(--dur-hover) var(--ease-saida),
+    border-color var(--dur-ui) var(--ease-saida),
+    background-color var(--dur-ui) var(--ease-saida);
+}
+
+a.border-linha-forte:hover,
+button.border-linha-forte:hover {
+  transform: translate3d(0, -2px, 0);
+  background-color: rgba(113, 22, 173, 0.12);
+}
+
+/* Setas andam na direção do link. */
+a .lucide-arrow-right,
+button .lucide-arrow-right {
+  transition: transform var(--dur-hover) var(--ease-saida);
+}
+
+a:hover .lucide-arrow-right,
+button:hover .lucide-arrow-right {
+  transform: translate3d(4px, 0, 0);
+}
+
+/* Holofote que segue o cursor nos cartões (Efeitos grava --mx e --my). */
+:is(.holofote, [data-guia-conteudo] section article:not([id])) {
+  position: relative;
+  isolation: isolate;
+}
+
+:is(.holofote, [data-guia-conteudo] section article:not([id]))::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(155, 77, 219, 0.18), transparent 65%);
+  opacity: 0;
+  transition: opacity var(--dur-hover) var(--ease-saida);
+  pointer-events: none;
+}
+
+:is(.holofote, [data-guia-conteudo] section article:not([id])):hover::before {
+  opacity: 1;
+}
+
+:is(.holofote, [data-guia-conteudo] section article:not([id])):hover {
+  border-color: rgba(155, 77, 219, 0.45);
+}
+
+[data-inclinar] {
+  transition:
+    transform var(--dur-hover) var(--ease-saida),
+    border-color var(--dur-ui) var(--ease-saida);
+  will-change: transform;
+}
+
+/* Imagens que respondem ao hover. */
+.zoom-hover {
+  overflow: hidden;
+}
+
+.zoom-hover img {
+  transition:
+    transform 900ms var(--ease-saida),
+    filter var(--dur-hover) var(--ease-saida);
+}
+
+.zoom-hover:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.08) saturate(1.08);
+}
+
+/* Borda com feixe girando (destaques raros, como um item mítico). */
+.feixe {
+  position: relative;
+  isolation: isolate;
+}
+
+.feixe::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--feixe), transparent 0 70%, var(--color-violeta) 82%, #fff 86%, var(--color-gsw) 90%, transparent 100%);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: feixe-gira 5s linear infinite;
+  pointer-events: none;
+}
+
+/* ---------- Início: palco fixo, partículas, fita ---------- */
+/* Efeitos grava --p (0 a 1) no [data-trilho] conforme a rolagem atravessa o palco. */
+.palco-imagem {
+  transform: scale(calc(1.04 + var(--p, 0) * 0.22)) translate3d(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px), 0);
+  transform-origin: 60% 40%;
+  transition: transform 300ms linear;
+}
+
+.palco-veu {
+  opacity: calc(0.35 + var(--p, 0) * 0.65);
+}
+
+.palco-texto {
+  transform: translate3d(0, calc(var(--p, 0) * -14vh), 0);
+  opacity: calc(1 - var(--p, 0) * 1.8);
+}
+
+.palco-imagem-entra {
+  animation: imagem-abre 1600ms var(--ease-saida) both;
+}
+
+.particulas span {
+  position: absolute;
+  bottom: -10px;
+  width: var(--tam, 4px);
+  height: var(--tam, 4px);
+  background: var(--cor, var(--color-violeta));
+  box-shadow: 0 0 10px var(--cor, var(--color-violeta));
+  opacity: 0;
+  animation: particula var(--dur, 9s) linear infinite;
+  animation-delay: var(--atraso, 0s);
+}
+
+.dica-rolar {
+  animation: rolar-dica 1.8s var(--ease-meio) infinite;
+}
+
+.fita-trilho {
+  display: flex;
+  width: max-content;
+  animation: fita 48s linear infinite;
+}
+
+.fita:hover .fita-trilho {
+  animation-play-state: paused;
+}
+
+.fita {
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+/* Top bar ganha vidro quando a página rola (Efeitos marca html[data-rolou]). */
+.topo-site {
+  transition:
+    background-color var(--dur-hover) var(--ease-saida),
+    backdrop-filter var(--dur-hover) var(--ease-saida),
+    box-shadow var(--dur-hover) var(--ease-saida);
+}
+
+html[data-rolou] .topo-site {
+  background-color: rgba(15, 13, 17, 0.72);
+  backdrop-filter: blur(14px) saturate(1.4);
+  box-shadow:
+    inset 0 -1px 0 rgba(113, 22, 173, 0.55),
+    0 12px 30px -18px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- Termo do jogo: a caixa de item abrindo ---------- */
+.caixa-abre:not(.hidden) {
+  animation:
+    caixa-surge 240ms var(--ease-saida) both,
+    caixa-pixel 240ms steps(6, end) both;
+}
+
+.caixa-abre:not(.hidden) > span {
+  animation: entrar 360ms var(--ease-saida) both;
+  --subida: 4px;
+}
+
+.caixa-abre:not(.hidden) > span:nth-child(2) {
+  animation-delay: 60ms;
+}
+
+.caixa-abre:not(.hidden) > span:nth-child(3) {
+  animation-delay: 110ms;
+}
+
+/* ---------- Sidebar dos guias ---------- */
+.item-guia {
+  transition:
+    background-color var(--dur-ui) var(--ease-saida),
+    color var(--dur-ui) var(--ease-saida),
+    padding-left var(--dur-hover) var(--ease-saida);
+}
+
+.item-guia:not([aria-current="page"]):hover {
+  padding-left: 1rem;
 }
 
 .bg-panel {
   background: var(--color-panel);
 }
 
+/* ---------- Movimento reduzido: só fades curtos ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
   }
 
-  .reveal-on-scroll,
-  .reveal-on-scroll[data-reveal] {
-    transform: none;
-    transition: opacity 120ms linear;
-    transition-delay: 0ms;
+  .entra,
+  .palavras .palavra > span,
+  .pagina-entra,
+  .palco-imagem-entra,
+  .caixa-abre:not(.hidden),
+  .caixa-abre:not(.hidden) > span,
+  html.js main .caixa-item:not(.caixa-abre)[data-visto] {
+    animation: fadeIn 200ms linear both !important;
   }
 
-  .animate-fade-in {
-    animation-duration: 120ms;
+  html.js :is(
+      main section h2,
+      main section h3,
+      main figure,
+      main picture,
+      main table,
+      main section article:not([id]),
+      main .caixa-item:not(.caixa-abre),
+      main section ol > li,
+      main section ul.grid > li,
+      main [data-revelar-item]
+    ):not([data-visto]) {
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  html.js [data-visto],
+  html.js [data-visto] img {
+    transition: opacity 200ms linear !important;
+    transform: none !important;
+  }
+
+  .palco-imagem,
+  .palco-texto {
+    transform: none;
+    opacity: 1;
+  }
+
+  .particulas,
+  .dica-rolar,
+  .feixe::after {
+    animation: none;
+    display: none;
+  }
+
+  .fita-trilho {
+    animation: none;
+  }
+
+  .trilho-desenha::before {
+    transform: none !important;
+  }
+
+  :is(a, button).bg-gsw:not([aria-current]):hover,
+  a.border-linha-forte:hover,
+  button.border-linha-forte:hover,
+  [data-inclinar] {
+    transform: none !important;
+  }
+}
+
+/* Impressão: nada escondido à espera de rolagem. */
+@media print {
+  html.js :is(
+      main section h2,
+      main section h3,
+      main figure,
+      main picture,
+      main table,
+      main section article:not([id]),
+      main .caixa-item:not(.caixa-abre),
+      main section ol > li,
+      main section ul.grid > li,
+      main [data-revelar-item]
+    ):not([data-visto]) {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
   }
 }

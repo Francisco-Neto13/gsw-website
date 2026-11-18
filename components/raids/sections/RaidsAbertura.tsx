@@ -2,6 +2,8 @@ import Breadcrumb from "@/components/guias/Breadcrumb";
 import FichaGuia from "@/components/guias/FichaGuia";
 import SeloVersao from "@/components/guias/SeloVersao";
 import TextoComTermos from "@/components/guias/TextoComTermos";
+import TextoAnimado from "@/components/shared/TextoAnimado";
+import type { CSSProperties } from "react";
 import { raids, raidsIntroParagraphs, raidsResumo } from "@/components/raids/data/raids-content";
 import { guias } from "@/lib/site-content";
 
@@ -14,9 +16,13 @@ export default function RaidsAbertura() {
       {/* Desktop largo: a ficha vira quadro lateral do texto de abertura, como numa wiki. */}
       <div className="grid gap-x-12 xl:grid-cols-[minmax(0,1fr)_minmax(20rem,26rem)]">
       <div className="max-w-leitura xl:col-start-1">
-        <Breadcrumb guia={guia} />
-        <h1 className="mt-3 text-titulo-1 text-texto">Raids</h1>
-        <p className="mt-3 text-lede text-texto-2">
+        <div className="entra">
+          <Breadcrumb guia={guia} />
+        </div>
+        <h1 className="mt-3 text-titulo-1 text-texto">
+          <TextoAnimado texto="Raids" inicio={1} />
+        </h1>
+        <p className="entra mt-3 text-lede text-texto-2" style={{ "--i": 2 } as CSSProperties}>
           As cinco raids do Wynncraft sala a sala, com as variações de cada uma e vídeos em POV da guilda.
         </p>
       </div>

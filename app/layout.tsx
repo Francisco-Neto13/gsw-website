@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Alegreya_Sans, JetBrains_Mono, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
-import AnimationInitializer from "@/components/shared/AnimationInitializer";
+import Efeitos from "@/components/shared/Efeitos";
 import SiteFooter from "@/components/shared/SiteFooter";
 import TopBar from "@/components/shared/TopBar";
+import TransicaoDePagina from "@/components/shared/TransicaoDePagina";
+import { scriptDeRevelacao } from "@/lib/movimento";
 
 const pixelify = Pixelify_Sans({
   variable: "--font-pixelify",
@@ -42,15 +44,24 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${pixelify.variable} ${alegreya.variable} ${jetbrains.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${pixelify.variable} ${alegreya.variable} ${jetbrains.variable}`}
+      // O script abaixo põe "js" e o motor de efeitos põe "lenis" e data-rolou antes de o React hidratar.
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Antes do primeiro desenho: liga a revelação ao rolar sem esperar o React (lib/movimento.ts). */}
+        <script dangerouslySetInnerHTML={{ __html: scriptDeRevelacao }} />
+      </head>
       <body className="antialiased">
         <a href="#conteudo" className="pular-para-conteudo">
           Pular para o conteúdo
         </a>
-        <AnimationInitializer />
+        <Efeitos />
         <TopBar />
         <main id="conteudo" tabIndex={-1} className="min-h-[calc(100vh-var(--topbar-h))] outline-none">
-          {children}
+          <TransicaoDePagina>{children}</TransicaoDePagina>
         </main>
         <SiteFooter />
       </body>

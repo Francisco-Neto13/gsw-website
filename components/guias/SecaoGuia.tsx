@@ -11,7 +11,7 @@ type SecaoGuiaProps = {
 /** Bloco padrão de um guia: âncora para o índice, título e texto na largura de leitura. */
 export default function SecaoGuia({ id, titulo, introducao, children }: SecaoGuiaProps) {
   return (
-    <section id={id} aria-labelledby={`${id}-titulo`} className="scroll-mt-28 border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
+    <section id={id} aria-labelledby={`${id}-titulo`} className="scroll-mt-12 xl:scroll-mt-0 border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <header className="max-w-leitura">
         <h2 id={`${id}-titulo`} className="text-titulo-2 text-texto">
           {titulo}

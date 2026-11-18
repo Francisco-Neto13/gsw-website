@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SeloVersao from "@/components/guias/SeloVersao";
+import TextoAnimado from "@/components/shared/TextoAnimado";
 import { grupos, guiaHref, guiasDoGrupo } from "@/lib/site-content";
 
 export const metadata = {
@@ -11,8 +12,10 @@ export const metadata = {
 export default function PaginaDosGuias() {
   return (
     <div className="casca pb-16 pt-8 lg:pt-10">
-      <h1 className="text-titulo-1 text-texto">Guias</h1>
-      <p className="mt-3 max-w-leitura text-lede text-texto-2">
+      <h1 className="text-titulo-1 text-texto">
+        <TextoAnimado texto="Guias" />
+      </h1>
+      <p className="entra mt-3 max-w-leitura text-lede text-texto-2">
         Tudo o que a guilda já escreveu sobre o Wynncraft, por etapa do jogo. Guias marcados como em construção estão
         sendo escritos; os marcados com revisão pendente ainda não foram conferidos para a versão atual do jogo e
         podem ter dados desatualizados.
@@ -30,7 +33,7 @@ export default function PaginaDosGuias() {
                 <li key={guia.slug} className="border-b border-linha">
                   <Link
                     href={guiaHref(guia.slug)}
-                    className="group grid gap-x-6 gap-y-2 py-4 transition-colors duration-150 sm:grid-cols-[12rem_1fr_auto] sm:items-center"
+                    className="group grid gap-x-6 gap-y-2 py-4 transition-[color,padding] duration-[var(--dur-hover)] ease-[var(--ease-saida)] hover:pl-2 sm:grid-cols-[12rem_1fr_auto] sm:items-center"
                   >
                     <span className="font-titulo text-titulo-4 text-texto group-hover:text-violeta">{guia.titulo}</span>
                     <span className="text-texto-2">{guia.resumo}</span>

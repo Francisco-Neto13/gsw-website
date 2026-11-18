@@ -28,7 +28,7 @@ export default function GuiaNavLista({ onNavigate }: GuiaNavListaProps) {
                     href={href}
                     onClick={onNavigate}
                     aria-current={ativo ? "page" : undefined}
-                    className={`flex items-center justify-between gap-2 rounded-md px-3 py-2 text-apoio leading-tight transition-colors duration-150 ${
+                    className={`item-guia flex items-center justify-between gap-2 rounded-md px-3 py-2 text-apoio leading-tight transition-colors duration-150 ${
                       ativo
                         ? "bg-gsw font-medium text-white"
                         : "text-texto-2 hover:bg-elevada hover:text-texto"

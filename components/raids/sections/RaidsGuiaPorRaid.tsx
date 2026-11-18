@@ -96,7 +96,7 @@ function Sala({ sala, numero, raid }: { sala: RaidGuideRoom; numero: number; rai
 function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
   const raid = raids.find((item) => item.id === grupo.id)!;
   return (
-    <article id={raid.id} aria-labelledby={`${raid.id}-titulo`} className="scroll-mt-28 pt-12 first:pt-0">
+    <article id={raid.id} aria-labelledby={`${raid.id}-titulo`} className="scroll-mt-12 xl:scroll-mt-0 pt-12 first:pt-0">
       <header className="">
         <h3 id={`${raid.id}-titulo`} className="font-titulo text-titulo-3 leading-tight text-texto">
           {raid.name} <span className="text-texto-3">({raid.sigla})</span>

@@ -15,7 +15,7 @@ export default function FimDoGuia({ slug, fontes }: FimDoGuiaProps) {
 
   return (
     <>
-      <section id="fontes" className="scroll-mt-24 px-4 py-12 sm:px-6 lg:px-10">
+      <section id="fontes" className="scroll-mt-12 xl:scroll-mt-0 px-4 py-12 sm:px-6 lg:px-10">
         <div className="max-w-leitura">
           <h2 className="text-titulo-2 text-texto">Fontes</h2>
           <p className="mt-3 text-texto-2">
