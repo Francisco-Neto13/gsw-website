@@ -41,6 +41,12 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 | Baixa | Sem CSP | `next.config.ts` não define `Content-Security-Policy` (precisa liberar YouTube e `i.ytimg.com`) |
 | Baixa | Guias antigos com fundo preto | Neutralizado por um `shortcut:` em `app/styles/foundation.css`; sai quando cada guia for refeito |
 
+## Observar na hospedagem nova
+
+| Item | Detalhe |
+|---|---|
+| Otimizador de imagens do Next | Em 18/11/2026, um pedido (`raid-ui-bau-recompensa-1280.webp`, 384 px, qualidade 90, AVIF) travou no `next start` local e todo pedido igual ficou esperando o primeiro, até reiniciar o servidor. Não se repetiu depois. Na hospedagem nova, conferir se há timeout no otimizador ou usar `unoptimized` nas prints que já são geradas em AVIF/WebP |
+
 ## CI/CD e repositório
 
 | Item | Detalhe |
