@@ -41,14 +41,15 @@ export default function MontariasTreinamento() {
       {boost.length > 0 ? (
         <>
           <h4 className="mt-8 text-titulo-5 font-bold text-texto">De boost</h4>
-          {/* Meia largura: os dois quadros ficam do tamanho dos quatro por linha da grade de atributo. */}
-          <Galeria className="mt-3 lg:max-w-[calc(50%-0.75rem)]" proporcao="1 / 1" itens={boost} />
+          {/* Prints de 215 px, nunca ampliadas: grades estreitas para o quadro ficar do tamanho da imagem.
+              A de boost tem metade da largura, para os dois quadros saírem do tamanho dos de atributo. */}
+          <Galeria className="mt-3 lg:max-w-[29.25rem]" proporcao="1 / 1" itens={boost} />
         </>
       ) : null}
       {atributo.length > 0 ? (
         <>
           <h4 className="mt-8 text-titulo-5 font-bold text-texto">De atributo</h4>
-          <Galeria className="mt-3" proporcao="1 / 1" itens={atributo} />
+          <Galeria className="mt-3 lg:max-w-[60rem]" proporcao="1 / 1" itens={atributo} />
         </>
       ) : null}
 
