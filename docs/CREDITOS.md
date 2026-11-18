@@ -49,18 +49,23 @@ pedirem:
   rodar `node scripts/medir-imagens.mjs` e o `npm run check`; as páginas seguem sem elas.
 - Todo arquivo da pasta tem linha na tabela abaixo; o `npm test` falha se faltar algum.
 
+O link de origem de cada arquivo fica em `lib/terceiros.ts` e aparece na legenda ("© Wynncraft").
+
 | Arquivo | Origem | Onde aparece |
 |---|---|---|
-| festival-heroes-logo.webp | Wiki (HeroesLogo.png), arte oficial | Festivais, ordem dos festivais |
-| festival-bonfire-logo.webp | Wiki (Festival_of_the_Bonfire_logo.png), arte oficial | Festivais, ordem dos festivais |
-| festival-spirits-logo.webp | Wiki (Festival_of_the_Spirits_logo.png), arte oficial | Festivais, ordem dos festivais |
-| festival-blizzard-logo.webp | Wiki (Festival_of_the_Blizzard_logo.png), arte oficial | Festivais, ordem dos festivais |
-| festival-bonfire-promocional.webp | Arte promocional oficial do Festival of the Bonfire | Festivais, abertura |
-| bonfire-keeper.webp | Wiki (Bonfire Keeper) | Festivais, Bonfire |
-| spirits-alma.webp | Wiki (alma perdida), origem não confirmada | Festivais, Spirits |
-| blizzard-the-traveler.webp | Wiki (The Traveler) | Festivais, Blizzard |
-| blizzard-convites.webp | Wiki (Wynnter Invitations) | Festivais, Blizzard |
-| blizzard-brawl-mapa.webp | Wiki (mapa do Blizzard Brawl) | Festivais, Blizzard |
+| festival-heroes-logo.webp | [Wiki: HeroesLogo.png](https://wynncraft.wiki.gg/wiki/File:HeroesLogo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-bonfire-logo.webp | [Wiki: Festival_of_the_Bonfire_logo.png](https://wynncraft.wiki.gg/wiki/File:Festival_of_the_Bonfire_logo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-spirits-logo.webp | [Wiki: Festival_of_the_Spirits_logo.png](https://wynncraft.wiki.gg/wiki/File:Festival_of_the_Spirits_logo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-blizzard-logo.webp | [Wiki: Festival_of_the_Blizzard_logo.png](https://wynncraft.wiki.gg/wiki/File:Festival_of_the_Blizzard_logo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-bonfire-promocional.webp | [Wiki: BonfirePromo2022.png](https://wynncraft.wiki.gg/wiki/File:BonfirePromo2022.png), arte promocional oficial | Festivais, abertura |
+| bonfire-keeper.webp | [Wiki: BonfireKeeper(BattlefortheBonfire).png](https://wynncraft.wiki.gg/wiki/File:BonfireKeeper(BattlefortheBonfire).png) | Festivais, Bonfire |
+| spirits-alma.webp | [Wiki: LostSpirit.png](https://wynncraft.wiki.gg/wiki/File:LostSpirit.png) | Festivais, Spirits |
+| blizzard-the-traveler.webp | [Wiki: TheTraveler.png](https://wynncraft.wiki.gg/wiki/File:TheTraveler.png) | Festivais, Blizzard |
+| blizzard-convites.webp | [Wiki: WynnterInvitations.png](https://wynncraft.wiki.gg/wiki/File:WynnterInvitations.png) | Festivais, Blizzard |
+| blizzard-brawl-mapa.webp | [Wiki: BBWorkshopMap.png](https://wynncraft.wiki.gg/wiki/File:BBWorkshopMap.png) | Festivais, Blizzard |
+| modos-icones-chat.webp | [Wiki: HICicons.png](https://wynncraft.wiki.gg/wiki/File:HICicons.png) | Modos especiais, como escolher |
+| hunted-npc-inicio.webp | [Wiki: AHunter'sCallingStartNPC.png](https://wynncraft.wiki.gg/wiki/File:AHunter%27sCallingStartNPC.png) | Modos especiais, Hunted |
+| hunted-aledar.webp | [Wiki: Aledar,theExterminator(Phase1).png](https://wynncraft.wiki.gg/wiki/File:Aledar,theExterminator(Phase1).png) | Modos especiais, Hunted |
 
 ## Imagens de itens (CDN oficial)
 
