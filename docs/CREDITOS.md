@@ -155,6 +155,27 @@ O link de origem de cada arquivo fica em `lib/terceiros.ts` e aparece na legenda
 | item-wand-water1.webp | [CDN do guia de itens: wand.water1.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.water1.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
 | item-wand-water3.webp | [CDN do guia de itens: wand.water3.webp](https://cdn.wynncraft.com/nextgen/itemguide/3.3/wand.water3.webp), reduzido para 64 px | Leveling, rota de armas e acessórios |
 
+### Sites úteis: prévias dos sites da comunidade
+
+O guia Sites úteis (`/guias/sites-uteis`) mostra uma prévia de cada site. Quando o site tem imagem de
+compartilhamento (`og:image`), usamos ela; quando não tem, uma captura da página inicial feita em 18/11/2026
+(1200 × 630). Os logos da Wynncraft e da Wiki ficam em `public/terceiros/wynncraft/`; as prévias dos sites da
+comunidade, em `public/terceiros/sites/`, com o crédito "© criadores do site" e link para a origem.
+Cada card diz de quem é o site e que a GsW não tem vínculo com ele. Dois cards usam uma prévia desenhada
+com o nome do site: o WynnXR (certificado inválido quando conferimos) e a Wiki (a imagem de compartilhamento
+é o mesmo emblema da Wynncraft, e a página bloqueia captura automática).
+
+Curadoria e texto da seção: **FurionSpeed (Labubu)**, da comunidade, revisados pela GsW.
+
+| Arquivo | Origem | Onde aparece |
+|---|---|---|
+| site-wynncraft-logo.webp | [og:image de wynncraft.com](https://cdn.wynncraft.com/nextgen/themes/classic/assets/wynncraft_icon.png), logo oficial | Sites úteis, card do Wynncraft |
+| wynnpool.webp | [og:image de wynnpool.com](https://www.wynnpool.com/images/og-image.png) | Sites úteis, card do Wynnpool |
+| nori-fish.webp | [og:image de nori.fish](https://nori.fish/resources/nori_logo.png), logo de RawFish | Sites úteis, card do nori.fish |
+| wynnbuilder.webp | Captura de [wynnbuilder.github.io](https://wynnbuilder.github.io/) (sem og:image) | Sites úteis, card do WynnBuilder |
+| wynnventory.webp | Captura de [wynnventory.com](https://www.wynnventory.com/) (sem og:image) | Sites úteis, card do Wynnventory |
+| wynncrafter.webp | Captura de [wynnbuilder.github.io/crafter](https://wynnbuilder.github.io/crafter/) (sem og:image) | Sites úteis, card do WynnCrafter |
+
 ## Imagens de itens (CDN oficial)
 
 `https://cdn.wynncraft.com/nextgen/itemguide/3.3/<nome>.webp` não tem licença publicada; o uso
