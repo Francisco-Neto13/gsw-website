@@ -42,7 +42,7 @@ export default function RaidsAbertura() {
         />
       </div>
 
-      <div className="mt-8 max-w-leitura xl:col-start-1">
+      <div className="entra mt-8 max-w-leitura xl:col-start-1" style={{ "--i": 4 } as CSSProperties}>
         {raidsIntroParagraphs.map((paragrafo) => (
           <p key={paragrafo} className="text-texto-2">
             {paragrafo}

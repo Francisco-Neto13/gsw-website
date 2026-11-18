@@ -12,6 +12,7 @@
   --dur-entrada: 800ms;
   --subida: 24px;
   --escalonar: 70ms;
+  --atraso-pagina: 900ms;
 }
 
 /* ---------- Keyframes ---------- */
@@ -139,6 +140,7 @@
    Manter a lista igual a SELETORES_REVELAR em lib/movimento.ts. */
 html.js
   :is(
+    main section:not(:has(h1)),
     main section h2,
     main section h3,
     main figure,
@@ -154,11 +156,23 @@ html.js
   transform: translate3d(0, var(--subida), 0);
 }
 
+/* A seção inteira só esmaece (sem subir): deslocar a seção mudaria o ponto de parada das âncoras do índice.
+   Quem sobe são os blocos dentro dela. */
+/* :not(#_) só sobe a especificidade acima da regra que esconde (que tem :is() com classes). */
+html.js main section:not(:has(h1)):not([data-visto]):not(#_) {
+  transform: none;
+}
+
 html.js [data-visto] {
   transition:
     opacity var(--dur-entrada) var(--ease-saida),
     transform var(--dur-entrada) var(--ease-saida);
   transition-delay: calc(var(--i, 0) * var(--escalonar));
+}
+
+/* Primeiro 1,2 s da página: o conteúdo espera o cabeçalho (título palavra a palavra, abertura) entrar. */
+html.js [data-visto][data-cedo] {
+  transition-delay: calc(var(--atraso-pagina) + var(--i, 0) * var(--escalonar));
 }
 
 [data-i="1"] { --i: 1; }
@@ -167,13 +181,21 @@ html.js [data-visto] {
 [data-i="4"] { --i: 4; }
 [data-i="5"] { --i: 5; }
 
-/* Imagens revelam com máscara: abrem de dentro, sem o bloco subir junto. */
+/* Imagens revelam sem o bloco subir. A <figure> (bloco de verdade) abre com máscara; o <picture> é inline e sem
+   caixa própria, então só esmaece: recortá-lo apagaria a <img> inteira e o observer nunca a veria entrar. */
 html.js :is(main figure, main picture):not([data-visto]):not([data-sem-revelar] *) {
   transform: none;
+}
+
+html.js main figure:not([data-visto]):not([data-sem-revelar] *) {
   clip-path: inset(6% 6% 6% 6% round 6px);
 }
 
 html.js :is(main figure, main picture)[data-visto]:not([data-sem-revelar] *) {
+  transition: opacity 600ms var(--ease-saida);
+}
+
+html.js main figure[data-visto]:not([data-sem-revelar] *) {
   clip-path: inset(0 0 0 0 round 0);
   transition:
     opacity 600ms var(--ease-saida),
@@ -468,7 +490,8 @@ html[data-rolou] .topo-site {
   }
 
   html.js :is(
-      main section h2,
+      main section:not(:has(h1)),
+    main section h2,
       main section h3,
       main figure,
       main picture,
@@ -521,7 +544,8 @@ html[data-rolou] .topo-site {
 /* Impressão: nada escondido à espera de rolagem. */
 @media print {
   html.js :is(
-      main section h2,
+      main section:not(:has(h1)),
+    main section h2,
       main section h3,
       main figure,
       main picture,
