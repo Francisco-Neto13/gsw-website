@@ -1,5 +1,4 @@
 {
-  "0": "raids-content.ts",
   "1": "silverbull-shares-content.ts",
   "3": "professions-content.ts",
   "4": "env",
@@ -12,7 +11,6 @@
   "25": "Créditos, fontes e licenças",
   "26": "[P1] Sem prefers-reduced-motion no reveal e scro",
   "27": "Pendências",
-  "30": "GuideIntro.tsx",
   "31": "deploy",
   "34": "Navegacao proposta",
   "35": "Estrutura do guia completo e plano de conteudo",
@@ -22,7 +20,6 @@
   "41": "Sidebar dos guias",
   "43": "Grafo do projeto (Graphify) doc",
   "44": "Mapa das pastas",
-  "45": "GuiaLayout.tsx",
   "59": "Item image and icon options (own prints, CDN, AP",
   "60": "Game guides (Lootrun, Dungeons, Raids, World Eve",
   "61": "global.d.ts",

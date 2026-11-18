@@ -78,10 +78,10 @@
     "semantic_hash": ""
   },
   "components/festivals/pages/FestivalsPage.tsx": {
-    "mtime": 1794986467.136837,
-    "seen": 1794989218.1700666,
-    "ast_hash": "30c0cd6e510b73a86a6c27e80e274d7d",
-    "semantic_hash": "30c0cd6e510b73a86a6c27e80e274d7d"
+    "mtime": 1795019748.158732,
+    "seen": 1795019893.8444042,
+    "ast_hash": "cbfc1814b02899ff126c8940050a019a",
+    "semantic_hash": ""
   },
   "components/history/data/gallery.ts": {
     "mtime": 1794986467.1653666,
@@ -474,9 +474,9 @@
     "semantic_hash": "0ed79c85de5bb2f1af5976079d448b19"
   },
   "lib/site-content.ts": {
-    "mtime": 1795017974.0978458,
-    "seen": 1795018118.0719903,
-    "ast_hash": "5f5e0e326bfc5d51c1bab7e2ed1150b2",
+    "mtime": 1795019783.9702468,
+    "seen": 1795019893.844544,
+    "ast_hash": "bad90b82a6bb639648d15af9b20260c0",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -534,9 +534,9 @@
     "semantic_hash": "416f42d13c08319479c63227b166b1c0"
   },
   "docs/ARQUITETURA.md": {
-    "mtime": 1795018104.6659214,
-    "seen": 1795018118.0720131,
-    "ast_hash": "c8686f5939a8c6485a371cd3b203d4cb",
+    "mtime": 1795019883.3383553,
+    "seen": 1795019893.844565,
+    "ast_hash": "a144103768e015f17663d4afb47b2822",
     "semantic_hash": ""
   },
   "docs/CI-CD.md": {
@@ -558,9 +558,9 @@
     "semantic_hash": "f5161c48166d49358dcd19aac600e4d1"
   },
   "docs/PENDENCIAS.md": {
-    "mtime": 1795019151.3664894,
-    "seen": 1795019219.6454108,
-    "ast_hash": "e8d7eee88d5d9d1111048ab9b3a89ef8",
+    "mtime": 1795019920.8265638,
+    "seen": 1795019970.5811722,
+    "ast_hash": "e78cd5d03fc571b295fb8082b61ef424",
     "semantic_hash": ""
   },
   "PRODUCT.md": {
@@ -792,10 +792,10 @@
     "semantic_hash": ""
   },
   "components/guias/TextoComTermos.tsx": {
-    "mtime": 1794986845.7852998,
-    "seen": 1794989218.1700783,
-    "ast_hash": "ad647a025f5258311b24ed1b618aadc2",
-    "semantic_hash": "ad647a025f5258311b24ed1b618aadc2"
+    "mtime": 1795019645.401362,
+    "seen": 1795019893.8444269,
+    "ast_hash": "f559eab39e06fabc91fe285615bd4ace",
+    "semantic_hash": ""
   },
   "components/home/sections/BotaoBuscar.tsx": {
     "mtime": 1794987970.3720467,
@@ -894,9 +894,9 @@
     "semantic_hash": "7fde8c3c223eb64eeebb99f3ebc66b51"
   },
   "lib/glossario.ts": {
-    "mtime": 1795017827.6571028,
-    "seen": 1795018118.0719855,
-    "ast_hash": "39e187d95a99a54884cdfaee91cf047d",
+    "mtime": 1795019631.8000257,
+    "seen": 1795019893.8445394,
+    "ast_hash": "7a51a946683a382d9f6489df393a1cd3",
     "semantic_hash": ""
   },
   "scripts/gif-para-webp.mjs": {
@@ -912,9 +912,9 @@
     "semantic_hash": "9b71dcd3f6188562e8577590e13a78de"
   },
   "DESIGN.md": {
-    "mtime": 1795017421.4287624,
-    "seen": 1795017446.3629112,
-    "ast_hash": "71050469b4c1c09936606e93e2e05967",
+    "mtime": 1795019883.3393602,
+    "seen": 1795019893.8445613,
+    "ast_hash": "45fa5209c30e3ea051495a85c0eafe03",
     "semantic_hash": ""
   },
   "lib/tamanhos.ts": {
@@ -966,9 +966,9 @@
     "semantic_hash": ""
   },
   "lib/previas.ts": {
-    "mtime": 1795017974.0988457,
-    "seen": 1795018118.071989,
-    "ast_hash": "4741834cb4d086ebebf547775aaac92b",
+    "mtime": 1795019761.0672033,
+    "seen": 1795019893.844543,
+    "ast_hash": "548eb0da75f79a608aaeb2177667cd20",
     "semantic_hash": ""
   },
   "components/guias/Galeria.tsx": {
@@ -984,9 +984,9 @@
     "semantic_hash": ""
   },
   "lib/dimensoes-imagens.json": {
-    "mtime": 1795019083.3629456,
-    "seen": 1795019219.645377,
-    "ast_hash": "fe61eb7ff04560787cc6e45036a61f2d",
+    "mtime": 1795019603.2824516,
+    "seen": 1795019893.8445382,
+    "ast_hash": "7bbe5bb5d495762cee1830adde9aae40",
     "semantic_hash": ""
   },
   "lib/imagens.ts": {
@@ -1026,9 +1026,9 @@
     "semantic_hash": ""
   },
   "components/mounts/sections/MontariasAlimentacao.tsx": {
-    "mtime": 1795017949.2963955,
-    "seen": 1795018118.0719068,
-    "ast_hash": "77a31f5bd5b8c4202ee9c5005c2d1d62",
+    "mtime": 1795019672.659163,
+    "seen": 1795019893.8444667,
+    "ast_hash": "d71fbbb640cf8a06d92d144e73c935b8",
     "semantic_hash": ""
   },
   "components/mounts/sections/MontariasAtributos.tsx": {
@@ -1053,6 +1053,60 @@
     "mtime": 1795019144.9106202,
     "seen": 1795019219.6453092,
     "ast_hash": "e513f5ab40851671c5bb2afe99411344",
+    "semantic_hash": ""
+  },
+  "components/festivals/data/festivals-content.ts": {
+    "mtime": 1795019908.0455613,
+    "seen": 1795019970.580994,
+    "ast_hash": "486e50883b7814a8b9d2ce3754e9745f",
+    "semantic_hash": ""
+  },
+  "components/festivals/festivais-visual.ts": {
+    "mtime": 1795019694.6222086,
+    "seen": 1795019893.8444028,
+    "ast_hash": "8897486c0b1a18f97429815aefe52a77",
+    "semantic_hash": ""
+  },
+  "components/festivals/sections/FestivaisAbertura.tsx": {
+    "mtime": 1795019717.2623734,
+    "seen": 1795019893.8444052,
+    "ast_hash": "27d9296db1378d9e503de625b7359f52",
+    "semantic_hash": ""
+  },
+  "components/festivals/sections/FestivaisCiclo.tsx": {
+    "mtime": 1795019717.6562545,
+    "seen": 1795019893.8444064,
+    "ast_hash": "9de168ba865de66ca220dc2cdc326886",
+    "semantic_hash": ""
+  },
+  "components/festivals/sections/FestivaisEstrutura.tsx": {
+    "mtime": 1795019718.0702212,
+    "seen": 1795019893.8444073,
+    "ast_hash": "0b2e23b4152cb3e80a24ac8a47bb77b0",
+    "semantic_hash": ""
+  },
+  "components/festivals/sections/FestivalSecao.tsx": {
+    "mtime": 1795019747.7430294,
+    "seen": 1795019893.8444083,
+    "ast_hash": "c1f08358a6ef1c68b5797977ce5cb254",
+    "semantic_hash": ""
+  },
+  "components/guias/Coordenada.tsx": {
+    "mtime": 1795019644.1738422,
+    "seen": 1795019893.8444107,
+    "ast_hash": "c406b8192820577703b261b6ae556c16",
+    "semantic_hash": ""
+  },
+  "components/guias/RecursoExterno.tsx": {
+    "mtime": 1795019672.268286,
+    "seen": 1795019893.8444219,
+    "ast_hash": "f2a81be0804c2d1df1fffe30b480ad7d",
+    "semantic_hash": ""
+  },
+  "components/guias/TextoGlitch.tsx": {
+    "mtime": 1795019651.7675092,
+    "seen": 1795019893.8444278,
+    "ast_hash": "769d7981ed55106f8ad2501d5d8fc1a2",
     "semantic_hash": ""
   },
   "package-lock.json": {
