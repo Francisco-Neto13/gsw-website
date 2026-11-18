@@ -59,7 +59,7 @@ export default function ProfessionTypesSection() {
           {overviewMedia.map((item) => (
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
-                <div className="relative aspect-video w-full bg-black">
+                <div className="relative aspect-video w-full bg-poco">
                   <Image quality={90}
                     src={item.src}
                     alt={item.alt}
@@ -86,10 +86,10 @@ export default function ProfessionTypesSection() {
               {gatheringProfessions.map((profession) => (
                 <div
                   key={profession.name}
-                  className="flex items-center justify-between gap-3 rounded-xl border border-linha bg-carvao px-4 py-3"
+                  className="flex items-center justify-between gap-3 rounded-md border border-linha bg-carvao px-4 py-3"
                 >
                   <div className="flex min-w-0 items-center gap-3">
-                    <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-linha bg-zinc-950">
+                    <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-linha bg-poco">
                       <Image quality={90}
                         src={gatheringImageByName[profession.name] ?? "/icon.webp"}
                         alt={`Ícone ${profession.name}`}
@@ -119,10 +119,10 @@ export default function ProfessionTypesSection() {
               {craftingProfessions.map((profession) => (
                 <div
                   key={profession.name}
-                  className="flex items-center justify-between gap-3 rounded-xl border border-linha bg-carvao px-4 py-3"
+                  className="flex items-center justify-between gap-3 rounded-md border border-linha bg-carvao px-4 py-3"
                 >
                   <div className="flex min-w-0 items-center gap-3">
-                    <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-linha bg-zinc-950">
+                    <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-linha bg-poco">
                       <Image quality={90}
                         src={craftingImageByName[profession.name] ?? "/icon.webp"}
                         alt={`Ícone ${profession.name}`}
@@ -136,7 +136,7 @@ export default function ProfessionTypesSection() {
                       <span className="text-detalhe text-texto-3">{profession.produces}</span>
                     </div>
                   </div>
-                  <span className="shrink-0 rounded-lg bg-white/5 px-3 py-1 text-detalhe font-medium text-texto-2">
+                  <span className="shrink-0 rounded-lg bg-gsw/15 px-3 py-1 text-detalhe font-medium text-texto-2">
                     {profession.resources}
                   </span>
                 </div>

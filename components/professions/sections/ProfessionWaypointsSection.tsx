@@ -64,7 +64,7 @@ export default function ProfessionWaypointsSection() {
                 {professionWaypointsLabels.download}
               </a>
             </div>
-            <div className="overflow-hidden rounded-xl border border-linha bg-zinc-950">
+            <div className="overflow-hidden rounded-md border border-linha bg-poco">
               <pre className="overflow-x-auto p-4 text-detalhe leading-relaxed text-texto-2">
                 <code>{waypointSnippet}</code>
               </pre>

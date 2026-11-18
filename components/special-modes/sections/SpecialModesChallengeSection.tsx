@@ -54,7 +54,7 @@ export default function SpecialModesChallengeSection() {
               src={specialModesReferenceImage.src}
               alt={specialModesReferenceImage.alt}
             >
-              <div className="relative aspect-[25/9] w-full overflow-hidden rounded-xl border border-linha bg-black/60">
+              <div className="relative aspect-[25/9] w-full overflow-hidden rounded-md border border-linha bg-poco">
                 <Image quality={90}
                   src={specialModesReferenceImage.src}
                   alt={specialModesReferenceImage.alt}

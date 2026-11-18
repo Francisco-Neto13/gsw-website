@@ -21,9 +21,9 @@ export default function RaidImageCard({
     typeof caption === "string" ? caption.trim() || alt : caption ?? alt;
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40">
+    <div className="overflow-hidden rounded-md border border-linha bg-poco">
       <ClickableImagePreview src={src} alt={alt}>
-        <div className={`relative w-full overflow-hidden bg-zinc-950 ${aspectClassName}`}>
+        <div className={`relative w-full overflow-hidden bg-poco ${aspectClassName}`}>
           <Image quality={90} src={src} alt={alt} fill sizes={sizes} className="object-contain p-2 sm:p-3" />
         </div>
       </ClickableImagePreview>

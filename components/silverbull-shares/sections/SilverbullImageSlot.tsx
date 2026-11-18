@@ -17,7 +17,7 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
     return (
       <article className="overflow-hidden rounded-md border border-linha bg-carvao">
         <ClickableImagePreview src={src} alt={alt ?? label}>
-          <div className={`relative w-full bg-zinc-900/60 p-2 ${frameClass}`}>
+          <div className={`relative w-full bg-poco p-2 ${frameClass}`}>
             <Image quality={90}
               src={src}
               alt={alt ?? label}
@@ -35,7 +35,7 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
   }
 
   return (
-    <div className="rounded-md border border-dashed border-white/20 bg-carvao p-6 text-center">
+    <div className="rounded-md border border-dashed border-linha bg-carvao p-6 text-center">
       <p className="text-apoio font-semibold text-texto-2">{label}</p>
     </div>
   );

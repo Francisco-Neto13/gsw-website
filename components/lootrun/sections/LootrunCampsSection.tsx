@@ -27,13 +27,13 @@ export default function LootrunCampsSection() {
             {lootrunCamps.map((camp, index) => (
               <article
                 key={`${camp.name}-${camp.coordinates}`}
-                className="rounded-xl border border-linha bg-carvao px-4 py-3"
+                className="rounded-md border border-linha bg-carvao px-4 py-3"
               >
                 <div className="mb-1.5 flex items-center justify-between gap-3">
                   <span className="text-apoio font-bold text-texto-3">
                     Camp {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-detalhe font-semibold text-texto-2">
+                  <span className="rounded-md border border-linha bg-gsw/15 px-2 py-1 text-detalhe font-semibold text-texto-2">
                     {camp.difficulty}
                   </span>
                 </div>
@@ -76,7 +76,7 @@ export default function LootrunCampsSection() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-titulo-4 font-bold text-texto">{camp.name}</h3>
-                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-detalhe text-texto-2">
+                  <span className="rounded-md border border-linha bg-gsw/15 px-2 py-1 text-detalhe text-texto-2">
                     {camp.difficulty}
                   </span>
                 </div>
@@ -115,7 +115,7 @@ export default function LootrunCampsSection() {
                 ) : null}
 
                 {camp.dangerousChallenges && camp.dangerousChallenges.length > 0 ? (
-                  <div className="mt-4 rounded-xl border border-linha bg-carvao p-3 sm:p-4">
+                  <div className="mt-4 rounded-md border border-linha bg-carvao p-3 sm:p-4">
                     <p className="text-apoio font-bold text-texto-3">Desafios de atenção</p>
                     <div className="mt-2 space-y-1.5">
                       {camp.dangerousChallenges.map((challenge) => (

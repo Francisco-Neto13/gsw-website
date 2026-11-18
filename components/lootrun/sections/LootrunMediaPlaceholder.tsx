@@ -37,8 +37,8 @@ export default function LootrunMediaPlaceholder({
   const isLocalVideo = item.src?.startsWith("/") && item.src.toLowerCase().endsWith(".mp4");
   const mediaDescription = resolveMediaDescription(item);
   const frameClassName = compact
-    ? "relative aspect-[4/3] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2"
-    : "relative aspect-[2/1] w-full bg-zinc-900/50 p-1 sm:aspect-video sm:p-2";
+    ? "relative aspect-[4/3] w-full bg-poco p-1 sm:aspect-video sm:p-2"
+    : "relative aspect-[2/1] w-full bg-poco p-1 sm:aspect-video sm:p-2";
   const captionClassName = compact ? "px-3 py-2.5 sm:px-4" : "px-4 py-3 sm:px-5";
 
   if (isLocalVideo && item.src) {
@@ -116,8 +116,8 @@ export default function LootrunMediaPlaceholder({
   }
 
   return (
-    <div className="flex h-full min-h-36 flex-col justify-between rounded-md border border-dashed border-white/20 bg-carvao p-4 sm:min-h-40 sm:p-5">
-      <div className="rounded-xl border border-linha bg-zinc-900/50 px-3 py-6 text-center text-apoio font-semibold text-texto-2 sm:px-4 sm:py-7">
+    <div className="flex h-full min-h-36 flex-col justify-between rounded-md border border-dashed border-linha bg-carvao p-4 sm:min-h-40 sm:p-5">
+      <div className="rounded-md border border-linha bg-poco px-3 py-6 text-center text-apoio font-semibold text-texto-2 sm:px-4 sm:py-7">
         {item.name}
       </div>
       <p className="mt-3 text-detalhe leading-relaxed text-texto-3">{mediaDescription}</p>

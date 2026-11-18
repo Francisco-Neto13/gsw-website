@@ -35,7 +35,7 @@ export default function LevelingSpotsSection() {
                     <span className="text-detalhe font-semibold text-violeta">{spot.range}</span>
                   </div>
                 </div>
-                <code className="leveling-badge-pop w-fit rounded-lg bg-white/5 px-3 py-1.5 text-detalhe font-mono text-texto-2">
+                <code className="leveling-badge-pop w-fit rounded-lg bg-gsw/15 px-3 py-1.5 text-detalhe font-mono text-texto-2">
                   {spot.coords}
                 </code>
               </div>
@@ -49,7 +49,7 @@ export default function LevelingSpotsSection() {
                     </li>
                   ))}
                 </ul>
-                <div className="overflow-hidden border-t border-linha bg-zinc-950 lg:border-t-0 lg:border-l">
+                <div className="overflow-hidden border-t border-linha bg-poco lg:border-t-0 lg:border-l">
                   <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
                     <div className="leveling-media-pop relative aspect-video w-full p-1 sm:p-2">
                       <Image quality={90}

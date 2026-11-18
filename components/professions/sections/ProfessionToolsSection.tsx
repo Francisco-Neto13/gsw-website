@@ -63,7 +63,7 @@ export default function ProfessionToolsSection() {
           {optimizationMedia.map((item) => (
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
-                <div className="relative aspect-video w-full bg-black">
+                <div className="relative aspect-video w-full bg-poco">
                   <Image quality={90}
                     src={item.src}
                     alt={item.alt}
@@ -85,7 +85,7 @@ export default function ProfessionToolsSection() {
           {professionFlowMedia.map((item) => (
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
-                <div className="relative aspect-[4/3] w-full bg-black">
+                <div className="relative aspect-[4/3] w-full bg-poco">
                   <Image quality={90}
                     src={item.src}
                     alt={item.alt}

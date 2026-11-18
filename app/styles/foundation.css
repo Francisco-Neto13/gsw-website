@@ -14,8 +14,11 @@
 
   --color-chao: #0f0d11;
   --color-carvao: #191819;
-  --color-elevada: #221f24;
+  /* Superfície de hover e destaque: carvão puxado para o roxo da marca. */
+  --color-elevada: #251c2d;
   --color-caixa: #160c20;
+  /* Poço: fundo de imagem e ícone dentro de cartões (preto-violeta, nunca cinza). */
+  --color-poco: #0c0910;
   --color-caixa-fora: #2a0f40;
   --color-texto: #eee9f3;
   --color-texto-2: #bdb4c8;
@@ -213,4 +216,15 @@ table,
 
 .pular-para-conteudo:focus {
   top: 0.75rem;
+}
+
+/* Cartões e painéis carvão: o roxo da marca nos detalhes. Dentro de qualquer superfície carvão, as linhas
+   (borda do cartão e divisões internas) viram violeta translúcido, o fundo ganha 6% do violeta da marca e o topo
+   um brilho violeta sutil, como a caixa de item. Por token: todo bg-carvao do site entra no padrão sem editar cada cartão. */
+.bg-carvao {
+  --color-linha: rgba(155, 77, 219, 0.2);
+  --color-linha-forte: rgba(155, 77, 219, 0.38);
+  background-image:
+    linear-gradient(180deg, rgba(113, 22, 173, 0.1), rgba(113, 22, 173, 0) 10rem),
+    linear-gradient(rgba(113, 22, 173, 0.06), rgba(113, 22, 173, 0.06));
 }

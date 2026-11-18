@@ -42,7 +42,7 @@ export default function WorldEventsParticipationSection() {
                 <h4 className="text-titulo-5 font-semibold tracking-widest text-violeta">{image.title}</h4>
               </div>
               <ClickableImagePreview src={image.src} alt={image.alt}>
-                <div className="relative aspect-video w-full bg-black/60">
+                <div className="relative aspect-video w-full bg-poco">
                   <Image quality={90}
                     src={image.src}
                     alt={image.alt}

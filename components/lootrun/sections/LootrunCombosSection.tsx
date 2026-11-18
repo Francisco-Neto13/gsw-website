@@ -43,7 +43,7 @@ export default function LootrunCombosSection() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{combo.title}</h3>
-                <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-detalhe text-texto-2">
+                <span className="rounded-md border border-linha bg-gsw/15 px-2 py-1 text-detalhe text-texto-2">
                   {combo.challengeRange}
                 </span>
               </div>

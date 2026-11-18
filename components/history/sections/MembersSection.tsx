@@ -102,9 +102,9 @@ export default function MembersSection() {
           <div className="rounded-md border border-dashed border-linha bg-carvao px-6 py-12 text-center sm:px-10 sm:py-16">
             <p className="text-texto-2">
               Adicione os retratos em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-detalhe text-violeta">public/members</code>{" "}
+              <code className="rounded bg-gsw/15 px-1.5 py-0.5 text-detalhe text-violeta">public/members</code>{" "}
               e preencha a lista em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-detalhe text-violeta">
+              <code className="rounded bg-gsw/15 px-1.5 py-0.5 text-detalhe text-violeta">
                 components/history/data/members.ts
               </code>
               .

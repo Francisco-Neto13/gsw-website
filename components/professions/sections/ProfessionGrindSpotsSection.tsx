@@ -54,7 +54,7 @@ export default function ProfessionGrindSpotsSection() {
           {professionSpotMedia.map((item) => (
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
-                <div className="relative aspect-video w-full bg-black">
+                <div className="relative aspect-video w-full bg-poco">
                   <Image quality={90}
                     src={item.src}
                     alt={item.alt}
@@ -82,7 +82,7 @@ export default function ProfessionGrindSpotsSection() {
             >
               <div className="flex flex-col gap-2 border-b border-linha px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
-                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-linha bg-zinc-950">
+                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-linha bg-poco">
                     <Image quality={90}
                       src={craftingSpotImageByProfession[professionSpots.profession] ?? "/icon.webp"}
                       alt={`Ícone ${professionSpots.profession}`}
@@ -131,7 +131,7 @@ export default function ProfessionGrindSpotsSection() {
                           <span className="text-apoio text-white">{spot.name}</span>
                         </td>
                         <td className="px-3 py-3">
-                          <code className="rounded bg-white/5 px-2 py-0.5 text-detalhe font-mono text-texto-2">
+                          <code className="rounded bg-gsw/15 px-2 py-0.5 text-detalhe font-mono text-texto-2">
                             {spot.coords}
                           </code>
                         </td>

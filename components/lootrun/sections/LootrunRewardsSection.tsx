@@ -22,7 +22,7 @@ export default function LootrunRewardsSection() {
           </p>
         </div>
 
-        <div className="rounded-md border border-linha bg-zinc-900/25 p-5 sm:p-7">
+        <div className="rounded-md border border-linha bg-poco p-5 sm:p-7">
           <div className="space-y-2">
             {lootrunRewardItems.map((item) => (
               <p key={item} className="text-texto-2">

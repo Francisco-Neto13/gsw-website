@@ -258,7 +258,7 @@ export default function LevelingBuildsSection() {
                 {weapon.entries.map((entry) => (
                   <li
                     key={`${weapon.className}-${entry.level}`}
-                    className="leveling-card-soft rounded-xl border border-linha bg-carvao p-3 text-apoio leading-relaxed sm:p-4"
+                    className="leveling-card-soft rounded-md border border-linha bg-carvao p-3 text-apoio leading-relaxed sm:p-4"
                   >
                     <span className="mb-2 inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-violeta">
                       {entry.level}
@@ -307,7 +307,7 @@ export default function LevelingBuildsSection() {
                 <span className="inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2.5 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-violeta">
                   {parsedArmorPieces.length} pecas
                 </span>
-                <span className="inline-flex rounded-md border border-white/15 bg-carvao px-2.5 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-texto-2">
+                <span className="inline-flex rounded-md border border-linha bg-carvao px-2.5 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-texto-2">
                   Lvl {armorMinLevel} - {armorMaxLevel}
                 </span>
               </div>
@@ -323,7 +323,7 @@ export default function LevelingBuildsSection() {
 
           <ul className="grid grid-cols-1 gap-3 px-5 py-5 sm:px-7 sm:py-6 lg:grid-cols-2">
             {parsedArmorPieces.map((piece) => (
-              <li key={`${piece.level}-${piece.item}`} className="leveling-card-soft rounded-xl border border-linha bg-carvao p-3 sm:p-4">
+              <li key={`${piece.level}-${piece.item}`} className="leveling-card-soft rounded-md border border-linha bg-carvao p-3 sm:p-4">
                 <div className="flex items-center gap-2.5">
                   <span className="inline-flex h-[24px] items-center rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-detalhe font-semibold uppercase tracking-[0.15em] text-violeta">
                     Lvl {piece.level}
