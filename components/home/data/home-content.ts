@@ -18,15 +18,15 @@ export const homeCategorias: Record<string, { resumo: string; imagem: { base: st
   progressao: {
     resumo: "Do nível 1 ao 121: onde upar, como montar a party e as profissões que sustentam o resto do jogo.",
     imagem: {
-      base: "/inicio/categorias/categoria-progressao-treino",
-      alt: "Personagem atacando um boneco de treino que mostra o dano médio por segundo",
+      base: "/inicio/categorias/categoria-progressao-trono",
+      alt: "Uma rainha coroada no trono de um palácio vermelho e verde-água, com dois acompanhantes ao lado",
     },
   },
   endgame: {
     resumo: "O conteúdo de nível máximo: lootruns, as cinco raids sala a sala, dungeons corrompidas e eventos no mapa.",
     imagem: {
-      base: "/inicio/categorias/categoria-endgame-anathema",
-      alt: "A asa vermelha de Anathema, chefe da raid The Wartorn Palace, passando por cima de um jogador",
+      base: "/inicio/categorias/categoria-endgame-silhueta",
+      alt: "Silhuetas escuras de garras gigantes contra o céu vermelho da raid The Wartorn Palace",
     },
   },
   economia: {
