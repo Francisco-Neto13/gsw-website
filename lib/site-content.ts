@@ -289,6 +289,6 @@ export const redirecionamentos = guias.map((guia) => ({
 
 export const discordUrl = "https://discord.gg/Ec2YPWTN9E";
 
-// Contato real exigido pelas regras da Mojang no aviso de site não oficial (docs/CREDITOS.md).
-// shortcut: vazio até o dono informar o e-mail; o rodapé mostra "contato a definir" enquanto isso.
-export const contatoEmail = "";
+// Contato do aviso de site não oficial (docs/CREDITOS.md): as issues do repositório, aberto a qualquer pessoa.
+// shortcut: a Mojang prefere e-mail (chat e fórum não valem); se um dia exigirem, troque por um e-mail.
+export const contato = { rotulo: "issues no GitHub", href: "https://github.com/Francisco-Neto13/gsw-website/issues" };

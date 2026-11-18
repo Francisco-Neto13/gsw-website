@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { areas, contatoEmail, discordUrl } from "@/lib/site-content";
+import { areas, contato, discordUrl } from "@/lib/site-content";
 
 export default function SiteFooter() {
   return (
@@ -18,17 +18,16 @@ export default function SiteFooter() {
             Wynncraft Studios; Minecraft © Mojang AB.
           </p>
           <p className="mt-3 text-apoio text-texto-2">
-            Responsável: guilda GsW.{" "}
-            {contatoEmail ? (
-              <>
-                Contato:{" "}
-                <a href={`mailto:${contatoEmail}`} className="text-violeta underline decoration-violeta/40 hover:decoration-violeta">
-                  {contatoEmail}
-                </a>
-              </>
-            ) : (
-              <span>Contato: a definir.</span>
-            )}
+            Responsável: guilda GsW. Contato:{" "}
+            <a
+              href={contato.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-violeta underline decoration-violeta/40 hover:decoration-violeta"
+            >
+              {contato.rotulo}
+            </a>
+            .
           </p>
         </div>
 
