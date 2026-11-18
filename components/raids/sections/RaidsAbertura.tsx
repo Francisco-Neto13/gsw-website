@@ -11,7 +11,9 @@ export default function RaidsAbertura() {
   const niveis = raids.map((raid) => raid.level);
   return (
     <section className="px-4 pb-12 pt-8 sm:px-6 lg:px-10 lg:pt-10">
-      <div className="max-w-[60ch]">
+      {/* Desktop largo: a ficha vira quadro lateral do texto de abertura, como numa wiki. */}
+      <div className="grid gap-x-12 xl:grid-cols-[minmax(0,1fr)_minmax(20rem,26rem)]">
+      <div className="max-w-leitura xl:col-start-1">
         <Breadcrumb guia={guia} />
         <h1 className="mt-3 text-titulo-1 text-texto">Raids</h1>
         <p className="mt-3 text-lede text-texto-2">
@@ -19,7 +21,7 @@ export default function RaidsAbertura() {
         </p>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:mt-0">
         <FichaGuia
           titulo="Raids"
           tipo="Conteúdo de grupo · Endgame"
@@ -34,7 +36,7 @@ export default function RaidsAbertura() {
         />
       </div>
 
-      <div className="mt-8 max-w-[60ch]">
+      <div className="mt-8 max-w-leitura xl:col-start-1">
         {raidsIntroParagraphs.map((paragrafo) => (
           <p key={paragrafo} className="text-texto-2">
             {paragrafo}
@@ -48,6 +50,7 @@ export default function RaidsAbertura() {
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </section>
   );

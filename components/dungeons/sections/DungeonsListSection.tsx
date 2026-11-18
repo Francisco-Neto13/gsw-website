@@ -49,7 +49,7 @@ function TabelaDeDungeons({ titulo, lista }: { titulo: string; lista: DungeonDaL
 export default function DungeonsListSection() {
   return (
     <section className="px-4 pb-12 sm:px-6 lg:px-10">
-      <div className="max-w-[60ch]">
+      <div className="max-w-leitura">
         <h2 className="text-titulo-2 text-texto">{dungeonsListaIntro.title}</h2>
         <p className="mt-3 text-texto-2">{dungeonsListaIntro.description}</p>
       </div>
@@ -57,7 +57,7 @@ export default function DungeonsListSection() {
         <TabelaDeDungeons titulo="Dungeons normais" lista={dungeonsNormais} />
         <TabelaDeDungeons titulo="Dungeons corrompidas" lista={dungeonsCorrompidas} />
       </div>
-      <p className="mt-2 max-w-[60ch] text-apoio text-texto-3">
+      <p className="mt-2 max-w-leitura text-apoio text-texto-3">
         Níveis mínimos e chefes conferidos na wiki da Wynncraft para a versão 2.2.4.
       </p>
     </section>

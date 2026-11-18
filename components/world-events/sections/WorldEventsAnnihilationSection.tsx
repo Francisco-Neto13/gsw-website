@@ -14,8 +14,8 @@ export default function WorldEventsAnnihilationSection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div className="relative">
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {worldEventsAnnihilationIntro.title}
           </h2>
@@ -24,7 +24,7 @@ export default function WorldEventsAnnihilationSection() {
           </p>
         </div>
 
-        <div className="mx-auto mb-10 max-w-3xl overflow-hidden rounded-md border border-linha bg-carvao sm:mb-14">
+        <div className="mb-10 max-w-3xl overflow-hidden rounded-md border border-linha bg-carvao sm:mb-14">
           <LazyYouTubeEmbed videoId={annihilationVideo.videoId} title={annihilationVideo.title} />
           <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">
             {annihilationVideo.caption}

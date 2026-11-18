@@ -4,8 +4,8 @@ export default function Essence() {
   return (
     <section id="essencia" className="border-t border-linha py-16 sm:py-20">
 
-      <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
-        <div className="mb-10 max-w-[60ch]">
+      <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div className="mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
           <h2 className="text-titulo-2 text-texto">
             Além de uma Guilda
           </h2>
@@ -13,8 +13,9 @@ export default function Essence() {
             &ldquo;O que começou como pixels e estratégias se transformou em algo que transcende qualquer tela.&rdquo;
           </p>
         </div>
+        <div className="min-w-0">
 
-        <div className="mb-12 max-w-[60ch] space-y-4 text-texto-2">
+        <div className="mb-12 max-w-leitura space-y-4 text-texto-2">
           <p>
             Na <span className="font-semibold text-texto">GsW</span>, as fronteiras entre o virtual e o real se dissiparam há muito tempo.
             O que começou em 2017 como um grupo de brasileiros em busca de territórios em Wynncraft evoluiu
@@ -28,7 +29,7 @@ export default function Essence() {
           </p>
         </div>
 
-        <div className="my-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        <div className="my-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3">
           <div className="rounded-md border border-linha bg-carvao p-6">
             <div className="mb-3 text-violeta">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -63,7 +64,7 @@ export default function Essence() {
             </p>
           </div>
 
-          <div className="rounded-md border border-linha bg-carvao p-6 sm:col-span-2 lg:col-span-1">
+          <div className="rounded-md border border-linha bg-carvao p-6 sm:col-span-2 xl:col-span-1">
             <div className="mb-3 text-violeta">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -79,7 +80,7 @@ export default function Essence() {
           </div>
         </div>
 
-        <div className="max-w-[60ch] space-y-4 text-texto-2">
+        <div className="max-w-leitura space-y-4 text-texto-2">
           <p>
             Nossa jornada não foi linear nem perfeita. Já passamos por vitórias grandiosas que nos
             encheram de orgulho, e derrotas amargas que testaram nossa determinação. Já discutimos
@@ -104,6 +105,7 @@ export default function Essence() {
             novos capítulos a escrever. Mas acima de tudo, olhamos ao nosso lado e vemos irmãos -
             <span className="font-medium text-texto"> e isso é o que realmente importa.</span>
           </p>
+        </div>
         </div>
       </div>
     </section>

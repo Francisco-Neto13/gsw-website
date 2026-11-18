@@ -9,15 +9,15 @@ import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaP
 export default function LootrunRewardsSection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div>
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {lootrunRewardsIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
             {lootrunRewardsIntro.lead}
           </p>
-          <p className="mx-auto mt-4 max-w-3xl px-2 text-texto-2">
+          <p className="mt-4 max-w-leitura text-texto-2">
             {lootrunRewardsIntro.body}
           </p>
         </div>

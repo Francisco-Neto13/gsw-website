@@ -62,8 +62,8 @@ export default function GallerySection() {
   return (
     <section id="galeria" className="border-t border-linha py-16 sm:py-20">
 
-      <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
-        <div className="reveal-on-scroll mb-10 max-w-[60ch]">
+      <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div className="reveal-on-scroll mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
           <h2 className="text-titulo-2 text-texto">
             Galeria dos Guardiões
           </h2>
@@ -72,6 +72,7 @@ export default function GallerySection() {
             Guardiões.&rdquo;
           </p>
         </div>
+        <div className="min-w-0">
 
         <div>
           {photos.length > 0 ? (
@@ -113,12 +114,13 @@ export default function GallerySection() {
           )}
         </div>
 
-        <div className="mt-12 max-w-[60ch]">
+        <div className="mt-12 max-w-leitura">
           <p className="border-l border-linha-forte pl-4 italic text-texto-2">
             &ldquo;Onde houver uma batalha, haverá um{" "}
             <span className="font-medium text-texto">Guardião</span>.
             O legado da GsW é eterno.&rdquo;
           </p>
+        </div>
         </div>
       </div>
 

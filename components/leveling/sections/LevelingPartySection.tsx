@@ -10,8 +10,8 @@ export default function LevelingPartySection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
-      <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div className="relative">
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {levelingPartyIntro.title}
           </h2>
@@ -20,7 +20,7 @@ export default function LevelingPartySection() {
           </p>
         </div>
 
-        <div className="leveling-panel-3d mx-auto mb-10 max-w-2xl overflow-hidden rounded-md border border-linha bg-carvao sm:mb-16">
+        <div className="leveling-panel-3d mb-10 max-w-2xl overflow-hidden rounded-md border border-linha bg-carvao sm:mb-16">
           <ClickableImagePreview src={levelingPartyImage.src} alt={levelingPartyImage.alt}>
             <div className="leveling-media-pop relative aspect-video w-full">
               <Image

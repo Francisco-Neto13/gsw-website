@@ -14,7 +14,7 @@ export default function GuiaEmConstrucao({ titulo, introducao, topicos, fontes }
     <div>
       <GuideIntro title={titulo} paragraphs={introducao} />
       <section className="px-4 pb-16 sm:px-6 lg:px-10">
-        <div className="caixa-item max-w-[60ch] p-6">
+        <div className="caixa-item max-w-leitura p-6">
           <h2 className="text-titulo-4 flex items-center gap-2 text-texto">
             <Hammer aria-hidden size={20} strokeWidth={1.75} className="text-violeta" />
             O que este guia vai cobrir

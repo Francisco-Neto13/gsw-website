@@ -74,10 +74,10 @@ function Sala({ sala, numero, raid }: { sala: RaidGuideRoom; numero: number; rai
           <span className="sr-only">{raid}, </span>
           {sala.room}: {sala.title}
         </h4>
-        <p className="mt-2 max-w-[60ch] text-texto-2">
+        <p className="mt-2 max-w-leitura text-texto-2">
           <TextoComTermos texto={sala.description} />
         </p>
-        <div className="mt-5 grid max-w-[60rem] gap-4">
+        <div className="mt-5 grid gap-4">
           {sala.variants.map((variacao, indice) => (
             <Variacao
               key={variacao.name}
@@ -96,7 +96,7 @@ function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
   const raid = raids.find((item) => item.id === grupo.id)!;
   return (
     <article id={raid.id} aria-labelledby={`${raid.id}-titulo`} className="scroll-mt-28 pt-12 first:pt-0">
-      <header className="max-w-[56rem]">
+      <header className="">
         <h3 id={`${raid.id}-titulo`} className="font-titulo text-titulo-3 leading-tight text-texto">
           {raid.name} <span className="text-texto-3">({raid.sigla})</span>
         </h3>
@@ -126,10 +126,10 @@ function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
             </div>
           ) : null}
         </dl>
-        <p className="mt-3 max-w-[60ch] text-texto-2">{grupo.description}</p>
+        <p className="mt-3 max-w-leitura text-texto-2">{grupo.description}</p>
       </header>
 
-      <div className="mt-6 max-w-[56rem]">
+      <div className="mt-6">
         {grupo.print ? (
           <figure>
             <ImagemDoJogo

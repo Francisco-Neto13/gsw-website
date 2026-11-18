@@ -48,19 +48,19 @@ export default function History() {
 
   return (
     <>
-      <header id="historia" className="mx-auto w-full max-w-[64rem] px-4 pb-12 pt-8 sm:px-6 lg:px-10 lg:pt-10">
-        <div className="max-w-[60ch]">
+      <header id="historia" className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-y-5 pb-12 pt-8 lg:pt-10">
+        <div>
           <h1 className="text-titulo-1 text-texto">História da GsW</h1>
-          <div className="mt-5 flex flex-col gap-4 text-lede text-texto-2">
+        </div>
+          <div className="flex max-w-leitura flex-col gap-4 text-lede text-texto-2">
             <p>Mais do que uma linha do tempo, esta página guarda a memória da GsW: os períodos de ascensão, as guerras que marcaram a guilda, os líderes que conduziram cada era e os membros que ajudaram a transformar a comunidade em uma das presenças brasileiras mais fortes de Wynncraft.</p>
             <p>Aqui ficam registrados os momentos que definiram a identidade da guilda, desde as primeiras chamas até a fase atual, para que cada conquista, ruptura e renascimento continue fazendo parte do legado da GsW.</p>
           </div>
-        </div>
       </header>
 
       <section className="border-t border-linha py-16 sm:py-20">
-        <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
-          <div className="reveal-on-scroll mb-10 max-w-[60ch]">
+        <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+          <div className="reveal-on-scroll mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
             <h2 className="text-titulo-2 text-texto">
               Crônicas de Wynn
             </h2>
@@ -69,10 +69,11 @@ export default function History() {
               Guardiões na busca pela paz nas províncias.&rdquo;
             </p>
           </div>
+          <div className="min-w-0">
 
-          <ol className="max-w-[60ch] border-l border-linha-forte">
+          <ol className="grid gap-x-12 xl:grid-cols-2">
             {eras.map((era) => (
-              <li key={era.year} className="relative pb-10 pl-6 last:pb-0 sm:pl-8">
+              <li key={era.year} className="relative border-l border-linha-forte pb-10 pl-6 sm:pl-8">
                 <span aria-hidden className="absolute -left-[5px] top-2 h-[9px] w-[9px] rounded-full border-2 border-violeta-borda bg-chao" />
                 <p className="numeros font-mono text-apoio text-violeta">{era.year}</p>
                 <h3 className="text-titulo-4 mt-1 font-titulo text-texto">{era.title}</h3>
@@ -81,11 +82,12 @@ export default function History() {
             ))}
           </ol>
 
-          <div className="mt-12 max-w-[60ch]">
+          <div className="mt-12 max-w-leitura">
             <p className="border-l border-linha-forte pl-4 italic text-texto-2">
               &ldquo;O valor de um guardião não se mede apenas pelo seu nível, mas pela sua
               lealdade à bandeira.&rdquo;
             </p>
+          </div>
           </div>
         </div>
       </section>

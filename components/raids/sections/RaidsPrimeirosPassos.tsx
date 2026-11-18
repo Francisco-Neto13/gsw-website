@@ -13,7 +13,7 @@ import { tamanhoDe } from "@/components/raids/data/raids-midia";
 export default function RaidsPrimeirosPassos() {
   return (
     <SecaoGuia id="primeiros-passos" titulo="Primeiros passos" introducao={raidFirstStepsDescription}>
-      <div className="max-w-[56rem] overflow-x-auto rounded-md border border-linha">
+      <div className="overflow-x-auto rounded-md border border-linha">
         <table className="w-full min-w-[40rem] border-collapse text-left text-apoio">
           <caption className="sr-only">Requisitos de cada raid</caption>
           <thead className="bg-carvao text-texto">
@@ -53,7 +53,7 @@ export default function RaidsPrimeirosPassos() {
         Níveis mínimos conferidos na wiki para a versão 2.2.4.
       </p>
 
-      <div className="mt-10 grid max-w-[56rem] gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         <Figura
           src={silverbullNpcImage.src}
           alt={silverbullNpcImage.alt}
@@ -70,8 +70,8 @@ export default function RaidsPrimeirosPassos() {
         />
       </div>
 
-      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">Entrando pela fila de party</h3>
-      <ol className="mt-4 grid max-w-[56rem] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <h3 className="text-titulo-4 mt-10 max-w-leitura font-bold text-texto">Entrando pela fila de party</h3>
+      <ol className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {queueSteps.map((passo, indice) => (
           <li key={passo.src}>
             <Figura
@@ -92,7 +92,7 @@ export default function RaidsPrimeirosPassos() {
           alt={imagem.alt}
           legenda={imagem.caption}
           sizes="(min-width: 768px) 40rem, 100vw"
-          className="mt-10 max-w-[40rem]"
+          className="mt-10 max-w-[48rem]"
           {...tamanhoDe(imagem.src)}
         />
       ))}

@@ -45,8 +45,8 @@ export default function Pillars() {
   return (
     <section id="pilares" className="border-t border-linha py-16 sm:py-20">
 
-      <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
-        <div className="reveal-on-scroll mb-10 max-w-[60ch]">
+      <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div className="reveal-on-scroll mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
           <h2 className="text-titulo-2 text-texto">
             Os <span className="numeros font-mono">5</span> Pilares
           </h2>
@@ -55,6 +55,7 @@ export default function Pillars() {
             <span className="font-bold text-texto">Capitão</span>, permitindo que escolham em qual frente desejam integrar e fortalecer o legado da guilda.
           </p>
         </div>
+        <div className="min-w-0">
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {pillars.map((pillar) => (
@@ -78,12 +79,13 @@ export default function Pillars() {
           ))}
         </div>
 
-        <div className="mt-12 max-w-[60ch]">
+        <div className="mt-12 max-w-leitura">
           <p className="border-l border-linha-forte pl-4 italic text-texto-2">
             &ldquo;Divididos em frentes, mas unidos por um propósito. Os{" "}
             <span className="font-medium text-texto">Pilares</span>{" "}
             não são apenas setores; são os alicerces de um império que se recusa a cair.&rdquo;
           </p>
+        </div>
         </div>
       </div>
     </section>

@@ -22,7 +22,7 @@ function MarcadorBeacon({ beacon }: { beacon: LootrunBeacon }) {
 export default function LootrunBeaconsSection() {
   return (
     <section className="px-4 py-14 sm:px-6 lg:px-10">
-      <div className="max-w-[60ch]">
+      <div className="max-w-leitura">
         <h2 className="text-titulo-2 text-texto">{lootrunBeaconsIntro.title}</h2>
         <p className="mt-3 text-texto-2">{lootrunBeaconsIntro.description}</p>
         <ul className="mt-4 flex list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
@@ -82,7 +82,7 @@ export default function LootrunBeaconsSection() {
           </tbody>
         </table>
       </div>
-      <p className="mt-2 max-w-[60ch] text-apoio text-texto-3">
+      <p className="mt-2 max-w-leitura text-apoio text-texto-3">
         Valores conferidos na wiki da Wynncraft para a versão 2.2.4. A cor do Crimson é aproximada.
       </p>
     </section>

@@ -9,7 +9,7 @@ export default function RaidsEstrutura() {
       titulo="Como uma raid funciona"
       introducao="Todas as raids seguem a mesma sequência. O que muda de uma para outra é a mecânica de cada sala."
     >
-      <ol className="relative max-w-[60ch]">
+      <ol className="relative max-w-leitura">
         {raidStructureSteps.map((etapa, indice) => (
           <li key={etapa.title} className="relative flex gap-4 pb-8 last:pb-0">
             {indice < raidStructureSteps.length - 1 ? (

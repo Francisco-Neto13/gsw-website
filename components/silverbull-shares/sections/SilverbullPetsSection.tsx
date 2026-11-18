@@ -4,8 +4,8 @@ import SilverbullImageSlot from "@/components/silverbull-shares/sections/Silverb
 export default function SilverbullPetsSection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div>
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {petsIntro.title}
           </h2>
@@ -14,7 +14,7 @@ export default function SilverbullPetsSection() {
           </p>
         </div>
 
-        <div className="mb-6 mx-auto max-w-lg">
+        <div className="mb-6 max-w-lg">
           <SilverbullImageSlot label={bundlesStoreImage.label} src={bundlesStoreImage.src} alt={bundlesStoreImage.alt} compact />
         </div>
 

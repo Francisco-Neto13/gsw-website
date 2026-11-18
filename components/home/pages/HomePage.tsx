@@ -64,7 +64,7 @@ export default function HomePage() {
         <h2 id="comeco" className="text-titulo-2 text-texto">
           {homeComeco.titulo}
         </h2>
-        <p className="mt-3 max-w-[60ch] text-texto-2">{homeComeco.texto}</p>
+        <p className="mt-3 max-w-leitura text-texto-2">{homeComeco.texto}</p>
         <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {grupos.map((grupo) => (
             <div key={grupo.id}>
@@ -98,8 +98,8 @@ export default function HomePage() {
             <h2 id="destaque" className="text-titulo-2 text-texto">
               {homeDestaque.titulo}
             </h2>
-            <p className="mt-4 max-w-[52ch] text-texto-2">{homeDestaque.texto}</p>
-            <p className="mt-4 max-w-[52ch] text-texto-2">
+            <p className="mt-4 max-w-leitura text-texto-2">{homeDestaque.texto}</p>
+            <p className="mt-4 max-w-leitura text-texto-2">
               São <span className="numeros font-mono text-texto">{raids.length}</span> raids,{" "}
               <span className="numeros font-mono text-texto">{totalDeSalas}</span> salas e{" "}
               <span className="numeros font-mono text-texto">{totalDePovs}</span> POVs gravados pela guilda.
@@ -135,7 +135,7 @@ export default function HomePage() {
               <h2 id="comunidade" className="text-titulo-2 text-texto">
                 {homeComunidade.titulo}
               </h2>
-              <p className="mt-3 max-w-[56ch] text-texto-2">{homeComunidade.texto}</p>
+              <p className="mt-3 max-w-leitura text-texto-2">{homeComunidade.texto}</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <Link

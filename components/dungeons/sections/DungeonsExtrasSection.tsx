@@ -9,8 +9,8 @@ export default function DungeonsExtrasSection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
-      <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div className="relative">
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {dungeonsExtrasIntro.title}
           </h2>

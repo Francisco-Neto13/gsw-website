@@ -5,14 +5,14 @@ export default function SiteFooter() {
   return (
     <footer className="border-t border-caixa-fora bg-carvao shadow-[inset_0_1px_0_rgba(113,22,173,0.45)]">
       <div className="casca grid gap-8 py-10 md:grid-cols-[1.4fr_1fr]">
-        <div className="max-w-[60ch]">
+        <div className="max-w-leitura">
           <p className="font-titulo text-titulo-4 text-texto">GsW · Guardians of Wynn</p>
           <p className="mt-2 text-texto-2">
             Guia de Wynncraft em português, escrito e mantido pela guilda GsW.
           </p>
 
           {/* Aviso exigido pelas Minecraft Usage Guidelines (docs/CREDITOS.md). */}
-          <p className="mt-6 max-w-[56ch] text-apoio leading-relaxed text-texto-2">
+          <p className="mt-6 max-w-leitura text-apoio leading-relaxed text-texto-2">
             <strong className="text-texto">Site de fãs.</strong> Não é um site oficial do Minecraft. Não aprovado por
             nem associado à Mojang ou à Microsoft. Não afiliado à Wynncraft Studios. Wynncraft e seus assets ©
             Wynncraft Studios; Minecraft © Mojang AB.

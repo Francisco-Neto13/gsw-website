@@ -5,8 +5,8 @@ import SilverbullImageSlot from "@/components/silverbull-shares/sections/Silverb
 export default function SilverbullTokensSection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div className="relative">
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {tokensIntro.title}
           </h2>
@@ -15,7 +15,7 @@ export default function SilverbullTokensSection() {
           </p>
         </div>
 
-        <div className="mb-6 mx-auto max-w-3xl">
+        <div className="mb-6 max-w-3xl">
           <SilverbullImageSlot label={tokenStoreImage.label} src={tokenStoreImage.src} alt={tokenStoreImage.alt} />
         </div>
 

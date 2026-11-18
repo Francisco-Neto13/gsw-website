@@ -12,7 +12,7 @@ export default function PaginaDosGuias() {
   return (
     <div className="casca pb-16 pt-8 lg:pt-10">
       <h1 className="text-titulo-1 text-texto">Guias</h1>
-      <p className="mt-3 max-w-[60ch] text-lede text-texto-2">
+      <p className="mt-3 max-w-leitura text-lede text-texto-2">
         Tudo o que a guilda já escreveu sobre o Wynncraft, por etapa do jogo. Guias marcados como em construção estão
         sendo escritos; os marcados com revisão pendente ainda não foram conferidos para a versão atual do jogo e
         podem ter dados desatualizados.

@@ -5,15 +5,15 @@ export default function SilverbullRanksSection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
-      <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div className="relative">
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {rankIntro.title}
           </h2>
           <p className="mt-3 text-texto-2">
             {rankIntro.description}
           </p>
-          <p className="mx-auto mt-3 max-w-3xl text-detalhe leading-relaxed text-texto-3">
+          <p className="mt-3 max-w-3xl text-detalhe leading-relaxed text-texto-3">
             Referência de benefícios no site da Wynncraft:{" "}
             <a
               href="https://wynncraft.com/store/ranks"

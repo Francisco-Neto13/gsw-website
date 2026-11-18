@@ -7,8 +7,8 @@ import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaP
 export default function LootrunMechanicsSection() {
   return (
     <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-8 max-w-[60ch]">
+      <div>
+        <div className="mb-8 max-w-leitura">
           <h2 className="text-titulo-2 text-texto">
             {lootrunMechanicsIntro.title}
           </h2>

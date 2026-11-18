@@ -12,7 +12,7 @@ type SecaoGuiaProps = {
 export default function SecaoGuia({ id, titulo, introducao, children }: SecaoGuiaProps) {
   return (
     <section id={id} aria-labelledby={`${id}-titulo`} className="scroll-mt-28 border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-      <header className="max-w-[60ch]">
+      <header className="max-w-leitura">
         <h2 id={`${id}-titulo`} className="text-titulo-2 text-texto">
           {titulo}
         </h2>

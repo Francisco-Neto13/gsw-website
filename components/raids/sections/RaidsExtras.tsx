@@ -12,27 +12,27 @@ export default function RaidsExtras() {
       titulo="Gambits, ranking e dicas"
       introducao="O que não depende de uma sala específica, mas pesa na preparação da party."
     >
-      <h3 className="text-titulo-4 max-w-[60ch] font-bold text-texto">
+      <h3 className="text-titulo-4 max-w-leitura font-bold text-texto">
         <TextoComTermos texto="[[gambit|Gambits]]" />
       </h3>
-      <ul className="mt-3 flex max-w-[60ch] list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+      <ul className="mt-3 flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
         <li>
           <TextoComTermos texto={raidGambits.diarios} />
         </li>
         <li>{raidGambits.slots}</li>
         <li>{raidGambits.recompensa}</li>
       </ul>
-      <p className="mt-4 flex max-w-[60ch] gap-2 rounded-md border border-ambar/40 px-4 py-3 text-texto-2">
+      <p className="mt-4 flex max-w-leitura gap-2 rounded-md border border-ambar/40 px-4 py-3 text-texto-2">
         <CircleAlert aria-hidden size={18} strokeWidth={1.75} className="mt-1 shrink-0 text-ambar" />
         <span>{raidGambits.ativos}</span>
       </p>
 
-      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">Ranking da divisão de raids</h3>
-      <p className="mt-2 max-w-[60ch] text-texto-2">
+      <h3 className="text-titulo-4 mt-10 max-w-leitura font-bold text-texto">Ranking da divisão de raids</h3>
+      <p className="mt-2 max-w-leitura text-texto-2">
         O rank sobe com XP de divisão, ganho a cada raid concluída. Depois de Sentinel vem Admiral: na divisão de
         raids não existe Elite.
       </p>
-      <div className="mt-4 max-w-[44rem] overflow-x-auto rounded-md border border-linha">
+      <div className="mt-4 overflow-x-auto rounded-md border border-linha">
         <table className="w-full min-w-[30rem] border-collapse text-left text-apoio">
           <caption className="sr-only">Ranks da divisão de raids, XP total e o que cada um libera</caption>
           <thead className="bg-carvao text-texto">
@@ -62,14 +62,14 @@ export default function RaidsExtras() {
         </table>
       </div>
 
-      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">Antes de entrar</h3>
-      <ul className="mt-3 flex max-w-[60ch] list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+      <h3 className="text-titulo-4 mt-10 max-w-leitura font-bold text-texto">Antes de entrar</h3>
+      <ul className="mt-3 flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
         {extras.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
 
-      <div className="mt-8 grid max-w-[56rem] gap-6 sm:grid-cols-2">
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
         {supportImages.map((imagem) => (
           <Figura
             key={imagem.src}

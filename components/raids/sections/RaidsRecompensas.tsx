@@ -15,7 +15,7 @@ import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
 export default function RaidsRecompensas() {
   return (
     <SecaoGuia id="recompensas" titulo="Recompensas" introducao={raidRewardsDescription}>
-      <ul className="flex max-w-[60ch] flex-col gap-3">
+      <ul className="flex max-w-leitura flex-col gap-3">
         {raidRewardOutcomes.map((resultado) => (
           <li key={resultado.label}>
             <p className="font-bold text-texto">
@@ -25,12 +25,12 @@ export default function RaidsRecompensas() {
           </li>
         ))}
       </ul>
-      <p className="mt-6 max-w-[60ch] text-texto-2">{raidDailyBonus}</p>
+      <p className="mt-6 max-w-leitura text-texto-2">{raidDailyBonus}</p>
 
-      <h3 className="text-titulo-4 mt-10 max-w-[60ch] font-bold text-texto">
+      <h3 className="text-titulo-4 mt-10 max-w-leitura font-bold text-texto">
         <TextoComTermos texto="[[aspect|Aspects]]" />
       </h3>
-      <div className="mt-4 grid max-w-[56rem] items-start gap-8 lg:grid-cols-2">
+      <div className="mt-4 grid items-start gap-8 lg:grid-cols-2">
         <div>
           <p className="mb-3 flex flex-wrap gap-2 text-apoio" aria-label="Raridades de aspect">
             <span className="rounded border border-raridade-legendary/60 px-2 py-0.5 text-raridade-legendary">Legendary</span>
@@ -62,7 +62,7 @@ export default function RaidsRecompensas() {
         </figure>
       </div>
 
-      <div className="mt-10 grid max-w-[56rem] gap-6 md:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
         <figure>
           <ImagemDoJogo
             base="/raids/prints/raid-ui-bau-recompensa"

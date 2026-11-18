@@ -35,6 +35,9 @@
   --color-raridade-mythic: #c80db1;
   --color-raridade-mythic-texto: #edb7e7;
 
+  /* Medida de leitura (max-w-leitura): dentro da faixa de 65 a 75ch para texto corrido. */
+  --container-leitura: 70ch;
+
   /* Escala de tipo por papel (DESIGN.md, Typography). Componentes usam o papel, nunca um tamanho solto. */
   --text-exibicao: clamp(2.25rem, 5vw, 3.75rem);
   --text-exibicao--line-height: 1.05;

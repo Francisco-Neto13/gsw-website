@@ -80,8 +80,8 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
 export default function MembersSection() {
   return (
     <section id="membros" className="border-t border-linha py-16 sm:py-20">
-      <div className="mx-auto w-full max-w-[64rem] px-4 sm:px-6 lg:px-10">
-        <div className="mb-10 max-w-[60ch]">
+      <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div className="mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
           <h2 className="text-titulo-2 text-texto">
             Os Guardiões Principais
           </h2>
@@ -90,9 +90,10 @@ export default function MembersSection() {
             GsW a cada batalha.&rdquo;
           </p>
         </div>
+        <div className="min-w-0">
 
         {members.length > 0 ? (
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 2xl:grid-cols-7">
             {members.map((member) => (
               <MemberCard key={member.name} member={member} />
             ))}
@@ -110,6 +111,7 @@ export default function MembersSection() {
             </p>
           </div>
         )}
+        </div>
       </div>
     </section>
   );
