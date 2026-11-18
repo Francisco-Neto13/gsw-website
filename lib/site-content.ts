@@ -97,6 +97,15 @@ export const dungeonsSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const worldEventsSecoes: GuiaSecao[] = [
+  { id: "participar", titulo: "Como participar", busca: "aviso chat região quest world event bomb" },
+  { id: "como-funciona", titulo: "Como funciona", busca: "ondas waves party chefe baú" },
+  { id: "annihilation", titulo: "Annihilation", busca: "new sun subjugate corruption portal 3 dias prelude" },
+  { id: "recompensas", titulo: "Recompensas", busca: "corrupted cache mítico le runas ingredientes" },
+  { id: "dicas", titulo: "Dicas" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -165,6 +174,7 @@ export const guias: Guia[] = [
     grupo: "endgame",
     estado: "completo",
     rotaAntiga: "/world-events",
+    secoes: worldEventsSecoes,
   },
   {
     slug: "silverbull-shares",
