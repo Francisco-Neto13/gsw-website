@@ -87,6 +87,16 @@ export const modosSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const dungeonsSecoes: GuiaSecao[] = [
+  { id: "lista", titulo: "Todas as dungeons", busca: "nível chefe boss corrompida corrupted" },
+  { id: "acesso", titulo: "Como entrar", busca: "chave key guardian key collector second chance" },
+  { id: "forgery", titulo: "Forgery", busca: "forgery chest 8/8 mítico runas key forge merchant" },
+  { id: "merchant", titulo: "Dungeon Merchant", busca: "boss token fragmentos loja" },
+  { id: "recompensas", titulo: "Recompensas", busca: "esmeraldas runas mítico" },
+  { id: "dicas", titulo: "Dicas" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -145,6 +155,7 @@ export const guias: Guia[] = [
     grupo: "endgame",
     estado: "completo",
     rotaAntiga: "/dungeons",
+    secoes: dungeonsSecoes,
   },
   {
     slug: "world-events",

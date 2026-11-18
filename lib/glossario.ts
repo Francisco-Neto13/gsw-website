@@ -156,6 +156,11 @@ export const glossario = {
     tipo: "Desafio",
     explicacao: "Ilha de combate de nível alto com ondas de inimigos e chefes, feita em grupo ou sozinho.",
   },
+  keyGuardian: {
+    termo: "Key Guardian",
+    tipo: "Inimigo raro",
+    explicacao: "Inimigo mais forte que os comuns, que aparece em áreas de nível parecido com o da dungeon e sempre deixa 1 chave dela.",
+  },
   toughness: {
     termo: "Toughness",
     tipo: "Atributo de montaria",

@@ -1,51 +1,29 @@
-import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import FiguraNoTamanho from "@/components/guias/FiguraNoTamanho";
+import SecaoGuia from "@/components/guias/SecaoGuia";
+import TextoComTermos from "@/components/guias/TextoComTermos";
+import { merchantImagens, merchantIntro, merchantMoedas } from "@/components/dungeons/data/dungeons-content";
 import { tamanhos } from "@/lib/tamanhos";
-import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
-import {
-  dungeonsMerchantCards,
-  dungeonsMerchantImages,
-  dungeonsMerchantIntro,
-} from "@/components/dungeons/data/dungeons-content";
 
 export default function DungeonsMerchantSection() {
+  const [npc, loja] = merchantImagens;
   return (
-    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-
-      <div className="relative">
-        <div className="mb-8 max-w-leitura">
-          <h2 className="text-titulo-2 text-texto">
-            {dungeonsMerchantIntro.title}
-          </h2>
-          <p className="mt-3 text-texto-2">
-            {dungeonsMerchantIntro.description}
-          </p>
+    <SecaoGuia id="merchant" titulo="Dungeon Merchant" introducao={merchantIntro}>
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+        <div>
+          <dl className="flex max-w-leitura flex-col gap-4">
+            {merchantMoedas.map((moeda) => (
+              <div key={moeda.titulo} className="rounded-md border border-linha bg-carvao px-5 py-4">
+                <dt className="font-bold text-texto">{moeda.titulo}</dt>
+                <dd className="mt-1 text-texto-2">
+                  <TextoComTermos texto={moeda.texto} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <FiguraNoTamanho imagem={loja} sizes={tamanhos.solta} className="mt-6" />
         </div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {dungeonsMerchantCards.map((item) => (
-            <article
-              key={item.title}
-              className="group relative rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8"
-            >
-              <h3 className="text-titulo-4 mb-3 font-bold tracking-tight text-texto">{item.title}</h3>
-              <p className="text-apoio text-texto-2">{item.description}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6">
-          {dungeonsMerchantImages.map((image) => (
-            <article key={image.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
-              <ClickableImagePreview src={image.src} alt={image.alt}>
-                <div className="relative aspect-video w-full">
-                  <ImagemNoQuadro src={image.src} alt={image.alt} sizes={tamanhos.metade} className="p-2" />
-                </div>
-              </ClickableImagePreview>
-              <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">{image.caption?.trim() || image.alt}</p>
-            </article>
-          ))}
-        </div>
+        <FiguraNoTamanho imagem={npc} sizes={tamanhos.lateral} />
       </div>
-    </section>
+    </SecaoGuia>
   );
 }

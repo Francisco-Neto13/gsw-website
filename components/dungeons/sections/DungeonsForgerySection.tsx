@@ -1,53 +1,75 @@
-import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
-import { tamanhos } from "@/lib/tamanhos";
-import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
+import Destaque from "@/components/guias/Destaque";
+import FiguraNoTamanho from "@/components/guias/FiguraNoTamanho";
+import SecaoGuia from "@/components/guias/SecaoGuia";
 import {
-  dungeonsForgeryCards,
-  dungeonsForgeryImage,
-  dungeonsForgeryIntro,
+  forgeryExtras,
+  forgeryImagem,
+  forgeryIntro,
+  forgeryMitico,
+  forgeryRegras,
+  forgeryTabela,
 } from "@/components/dungeons/data/dungeons-content";
+import { tamanhos } from "@/lib/tamanhos";
+
+const colunas = ["XP", "Esmeraldas", "Runas", "Tokens", "Mítico"] as const;
 
 export default function DungeonsForgerySection() {
   return (
-    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-
-      <div className="relative">
-        <div className="mb-8 max-w-leitura">
-          <h2 className="text-titulo-2 text-texto">
-            {dungeonsForgeryIntro.title}
-          </h2>
-          <p className="mt-3 text-texto-2">
-            {dungeonsForgeryIntro.description}
-          </p>
-        </div>
-
-        {/* Cartões e imagem lado a lado: a imagem não fica sozinha pela metade com a outra metade vazia. */}
-        <div className="grid items-start gap-4 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] sm:gap-6">
-            {dungeonsForgeryCards.map((item) => (
-              <article
-                key={item.title}
-                className="group relative rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8"
-              >
-                <h3 className="text-titulo-4 mb-3 font-bold tracking-tight text-texto sm:mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-texto-2">{item.description}</p>
-              </article>
+    <SecaoGuia id="forgery" titulo="Forgery" introducao={forgeryIntro}>
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+        <div>
+          <h3 className="text-titulo-4 font-bold text-texto">Como o Forgery Chest conta</h3>
+          <ul className="mt-3 flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+            {forgeryRegras.map((regra) => (
+              <li key={regra}>{regra}</li>
             ))}
-          </div>
-          <div className="overflow-hidden rounded-md border border-linha bg-carvao">
-            <ClickableImagePreview src={dungeonsForgeryImage.src} alt={dungeonsForgeryImage.alt}>
-              <div className="relative aspect-video w-full">
-                <ImagemNoQuadro src={dungeonsForgeryImage.src} alt={dungeonsForgeryImage.alt} sizes={tamanhos.lateral} className="p-2" />
-              </div>
-            </ClickableImagePreview>
-            <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">
-              {dungeonsForgeryImage.caption?.trim() || dungeonsForgeryImage.alt}
-            </p>
-          </div>
+          </ul>
         </div>
+        <FiguraNoTamanho imagem={forgeryImagem} sizes={tamanhos.lateral} />
       </div>
-    </section>
+
+      <h3 className="mt-10 text-titulo-4 font-bold text-texto">O que o baú dá em cada contagem</h3>
+      <div className="mt-4 overflow-x-auto rounded-md border border-linha">
+        <table className="w-full min-w-[36rem] border-collapse text-left text-apoio">
+          <caption className="sr-only">Recompensa média do Forgery Chest por número de dungeons corrompidas concluídas</caption>
+          <thead className="bg-carvao text-texto">
+            <tr>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Contagem
+              </th>
+              {colunas.map((coluna) => (
+                <th key={coluna} scope="col" className="px-4 py-2.5 text-right font-bold">
+                  {coluna}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="numeros font-mono">
+            {forgeryTabela.map((linha) => (
+              <tr key={linha.contagem} className="border-t border-linha">
+                <th scope="row" className="px-4 py-2 text-left font-medium text-texto">
+                  {linha.contagem}/8
+                </th>
+                {[linha.xp, linha.esmeraldas, linha.runas, linha.tokens, linha.mitico].map((valor, indice) => (
+                  <td key={colunas[indice]} className="px-4 py-2 text-right text-texto-2">
+                    {valor}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-2 max-w-leitura text-apoio text-texto-3">Valores médios; as esmeraldas e as runas variam a cada baú.</p>
+
+      <Destaque {...forgeryMitico} className="mt-6" />
+
+      <h3 className="mt-10 text-titulo-4 font-bold text-texto">Itens que só saem do baú</h3>
+      <ul className="mt-3 flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+        {forgeryExtras.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </SecaoGuia>
   );
 }

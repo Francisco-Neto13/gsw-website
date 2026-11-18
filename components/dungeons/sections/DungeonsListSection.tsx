@@ -1,4 +1,5 @@
 import Galeria from "@/components/guias/Galeria";
+import SecaoGuia from "@/components/guias/SecaoGuia";
 import { dimensoesDe } from "@/lib/imagens";
 import {
   dungeonsCorrompidas,
@@ -58,12 +59,8 @@ function ImagensDasDungeons({ lista }: { lista: DungeonDaLista[] }) {
 
 export default function DungeonsListSection() {
   return (
-    <section className="px-4 pb-12 sm:px-6 lg:px-10">
-      <div className="max-w-leitura">
-        <h2 className="text-titulo-2 text-texto">{dungeonsListaIntro.title}</h2>
-        <p className="mt-3 text-texto-2">{dungeonsListaIntro.description}</p>
-      </div>
-      <div className="mt-6 flex flex-col gap-6">
+    <SecaoGuia id="lista" titulo="Todas as dungeons" introducao={dungeonsListaIntro}>
+      <div className="flex flex-col gap-6">
         <TabelaDeDungeons titulo="Dungeons normais" lista={dungeonsNormais} />
         <ImagensDasDungeons lista={dungeonsNormais} />
         <TabelaDeDungeons titulo="Dungeons corrompidas" lista={dungeonsCorrompidas} />
@@ -72,6 +69,6 @@ export default function DungeonsListSection() {
       <p className="mt-2 max-w-leitura text-apoio text-texto-3">
         Níveis mínimos e chefes conferidos na wiki da Wynncraft para a versão 2.2.4.
       </p>
-    </section>
+    </SecaoGuia>
   );
 }
