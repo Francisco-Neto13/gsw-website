@@ -1,4 +1,5 @@
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, ChevronDown, Search } from "lucide-react";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { members } from "@/components/history/data/members";
@@ -6,7 +7,8 @@ import BotaoBuscar from "@/components/home/sections/BotaoBuscar";
 import { homeComeco, homeComunidade, homeDestaque, homeHero } from "@/components/home/data/home-content";
 import { raidGuideGroups, raids } from "@/components/raids/data/raids-content";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
-import { discordUrl, grupos, guiaHref, guiasDoGrupo } from "@/lib/site-content";
+import TextoAnimado from "@/components/shared/TextoAnimado";
+import { discordUrl, grupos, guiaHref, guiasDoGrupo, guiasEmOrdem } from "@/lib/site-content";
 
 // Números do destaque saem dos próprios dados do guia, nunca escritos à mão.
 const totalDeSalas = raidGuideGroups.reduce((soma, grupo) => soma + grupo.rooms.length, 0);
@@ -18,46 +20,102 @@ const totalDePovs = new Set(
 ).size;
 const retratos = members.filter((membro) => membro.img).slice(0, 8);
 
+// Partículas do palco: posições fixas (sem aleatório, o servidor e o navegador desenham igual).
+const particulas = Array.from({ length: 22 }, (_, i) => {
+  const passo = (i * 37) % 100;
+  return {
+    left: `${(passo * 0.97 + 2) % 100}%`,
+    "--tam": `${2 + (i % 3) * 2}px`,
+    "--dur": `${7 + ((i * 13) % 7)}s`,
+    "--atraso": `-${((i * 1.7) % 9).toFixed(1)}s`,
+    "--deriva": `${((i * 29) % 40) - 20}px`,
+    "--brilho": `${0.35 + ((i * 7) % 5) / 10}`,
+    "--cor": i % 4 === 0 ? "#f2c063" : i % 3 === 0 ? "#ff5cff" : "#c79bf2",
+  } as CSSProperties;
+});
+
 export default function HomePage() {
   return (
     <div>
-      {/* Abertura: a frase do guia e a busca, sobre uma print da guilda. */}
-      <section className="relative isolate overflow-hidden border-b border-caixa-fora">
-        <div className="absolute inset-0 -z-10">
-          <ImagemDoJogo
-            base={homeHero.imagem.base}
-            alt=""
-            larguras={[640, 1280, 1920]}
-            largura={1920}
-            altura={823}
-            sizes="100vw"
-            prioridade
-            className="h-full w-full object-cover object-[70%_center]"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,#0f0d11_0%,rgba(15,13,17,0.92)_38%,rgba(15,13,17,0.35)_75%,rgba(15,13,17,0.15)_100%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(0deg,#0f0d11,transparent)]" />
-        </div>
-        <div className="casca pb-20 pt-16 sm:pt-24 lg:pb-28 lg:pt-32">
-          <div className="max-w-[36rem]">
-            <h1 className="text-exibicao leading-[1.05] text-texto">{homeHero.titulo}</h1>
-            <p className="mt-5 text-lede text-texto-2">{homeHero.texto}</p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <BotaoBuscar>
-                <Search aria-hidden size={18} strokeWidth={1.75} />
-                Buscar um guia
-                <kbd className="ml-1 rounded border border-white/30 px-1.5 font-mono text-detalhe text-white/80">Ctrl K</kbd>
-              </BotaoBuscar>
-              <Link
-                href="/guias"
-                className="flex h-11 items-center gap-2 rounded-md border border-linha-forte px-4 text-texto hover:border-violeta-borda"
-              >
-                Ver todos os guias
-                <ArrowRight aria-hidden size={16} strokeWidth={1.75} />
-              </Link>
+      {/* Abertura: palco fixo. A rolagem (--p) aproxima a ilha, escurece o véu e leva o título embora;
+          o cursor (--px/--py) mexe a imagem de leve. Partículas sobem como as de encantamento do jogo. */}
+      <section data-trilho data-paralaxe data-sem-revelar aria-labelledby="titulo-inicio" className="relative h-[165svh] border-b border-caixa-fora">
+        <div className="sticky top-[var(--topbar-h)] isolate h-[calc(100svh-var(--topbar-h))] overflow-hidden">
+          <div className="palco-imagem-entra absolute inset-0 -z-20">
+            <div className="palco-imagem absolute inset-0">
+              <ImagemDoJogo
+                base={homeHero.imagem.base}
+                alt=""
+                larguras={[640, 1280, 1920]}
+                largura={1920}
+                altura={823}
+                sizes="100vw"
+                prioridade
+                className="h-full w-full object-cover object-[70%_center]"
+              />
             </div>
+          </div>
+          <div className="palco-veu absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_68%_45%,transparent_0%,rgba(15,13,17,0.55)_55%,#0f0d11_100%)]" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#0f0d11_0%,rgba(15,13,17,0.88)_34%,rgba(15,13,17,0.2)_72%,transparent_100%)]" />
+          <div aria-hidden className="particulas pointer-events-none absolute inset-0 -z-10">
+            {particulas.map((estilo, indice) => (
+              <span key={indice} style={estilo} />
+            ))}
+          </div>
+
+          <div className="palco-texto casca flex h-full flex-col justify-center pb-16">
+            <div className="max-w-[40rem]">
+              <h1 id="titulo-inicio" className="text-exibicao leading-[1.05] text-texto">
+                <TextoAnimado texto={homeHero.titulo} />
+              </h1>
+              <p className="entra mt-6 max-w-leitura text-lede text-texto-2" style={{ "--i": 7 } as CSSProperties}>
+                {homeHero.texto}
+              </p>
+              <div className="entra mt-8 flex flex-wrap items-center gap-3" style={{ "--i": 8 } as CSSProperties}>
+                <BotaoBuscar>
+                  <Search aria-hidden size={18} strokeWidth={1.75} />
+                  Buscar um guia
+                  <kbd className="ml-1 rounded border border-white/30 px-1.5 font-mono text-detalhe text-white/80">Ctrl K</kbd>
+                </BotaoBuscar>
+                <Link
+                  href="/guias"
+                  className="flex h-11 items-center gap-2 rounded-md border border-linha-forte px-4 text-texto hover:border-violeta-borda"
+                >
+                  Ver todos os guias
+                  <ArrowRight aria-hidden size={16} strokeWidth={1.75} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div
+            aria-hidden
+            className="entra absolute inset-x-0 bottom-6 flex flex-col items-center gap-1 text-detalhe text-texto-3"
+            style={{ "--i": 12 } as CSSProperties}
+          >
+            Role para explorar
+            <ChevronDown className="dica-rolar" size={18} strokeWidth={1.75} />
           </div>
         </div>
       </section>
+
+      {/* Fita com os guias: passa devagar e para no hover (decorativa; os links estão logo abaixo). */}
+      <div aria-hidden className="fita overflow-hidden border-b border-linha py-5">
+        <div className="fita-trilho">
+          {[0, 1].map((copia) => (
+            <div key={copia} className="flex shrink-0 items-center gap-10 pr-10">
+              {guiasEmOrdem.map((guia) => (
+                <span key={guia.slug} className="flex items-center gap-10">
+                  <span className="font-titulo text-titulo-2 text-transparent [-webkit-text-stroke:1px_rgba(199,155,242,0.55)]">
+                    {guia.titulo}
+                  </span>
+                  <span className="h-2 w-2 bg-gsw" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Por onde começar: os grupos de guias, na ordem do jogo. */}
       <section aria-labelledby="comeco" className="casca py-16">
@@ -67,12 +125,12 @@ export default function HomePage() {
         <p className="mt-3 max-w-leitura text-texto-2">{homeComeco.texto}</p>
         <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {grupos.map((grupo) => (
-            <div key={grupo.id}>
+            <div key={grupo.id} data-revelar-item>
               <h3 className="border-b border-linha pb-2 font-bold text-texto-3">{grupo.titulo}</h3>
               <ul className="mt-3 flex flex-col gap-3">
                 {guiasDoGrupo(grupo.id).map((guia) => (
                   <li key={guia.slug}>
-                    <Link href={guiaHref(guia.slug)} className="group block">
+                    <Link href={guiaHref(guia.slug)} className="group block transition-transform duration-[var(--dur-hover)] ease-[var(--ease-saida)] hover:translate-x-1">
                       <span className="flex items-center gap-2 font-titulo text-titulo-4 text-texto group-hover:text-violeta">
                         {guia.titulo}
                         {guia.estado === "em-construcao" ? (
@@ -93,16 +151,16 @@ export default function HomePage() {
 
       {/* Guia em destaque: painel carvão (a caixa de item fica só para informação de consulta). */}
       <section aria-labelledby="destaque" className="casca pb-16">
-        <div className="grid overflow-hidden rounded-md border border-linha bg-carvao lg:grid-cols-[1fr_1.1fr]">
+        <div data-revelar-item className="feixe holofote grid overflow-hidden rounded-md border border-linha bg-carvao lg:grid-cols-[1fr_1.1fr]">
           <div className="px-6 py-8 sm:px-8 sm:py-10">
             <h2 id="destaque" className="text-titulo-2 text-texto">
               {homeDestaque.titulo}
             </h2>
             <p className="mt-4 max-w-leitura text-texto-2">{homeDestaque.texto}</p>
             <p className="mt-4 max-w-leitura text-texto-2">
-              São <span className="numeros font-mono text-texto">{raids.length}</span> raids,{" "}
-              <span className="numeros font-mono text-texto">{totalDeSalas}</span> salas e{" "}
-              <span className="numeros font-mono text-texto">{totalDePovs}</span> POVs gravados pela guilda.
+              São <span data-contar={raids.length} className="numeros font-mono text-texto">{raids.length}</span> raids,{" "}
+              <span data-contar={totalDeSalas} className="numeros font-mono text-texto">{totalDeSalas}</span> salas e{" "}
+              <span data-contar={totalDePovs} className="numeros font-mono text-texto">{totalDePovs}</span> POVs gravados pela guilda.
             </p>
             <Link
               href={guiaHref("raids")}
@@ -112,7 +170,7 @@ export default function HomePage() {
               <ArrowRight aria-hidden size={16} strokeWidth={1.75} />
             </Link>
           </div>
-          <div className="relative min-h-60">
+          <div className="zoom-hover relative min-h-60">
             <ImagemDoJogo
               base={homeDestaque.imagem.base}
               alt={homeDestaque.imagem.alt}
@@ -166,7 +224,7 @@ export default function HomePage() {
             />
             <ul className="grid grid-cols-4 gap-3 sm:gap-4" aria-label="Alguns membros da guilda">
               {retratos.map((membro) => (
-                <li key={membro.name}>
+                <li key={membro.name} data-inclinar>
                   <Image quality={90}
                     src={membro.img!}
                     alt=""
