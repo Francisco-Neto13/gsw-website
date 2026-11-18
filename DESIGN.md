@@ -239,7 +239,6 @@ H1 e H2 têm `text-wrap: balance`; parágrafos, itens, legendas e `dd` têm `tex
 - **Onde parei:** o guia guarda no navegador a última seção visível e oferece "Continuar de" só para quem volta pelo topo.
 - **Breakpoints:** os do Tailwind (640, 768, 1024, 1280 px).
 - **Divergência do plano:** a direção pedia coluna de 68ch e sidebar de 264 px; o build usa 70ch e 16 rem (256 px), e este documento segue o build.
-- **Atalho temporário:** os guias ainda no modelo antigo pintam cada seção de preto puro; `app/styles/foundation.css` deixa esses fundos transparentes dentro da área de guias. Não é regra do sistema: sai quando cada guia for refeito no modelo de Raids, e nenhuma superfície nova deve depender dele.
 
 ## Elevation & Depth
 

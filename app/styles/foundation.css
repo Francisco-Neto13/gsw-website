@@ -254,15 +254,6 @@ table,
   }
 }
 
-/* shortcut: os guias ainda no modelo antigo pintam cada seção de preto puro (bg-black/bg-zinc-950), o que
-   deixa a página em retalhos sobre o chão do site. Neutraliza só dentro da área de guias; sai quando cada
-   guia for refeito no modelo de Raids. */
-[data-guia-conteudo] section.bg-black,
-[data-guia-conteudo] section.bg-zinc-950,
-[data-guia-conteudo] div.bg-black {
-  background-color: transparent;
-}
-
 .pular-para-conteudo {
   position: absolute;
   left: 1rem;
