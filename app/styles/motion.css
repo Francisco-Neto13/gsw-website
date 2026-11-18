@@ -561,3 +561,59 @@ html[data-rolou] .topo-site {
     clip-path: none !important;
   }
 }
+
+/* Texto glitch (components/guias/TextoGlitch.tsx): duas cópias deslocadas, em ciano e magenta, piscam em
+   faixas recortadas a cada poucos segundos; o texto base treme de leve. Sem movimento reduzido: fica parado. */
+.texto-glitch-caixa {
+  position: relative;
+  display: inline-block;
+}
+
+.texto-glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--color-texto);
+  animation: glitch-tremor 3.2s steps(1, end) infinite;
+}
+
+.texto-glitch::before,
+.texto-glitch::after {
+  content: attr(data-texto);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.texto-glitch::before {
+  color: #5ef2f2;
+  animation: glitch-faixa 3.2s steps(1, end) infinite;
+}
+
+.texto-glitch::after {
+  color: #ff5cff;
+  animation: glitch-faixa 3.2s steps(1, end) infinite reverse;
+}
+
+@keyframes glitch-tremor {
+  0%, 86%, 100% { transform: none; }
+  88% { transform: translate(1px, -1px); }
+  91% { transform: translate(-2px, 0); }
+  94% { transform: translate(1px, 1px); }
+}
+
+@keyframes glitch-faixa {
+  0%, 85%, 100% { opacity: 0; clip-path: inset(0 0 100% 0); transform: none; }
+  87% { opacity: 0.85; clip-path: inset(10% 0 55% 0); transform: translate(-3px, 0); }
+  90% { opacity: 0.85; clip-path: inset(60% 0 8% 0); transform: translate(3px, 0); }
+  93% { opacity: 0.85; clip-path: inset(30% 0 40% 0); transform: translate(-2px, 0); }
+  96% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .texto-glitch,
+  .texto-glitch::before,
+  .texto-glitch::after {
+    animation: none;
+  }
+}
