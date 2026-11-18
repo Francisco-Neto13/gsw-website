@@ -132,8 +132,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* A Pixelify desenha errado a ligadura "fi" ("Bonfire" vira "BonAre"): sem ligaduras na fonte de título. */
+.font-titulo {
+  font-variant-ligatures: none;
+}
+
 h1,
 h2 {
+  font-variant-ligatures: none;
   font-family: var(--font-titulo);
   font-weight: 600;
   letter-spacing: 0.01em;
