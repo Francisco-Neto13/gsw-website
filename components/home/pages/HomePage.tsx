@@ -37,7 +37,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,#0f0d11_0%,rgba(15,13,17,0.92)_38%,rgba(15,13,17,0.35)_75%,rgba(15,13,17,0.15)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(0deg,#0f0d11,transparent)]" />
         </div>
-        <div className="mx-auto max-w-[96rem] px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:px-10 lg:pb-28 lg:pt-32">
+        <div className="casca pb-20 pt-16 sm:pt-24 lg:pb-28 lg:pt-32">
           <div className="max-w-[36rem]">
             <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] text-texto">{homeHero.titulo}</h1>
             <p className="mt-5 text-lg text-texto-2">{homeHero.texto}</p>
@@ -60,7 +60,7 @@ export default function HomePage() {
       </section>
 
       {/* Por onde começar: os grupos de guias, na ordem do jogo. */}
-      <section aria-labelledby="comeco" className="mx-auto max-w-[96rem] px-4 py-16 sm:px-6 lg:px-10">
+      <section aria-labelledby="comeco" className="casca py-16">
         <h2 id="comeco" className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
           {homeComeco.titulo}
         </h2>
@@ -92,7 +92,7 @@ export default function HomePage() {
       </section>
 
       {/* Guia em destaque: painel carvão (a caixa de item fica só para informação de consulta). */}
-      <section aria-labelledby="destaque" className="mx-auto max-w-[96rem] px-4 pb-16 sm:px-6 lg:px-10">
+      <section aria-labelledby="destaque" className="casca pb-16">
         <div className="grid overflow-hidden rounded-md border border-linha bg-carvao lg:grid-cols-[1fr_1.1fr]">
           <div className="px-6 py-8 sm:px-8 sm:py-10">
             <h2 id="destaque" className="text-[clamp(1.5rem,2.4vw,2rem)] text-texto">
@@ -128,13 +128,16 @@ export default function HomePage() {
 
       {/* Comunidade: a guilda por trás do guia. */}
       <section aria-labelledby="comunidade" className="border-t border-linha bg-carvao">
-        <div className="mx-auto grid max-w-[96rem] gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:items-start lg:px-10">
-          <div>
-            <h2 id="comunidade" className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
-              {homeComunidade.titulo}
-            </h2>
-            <p className="mt-3 max-w-[56ch] text-texto-2">{homeComunidade.texto}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+        <div className="casca py-16">
+          {/* Cabeçalho numa faixa (texto à esquerda, ações à direita); embaixo, a arte e os retratos com alturas parecidas. */}
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <h2 id="comunidade" className="text-[clamp(1.6rem,2.6vw,2.1rem)] text-texto">
+                {homeComunidade.titulo}
+              </h2>
+              <p className="mt-3 max-w-[56ch] text-texto-2">{homeComunidade.texto}</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/historia"
                 className="flex h-11 items-center gap-2 rounded-md border border-linha-forte px-4 text-texto hover:border-violeta-borda"
@@ -152,31 +155,31 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col gap-6">
-          <Image
-            src="/bg-guilda.webp"
-            alt="Arte da guilda: membros da GsW reunidos numa mesa redonda sob vitrais roxos"
-            width={1824}
-            height={866}
-            sizes="(min-width: 1024px) 45vw, 100vw"
-            className="h-auto w-full rounded-md border border-linha"
-          />
-          <ul className="grid grid-cols-4 gap-3 sm:gap-4" aria-label="Alguns membros da guilda">
-            {retratos.map((membro) => (
-              <li key={membro.name} className="text-center">
-                <Image
-                  src={membro.img!}
-                  alt=""
-                  width={160}
-                  height={160}
-                  sizes="(min-width: 1024px) 8rem, 22vw"
-                  className="aspect-square w-full rounded-md border border-linha object-cover"
-                />
-                <span className="mt-1.5 block truncate text-[0.9rem] text-texto">{membro.name}</span>
-                <span className="block truncate text-[0.8rem] text-texto-3">{membro.role}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-10 grid items-start gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+            <Image
+              src="/bg-guilda.webp"
+              alt="Arte da guilda: membros da GsW reunidos numa mesa redonda sob vitrais roxos"
+              width={1824}
+              height={866}
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              className="h-auto w-full rounded-md border border-linha"
+            />
+            <ul className="grid grid-cols-4 gap-3 sm:gap-4" aria-label="Alguns membros da guilda">
+              {retratos.map((membro) => (
+                <li key={membro.name}>
+                  <Image
+                    src={membro.img!}
+                    alt=""
+                    width={160}
+                    height={160}
+                    sizes="(min-width: 1024px) 9vw, 22vw"
+                    className="aspect-square w-full rounded-md border border-linha object-cover"
+                  />
+                  <span className="mt-1.5 block truncate text-[0.9rem] text-texto">{membro.name}</span>
+                  <span className="block truncate text-[0.8rem] text-texto-3">{membro.role}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
