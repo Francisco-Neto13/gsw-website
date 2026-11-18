@@ -46,7 +46,7 @@ export default function Pillars() {
     <section id="pilares" className="border-t border-linha py-16 sm:py-20">
 
       <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
-        <div className="reveal-on-scroll mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
+        <div className="mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
           <h2 className="text-titulo-2 text-texto">
             Os <span className="numeros font-mono">5</span> Pilares
           </h2>
@@ -61,7 +61,7 @@ export default function Pillars() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="flex flex-col rounded-md border border-linha bg-carvao p-6 sm:last:col-span-2"
+              data-revelar-item className="holofote flex flex-col rounded-md border border-linha bg-carvao p-6 sm:last:col-span-2"
             >
 
               <div className="mb-4 text-violeta">

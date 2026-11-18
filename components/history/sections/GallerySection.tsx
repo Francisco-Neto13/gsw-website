@@ -63,7 +63,7 @@ export default function GallerySection() {
     <section id="galeria" className="border-t border-linha py-16 sm:py-20">
 
       <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
-        <div className="reveal-on-scroll mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
+        <div className="mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
           <h2 className="text-titulo-2 text-texto">
             Galeria dos Guardiões
           </h2>

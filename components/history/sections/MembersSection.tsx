@@ -46,7 +46,7 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
   const imageSrc = member.img?.trim() ? normalizeImageSrc(member.img.trim()) : fallbackSrc;
 
   return (
-    <div className="rounded-md border border-linha bg-carvao p-3">
+    <div data-revelar-item data-inclinar className="holofote rounded-md border border-linha bg-carvao p-3">
       <div className="relative mb-3 aspect-square w-full overflow-hidden rounded bg-elevada">
         <Image quality={90}
           src={imageSrc}

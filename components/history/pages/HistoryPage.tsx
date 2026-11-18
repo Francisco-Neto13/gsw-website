@@ -6,7 +6,7 @@ import GallerySection from "@/components/history/sections/GallerySection";
 
 export default function HistoryPage() {
   return (
-    <div id="topo" data-revelar>
+    <div id="topo">
         <History />
         <MembersSection />
         <Pillars />

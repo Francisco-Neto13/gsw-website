@@ -30,7 +30,7 @@ export default function Essence() {
         </div>
 
         <div className="my-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3">
-          <div className="rounded-md border border-linha bg-carvao p-6">
+          <div data-revelar-item className="holofote rounded-md border border-linha bg-carvao p-6">
             <div className="mb-3 text-violeta">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -48,7 +48,7 @@ export default function Essence() {
             </p>
           </div>
 
-          <div className="rounded-md border border-linha bg-carvao p-6">
+          <div data-revelar-item className="holofote rounded-md border border-linha bg-carvao p-6">
             <div className="mb-3 text-violeta">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
@@ -64,7 +64,7 @@ export default function Essence() {
             </p>
           </div>
 
-          <div className="rounded-md border border-linha bg-carvao p-6 sm:col-span-2 xl:col-span-1">
+          <div data-revelar-item className="holofote rounded-md border border-linha bg-carvao p-6 sm:col-span-2 xl:col-span-1">
             <div className="mb-3 text-violeta">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
