@@ -1,3 +1,5 @@
+import Galeria from "@/components/guias/Galeria";
+import { dimensoesDe } from "@/lib/imagens";
 import {
   dungeonsCorrompidas,
   dungeonsListaIntro,
@@ -46,6 +48,14 @@ function TabelaDeDungeons({ titulo, lista }: { titulo: string; lista: DungeonDaL
   );
 }
 
+/** Uma imagem por dungeon, na galeria padrão (só as que existem e estão medidas). */
+function ImagensDasDungeons({ lista }: { lista: DungeonDaLista[] }) {
+  const itens = lista
+    .filter((dungeon) => dungeon.imagem && dimensoesDe(dungeon.imagem))
+    .map((dungeon) => ({ src: dungeon.imagem!, alt: `Cenário da dungeon ${dungeon.nome}`, legenda: `${dungeon.nome}, nível ${dungeon.nivel}+` }));
+  return itens.length > 0 ? <Galeria itens={itens} className="mt-2" /> : null;
+}
+
 export default function DungeonsListSection() {
   return (
     <section className="px-4 pb-12 sm:px-6 lg:px-10">
@@ -55,7 +65,9 @@ export default function DungeonsListSection() {
       </div>
       <div className="mt-6 flex flex-col gap-6">
         <TabelaDeDungeons titulo="Dungeons normais" lista={dungeonsNormais} />
+        <ImagensDasDungeons lista={dungeonsNormais} />
         <TabelaDeDungeons titulo="Dungeons corrompidas" lista={dungeonsCorrompidas} />
+        <ImagensDasDungeons lista={dungeonsCorrompidas} />
       </div>
       <p className="mt-2 max-w-leitura text-apoio text-texto-3">
         Níveis mínimos e chefes conferidos na wiki da Wynncraft para a versão 2.2.4.

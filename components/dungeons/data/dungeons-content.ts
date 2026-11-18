@@ -247,30 +247,32 @@ export type DungeonDaLista = {
   chefe: string;
   regiao: string;
   quest?: string;
+  /** Imagem da dungeon (wiki, public/terceiros/); some sozinha se a pasta for removida. */
+  imagem?: string;
 };
 
 export const dungeonsNormais: DungeonDaLista[] = [
-  { nome: "Decrepit Sewers", nivel: 3, chefe: "Witherhead", regiao: "Ragni" },
-  { nome: "Infested Pit", nivel: 12, chefe: "Arakadicus", regiao: "Wynn" },
-  { nome: "Underworld Crypt", nivel: 18, chefe: "Charon", regiao: "Wynn" },
-  { nome: "Timelost Sanctum", nivel: 22, chefe: "Garoth, Keeper of the Sanctum", regiao: "Wynn" },
-  { nome: "Sand-Swept Tomb", nivel: 31, chefe: "Hashr", regiao: "Deserto de Almuj" },
-  { nome: "Ice Barrows", nivel: 40, chefe: "Theorick", regiao: "Nesaak" },
-  { nome: "Undergrowth Ruins", nivel: 49, chefe: "Slykaar", regiao: "Selva de Troms" },
-  { nome: "Galleon's Graveyard", nivel: 58, chefe: "Captain Redbeard e tripulação", regiao: "Oceano" },
-  { nome: "Fallen Factory", nivel: 89, chefe: "Wynnston e Antikythera Supercomputer", regiao: "Corkus", quest: "The Envoy Part II" },
-  { nome: "Eldritch Outlook", nivel: 101, chefe: "The Eye", regiao: "Silent Expanse", quest: "A Journey Further" },
+  { nome: "Decrepit Sewers", imagem: "/terceiros/wynncraft/dungeon-decrepit-sewers.webp", nivel: 3, chefe: "Witherhead", regiao: "Ragni" },
+  { nome: "Infested Pit", imagem: "/terceiros/wynncraft/dungeon-infested-pit.webp", nivel: 12, chefe: "Arakadicus", regiao: "Wynn" },
+  { nome: "Underworld Crypt", imagem: "/terceiros/wynncraft/dungeon-underworld-crypt.webp", nivel: 18, chefe: "Charon", regiao: "Wynn" },
+  { nome: "Timelost Sanctum", imagem: "/terceiros/wynncraft/dungeon-timelost-sanctum.webp", nivel: 22, chefe: "Garoth, Keeper of the Sanctum", regiao: "Wynn" },
+  { nome: "Sand-Swept Tomb", imagem: "/terceiros/wynncraft/dungeon-sand-swept-tomb.webp", nivel: 31, chefe: "Hashr", regiao: "Deserto de Almuj" },
+  { nome: "Ice Barrows", imagem: "/terceiros/wynncraft/dungeon-ice-barrows.webp", nivel: 40, chefe: "Theorick", regiao: "Nesaak" },
+  { nome: "Undergrowth Ruins", imagem: "/terceiros/wynncraft/dungeon-undergrowth-ruins.webp", nivel: 49, chefe: "Slykaar", regiao: "Selva de Troms" },
+  { nome: "Galleon's Graveyard", imagem: "/terceiros/wynncraft/dungeon-galleons-graveyard.webp", nivel: 58, chefe: "Captain Redbeard e tripulação", regiao: "Oceano" },
+  { nome: "Fallen Factory", imagem: "/terceiros/wynncraft/dungeon-fallen-factory.webp", nivel: 89, chefe: "Wynnston e Antikythera Supercomputer", regiao: "Corkus", quest: "The Envoy Part II" },
+  { nome: "Eldritch Outlook", imagem: "/terceiros/wynncraft/dungeon-eldritch-outlook.webp", nivel: 101, chefe: "The Eye", regiao: "Silent Expanse", quest: "A Journey Further" },
 ];
 
 export const dungeonsCorrompidas: DungeonDaLista[] = [
-  { nome: "Corrupted Decrepit Sewers", nivel: 65, chefe: "Corrupted Witherhead", regiao: "Forgery" },
-  { nome: "Corrupted Infested Pit", nivel: 69, chefe: "Corrupted Arakadicus", regiao: "Forgery" },
-  { nome: "Corrupted Lost Sanctuary", nivel: 73, chefe: "Corrupted Garoth", regiao: "Forgery" },
-  { nome: "Corrupted Underworld Crypt", nivel: 77, chefe: "Corrupted Charon", regiao: "Forgery" },
-  { nome: "Corrupted Sand-Swept Tomb", nivel: 81, chefe: "Corrupted Hashr", regiao: "Forgery" },
-  { nome: "Corrupted Ice Barrows", nivel: 85, chefe: "Corrupted Theorick", regiao: "Forgery" },
-  { nome: "Corrupted Undergrowth Ruins", nivel: 89, chefe: "Corrupted Slykaar", regiao: "Forgery" },
-  { nome: "Corrupted Galleon's Graveyard", nivel: 93, chefe: "Corrupted Captain Redbeard e os Mutineers", regiao: "Forgery" },
+  { nome: "Corrupted Decrepit Sewers", imagem: "/terceiros/wynncraft/dungeon-decrepit-sewers-corrompida.webp", nivel: 65, chefe: "Corrupted Witherhead", regiao: "Forgery" },
+  { nome: "Corrupted Infested Pit", imagem: "/terceiros/wynncraft/dungeon-infested-pit-corrompida.webp", nivel: 69, chefe: "Corrupted Arakadicus", regiao: "Forgery" },
+  { nome: "Corrupted Lost Sanctuary", imagem: "/terceiros/wynncraft/dungeon-lost-sanctuary-corrompida.webp", nivel: 73, chefe: "Corrupted Garoth", regiao: "Forgery" },
+  { nome: "Corrupted Underworld Crypt", imagem: "/terceiros/wynncraft/dungeon-underworld-crypt-corrompida.webp", nivel: 77, chefe: "Corrupted Charon", regiao: "Forgery" },
+  { nome: "Corrupted Sand-Swept Tomb", imagem: "/terceiros/wynncraft/dungeon-sand-swept-tomb-corrompida.webp", nivel: 81, chefe: "Corrupted Hashr", regiao: "Forgery" },
+  { nome: "Corrupted Ice Barrows", imagem: "/terceiros/wynncraft/dungeon-ice-barrows-corrompida.webp", nivel: 85, chefe: "Corrupted Theorick", regiao: "Forgery" },
+  { nome: "Corrupted Undergrowth Ruins", imagem: "/terceiros/wynncraft/dungeon-undergrowth-ruins-corrompida.webp", nivel: 89, chefe: "Corrupted Slykaar", regiao: "Forgery" },
+  { nome: "Corrupted Galleon's Graveyard", imagem: "/terceiros/wynncraft/dungeon-galleons-graveyard-corrompida.webp", nivel: 93, chefe: "Corrupted Captain Redbeard e os Mutineers", regiao: "Forgery" },
 ];
 
 export const dungeonsListaIntro = {
