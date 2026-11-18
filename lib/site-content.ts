@@ -118,6 +118,16 @@ export const sharesSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const profissoesSecoes: GuiaSecao[] = [
+  { id: "tipos", titulo: "Tipos de profissão", busca: "gathering crafting mining woodcutting farming fishing armouring tailoring jeweling alchemism scribing cooking" },
+  { id: "coleta", titulo: "Coleta e ferramentas", busca: "ferramenta tool tier refino material" },
+  { id: "crafting", titulo: "Crafting", busca: "ingredientes crafting station powders xp bomba" },
+  { id: "spots", titulo: "Spots de ingredientes", busca: "coordenadas farm ingrediente" },
+  { id: "waypoints", titulo: "Waypoints no Wynntils", busca: "wynntils mod mapa" },
+  { id: "dicas", titulo: "Dicas" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -136,6 +146,7 @@ export const guias: Guia[] = [
     grupo: "progressao",
     estado: "completo",
     rotaAntiga: "/professions",
+    secoes: profissoesSecoes,
   },
   {
     slug: "montarias",
