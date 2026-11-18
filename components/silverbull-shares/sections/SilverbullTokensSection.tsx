@@ -15,23 +15,25 @@ export default function SilverbullTokensSection() {
           </p>
         </div>
 
-        <div className="mb-6 max-w-3xl">
-          <SilverbullImageSlot label={tokenStoreImage.label} src={tokenStoreImage.src} alt={tokenStoreImage.alt} />
-        </div>
-
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-          {tokenCards.map((token) => (
-            <article
-              key={token.name}
-              className="group relative rounded-md border border-linha bg-carvao p-5 transition-all duration-200 hover:border-gsw/40"
-            >
-              <div className="mb-3 flex items-center gap-2 border-b border-linha pb-3">
-                <IconeShares nome={token.icon} />
-                <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{token.name}</h3>
-              </div>
-              <p className="text-texto-2">{token.description}</p>
-            </article>
-          ))}
+        {/* Cartões e imagem lado a lado: a imagem não fica sozinha pela metade com a outra metade vazia. */}
+        <div className="grid items-start gap-4 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] sm:gap-4">
+            {tokenCards.map((token) => (
+              <article
+                key={token.name}
+                className="group relative rounded-md border border-linha bg-carvao p-5 transition-all duration-200 hover:border-gsw/40"
+              >
+                <div className="mb-3 flex items-center gap-2 border-b border-linha pb-3">
+                  <IconeShares nome={token.icon} />
+                  <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{token.name}</h3>
+                </div>
+                <p className="text-texto-2">{token.description}</p>
+              </article>
+            ))}
+          </div>
+          <div >
+            <SilverbullImageSlot label={tokenStoreImage.label} src={tokenStoreImage.src} alt={tokenStoreImage.alt} />
+          </div>
         </div>
       </div>
     </section>

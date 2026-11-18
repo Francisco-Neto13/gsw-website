@@ -3,6 +3,8 @@ import {
   lootrunMechanicsIntro,
 } from "@/components/lootrun/data/lootrun-content";
 import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
+import { tamanhos } from "@/lib/tamanhos";
+import { ehPrintPequena } from "@/lib/imagens";
 
 export default function LootrunMechanicsSection() {
   return (
@@ -22,6 +24,8 @@ export default function LootrunMechanicsSection() {
             const mediaItems = block.media ?? [];
             const hasMedia = mediaItems.length > 0;
             const hasMobileFeatured = mediaItems.length > 2;
+            // Uma print pequena só: vai ao lado da lista, em vez de ficar perdida num quadro largo.
+            const lateral = mediaItems.length === 1 && ehPrintPequena(mediaItems[0].src);
 
             return (
               <article
@@ -33,10 +37,10 @@ export default function LootrunMechanicsSection() {
                   <p className="mt-2 text-texto-2">{block.description}</p>
                 </div>
 
-                <div className="px-5 py-5 sm:px-7 sm:py-6">
+                <div className={`px-5 py-5 sm:px-7 sm:py-6 ${lateral ? "grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]" : ""}`}>
                   {hasMedia ? (
                     <div
-                      className={`grid gap-4 ${
+                      className={`${lateral ? "lg:order-2" : ""} grid gap-4 ${
                         hasMobileFeatured ? "grid-cols-2" : "grid-cols-1"
                       } ${mediaItems.length > 2 ? "sm:grid-cols-2" : ""}`}
                     >
@@ -45,13 +49,13 @@ export default function LootrunMechanicsSection() {
                           key={item.name}
                           className={hasMobileFeatured && index === 0 ? "col-span-2 sm:col-span-1" : undefined}
                         >
-                          <LootrunMediaPlaceholder item={item} compact={hasMobileFeatured && index > 0} />
+                          <LootrunMediaPlaceholder item={item} compact={hasMobileFeatured && index > 0} sizes={lateral ? tamanhos.lateral : tamanhos.metade} />
                         </div>
                       ))}
                     </div>
                   ) : null}
 
-                  <div className="mt-5 space-y-3">
+                  <div className={`${lateral ? "lg:order-1 lg:mt-0" : ""} mt-5 space-y-3`}>
                     {block.points.map((point) => (
                       <div key={point} className="flex gap-3 text-texto-2">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />

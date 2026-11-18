@@ -3,6 +3,8 @@ import {
   lootrunCampsIntro,
 } from "@/components/lootrun/data/lootrun-content";
 import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
+import { tamanhos } from "@/lib/tamanhos";
+import { ehPrintPequena } from "@/lib/imagens";
 
 function isAnimado(item: { animado?: boolean }) {
   return Boolean(item.animado);
@@ -44,15 +46,9 @@ export default function LootrunCampsSection() {
           </div>
         </div>
 
-        {lootrunCampsIntro.media.length > 0 ? (
-          <div className="mb-8 grid grid-cols-1 gap-4">
-            {lootrunCampsIntro.media.map((item) => (
-              <LootrunMediaPlaceholder key={item.name} item={item} />
-            ))}
-          </div>
-        ) : null}
-
-        <div className="mb-8 rounded-md border border-linha bg-carvao p-5 sm:p-7">
+        {/* Notas e a print de requisitos lado a lado (a print é um recorte pequeno; sozinha ficava perdida). */}
+        <div className="mb-8 grid items-start gap-4 sm:gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+        <div className="rounded-md border border-linha bg-carvao p-5 sm:p-7">
           <div className="space-y-3">
             {lootrunCampsIntro.notes.map((note) => (
               <div key={note} className="flex gap-3 text-texto-2">
@@ -62,12 +58,18 @@ export default function LootrunCampsSection() {
             ))}
           </div>
         </div>
+        {lootrunCampsIntro.media.map((item) => (
+          <LootrunMediaPlaceholder key={item.name} item={item} sizes={ehPrintPequena(item.src) ? tamanhos.lateral : tamanhos.metade} />
+        ))}
+        </div>
 
         <div className="space-y-4">
           {lootrunCamps.map((camp, index) => {
             const media = camp.media ?? [];
             const featuredMedia = media.find((item) => !isAnimado(item)) ?? media[0];
             const secondaryMedia = media.filter((item) => item !== featuredMedia);
+            // Uma mídia secundária só: vai ao lado das notas, em vez de ocupar meia linha sozinha.
+            const lateral = secondaryMedia.length === 1 ? secondaryMedia[0] : null;
 
             return (
               <article key={camp.name} className="rounded-md border border-linha bg-carvao p-4 sm:p-5">
@@ -85,29 +87,26 @@ export default function LootrunCampsSection() {
                   Coordenadas: <span className="font-medium text-zinc-200">{camp.coordinates}</span>
                 </p>
 
-                <div className="mt-3 space-y-2">
-                  {camp.notes.map((note) => (
-                    <div key={note} className="flex gap-3 text-texto-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
-                      <span>{note}</span>
-                    </div>
-                  ))}
+                <div className={`mt-3 ${lateral ? "grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]" : ""}`}>
+                  <div className="space-y-2">
+                    {camp.notes.map((note) => (
+                      <div key={note} className="flex gap-3 text-texto-2">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
+                        <span>{note}</span>
+                      </div>
+                    ))}
+                  </div>
+                  {lateral ? <LootrunMediaPlaceholder item={lateral} compact sizes={tamanhos.lateral} /> : null}
                 </div>
 
                 {featuredMedia ? (
                   <div className="mt-4 space-y-4">
                     <LootrunMediaPlaceholder item={featuredMedia} />
 
-                    {secondaryMedia.length > 0 ? (
-                      <div
-                        className={`grid gap-4 ${
-                          secondaryMedia.length > 1
-                            ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-3"
-                            : "grid-cols-1 sm:grid-cols-2"
-                        }`}
-                      >
+                    {secondaryMedia.length > 1 ? (
+                      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
                         {secondaryMedia.map((item) => (
-                          <LootrunMediaPlaceholder key={item.name} item={item} compact />
+                          <LootrunMediaPlaceholder key={item.name} item={item} compact sizes={tamanhos.terco} />
                         ))}
                       </div>
                     ) : null}
