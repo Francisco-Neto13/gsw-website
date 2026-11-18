@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { members } from "@/components/history/data/members";
 import BotaoBuscar from "@/components/home/sections/BotaoBuscar";
-import { homeCategorias, homeComeco, homeComunidade, homeDestaque, homeHero } from "@/components/home/data/home-content";
+import { homeCategorias, homeComeco, homeComunidade, homeDestaque, homeFerramentas, homeHero } from "@/components/home/data/home-content";
 import { raidGuideGroups, raids } from "@/components/raids/data/raids-content";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
 import TextoAnimado from "@/components/shared/TextoAnimado";
@@ -126,7 +126,7 @@ export default function HomePage() {
         </h2>
         <p className="mt-3 max-w-leitura text-texto-2">{homeComeco.texto}</p>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          {grupos.map((grupo) => {
+          {grupos.filter((grupo) => homeCategorias[grupo.id]).map((grupo) => {
             const categoria = homeCategorias[grupo.id];
             return (
               <article key={grupo.id} aria-labelledby={`categoria-${grupo.id}`} className="holofote flex flex-col overflow-hidden rounded-md border border-linha bg-carvao">
@@ -185,6 +185,31 @@ export default function HomePage() {
             );
           })}
         </div>
+
+        {/* Grupos sem arte de categoria (Ferramentas): faixa compacta abaixo da grade, sem card sozinho na última linha. */}
+        {grupos
+          .filter((grupo) => !homeCategorias[grupo.id])
+          .map((grupo) => (
+            <div
+              key={grupo.id}
+              className="mt-6 flex flex-col gap-3 rounded-md border border-linha bg-carvao px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6"
+            >
+              <div>
+                <h3 className="font-titulo text-titulo-4 text-texto">{grupo.titulo}</h3>
+                <p className="mt-0.5 text-apoio text-texto-3">{homeFerramentas.texto}</p>
+              </div>
+              <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                {guiasDoGrupo(grupo.id).map((guia) => (
+                  <li key={guia.slug}>
+                    <Link href={guiaHref(guia.slug)} className="group inline-flex items-center gap-1.5 font-titulo text-titulo-4 text-texto hover:text-violeta">
+                      {guia.titulo}
+                      <ArrowRight aria-hidden size={16} strokeWidth={1.75} className="text-texto-3 group-hover:text-violeta" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
       </section>
 
       {/* Guia em destaque: painel carvão (a caixa de item fica só para informação de consulta). */}
