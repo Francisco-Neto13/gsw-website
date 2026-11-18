@@ -1,3 +1,6 @@
+import Image from "next/image";
+import CreditoImagem from "@/components/guias/CreditoImagem";
+import { dimensoesDe } from "@/lib/imagens";
 import {
   lootrunBeacons,
   lootrunBeaconsIntro,
@@ -5,8 +8,20 @@ import {
   type LootrunBeacon,
 } from "@/components/lootrun/data/lootrun-content";
 
-/** Marcador desenhado na cor do beacon (no lugar dos emojis, que viravam quadrados em alguns sistemas). */
+/** Ícone do beacon no jogo (wiki, public/terceiros/): "Dark Grey" vira beacon-dark-gray.webp. */
+const iconeDoBeacon = (beacon: LootrunBeacon) =>
+  `/terceiros/wynncraft/beacon-${beacon.color.toLowerCase().replace(/grey/, "gray").replace(/\s+/g, "-")}.webp`;
+
+/** Ícone do jogo; sem ele (pasta de terceiros removida), o marcador desenhado na cor do beacon. */
 function MarcadorBeacon({ beacon }: { beacon: LootrunBeacon }) {
+  const icone = iconeDoBeacon(beacon);
+  if (dimensoesDe(icone)) {
+    return <Image src={icone} alt="" width={32} height={32} sizes="32px" quality={90} className="h-8 w-8 shrink-0 [image-rendering:pixelated]" />;
+  }
+  return <MarcadorDesenhado beacon={beacon} />;
+}
+
+function MarcadorDesenhado({ beacon }: { beacon: LootrunBeacon }) {
   const fundo =
     beacon.hex === "arco-iris"
       ? "linear-gradient(135deg, #ff5555, #ffaa00, #ffff55, #55ff55, #55ffff, #5555ff, #ff55ff)"
@@ -83,7 +98,14 @@ export default function LootrunBeaconsSection() {
         </table>
       </div>
       <p className="mt-2 max-w-leitura text-apoio text-texto-3">
-        Valores conferidos na wiki da Wynncraft para a versão 2.2.4. A cor do Crimson é aproximada.
+        Valores conferidos na wiki da Wynncraft para a versão 2.2.4.{" "}
+        {dimensoesDe(iconeDoBeacon(lootrunBeacons[0])) ? (
+          <>
+            Ícones dos beacons: <CreditoImagem src={iconeDoBeacon(lootrunBeacons[0])} />, da wiki.
+          </>
+        ) : (
+          "A cor do Crimson é aproximada."
+        )}
       </p>
     </section>
   );
