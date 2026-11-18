@@ -108,9 +108,9 @@
     "semantic_hash": ""
   },
   "components/history/sections/GallerySection.tsx": {
-    "mtime": 1795009375.1355014,
-    "seen": 1795009378.5287366,
-    "ast_hash": "1435e4705f4152b2c9cbe665aa1bfb47",
+    "mtime": 1795010502.509377,
+    "seen": 1795010631.8936594,
+    "ast_hash": "7a012f34254d7416fed76c797e8239c1",
     "semantic_hash": ""
   },
   "components/history/sections/History.tsx": {
@@ -558,9 +558,9 @@
     "semantic_hash": "f5161c48166d49358dcd19aac600e4d1"
   },
   "docs/PENDENCIAS.md": {
-    "mtime": 1795006163.122055,
-    "seen": 1795006175.2739305,
-    "ast_hash": "64dc506980f1129e58add28d6493f368",
+    "mtime": 1795010581.6517837,
+    "seen": 1795010631.8937917,
+    "ast_hash": "b3469c636fe119a7f534c9faf24c793c",
     "semantic_hash": ""
   },
   "PRODUCT.md": {
@@ -957,6 +957,12 @@
     "mtime": 1795009227.5427468,
     "seen": 1795009349.1441193,
     "ast_hash": "6d7df06e86a2fb81be3202357194631a",
+    "semantic_hash": ""
+  },
+  "components/history/sections/GaleriaDialogo.tsx": {
+    "mtime": 1795010500.972051,
+    "seen": 1795010631.8936574,
+    "ast_hash": "36a97e136357f91e84a9311b0b15aa05",
     "semantic_hash": ""
   },
   "package-lock.json": {
