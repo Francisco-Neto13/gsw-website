@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { members } from "@/components/history/data/members";
 import BotaoBuscar from "@/components/home/sections/BotaoBuscar";
+import CreditoImagem from "@/components/guias/CreditoImagem";
 import { homeCategorias, homeComeco, homeComunidade, homeDestaque, homeFerramentas, homeHero } from "@/components/home/data/home-content";
 import { raidGuideGroups, raids } from "@/components/raids/data/raids-content";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
@@ -192,22 +193,39 @@ export default function HomePage() {
           .map((grupo) => (
             <div
               key={grupo.id}
-              className="mt-6 flex flex-col gap-3 rounded-md border border-linha bg-carvao px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6"
+              className="holofote mt-6 flex flex-col overflow-hidden rounded-md border border-linha bg-carvao sm:flex-row sm:items-center"
             >
-              <div>
-                <h3 className="font-titulo text-titulo-4 text-texto">{grupo.titulo}</h3>
-                <p className="mt-0.5 text-apoio text-texto-3">{homeFerramentas.texto}</p>
+              <div className="zoom-hover relative aspect-[1200/630] w-full shrink-0 overflow-hidden border-b border-linha bg-poco sm:w-56 sm:border-b-0 sm:border-r">
+                <Image
+                  src={homeFerramentas.imagem.src}
+                  alt={homeFerramentas.imagem.alt}
+                  fill
+                  sizes="(min-width: 640px) 14rem, calc(100vw - 2rem)"
+                  className="object-cover object-left-top"
+                />
               </div>
-              <ul className="flex flex-wrap gap-x-5 gap-y-2">
-                {guiasDoGrupo(grupo.id).map((guia) => (
-                  <li key={guia.slug}>
-                    <Link href={guiaHref(guia.slug)} className="group inline-flex items-center gap-1.5 font-titulo text-titulo-4 text-texto hover:text-violeta">
-                      {guia.titulo}
-                      <ArrowRight aria-hidden size={16} strokeWidth={1.75} className="text-texto-3 group-hover:text-violeta" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-1 flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                <div>
+                  <h3 className="font-titulo text-titulo-4 text-texto">{grupo.titulo}</h3>
+                  <p className="mt-0.5 text-apoio text-texto-3">{homeFerramentas.texto}</p>
+                  <p className="mt-1">
+                    <CreditoImagem src={homeFerramentas.imagem.src} rotulo="Prévia:" />
+                  </p>
+                </div>
+                <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                  {guiasDoGrupo(grupo.id).map((guia) => (
+                    <li key={guia.slug}>
+                      <Link
+                        href={guiaHref(guia.slug)}
+                        className="group inline-flex items-center gap-1.5 font-titulo text-titulo-4 text-texto hover:text-violeta"
+                      >
+                        {guia.titulo}
+                        <ArrowRight aria-hidden size={16} strokeWidth={1.75} className="text-texto-3 group-hover:text-violeta" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
       </section>

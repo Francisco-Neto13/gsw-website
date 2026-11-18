@@ -16,6 +16,7 @@ export const homeComeco = {
 /** Faixa dos grupos sem arte própria na Início (hoje, Ferramentas). */
 export const homeFerramentas = {
   texto: "Os sites que a comunidade usa para montar builds, acompanhar o mercado e consultar dados.",
+  imagem: { src: "/terceiros/sites/wynnbuilder.webp", alt: "Prévia do WynnBuilder, o simulador de builds" },
 };
 
 /** Prévia de cada grupo de guias na Início: o que a pessoa aprende e uma print do jogo (docs/CREDITOS.md). */
