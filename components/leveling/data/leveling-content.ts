@@ -1,20 +1,13 @@
+// Guia de Leveling. Spots, árvores, rota de armas e armaduras são recomendações da guilda.
+// Ícones de item: cópias locais do guia de itens oficial (public/terceiros/wynncraft/item-*.webp, docs/CREDITOS.md).
+// Marcações: [[chave]] abre a caixa de item do glossário.
+
 export type LevelingSpot = {
   name: string;
   range: string;
   coords: string;
   image: string;
   notes: string[];
-};
-
-export type SectionIntro = {
-  eyebrow: string;
-  title: string;
-  description: string;
-};
-
-export type LevelingInfoCard = {
-  title: string;
-  description: string;
 };
 
 export type AbilityTreeRoute = {
@@ -43,47 +36,48 @@ export type WeaponRoute = {
 };
 
 export const levelingIntroParagraphs = [
-  "Nesse tópico, você aprenderá tudo sobre leveling, desde spots até itens.",
-  "As recomendações abaixo são focadas em matar mobs com XP Bonus. Se for sua primeira classe, é fortemente recomendado fazer quests, caves e discoveries antes de focar em grind.",
+  "Um roteiro para subir de nível matando mobs, do 1 ao 121: onde upar em cada faixa, como montar a party e quais árvores, armas e armaduras aceleram o grind.",
+  "As recomendações focam em XP Bonus. Se for sua primeira classe, faça antes as quests, caves e discoveries: além de XP, elas ensinam o mapa.",
 ];
 
-export const levelingPartyIntro: SectionIntro = {
-  eyebrow: "Fundamentos",
-  title: "Party",
-  description:
-    "Upar em party é quase obrigatório: o ganho de XP aumenta e a chance de sobreviver fica muito maior. Para achar uma party rapidamente, use /pfinder no chat ou fale com o NPC de Party Finder em qualquer cidade. No menu, parties de XP aparecem com ícone de caveira.",
-};
+export const levelingResumo = [
+  "Upe em [[party]]: o XP aumenta e a chance de sobreviver também. Use /pfinder para achar uma.",
+  "Healer vira essencial a partir dos spots de nível 20 a 35.",
+  "Totems (de quem tem rank) e bombas de XP aceleram muito a party.",
+  "Priorize dano em área e XP Bonus na build.",
+];
 
-export const levelingPartyImage = {
+// Party
+export const partyIntro =
+  "Upar em party é quase obrigatório: o XP aumenta e a chance de sobreviver fica muito maior. Para achar uma party, use /pfinder no chat ou fale com o NPC Party Finder em qualquer cidade. No menu, parties de XP aparecem com o ícone de caveira.";
+
+export const partyImagem = {
   src: "/leveling/party_finder.webp",
-  alt: "Exemplo de party de XP no Party Finder",
-  caption: "Exemplo de party de XP",
+  alt: "Party de XP listada no Party Finder, com o ícone de caveira",
+  legenda: "Uma party de XP no Party Finder.",
 };
 
-export const levelingPartyCards: LevelingInfoCard[] = [
+export const partyPapeis = [
   {
-    title: "Healers",
-    description:
-      "São normalmente jogadores level 120 ou 121 com build focada em cura (geralmente Shaman ou Mage). Em parties de nível baixo, costumam usar itens para reduzir o dano e não roubar XP da party.",
+    titulo: "Healers",
+    texto:
+      "Normalmente jogadores de nível 120 ou 121 com build de cura (quase sempre Shaman ou Mage). Em party de nível baixo, costumam usar itens que reduzem o próprio dano para não roubar XP.",
   },
   {
-    title: "Totens",
-    description:
-      "São recebidos diariamente por quem possui rank da loja e usados com /totem. Cada totem dura 5 minutos e aumenta muito o spawn de mobs, elevando o XP da party.",
+    titulo: "Totems",
+    texto:
+      "Quem tem rank recebe totems todo dia e usa com /totem. Cada totem dura 5 minutos e aumenta muito o spawn de mobs, e com isso o XP da party.",
   },
   {
-    title: "Bombas de XP",
-    description:
-      "Dobram o XP do servidor por 20 minutos. É um investimento caro, então vale usar quando a party está bem organizada e matando em bom ritmo.",
+    titulo: "Bombas de XP",
+    texto:
+      "Dobram o XP de mobs do mundo por 20 minutos. São caras: vale usar quando a party está organizada e matando em bom ritmo.",
   },
 ];
 
-export const levelingSpotsIntro: SectionIntro = {
-  eyebrow: "Do level 1 ao 121",
-  title: "Spots",
-  description:
-    "Alguns spots se sobrepõem em nível. Não existe regra fixa para troca: se um spot estiver difícil ou ineficiente para sua party, mude para outro.",
-};
+// Spots
+export const spotsIntro =
+  "Alguns spots se sobrepõem em nível. Não existe regra fixa para trocar: se um spot estiver difícil ou lento para a sua party, mude para o próximo.";
 
 export const levelingSpots: LevelingSpot[] = [
   {
@@ -209,25 +203,29 @@ export const levelingSpots: LevelingSpot[] = [
   },
 ];
 
-export const levelingBuildsIntro: SectionIntro = {
-  eyebrow: "Builds",
-  title: "Ability Trees, Armas e Armaduras",
-  description:
-    "Aqui estão as recomendações para acelerar seu grind. A prioridade geral é maximizar AOE e manter XP Bonus alto no set.",
-};
+// Árvores
+export const arvoresIntro =
+  "As árvores abaixo estão no nível 120, com todos os pontos. Vá montando aos poucos, conforme os pontos que você tem no seu nível. O foco é dano em área.";
 
-export const levelingBuildHighlights: LevelingInfoCard[] = [
-  {
-    title: "Ability Trees no 120",
-    description:
-      "As trees abaixo são apresentadas no level 120 (todos os pontos). Vá descendo gradualmente de acordo com os pontos disponíveis no seu nível atual.",
-  },
-  {
-    title: "XP Bonus",
-    description:
-      "O principal stat para esse guia é XP Bonus. Mesmo com itens caros, foque em compras que realmente acelerem o seu ciclo de party.",
-  },
-];
+export const xpBonus =
+  "XP Bonus é o atributo mais importante deste guia. Mesmo com itens caros, compre o que realmente acelera a sua party.";
+
+// Armas
+export const armasIntro =
+  "Uma arma por faixa de nível, por classe. Clique no nome para ver o item no guia oficial.";
+
+export const levelingWeaponTip =
+  "No nível 1, use a arma inicial com uma powder de tier 7 para dano extra. Ela segura bem até a primeira arma da rota.";
+
+const ITEM_PAGINA = "https://wynncraft.com/item";
+
+export const linkDoItem = (itemName: string) => `${ITEM_PAGINA}/${encodeURIComponent(itemName)}`;
+
+/** Ícone local do item (cópia do guia oficial); null para armadura, que não tem arquivo próprio. */
+export const iconeDoItem = (iconName: string) =>
+  /^(helmet|chestplate|leggings|boots)\./.test(iconName)
+    ? null
+    : `/terceiros/wynncraft/item-${iconName.replace(".", "-").toLowerCase().replace("basic", "basic-")}.webp`;
 
 export const levelingAbilityTrees: AbilityTreeRoute[] = [
   {
@@ -274,28 +272,12 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     archetype: "Summoner",
     icon: "/abilitytree/abilityTree.summoner_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT0000000000000000000000sJI-JDy7cNQo0",
-notes: [
-    "Priorize Double Totem, Triple Totem, Rebound e Storm Dance para aumentar AOE.",
-    "Pegue Regeneration para melhorar sua sobrevivência.",
-  ],
+    notes: [
+      "Priorize Double Totem, Triple Totem, Rebound e Storm Dance para aumentar AOE.",
+      "Pegue Regeneration para melhorar sua sobrevivência.",
+    ],
   },
 ];
-
-export const levelingWeaponTip =
-  "Dica: no level 1, use a arma inicial do jogo com uma powder T7 para dano extra. Ela pode segurar bem até os primeiros itens da rota.";
-
-export const levelingItemGuideUrl = "https://wynncraft.com/help/item-guide";
-export const levelingItemDetailBaseUrl = "https://wynncraft.com/item";
-export const levelingItemGuideIconBaseUrl = "https://cdn.wynncraft.com/nextgen/itemguide/3.3";
-
-export function buildLevelingItemGuideLink(itemName: string) {
-  return `${levelingItemDetailBaseUrl}/${encodeURIComponent(itemName)}`;
-}
-
-export function buildLevelingItemGuideIconUrl(iconName: string) {
-  const normalized = iconName.endsWith(".webp") ? iconName : `${iconName}.webp`;
-  return `${levelingItemGuideIconBaseUrl}/${normalized}`;
-}
 
 export const levelingWeapons: WeaponRoute[] = [
   {
@@ -534,3 +516,9 @@ export const levelingArmorPieces = [
   "Lvl 119: Due Debts",
 ];
 
+
+export const levelingFontes = [
+  { rotulo: "Guia de itens oficial da Wynncraft", href: "https://wynncraft.com/help/item-guide" },
+  { rotulo: "WynnBuilder (árvores de habilidade)", href: "https://wynnbuilder-beta.github.io/builder/" },
+  { rotulo: "Party Finder, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Party_Finder" },
+];

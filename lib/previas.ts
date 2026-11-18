@@ -32,7 +32,6 @@ const conteudoDoGuia: Record<string, Record<string, unknown>> = {
 
 /** Arquivo de dados de cada guia, para ler a ordem das seções (a Início é gerada no build). */
 const arquivoDoGuia: Record<string, string> = {
-  leveling: "components/leveling/data/leveling-content.ts",
   lootrun: "components/lootrun/data/lootrun-content.ts",
   "modos-especiais": "components/special-modes/data/special-modes-content.ts",
 };

@@ -1,70 +1,67 @@
-import {
-  levelingSpots,
-  levelingSpotsIntro,
-} from "@/components/leveling/data/leveling-content";
-import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
-import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
+import FiguraNoTamanho from "@/components/guias/FiguraNoTamanho";
+import SecaoGuia from "@/components/guias/SecaoGuia";
+import { levelingSpots, spotsIntro } from "@/components/leveling/data/leveling-content";
 import { tamanhos } from "@/lib/tamanhos";
+
+const idDoSpot = (nome: string) => `spot-${nome.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
 export default function LevelingSpotsSection() {
   return (
-    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
-
-      <div className="relative">
-        <div className="mb-8 max-w-leitura">
-          <h2 className="text-titulo-2 text-texto">
-            {levelingSpotsIntro.title}
-          </h2>
-          <p className="mt-3 text-texto-2">
-            {levelingSpotsIntro.description}
-          </p>
-        </div>
-
-        <div className="space-y-4 sm:space-y-6">
-          {levelingSpots.map((spot, index) => (
-            <article
-              key={spot.name}
-              className={`leveling-card-medium group overflow-hidden rounded-md border border-linha bg-carvao transition-all duration-300 hover:border-gsw/30 ${
-                index % 2 === 0 ? "leveling-tilt-right" : "leveling-tilt-left"
-              }`}
-            >
-              <div className="flex flex-col gap-2 border-b border-linha px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
-                <div className="flex items-center gap-4">
-                  <div>
-                    <h3 className="text-titulo-4 font-bold tracking-tight text-texto">{spot.name}</h3>
-                    <span className="text-detalhe font-semibold text-violeta">{spot.range}</span>
-                  </div>
-                </div>
-                <code className="leveling-badge-pop w-fit rounded-lg bg-gsw/15 px-3 py-1.5 text-detalhe font-mono text-texto-2">
-                  {spot.coords}
-                </code>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <ul className="space-y-3 px-5 py-5 sm:px-7 sm:py-6">
-                  {spot.notes.map((note) => (
-                    <li key={`${spot.name}-${note}`} className="flex gap-3 text-texto-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
-                      <span>{note}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="overflow-hidden border-t border-linha bg-poco lg:border-t-0 lg:border-l">
-                  <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
-                    <div className="leveling-media-pop relative aspect-video w-full p-1 sm:p-2">
-                      <ImagemNoQuadro src={spot.image} alt={`Screenshot do spot ${spot.name}`} sizes={tamanhos.metade} />
-                    </div>
-                  </ClickableImagePreview>
-                  <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">
-                    Imagem de referência do spot {spot.name}.
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
+    <SecaoGuia id="spots" titulo="Spots do 1 ao 121" introducao={spotsIntro}>
+      <div className="overflow-x-auto rounded-md border border-linha">
+        <table className="w-full min-w-[30rem] border-collapse text-left text-apoio">
+          <caption className="sr-only">Spots de leveling, faixa de nível e coordenadas</caption>
+          <thead className="bg-carvao text-texto">
+            <tr>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Spot
+              </th>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Níveis
+              </th>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Coordenadas (X, Z)
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {levelingSpots.map((spot) => (
+              <tr key={spot.name} className="border-t border-linha">
+                <th scope="row" className="px-4 py-2 font-medium">
+                  <a href={`#${idDoSpot(spot.name)}`} className="text-texto underline decoration-violeta/40 hover:decoration-violeta">
+                    {spot.name}
+                  </a>
+                </th>
+                <td className="numeros px-4 py-2 text-texto-2">{spot.range.replace("Lvl ", "")}</td>
+                <td className="numeros px-4 py-2 font-mono text-texto-2">{spot.coords}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </section>
+
+      <div className="mt-10 flex flex-col gap-10">
+        {levelingSpots.map((spot) => (
+          <div
+            key={spot.name}
+            id={idDoSpot(spot.name)}
+            className="grid scroll-mt-12 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] xl:scroll-mt-0"
+          >
+            <div>
+              <h3 className="text-titulo-4 font-bold text-texto">{spot.name}</h3>
+              <p className="numeros mt-1 text-apoio text-violeta">
+                {spot.range.replace("Lvl ", "Nível ")} · <span className="font-mono">{spot.coords}</span>
+              </p>
+              <ul className="mt-3 flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+                {spot.notes.map((nota) => (
+                  <li key={nota}>{nota}</li>
+                ))}
+              </ul>
+            </div>
+            <FiguraNoTamanho imagem={{ src: spot.image, alt: `O spot ${spot.name}` }} sizes={tamanhos.lateral} />
+          </div>
+        ))}
+      </div>
+    </SecaoGuia>
   );
 }

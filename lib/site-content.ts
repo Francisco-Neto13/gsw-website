@@ -128,6 +128,15 @@ export const profissoesSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const levelingSecoes: GuiaSecao[] = [
+  { id: "party", titulo: "Party", busca: "healer totem bomba xp pfinder party finder" },
+  { id: "spots", titulo: "Spots do 1 ao 121", busca: "emerald trail pigman saints row herb cave flesh cave waterfall scrapyard church bat cave coordenadas" },
+  { id: "arvores", titulo: "Árvores de habilidade", busca: "ability tree wynnbuilder arquétipo" },
+  { id: "armas", titulo: "Rota de armas", busca: "arma mítico assassin archer mage warrior shaman" },
+  { id: "armaduras", titulo: "Armaduras e acessórios", busca: "armadura anel bracelete colar xp bonus" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -137,6 +146,7 @@ export const guias: Guia[] = [
     grupo: "progressao",
     estado: "completo",
     rotaAntiga: "/leveling",
+    secoes: levelingSecoes,
   },
   {
     slug: "profissoes",

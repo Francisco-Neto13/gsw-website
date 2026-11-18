@@ -53,8 +53,8 @@
 }
 
 /* Shared hover pulse for guide cards outside Home/History/Leveling specialized classes */
-main section .rounded-2xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium),
-main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium) {
+main section .rounded-2xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame),
+main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame) {
   transform-style: preserve-3d;
   transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 220ms ease, box-shadow 220ms ease;
 }
@@ -80,8 +80,8 @@ main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-p
     transform: translateY(-1px);
   }
 
-  main section .rounded-2xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium):hover,
-  main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium):hover {
+  main section .rounded-2xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):hover,
+  main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):hover {
     transform: translateY(-3px) scale(1.01);
     border-color: color-mix(in srgb, var(--color-gsw) 40%, rgba(255, 255, 255, 0.2)) !important;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
@@ -95,8 +95,8 @@ main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-p
     box-shadow: none;
   }
 
-  main section .rounded-2xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium):hover,
-  main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):not(.leveling-panel-3d):not(.leveling-card-soft):not(.leveling-card-medium):hover {
+  main section .rounded-2xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):hover,
+  main section .rounded-3xl.border.border-white\/10:not(.home-card-3d):not(.home-panel-3d):not(.history-sheen-card):not(.history-gallery-frame):hover {
     transform: none;
     box-shadow: none;
   }
