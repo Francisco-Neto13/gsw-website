@@ -558,9 +558,9 @@
     "semantic_hash": "f5161c48166d49358dcd19aac600e4d1"
   },
   "docs/PENDENCIAS.md": {
-    "mtime": 1795018100.4333575,
-    "seen": 1795018118.0720205,
-    "ast_hash": "cafab541a6d7a6882c630193683282ff",
+    "mtime": 1795019151.3664894,
+    "seen": 1795019219.6454108,
+    "ast_hash": "e8d7eee88d5d9d1111048ab9b3a89ef8",
     "semantic_hash": ""
   },
   "PRODUCT.md": {
@@ -984,9 +984,9 @@
     "semantic_hash": ""
   },
   "lib/dimensoes-imagens.json": {
-    "mtime": 1795015859.492271,
-    "seen": 1795017446.3628674,
-    "ast_hash": "fa731257fe5015bf24779cd52664191b",
+    "mtime": 1795019083.3629456,
+    "seen": 1795019219.645377,
+    "ast_hash": "fe61eb7ff04560787cc6e45036a61f2d",
     "semantic_hash": ""
   },
   "lib/imagens.ts": {
@@ -1050,9 +1050,9 @@
     "semantic_hash": ""
   },
   "components/mounts/sections/MontariasTreinamento.tsx": {
-    "mtime": 1795017938.6327374,
-    "seen": 1795018118.0719113,
-    "ast_hash": "440c73fcfbe8ec5a6ec00fa90ef23a7e",
+    "mtime": 1795019144.9106202,
+    "seen": 1795019219.6453092,
+    "ast_hash": "e513f5ab40851671c5bb2afe99411344",
     "semantic_hash": ""
   },
   "package-lock.json": {

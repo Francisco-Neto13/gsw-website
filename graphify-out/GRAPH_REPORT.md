@@ -1,17 +1,17 @@
 # Graph Report - gsw_lp  (2026-11-18)
 
 ## Corpus Check
-- 176 files · ~94,092 words
+- 176 files · ~94,134 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 9 file(s) not represented in the graph (top: .css 5, (none) 3, .ico 1)
 
 ## Summary
-- 1334 nodes · 2748 edges · 68 communities (65 shown, 3 thin omitted)
+- 1334 nodes · 2746 edges · 68 communities (65 shown, 3 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 146 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `de0cd77b`
+- Built from commit: `ca33e0a4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -392,17 +392,17 @@ Nodes (4): RootLayout(), SiteFooter(), TransicaoDePagina(), 4. O que foi aplicad
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Mapa das pastas` connect `Mapa das pastas` to `raids-content.ts`, `convert-to-webp.mjs`, `site-content.ts`, `deploy.yml`, `AGENTS.md — regras para agentes`?**
-  _High betweenness centrality (0.152) - this node is a cross-community bridge._
+- **Why does `Estrutura de pastas` connect `Estrutura de pastas` to `raids-content.ts`, `GallerySection.tsx`, `AnimacaoSobDemanda.tsx`, `convert-to-webp.mjs`, `GuiaLayout.tsx`, `site-content.ts`, `GuiaEmConstrucao.tsx`, `Arquitetura`, `compilerOptions`, `Busca.tsx`, `tamanhos.ts`, `app/layout.tsx`, `[P1] Sem prefers-reduced-motion no reveal e scro`, `HomePage.tsx`, `GuideIntro.tsx`?**
+  _High betweenness centrality (0.134) - this node is a cross-community bridge._
 - **What connects `Botões (primary, secondary, ícone, sobre mídia)`, `Painel de variação, cartão de navegação, mídia`, `Navegação: top bar, sidebar, índice Nesta página, breadcrumb` to the rest of the system?**
   _127 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `raids-content.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.050187265917602995 - nodes in this community are weakly interconnected._
-- **Why does `Estrutura de pastas` connect `Estrutura de pastas` to `raids-content.ts`, `GallerySection.tsx`, `AnimacaoSobDemanda.tsx`, `convert-to-webp.mjs`, `GuiaLayout.tsx`, `site-content.ts`, `GuiaEmConstrucao.tsx`, `Arquitetura`, `compilerOptions`, `Busca.tsx`, `tamanhos.ts`, `app/layout.tsx`, `[P1] Sem prefers-reduced-motion no reveal e scro`, `HomePage.tsx`, `GuideIntro.tsx`?**
-  _High betweenness centrality (0.112) - this node is a cross-community bridge._
+- **Why does `Mapa das pastas` connect `Mapa das pastas` to `raids-content.ts`, `convert-to-webp.mjs`, `site-content.ts`, `deploy.yml`, `AGENTS.md — regras para agentes`?**
+  _High betweenness centrality (0.132) - this node is a cross-community bridge._
 - **Should `silverbull-shares-content.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.05516431924882629 - nodes in this community are weakly interconnected._
 - **Why does `next` connect `Estrutura de pastas` to `raids-content.ts`, `GallerySection.tsx`, `silverbull-shares-content.ts`, `professions-content.ts`, `RootLayout`, `leveling-content.ts`, `world-events-content.ts`, `GuiaLayout.tsx`, `site-content.ts`, `Arquitetura`, `package.json`, `Busca.tsx`, `tamanhos.ts`, `app/layout.tsx`, `special-modes-content.ts`, `HomePage.tsx`, `GuideIntro.tsx`?**
-  _High betweenness centrality (0.107) - this node is a cross-community bridge._
+  _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Should `lootrun-content.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.0946969696969697 - nodes in this community are weakly interconnected._
