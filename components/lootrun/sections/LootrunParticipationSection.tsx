@@ -1,5 +1,6 @@
 import { lootrunParticipation } from "@/components/lootrun/data/lootrun-content";
 import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function LootrunParticipationSection() {
   return (
@@ -30,7 +31,7 @@ export default function LootrunParticipationSection() {
           }`}
         >
           {lootrunParticipation.media.map((item) => (
-            <LootrunMediaPlaceholder key={item.name} item={item} />
+            <LootrunMediaPlaceholder key={item.name} item={item} sizes={lootrunParticipation.media.length > 1 ? tamanhos.metade : tamanhos.artigo} />
           ))}
         </div>
       </div>

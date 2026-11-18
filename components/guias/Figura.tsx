@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 
 type FiguraProps = {
   src: string;
@@ -25,7 +26,7 @@ export default function Figura({ src, alt, legenda, largura, altura, sizes, prop
       <ClickableImagePreview src={src} alt={alt}>
         {proporcao ? (
           <div className="relative w-full overflow-hidden rounded-md border border-linha bg-poco" style={{ aspectRatio: proporcao }}>
-            <Image quality={90} src={src} alt={alt} fill sizes={sizes} className="object-contain" />
+            <ImagemNoQuadro src={src} alt={alt} sizes={sizes} />
           </div>
         ) : (
           <Image

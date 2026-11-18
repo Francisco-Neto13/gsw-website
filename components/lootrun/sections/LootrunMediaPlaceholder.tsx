@@ -1,14 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import AnimacaoSobDemanda from "@/components/shared/AnimacaoSobDemanda";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import type { MediaPlaceholder } from "@/components/lootrun/data/lootrun-content";
 import { tamanhos } from "@/lib/tamanhos";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 
 type LootrunMediaPlaceholderProps = {
   item: MediaPlaceholder;
   compact?: boolean;
+  /** Espaço que a mídia ocupa na página (lib/tamanhos.ts); padrão: largura toda, ou metade se compacta. */
+  sizes?: string;
 };
 
 function resolveMediaDescription(item: MediaPlaceholder) {
@@ -33,6 +35,7 @@ function resolveMediaDescription(item: MediaPlaceholder) {
 export default function LootrunMediaPlaceholder({
   item,
   compact = false,
+  sizes,
 }: LootrunMediaPlaceholderProps) {
   const isLocalVideo = item.src?.startsWith("/") && item.src.toLowerCase().endsWith(".mp4");
   const mediaDescription = resolveMediaDescription(item);
@@ -82,14 +85,7 @@ export default function LootrunMediaPlaceholder({
       <article className="h-full overflow-hidden rounded-md border border-linha bg-carvao">
         <ClickableImagePreview src={item.src} alt={item.alt ?? item.name}>
           <div className={frameClassName}>
-            <Image quality={90}
-              src={item.src}
-              alt={item.alt ?? item.name}
-              fill
-              sizes={compact ? tamanhos.terco : tamanhos.metade}
-              className="object-contain"
-
-            />
+            <ImagemNoQuadro src={item.src} alt={item.alt ?? item.name} sizes={sizes ?? (compact ? tamanhos.metade : tamanhos.artigo)} />
           </div>
         </ClickableImagePreview>
         <div className={captionClassName}>

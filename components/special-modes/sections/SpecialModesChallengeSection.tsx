@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   combinedModesRequirements,
   specialModesChallengeIntro,
@@ -7,6 +6,7 @@ import {
 } from "@/components/special-modes/data/special-modes-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import { tamanhos } from "@/lib/tamanhos";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 
 export default function SpecialModesChallengeSection() {
   return (
@@ -55,13 +55,7 @@ export default function SpecialModesChallengeSection() {
               alt={specialModesReferenceImage.alt}
             >
               <div className="relative aspect-[25/9] w-full overflow-hidden rounded-md border border-linha bg-poco">
-                <Image quality={90}
-                  src={specialModesReferenceImage.src}
-                  alt={specialModesReferenceImage.alt}
-                  fill
-                  sizes={tamanhos.artigo}
-                  className="object-contain"
-                />
+                <ImagemNoQuadro src={specialModesReferenceImage.src} alt={specialModesReferenceImage.alt} sizes={tamanhos.artigo} />
               </div>
             </ClickableImagePreview>
             <p className="mt-3 px-1 text-detalhe leading-relaxed text-texto-3">

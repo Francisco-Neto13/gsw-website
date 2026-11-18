@@ -25,6 +25,8 @@ export const tamanhos = {
   terco: faixa(3, DUAS_NO_TABLET),
   /** Quatro por linha no desktop, duas no tablet. */
   quarto: faixa(4, DUAS_NO_TABLET),
+  /** Coluna lateral de 26 rem ao lado dos cartões (a partir de 1024 px). */
+  lateral: `(min-width: 1024px) 26rem, ${UMA_COLUNA}`,
   /** Imagem solta com teto de 48 rem (prints pequenas que não devem esticar). */
   solta: `(min-width: 1024px) 48rem, ${UMA_COLUNA}`,
 } as const;

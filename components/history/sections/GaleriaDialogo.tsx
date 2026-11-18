@@ -8,7 +8,7 @@ import type { GalleryPhoto } from "@/components/history/data/gallery";
 type LenisPausavel = { stop: () => void; start: () => void };
 
 /** Mesmo `sizes` das miniaturas da grade (GallerySection), para a prévia sair do cache. */
-export const TAMANHO_DA_MINIATURA = "(min-width: 1024px) 20vw, 50vw";
+export const TAMANHO_DA_MINIATURA = "(min-width: 1024px) 15vw, 50vw";
 
 type GaleriaDialogoProps = {
   fotos: GalleryPhoto[];

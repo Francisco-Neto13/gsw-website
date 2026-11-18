@@ -210,6 +210,26 @@ table,
     }
   }
 
+  /* Animações do jogo (AnimacaoSobDemanda): 1x nativo; com quadro de 960 px ou mais, 2x exato e pixels nítidos. */
+  .animacao-quadro {
+    container-type: size;
+  }
+
+  .animacao-caixa {
+    width: min(100%, var(--w));
+    max-height: 100%;
+  }
+
+  @container (min-width: 960px) {
+    .animacao-caixa {
+      width: min(100%, calc(var(--w) * 2));
+    }
+
+    .animacao-caixa img {
+      image-rendering: pixelated;
+    }
+  }
+
   /* A caixa de item: fundo roxo-escuro, borda dupla (fora escura, dentro violeta a 1px). */
   .caixa-item {
     background: var(--color-caixa);

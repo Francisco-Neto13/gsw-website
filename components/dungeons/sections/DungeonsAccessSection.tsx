@@ -1,6 +1,6 @@
-import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import { tamanhos } from "@/lib/tamanhos";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 import {
   dungeonsAccessImages,
   dungeonsAccessIntro,
@@ -52,13 +52,7 @@ export default function DungeonsAccessSection() {
             <article key={image.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={image.src} alt={image.alt}>
                 <div className="relative aspect-video w-full">
-                  <Image quality={90}
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    sizes={tamanhos.metade}
-                    className="object-contain p-2"
-                  />
+                  <ImagemNoQuadro src={image.src} alt={image.alt} sizes={tamanhos.metade} className="p-2" />
                 </div>
               </ClickableImagePreview>
               <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">{image.caption?.trim() || image.alt}</p>

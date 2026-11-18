@@ -1,6 +1,6 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 
 type RaidImageCardProps = {
   src: string;
@@ -24,7 +24,7 @@ export default function RaidImageCard({
     <div className="overflow-hidden rounded-md border border-linha bg-poco">
       <ClickableImagePreview src={src} alt={alt}>
         <div className={`relative w-full overflow-hidden bg-poco ${aspectClassName}`}>
-          <Image quality={90} src={src} alt={alt} fill sizes={sizes} className="object-contain p-2 sm:p-3" />
+          <ImagemNoQuadro src={src} alt={alt} sizes={sizes} className="p-2 sm:p-3" />
         </div>
       </ClickableImagePreview>
       {normalizedCaption ? (

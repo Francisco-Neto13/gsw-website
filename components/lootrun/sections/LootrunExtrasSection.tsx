@@ -7,6 +7,7 @@ import {
 } from "@/components/lootrun/data/lootrun-content";
 import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
 import type { CSSProperties } from "react";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function LootrunExtrasSection() {
   return (
@@ -52,7 +53,7 @@ export default function LootrunExtrasSection() {
         <ul className="galeria mt-8 sm:mt-10" style={{ "--colunas": 4 } as CSSProperties}>
           {lootrunExtraSupportMedia.map((item) => (
             <li key={item.name}>
-              <LootrunMediaPlaceholder item={item} compact />
+              <LootrunMediaPlaceholder item={item} compact sizes={tamanhos.quarto} />
             </li>
           ))}
         </ul>

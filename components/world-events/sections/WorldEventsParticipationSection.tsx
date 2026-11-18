@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   participationCards,
   worldEventsParticipationIntro,
@@ -6,6 +5,7 @@ import {
 } from "@/components/world-events/data/world-events-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import { tamanhos } from "@/lib/tamanhos";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 
 export default function WorldEventsParticipationSection() {
   return (
@@ -43,13 +43,7 @@ export default function WorldEventsParticipationSection() {
               </div>
               <ClickableImagePreview src={image.src} alt={image.alt}>
                 <div className="relative aspect-video w-full bg-poco">
-                  <Image quality={90}
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    sizes={tamanhos.metade}
-                    className="object-contain p-2"
-                  />
+                  <ImagemNoQuadro src={image.src} alt={image.alt} sizes={tamanhos.metade} className="p-2" />
                 </div>
               </ClickableImagePreview>
               <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">{image.alt}</p>

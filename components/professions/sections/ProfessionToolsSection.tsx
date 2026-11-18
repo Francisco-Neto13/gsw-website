@@ -1,6 +1,6 @@
-import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import { tamanhos } from "@/lib/tamanhos";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 import {
   bombTips,
   craftingXpTips,
@@ -64,13 +64,7 @@ export default function ProfessionToolsSection() {
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
                 <div className="relative aspect-video w-full bg-poco">
-                  <Image quality={90}
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes={tamanhos.metade}
-                    className="object-contain p-1 sm:p-2"
-                  />
+                  <ImagemNoQuadro src={item.src} alt={item.alt} sizes={tamanhos.metade} className="p-1 sm:p-2" />
                 </div>
               </ClickableImagePreview>
               <div className="p-4 sm:p-5">
@@ -86,13 +80,7 @@ export default function ProfessionToolsSection() {
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
                 <div className="relative aspect-[4/3] w-full bg-poco">
-                  <Image quality={90}
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes={tamanhos.quarto}
-                    className="object-contain p-1 sm:p-2"
-                  />
+                  <ImagemNoQuadro src={item.src} alt={item.alt} sizes={tamanhos.quarto} className="p-1 sm:p-2" />
                 </div>
               </ClickableImagePreview>
               <div className="p-4 sm:p-5">

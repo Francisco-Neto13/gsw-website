@@ -26,7 +26,7 @@ export default function GallerySection() {
 
         <div>
           {photos.length > 0 ? (
-            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-4">
               {photos.map((photo, index) => (
                 <button
                   type="button"

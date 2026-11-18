@@ -1,9 +1,9 @@
-import Image from "next/image";
 import {
   levelingSpots,
   levelingSpotsIntro,
 } from "@/components/leveling/data/leveling-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 import { tamanhos } from "@/lib/tamanhos";
 
 export default function LevelingSpotsSection() {
@@ -52,13 +52,7 @@ export default function LevelingSpotsSection() {
                 <div className="overflow-hidden border-t border-linha bg-poco lg:border-t-0 lg:border-l">
                   <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
                     <div className="leveling-media-pop relative aspect-video w-full p-1 sm:p-2">
-                      <Image quality={90}
-                        src={spot.image}
-                        alt={`Screenshot do spot ${spot.name}`}
-                        fill
-                        sizes={tamanhos.metade}
-                        className="object-contain"
-                      />
+                      <ImagemNoQuadro src={spot.image} alt={`Screenshot do spot ${spot.name}`} sizes={tamanhos.metade} />
                     </div>
                   </ClickableImagePreview>
                   <p className="px-4 py-3 text-apoio text-texto-3 sm:px-5">

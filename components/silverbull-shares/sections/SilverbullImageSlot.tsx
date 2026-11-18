@@ -1,6 +1,6 @@
-import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import { tamanhos } from "@/lib/tamanhos";
+import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 
 type SilverbullImageSlotProps = {
   label: string;
@@ -18,13 +18,7 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
       <article className="overflow-hidden rounded-md border border-linha bg-carvao">
         <ClickableImagePreview src={src} alt={alt ?? label}>
           <div className={`relative w-full bg-poco p-2 ${frameClass}`}>
-            <Image quality={90}
-              src={src}
-              alt={alt ?? label}
-              fill
-              sizes={compact ? tamanhos.terco : tamanhos.metade}
-              className="object-contain"
-            />
+            <ImagemNoQuadro src={src} alt={alt ?? label} sizes={compact ? tamanhos.terco : tamanhos.metade} />
           </div>
         </ClickableImagePreview>
         <div className={`px-4 ${compact ? "py-2.5" : "py-3"} sm:px-5`}>
