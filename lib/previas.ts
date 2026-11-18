@@ -11,6 +11,7 @@ import * as lootrun from "@/components/lootrun/data/lootrun-content";
 import * as profissoes from "@/components/professions/data/professions-content";
 import * as raids from "@/components/raids/data/raids-content";
 import * as shares from "@/components/silverbull-shares/data/silverbull-shares-content";
+import * as festivais from "@/components/festivals/data/festivals-content";
 import * as montarias from "@/components/mounts/data/mounts-content";
 import * as modos from "@/components/special-modes/data/special-modes-content";
 import * as eventos from "@/components/world-events/data/world-events-content";
@@ -26,6 +27,7 @@ const conteudoDoGuia: Record<string, Record<string, unknown>> = {
   "world-events": eventos,
   "silverbull-shares": shares,
   "modos-especiais": modos,
+  festivais,
 };
 
 /** Arquivo de dados de cada guia, para ler a ordem das seções (a Início é gerada no build). */

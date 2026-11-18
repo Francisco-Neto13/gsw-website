@@ -38,6 +38,13 @@
   --color-raridade-mythic: #c80db1;
   --color-raridade-mythic-texto: #edb7e7;
 
+  /* Festivais (guia de Festivais): cor de destaque de cada um, só em ícone, borda e título curto. Todas acima
+     de 7:1 sobre o carvão. */
+  --color-festival-heroes: #ff8fc8;
+  --color-festival-bonfire: #ffa25c;
+  --color-festival-spirits: #74e6d2;
+  --color-festival-blizzard: #a8dcff;
+
   /* Medida de leitura (max-w-leitura): dentro da faixa de 65 a 75ch para texto corrido. */
   --container-leitura: 70ch;
 

@@ -103,6 +103,44 @@ export const glossario = {
     tipo: "Atributo de montaria",
     explicacao: "Controle nas curvas: quanto mais alto, mais rápido a montaria vira e menos velocidade perde ao curvar.",
   },
+  le: {
+    termo: "Liquid Emerald (LE)",
+    tipo: "Moeda",
+    explicacao:
+      "A maior forma de esmeralda do jogo: 1 LE vale 64 blocos de esmeralda (4096 esmeraldas). É a unidade de preço das trocas entre jogadores.",
+  },
+  stx: {
+    termo: "stx",
+    tipo: "Gíria de preço",
+    explicacao: "Um stack de Liquid Emerald: 64 LE. \"1 stx\" é o preço de um item muito caro.",
+  },
+  trinket: {
+    termo: "Trinket",
+    tipo: "Item",
+    explicacao:
+      "Item de utilidade, como totens, anéis e sigilos, com efeitos especiais. Muitos só saem nos festivais e vários ficam mais fracos fora da época do evento.",
+  },
+  powders: {
+    termo: "Powders",
+    tipo: "Material",
+    explicacao: "Pós elementais que se aplicam em armas e armaduras para somar dano ou defesa de um elemento. Vão do tier 1 ao 6.",
+  },
+  abilityShards: {
+    termo: "Ability Shards",
+    tipo: "Material",
+    explicacao:
+      "Fragmentos usados para resetar a árvore de habilidades ou editá-la sem reset completo: 3 shards no menu de reset, numa zona segura.",
+  },
+  war: {
+    termo: "War",
+    tipo: "Atividade de guilda",
+    explicacao: "Batalha de guilda pelo controle de territórios no mapa. Trinkets que fortalecem a equipe são muito procurados para isso.",
+  },
+  dbd: {
+    termo: "dbd",
+    tipo: "Gíria",
+    explicacao: "Dead by Daylight: jogo de terror assimétrico em que um caçador persegue quatro sobreviventes. O Banish the Beyond segue a mesma ideia.",
+  },
   toughness: {
     termo: "Toughness",
     tipo: "Atributo de montaria",

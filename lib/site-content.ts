@@ -66,6 +66,16 @@ export const montariasSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const festivaisSecoes: GuiaSecao[] = [
+  { id: "ciclo", titulo: "Ordem dos festivais" },
+  { id: "estrutura", titulo: "O que esperar de um festival", busca: "duração caixas crates detlas" },
+  { id: "heroes", titulo: "Festival of the Heroes", busca: "aster palco scavenger hunt claim to heroism talespun totem of tales" },
+  { id: "bonfire", titulo: "Festival of the Bonfire", busca: "fogueira hearthflame hunt kindling prop hunt bonfire keeper" },
+  { id: "spirits", titulo: "Festival of the Spirits", busca: "halloween guiding of the spirits banish the beyond dead by daylight dbd well of power" },
+  { id: "blizzard", titulo: "Festival of the Blizzard", busca: "natal traveler festival invitations blizzard brawl wynnter fair" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -154,12 +164,13 @@ export const guias: Guia[] = [
   },
   {
     slug: "festivais",
-    palavrasChave: "festival heroes bonfire spirits blizzard",
+    palavrasChave: "festival festivais evento sazonal heroes bonfire spirits blizzard minigame trinket",
     titulo: "Festivais",
-    resumo: "Heroes, Bonfire, Spirits e Blizzard.",
+    resumo: "Heroes, Bonfire, Spirits e Blizzard: missões, minigames e recompensas.",
     grupo: "especiais",
-    estado: "em-construcao",
+    estado: "completo",
     rotaAntiga: "/festivais",
+    secoes: festivaisSecoes,
   },
 ];
 
