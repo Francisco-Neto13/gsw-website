@@ -44,6 +44,9 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 | Festivais: Dodge 'Em e Thin Ice se revezam a cada 48 h | Festivais, Blizzard |
 | Festivais: prêmios "trinkets consumíveis" do Drawing são Spirit Fireworks e Rotten Pumpkins | Festivais, Spirits |
 | Festivais: sem fonte para o tiro ao alvo em 424, 67, -1630 e para a máquina de biscoitos (1024 por 32 LE) | Festivais, Heroes e Blizzard |
+| Modos especiais: na 1.19 o Hunted também podia ser ligado e desligado (soul points, depois só em cidades com espera de 15 min); a wiki atual só descreve o modo escolhido na criação. Conferir se a opção ainda existe | Modos especiais, Hunted |
+| Modos especiais: espera para atacar depois de entrar no servidor no Hunted (1 min na 1.19; 10 s na 2.0.3) | Fora do guia até confirmar |
+| Modos especiais: se o Ingredient Pouch "guarda tudo" vale para o Ironman normal ou só para o Ultimate (a wiki diverge) | Modos especiais, Ironman |
 
 ## Próxima etapa (depois da validação)
 

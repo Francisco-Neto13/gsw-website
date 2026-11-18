@@ -66,6 +66,47 @@ O link de origem de cada arquivo fica em `lib/terceiros.ts` e aparece na legenda
 | modos-icones-chat.webp | [Wiki: HICicons.png](https://wynncraft.wiki.gg/wiki/File:HICicons.png) | Modos especiais, como escolher |
 | hunted-npc-inicio.webp | [Wiki: AHunter'sCallingStartNPC.png](https://wynncraft.wiki.gg/wiki/File:AHunter%27sCallingStartNPC.png) | Modos especiais, Hunted |
 | hunted-aledar.webp | [Wiki: Aledar,theExterminator(Phase1).png](https://wynncraft.wiki.gg/wiki/File:Aledar,theExterminator(Phase1).png) | Modos especiais, Hunted |
+| bomba-combat-xp.webp | [Wiki: Xpbomb.png](https://wynncraft.wiki.gg/wiki/File:Xpbomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-profession-xp.webp | [Wiki: ProfessionXPBomb.png](https://wynncraft.wiki.gg/wiki/File:ProfessionXPBomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-profession-speed.webp | [Wiki: ProfessionSpeedBomb.png](https://wynncraft.wiki.gg/wiki/File:ProfessionSpeedBomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-shout.webp | [Wiki: Shoutbomb.png](https://wynncraft.wiki.gg/wiki/File:Shoutbomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-loot.webp | [Wiki: Lootbomb.png](https://wynncraft.wiki.gg/wiki/File:Lootbomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-item.webp | [Wiki: Itembomb.png](https://wynncraft.wiki.gg/wiki/File:Itembomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-dungeon.webp | [Wiki: Dungeonbomb.png](https://wynncraft.wiki.gg/wiki/File:Dungeonbomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-scroll-charge.webp | [Wiki: ScrollChargeBomb.png](https://wynncraft.wiki.gg/wiki/File:ScrollChargeBomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-ingredient.webp | [Wiki: IngredientBomb.png](https://wynncraft.wiki.gg/wiki/File:IngredientBomb.png), ilustração da loja | Silverbull Shares, bombas |
+| bomba-party-crackers.webp | [Wiki: Partybomb.png](https://wynncraft.wiki.gg/wiki/File:Partybomb.png), ilustração da loja | Silverbull Shares, bombas |
+| beacon-aqua.webp | [Wiki: Inspect_beacon_aqua.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_aqua.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-blue.webp | [Wiki: Inspect_beacon_blue.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_blue.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-crimson.webp | [Wiki: Inspect_beacon_crimson.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_crimson.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-dark-gray.webp | [Wiki: Inspect_beacon_dark_gray.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_dark_gray.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-gray.webp | [Wiki: Inspect_beacon_gray.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_gray.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-green.webp | [Wiki: Inspect_beacon_green.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_green.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-orange.webp | [Wiki: Inspect_beacon_orange.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_orange.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-pink.webp | [Wiki: Inspect_beacon_pink.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_pink.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-purple.webp | [Wiki: Inspect_beacon_purple.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_purple.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-rainbow.webp | [Wiki: Inspect_beacon_rainbow.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_rainbow.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-red.webp | [Wiki: Inspect_beacon_red.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_red.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-white.webp | [Wiki: Inspect_beacon_white.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_white.png), ícone do jogo | Lootrun, tabela de beacons |
+| beacon-yellow.webp | [Wiki: Inspect_beacon_yellow.png](https://wynncraft.wiki.gg/wiki/File:Inspect_beacon_yellow.png), ícone do jogo | Lootrun, tabela de beacons |
+| dungeon-decrepit-sewers.webp | [Wiki: DecrepitSewers.png](https://wynncraft.wiki.gg/wiki/File:DecrepitSewers.png), entrada | Dungeons, Decrepit Sewers |
+| dungeon-infested-pit.webp | [Wiki: InfestedPit.png](https://wynncraft.wiki.gg/wiki/File:InfestedPit.png), entrada | Dungeons, Infested Pit |
+| dungeon-underworld-crypt.webp | [Wiki: UnderworldCryptBossRoom.png](https://wynncraft.wiki.gg/wiki/File:UnderworldCryptBossRoom.png), sala do chefe | Dungeons, Underworld Crypt |
+| dungeon-timelost-sanctum.webp | [Wiki: TimelostSanctumCathedral1.png](https://wynncraft.wiki.gg/wiki/File:TimelostSanctumCathedral1.png), catedral | Dungeons, Timelost Sanctum |
+| dungeon-sand-swept-tomb.webp | [Wiki: Sand-SweptTomb.png](https://wynncraft.wiki.gg/wiki/File:Sand-SweptTomb.png), entrada | Dungeons, Sand-Swept Tomb |
+| dungeon-ice-barrows.webp | [Wiki: IceBarrows.png](https://wynncraft.wiki.gg/wiki/File:IceBarrows.png), entrada | Dungeons, Ice Barrows |
+| dungeon-undergrowth-ruins.webp | [Wiki: UndergrowthRuins.png](https://wynncraft.wiki.gg/wiki/File:UndergrowthRuins.png), entrada | Dungeons, Undergrowth Ruins |
+| dungeon-galleons-graveyard.webp | [Wiki: GalleonsGraveyardEntrance.png](https://wynncraft.wiki.gg/wiki/File:GalleonsGraveyardEntrance.png), entrada | Dungeons, Galleon's Graveyard |
+| dungeon-fallen-factory.webp | [Wiki: FallenFactory.png](https://wynncraft.wiki.gg/wiki/File:FallenFactory.png), entrada | Dungeons, Fallen Factory |
+| dungeon-eldritch-outlook.webp | [Wiki: EldritchOutlook.png](https://wynncraft.wiki.gg/wiki/File:EldritchOutlook.png), entrada | Dungeons, Eldritch Outlook |
+| dungeon-decrepit-sewers-corrompida.webp | [Wiki: CorruptedDecrepitSewersBossRoom.png](https://wynncraft.wiki.gg/wiki/File:CorruptedDecrepitSewersBossRoom.png), sala do chefe | Dungeons, Corrupted Decrepit Sewers |
+| dungeon-infested-pit-corrompida.webp | [Wiki: CorruptedInfestedPitRoom0.png](https://wynncraft.wiki.gg/wiki/File:CorruptedInfestedPitRoom0.png), primeira sala | Dungeons, Corrupted Infested Pit |
+| dungeon-lost-sanctuary-corrompida.webp | [Wiki: CorruptedLostSanctuaryEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedLostSanctuaryEntrance.png), entrada | Dungeons, Corrupted Lost Sanctuary |
+| dungeon-underworld-crypt-corrompida.webp | [Wiki: CorruptedUnderworldCrypt.png](https://wynncraft.wiki.gg/wiki/File:CorruptedUnderworldCrypt.png), entrada | Dungeons, Corrupted Underworld Crypt |
+| dungeon-sand-swept-tomb-corrompida.webp | [Wiki: CorruptedSand-SweptTombEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedSand-SweptTombEntrance.png), entrada | Dungeons, Corrupted Sand-Swept Tomb |
+| dungeon-ice-barrows-corrompida.webp | [Wiki: CorruptedIceBarrowsEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedIceBarrowsEntrance.png), entrada | Dungeons, Corrupted Ice Barrows |
+| dungeon-undergrowth-ruins-corrompida.webp | [Wiki: CorruptedUndergrowthRuinsEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedUndergrowthRuinsEntrance.png), entrada | Dungeons, Corrupted Undergrowth Ruins |
+| dungeon-galleons-graveyard-corrompida.webp | [Wiki: CorruptedGalleon'sGraveyardEntrance.png](https://wynncraft.wiki.gg/wiki/File:CorruptedGalleon%27sGraveyardEntrance.png), entrada | Dungeons, Corrupted Galleon's Graveyard |
 
 ## Imagens de itens (CDN oficial)
 
