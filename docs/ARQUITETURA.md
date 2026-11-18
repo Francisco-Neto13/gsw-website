@@ -37,6 +37,7 @@ components/
   shared/               TopBar, Busca, GuiaNavLista, SiteFooter, ImagemDoJogo, AnimacaoSobDemanda,
                         ClickableImagePreview, LazyYouTubeEmbed, GuideIntro, Efeitos (motor de
                         movimento), TransicaoDePagina, TextoAnimado
+  (lib/previas.ts)      tópicos e tempo de leitura de cada guia, tirados do conteúdo, para a Início
   guias/                peças do modelo de guia: GuiaLayout, FichaGuia, DicaGsw, Termo,
                         TextoComTermos, SecaoGuia, Figura, FimDoGuia, Breadcrumb, SeloVersao,
                         GuiaEmConstrucao

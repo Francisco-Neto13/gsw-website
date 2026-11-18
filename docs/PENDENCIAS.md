@@ -7,7 +7,7 @@ Raids). Ao resolver um item, apague-o daqui no mesmo PR.
 
 | Item | Detalhe |
 |---|---|
-| E-mail de contato do aviso de site não oficial | A Mojang exige um contato real (Discord não basta). Preencher `contatoEmail` em `lib/site-content.ts`; até lá o rodapé mostra "Contato: a definir" |
+| E-mail de contato do aviso de site não oficial | A Mojang exige um contato real (Discord não basta). Conferido em 18/11/2026 nas [Minecraft Usage Guidelines](https://www.minecraft.net/en-us/usage-guidelines), seção "Essential guidelines", que vale para todo uso: deixar claro "whom to contact … and the contact method (chat and forum links are not acceptable methods)". Preencher `contatoEmail` em `lib/site-content.ts`; até lá o rodapé mostra "Contato: a definir" |
 | Hospedagem de produção | A Vercel não será mais usada. O `deploy.yml` atual publica na Vercel e está desligado; precisa ser trocado pelo destino novo (provavelmente a VPS, como o Portfolio) antes de ligar o deploy |
 | Autorização da Wynncraft para ícones oficiais | Sem ela, nada da CDN oficial entra no site (`docs/CREDITOS.md`). Pedido pelo Discord de desenvolvedores |
 | Vídeos repetidos na TCC Sala 3 | "Agate Axon" usa o mesmo vídeo de "Primeval Machine" e "Elder Astal" o de "Desvie das Pedras". Pode ser o mesmo POV mostrando dois caminhos ou erro; confirmar ou gravar os certos |

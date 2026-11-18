@@ -113,8 +113,10 @@ sem paralaxe, partículas, fita, feixe ou inclinação; as animações do Lootru
 | Fita de guias | Início, abaixo do palco | Texto vazado em Pixelify, 48 s por volta, para no hover |
 | Contadores | Início (raids, salas, POVs) | `data-contar`: zera fora da tela e conta em 1,4 s com saída exponencial |
 | Feixe de borda | Destaque de Raids na Início | `@property --feixe` girando um `conic-gradient` mascarado |
-| Revelação ao rolar | Todas as páginas | Títulos de seção, figuras, tabelas, cartões, etapas e itens de grade sobem 24 px e aparecem uma vez, em sequência entre irmãos |
-| Imagens com máscara | Figuras e prints dos guias | A moldura abre de `inset(6%)` para cheio e a imagem desce de 1,12× para 1× |
+| Revelação ao rolar | Todas as páginas | Cada seção de conteúdo é um bloco que esmaece (sem subir, para não mudar o ponto das âncoras); dentro dela, títulos, figuras, tabelas, cartões, etapas e itens de grade sobem 24 px, em sequência entre irmãos. Nenhum parágrafo aparece pronto antes da animação |
+| Ordem de entrada | Todas as páginas | Cabeçalho primeiro (título palavra por palavra, abertura em sequência); o que aparece no primeiro 1,2 s da página espera 900 ms (`--atraso-pagina`) para entrar depois dele. O relógio zera a cada página nova |
+| Imagens com máscara | Figuras e prints dos guias | A `<figure>` abre de `inset(6%)` para cheio e a imagem desce de 1,12× para 1×. O `<picture>` só esmaece: é inline e sem caixa própria, e recortá-lo apagava a imagem para o observer (o script observa a `<img>` de dentro) |
+| Prévias de categoria | Início | Cartões entram em sequência; a print abre com zoom; hover acende o holofote e aproxima a imagem; cada guia desliza e a seta anda |
 | Caixa de item | Fichas dos guias e termos do jogo | A ficha "desenha" de cima para baixo em 7 degraus ao aparecer; o termo abre com surgimento e recorte em 6 degraus, e as linhas entram em sequência |
 | Linha do tempo | História | O trilho de cada era se desenha de cima para baixo ao aparecer |
 | Holofote | Cartões dos guias antigos, membros, pilares, essência, destaque | Gradiente violeta que segue o cursor |

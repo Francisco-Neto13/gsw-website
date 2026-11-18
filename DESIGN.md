@@ -274,6 +274,8 @@ Diretos e sem enfeite.
 - **Chip de raridade:** borda da cor da raridade, texto na cor (Mythic com a secundária), fundo transparente.
 
 ### Cards / Containers
+- **Cartão (regra geral):** fundo `bg-carvao`, que já carrega o roxo da marca: dentro dele os tokens `linha` e `linha-forte` viram violeta translúcido (borda e divisões), o fundo recebe 6% do violeta e o topo um brilho violeta sutil (`app/styles/foundation.css`). Poço de imagem e ícone em `bg-poco` (preto-violeta); chips e coordenadas em `bg-gsw/15`. Nunca cinza neutro (`zinc`, `white/5`, `black`) em cartão.
+- **Prévia de categoria (Início):** cartão com print 16:7, nome do grupo sobre a imagem, resumo, e cada guia com tópicos principais e tempo de leitura em mono; tópicos e tempo saem do conteúdo do guia (`lib/previas.ts`).
 - **Painel de variação:** carvão, régua de 1 px, 6 px de canto, 16 a 20 px de respiro; texto à esquerda e vídeo à direita a partir de 1024 px.
 - **Cartão de navegação (anterior/próximo):** só borda de régua, nome do guia em Pixelify, hover na borda violeta.
 - **Mídia:** borda de régua, 6 px, fundo carvão enquanto carrega, legenda no terciário em 0,95 rem.
