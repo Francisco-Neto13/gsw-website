@@ -1,5 +1,5 @@
 import Destaque from "@/components/guias/Destaque";
-import Figura from "@/components/guias/Figura";
+import FiguraNoTamanho from "@/components/guias/FiguraNoTamanho";
 import SecaoGuia from "@/components/guias/SecaoGuia";
 import {
   avisoIrreversivel,
@@ -25,17 +25,7 @@ export default function ModosComoFunciona() {
           <Destaque {...avisoIrreversivel} className="mt-6" />
           <Destaque tipo="info" titulo="Morrer custa itens" texto={penalidadeDeMorte} className="mt-4" />
         </div>
-        {medida ? (
-          <div className="w-full justify-self-center" style={{ maxWidth: `${medida[0]}px` }}>
-            <Figura
-              src={imagemIconesDoChat.src}
-              alt={imagemIconesDoChat.alt}
-              legenda={imagemIconesDoChat.legenda}
-              sizes={tamanhos.lateral}
-              proporcao={`${medida[0]} / ${medida[1]}`}
-            />
-          </div>
-        ) : null}
+        <FiguraNoTamanho imagem={imagemIconesDoChat} sizes={tamanhos.lateral} />
       </div>
     </SecaoGuia>
   );

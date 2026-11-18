@@ -2,7 +2,7 @@ import { BookOpen, Gamepad2, Gem, ScrollText, Store, type LucideIcon } from "luc
 import type { ReactNode } from "react";
 import DicaGsw from "@/components/guias/DicaGsw";
 import Destaque from "@/components/guias/Destaque";
-import Figura from "@/components/guias/Figura";
+import FiguraNoTamanho from "@/components/guias/FiguraNoTamanho";
 import RecursoExterno from "@/components/guias/RecursoExterno";
 import TextoComTermos from "@/components/guias/TextoComTermos";
 import TextoGlitch from "@/components/guias/TextoGlitch";
@@ -29,21 +29,8 @@ const Paragrafos =({ textos }: { textos: string[] }) => (
 
 /** Texto com a imagem ao lado (coluna de 26 rem); sem imagem medida, só o texto. */
 function ComImagem({ imagem, lateral, children }: { imagem?: Imagem; lateral: boolean; children: ReactNode }) {
-  const medida = imagem ? dimensoesDe(imagem.src) : null;
-  if (!imagem || !medida) return <div>{children}</div>;
-  // O quadro nunca passa da largura real da imagem: sem faixa preta em volta de miniatura pequena.
-  const figura = (
-    <div className="w-full justify-self-center" style={{ maxWidth: `${medida[0]}px` }}>
-    <Figura
-      src={imagem.src}
-      alt={imagem.alt}
-      legenda={imagem.legenda}
-      // Quadro na proporção da própria imagem: miniaturas pequenas ficam no tamanho real, sem esticar.
-      proporcao={`${medida[0]} / ${medida[1]}`}
-      sizes={lateral ? tamanhos.lateral : tamanhos.artigo}
-    />
-    </div>
-  );
+  if (!imagem || !dimensoesDe(imagem.src)) return <div>{children}</div>;
+  const figura = <FiguraNoTamanho imagem={imagem} sizes={lateral ? tamanhos.lateral : tamanhos.artigo} />;
   return lateral ? (
     <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
       <div>{children}</div>
