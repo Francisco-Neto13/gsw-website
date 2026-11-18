@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import AnimacaoSobDemanda from "@/components/shared/AnimacaoSobDemanda";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import type { MediaPlaceholder } from "@/components/lootrun/data/lootrun-content";
 
@@ -43,17 +44,30 @@ export default function LootrunMediaPlaceholder({
     return (
       <article className="h-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
         <div className={frameClassName}>
+          {/* Sem autoplay: só baixa o vídeo quando o leitor dá play (preload só dos metadados). */}
           <video
             src={item.src}
-            className="pointer-events-none h-full w-full rounded-lg object-contain"
-            autoPlay
+            className="h-full w-full rounded-lg object-contain"
+            preload="metadata"
             muted
             loop
             playsInline
-            controls={false}
-            disablePictureInPicture
-            controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
+            controls
+            aria-label={item.alt ?? item.name}
           />
+        </div>
+        <div className={captionClassName}>
+          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
+        </div>
+      </article>
+    );
+  }
+
+  if (item.animado && item.src) {
+    return (
+      <article className="h-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+        <div className={frameClassName}>
+          <AnimacaoSobDemanda src={item.src} alt={item.alt ?? item.name} className="h-full w-full rounded-lg object-contain" />
         </div>
         <div className={captionClassName}>
           <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
@@ -73,7 +87,7 @@ export default function LootrunMediaPlaceholder({
               fill
               sizes={compact ? "(max-width: 768px) 50vw, 33vw" : "(max-width: 1024px) 100vw, 50vw"}
               className="object-contain"
-              unoptimized
+
             />
           </div>
         </ClickableImagePreview>

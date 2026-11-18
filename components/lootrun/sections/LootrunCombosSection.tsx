@@ -7,7 +7,7 @@ function ComboList({ title, items }: { title: string; items?: string[] }) {
 
   return (
     <div>
-      <p className="text-xs font-bold uppercase tracking-[0.3em] text-gsw/80">{title}</p>
+      <p className="text-xs font-bold uppercase tracking-[0.3em] text-violeta/80">{title}</p>
       <div className="mt-2 space-y-1.5">
         {items.map((item) => (
           <p key={item} className="text-sm leading-relaxed text-zinc-400 sm:text-base">
@@ -24,7 +24,7 @@ export default function LootrunCombosSection() {
     <section className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {lootrunCombosIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -42,7 +42,7 @@ export default function LootrunCombosSection() {
               className="rounded-2xl border border-white/10 bg-black/35 p-5 sm:p-7"
             >
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <span className="text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
+                <span className="text-xs font-bold uppercase tracking-[0.35em] text-violeta/80">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{combo.title}</h3>

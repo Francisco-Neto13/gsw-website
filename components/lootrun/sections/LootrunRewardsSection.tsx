@@ -11,7 +11,7 @@ export default function LootrunRewardsSection() {
     <section className="bg-black px-4 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {lootrunRewardsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -39,7 +39,7 @@ export default function LootrunRewardsSection() {
           {lootrunRewardMedia.videos.map((video, index) => (
             <article key={video.id} className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20">
               <div className="border-b border-white/5 px-5 py-4 sm:px-6 sm:py-5">
-                <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-gsw/90">{video.title}</h3>
+                <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-violeta/90">{video.title}</h3>
               </div>
               <div className="px-4 pt-4 sm:px-5 sm:pt-5">
                 <LazyYouTubeEmbed videoId={video.id} title={video.title} priority={index === 0} />
