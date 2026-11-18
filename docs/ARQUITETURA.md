@@ -61,8 +61,8 @@ tests/                  rotas.test.mjs
 | `/` | `home/pages/HomePage` | Modelo novo |
 | `/guias` | `app/guias/page.tsx` | Modelo novo |
 | `/guias/raids` | `raids/pages/RaidsPage` | **Guia modelo** |
-| `/guias/leveling`, `/guias/profissoes`, `/guias/lootrun`, `/guias/dungeons`, `/guias/world-events`, `/guias/silverbull-shares`, `/guias/modos-especiais` | `<area>/pages/*` | Moldura nova, miolo antigo |
-| `/guias/montarias`, `/guias/festivais` | `GuiaEmConstrucao` | Em construção |
+| `/guias/leveling`, `/guias/profissoes`, `/guias/montarias`, `/guias/lootrun`, `/guias/dungeons`, `/guias/world-events`, `/guias/silverbull-shares`, `/guias/modos-especiais`, `/guias/festivais` | `<area>/pages/*` | Modelo de Raids |
+| `/guias/sites-uteis` | `sites-uteis/pages/SitesUteisPage` | Modelo de Raids; grupo Ferramentas, com filtro por categoria (`SitesGuia`, cliente) |
 | `/historia` | `history/pages/HistoryPage` | Modelo antigo (Comunidade, próxima etapa) |
 
 As rotas antigas (`/raids`, `/lootrun`, `/professions`...) redirecionam com **308 permanente**
