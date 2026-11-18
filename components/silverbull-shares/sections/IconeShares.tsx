@@ -38,7 +38,7 @@ const icones: Record<string, LucideIcon> = {
   recarregar: CalendarClock,
 };
 
-export default function IconeShares({ nome }: { nome: string }) {
+export default function IconeShares({ nome, grande = false }: { nome: string; grande?: boolean }) {
   const Icone = icones[nome] ?? Gem;
-  return <Icone aria-hidden size={22} strokeWidth={1.75} className="shrink-0 text-violeta" />;
+  return <Icone aria-hidden size={grande ? 40 : 22} strokeWidth={grande ? 1.5 : 1.75} className="shrink-0 text-violeta" />;
 }

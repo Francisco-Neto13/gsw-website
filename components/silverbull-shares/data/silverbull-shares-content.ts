@@ -25,6 +25,8 @@ export type BombCard = {
   icon: string;
   name: string;
   description: string;
+  /** Ilustração da loja (wiki, public/terceiros/); sem ela, o cartão mostra o ícone. */
+  imagem?: string;
 };
 
 export type MembershipBenefit = {
@@ -407,18 +409,18 @@ export const bombStoreImage = {
 };
 
 export const bombCards: BombCard[] = [
-  { icon: "espadas", name: "Combat XP Bomb", description: "Dobra XP de mobs por 20 minutos." },
-  { icon: "picareta", name: "Profession XP Bomb", description: "Dobra XP de profissões por 20 minutos." },
-  { icon: "velocidade", name: "Profession Speed Bomb", description: "Acelera coleta e crafting por 10 minutos e reduz custo de craft." },
-  { icon: "grito", name: "Shout Bomb", description: "Mensagem no chat global para todos online." },
-  { icon: "gema", name: "Loot Bomb", description: "Dobra loot dropado por mobs por 20 minutos." },
-  { icon: "presente", name: "Item Bomb", description: "Entrega baú com itens aleatórios no mundo." },
-  { icon: "chave", name: "Dungeon Bomb", description: "Entrada grátis em dungeons por 10 minutos." },
+  { icon: "espadas", name: "Combat XP Bomb", imagem: "/terceiros/wynncraft/bomba-combat-xp.webp", description: "Dobra XP de mobs por 20 minutos." },
+  { icon: "picareta", name: "Profession XP Bomb", imagem: "/terceiros/wynncraft/bomba-profession-xp.webp", description: "Dobra XP de profissões por 20 minutos." },
+  { icon: "velocidade", name: "Profession Speed Bomb", imagem: "/terceiros/wynncraft/bomba-profession-speed.webp", description: "Acelera coleta e crafting por 10 minutos e reduz custo de craft." },
+  { icon: "grito", name: "Shout Bomb", imagem: "/terceiros/wynncraft/bomba-shout.webp", description: "Mensagem no chat global para todos online." },
+  { icon: "gema", name: "Loot Bomb", imagem: "/terceiros/wynncraft/bomba-loot.webp", description: "Dobra loot dropado por mobs por 20 minutos." },
+  { icon: "presente", name: "Item Bomb", imagem: "/terceiros/wynncraft/bomba-item.webp", description: "Entrega baú com itens aleatórios no mundo." },
+  { icon: "chave", name: "Dungeon Bomb", imagem: "/terceiros/wynncraft/bomba-dungeon.webp", description: "Entrada grátis em dungeons por 10 minutos." },
   { icon: "bau", name: "Loot Chest Bomb", description: "Aumenta quantidade de itens em baús por 20 minutos." },
   { icon: "mundo", name: "World Event Bomb", description: "Ativa world events comuns (sem Annihilation)." },
-  { icon: "pergaminho", name: "Scroll Charge Bomb", description: "Restaura 2 cargas de teleport scrolls." },
-  { icon: "ingrediente", name: "Ingredient Bomb", description: "Envia 16 ingredientes aleatórios para todos no mundo." },
-  { icon: "festa", name: "Party Crackers", description: "Evento visual de celebração no entorno do jogador." },
+  { icon: "pergaminho", name: "Scroll Charge Bomb", imagem: "/terceiros/wynncraft/bomba-scroll-charge.webp", description: "Restaura 2 cargas de teleport scrolls." },
+  { icon: "ingrediente", name: "Ingredient Bomb", imagem: "/terceiros/wynncraft/bomba-ingredient.webp", description: "Envia 16 ingredientes aleatórios para todos no mundo." },
+  { icon: "festa", name: "Party Crackers", imagem: "/terceiros/wynncraft/bomba-party-crackers.webp", description: "Evento visual de celebração no entorno do jogador." },
 ];
 
 export const petsIntro: SectionIntro = {
