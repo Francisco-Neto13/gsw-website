@@ -4,16 +4,13 @@ import SilverbullImageSlot from "@/components/silverbull-shares/sections/Silverb
 
 export default function SilverbullBombsSection() {
   return (
-    <section className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta">
-            {bombsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {bombsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {bombsIntro.description}
           </p>
         </div>
@@ -24,12 +21,12 @@ export default function SilverbullBombsSection() {
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {bombCards.map((bomb) => (
-            <article key={bomb.name} className="rounded-2xl border border-white/10 bg-black/35 p-4 sm:p-5">
+            <article key={bomb.name} className="rounded-md border border-linha bg-carvao p-4 sm:p-5">
               <div className="mb-2 flex items-center gap-2">
                 <IconeShares nome={bomb.icon} />
-                <h3 className="text-sm font-bold tracking-tight text-white sm:text-base">{bomb.name}</h3>
+                <h3 className="text-sm font-bold tracking-tight text-texto sm:text-base">{bomb.name}</h3>
               </div>
-              <p className="text-sm leading-relaxed text-zinc-400">{bomb.description}</p>
+              <p className="text-[0.95rem] text-texto-2">{bomb.description}</p>
             </article>
           ))}
         </div>

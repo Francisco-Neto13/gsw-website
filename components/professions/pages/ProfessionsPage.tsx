@@ -8,7 +8,7 @@ import ProfessionWaypointsSection from "@/components/professions/sections/Profes
 
 export default function ProfessionsPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div>
         <GuideIntro
           title="Profissões"
           paragraphs={professionsIntroParagraphs}

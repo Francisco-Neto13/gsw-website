@@ -8,23 +8,19 @@ import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function LevelingPartySection() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-0 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-gsw/5 blur-[150px]" />
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
-            {levelingPartyIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {levelingPartyIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {levelingPartyIntro.description}
           </p>
         </div>
 
-        <div className="leveling-panel-3d mx-auto mb-10 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mb-16">
+        <div className="leveling-panel-3d mx-auto mb-10 max-w-2xl overflow-hidden rounded-md border border-linha bg-carvao sm:mb-16">
           <ClickableImagePreview src={levelingPartyImage.src} alt={levelingPartyImage.alt}>
             <div className="leveling-media-pop relative aspect-video w-full">
               <Image
@@ -36,7 +32,7 @@ export default function LevelingPartySection() {
               />
             </div>
           </ClickableImagePreview>
-          <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
+          <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">
             {levelingPartyImage.caption}
           </p>
         </div>
@@ -45,12 +41,12 @@ export default function LevelingPartySection() {
           {levelingPartyCards.map((card) => (
             <div
               key={card.title}
-              className="leveling-card-soft group rounded-2xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:border-gsw/40 sm:p-8"
+              className="leveling-card-soft group rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8"
             >
-              <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
+              <h3 className="mb-3 text-xl font-bold tracking-tight text-texto sm:mb-4 sm:text-2xl">
                 {card.title}
               </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">{card.description}</p>
+              <p className="text-texto-2">{card.description}</p>
             </div>
           ))}
         </div>

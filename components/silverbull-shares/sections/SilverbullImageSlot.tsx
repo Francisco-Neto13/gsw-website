@@ -14,7 +14,7 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
 
   if (src) {
     return (
-      <article className="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+      <article className="overflow-hidden rounded-md border border-linha bg-carvao">
         <ClickableImagePreview src={src} alt={alt ?? label}>
           <div className={`relative w-full bg-zinc-900/60 p-2 ${frameClass}`}>
             <Image
@@ -27,15 +27,15 @@ export default function SilverbullImageSlot({ label, src, alt, compact = false }
           </div>
         </ClickableImagePreview>
         <div className={`px-4 ${compact ? "py-2.5" : "py-3"} sm:px-5`}>
-          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{imageDescription}</p>
+          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{imageDescription}</p>
         </div>
       </article>
     );
   }
 
   return (
-    <div className="rounded-2xl border border-dashed border-white/20 bg-black/35 p-6 text-center">
-      <p className="text-sm font-semibold text-zinc-300 sm:text-base">{label}</p>
+    <div className="rounded-md border border-dashed border-white/20 bg-carvao p-6 text-center">
+      <p className="text-sm font-semibold text-texto-2 sm:text-base">{label}</p>
     </div>
   );
 }

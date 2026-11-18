@@ -7,18 +7,14 @@ import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 
 export default function LevelingSpotsSection() {
   return (
-    <section className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gsw/5 blur-[120px]" />
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
-            {levelingSpotsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {levelingSpotsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {levelingSpotsIntro.description}
           </p>
         </div>
@@ -27,21 +23,18 @@ export default function LevelingSpotsSection() {
           {levelingSpots.map((spot, index) => (
             <article
               key={spot.name}
-              className={`leveling-card-medium group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30 ${
+              className={`leveling-card-medium group overflow-hidden rounded-md border border-linha bg-carvao transition-all duration-300 hover:border-gsw/30 ${
                 index % 2 === 0 ? "leveling-tilt-right" : "leveling-tilt-left"
               }`}
             >
-              <div className="flex flex-col gap-2 border-b border-white/5 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
+              <div className="flex flex-col gap-2 border-b border-linha px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
-                  <span className="leveling-badge-pop select-none text-3xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/15 sm:text-4xl">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
                   <div>
-                    <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">{spot.name}</h3>
+                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-xl">{spot.name}</h3>
                     <span className="text-xs font-semibold text-violeta">{spot.range}</span>
                   </div>
                 </div>
-                <code className="leveling-badge-pop w-fit rounded-lg bg-white/5 px-3 py-1.5 text-xs font-mono text-zinc-400">
+                <code className="leveling-badge-pop w-fit rounded-lg bg-white/5 px-3 py-1.5 text-xs font-mono text-texto-2">
                   {spot.coords}
                 </code>
               </div>
@@ -49,13 +42,13 @@ export default function LevelingSpotsSection() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <ul className="space-y-3 px-5 py-5 sm:px-7 sm:py-6">
                   {spot.notes.map((note) => (
-                    <li key={`${spot.name}-${note}`} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                    <li key={`${spot.name}-${note}`} className="flex gap-3 text-texto-2">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                       <span>{note}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="overflow-hidden border-t border-white/5 bg-zinc-950 lg:border-t-0 lg:border-l">
+                <div className="overflow-hidden border-t border-linha bg-zinc-950 lg:border-t-0 lg:border-l">
                   <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
                     <div className="leveling-media-pop relative aspect-video w-full p-1 sm:p-2">
                       <Image
@@ -67,7 +60,7 @@ export default function LevelingSpotsSection() {
                       />
                     </div>
                   </ClickableImagePreview>
-                  <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
+                  <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">
                     Imagem de referência do spot {spot.name}.
                   </p>
                 </div>

@@ -37,25 +37,21 @@ const craftingSpotImageByProfession: Record<string, string> = {
 
 export default function ProfessionGrindSpotsSection() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gsw/5 blur-[120px]" />
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
-            {professionGrindSpotsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {professionGrindSpotsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {professionGrindSpotsIntro.description}
           </p>
         </div>
 
         <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {professionSpotMedia.map((item) => (
-            <article key={item.src} className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20">
+            <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
                 <div className="relative aspect-video w-full bg-black">
                   <Image
@@ -68,8 +64,8 @@ export default function ProfessionGrindSpotsSection() {
                 </div>
               </ClickableImagePreview>
               <div className="px-4 py-3 sm:px-5">
-                <p className="text-sm font-semibold tracking-tight text-zinc-300">{item.title}</p>
-                <p className="mt-1 text-xs leading-relaxed text-zinc-500">
+                <p className="text-sm font-semibold tracking-tight text-texto-2">{item.title}</p>
+                <p className="mt-1 text-xs leading-relaxed text-texto-3">
                   Referência visual do tipo de spot. Use a tabela abaixo para coordenadas e progressão.
                 </p>
               </div>
@@ -81,11 +77,11 @@ export default function ProfessionGrindSpotsSection() {
           {grindSpots.map((professionSpots) => (
             <article
               key={professionSpots.profession}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
+              className="group overflow-hidden rounded-md border border-linha bg-carvao transition-all duration-300 hover:border-gsw/30"
             >
-              <div className="flex flex-col gap-2 border-b border-white/5 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
+              <div className="flex flex-col gap-2 border-b border-linha px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
-                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-zinc-950">
+                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-linha bg-zinc-950">
                     <Image
                       src={craftingSpotImageByProfession[professionSpots.profession] ?? "/icon.webp"}
                       alt={`Ícone ${professionSpots.profession}`}
@@ -95,7 +91,7 @@ export default function ProfessionGrindSpotsSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">
+                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-xl">
                       {professionSpots.profession}
                     </h3>
                     <span className="text-xs font-semibold text-violeta">{professionSpots.resources}</span>
@@ -106,17 +102,17 @@ export default function ProfessionGrindSpotsSection() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-white/5">
-                      <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500 sm:px-7">
+                    <tr className="border-b border-linha">
+                      <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3 sm:px-7">
                         {professionGrindSpotsTableHeaders.level}
                       </th>
-                      <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500">
+                      <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3">
                         {professionGrindSpotsTableHeaders.ingredient}
                       </th>
-                      <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500">
+                      <th className="px-3 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3">
                         {professionGrindSpotsTableHeaders.coords}
                       </th>
-                      <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-zinc-500 sm:px-7">
+                      <th className="px-5 py-3 text-left text-xs font-bold uppercase tracking-widest text-texto-3 sm:px-7">
                         {professionGrindSpotsTableHeaders.tags}
                       </th>
                     </tr>
@@ -125,7 +121,7 @@ export default function ProfessionGrindSpotsSection() {
                     {professionSpots.spots.map((spot) => (
                       <tr
                         key={`${professionSpots.profession}-${spot.level}-${spot.name}`}
-                        className="border-b border-white/5 transition-colors duration-150 hover:bg-white/[0.02] last:border-0"
+                        className="border-b border-linha transition-colors duration-150 hover:bg-white/[0.02] last:border-0"
                       >
                         <td className="px-5 py-3 sm:px-7">
                           <span className="font-mono text-xs font-semibold text-violeta">{spot.level}</span>
@@ -134,7 +130,7 @@ export default function ProfessionGrindSpotsSection() {
                           <span className="text-sm text-white">{spot.name}</span>
                         </td>
                         <td className="px-3 py-3">
-                          <code className="rounded bg-white/5 px-2 py-0.5 text-xs font-mono text-zinc-400">
+                          <code className="rounded bg-white/5 px-2 py-0.5 text-xs font-mono text-texto-2">
                             {spot.coords}
                           </code>
                         </td>

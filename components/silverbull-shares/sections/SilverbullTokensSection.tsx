@@ -4,17 +4,13 @@ import SilverbullImageSlot from "@/components/silverbull-shares/sections/Silverb
 
 export default function SilverbullTokensSection() {
   return (
-    <section className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gsw/5 blur-[120px]" />
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta">
-            {tokensIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {tokensIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {tokensIntro.description}
           </p>
         </div>
@@ -24,19 +20,16 @@ export default function SilverbullTokensSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-          {tokenCards.map((token, index) => (
+          {tokenCards.map((token) => (
             <article
               key={token.name}
-              className="group relative rounded-2xl border border-white/10 bg-black/40 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gsw/40"
+              className="group relative rounded-md border border-linha bg-carvao p-5 transition-all duration-200 hover:border-gsw/40"
             >
-              <div className="mb-3 flex items-center gap-2 border-b border-white/5 pb-3">
+              <div className="mb-3 flex items-center gap-2 border-b border-linha pb-3">
                 <IconeShares nome={token.icon} />
-                <h3 className="text-sm font-bold tracking-tight text-white sm:text-base">{token.name}</h3>
+                <h3 className="text-sm font-bold tracking-tight text-texto sm:text-base">{token.name}</h3>
               </div>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">{token.description}</p>
-              <span className="pointer-events-none absolute right-4 bottom-3 select-none text-3xl font-black italic text-white/5 group-hover:text-violeta/15">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+              <p className="text-texto-2">{token.description}</p>
             </article>
           ))}
         </div>

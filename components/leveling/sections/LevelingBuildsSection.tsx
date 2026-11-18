@@ -146,25 +146,22 @@ export default function LevelingBuildsSection() {
   const armorMaxLevel = armorLevels.length > 0 ? Math.max(...armorLevels) : 0;
 
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24">
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
-            {levelingBuildsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {levelingBuildsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {levelingBuildsIntro.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {levelingBuildHighlights.map((item) => (
-            <article key={item.title} className="leveling-card-soft rounded-2xl border border-white/10 bg-zinc-900/20 p-5 sm:p-6">
-              <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{item.description}</p>
+            <article key={item.title} className="leveling-card-soft rounded-md border border-linha bg-carvao p-5 sm:p-6">
+              <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{item.title}</h3>
+              <p className="mt-3 text-texto-2">{item.description}</p>
             </article>
           ))}
         </div>
@@ -173,11 +170,11 @@ export default function LevelingBuildsSection() {
           {levelingAbilityTrees.map((tree, treeIndex) => (
             <article
               key={tree.className}
-              className={`leveling-card-medium group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30 ${
+              className={`leveling-card-medium group overflow-hidden rounded-md border border-linha bg-carvao transition-all duration-300 hover:border-gsw/30 ${
                 treeIndex % 2 === 0 ? "leveling-tilt-left" : "leveling-tilt-right"
               }`}
             >
-              <div className="border-b border-white/5 px-5 py-4 sm:px-7 sm:py-5">
+              <div className="border-b border-linha px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
                   <Image
                     src={tree.icon}
@@ -187,7 +184,7 @@ export default function LevelingBuildsSection() {
                     className="h-8 w-8 object-contain"
                   />
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg font-bold tracking-tight text-white sm:text-2xl">{tree.className}</h3>
+                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-2xl">{tree.className}</h3>
                     <p className="text-xs font-semibold text-violeta sm:text-sm">{tree.archetype}</p>
                   </div>
                   <a
@@ -205,7 +202,7 @@ export default function LevelingBuildsSection() {
                 {tree.notes.map((note) => (
                   <li
                     key={`${tree.className}-${note}`}
-                    className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base"
+                    className="flex gap-3 text-texto-2"
                   >
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                     <span>{note}</span>
@@ -216,9 +213,9 @@ export default function LevelingBuildsSection() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-gsw/30 bg-gsw/5 p-5 sm:mt-10 sm:p-6">
-          <p className="text-sm leading-relaxed text-zinc-300 sm:text-base">{levelingWeaponTip}</p>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+        <div className="mt-8 rounded-md border border-gsw/30 bg-gsw/5 p-5 sm:mt-10 sm:p-6">
+          <p className="text-texto-2">{levelingWeaponTip}</p>
+          <p className="mt-3 text-texto-2">
             Referência no site da Wynncraft:
             {" "}
             <a
@@ -236,11 +233,11 @@ export default function LevelingBuildsSection() {
           {levelingWeapons.map((weapon, weaponIndex) => (
             <article
               key={weapon.className}
-              className={`leveling-card-medium group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30 ${
+              className={`leveling-card-medium group overflow-hidden rounded-md border border-linha bg-carvao transition-all duration-300 hover:border-gsw/30 ${
                 weaponIndex % 2 === 0 ? "leveling-tilt-right" : "leveling-tilt-left"
               }`}
             >
-              <div className="border-b border-white/5 bg-zinc-900/40 px-5 py-4 sm:px-7 sm:py-5">
+              <div className="border-b border-linha bg-carvao px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <Image
                     src={classShowcaseImages[weapon.className]}
@@ -250,7 +247,7 @@ export default function LevelingBuildsSection() {
                     className="h-12 w-12 object-contain sm:h-14 sm:w-14"
                   />
                   <div>
-                    <h3 className="text-lg font-bold tracking-tight text-white sm:text-2xl">{weapon.className}</h3>
+                    <h3 className="text-lg font-bold tracking-tight text-texto sm:text-2xl">{weapon.className}</h3>
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violeta/80">
                       {weapon.entries.length} recomendacoes
                     </p>
@@ -261,7 +258,7 @@ export default function LevelingBuildsSection() {
                 {weapon.entries.map((entry) => (
                   <li
                     key={`${weapon.className}-${entry.level}`}
-                    className="leveling-card-soft rounded-xl border border-white/10 bg-black/30 p-3 text-sm leading-relaxed sm:p-4 sm:text-base"
+                    className="leveling-card-soft rounded-xl border border-linha bg-carvao p-3 text-sm leading-relaxed sm:p-4 sm:text-base"
                   >
                     <span className="mb-2 inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-violeta">
                       {entry.level}
@@ -288,7 +285,7 @@ export default function LevelingBuildsSection() {
                             ) : null}
                           </a>
                           {index < entry.options.length - 1 ? (
-                            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+                            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-texto-3">
                               ou
                             </p>
                           ) : null}
@@ -302,22 +299,22 @@ export default function LevelingBuildsSection() {
           ))}
         </div>
 
-        <article className="leveling-panel-3d mt-8 overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 sm:mt-10">
-          <div className="border-b border-white/5 bg-zinc-900/40 px-5 py-4 sm:px-7 sm:py-5">
+        <article className="leveling-panel-3d mt-8 overflow-hidden rounded-md border border-linha bg-carvao sm:mt-10">
+          <div className="border-b border-linha bg-carvao px-5 py-4 sm:px-7 sm:py-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <h3 className="text-lg font-bold tracking-tight text-white sm:text-2xl">Armaduras</h3>
+              <h3 className="text-lg font-bold tracking-tight text-texto sm:text-2xl">Armaduras</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="inline-flex rounded-md border border-gsw/30 bg-gsw/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-violeta">
                   {parsedArmorPieces.length} pecas
                 </span>
-                <span className="inline-flex rounded-md border border-white/15 bg-black/40 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-300">
+                <span className="inline-flex rounded-md border border-white/15 bg-carvao px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-texto-2">
                   Lvl {armorMinLevel} - {armorMaxLevel}
                 </span>
               </div>
             </div>
             <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
               {levelingArmorNotes.map((note) => (
-                <p key={note} className="rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                <p key={note} className="rounded-lg border border-linha bg-carvao px-3 py-2 text-texto-2">
                   {note}
                 </p>
               ))}
@@ -326,7 +323,7 @@ export default function LevelingBuildsSection() {
 
           <ul className="grid grid-cols-1 gap-3 px-5 py-5 sm:px-7 sm:py-6 lg:grid-cols-2">
             {parsedArmorPieces.map((piece) => (
-              <li key={`${piece.level}-${piece.item}`} className="leveling-card-soft rounded-xl border border-white/10 bg-black/30 p-3 sm:p-4">
+              <li key={`${piece.level}-${piece.item}`} className="leveling-card-soft rounded-xl border border-linha bg-carvao p-3 sm:p-4">
                 <div className="flex items-center gap-2.5">
                   <span className="inline-flex h-[24px] items-center rounded-md border border-gsw/30 bg-gsw/10 px-2 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-violeta">
                     Lvl {piece.level}
@@ -346,7 +343,7 @@ export default function LevelingBuildsSection() {
                   </a>
                 </div>
                 {piece.source ? (
-                  <p className="mt-1 text-xs uppercase tracking-[0.12em] text-zinc-500 sm:text-sm">{piece.source}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.12em] text-texto-3 sm:text-sm">{piece.source}</p>
                 ) : null}
               </li>
             ))}

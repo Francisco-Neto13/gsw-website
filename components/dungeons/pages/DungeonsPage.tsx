@@ -9,7 +9,7 @@ import DungeonsRewardsSection from "@/components/dungeons/sections/DungeonsRewar
 
 export default function DungeonsPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div>
         <GuideIntro
           title="Dungeons"
           paragraphs={dungeonsIntroParagraphs}

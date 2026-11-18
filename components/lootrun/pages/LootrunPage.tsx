@@ -12,7 +12,7 @@ import LootrunRewardsSection from "@/components/lootrun/sections/LootrunRewardsS
 
 export default function LootrunPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div>
         <GuideIntro
           eyebrow={lootrunGuideIntro.eyebrow}
           title={lootrunGuideIntro.title}

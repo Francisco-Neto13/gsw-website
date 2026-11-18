@@ -10,38 +10,35 @@ function isAnimado(item: { animado?: boolean }) {
 
 export default function LootrunCampsSection() {
   return (
-    <section className="bg-black px-4 py-16 sm:px-6 sm:py-24">
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
-            {lootrunCampsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {lootrunCampsIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {lootrunCampsIntro.description}
           </p>
         </div>
 
-        <div className="mb-8 rounded-2xl border border-white/10 bg-zinc-950/60 p-5 sm:p-7">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-violeta/80">Lista literal de camps</p>
+        <div className="mb-8 rounded-md border border-linha bg-carvao p-5 sm:p-7">
+          <p className="mb-4 text-[0.9rem] font-bold text-texto-3">Lista literal de camps</p>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {lootrunCamps.map((camp, index) => (
               <article
                 key={`${camp.name}-${camp.coordinates}`}
-                className="rounded-xl border border-white/10 bg-black/35 px-4 py-3"
+                className="rounded-xl border border-linha bg-carvao px-4 py-3"
               >
                 <div className="mb-1.5 flex items-center justify-between gap-3">
-                  <span className="text-xs font-bold uppercase tracking-[0.3em] text-violeta/80">
+                  <span className="text-[0.9rem] font-bold text-texto-3">
                     Camp {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs font-semibold text-zinc-300">
+                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-xs font-semibold text-texto-2">
                     {camp.difficulty}
                   </span>
                 </div>
                 <p className="text-sm font-semibold leading-relaxed text-zinc-200">{camp.name}</p>
-                <p className="mt-1 text-xs text-zinc-400 sm:text-sm">[{camp.coordinates}]</p>
+                <p className="mt-1 text-xs text-texto-2 sm:text-sm">[{camp.coordinates}]</p>
               </article>
             ))}
           </div>
@@ -55,10 +52,10 @@ export default function LootrunCampsSection() {
           </div>
         ) : null}
 
-        <div className="mb-8 rounded-2xl border border-white/10 bg-zinc-950/60 p-5 sm:p-7">
+        <div className="mb-8 rounded-md border border-linha bg-carvao p-5 sm:p-7">
           <div className="space-y-3">
             {lootrunCampsIntro.notes.map((note) => (
-              <div key={note} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+              <div key={note} className="flex gap-3 text-texto-2">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                 <span>{note}</span>
               </div>
@@ -73,24 +70,24 @@ export default function LootrunCampsSection() {
             const secondaryMedia = media.filter((item) => item !== featuredMedia);
 
             return (
-              <article key={camp.name} className="rounded-2xl border border-white/10 bg-zinc-900/20 p-4 sm:p-5">
+              <article key={camp.name} className="rounded-md border border-linha bg-carvao p-4 sm:p-5">
                 <div className="mb-3 flex flex-wrap items-center gap-3">
                   <span className="text-xs font-bold uppercase tracking-[0.35em] text-violeta/80">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">{camp.name}</h3>
-                  <span className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-zinc-300">
+                  <h3 className="text-base font-bold text-texto sm:text-lg">{camp.name}</h3>
+                  <span className="rounded-md border border-linha bg-white/5 px-2 py-1 text-xs text-texto-2">
                     {camp.difficulty}
                   </span>
                 </div>
 
-                <p className="text-sm text-zinc-400 sm:text-base">
+                <p className="text-sm text-texto-2 sm:text-base">
                   Coordenadas: <span className="font-medium text-zinc-200">{camp.coordinates}</span>
                 </p>
 
                 <div className="mt-3 space-y-2">
                   {camp.notes.map((note) => (
-                    <div key={note} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                    <div key={note} className="flex gap-3 text-texto-2">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                       <span>{note}</span>
                     </div>
@@ -118,11 +115,11 @@ export default function LootrunCampsSection() {
                 ) : null}
 
                 {camp.dangerousChallenges && camp.dangerousChallenges.length > 0 ? (
-                  <div className="mt-4 rounded-xl border border-white/10 bg-zinc-900/40 p-3 sm:p-4">
-                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-violeta/80">Desafios de atenção</p>
+                  <div className="mt-4 rounded-xl border border-linha bg-carvao p-3 sm:p-4">
+                    <p className="text-[0.9rem] font-bold text-texto-3">Desafios de atenção</p>
                     <div className="mt-2 space-y-1.5">
                       {camp.dangerousChallenges.map((challenge) => (
-                        <p key={challenge} className="text-sm text-zinc-400 sm:text-base">
+                        <p key={challenge} className="text-sm text-texto-2 sm:text-base">
                           - {challenge}
                         </p>
                       ))}

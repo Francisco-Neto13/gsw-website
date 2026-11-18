@@ -6,7 +6,7 @@ import LevelingSpotsSection from "@/components/leveling/sections/LevelingSpotsSe
 
 export default function LevelingPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div>
         <GuideIntro
           title="Leveling"
           paragraphs={levelingIntroParagraphs}

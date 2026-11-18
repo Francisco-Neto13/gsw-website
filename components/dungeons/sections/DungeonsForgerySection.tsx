@@ -8,40 +8,33 @@ import {
 
 export default function DungeonsForgerySection() {
   return (
-    <section className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gsw/5 blur-[120px]" />
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
-            {dungeonsForgeryIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {dungeonsForgeryIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {dungeonsForgeryIntro.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-          {dungeonsForgeryCards.map((item, index) => (
+          {dungeonsForgeryCards.map((item) => (
             <article
               key={item.title}
-              className="group relative rounded-2xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8"
+              className="group relative rounded-md border border-linha bg-carvao p-6 transition-all duration-300 hover:border-gsw/40 sm:p-8"
             >
-              <span className="absolute right-4 bottom-3 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/10">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
+              <h3 className="mb-3 text-xl font-bold tracking-tight text-texto sm:mb-4 sm:text-2xl">
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">{item.description}</p>
+              <p className="text-texto-2">{item.description}</p>
             </article>
           ))}
         </div>
 
-        <div className="mx-auto mt-6 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mt-8">
+        <div className="mx-auto mt-6 max-w-2xl overflow-hidden rounded-md border border-linha bg-carvao sm:mt-8">
           <ClickableImagePreview src={dungeonsForgeryImage.src} alt={dungeonsForgeryImage.alt}>
             <div className="relative aspect-video w-full">
               <Image
@@ -53,7 +46,7 @@ export default function DungeonsForgerySection() {
               />
             </div>
           </ClickableImagePreview>
-          <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
+          <p className="px-4 py-3 text-[0.9rem] text-texto-3 sm:px-5">
             {dungeonsForgeryImage.caption?.trim() || dungeonsForgeryImage.alt}
           </p>
         </div>

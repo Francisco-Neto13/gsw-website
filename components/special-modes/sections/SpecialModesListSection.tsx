@@ -6,18 +6,14 @@ import {
 
 export default function SpecialModesListSection() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-0 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-gsw/5 blur-[150px]" />
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
-            {specialModesListIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {specialModesListIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {specialModesListIntro.description}
           </p>
         </div>
@@ -26,11 +22,11 @@ export default function SpecialModesListSection() {
           {specialModes.map((mode) => (
             <article
               key={mode.name}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/20 transition-all duration-300 hover:border-gsw/30"
+              className="group overflow-hidden rounded-md border border-linha bg-carvao transition-all duration-300 hover:border-gsw/30"
             >
-              <div className="border-b border-white/5 px-5 py-4 sm:px-7 sm:py-5">
+              <div className="border-b border-linha px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3">
-                  <div className="relative h-9 w-9 overflow-hidden rounded-md border border-white/10 bg-black/40 sm:h-10 sm:w-10">
+                  <div className="relative h-9 w-9 overflow-hidden rounded-md border border-linha bg-carvao sm:h-10 sm:w-10">
                     <Image
                       src={mode.icon}
                       alt={`Ícone do modo ${mode.name}`}
@@ -40,7 +36,7 @@ export default function SpecialModesListSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{mode.name}</h3>
+                    <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{mode.name}</h3>
                     <p className="mt-1 text-xs font-semibold text-violeta sm:text-sm">{mode.unlock}</p>
                   </div>
                 </div>
@@ -48,7 +44,7 @@ export default function SpecialModesListSection() {
 
               <ul className="space-y-3 px-5 py-5 sm:px-7 sm:py-6">
                 {mode.description.map((point) => (
-                  <li key={`${mode.name}-${point}`} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
+                  <li key={`${mode.name}-${point}`} className="flex gap-3 text-texto-2">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
                     <span>{point}</span>
                   </li>

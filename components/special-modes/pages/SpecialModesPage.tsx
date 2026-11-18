@@ -5,7 +5,7 @@ import SpecialModesListSection from "@/components/special-modes/sections/Special
 
 export default function SpecialModesPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div>
         <GuideIntro
           title="Modos Especiais"
           paragraphs={specialModesIntroParagraphs}

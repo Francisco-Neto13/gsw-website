@@ -11,7 +11,7 @@ import SilverbullTokensSection from "@/components/silverbull-shares/sections/Sil
 
 export default function SilverbullSharesPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div>
         <GuideIntro
           eyebrow={silverbullGuideIntro.eyebrow}
           title={silverbullGuideIntro.title}

@@ -8,7 +8,7 @@ import WorldEventsRewardsSection from "@/components/world-events/sections/WorldE
 
 export default function WorldEventsPage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div>
         <GuideIntro
           title="World Events"
           paragraphs={worldEventsIntroParagraphs}

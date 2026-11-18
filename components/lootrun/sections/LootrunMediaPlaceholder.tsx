@@ -42,7 +42,7 @@ export default function LootrunMediaPlaceholder({
 
   if (isLocalVideo && item.src) {
     return (
-      <article className="h-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+      <article className="h-full overflow-hidden rounded-md border border-linha bg-carvao">
         <div className={frameClassName}>
           {/* Sem autoplay: só baixa o vídeo quando o leitor dá play (preload só dos metadados). */}
           <video
@@ -57,7 +57,7 @@ export default function LootrunMediaPlaceholder({
           />
         </div>
         <div className={captionClassName}>
-          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
+          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -65,12 +65,12 @@ export default function LootrunMediaPlaceholder({
 
   if (item.animado && item.src) {
     return (
-      <article className="h-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+      <article className="h-full overflow-hidden rounded-md border border-linha bg-carvao">
         <div className={frameClassName}>
           <AnimacaoSobDemanda src={item.src} alt={item.alt ?? item.name} className="h-full w-full rounded-lg object-contain" />
         </div>
         <div className={captionClassName}>
-          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
+          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -78,7 +78,7 @@ export default function LootrunMediaPlaceholder({
 
   if (item.src && item.src.startsWith("/")) {
     return (
-      <article className="h-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+      <article className="h-full overflow-hidden rounded-md border border-linha bg-carvao">
         <ClickableImagePreview src={item.src} alt={item.alt ?? item.name}>
           <div className={frameClassName}>
             <Image
@@ -92,7 +92,7 @@ export default function LootrunMediaPlaceholder({
           </div>
         </ClickableImagePreview>
         <div className={captionClassName}>
-          <p className="text-xs leading-relaxed text-zinc-500 sm:text-sm">{mediaDescription}</p>
+          <p className="text-xs leading-relaxed text-texto-3 sm:text-sm">{mediaDescription}</p>
         </div>
       </article>
     );
@@ -100,26 +100,26 @@ export default function LootrunMediaPlaceholder({
 
   if (item.src && item.src.startsWith("http")) {
     return (
-      <article className="h-full rounded-2xl border border-white/10 bg-black/40 p-4 sm:p-5">
+      <article className="h-full rounded-md border border-linha bg-carvao p-4 sm:p-5">
         <a
           href={item.src}
           target="_blank"
           rel="noopener noreferrer"
-          className="block break-all text-xs text-zinc-400 underline decoration-white/20 underline-offset-2 transition-colors hover:text-white sm:text-sm"
+          className="block break-all text-xs text-texto-2 underline decoration-white/20 underline-offset-2 transition-colors hover:text-white sm:text-sm"
         >
           {item.src}
         </a>
-        <p className="mt-3 text-xs leading-relaxed text-zinc-500">{mediaDescription}</p>
+        <p className="mt-3 text-xs leading-relaxed text-texto-3">{mediaDescription}</p>
       </article>
     );
   }
 
   return (
-    <div className="flex h-full min-h-36 flex-col justify-between rounded-2xl border border-dashed border-white/20 bg-black/40 p-4 sm:min-h-40 sm:p-5">
-      <div className="rounded-xl border border-white/10 bg-zinc-900/50 px-3 py-6 text-center text-sm font-semibold text-zinc-300 sm:px-4 sm:py-7 sm:text-base">
+    <div className="flex h-full min-h-36 flex-col justify-between rounded-md border border-dashed border-white/20 bg-carvao p-4 sm:min-h-40 sm:p-5">
+      <div className="rounded-xl border border-linha bg-zinc-900/50 px-3 py-6 text-center text-sm font-semibold text-texto-2 sm:px-4 sm:py-7 sm:text-base">
         {item.name}
       </div>
-      <p className="mt-3 text-xs leading-relaxed text-zinc-500">{mediaDescription}</p>
+      <p className="mt-3 text-xs leading-relaxed text-texto-3">{mediaDescription}</p>
     </div>
   );
 }

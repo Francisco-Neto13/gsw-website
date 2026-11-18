@@ -11,52 +11,42 @@ import SilverbullImageSlot from "@/components/silverbull-shares/sections/Silverb
 
 export default function SilverbullOverviewSection() {
   return (
-    <section className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gsw/5 blur-[120px]" />
+    <section className="relative border-t border-linha px-4 py-12 sm:px-6 lg:px-10">
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta">
-            {silverbullOverviewIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+        <div className="mb-8 max-w-[60ch]">
+          <h2 className="text-[clamp(1.5rem,2.4vw,1.875rem)] text-texto">
             {silverbullOverviewIntro.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             {silverbullOverviewIntro.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-          {acquisitionCards.map((card, index) => (
+          {acquisitionCards.map((card) => (
             <article
               key={card.title}
-              className="group relative rounded-2xl border border-white/10 bg-zinc-900/20 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-gsw/40 sm:p-6"
+              className="group relative rounded-md border border-linha bg-carvao p-5 transition-all duration-200 hover:border-gsw/40 sm:p-6"
             >
-              <span className="absolute right-4 bottom-3 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/15">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{card.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{card.description}</p>
+              <h3 className="text-xl font-bold tracking-tight text-texto sm:text-2xl">{card.title}</h3>
+              <p className="mt-3 text-texto-2">{card.description}</p>
             </article>
           ))}
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {tradableVsUntradable.map((card) => (
-            <article key={card.title} className="rounded-2xl border border-white/10 bg-black/40 p-5 sm:p-6">
-              <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">{card.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{card.description}</p>
+            <article key={card.title} className="rounded-md border border-linha bg-carvao p-5 sm:p-6">
+              <h3 className="text-lg font-bold tracking-tight text-texto sm:text-xl">{card.title}</h3>
+              <p className="mt-3 text-texto-2">{card.description}</p>
             </article>
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-white/10 bg-zinc-950/60 p-5 sm:p-7">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.4em] text-violeta/80">
-            {inGameStoreIntro.eyebrow}
-          </span>
-          <h3 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{inGameStoreIntro.title}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:text-base">{inGameStoreIntro.description}</p>
+        <div className="mt-8 rounded-md border border-linha bg-carvao p-5 sm:p-7">
+          <h3 className="text-2xl font-bold tracking-tight text-texto sm:text-3xl">{inGameStoreIntro.title}</h3>
+          <p className="mt-3 text-texto-2">{inGameStoreIntro.description}</p>
 
           <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {storeEntryImages.map((item) => (
