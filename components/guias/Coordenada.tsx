@@ -20,7 +20,7 @@ export default function Coordenada({ valor }: { valor: string }) {
       type="button"
       onClick={copiar}
       title="Copiar coordenada"
-      className="numeros mx-0.5 inline-flex items-baseline gap-1.5 rounded-[4px] border border-linha-forte bg-poco px-1.5 py-px align-baseline font-mono text-[0.9em] text-texto transition-colors hover:border-violeta-borda"
+      className="numeros relative mx-0.5 inline-flex items-baseline gap-1.5 rounded-[4px] border border-linha-forte bg-poco px-1.5 py-px align-baseline font-mono text-[0.9em] text-texto transition-colors hover:border-violeta-borda"
     >
       {valor}
       {copiada ? (
