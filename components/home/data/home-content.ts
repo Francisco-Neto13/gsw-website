@@ -16,7 +16,7 @@ export const homeComeco = {
 /** Prévia de cada grupo de guias na Início: o que a pessoa aprende e uma print do jogo (docs/CREDITOS.md). */
 export const homeCategorias: Record<string, { resumo: string; imagem: { base: string; alt: string } }> = {
   progressao: {
-    resumo: "Do nível 1 ao 121: onde upar, como montar a party e as profissões que sustentam o resto do jogo.",
+    resumo: "Do nível 1 ao 121: onde upar, como montar a party, as profissões que sustentam o resto do jogo e as montarias.",
     imagem: {
       base: "/inicio/categorias/categoria-progressao-trono",
       alt: "Uma rainha coroada no trono de um palácio vermelho e verde-água, com dois acompanhantes ao lado",

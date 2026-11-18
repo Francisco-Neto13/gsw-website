@@ -11,6 +11,7 @@ import * as lootrun from "@/components/lootrun/data/lootrun-content";
 import * as profissoes from "@/components/professions/data/professions-content";
 import * as raids from "@/components/raids/data/raids-content";
 import * as shares from "@/components/silverbull-shares/data/silverbull-shares-content";
+import * as montarias from "@/components/mounts/data/mounts-content";
 import * as modos from "@/components/special-modes/data/special-modes-content";
 import * as eventos from "@/components/world-events/data/world-events-content";
 import { guias, type Guia } from "@/lib/site-content";
@@ -18,6 +19,7 @@ import { guias, type Guia } from "@/lib/site-content";
 const conteudoDoGuia: Record<string, Record<string, unknown>> = {
   leveling,
   profissoes,
+  montarias,
   lootrun,
   raids,
   dungeons,

@@ -64,6 +64,50 @@ export const glossario = {
     explicacao:
       "Centro de Divisão Silverbull, a leste de Cinfras. É onde se registra nas divisões de raid e de lootrun e onde fica a fila de party.",
   },
+  feeder: {
+    termo: "Feeder",
+    tipo: "Bloco do curral",
+    explicacao:
+      "Cocho do curral de cada tipo de montaria. É nele que se guarda a montaria para treinar e onde se alimenta com materiais de crafting.",
+  },
+  powerup: {
+    termo: "PowerUp",
+    tipo: "Treino de montaria",
+    explicacao:
+      "Objeto que aparece em volta da montaria enquanto você anda. Os de atributo sobem um atributo; os de boost restauram energia ou dão velocidade por um tempo. Cada um gasta 2 de Energy.",
+  },
+  levelMontaria: {
+    termo: "Level",
+    tipo: "Atributo de montaria (verde)",
+    explicacao:
+      "Valor atual do atributo. Também define o tier máximo de material que a montaria aceita na alimentação.",
+  },
+  limitMontaria: {
+    termo: "Limit",
+    tipo: "Atributo de montaria (cinza claro)",
+    explicacao: "Até onde o treino consegue levar o atributo. Sobe com a alimentação, até chegar no Max.",
+  },
+  maxMontaria: {
+    termo: "Max",
+    tipo: "Atributo de montaria (cinza escuro)",
+    explicacao: "Teto do atributo para essa montaria. Só um filho de breeding passa desse valor.",
+  },
+  energy: {
+    termo: "Energy",
+    tipo: "Atributo de montaria",
+    explicacao:
+      "Quanto tempo a montaria aguenta treinar. Cada PowerUp coletado gasta 2; em 0, ela fica um pouco mais lenta e não coleta PowerUps.",
+  },
+  handling: {
+    termo: "Handling",
+    tipo: "Atributo de montaria",
+    explicacao: "Controle nas curvas: quanto mais alto, mais rápido a montaria vira e menos velocidade perde ao curvar.",
+  },
+  toughness: {
+    termo: "Toughness",
+    tipo: "Atributo de montaria",
+    explicacao: "Resistência: quanto mais alta, menor a chance de você ser derrubado da montaria ao levar dano.",
+  },
 } satisfies Record<string, TermoDoGlossario>;
 
 export type ChaveDoGlossario = keyof typeof glossario;

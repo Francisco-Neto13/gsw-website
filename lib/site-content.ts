@@ -55,6 +55,17 @@ export const raidsSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const montariasSecoes: GuiaSecao[] = [
+  { id: "tipos", titulo: "Tipos de montaria", busca: "horse cavalo wyvern dragão adasaur adassauro curral" },
+  { id: "atributos", titulo: "Atributos", busca: "speed acceleration altitude energy handling toughness boost training stats" },
+  { id: "level-limit-max", titulo: "Level, Limit e Max", nivel: 3 },
+  { id: "treinamento", titulo: "Treinamento", busca: "training treinar" },
+  { id: "powerups", titulo: "PowerUps", nivel: 3, busca: "powerup speed boost energy boost" },
+  { id: "alimentacao", titulo: "Alimentação", busca: "feeding feeder materiais alimentar" },
+  { id: "breeding", titulo: "Breeding", busca: "reprodução cruzamento filho" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -80,8 +91,9 @@ export const guias: Guia[] = [
     titulo: "Montarias",
     resumo: "Horse, Wyvern e Adasaur: como conseguir, treinar e cruzar.",
     grupo: "progressao",
-    estado: "em-construcao",
+    estado: "completo",
     rotaAntiga: "/montarias",
+    secoes: montariasSecoes,
   },
   {
     slug: "lootrun",
