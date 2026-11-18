@@ -8,11 +8,11 @@ export default function Essence() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-20">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-4">
+          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-4">
             Nossa Identidade
           </span>
           <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-            Além de uma <span className="text-gsw">Guilda</span>
+            Além de uma <span className="text-violeta">Guilda</span>
           </h2>
           <p className="mx-auto max-w-2xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-lg">
             &ldquo;O que começou como pixels e estratégias se transformou em algo que transcende qualquer tela.&rdquo;
@@ -23,7 +23,7 @@ export default function Essence() {
           <p>
             Na <span className="font-semibold text-white">GsW</span>, as fronteiras entre o virtual e o real se dissiparam há muito tempo.
             O que começou em 2017 como um grupo de brasileiros em busca de territórios em Wynncraft evoluiu
-            naturalmente para algo muito maior: <span className="font-medium italic text-gsw">uma irmandade viva, pulsante e verdadeira.</span>
+            naturalmente para algo muito maior: <span className="font-medium italic text-violeta">uma irmandade viva, pulsante e verdadeira.</span>
           </p>
           <p>
             Não somos apenas jogadores que se encontram online. Somos pessoas que compartilham conquistas,
@@ -35,7 +35,7 @@ export default function Essence() {
 
         <div className="mb-12 grid grid-cols-1 gap-4 sm:mb-24 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
           <div className="history-sheen-card history-tilt-soft group rounded-2xl border border-white/10 bg-black/40 p-6 transition-colors duration-300 hover:border-gsw/40 sm:p-8">
-            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
+            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-violeta sm:mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
@@ -53,7 +53,7 @@ export default function Essence() {
           </div>
 
           <div className="history-sheen-card history-tilt-soft group rounded-2xl border border-white/10 bg-black/40 p-6 transition-colors duration-300 hover:border-gsw/40 sm:p-8">
-            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
+            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-violeta sm:mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
@@ -69,7 +69,7 @@ export default function Essence() {
           </div>
 
           <div className="history-sheen-card history-tilt-soft group rounded-2xl border border-white/10 bg-black/40 p-6 transition-colors duration-300 hover:border-gsw/40 sm:col-span-2 sm:p-8 md:col-span-1">
-            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-gsw sm:mb-4">
+            <div className="history-tilt-pop mb-3 inline-flex rounded-xl bg-gsw/10 p-3 text-violeta sm:mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
@@ -107,7 +107,7 @@ export default function Essence() {
             Olhamos para trás e vemos as batalhas vencidas, os amigos conquistados, as lições aprendidas.
             Olhamos para frente e vemos um futuro cheio de possibilidades, novos desafios a enfrentar,
             novos capítulos a escrever. Mas acima de tudo, olhamos ao nosso lado e vemos irmãos -
-            <span className="font-medium italic text-gsw"> e isso é o que realmente importa.</span>
+            <span className="font-medium italic text-violeta"> e isso é o que realmente importa.</span>
           </p>
         </div>
       </div>

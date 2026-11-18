@@ -49,7 +49,7 @@ export default function Pillars() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="reveal-on-scroll mb-10 text-center sm:mb-20">
           <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-6 sm:text-6xl">
-            Os 5 <span className="text-gsw">Pilares</span>
+            Os 5 <span className="text-violeta">Pilares</span>
           </h2>
           <p className="mx-auto max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-lg">
             A estrutura que sustenta a GsW. Estas divisões são destinadas aos membros que alcançam o cargo de{" "}
@@ -67,7 +67,7 @@ export default function Pillars() {
             >
               <div className={`absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${pillar.color}`} />
 
-              <div className="history-tilt-pop mb-5 inline-flex rounded-2xl bg-white/5 p-4 text-gsw shadow-[0_0_20px_rgba(113,22,173,0.2)] transition-all duration-200 group-hover:scale-110 group-hover:bg-gsw group-hover:text-white sm:mb-8 sm:p-5">
+              <div className="history-tilt-pop mb-5 inline-flex rounded-2xl bg-white/5 p-4 text-violeta shadow-[0_0_20px_rgba(113,22,173,0.2)] transition-all duration-200 group-hover:scale-110 group-hover:bg-gsw group-hover:text-white sm:mb-8 sm:p-5">
                 {pillar.icon}
               </div>
 
@@ -79,7 +79,7 @@ export default function Pillars() {
                 {pillar.description}
               </p>
 
-              <div className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 group-hover:text-gsw/10 sm:right-8 sm:text-5xl">
+              <div className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 group-hover:text-violeta/10 sm:right-8 sm:text-5xl">
                 0{index + 1}
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function Pillars() {
         <div className="reveal-on-scroll mt-16 text-center sm:mt-24">
           <p className="inline-block max-w-2xl border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
             &ldquo;Divididos em frentes, mas unidos por um propósito. Os{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">Pilares</span>{" "}
+            <span className="text-sm font-bold uppercase tracking-widest text-violeta/60">Pilares</span>{" "}
             não são apenas setores; são os alicerces de um império que se recusa a cair.&rdquo;
           </p>
         </div>

@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import {
   grindSpots,
@@ -42,7 +42,7 @@ export default function ProfessionGrindSpotsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {professionGrindSpotsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -98,7 +98,7 @@ export default function ProfessionGrindSpotsSection() {
                     <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">
                       {professionSpots.profession}
                     </h3>
-                    <span className="text-xs font-semibold text-gsw">{professionSpots.resources}</span>
+                    <span className="text-xs font-semibold text-violeta">{professionSpots.resources}</span>
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function ProfessionGrindSpotsSection() {
                         className="border-b border-white/5 transition-colors duration-150 hover:bg-white/[0.02] last:border-0"
                       >
                         <td className="px-5 py-3 sm:px-7">
-                          <span className="font-mono text-xs font-semibold text-gsw">{spot.level}</span>
+                          <span className="font-mono text-xs font-semibold text-violeta">{spot.level}</span>
                         </td>
                         <td className="px-3 py-3">
                           <span className="text-sm text-white">{spot.name}</span>

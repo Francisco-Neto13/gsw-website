@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
+import { redirecionamentos } from "./lib/site-content";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return redirecionamentos;
+  },
   images: {
     remotePatterns: [
       {

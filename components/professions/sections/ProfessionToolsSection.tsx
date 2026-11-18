@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import {
   bombTips,
@@ -51,7 +51,7 @@ export default function ProfessionToolsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {professionToolsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -99,7 +99,7 @@ export default function ProfessionToolsSection() {
                 </div>
               </ClickableImagePreview>
               <div className="p-4 sm:p-5">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gsw">{item.title}</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-violeta">{item.title}</h3>
                 <p className="mt-1 text-sm leading-relaxed text-zinc-400">{item.description}</p>
               </div>
             </article>
@@ -108,7 +108,7 @@ export default function ProfessionToolsSection() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           <article className="group relative rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
-            <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
+            <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/10">
               01
             </span>
             <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
@@ -125,7 +125,7 @@ export default function ProfessionToolsSection() {
           </article>
 
           <article className="group relative rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8">
-            <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
+            <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/10">
               02
             </span>
             <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">
@@ -142,7 +142,7 @@ export default function ProfessionToolsSection() {
           </article>
 
           <article className="group relative rounded-2xl border border-white/10 bg-black/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:col-span-2 sm:p-8">
-            <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
+            <span className="absolute right-6 bottom-4 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/10">
               03
             </span>
             <h3 className="mb-3 text-xl font-bold tracking-tight text-white sm:mb-4 sm:text-2xl">

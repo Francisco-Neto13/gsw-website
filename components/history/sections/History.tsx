@@ -26,7 +26,7 @@ export default function History() {
       year: "2022 - 2023",
       title: "O Nascimento do Warteam e a Brazucoin",
       description:
-        "Um marco histórico: a fundação do Warteam oficial. Unindo veteranos e novos prodígios, a GsW tornou-se temida pelos seus Dry Snipes. Criamos a Brazucoin, uma moeda de influência que ditava o ritmo das conquistas.",
+        "Um marco histórico: a fundação do Warteam da guilda. Unindo veteranos e novos prodígios, a GsW tornou-se temida pelos seus Dry Snipes. Criamos a Brazucoin, uma moeda de influência que ditava o ritmo das conquistas.",
     },
     {
       year: "2024",
@@ -52,10 +52,9 @@ export default function History() {
     <>
       <GuideIntro
         id="historia"
-        eyebrow="Guia Oficial"
         title={
           <>
-            História da <span className="text-gsw">GsW</span>
+            História da <span className="text-violeta">GsW</span>
           </>
         }
         paragraphs={[
@@ -68,11 +67,11 @@ export default function History() {
       <section className="relative overflow-hidden bg-zinc-950 px-4 pb-16 pt-16 sm:px-6 sm:pb-32 sm:pt-24">
         <div className="relative z-10 mx-auto max-w-5xl">
           <div className="reveal-on-scroll mb-16 text-center sm:mb-28">
-            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-              Documento Oficial
+            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
+              Registro da guilda
             </span>
             <h2 className="mb-6 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-              Crônicas de <span className="text-gsw">Wynn</span>
+              Crônicas de <span className="text-violeta">Wynn</span>
             </h2>
             <p className="mx-auto max-w-xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
               &ldquo;Um registro eterno das eras, das alianças e do sangue derramado pelos
@@ -100,7 +99,7 @@ export default function History() {
                       index % 2 === 0 ? "sm:pl-12 sm:text-left" : "sm:pr-12 sm:text-right"
                     }`}
                   >
-                    <span className="history-year-emphasis mb-4 block transform-gpu text-3xl font-black italic text-gsw/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-gsw">
+                    <span className="history-year-emphasis mb-4 block transform-gpu text-3xl font-black italic text-violeta/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-violeta">
                       {era.year}
                     </span>
                   </div>
@@ -109,10 +108,10 @@ export default function History() {
                     index % 2 === 0 ? "history-tilt-right" : "history-tilt-left"
                   }`}>
                     <div className="history-era-card-inner transform-gpu transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105">
-                      <span className="history-year-emphasis mb-2 block transform-gpu text-sm font-black italic text-gsw/60 transition-all duration-500 group-hover:scale-110 group-hover:text-gsw sm:hidden">
+                      <span className="history-year-emphasis mb-2 block transform-gpu text-sm font-black italic text-violeta/60 transition-all duration-500 group-hover:scale-110 group-hover:text-violeta sm:hidden">
                         {era.year}
                       </span>
-                      <h4 className="mb-3 text-base font-bold uppercase tracking-tight text-white transition-colors duration-500 group-hover:text-gsw sm:mb-4 sm:text-xl">
+                      <h4 className="mb-3 text-base font-bold uppercase tracking-tight text-white transition-colors duration-500 group-hover:text-violeta sm:mb-4 sm:text-xl">
                         {era.title}
                       </h4>
                       <p className="text-sm leading-relaxed text-zinc-300 transition-colors duration-500 group-hover:text-white">

@@ -27,25 +27,15 @@ export default function AnimationInitializer() {
   }, [pathname]);
 
   useEffect(() => {
+    // Guias e Início não animam a entrada (a assinatura de movimento é a caixa do termo); só a História.
+    if (pathname !== "/historia") return;
     const observedElements = new WeakSet<Element>();
     const viewportRevealThreshold = 0.74;
 
     const collectRevealTargets = () => {
       const manualTargets = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
-      const autoSelectors = [
-        "main section > div",
-        "main section > article",
-        "main section article",
-        "main section li",
-        "main section .home-card-3d",
-        "main section .home-panel-3d",
-        "main section .leveling-panel-3d",
-        "main section .leveling-card-soft",
-        "main section .leveling-card-medium",
-        "main section .history-sheen-card",
-        "main section .history-era-card",
-        "main section .history-gallery-frame",
-      ].join(", ");
+      // Só a abertura de cada seção anima (direção visual): o resto já nasce visível.
+      const autoSelectors = ["main section > div:first-child", "main section > header"].join(", ");
       const autoTargets = Array.from(document.querySelectorAll<HTMLElement>(autoSelectors)).filter(
         (element) => !element.closest("[data-reveal-ignore='true'], [data-reveal-ignore]")
       );
@@ -122,28 +112,17 @@ export default function AnimationInitializer() {
       });
     };
 
-    const handleScroll = () => {
-      const targets = collectRevealTargets();
-      targets.forEach((element) => {
-        revealIfInViewport(element);
-      });
-    };
-
     const frame = window.requestAnimationFrame(() => {
       syncTargetsForPath();
       registerTargets();
     });
     const mutationObserver = new MutationObserver(registerTargets);
     mutationObserver.observe(document.body, { childList: true, subtree: true });
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
 
     return () => {
       window.cancelAnimationFrame(frame);
       mutationObserver.disconnect();
       observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
     };
   }, [pathname]);
 

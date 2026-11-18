@@ -12,7 +12,7 @@ export default function ProfessionWaypointsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {professionWaypointsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -31,7 +31,7 @@ export default function ProfessionWaypointsSection() {
             <ol className="space-y-4">
               {waypointImportSteps.map((step, index) => (
                 <li key={step} className="flex items-start gap-4">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gsw/15 text-xs font-bold text-gsw">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gsw/15 text-xs font-bold text-violeta">
                     {index + 1}
                   </span>
                   <span className="text-sm leading-relaxed text-zinc-400 sm:text-base">{step}</span>
@@ -48,7 +48,7 @@ export default function ProfessionWaypointsSection() {
               <a
                 href="/professions/profwaypoints.txt"
                 download
-                className="inline-flex items-center gap-2 rounded-lg bg-gsw/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-gsw transition-colors duration-200 hover:bg-gsw hover:text-white"
+                className="inline-flex items-center gap-2 rounded-lg bg-gsw/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-violeta transition-colors duration-200 hover:bg-gsw hover:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

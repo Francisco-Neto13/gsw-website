@@ -65,11 +65,11 @@ export default function GallerySection() {
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="reveal-on-scroll mb-10 text-center sm:mb-20">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-4">
+          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-4">
             Memórias Eternas
           </span>
           <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-            Galeria dos <span className="text-gsw">Guardiões</span>
+            Galeria dos <span className="text-violeta">Guardiões</span>
           </h2>
           <p className="mx-auto max-w-2xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
             &ldquo;Cada imagem conta uma história, cada momento eternizado na memória dos
@@ -106,9 +106,9 @@ export default function GallerySection() {
             <div className="rounded-2xl border border-dashed border-white/10 bg-zinc-900/20 px-6 py-12 text-center sm:px-10 sm:py-16">
               <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
                 Adicione as imagens em{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/gallery</code>{" "}
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">public/gallery</code>{" "}
                 e preencha a lista em{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
+                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">
                   components/history/data/gallery.ts
                 </code>
                 .
@@ -120,7 +120,7 @@ export default function GallerySection() {
         <div className="reveal-on-scroll mt-16 text-center sm:mt-24">
           <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
             &ldquo;Onde houver uma batalha, haverá um{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">Guardião</span>.
+            <span className="text-sm font-bold uppercase tracking-widest text-violeta/60">Guardião</span>.
             O legado da GsW é eterno.&rdquo;
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function GallerySection() {
                       </h3>
 
                       <p id={modalDescriptionId} className="mb-3 text-xs leading-relaxed text-zinc-300 sm:mb-4 sm:text-sm">
-                        {selectedPhoto.description || "Registro histórico da galeria oficial da GsW."}
+                        {selectedPhoto.description || "Registro histórico da galeria da guilda da GsW."}
                       </p>
 
                       <div className="history-gallery-modal-meta mb-3 hidden flex-wrap gap-2 sm:mb-4 sm:flex">

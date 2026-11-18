@@ -1,4 +1,4 @@
-﻿export type SpecialMode = {
+export type SpecialMode = {
   name: string;
   icon: string;
   unlock: string;

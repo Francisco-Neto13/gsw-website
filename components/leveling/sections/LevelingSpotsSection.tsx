@@ -12,7 +12,7 @@ export default function LevelingSpotsSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {levelingSpotsIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -33,12 +33,12 @@ export default function LevelingSpotsSection() {
             >
               <div className="flex flex-col gap-2 border-b border-white/5 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
-                  <span className="leveling-badge-pop select-none text-3xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/15 sm:text-4xl">
+                  <span className="leveling-badge-pop select-none text-3xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-violeta/15 sm:text-4xl">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">{spot.name}</h3>
-                    <span className="text-xs font-semibold text-gsw">{spot.range}</span>
+                    <span className="text-xs font-semibold text-violeta">{spot.range}</span>
                   </div>
                 </div>
                 <code className="leveling-badge-pop w-fit rounded-lg bg-white/5 px-3 py-1.5 text-xs font-mono text-zinc-400">

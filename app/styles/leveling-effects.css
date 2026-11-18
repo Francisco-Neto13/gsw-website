@@ -75,42 +75,6 @@
   transform: translateZ(14px) scale(1.09);
 }
 
-.theme-light .leveling-panel-3d:hover,
-.theme-light .leveling-card-soft:hover,
-.theme-light .leveling-card-medium:hover {
-  border-color: color-mix(in srgb, var(--color-gsw) 30%, var(--line-soft)) !important;
-  box-shadow: 0 14px 28px rgba(66, 16, 106, 0.13), 0 6px 14px rgba(15, 23, 42, 0.07);
-}
-
-.theme-light .leveling-card-soft:hover {
-  transform:
-    translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 2px), 0)
-    perspective(1180px)
-    rotateX(0.95deg)
-    rotateY(calc(var(--leveling-tilt-y, -1.4deg) * 0.6))
-    scale(1.006);
-}
-
-.theme-light .leveling-card-medium:hover {
-  transform:
-    translate3d(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 3px), 0)
-    perspective(1100px)
-    rotateX(1.2deg)
-    rotateY(calc(var(--leveling-tilt-y, -1.8deg) * 0.65))
-    scale(1.008);
-}
-
-.theme-light .leveling-panel-3d:hover .leveling-media-pop,
-.theme-light .leveling-card-soft:hover .leveling-media-pop,
-.theme-light .leveling-card-medium:hover .leveling-media-pop {
-  transform: translateZ(8px) scale(1.02);
-}
-
-.theme-light .leveling-card-soft:hover .leveling-badge-pop,
-.theme-light .leveling-card-medium:hover .leveling-badge-pop {
-  transform: translateZ(7px) scale(1.05);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .leveling-panel-3d,
   .leveling-card-soft,

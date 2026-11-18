@@ -59,10 +59,10 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
       <div className="text-center">
-        <span className="mb-1 block text-[10px] font-bold uppercase tracking-widest text-gsw/80">
+        <span className="mb-1 block text-[10px] font-bold uppercase tracking-widest text-violeta/80">
           {member.role}
         </span>
-        <h3 className="mb-3 text-lg font-black italic tracking-tight text-white transition-colors duration-200 group-hover:text-gsw sm:mb-4 sm:text-xl">
+        <h3 className="mb-3 text-lg font-black italic tracking-tight text-white transition-colors duration-200 group-hover:text-violeta sm:mb-4 sm:text-xl">
           {member.name}
         </h3>
         {member.tags && member.tags.length > 0 && (
@@ -88,11 +88,11 @@ export default function MembersSection() {
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(113,22,173,0.03)_0%,transparent_50%)]" />
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-10 text-center sm:mb-20">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-4">
+          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-4">
             Elite de Wynn
           </span>
           <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-            Os <span className="text-gsw">Guardiões Principais</span>
+            Os <span className="text-violeta">Guardiões Principais</span>
           </h2>
           <p className="mx-auto max-w-2xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
             &ldquo;Não são apenas nomes em uma lista, são as lendas que escrevem as crônicas da
@@ -110,9 +110,9 @@ export default function MembersSection() {
           <div className="rounded-3xl border border-dashed border-white/10 bg-black/30 px-6 py-12 text-center sm:px-10 sm:py-16">
             <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
               Adicione os retratos em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/members</code>{" "}
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">public/members</code>{" "}
               e preencha a lista em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
+              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-violeta">
                 components/history/data/members.ts
               </code>
               .

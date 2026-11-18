@@ -11,7 +11,7 @@ export default function SpecialModesListSection() {
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
+          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-violeta sm:mb-6">
             {specialModesListIntro.eyebrow}
           </span>
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
@@ -41,7 +41,7 @@ export default function SpecialModesListSection() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">{mode.name}</h3>
-                    <p className="mt-1 text-xs font-semibold text-gsw sm:text-sm">{mode.unlock}</p>
+                    <p className="mt-1 text-xs font-semibold text-violeta sm:text-sm">{mode.unlock}</p>
                   </div>
                 </div>
               </div>
