@@ -1,4 +1,5 @@
 import Figura from "@/components/guias/Figura";
+import Galeria from "@/components/guias/Galeria";
 import SecaoGuia from "@/components/guias/SecaoGuia";
 import {
   cinfrasSilverbullImage,
@@ -54,37 +55,21 @@ export default function RaidsPrimeirosPassos() {
         Níveis mínimos conferidos na wiki para a versão 2.2.4.
       </p>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <Figura
-          src={silverbullNpcImage.src}
-          alt={silverbullNpcImage.alt}
-          legenda={silverbullNpcImage.caption}
-          sizes={tamanhos.metade}
-          {...tamanhoDe(silverbullNpcImage.src)}
-        />
-        <Figura
-          src={cinfrasSilverbullImage.src}
-          alt={cinfrasSilverbullImage.alt}
-          legenda={cinfrasSilverbullImage.caption}
-          sizes={tamanhos.metade}
-          {...tamanhoDe(cinfrasSilverbullImage.src)}
-        />
-      </div>
+      <Galeria
+        className="mt-10"
+        itens={[
+          { src: silverbullNpcImage.src, alt: silverbullNpcImage.alt, legenda: silverbullNpcImage.caption },
+          { src: cinfrasSilverbullImage.src, alt: cinfrasSilverbullImage.alt, legenda: cinfrasSilverbullImage.caption },
+        ]}
+      />
 
       <h3 className="text-titulo-4 mt-10 max-w-leitura font-bold text-texto">Entrando pela fila de party</h3>
-      <ol className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {queueSteps.map((passo, indice) => (
-          <li key={passo.src}>
-            <Figura
-              src={passo.src}
-              alt={passo.alt}
-              legenda={`${indice + 1}. ${passo.alt}`}
-              sizes={tamanhos.quarto}
-              {...tamanhoDe(passo.src)}
-            />
-          </li>
-        ))}
-      </ol>
+      <Galeria
+        className="mt-4"
+        proporcao="4 / 3"
+        numerar
+        itens={queueSteps.map((passo) => ({ src: passo.src, alt: passo.alt, legenda: passo.alt }))}
+      />
 
       {raidFirstStepsSupportImages.map((imagem) => (
         <Figura
@@ -92,8 +77,8 @@ export default function RaidsPrimeirosPassos() {
           src={imagem.src}
           alt={imagem.alt}
           legenda={imagem.caption}
-          sizes={tamanhos.solta}
-          className="mt-10 max-w-[48rem]"
+          sizes={tamanhos.artigo}
+          className="mt-10"
           {...tamanhoDe(imagem.src)}
         />
       ))}

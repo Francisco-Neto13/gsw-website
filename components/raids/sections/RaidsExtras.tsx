@@ -1,10 +1,8 @@
 import { CircleAlert } from "lucide-react";
-import Figura from "@/components/guias/Figura";
+import Galeria from "@/components/guias/Galeria";
 import SecaoGuia from "@/components/guias/SecaoGuia";
 import TextoComTermos from "@/components/guias/TextoComTermos";
 import { extras, raidGambits, raidRanks, supportImages } from "@/components/raids/data/raids-content";
-import { tamanhoDe } from "@/components/raids/data/raids-midia";
-import { tamanhos } from "@/lib/tamanhos";
 
 export default function RaidsExtras() {
   return (
@@ -70,18 +68,11 @@ export default function RaidsExtras() {
         ))}
       </ul>
 
-      <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        {supportImages.map((imagem) => (
-          <Figura
-            key={imagem.src}
-            src={imagem.src}
-            alt={imagem.alt}
-            legenda={imagem.caption}
-            sizes={tamanhos.metade}
-            {...tamanhoDe(imagem.src)}
-          />
-        ))}
-      </div>
+      <Galeria
+        className="mt-8"
+        proporcao="4 / 3"
+        itens={supportImages.map((imagem) => ({ src: imagem.src, alt: imagem.alt, legenda: imagem.caption }))}
+      />
     </SecaoGuia>
   );
 }

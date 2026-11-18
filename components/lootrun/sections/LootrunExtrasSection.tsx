@@ -6,6 +6,7 @@ import {
   lootrunExtrasIntro,
 } from "@/components/lootrun/data/lootrun-content";
 import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
+import type { CSSProperties } from "react";
 
 export default function LootrunExtrasSection() {
   return (
@@ -48,13 +49,13 @@ export default function LootrunExtrasSection() {
           ))}
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {lootrunExtraSupportMedia.map((item, index) => (
-            <div key={item.name} className={index === 0 ? "col-span-2 sm:col-span-1" : undefined}>
-              <LootrunMediaPlaceholder item={item} compact={index > 0} />
-            </div>
+        <ul className="galeria mt-8 sm:mt-10" style={{ "--colunas": 4 } as CSSProperties}>
+          {lootrunExtraSupportMedia.map((item) => (
+            <li key={item.name}>
+              <LootrunMediaPlaceholder item={item} compact />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

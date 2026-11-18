@@ -1,4 +1,4 @@
-import Figura from "@/components/guias/Figura";
+import Galeria from "@/components/guias/Galeria";
 import SecaoGuia from "@/components/guias/SecaoGuia";
 import TextoComTermos from "@/components/guias/TextoComTermos";
 import {
@@ -9,7 +9,6 @@ import {
   raidRewardOutcomes,
   raidRewardsDescription,
 } from "@/components/raids/data/raids-content";
-import { tamanhoDe } from "@/components/raids/data/raids-midia";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
 import { tamanhos } from "@/lib/tamanhos";
 
@@ -63,30 +62,17 @@ export default function RaidsRecompensas() {
         </figure>
       </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
-        <figure>
-          <ImagemDoJogo
-            base="/raids/prints/raid-ui-bau-recompensa"
-            alt="Baú de recompensa da raid aberto, com pulls, esmeraldas e itens"
-            larguras={[640, 1280]}
-            largura={1280}
-            altura={720}
-            sizes={tamanhos.terco}
-            className="h-auto w-full rounded-md border border-linha"
-          />
-          <figcaption className="mt-2 text-apoio text-texto-3">O baú final por dentro. Print da guilda.</figcaption>
-        </figure>
-        {raidRewardImages.map((imagem) => (
-          <Figura
-            key={imagem.src}
-            src={imagem.src}
-            alt={imagem.alt}
-            legenda={imagem.caption}
-            sizes={tamanhos.terco}
-            {...tamanhoDe(imagem.src)}
-          />
-        ))}
-      </div>
+      <Galeria
+        className="mt-10"
+        itens={[
+          {
+            src: "/raids/prints/raid-ui-bau-recompensa-1280.webp",
+            alt: "Baú de recompensa da raid aberto, com pulls, esmeraldas e itens",
+            legenda: "O baú final por dentro. Print da guilda.",
+          },
+          ...raidRewardImages.map((imagem) => ({ src: imagem.src, alt: imagem.alt, legenda: imagem.caption })),
+        ]}
+      />
     </SecaoGuia>
   );
 }

@@ -183,6 +183,33 @@ table,
     padding-inline: var(--casca-x);
   }
 
+  /* Galeria (components/guias/Galeria.tsx): figuras do mesmo tamanho; a última linha fica centralizada, sem
+     buraco. Celular uma por linha, tablet duas, desktop o número de colunas que a galeria escolheu. */
+  .galeria {
+    --vao: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem var(--vao);
+  }
+
+  .galeria > li {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .galeria > li {
+      flex-basis: calc((100% - var(--vao)) / 2);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .galeria > li {
+      flex-basis: calc((100% - (var(--colunas) - 1) * var(--vao)) / var(--colunas));
+    }
+  }
+
   /* A caixa de item: fundo roxo-escuro, borda dupla (fora escura, dentro violeta a 1px). */
   .caixa-item {
     background: var(--color-caixa);
