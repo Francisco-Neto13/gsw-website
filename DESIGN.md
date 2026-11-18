@@ -217,10 +217,13 @@ H1 e H2 têm `text-wrap: balance`; parágrafos, itens, legendas e `dd` têm `tex
 
 ## Layout
 
-- **Moldura do site:** top bar fixa de 3,5 rem (56 px, `--topbar-h`); conteúdo centrado em até 96 rem; `scroll-padding-top` igual à top bar mais 1 rem para âncoras.
-- **Página de guia:** três colunas a partir de 1280 px: sidebar de guias de 16 rem (a partir de 1024 px), coluna central flexível e índice "Nesta página" de 15 rem. Sidebar e índice são `sticky` sob a top bar, com rolagem própria. Abaixo de 1280 px o índice vira uma barra fixa "Nesta página: <seção atual>" que abre em lista; abaixo de 768 px a navegação de áreas e os guias vão para uma gaveta lateral (`<dialog>`, até 22 rem).
+- **Moldura do site:** top bar fixa de 3,5 rem (56 px, `--topbar-h`); `scroll-padding-top` igual à top bar mais 1 rem para âncoras.
+- **Casca (`.casca`):** o contêiner único do site, até 120 rem (`--casca-max`), com margem lateral `--casca-x` de 16, 24, 32 e 48 px (a partir de 0, 640, 1024 e 1536 px). Top bar, rodapé, Início, `/guias` e as colunas dos guias usam a mesma casca: logo, títulos e o texto da sidebar começam no mesmo x em todas as páginas. Nenhuma página define outro `max-w` + `px` de moldura.
+- **Dois tipos de página:** as de entrada (Início e `/guias`) ocupam a casca inteira, com grades; as de leitura (guias e História) usam a coluna de artigo de 64 rem, centrada (nos guias, entre a sidebar e o índice), com texto a 60ch alinhado à esquerda dentro dela.
+- **Página de guia:** três colunas a partir de 1280 px: sidebar de guias de 16 rem (a partir de 1024 px) encostada na margem da casca, artigo de até 64 rem centrado no espaço do meio e índice "Nesta página" de 15 rem encostado na margem direita. O espaço que sobra em telas largas se divide dos dois lados do artigo, nunca nas bordas da tela. Sidebar e índice são `sticky` sob a top bar, com rolagem própria. Abaixo de 1280 px o índice vira uma barra fixa "Nesta página: <seção atual>" que abre em lista; abaixo de 768 px a navegação de áreas e os guias vão para uma gaveta lateral (`<dialog>`, até 22 rem).
 - **Coluna de leitura:** 60ch para texto; mídia e blocos de sala vão até 56 a 60 rem.
-- **Ritmo:** seções com 48 px de respiro vertical, separadas por régua de 1 px; margens laterais de 16, 24 e 40 px (celular, tablet, desktop). Dentro das caixas, 16 a 20 px de respiro.
+- **Ritmo:** seções de guia com 48 px de respiro vertical e da História com 64 a 80 px, separadas por régua de 1 px. Cabeçalho de seção sempre à esquerda: H2 no tamanho de título, lide em 60ch, sem rótulo acima. Dentro das caixas, 16 a 20 px de respiro.
+- **Grades sem órfão:** um número ímpar de itens não deixa um card sozinho numa linha (o último ocupa a linha toda, como nos pilares), e texto de card nunca é centralizado.
 - **Etapas:** salas numeradas em lista, ligadas por um traço vertical de 1 px na régua forte.
 - **Onde parei:** o guia guarda no navegador a última seção visível e oferece "Continuar de" só para quem volta pelo topo.
 - **Breakpoints:** os do Tailwind (640, 768, 1024, 1280 px).
