@@ -19,6 +19,8 @@ export type SpecialMode = {
   regras: string[];
   excecoes?: { titulo: string; itens: string[] };
   destaque?: Destaque;
+  /** Dicas práticas tiradas das regras (wiki e patches oficiais). */
+  dicas?: string[];
   variante?: { nome: string; icone: string; cor: string; texto: string[] };
   imagens?: Imagem[];
 };
@@ -78,6 +80,10 @@ export const specialModes: SpecialMode[] = [
         "Perder um /duel. Atenção: se o personagem morrer logo depois do duelo por sangramento, veneno ou queimadura, a morte conta.",
       ],
     },
+    dicas: [
+      "Depois de um duelo, espere os efeitos de dano contínuo (sangramento, veneno, queimadura) acabarem antes de sair da arena.",
+      "Raids e lootruns são o lugar mais seguro para arriscar: morrer lá não apaga o vermelho.",
+    ],
   },
   {
     id: "ironman",
@@ -98,6 +104,9 @@ export const specialModes: SpecialMode[] = [
       titulo: "Saindo do Ironman",
       texto: "O comando /ironman remove o modo. Ele pede confirmação e não tem volta.",
     },
+    dicas: [
+      "Em luta de chefe em grupo, só recebe o drop quem causar metade do dano: quem divide o dano pode sair sem item.",
+    ],
     variante: {
       nome: "Ultimate Ironman",
       icone: "/gamemodes/ultimate_ironman.svg",
@@ -106,6 +115,8 @@ export const specialModes: SpecialMode[] = [
         "Todas as regras do Ironman e mais uma: nenhum banco, nem o Character Bank.",
         "É liberado junto com o Ironman (nível 50). Desde a versão 2.0.4, quem era Ironman antes dela virou Ultimate.",
         "O comando /ironman desce um degrau, do Ultimate para o Ironman normal. Também pede confirmação e não tem volta.",
+        "Sem as Pet Tasks (retiradas do Ultimate num hotfix da 2.0.4).",
+        "Sem banco, o Ingredient Pouch vira o único espaço extra: vale planejar o inventário em torno dele.",
       ],
     },
   },
@@ -127,6 +138,7 @@ export const specialModes: SpecialMode[] = [
       texto:
         "Nem todo item ganho numa quest conta como item de quest. O capacete Tosach, da quest King's Recruit, por exemplo, não pode ser usado no Craftsman.",
     },
+    dicas: ["Combinado com Ironman, todo material precisa vir da sua própria coleta: suba as profissões de coleta cedo."],
   },
   {
     id: "hunted",
@@ -148,6 +160,7 @@ export const specialModes: SpecialMode[] = [
       texto:
         "Quest de história longa e difícil, de nível 103. Começa no Portal to Dern, na Silent Expanse, com o NPC \"???\". Antes, é preciso ter feito A Journey Beyond e A Journey Further, vencido a Eldritch Outlook uma vez e avançado em Dwarves and Doguns Part II e An Iron Heart Part II. Além do Hunted, dá 10.008.000 de XP e 1 Corrupted Soul Token.",
     },
+    dicas: ["Antes de sair do jogo, fique 10 segundos sem lutar ou vá para uma cidade, para não perder itens."],
     imagens: [
       { src: "/terceiros/wynncraft/hunted-npc-inicio.webp", alt: "O NPC \"???\" que inicia a quest A Hunter's Calling", legenda: "O \"???\", que inicia A Hunter's Calling." },
       { src: "/terceiros/wynncraft/hunted-aledar.webp", alt: "Aledar, the Exterminator, chefe final da quest A Hunter's Calling", legenda: "Aledar, o chefe final da quest." },
@@ -177,4 +190,7 @@ export const imagemCombinacoes: Imagem = {
 export const specialModesFontes = [
   { rotulo: "Special Gamemodes, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Special_Gamemodes" },
   { rotulo: "A Hunter's Calling, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/A_Hunter%27s_Calling" },
+  { rotulo: "Patch 1.18.1: novos modos (anúncio oficial)", href: "https://forums.wynncraft.com/threads/patch-1-18-1-trade-market-is-back-new-gamemodes.250542/" },
+  { rotulo: "Changelog 1.19: Hunted (anúncio oficial)", href: "https://forums.wynncraft.com/threads/1-19-the-silent-expanse-changelog.256264/" },
+  { rotulo: "Changelog 2.0.4: Ultimate Ironman (anúncio oficial)", href: "https://forums.wynncraft.com/threads/2-0-4-full-changelog-new-bank-lootruns-more.310535/" },
 ];

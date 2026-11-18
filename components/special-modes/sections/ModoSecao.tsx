@@ -72,6 +72,14 @@ export default function ModoSecao({ modo }: { modo: SpecialMode }) {
 
       {modo.destaque ? <Destaque {...modo.destaque} className="mt-6" /> : null}
 
+      {modo.dicas ? (
+        <div className="mt-6 flex flex-col gap-3">
+          {modo.dicas.map((dica) => (
+            <Destaque key={dica} tipo="dica" titulo="Dica" texto={dica} />
+          ))}
+        </div>
+      ) : null}
+
       {modo.variante ? (
         <div className="mt-8 max-w-leitura rounded-md border border-linha bg-carvao px-5 py-4">
           <p className="flex items-center gap-3">
