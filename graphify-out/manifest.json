@@ -132,15 +132,15 @@
     "semantic_hash": ""
   },
   "components/home/data/home-content.ts": {
-    "mtime": 1795042541.6431017,
-    "seen": 1795042814.1811118,
-    "ast_hash": "f0fa6d1569c2b247a4c3d858056c60a0",
+    "mtime": 1795043338.547804,
+    "seen": 1795043470.6320662,
+    "ast_hash": "2d0ca979aab155d82781f7b1448280f9",
     "semantic_hash": ""
   },
   "components/home/pages/HomePage.tsx": {
-    "mtime": 1795042541.6431017,
-    "seen": 1795042814.1811128,
-    "ast_hash": "13a40a5a51353f09a808b6d4ab3acf7b",
+    "mtime": 1795043374.439653,
+    "seen": 1795043470.6320674,
+    "ast_hash": "98e699f19867f09568be3b25920b7d15",
     "semantic_hash": ""
   },
   "components/leveling/data/leveling-content.ts": {
@@ -456,9 +456,9 @@
     "semantic_hash": "0ed79c85de5bb2f1af5976079d448b19"
   },
   "lib/site-content.ts": {
-    "mtime": 1795042527.7260318,
-    "seen": 1795042814.1812475,
-    "ast_hash": "7f083fea6c1c69efed9d327d2f546d76",
+    "mtime": 1795043315.9872692,
+    "seen": 1795043470.632196,
+    "ast_hash": "5e77b3ba9c6be9fc93f4b7027cfc885b",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -558,9 +558,9 @@
     "semantic_hash": "156a91b590e28b048deed13b5ea8b95e"
   },
   "docs/CREDITOS.md": {
-    "mtime": 1795042708.7681425,
-    "seen": 1795042814.1812751,
-    "ast_hash": "b3f5863628fc7e742ccd9d25ce690179",
+    "mtime": 1795043315.9893017,
+    "seen": 1795043470.6322222,
+    "ast_hash": "7f8e99c4a317a7b673edacbfc57d5dc0",
     "semantic_hash": ""
   },
   "docs/redesign/README.md": {
@@ -672,9 +672,9 @@
     "semantic_hash": "8c226118f1522938b8c321e7286f7a90"
   },
   "app/guias/page.tsx": {
-    "mtime": 1795009369.5081685,
-    "seen": 1795009378.528659,
-    "ast_hash": "891f86338a2561db7d58cd2adcb44037",
+    "mtime": 1795043338.547804,
+    "seen": 1795043470.6319973,
+    "ast_hash": "a0cf622e4311ea94b93cb5eca362abab",
     "semantic_hash": ""
   },
   "app/guias/profissoes/page.tsx": {
@@ -966,9 +966,9 @@
     "semantic_hash": ""
   },
   "lib/dimensoes-imagens.json": {
-    "mtime": 1795042710.8414729,
-    "seen": 1795042814.181241,
-    "ast_hash": "da191ea206fd68844c6afc2bc1d2eef4",
+    "mtime": 1795043324.4853227,
+    "seen": 1795043470.6321898,
+    "ast_hash": "8ee861d776d68546d631adf66833afc4",
     "semantic_hash": ""
   },
   "lib/imagens.ts": {
@@ -1134,9 +1134,9 @@
     "semantic_hash": ""
   },
   "lib/terceiros.ts": {
-    "mtime": 1795042708.7650106,
-    "seen": 1795042814.18125,
-    "ast_hash": "8476cc3dbacd16a461366f4d7f876fd3",
+    "mtime": 1795043315.9877868,
+    "seen": 1795043470.6321983,
+    "ast_hash": "c73986ddacc106dd05dd66eac11eb7ef",
     "semantic_hash": ""
   },
   "components/dungeons/sections/DungeonsAbertura.tsx": {
@@ -1218,9 +1218,9 @@
     "semantic_hash": ""
   },
   "components/sites-uteis/data/sites-uteis-content.ts": {
-    "mtime": 1795042708.7650106,
-    "seen": 1795042814.1812134,
-    "ast_hash": "a3031f9b9c190ccf422bef0535337c3b",
+    "mtime": 1795043315.9847581,
+    "seen": 1795043470.6321628,
+    "ast_hash": "67f48f38d6b41ac42965a7e2a3e29acf",
     "semantic_hash": ""
   },
   "components/sites-uteis/pages/SitesUteisPage.tsx": {
