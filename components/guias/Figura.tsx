@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
+import { creditoDe } from "@/lib/imagens";
 
 type FiguraProps = {
   src: string;
@@ -21,6 +22,7 @@ type FiguraProps = {
 
 /** Print do jogo com legenda; amplia no clique, então o tamanho na grade não esconde nada. */
 export default function Figura({ src, alt, legenda, largura, altura, sizes, proporcao, className = "" }: FiguraProps) {
+  const credito = creditoDe(src);
   return (
     <figure className={className}>
       <ClickableImagePreview src={src} alt={alt}>
@@ -40,7 +42,12 @@ export default function Figura({ src, alt, legenda, largura, altura, sizes, prop
           />
         )}
       </ClickableImagePreview>
-      {legenda ? <figcaption className="mt-2 text-apoio text-texto-3">{legenda}</figcaption> : null}
+      {legenda || credito ? (
+        <figcaption className="mt-2 text-apoio text-texto-3">
+          {legenda}
+          {credito ? <span className="text-detalhe">{legenda ? " · " : ""}{credito}</span> : null}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
