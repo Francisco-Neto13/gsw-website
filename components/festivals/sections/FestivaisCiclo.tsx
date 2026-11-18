@@ -3,7 +3,8 @@ import SecaoGuia from "@/components/guias/SecaoGuia";
 import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
 import { festivais, festivaisCicloIntro } from "@/components/festivals/data/festivals-content";
 import { logoDoFestival, visualDoFestival } from "@/components/festivals/festivais-visual";
-import { creditoDe, dimensoesDe } from "@/lib/imagens";
+import CreditoImagem from "@/components/guias/CreditoImagem";
+import { dimensoesDe } from "@/lib/imagens";
 
 const TAMANHO_DO_LOGO = "(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 90vw";
 
@@ -54,7 +55,18 @@ export default function FestivaisCiclo() {
       <p className="mt-4 flex max-w-leitura flex-wrap items-center gap-x-2 text-apoio text-texto-3">
         <Repeat aria-hidden size={16} strokeWidth={1.75} />
         Depois do Blizzard, o ciclo recomeça pelo Heroes.
-        {temLogo ? <span className="text-detalhe">Logos dos festivais {creditoDe(logoDoFestival("heroes"))}.</span> : null}
+        {temLogo ? (
+          <span className="text-detalhe">
+            Logos:{" "}
+            {festivais.map((festival, indice) => (
+              <span key={festival.id}>
+                {indice > 0 ? ", " : ""}
+                <CreditoImagem src={logoDoFestival(festival.id)} rotulo={festival.curto} />
+              </span>
+            ))}
+            .
+          </span>
+        ) : null}
       </p>
     </SecaoGuia>
   );

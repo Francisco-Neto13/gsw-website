@@ -1,4 +1,5 @@
 import dimensoes from "@/lib/dimensoes-imagens.json";
+import { origemDasImagens } from "@/lib/terceiros";
 
 const tabela = dimensoes as unknown as Record<string, [number, number]>;
 
@@ -9,7 +10,11 @@ export const dimensoesDe = (src: string): [number, number] | null => tabela[src]
  * Imagens de terceiros (wiki e arte oficial da Wynncraft) moram só em public/terceiros/, com crédito automático na
  * legenda. Para remover todas: apagar a pasta e rodar `node scripts/medir-imagens.mjs` (docs/CREDITOS.md).
  */
-export const creditoDe = (src: string) => (src.startsWith("/terceiros/wynncraft/") ? "© Wynncraft" : null);
+export const creditoDe = (src: string) => {
+  if (!src.startsWith("/terceiros/wynncraft/")) return null;
+  const href = origemDasImagens[src.split("/").pop() ?? ""];
+  return { texto: "© Wynncraft", href };
+};
 
 /**
  * Print pequena (recorte de interface com menos de 700 px): numa linha sozinha ela ficaria perdida no meio de um

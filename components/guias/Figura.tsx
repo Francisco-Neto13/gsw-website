@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import ImagemNoQuadro from "@/components/shared/ImagemNoQuadro";
+import CreditoImagem from "@/components/guias/CreditoImagem";
 import { creditoDe } from "@/lib/imagens";
 
 type FiguraProps = {
@@ -45,7 +46,12 @@ export default function Figura({ src, alt, legenda, largura, altura, sizes, prop
       {legenda || credito ? (
         <figcaption className="mt-2 text-apoio text-texto-3">
           {legenda}
-          {credito ? <span className="text-detalhe">{legenda ? " · " : ""}{credito}</span> : null}
+          {credito ? (
+            <>
+              {legenda ? " · " : ""}
+              <CreditoImagem src={src} />
+            </>
+          ) : null}
         </figcaption>
       ) : null}
     </figure>
