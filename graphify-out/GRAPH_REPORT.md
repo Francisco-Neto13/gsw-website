@@ -1,14 +1,19 @@
 # Graph Report - gsw_lp  (2026-11-18)
 
 ## Corpus Check
-- 154 files · ~83,479 words
+- 154 files · ~81,635 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 10 file(s) not represented in the graph (top: .css 6, (none) 3, .ico 1)
 
 ## Summary
-- 1204 nodes · 2434 edges · 64 communities (60 shown, 4 thin omitted)
+- 1204 nodes · 2395 edges · 64 communities (60 shown, 4 thin omitted)
 - Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 139 edges (avg confidence: 0.85)
-- Token cost: 105,731 input · 0 output
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `141edb1f`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - raids-content.ts
@@ -57,7 +62,7 @@
 - Grafo do projeto (Graphify) doc
 - Mapa das pastas
 - GuiaLayout.tsx
-- Caixa de Item (componente assinatura)
+- guiaHref
 - Padrões
 - deploy.yml
 - env
@@ -65,40 +70,40 @@
 - Redesign: proposta (Fase 2)
 - on
 - dry_run
-- Arquitetura
 - gif-para-webp.mjs
 - eslint.config.mjs
-- Cores de raridade (Normal, Unique, Rare, Legenda
-- Documentos: diagnostico, direcao-visual, navegac
+- Caixa de Item (componente assinatura)
+- Cores de raridade (Normal, Unique, Rare, Legendary, Fabled, Mythic)
 - Item image and icon options (own prints, CDN, AP
 - Game guides (Lootrun, Dungeons, Raids, World Eve
 - global.d.ts
 - postcss.config.mjs
 - CLAUDE.md imports AGENTS.md
+- Documentos: diagnostico, direcao-visual, navegacao, estrutura-do-guia, inventario-conteudo, fontes-e-licencas
 
 ## God Nodes (most connected - your core abstractions)
 1. `DESIGN.md — Design System GsW` - 44 edges
 2. `next` - 40 edges
 3. `Auditoria técnica gsw_lp (Impeccable audit)` - 36 edges
-4. `ClickableImagePreview()` - 35 edges
-5. `Estrutura de pastas` - 35 edges
-6. `Diagnóstico do front (Impeccable)` - 33 edges
-7. `Assessment A: Revisão de design` - 31 edges
-8. `AGENTS.md — regras para agentes` - 25 edges
-9. `Inventário do conteúdo atual` - 25 edges
-10. `GuideIntro()` - 22 edges
+4. `Estrutura de pastas` - 35 edges
+5. `Diagnóstico do front (Impeccable)` - 33 edges
+6. `Assessment A: Revisão de design` - 31 edges
+7. `AGENTS.md — regras para agentes` - 25 edges
+8. `Inventário do conteúdo atual` - 25 edges
+9. `ClickableImagePreview()` - 20 edges
+10. `react` - 19 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `Onde parei em localStorage (gsw:onde-parei:<rota>)` --semantically_similar_to--> `Onde parei / "Continuar de"`  [INFERRED] [semantically similar]
+  docs/ARQUITETURA.md → DESIGN.md
 - `Padrão de commits (resumo, notas, escopo, sem coautor)` --semantically_similar_to--> `Formato de commit type(scope) em inglês`  [INFERRED] [semantically similar]
   docs/PADROES.md → AGENTS.md
 - `Nunca usar ícones/imagens da CDN oficial da Wynncraft sem autorização` --semantically_similar_to--> `Decisão do dono: só arte própria até autorização escrita da Wynncraft`  [INFERRED] [semantically similar]
   AGENTS.md → docs/CREDITOS.md
-- `Onde parei em localStorage (gsw:onde-parei:<rota>)` --semantically_similar_to--> `Onde parei / "Continuar de"`  [INFERRED] [semantically similar]
-  docs/ARQUITETURA.md → DESIGN.md
-- `Creative North Star: "A Caixa de Item"` --semantically_similar_to--> `Thesis: informação de consulta em caixa de item`  [INFERRED] [semantically similar]
-  DESIGN.md → .impeccable/surfaces/app-guias.md
-- `Como foi feito: Graphify, Impeccable init/critique/audit, sorteio seed 658dcb521c289a54` --semantically_similar_to--> `Form: Caixa de Item, seed 658dcb521c289a54`  [INFERRED] [semantically similar]
-  docs/redesign/README.md → .impeccable/surfaces/app-guias.md
+- `Estilo: tokens, bg-gsw só preenchimento, Pixelify >= 20px, 60ch` --semantically_similar_to--> `The Fill-Only Rule`  [INFERRED] [semantically similar]
+  docs/PADROES.md → DESIGN.md
+- `Fluxo branch -> develop -> main -> deploy (desligado)` --semantically_similar_to--> `Fluxo de branches com merge e promoção automáticos`  [INFERRED] [semantically similar]
+  AGENTS.md → docs/CI-CD.md
 
 ## Import Cycles
 - None detected.
@@ -121,15 +126,15 @@ Nodes (68): metadata, Pagina(), DicaGsw(), Figura(), FiguraProps, FimDoGuia(), S
 
 ### Community 1 - "silverbull-shares-content.ts"
 Cohesion: 0.06
-Nodes (62): metadata, Pagina(), RaidImageCard(), acquisitionCards, BombCard, bombCards, bombsIntro, bombStoreImage (+54 more)
+Nodes (61): metadata, Pagina(), acquisitionCards, BombCard, bombCards, bombsIntro, bombStoreImage, bundlesStoreImage (+53 more)
 
 ### Community 2 - "lootrun-content.ts"
 Cohesion: 0.07
-Nodes (50): metadata, Pagina(), lootrunAdvancedSystems, lootrunAdvancedSystemsIntro, LootrunBeacon, lootrunBeacons, lootrunBeaconsIntro, lootrunBeaconsRegras (+42 more)
+Nodes (48): metadata, Pagina(), lootrunAdvancedSystems, lootrunAdvancedSystemsIntro, LootrunBeacon, lootrunBeacons, lootrunBeaconsIntro, lootrunBeaconsRegras (+40 more)
 
 ### Community 3 - "professions-content.ts"
 Cohesion: 0.06
-Nodes (47): metadata, Pagina(), bombTips, CraftingProfession, craftingProfessions, craftingXpTips, GatheringProfession, gatheringProfessions (+39 more)
+Nodes (48): metadata, Pagina(), bombTips, CraftingProfession, craftingProfessions, craftingXpTips, GatheringProfession, gatheringProfessions (+40 more)
 
 ### Community 4 - "env"
 Cohesion: 0.06
@@ -172,8 +177,8 @@ Cohesion: 0.16
 Nodes (15): Historia(), Member, members, HistoryPage(), Essence(), GallerySection(), Era, History() (+7 more)
 
 ### Community 14 - "next"
-Cohesion: 0.16
-Nodes (13): metadata, FimDoGuiaProps, RaidImageCardProps, AnimacaoSobDemandaProps, ClickableImagePreviewProps, LazyYouTubeEmbedProps, Estrutura de pastas, Boas práticas (Server Components, next/image, LazyYouTubeEmbed, <dialog>, UTF-8 sem BOM, a11y) (+5 more)
+Cohesion: 0.15
+Nodes (10): metadata, RaidImageCardProps, AnimacaoSobDemanda(), AnimacaoSobDemandaProps, posterDe(), ClickableImagePreviewProps, LazyYouTubeEmbedProps, Boas práticas (Server Components, next/image, LazyYouTubeEmbed, <dialog>, UTF-8 sem BOM, a11y) (+2 more)
 
 ### Community 15 - "Critique Assessment B: detector + navegador"
 Cohesion: 0.12
@@ -196,8 +201,8 @@ Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 20 - "guiaHref()"
-Cohesion: 0.22
-Nodes (14): metadata, PaginaDosGuias(), Busca(), indice, ItemDeBusca, procurar(), semAcento(), GuiaNavLista() (+6 more)
+Cohesion: 0.33
+Nodes (8): Busca(), indice, ItemDeBusca, procurar(), semAcento(), areaAtiva(), IconeDiscord(), TopBar()
 
 ### Community 21 - "CI/CD"
 Cohesion: 0.17
@@ -232,12 +237,12 @@ Cohesion: 0.23
 Nodes (9): metadata, Pagina(), metadata, Pagina(), FestivalsPage(), GuiaEmConstrucao(), GuiaEmConstrucaoProps, MountsPage() (+1 more)
 
 ### Community 29 - "HomePage.tsx"
-Cohesion: 0.23
+Cohesion: 0.22
 Nodes (10): Home(), homeComeco, homeComunidade, homeDestaque, homeHero, HomePage(), retratos, totalDeSalas (+2 more)
 
 ### Community 30 - "GuideIntro.tsx"
-Cohesion: 0.27
-Nodes (9): Breadcrumb(), FichaGuia(), FichaGuiaProps, SeloVersao(), RaidsAbertura(), GuideIntro(), GuideIntroProps, grupos (+1 more)
+Cohesion: 0.24
+Nodes (10): Breadcrumb(), FichaGuia(), FichaGuiaProps, SeloVersao(), RaidsAbertura(), GuideIntro(), GuideIntroProps, Modelo de guia (Raids é a referência) (+2 more)
 
 ### Community 31 - "deploy"
 Cohesion: 0.15
@@ -296,12 +301,12 @@ Cohesion: 0.22
 Nodes (6): Mapa das pastas, Hook pre-push (pula push só de mídia), concurrency, cancel-in-progress, group, name
 
 ### Community 45 - "GuiaLayout.tsx"
-Cohesion: 0.39
-Nodes (7): LayoutDosGuias(), gravarOndeParei(), GuiaLayout(), lerOndeParei(), paraSlug(), secoesDoConteudo(), GuiaSecao
+Cohesion: 0.20
+Nodes (14): LayoutDosGuias(), gravarOndeParei(), GuiaLayout(), lerOndeParei(), paraSlug(), secoesDoConteudo(), Arquitetura, Estado: useState local, sem store global (+6 more)
 
-### Community 46 - "Caixa de Item (componente assinatura)"
-Cohesion: 0.25
-Nodes (8): Thesis: informação de consulta em caixa de item, Caixa de Item (componente assinatura), Creative North Star: "A Caixa de Item", Ficha do guia (uma por página), Formas: cantos 6/4px, réguas 1px, tracejado = ainda não existe, borda dupla, Token Fundo da Caixa #160c20, Token Borda Externa da Caixa #2a0f40, Decisões: Caixa de Item, só escuro, /guias/<guia> com redirect, só arte própria, Raids modelo
+### Community 46 - "guiaHref"
+Cohesion: 0.27
+Nodes (9): metadata, PaginaDosGuias(), FimDoGuiaProps, GuiaNavLista(), GuiaNavListaProps, grupos, guiaHref(), guiasDoGrupo() (+1 more)
 
 ### Community 47 - "Padrões"
 Cohesion: 0.32
@@ -331,21 +336,17 @@ Nodes (7): on, pull_request, push, workflow_dispatch, branches, types, branches
 Cohesion: 0.29
 Nodes (7): default, description, type, dry_run, on, workflow_dispatch, inputs
 
-### Community 54 - "Arquitetura"
-Cohesion: 0.40
-Nodes (6): Arquitetura, Estado: useState local, sem store global, Integrações externas: YouTube lazy, Google Fonts no build, CDN no Leveling, Navegação: top bar, sidebar, Nesta página, busca, Onde parei em localStorage (gsw:onde-parei:<rota>), Stack (Next 16 estático, React 19, TS strict, Tailwind 4, lucide-react)
-
 ### Community 56 - "eslint.config.mjs"
 Cohesion: 0.33
 Nodes (5): eslintConfig, eslint@^9, eslint-config-next@16.1.6, eslint, eslint-config-next
 
-### Community 57 - "Cores de raridade (Normal, Unique, Rare, Legenda"
+### Community 57 - "Caixa de Item (componente assinatura)"
+Cohesion: 0.25
+Nodes (8): Thesis: informação de consulta em caixa de item, Caixa de Item (componente assinatura), Creative North Star: "A Caixa de Item", Ficha do guia (uma por página), Formas: cantos 6/4px, réguas 1px, tracejado = ainda não existe, borda dupla, Token Fundo da Caixa #160c20, Token Borda Externa da Caixa #2a0f40, Decisões: Caixa de Item, só escuro, /guias/<guia> com redirect, só arte própria, Raids modelo
+
+### Community 58 - "Cores de raridade (Normal, Unique, Rare, Legendary, Fabled, Mythic)"
 Cohesion: 0.40
 Nodes (5): Cores de raridade (Normal, Unique, Rare, Legendary, Fabled, Mythic), Mythic com duas entradas (#c80db1 borda/texto grande, #edb7e7 texto), The Rarity Is Signal Rule, Fonte das cores de raridade (item guide oficial, Crafted pendente), Dados do jogo a confirmar (beacons, gambits, Merchant, Crimson, Crafted, coordenadas, guild raid)
-
-### Community 58 - "Documentos: diagnostico, direcao-visual, navegac"
-Cohesion: 0.40
-Nodes (5): docs/redesign/diagnostico.md, docs/redesign/estrutura-do-guia.md, docs/redesign/fontes-e-licencas.md, docs/redesign/navegacao.md, Documentos: diagnostico, direcao-visual, navegacao, estrutura-do-guia, inventario-conteudo, fontes-e-licencas
 
 ### Community 59 - "Item image and icon options (own prints, CDN, AP"
 Cohesion: 0.50
@@ -355,25 +356,29 @@ Nodes (4): Item data from API v3 fetched at build, buildLevelingItemGuideIconUrl
 Cohesion: 0.50
 Nodes (4): Game guides (Lootrun, Dungeons, Raids, World Events, Professions, Leveling, Special Modes, Silverbull Shares, Mounts, Festivals), GsW Website portal (Guardians of Wynn, Wynncraft), Closed copyright license (LICENSE), Silverbull Shares (guild economy)
 
+### Community 64 - "Documentos: diagnostico, direcao-visual, navegacao, estrutura-do-guia, inventario-conteudo, fontes-e-licencas"
+Cohesion: 0.40
+Nodes (5): docs/redesign/diagnostico.md, docs/redesign/estrutura-do-guia.md, docs/redesign/fontes-e-licencas.md, docs/redesign/navegacao.md, Documentos: diagnostico, direcao-visual, navegacao, estrutura-do-guia, inventario-conteudo, fontes-e-licencas
+
 ## Knowledge Gaps
-- **127 isolated node(s):** `Own-world: paleta e tipografia da superfície`, `Story: fluxo do leitor (sidebar/busca, ficha, índice, POV, continuar)`, `Momento memorável: hover em "Aspect" abre caixa de item`, `Leitor: jogador brasileiro de Wynncraft, à noite, jogo aberto`, `Caixa de item só em ficha, glossário e páginas de caixa única` (+122 more)
+- **127 isolated node(s):** `Botões (primary, secondary, ícone, sobre mídia)`, `Painel de variação, cartão de navegação, mídia`, `Navegação: top bar, sidebar, índice Nesta página, breadcrumb`, `Ícones Lucide 1,75px, sem emoji`, `The Measure Rule (60ch)` (+122 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 355 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Mapa das pastas` connect `Mapa das pastas` to `raids-content.ts`, `convert-to-webp.mjs`, `site-content.ts`, `deploy.yml`, `AGENTS.md — regras para agentes`?**
-  _High betweenness centrality (0.170) - this node is a cross-community bridge._
-- **What connects `Own-world: paleta e tipografia da superfície`, `Story: fluxo do leitor (sidebar/busca, ficha, índice, POV, continuar)`, `Momento memorável: hover em "Aspect" abre caixa de item` to the rest of the system?**
+- **Why does `Estrutura de pastas` connect `GuiaLayout.tsx` to `raids-content.ts`, `convert-to-webp.mjs`, `site-content.ts`, `HistoryPage.tsx`, `next`, `guiaHref`, `compilerOptions`, `guiaHref()`, `app/layout.tsx`, `gif-para-webp.mjs`, `[P1] Sem prefers-reduced-motion no reveal e scro`, `GuiaEmConstrucao.tsx`, `HomePage.tsx`, `GuideIntro.tsx`?**
+  _High betweenness centrality (0.196) - this node is a cross-community bridge._
+- **What connects `Botões (primary, secondary, ícone, sobre mídia)`, `Painel de variação, cartão de navegação, mídia`, `Navegação: top bar, sidebar, índice Nesta página, breadcrumb` to the rest of the system?**
   _127 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `raids-content.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.05995410212277682 - nodes in this community are weakly interconnected._
-- **Why does `Estrutura de pastas` connect `next` to `raids-content.ts`, `convert-to-webp.mjs`, `site-content.ts`, `HistoryPage.tsx`, `GuiaLayout.tsx`, `compilerOptions`, `guiaHref()`, `gif-para-webp.mjs`, `Arquitetura`, `app/layout.tsx`, `[P1] Sem prefers-reduced-motion no reveal e scro`, `GuiaEmConstrucao.tsx`, `HomePage.tsx`, `GuideIntro.tsx`?**
-  _High betweenness centrality (0.168) - this node is a cross-community bridge._
+- **Why does `Mapa das pastas` connect `Mapa das pastas` to `raids-content.ts`, `convert-to-webp.mjs`, `site-content.ts`, `deploy.yml`, `AGENTS.md — regras para agentes`?**
+  _High betweenness centrality (0.167) - this node is a cross-community bridge._
 - **Should `silverbull-shares-content.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.057297297297297295 - nodes in this community are weakly interconnected._
-- **Why does `next` connect `next` to `raids-content.ts`, `silverbull-shares-content.ts`, `lootrun-content.ts`, `professions-content.ts`, `leveling-content.ts`, `dungeons-content.ts`, `world-events-content.ts`, `site-content.ts`, `GuiaLayout.tsx`, `HistoryPage.tsx`, `special-modes-content.ts`, `GallerySection.tsx`, `package.json`, `dependencies`, `guiaHref()`, `app/layout.tsx`, `HomePage.tsx`, `GuideIntro.tsx`?**
-  _High betweenness centrality (0.152) - this node is a cross-community bridge._
+  _Cohesion score 0.05738615327656423 - nodes in this community are weakly interconnected._
+- **Why does `next` connect `GuideIntro.tsx` to `raids-content.ts`, `silverbull-shares-content.ts`, `lootrun-content.ts`, `professions-content.ts`, `leveling-content.ts`, `dungeons-content.ts`, `world-events-content.ts`, `site-content.ts`, `HistoryPage.tsx`, `next`, `special-modes-content.ts`, `GallerySection.tsx`, `package.json`, `guiaHref()`, `app/layout.tsx`, `HomePage.tsx`, `GuiaLayout.tsx`, `guiaHref`, `dependencies`?**
+  _High betweenness centrality (0.158) - this node is a cross-community bridge._
 - **Should `lootrun-content.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.07270865335381464 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07486338797814207 - nodes in this community are weakly interconnected._
