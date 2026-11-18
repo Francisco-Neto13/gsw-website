@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "components/home/data/home-content.ts": {
-    "mtime": 1795012925.0427966,
-    "seen": 1795012982.7330062,
-    "ast_hash": "fe548ff57b58bf383992000aecfaeaca",
+    "mtime": 1795013840.8019214,
+    "seen": 1795013906.5708463,
+    "ast_hash": "8eb0d6ea0a9f0bb4f7c528e237890ebb",
     "semantic_hash": ""
   },
   "components/home/pages/HomePage.tsx": {
@@ -576,9 +576,9 @@
     "semantic_hash": "156a91b590e28b048deed13b5ea8b95e"
   },
   "docs/CREDITOS.md": {
-    "mtime": 1795012925.0438042,
-    "seen": 1795012982.733131,
-    "ast_hash": "bd707a4032fe6c9e64a263d44f4dde85",
+    "mtime": 1795013840.8029213,
+    "seen": 1795013906.570969,
+    "ast_hash": "0d3524e55717a1c93c3e1a1931055250",
     "semantic_hash": ""
   },
   "docs/redesign/README.md": {
