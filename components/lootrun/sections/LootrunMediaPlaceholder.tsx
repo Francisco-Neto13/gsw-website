@@ -4,6 +4,7 @@ import Image from "next/image";
 import AnimacaoSobDemanda from "@/components/shared/AnimacaoSobDemanda";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import type { MediaPlaceholder } from "@/components/lootrun/data/lootrun-content";
+import { tamanhos } from "@/lib/tamanhos";
 
 type LootrunMediaPlaceholderProps = {
   item: MediaPlaceholder;
@@ -81,11 +82,11 @@ export default function LootrunMediaPlaceholder({
       <article className="h-full overflow-hidden rounded-md border border-linha bg-carvao">
         <ClickableImagePreview src={item.src} alt={item.alt ?? item.name}>
           <div className={frameClassName}>
-            <Image
+            <Image quality={90}
               src={item.src}
               alt={item.alt ?? item.name}
               fill
-              sizes={compact ? "(max-width: 768px) 50vw, 33vw" : "(max-width: 1024px) 100vw, 50vw"}
+              sizes={compact ? tamanhos.terco : tamanhos.metade}
               className="object-contain"
 
             />

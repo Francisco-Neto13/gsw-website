@@ -6,6 +6,7 @@ import {
   worldEventsRewardsIntro,
 } from "@/components/world-events/data/world-events-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function WorldEventsRewardsSection() {
   return (
@@ -36,11 +37,11 @@ export default function WorldEventsRewardsSection() {
         <div className="mt-8 max-w-2xl overflow-hidden rounded-md border border-linha bg-carvao sm:mt-10">
           <ClickableImagePreview src={rewardChestImage.src} alt={rewardChestImage.alt}>
             <div className="relative aspect-video w-full">
-              <Image
+              <Image quality={90}
                 src={rewardChestImage.src}
                 alt={rewardChestImage.alt}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 42rem"
+                sizes={tamanhos.solta}
                 className="object-cover"
               />
             </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 import {
   craftingProfessions,
   gatheringProfessions,
@@ -59,11 +60,11 @@ export default function ProfessionTypesSection() {
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
                 <div className="relative aspect-video w-full bg-black">
-                  <Image
+                  <Image quality={90}
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes={tamanhos.metade}
                     className="object-cover"
                   />
                 </div>
@@ -89,7 +90,7 @@ export default function ProfessionTypesSection() {
                 >
                   <div className="flex min-w-0 items-center gap-3">
                     <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-linha bg-zinc-950">
-                      <Image
+                      <Image quality={90}
                         src={gatheringImageByName[profession.name] ?? "/icon.webp"}
                         alt={`Ícone ${profession.name}`}
                         fill
@@ -122,7 +123,7 @@ export default function ProfessionTypesSection() {
                 >
                   <div className="flex min-w-0 items-center gap-3">
                     <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-linha bg-zinc-950">
-                      <Image
+                      <Image quality={90}
                         src={craftingImageByName[profession.name] ?? "/icon.webp"}
                         alt={`Ícone ${profession.name}`}
                         fill

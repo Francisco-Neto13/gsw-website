@@ -13,6 +13,7 @@ import {
 import { tamanhoDe } from "@/components/raids/data/raids-midia";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
 import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
+import { tamanhos } from "@/lib/tamanhos";
 
 function Variacao({ sala, variacao, rotulo }: { sala: string; variacao: RaidGuideVariant; rotulo: string }) {
   return (
@@ -138,7 +139,7 @@ function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
               larguras={[640, 1280]}
               largura={1280}
               altura={720}
-              sizes="(min-width: 1280px) 56rem, 100vw"
+              sizes={tamanhos.artigo}
               className="h-auto w-full rounded-md border border-linha"
             />
             <figcaption className="mt-2 text-apoio text-texto-3">{grupo.print.legenda}</figcaption>
@@ -147,7 +148,7 @@ function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
           <Figura
             src={raid.image}
             alt={`Entrada da raid ${raid.name}`}
-            sizes="(min-width: 1280px) 56rem, 100vw"
+            sizes={tamanhos.artigo}
             {...tamanhoDe(raid.image)}
           />
         )}

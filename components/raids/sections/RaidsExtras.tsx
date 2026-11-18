@@ -4,6 +4,7 @@ import SecaoGuia from "@/components/guias/SecaoGuia";
 import TextoComTermos from "@/components/guias/TextoComTermos";
 import { extras, raidGambits, raidRanks, supportImages } from "@/components/raids/data/raids-content";
 import { tamanhoDe } from "@/components/raids/data/raids-midia";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function RaidsExtras() {
   return (
@@ -76,7 +77,7 @@ export default function RaidsExtras() {
             src={imagem.src}
             alt={imagem.alt}
             legenda={imagem.caption}
-            sizes="(min-width: 640px) 28rem, 100vw"
+            sizes={tamanhos.metade}
             {...tamanhoDe(imagem.src)}
           />
         ))}

@@ -24,7 +24,7 @@ export default function RaidImageCard({
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40">
       <ClickableImagePreview src={src} alt={alt}>
         <div className={`relative w-full overflow-hidden bg-zinc-950 ${aspectClassName}`}>
-          <Image src={src} alt={alt} fill sizes={sizes} className="object-contain p-2 sm:p-3" />
+          <Image quality={90} src={src} alt={alt} fill sizes={sizes} className="object-contain p-2 sm:p-3" />
         </div>
       </ClickableImagePreview>
       {normalizedCaption ? (

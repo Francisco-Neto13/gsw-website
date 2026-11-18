@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
     return redirecionamentos;
   },
   images: {
+    // Prints do jogo têm texto e bordas de pixel: 90 em vez do padrão 75, que borrava a interface.
+    qualities: [75, 90],
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",

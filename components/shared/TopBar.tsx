@@ -33,7 +33,7 @@ export default function TopBar() {
     <header className="sticky top-0 z-40 h-[var(--topbar-h)] border-b border-caixa-fora bg-chao shadow-[inset_0_-1px_0_rgba(113,22,173,0.55)]">
       <div className="casca flex h-full items-center gap-4">
         <Link href="/" className="flex shrink-0 items-center gap-2.5 rounded-md" aria-label="GsW, página inicial">
-          <Image src="/icon.webp" alt="" width={32} height={32} priority className="rounded-full" />
+          <Image quality={90} src="/icon.webp" alt="" width={32} height={32} priority className="rounded-full" />
           <span className="font-titulo text-titulo-4 leading-none text-texto">GsW</span>
         </Link>
 

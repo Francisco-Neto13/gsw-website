@@ -5,6 +5,7 @@ import {
   levelingPartyIntro,
 } from "@/components/leveling/data/leveling-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function LevelingPartySection() {
   return (
@@ -23,11 +24,11 @@ export default function LevelingPartySection() {
         <div className="leveling-panel-3d mb-10 max-w-2xl overflow-hidden rounded-md border border-linha bg-carvao sm:mb-16">
           <ClickableImagePreview src={levelingPartyImage.src} alt={levelingPartyImage.alt}>
             <div className="leveling-media-pop relative aspect-video w-full">
-              <Image
+              <Image quality={90}
                 src={levelingPartyImage.src}
                 alt={levelingPartyImage.alt}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 42rem"
+                sizes={tamanhos.solta}
                 className="object-cover"
               />
             </div>

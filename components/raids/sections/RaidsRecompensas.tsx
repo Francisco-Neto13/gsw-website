@@ -11,6 +11,7 @@ import {
 } from "@/components/raids/data/raids-content";
 import { tamanhoDe } from "@/components/raids/data/raids-midia";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function RaidsRecompensas() {
   return (
@@ -53,7 +54,7 @@ export default function RaidsRecompensas() {
             larguras={[640, 1280]}
             largura={1280}
             altura={720}
-            sizes="(min-width: 1024px) 28rem, 100vw"
+            sizes={tamanhos.metade}
             className="h-auto w-full rounded-md border border-linha"
           />
           <figcaption className="mt-2 text-apoio text-texto-3">
@@ -70,7 +71,7 @@ export default function RaidsRecompensas() {
             larguras={[640, 1280]}
             largura={1280}
             altura={720}
-            sizes="(min-width: 768px) 18rem, 100vw"
+            sizes={tamanhos.terco}
             className="h-auto w-full rounded-md border border-linha"
           />
           <figcaption className="mt-2 text-apoio text-texto-3">O baú final por dentro. Print da guilda.</figcaption>
@@ -81,7 +82,7 @@ export default function RaidsRecompensas() {
             src={imagem.src}
             alt={imagem.alt}
             legenda={imagem.caption}
-            sizes="(min-width: 768px) 18rem, 100vw"
+            sizes={tamanhos.terco}
             {...tamanhoDe(imagem.src)}
           />
         ))}

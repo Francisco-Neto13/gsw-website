@@ -6,6 +6,7 @@ import {
   specialModesReferenceImage,
 } from "@/components/special-modes/data/special-modes-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function SpecialModesChallengeSection() {
   return (
@@ -54,11 +55,11 @@ export default function SpecialModesChallengeSection() {
               alt={specialModesReferenceImage.alt}
             >
               <div className="relative aspect-[25/9] w-full overflow-hidden rounded-xl border border-linha bg-black/60">
-                <Image
+                <Image quality={90}
                   src={specialModesReferenceImage.src}
                   alt={specialModesReferenceImage.alt}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 80vw"
+                  sizes={tamanhos.artigo}
                   className="object-contain"
                 />
               </div>

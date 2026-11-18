@@ -5,6 +5,7 @@ import {
   participationImages,
 } from "@/components/world-events/data/world-events-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function WorldEventsParticipationSection() {
   return (
@@ -42,11 +43,11 @@ export default function WorldEventsParticipationSection() {
               </div>
               <ClickableImagePreview src={image.src} alt={image.alt}>
                 <div className="relative aspect-video w-full bg-black/60">
-                  <Image
+                  <Image quality={90}
                     src={image.src}
                     alt={image.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                    sizes={tamanhos.metade}
                     className="object-contain p-2"
                   />
                 </div>

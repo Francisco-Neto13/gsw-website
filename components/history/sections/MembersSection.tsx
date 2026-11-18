@@ -48,7 +48,7 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
   return (
     <div className="rounded-md border border-linha bg-carvao p-3">
       <div className="relative mb-3 aspect-square w-full overflow-hidden rounded bg-elevada">
-        <Image
+        <Image quality={90}
           src={imageSrc}
           alt={member.name}
           fill

@@ -176,7 +176,7 @@ export default function LevelingBuildsSection() {
             >
               <div className="border-b border-linha px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
-                  <Image
+                  <Image quality={90}
                     src={tree.icon}
                     alt={`Icone ${tree.archetype}`}
                     width={32}
@@ -239,7 +239,7 @@ export default function LevelingBuildsSection() {
             >
               <div className="border-b border-linha bg-carvao px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3 sm:gap-4">
-                  <Image
+                  <Image quality={90}
                     src={classShowcaseImages[weapon.className]}
                     alt={`Classe ${weapon.className}`}
                     width={56}

@@ -27,7 +27,7 @@ export default function HomePage() {
           <ImagemDoJogo
             base={homeHero.imagem.base}
             alt=""
-            larguras={[640, 1920]}
+            larguras={[640, 1280, 1920]}
             largura={1920}
             altura={823}
             sizes="100vw"
@@ -116,9 +116,9 @@ export default function HomePage() {
             <ImagemDoJogo
               base={homeDestaque.imagem.base}
               alt={homeDestaque.imagem.alt}
-              larguras={[640, 1280]}
-              largura={1280}
-              altura={720}
+              larguras={[640, 1280, 1920]}
+              largura={1920}
+              altura={1080}
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -156,7 +156,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mt-10 grid items-start gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
-            <Image
+            <Image quality={90}
               src="/bg-guilda.webp"
               alt="Arte da guilda: membros da GsW reunidos numa mesa redonda sob vitrais roxos"
               width={1824}
@@ -167,7 +167,7 @@ export default function HomePage() {
             <ul className="grid grid-cols-4 gap-3 sm:gap-4" aria-label="Alguns membros da guilda">
               {retratos.map((membro) => (
                 <li key={membro.name}>
-                  <Image
+                  <Image quality={90}
                     src={membro.img!}
                     alt=""
                     width={160}

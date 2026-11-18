@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 import {
   grindSpots,
   professionGrindSpotsIntro,
@@ -54,11 +55,11 @@ export default function ProfessionGrindSpotsSection() {
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
                 <div className="relative aspect-video w-full bg-black">
-                  <Image
+                  <Image quality={90}
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    sizes={tamanhos.terco}
                     className="object-cover"
                   />
                 </div>
@@ -82,7 +83,7 @@ export default function ProfessionGrindSpotsSection() {
               <div className="flex flex-col gap-2 border-b border-linha px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:py-5">
                 <div className="flex items-center gap-4">
                   <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-linha bg-zinc-950">
-                    <Image
+                    <Image quality={90}
                       src={craftingSpotImageByProfession[professionSpots.profession] ?? "/icon.webp"}
                       alt={`Ícone ${professionSpots.profession}`}
                       fill

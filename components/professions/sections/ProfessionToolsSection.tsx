@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 import {
   bombTips,
   craftingXpTips,
@@ -63,11 +64,11 @@ export default function ProfessionToolsSection() {
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
                 <div className="relative aspect-video w-full bg-black">
-                  <Image
+                  <Image quality={90}
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                    sizes={tamanhos.metade}
                     className="object-contain p-1 sm:p-2"
                   />
                 </div>
@@ -85,11 +86,11 @@ export default function ProfessionToolsSection() {
             <article key={item.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={item.src} alt={item.alt}>
                 <div className="relative aspect-[4/3] w-full bg-black">
-                  <Image
+                  <Image quality={90}
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes={tamanhos.quarto}
                     className="object-contain p-1 sm:p-2"
                   />
                 </div>

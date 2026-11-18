@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 import {
   dungeonsRewardsCards,
   dungeonsRewardsImage,
@@ -35,11 +36,11 @@ export default function DungeonsRewardsSection() {
         <div className="mt-6 max-w-2xl overflow-hidden rounded-md border border-linha bg-carvao sm:mt-8">
           <ClickableImagePreview src={dungeonsRewardsImage.src} alt={dungeonsRewardsImage.alt}>
             <div className="relative aspect-video w-full">
-              <Image
+              <Image quality={90}
                 src={dungeonsRewardsImage.src}
                 alt={dungeonsRewardsImage.alt}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 42rem"
+                sizes={tamanhos.solta}
                 className="object-contain p-2"
               />
             </div>

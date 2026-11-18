@@ -42,7 +42,7 @@ export default function LazyYouTubeEmbed({
       className="group relative aspect-video w-full overflow-hidden rounded-md border border-linha bg-carvao"
       aria-label={`Assistir vídeo: ${title}`}
     >
-      <Image
+      <Image quality={90}
         src={thumbnail}
         alt=""
         fill

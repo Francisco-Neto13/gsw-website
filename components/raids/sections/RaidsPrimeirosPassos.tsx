@@ -9,6 +9,7 @@ import {
   silverbullNpcImage,
 } from "@/components/raids/data/raids-content";
 import { tamanhoDe } from "@/components/raids/data/raids-midia";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function RaidsPrimeirosPassos() {
   return (
@@ -58,14 +59,14 @@ export default function RaidsPrimeirosPassos() {
           src={silverbullNpcImage.src}
           alt={silverbullNpcImage.alt}
           legenda={silverbullNpcImage.caption}
-          sizes="(min-width: 768px) 28rem, 100vw"
+          sizes={tamanhos.metade}
           {...tamanhoDe(silverbullNpcImage.src)}
         />
         <Figura
           src={cinfrasSilverbullImage.src}
           alt={cinfrasSilverbullImage.alt}
           legenda={cinfrasSilverbullImage.caption}
-          sizes="(min-width: 768px) 28rem, 100vw"
+          sizes={tamanhos.metade}
           {...tamanhoDe(cinfrasSilverbullImage.src)}
         />
       </div>
@@ -78,7 +79,7 @@ export default function RaidsPrimeirosPassos() {
               src={passo.src}
               alt={passo.alt}
               legenda={`${indice + 1}. ${passo.alt}`}
-              sizes="(min-width: 1024px) 13rem, (min-width: 640px) 50vw, 100vw"
+              sizes={tamanhos.quarto}
               {...tamanhoDe(passo.src)}
             />
           </li>
@@ -91,7 +92,7 @@ export default function RaidsPrimeirosPassos() {
           src={imagem.src}
           alt={imagem.alt}
           legenda={imagem.caption}
-          sizes="(min-width: 768px) 40rem, 100vw"
+          sizes={tamanhos.solta}
           className="mt-10 max-w-[48rem]"
           {...tamanhoDe(imagem.src)}
         />

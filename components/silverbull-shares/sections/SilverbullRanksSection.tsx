@@ -35,7 +35,7 @@ export default function SilverbullRanksSection() {
               <div className="border-b border-linha px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3">
                   <div className="relative h-12 w-12 overflow-hidden rounded-md border border-linha bg-carvao sm:h-14 sm:w-14">
-                    <Image
+                    <Image quality={90}
                       src={rank.badge.src}
                       alt={rank.badge.alt}
                       fill

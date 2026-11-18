@@ -9,6 +9,7 @@ import {
 } from "@/components/world-events/data/world-events-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import LazyYouTubeEmbed from "@/components/shared/LazyYouTubeEmbed";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function WorldEventsAnnihilationSection() {
   return (
@@ -66,11 +67,11 @@ export default function WorldEventsAnnihilationSection() {
             <article key={image.src} className="overflow-hidden rounded-md border border-linha bg-carvao">
               <ClickableImagePreview src={image.src} alt={image.alt}>
                 <div className="relative aspect-video w-full">
-                  <Image
+                  <Image quality={90}
                     src={image.src}
                     alt={image.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                    sizes={tamanhos.metade}
                     className="object-cover"
                   />
                 </div>

@@ -83,11 +83,11 @@ export default function GallerySection() {
                   className="group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-xl border border-linha bg-zinc-900 transition-colors duration-200 hover:border-gsw/35 sm:aspect-video"
                   onClick={() => setSelectedPhotoIndex(index)}
                 >
-                  <Image
+                  <Image quality={90}
                     src={photo.thumbSrc || photo.src}
                     alt={photo.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    sizes="(min-width: 1024px) 20vw, 50vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:p-4">
@@ -163,7 +163,7 @@ export default function GallerySection() {
                   <div className="history-gallery-modal-content grid gap-3 md:grid-cols-[minmax(0,1.15fr)_minmax(220px,0.85fr)] lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
                     <div className="history-gallery-modal-media relative flex items-center justify-center">
                       <div className="history-gallery-modal-canvas relative h-[33vh] w-full overflow-hidden rounded-md border border-linha bg-black/45 sm:h-[40vh] md:h-[44vh] lg:h-[60vh]">
-                        <Image
+                        <Image quality={90}
                           src={selectedPhoto.src}
                           alt={selectedPhoto.title}
                           fill

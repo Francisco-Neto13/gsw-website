@@ -16,7 +16,7 @@ export default function Figura({ src, alt, legenda, largura, altura, sizes, clas
   return (
     <figure className={className}>
       <ClickableImagePreview src={src} alt={alt}>
-        <Image
+        <Image quality={90}
           src={src}
           alt={alt}
           width={largura}

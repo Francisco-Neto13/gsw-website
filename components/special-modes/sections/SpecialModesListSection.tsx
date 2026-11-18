@@ -27,7 +27,7 @@ export default function SpecialModesListSection() {
               <div className="border-b border-linha px-5 py-4 sm:px-7 sm:py-5">
                 <div className="flex items-center gap-3">
                   <div className="relative h-9 w-9 overflow-hidden rounded-md border border-linha bg-carvao sm:h-10 sm:w-10">
-                    <Image
+                    <Image quality={90}
                       src={mode.icon}
                       alt={`Ícone do modo ${mode.name}`}
                       fill

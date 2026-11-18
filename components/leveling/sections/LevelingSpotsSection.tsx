@@ -4,6 +4,7 @@ import {
   levelingSpotsIntro,
 } from "@/components/leveling/data/leveling-content";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function LevelingSpotsSection() {
   return (
@@ -51,11 +52,11 @@ export default function LevelingSpotsSection() {
                 <div className="overflow-hidden border-t border-linha bg-zinc-950 lg:border-t-0 lg:border-l">
                   <ClickableImagePreview src={spot.image} alt={`Screenshot do spot ${spot.name}`}>
                     <div className="leveling-media-pop relative aspect-video w-full p-1 sm:p-2">
-                      <Image
+                      <Image quality={90}
                         src={spot.image}
                         alt={`Screenshot do spot ${spot.name}`}
                         fill
-                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        sizes={tamanhos.metade}
                         className="object-contain"
                       />
                     </div>
