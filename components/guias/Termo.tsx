@@ -62,7 +62,7 @@ export default function Termo({ id, children }: TermoProps) {
         role="tooltip"
         // Fechada, sai do layout; ao abrir, .caixa-abre roda o surgimento e o recorte em degraus (motion.css).
         style={{ left: deslocamento }}
-        className={`caixa-item caixa-abre absolute z-50 w-72 max-w-[calc(100vw-2rem)] px-4 py-3 text-left ${
+        className={`caixa-item caixa-abre absolute z-50 w-72 whitespace-normal max-w-[calc(100vw-2rem)] px-4 py-3 text-left ${
           acima ? "bottom-full mb-2 [--caixa-y:6px]" : "top-full mt-2 [--caixa-y:-6px]"
         } ${aberto ? "block" : "hidden"}`}
       >
