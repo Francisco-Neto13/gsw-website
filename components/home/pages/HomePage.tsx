@@ -1,13 +1,14 @@
-import { ArrowRight, ChevronDown, Search } from "lucide-react";
+import { ArrowRight, ChevronDown, Clock, Search } from "lucide-react";
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { members } from "@/components/history/data/members";
 import BotaoBuscar from "@/components/home/sections/BotaoBuscar";
-import { homeComeco, homeComunidade, homeDestaque, homeHero } from "@/components/home/data/home-content";
+import { homeCategorias, homeComeco, homeComunidade, homeDestaque, homeHero } from "@/components/home/data/home-content";
 import { raidGuideGroups, raids } from "@/components/raids/data/raids-content";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
 import TextoAnimado from "@/components/shared/TextoAnimado";
+import { previaDoGuia } from "@/lib/previas";
 import { discordUrl, grupos, guiaHref, guiasDoGrupo, guiasEmOrdem } from "@/lib/site-content";
 
 // Números do destaque saem dos próprios dados do guia, nunca escritos à mão.
@@ -117,35 +118,72 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Por onde começar: os grupos de guias, na ordem do jogo. */}
+      {/* Por onde começar: uma prévia por grupo de guias, na ordem do jogo. Tópicos e tempo de leitura saem do
+          conteúdo de cada guia (lib/previas.ts). */}
       <section aria-labelledby="comeco" className="casca py-16">
         <h2 id="comeco" className="text-titulo-2 text-texto">
           {homeComeco.titulo}
         </h2>
         <p className="mt-3 max-w-leitura text-texto-2">{homeComeco.texto}</p>
-        <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-          {grupos.map((grupo) => (
-            <div key={grupo.id} data-revelar-item>
-              <h3 className="border-b border-linha pb-2 font-bold text-texto-3">{grupo.titulo}</h3>
-              <ul className="mt-3 flex flex-col gap-3">
-                {guiasDoGrupo(grupo.id).map((guia) => (
-                  <li key={guia.slug}>
-                    <Link href={guiaHref(guia.slug)} className="group block transition-transform duration-[var(--dur-hover)] ease-[var(--ease-saida)] hover:translate-x-1">
-                      <span className="flex items-center gap-2 font-titulo text-titulo-4 text-texto group-hover:text-violeta">
-                        {guia.titulo}
-                        {guia.estado === "em-construcao" ? (
-                          <span className="rounded border border-dashed border-texto-3/60 px-1.5 font-texto text-detalhe text-texto-3">
-                            em breve
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          {grupos.map((grupo) => {
+            const categoria = homeCategorias[grupo.id];
+            return (
+              <article key={grupo.id} aria-labelledby={`categoria-${grupo.id}`} className="holofote flex flex-col overflow-hidden rounded-md border border-linha bg-carvao">
+                <div className="zoom-hover relative aspect-[16/7] overflow-hidden border-b border-linha">
+                  <ImagemDoJogo
+                    base={categoria.imagem.base}
+                    alt={categoria.imagem.alt}
+                    larguras={[640, 1280]}
+                    largura={1280}
+                    altura={720}
+                    sizes="(min-width: 1024px) 48vw, calc(100vw - 2rem)"
+                    className="h-full w-full object-cover"
+                  />
+                  <div aria-hidden className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgba(25,24,25,0.95)_0%,rgba(25,24,25,0.35)_45%,transparent_75%)]" />
+                  <h3 id={`categoria-${grupo.id}`} className="absolute bottom-4 left-5 font-titulo text-titulo-3 text-texto sm:left-6">
+                    {grupo.titulo}
+                  </h3>
+                </div>
+                <div className="flex flex-1 flex-col px-5 pb-5 pt-4 sm:px-6">
+                  <p className="text-texto-2">{categoria.resumo}</p>
+                  <ul className="mt-4 border-t border-linha">
+                    {guiasDoGrupo(grupo.id).map(previaDoGuia).map(({ guia, topicos, minutos }) => (
+                      <li key={guia.slug} className="border-b border-linha last:border-b-0">
+                        <Link
+                          href={guiaHref(guia.slug)}
+                          className="group flex items-start gap-4 py-3 transition-[padding] duration-[var(--dur-hover)] ease-[var(--ease-saida)] hover:pl-2"
+                        >
+                          <span className="min-w-0 flex-1">
+                            <span className="flex flex-wrap items-center gap-2 font-titulo text-titulo-4 text-texto transition-colors duration-[var(--dur-ui)] group-hover:text-violeta">
+                              {guia.titulo}
+                              {guia.estado === "em-construcao" ? (
+                                <span className="rounded border border-dashed border-texto-3/60 px-1.5 font-texto text-detalhe text-texto-3">
+                                  em breve
+                                </span>
+                              ) : null}
+                            </span>
+                            <span className="mt-0.5 block text-apoio text-texto-3">
+                              {topicos.length > 0 ? topicos.join(" · ") : guia.resumo}
+                            </span>
                           </span>
-                        ) : null}
-                      </span>
-                      <span className="block text-apoio text-texto-2">{guia.resumo}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                          {minutos ? (
+                            <span className="mt-1.5 flex shrink-0 items-center gap-1.5 text-detalhe text-texto-3">
+                              <Clock aria-hidden size={14} strokeWidth={1.75} />
+                              <span>
+                                <span className="numeros font-mono">{minutos}</span> min de leitura
+                              </span>
+                            </span>
+                          ) : null}
+                          <ArrowRight aria-hidden size={16} strokeWidth={1.75} className="mt-1.5 shrink-0 text-texto-3 group-hover:text-violeta" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 

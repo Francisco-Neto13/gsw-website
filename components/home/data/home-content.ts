@@ -13,6 +13,38 @@ export const homeComeco = {
   texto: "Os guias seguem a ordem do jogo. Escolha a etapa em que você está.",
 };
 
+/** Prévia de cada grupo de guias na Início: o que a pessoa aprende e uma print do jogo (docs/CREDITOS.md). */
+export const homeCategorias: Record<string, { resumo: string; imagem: { base: string; alt: string } }> = {
+  progressao: {
+    resumo: "Do nível 1 ao 121: onde upar, como montar a party e as profissões que sustentam o resto do jogo.",
+    imagem: {
+      base: "/inicio/categorias/categoria-progressao-mineracao",
+      alt: "Personagem minerando Voidstone numa caverna de cristais roxos",
+    },
+  },
+  endgame: {
+    resumo: "O conteúdo de nível máximo: lootruns, as cinco raids sala a sala, dungeons corrompidas e eventos no mapa.",
+    imagem: {
+      base: "/inicio/categorias/categoria-endgame-lootrun",
+      alt: "Baú de recompensa azul e dourado ao fim de uma lootrun",
+    },
+  },
+  economia: {
+    resumo: "Shares, ranks e a loja do Silverbull: o que cada compra libera e quando vale a pena.",
+    imagem: {
+      base: "/inicio/categorias/categoria-economia-token",
+      alt: "Banca de Token Offer com estandartes coloridos e um NPC ao lado, numa cidade",
+    },
+  },
+  especiais: {
+    resumo: "Hardcore, Ironman, Craftsman e outros modos com regras próprias, além dos festivais de cada temporada.",
+    imagem: {
+      base: "/inicio/categorias/categoria-especiais-pavao",
+      alt: "Noble Peacock, um pavão de penas azuis, num gramado à noite diante de uma cidade",
+    },
+  },
+};
+
 export const homeDestaque = {
   titulo: "Raids, sala a sala",
   texto:
