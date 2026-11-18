@@ -1,13 +1,11 @@
 {
   "0": "raids-content.ts",
   "1": "silverbull-shares-content.ts",
-  "2": "lootrun-content.ts",
   "3": "professions-content.ts",
   "4": "env",
   "5": "leveling-content.ts",
   "7": "world-events-content.ts",
   "8": "Inventário do conteúdo atual",
-  "16": "special-modes-content.ts",
   "19": "compilerOptions",
   "21": "CI/CD",
   "24": "AGENTS.md — regras para agentes",
