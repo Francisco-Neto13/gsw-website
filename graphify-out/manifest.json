@@ -672,14 +672,14 @@
     "semantic_hash": "ab575e944f15d39a5486cf9fca385c5e"
   },
   "AGENTS.md": {
-    "mtime": 1794983194.6618247,
-    "seen": 1794983892.9541948,
-    "ast_hash": "d36210dc42ff629f946979c45add689d",
-    "semantic_hash": "d36210dc42ff629f946979c45add689d"
+    "mtime": 1794984980.2461474,
+    "seen": 1794985453.478984,
+    "ast_hash": "0283d64e1c5d8fa9f291602791300cfd",
+    "semantic_hash": "0283d64e1c5d8fa9f291602791300cfd"
   },
   "CLAUDE.md": {
-    "mtime": 1794983195.5142395,
-    "seen": 1794983892.9541957,
+    "mtime": 1794983985.6243076,
+    "seen": 1794984028.6884887,
     "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
     "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
   },
@@ -714,9 +714,87 @@
     "semantic_hash": "b783b87596545f9ccaaf5d41430fb3d2"
   },
   "docs/PENDENCIAS.md": {
-    "mtime": 1794983293.6556642,
-    "seen": 1794983892.954202,
-    "ast_hash": "f8fa81041a764f75cfb1485745c08f68",
-    "semantic_hash": "f8fa81041a764f75cfb1485745c08f68"
+    "mtime": 1794984970.6827915,
+    "seen": 1794985453.47899,
+    "ast_hash": "30d69a6ba25cf3bb01e7333768c4fde1",
+    "semantic_hash": "30d69a6ba25cf3bb01e7333768c4fde1"
+  },
+  "PRODUCT.md": {
+    "mtime": 1794983845.5617626,
+    "seen": 1794985453.4789863,
+    "ast_hash": "d7c4dcf0045cbad7a4ed896a3eeb0df8",
+    "semantic_hash": "d7c4dcf0045cbad7a4ed896a3eeb0df8"
+  },
+  "docs/GRAFO.md": {
+    "mtime": 1794984007.1738696,
+    "seen": 1794985453.478989,
+    "ast_hash": "156a91b590e28b048deed13b5ea8b95e",
+    "semantic_hash": "156a91b590e28b048deed13b5ea8b95e"
+  },
+  "docs/CREDITOS.md": {
+    "mtime": 1794984404.1512916,
+    "seen": 1794985453.4789877,
+    "ast_hash": "5019c2b704b690124b89f1766b9442f3",
+    "semantic_hash": "5019c2b704b690124b89f1766b9442f3"
+  },
+  "docs/redesign/README.md": {
+    "mtime": 1794984962.7872841,
+    "seen": 1794985453.4789915,
+    "ast_hash": "f0bf2fe75f982f183e73df63537f1d22",
+    "semantic_hash": "f0bf2fe75f982f183e73df63537f1d22"
+  },
+  "docs/redesign/diagnostico.md": {
+    "mtime": 1794984949.6010313,
+    "seen": 1794985453.4789932,
+    "ast_hash": "3cf2cfb1937ebf1aef5912e9dfe9737b",
+    "semantic_hash": "3cf2cfb1937ebf1aef5912e9dfe9737b"
+  },
+  "docs/redesign/direcao-visual.md": {
+    "mtime": 1794984875.5401654,
+    "seen": 1794985453.4789941,
+    "ast_hash": "1c2d2f7356a203ea35ce02e026afb32a",
+    "semantic_hash": "1c2d2f7356a203ea35ce02e026afb32a"
+  },
+  "docs/redesign/estrutura-do-guia.md": {
+    "mtime": 1794984764.1187196,
+    "seen": 1794985453.4789958,
+    "ast_hash": "3606a2e6ac6f753a904d9926d5055252",
+    "semantic_hash": "3606a2e6ac6f753a904d9926d5055252"
+  },
+  "docs/redesign/fontes-e-licencas.md": {
+    "mtime": 1794984455.3695242,
+    "seen": 1794985453.478997,
+    "ast_hash": "6bce22d3808c90b10be0ba53df579bed",
+    "semantic_hash": "6bce22d3808c90b10be0ba53df579bed"
+  },
+  "docs/redesign/impeccable/audit.md": {
+    "mtime": 1794984907.121173,
+    "seen": 1794985453.4789982,
+    "ast_hash": "b0bf7829a8510bcca2f0fd4cf2c24cdd",
+    "semantic_hash": "b0bf7829a8510bcca2f0fd4cf2c24cdd"
+  },
+  "docs/redesign/impeccable/critique-design.md": {
+    "mtime": 1794984907.1241622,
+    "seen": 1794985453.4789996,
+    "ast_hash": "7bc3d31e1e5a057d4a39d37c84ee0e95",
+    "semantic_hash": "7bc3d31e1e5a057d4a39d37c84ee0e95"
+  },
+  "docs/redesign/impeccable/critique-detector.md": {
+    "mtime": 1794984907.1221604,
+    "seen": 1794985453.4790006,
+    "ast_hash": "9d15503a2f9895164901e52ba5f5e363",
+    "semantic_hash": "9d15503a2f9895164901e52ba5f5e363"
+  },
+  "docs/redesign/inventario-conteudo.md": {
+    "mtime": 1794984721.750109,
+    "seen": 1794985453.4790018,
+    "ast_hash": "f04a19462821669e468b6866d33761b2",
+    "semantic_hash": "f04a19462821669e468b6866d33761b2"
+  },
+  "docs/redesign/navegacao.md": {
+    "mtime": 1794984430.2189326,
+    "seen": 1794985453.4790032,
+    "ast_hash": "a73bf7ae30e24cc2eaf4f29517d410cb",
+    "semantic_hash": "a73bf7ae30e24cc2eaf4f29517d410cb"
   }
 }
