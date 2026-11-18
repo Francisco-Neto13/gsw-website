@@ -21,10 +21,11 @@ export default function PaginaDosGuias() {
         podem ter dados desatualizados.
       </p>
 
-      {/* Dois grupos por linha no desktop largo: a lista usa a tela sem esticar cada linha. */}
-      <div className="mt-10 grid gap-12 xl:grid-cols-2 xl:gap-x-16">
+      {/* Duas colunas de fluxo no desktop largo: os grupos se encaixam um embaixo do outro, sem vão quando um grupo
+          tem menos guias, e nenhum fica perdido no fim da página. */}
+      <div className="mt-10 xl:columns-2 xl:gap-x-16">
         {grupos.map((grupo) => (
-          <section key={grupo.id} aria-labelledby={`grupo-${grupo.id}`}>
+          <section key={grupo.id} aria-labelledby={`grupo-${grupo.id}`} className="mb-12 break-inside-avoid">
             <h2 id={`grupo-${grupo.id}`} className="text-titulo-3 text-texto">
               {grupo.titulo}
             </h2>
