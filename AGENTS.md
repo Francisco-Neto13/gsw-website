@@ -9,6 +9,21 @@ Portal da guilda GsW (Guardians of Wynn), do servidor de Minecraft Wynncraft: ho
 guilda e guias do jogo (Lootrun, Raids, Dungeons, World Events, Profissões, Leveling, Modos
 Especiais, Silverbull Shares, Montarias e Festivais). **Só front**: sem back-end, banco, API
 própria ou variáveis de ambiente. Todo o conteúdo é estático, versionado no repositório.
+Produto e público: `PRODUCT.md`.
+
+## Grafo do projeto (Graphify)
+
+O grafo de conhecimento fica em `graphify-out/` (`graph.json`, `GRAPH_REPORT.md`). Detalhes,
+instalação num clone novo e o que é versionado: `docs/GRAFO.md`.
+
+- **Consulte o grafo antes de explorar arquivos.** Para qualquer pergunta sobre o código, rode
+  `graphify query "<pergunta>"` (ou `graphify explain "X"` / `graphify path "A" "B"`) antes do
+  primeiro `grep`, busca ou leitura; abra só os trechos que o grafo apontou. Passe esta regra para
+  todo subagente que for explorar o código.
+- `GRAPH_REPORT.md` só para visão geral da arquitetura, quando query/explain/path não bastarem.
+- O hook `post-commit` refaz a parte de código do grafo sozinho. Mudou documentação, rode
+  `/graphify . --update`. O `graph.json` atualizado entra num commit próprio no fim da tarefa
+  (`chore(repo): update project graph`); diff grande nele é esperado.
 
 ## Stack
 
@@ -52,7 +67,9 @@ npm run convert:webp # converte imagens de image-workbench/input/ para webp em o
 | `scripts/` | `convert-to-webp.mjs` (pipeline de imagens) |
 | `image-workbench/` | Entrada e saída locais do conversor (conteúdo fora do git) |
 | `tests/` | Testes `*.test.mjs` do `node --test` |
-| `.githooks/` | `pre-push` |
+| `.githooks/` | `pre-push` (versionado) e hooks do Graphify (locais, fora do git) |
+| `graphify-out/` | Grafo do Graphify (`docs/GRAFO.md`) |
+| `docs/redesign/` | Diagnóstico e proposta do redesign |
 | `.github/workflows/` | `ci.yml` e `deploy.yml` |
 | `docs/` | Documentação do projeto |
 

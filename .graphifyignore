@@ -1,0 +1,9 @@
+# Fora do grafo: mídia do site (cada imagem viraria uma extração por visão, sem ganho para o código),
+# saídas de build e a própria pasta do grafo.
+public/
+image-workbench/
+node_modules/
+.next/
+graphify-out/
+package-lock.json
+LICENSE
