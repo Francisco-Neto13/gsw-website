@@ -225,7 +225,7 @@ H1 e H2 têm `text-wrap: balance`; parágrafos, itens, legendas e `dd` têm `tex
 
 **The Digit Rule.** Pixelify nunca carrega números: o 5 dela se lê como S. Todo número (nível, coordenada, contagem, número de etapa) vai em JetBrains Mono.
 
-**The Measure Rule.** Texto de leitura nunca passa de 60ch, inclusive dentro de cabeçalhos e caixas.
+**The Measure Rule.** Texto de leitura nunca passa de 70ch (`max-w-leitura`), inclusive dentro de cabeçalhos e caixas.
 
 ## Layout
 
@@ -233,7 +233,7 @@ H1 e H2 têm `text-wrap: balance`; parágrafos, itens, legendas e `dd` têm `tex
 - **Casca (`.casca`):** o contêiner único do site, até 120 rem (`--casca-max`), com margem lateral `--casca-x` de 16, 24, 32 e 48 px (a partir de 0, 640, 1024 e 1536 px). Top bar, rodapé, Início, `/guias` e as colunas dos guias usam a mesma casca: logo, títulos e o texto da sidebar começam no mesmo x em todas as páginas. Nenhuma página define outro `max-w` + `px` de moldura.
 - **Sem faixa vazia:** nenhuma página centraliza uma coluna estreita na casca. Início e `/guias` usam grades na casca inteira. Nos guias, o artigo ocupa todo o espaço entre a sidebar e o índice: texto corrido em 70ch, e tabelas, painéis e grades de mídia na largura do artigo. Na abertura do guia, a ficha vira quadro lateral a partir de 1280 px. A História usa duas colunas na casca (1:2): título e lide de cada seção fixos à esquerda, conteúdo à direita.
 - **Página de guia:** três colunas a partir de 1280 px: sidebar de guias de 16 rem (a partir de 1024 px) encostada na margem da casca, artigo ocupando todo o espaço do meio e índice "Nesta página" de 15 rem encostado na margem direita. Sidebar e índice são `sticky` sob a top bar, com rolagem própria. Abaixo de 1280 px o índice vira uma barra fixa "Nesta página: <seção atual>" que abre em lista; abaixo de 768 px a navegação de áreas e os guias vão para uma gaveta lateral (`<dialog>`, até 22 rem).
-- **Ritmo:** seções de guia com 48 px de respiro vertical e da História com 64 a 80 px, separadas por régua de 1 px. Cabeçalho de seção sempre à esquerda: H2 no tamanho de título, lide em 60ch, sem rótulo acima. Dentro das caixas, 16 a 20 px de respiro.
+- **Ritmo:** seções de guia com 48 px de respiro vertical e da História com 64 a 80 px, separadas por régua de 1 px. Cabeçalho de seção sempre à esquerda: H2 no tamanho de título, lide em 70ch, sem rótulo acima. Dentro das caixas, 16 a 20 px de respiro.
 - **Grades sem órfão:** um número ímpar de itens não deixa um card sozinho numa linha (o último ocupa a linha toda, como nos pilares), e texto de card nunca é centralizado.
 - **Etapas:** salas numeradas em lista, ligadas por um traço vertical de 1 px na régua forte.
 - **Onde parei:** o guia guarda no navegador a última seção visível e oferece "Continuar de" só para quem volta pelo topo.
@@ -300,24 +300,33 @@ Lucide em toda a interface, traço de 1,75 px, em 14, 16, 18 ou 22 px, sempre `a
 
 ### Imagens e animações
 - **Prints próprios:** AVIF com WebP de reserva, em larguras geradas fora do build, com largura e altura reais e carga sob demanda (`ImagemDoJogo`). Na Início, o print grande recebe um véu em gradiente do chão.
-- **GIFs:** viram pôster WebP leve mais animação WebP que só baixa quando o leitor pede (`AnimacaoSobDemanda`).
+- **GIFs:** viram pôster e animação em WebP **sem perda**; a animação baixa sozinha quando chega perto da tela e entra por cima do pôster com fade (`AnimacaoSobDemanda`). Com movimento reduzido, espera o clique.
+- **Qualidade:** `next/image` em qualidade 90 e AVIF; `sizes` sempre de `lib/tamanhos.ts`; nunca piorar a imagem para economizar peso (o peso se resolve com tamanhos responsivos e carga sob demanda).
 - **Vídeos POV:** miniatura do YouTube com botão; o iframe só carrega no clique e recebe o foco.
 - **Ampliar:** prints de guia ampliam no clique.
 
 ### Motion
-Uma curva só, `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease-saida`). 120 a 150 ms para hover e cor, 200 ms para a caixa do termo (opacidade e 4 px, sem escala, entrando com `@starting-style`) e menus, 360 ms para a entrada de seção, que só existe na História (opacidade e 12 px, uma vez); guias e Início não animam a entrada. Com `prefers-reduced-motion: reduce`, os deslocamentos saem e fica só a opacidade em 120 ms; a caixa do termo aparece sem transição; nada fica escondido esperando animação.
+Estudo das referências e mapa completo em `docs/redesign/ANIMACOES.md`. Curva principal `cubic-bezier(0.16, 1, 0.3, 1)` (`--ease-saida`); tokens `--dur-ui` 180 ms, `--dur-hover` 400 ms, `--dur-entrada` 800 ms, `--subida` 24 px, `--escalonar` 70 ms (`app/styles/motion.css`).
+
+- **Entradas de topo** (título palavra por palavra com máscara, abertura em sequência, imagem do palco): keyframes CSS com `fill-mode: both` no HTML do servidor, então o primeiro desenho já sai no ponto de partida.
+- **Revelação ao rolar:** títulos de seção, figuras, tabelas, cartões, etapas e itens de grade sobem 24 px e aparecem uma vez, em sequência entre irmãos. O script inline do `<head>` (`lib/movimento.ts`) liga tudo antes do primeiro desenho, sem esperar o React; sem JS, nada fica escondido. Parágrafos não animam.
+- **Rolagem:** Lenis no desktop; palco fixo da Início ligado à rolagem (`--p`); top bar ganha vidro depois de rolar.
+- **Interação:** holofote e inclinação em cartões, botões que sobem com brilho, setas que andam, caixa de item abrindo em degraus (`steps()`), como no jogo.
+- **Movimento reduzido:** só fades de 200 ms; sem Lenis, paralaxe, partículas, fita, feixe e inclinação.
+- Só `transform`, `opacity` e `clip-path` em animação; `filter` animado numa camada com imagem grande travou o Chrome no quadro inicial.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** usar o violeta GsW só como preenchimento de ação e estado ativo, com texto branco por cima.
 - **Do** usar o violeta de texto para links e nomes, e o violeta de borda para foco e indicadores ativos.
-- **Do** manter texto de leitura em até 60ch, Alegreya Sans 17 px com entrelinha 1,7.
+- **Do** manter texto de leitura em até 70ch, Alegreya Sans 17 px com entrelinha 1,7.
 - **Do** escrever todo número em JetBrains Mono, com algarismos tabulares.
 - **Do** colocar uma ficha do guia por página, logo abaixo do H1, e reservar a caixa de item para consulta e sobreposições.
 - **Do** marcar termos do jogo com `[[chave|texto]]` nos arquivos de dados, e acrescentar a explicação em `lib/glossario.ts`.
 - **Do** mostrar estado por ícone, traço ou texto além da cor (tracejado para o que ainda não existe).
-- **Do** servir prints próprios em AVIF com WebP de reserva e GIFs como pôster mais animação sob demanda.
+- **Do** servir prints próprios em AVIF com WebP de reserva e GIFs como pôster mais animação sem perda, carregada perto da tela.
+- **Do** animar bloco que entra (título de seção, figura, cartão) e deixar o texto corrido parado.
 - **Do** desenhar réguas e bordas com 1 px exato.
 
 ### Don't:

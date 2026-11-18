@@ -55,6 +55,7 @@ Exceção herdada: o guia de Leveling (modelo antigo) ainda usa ícones da CDN n
 | Item | Onde | Licença | Crédito exigido |
 |---|---|---|---|
 | [Lucide](https://lucide.dev) (`lucide-react` 1.66.0) | Todos os ícones de interface, bombas e tokens do Shares | ISC | Não |
+| [Lenis](https://github.com/darkroomengineering/lenis) (`lenis` 1.3.27) | Rolagem suave no desktop | MIT | Não |
 | [Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans) | Títulos e selos | SIL OFL 1.1 | Não no site; a licença acompanha a fonte |
 | [Alegreya Sans](https://fonts.google.com/specimen/Alegreya+Sans) | Texto | SIL OFL 1.1 | Idem |
 | [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) | Números, coordenadas | SIL OFL 1.1 | Idem |
@@ -91,12 +92,13 @@ terceiro entra nesta página antes de ir para `public/`.
 
 Escolhidas entre as 187 prints do dono (pasta de screenshots do perfil Wynncraft do Modrinth),
 recortadas, com chat, nomes e nametags de outros jogadores desfocados quando apareciam, e
-convertidas para AVIF e WebP em duas larguras. Só as usadas foram copiadas.
+convertidas para AVIF e WebP. Só as usadas foram copiadas. Regeradas em 18/11/2026 em AVIF 70 /
+WebP 90 (antes 50 / 78), com versão de 1920 px quando a fonte tem.
 
 | Arquivo em `public/` | Print original | Tratamento | Usada em |
 |---|---|---|---|
-| `inicio/inicio-hero-ilha-cerejeiras-{640,1920}` | 2026-04-05_03.20.00 | Recorte 21:9 | Início, abertura |
-| `raids/prints/raid-twp-chefe-anathema-{640,1280}` | 2026-04-05_04.18.04_2 | Nenhum | Raids (TWP) e destaque da Início |
+| `inicio/inicio-hero-ilha-cerejeiras-{640,1280,1920}` | 2026-04-05_03.20.00 | Recorte 21:9 | Início, abertura |
+| `raids/prints/raid-twp-chefe-anathema-{640,1280,1920}` | 2026-04-05_04.18.04_2 | Nenhum | Raids (TWP) e destaque da Início |
 | `raids/prints/raid-nol-palacio-nexus-{640,1280}` | 2026-05-01_14.41.02 | Recorte sem chat e HUD; desfoque no scoreboard | Raids (NOL) |
 | `raids/prints/raid-ui-bau-recompensa-{640,1280}` | 2026-03-07_23.23.21 | Recorte sem chat | Raids, recompensas |
 | `raids/prints/raid-ui-aspecto-mitico-{640,1280}` | 2026-04-21_15.33.06 | Recorte sem chat | Raids, aspects |

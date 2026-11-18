@@ -43,3 +43,7 @@ em `PRODUCT.md` na raiz.
 - Pesquisa de conteúdo e licenças: Minecraft Usage Guidelines, termos da Wynncraft e da API,
   licença da wiki, item guide oficial.
 - Sem prints nem vídeos na entrega: as capturas usadas para avaliar ficaram fora do repositório.
+
+## Depois da proposta
+
+- [ANIMACOES.md](ANIMACOES.md): estudo das referências de movimento, linguagem adotada, mapa do que foi aplicado e a correção da qualidade das imagens.

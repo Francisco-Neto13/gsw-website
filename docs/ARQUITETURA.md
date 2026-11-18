@@ -35,7 +35,8 @@ app/
   styles/               foundation (tokens, base, caixa-item), motion, efeitos dos modelos antigos
 components/
   shared/               TopBar, Busca, GuiaNavLista, SiteFooter, ImagemDoJogo, AnimacaoSobDemanda,
-                        ClickableImagePreview, LazyYouTubeEmbed, GuideIntro, AnimationInitializer
+                        ClickableImagePreview, LazyYouTubeEmbed, GuideIntro, Efeitos (motor de
+                        movimento), TransicaoDePagina, TextoAnimado
   guias/                peças do modelo de guia: GuiaLayout, FichaGuia, DicaGsw, Termo,
                         TextoComTermos, SecaoGuia, Figura, FimDoGuia, Breadcrumb, SeloVersao,
                         GuiaEmConstrucao

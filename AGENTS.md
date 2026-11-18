@@ -36,6 +36,7 @@ instalação num clone novo e o que é versionado: `docs/GRAFO.md`.
 | Tailwind CSS (via `@tailwindcss/postcss`) | 4 |
 | ESLint (`eslint-config-next` core-web-vitals + typescript) | 9 |
 | sharp (só no script de conversão de imagens) | 0.34 |
+| Lenis (rolagem suave, carregada sob demanda) | 1.3.27 |
 
 Hospedagem: a definir (a Vercel não será mais usada; o `deploy.yml` está desligado e precisa ser
 reescrito). Ver `docs/INFRAESTRUTURA.md`. Sistema visual: `DESIGN.md`.
