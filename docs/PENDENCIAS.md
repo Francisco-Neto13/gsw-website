@@ -11,6 +11,8 @@ Raids). Ao resolver um item, apague-o daqui no mesmo PR.
 | Hospedagem de produção | A Vercel não será mais usada. O `deploy.yml` atual publica na Vercel e está desligado; precisa ser trocado pelo destino novo (provavelmente a VPS, como o Portfolio) antes de ligar o deploy |
 | Autorização da Wynncraft para ícones oficiais | Sem ela, nada da CDN oficial entra no site (`docs/CREDITOS.md`). Pedido pelo Discord de desenvolvedores |
 | Links das ferramentas de alimentação (Montarias) | Faltam o link da Tabela de Materiais e Atributos e o da Calculadora (Wynnhub); os cartões aparecem tracejados com "Link a definir". Preencher `href` em `recursosDeAlimentacao` |
+| Imagens do guia de Festivais | Fora do site por serem da wiki ou arte oficial (regra em `docs/CREDITOS.md`): promo do Bonfire, logo do Heroes, Bonfire Keeper, The Guide, The Traveler, quadro de convites, mapa do Blizzard Brawl e a alma (origem não confirmada). A print do Discord (Totem of Tales) mostra nome e avatar de outro jogador. Os lugares esperam arquivos próprios em `public/festivais/` (caminhos em `festivals-content.ts`); cada um aparece sozinho ao ser medido |
+| Crédito de autor do guia de Festivais | Decidir entre creditar o texto a RFL_C no fim do guia ou não creditar |
 | Crédito de autor do guia de Montarias | Decidir entre creditar o texto a gabu322 (Betinha) no fim do guia ou não creditar |
 | Vídeos repetidos na TCC Sala 3 | "Agate Axon" usa o mesmo vídeo de "Primeval Machine" e "Elder Astal" o de "Desvie das Pedras". Pode ser o mesmo POV mostrando dois caminhos ou erro; confirmar ou gravar os certos |
 
@@ -31,6 +33,17 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 | Montarias: Y do curral do Adasaur (guia 83; wiki e Wynntils 59 a 60) | Montarias, tipos |
 | Montarias: bônus do breeding (+10~15, +20~40) e chances de cor (50/48/4%) sem fonte; a wiki diz que a mecânica exata é desconhecida | Montarias, breeding |
 | Montarias: o que limita o tier do material (guia: o Level; wiki: o maior atributo individual) | Montarias, alimentação |
+| Festivais: nome da ilha (guia mistura Isle/Isles of Fiction; no jogo é "Isles of Fiction") | Festivais, estrutura e recompensas |
+| Festivais: buff da Aster no Heroes (guia: aleatório; wiki: ciclo fixo dos 8 buffs, via Boost Token de 40 min) | Festivais, Heroes |
+| Festivais: Talespun Citadel é área oculta, não ilha; ascender exige matar 6 jogadores + 3 bosses + recursos (guia: mínimo de 6 jogadores) | Festivais, Heroes |
+| Festivais: as 3 caixas grátis do início são comuns; as temáticas vêm dos objetivos. Teto do Spirits é 27, não 30 | Festivais, abertura de cada festival e estrutura |
+| Festivais: Hearthflame Hunt usa um cajado (Hearthkeeper's Staff), não varinha | Festivais, Bonfire |
+| Festivais: Banish the Beyond tem um 8º espírito desde 2026 (The Hollowed, Sovereign Gikyo); "paletes" se chamam blockades | Festivais, Spirits |
+| Festivais: coordenadas a 1 bloco da wiki (Trinket Merchant z -1603, conversor z -1606, Aster z -1631) | Festivais, Heroes e Bonfire |
+| Festivais: Blizzard Brawl usa o papel Damage (não DPS); Mountainside é área oculta ligada por airship | Festivais, Blizzard |
+| Festivais: Dodge 'Em e Thin Ice se revezam a cada 48 h | Festivais, Blizzard |
+| Festivais: prêmios "trinkets consumíveis" do Drawing são Spirit Fireworks e Rotten Pumpkins | Festivais, Spirits |
+| Festivais: sem fonte para o tiro ao alvo em 424, 67, -1630 e para a máquina de biscoitos (1024 por 32 LE) | Festivais, Heroes e Blizzard |
 
 ## Próxima etapa (depois da validação)
 
