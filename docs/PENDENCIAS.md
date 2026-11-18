@@ -11,7 +11,7 @@ Raids). Ao resolver um item, apague-o daqui no mesmo PR.
 | Hospedagem de produção | A Vercel não será mais usada. O `deploy.yml` atual publica na Vercel e está desligado; precisa ser trocado pelo destino novo (provavelmente a VPS, como o Portfolio) antes de ligar o deploy |
 | Autorização da Wynncraft para ícones oficiais | Sem ela, nada da CDN oficial entra no site (`docs/CREDITOS.md`). Pedido pelo Discord de desenvolvedores |
 | Links das ferramentas de alimentação (Montarias) | Faltam o link da Tabela de Materiais e Atributos e o da Calculadora (Wynnhub); os cartões aparecem tracejados com "Link a definir". Preencher `href` em `recursosDeAlimentacao` |
-| Imagens do guia de Festivais | Fora do site por serem da wiki ou arte oficial (regra em `docs/CREDITOS.md`): promo do Bonfire, logo do Heroes, Bonfire Keeper, The Guide, The Traveler, quadro de convites, mapa do Blizzard Brawl e a alma (origem não confirmada). A print do Discord (Totem of Tales) mostra nome e avatar de outro jogador. Os lugares esperam arquivos próprios em `public/festivais/` (caminhos em `festivals-content.ts`); cada um aparece sozinho ao ser medido |
+| Print do Totem of Tales (Festivais) | A print do Discord mostra nome e avatar de outro jogador; ficou fora. O preço citado (1 stx) já está no texto |
 | Crédito de autor do guia de Festivais | Decidir entre creditar o texto a RFL_C no fim do guia ou não creditar |
 | Crédito de autor do guia de Montarias | Decidir entre creditar o texto a gabu322 (Betinha) no fim do guia ou não creditar |
 | Vídeos repetidos na TCC Sala 3 | "Agate Axon" usa o mesmo vídeo de "Primeval Machine" e "Elder Astal" o de "Desvie das Pedras". Pode ser o mesmo POV mostrando dois caminhos ou erro; confirmar ou gravar os certos |

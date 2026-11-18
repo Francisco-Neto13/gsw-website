@@ -146,7 +146,7 @@ type(scope): imperative lowercase summary in english
 - Nunca escrever valor de secret, token ou ID da Vercel no repositório, nem em `docs/`; só os nomes.
 - Nunca commitar `.env*`, `.vercel/`, `node_modules/`, `.next/` nem o conteúdo de `image-workbench/`.
 - Nunca ligar a integração Git da Vercel de novo nem criar `DEPLOY_HABILITADO` sem pedido explícito.
-- Nunca usar ícones ou imagens da CDN oficial da Wynncraft sem autorização escrita dela; nunca usar
+- Nunca puxar ícones da CDN oficial da Wynncraft direto no site (hotlink); nunca usar
   emoji como ícone; nunca reintroduzir tema claro sem pedido explícito.
 - Nunca adicionar back-end, banco, painel administrativo ou dependência de runtime sem pedido
   explícito: o projeto é só front de propósito (o Supabase e o painel foram removidos).
@@ -154,6 +154,7 @@ type(scope): imperative lowercase summary in english
 - Nunca subir imagem `.png`/`.jpg` em `public/` (use `.webp`) nem GIF novo acima de 2 MB.
 - Nunca colocar texto de guia direto nos componentes de `sections/`.
 - Nunca copiar ou adaptar texto da wiki ou do site oficial (a wiki é CC BY-NC-SA): reescreva e
-  linke a fonte. Nunca usar imagens da wiki, logos ou arte oficial do Minecraft e da Wynncraft, nem
-  chamar o site de "oficial" (`docs/CREDITOS.md`).
+  linke a fonte. Imagem da wiki ou arte oficial da Wynncraft só em `public/terceiros/wynncraft/`,
+  listada em `docs/CREDITOS.md` (removível de uma vez); nunca logo ou arte do Minecraft; nunca
+  chamar o site de "oficial".
 - Nunca alterar `LICENSE` nem trechos de direitos autorais.

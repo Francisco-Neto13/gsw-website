@@ -33,19 +33,44 @@ Não é parecer jurídico.
 | [Minecraft Usage Guidelines](https://www.minecraft.net/en-us/usage-guidelines) | Fan site conta como uso comercial para a Mojang | Nome "Minecraft" só descritivo; prints próprios de gameplay | Aviso de site não oficial no rodapé |
 | [Wynncraft — Termos de Serviço](https://wynncraft.com/tos) (18/05/2026) | Licença só pessoal e não comercial; proíbe copiar, derivar e espelhar. Não há política de fan site, logo ou screenshots | Prints próprios (prática tolerada); nenhum asset do site copiado em massa | "Wynncraft e seus assets © Wynncraft Studios" no rodapé |
 | [Wynncraft — Termos da API](https://wynncraft.com/api-terms) (18/05/2026) | Sem cláusula de atribuição; respeitar rate limit (50 req/min sem token) e privacidade dos jogadores | Dados de itens, guildas e territórios baixados **no build**, nunca do navegador do visitante | "Dados: API pública da Wynncraft" na página que os usa |
-| [Wynncraft Wiki](https://wynncraft.wiki.gg/) | Texto **CC BY-NC-SA 4.0** (rodapé da wiki; a página Copyrights ainda diz 3.0). Imagens **não** são CC: ~14,5 mil arquivos "© Wynncraft" e ~326 "© Mojang" | Referência de fatos; link na seção "Fontes" de cada guia. **Texto não é copiado nem adaptado** (evita a cláusula NC e o ShareAlike). Imagens da wiki não são usadas | Link para a página consultada |
+| [Wynncraft Wiki](https://wynncraft.wiki.gg/) | Texto **CC BY-NC-SA 4.0** (rodapé da wiki; a página Copyrights ainda diz 3.0). Imagens **não** são CC: ~14,5 mil arquivos "© Wynncraft" e ~326 "© Mojang" | Referência de fatos; link na seção "Fontes" de cada guia. **Texto não é copiado nem adaptado** (evita a cláusula NC e o ShareAlike). Imagens só na pasta de terceiros (abaixo) | Link para a página consultada |
 | [Item guide oficial](https://wynncraft.com/help/item-guide) | Mesmos termos do site oficial | Link de referência; o Leveling já linka itens e usa ícones da CDN (ver abaixo) | Link |
 | [Notícias e patches](https://wynncraft.com/news) | Mesmos termos do site oficial | Data e versão do jogo em cada guia ("Atualizado para a 2.2.x") | Link |
+
+## Imagens de terceiros (removíveis)
+
+**Decisão do dono (18/11/2026):** usar imagens da wiki e arte oficial da Wynncraft como as wikis
+fazem (uso tolerado, sem licença), mas **isoladas para remoção imediata** se a Wynncraft ou a Mojang
+pedirem:
+
+- Moram só em `public/terceiros/wynncraft/`. Prints da guilda nunca entram nessa pasta.
+- A legenda mostra "© Wynncraft" sozinha (`creditoDe` em `lib/imagens.ts`, usada pela `Figura`).
+- O código só mostra uma imagem que existe e está medida. **Para remover tudo:** apagar a pasta,
+  rodar `node scripts/medir-imagens.mjs` e o `npm run check`; as páginas seguem sem elas.
+- Todo arquivo da pasta tem linha na tabela abaixo; o `npm test` falha se faltar algum.
+
+| Arquivo | Origem | Onde aparece |
+|---|---|---|
+| festival-heroes-logo.webp | Wiki (HeroesLogo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-bonfire-logo.webp | Wiki (Festival_of_the_Bonfire_logo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-spirits-logo.webp | Wiki (Festival_of_the_Spirits_logo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-blizzard-logo.webp | Wiki (Festival_of_the_Blizzard_logo.png), arte oficial | Festivais, ordem dos festivais |
+| festival-bonfire-promocional.webp | Arte promocional oficial do Festival of the Bonfire | Festivais, abertura |
+| bonfire-keeper.webp | Wiki (Bonfire Keeper) | Festivais, Bonfire |
+| spirits-alma.webp | Wiki (alma perdida), origem não confirmada | Festivais, Spirits |
+| blizzard-the-traveler.webp | Wiki (The Traveler) | Festivais, Blizzard |
+| blizzard-convites.webp | Wiki (Wynnter Invitations) | Festivais, Blizzard |
+| blizzard-brawl-mapa.webp | Wiki (mapa do Blizzard Brawl) | Festivais, Blizzard |
 
 ## Imagens de itens (CDN oficial)
 
 `https://cdn.wynncraft.com/nextgen/itemguide/3.3/<nome>.webp` não tem licença publicada; o uso
 pela comunidade (wiki, WynnBuilder, Wynntils) é tolerado, mas não autorizado por escrito.
 
-**Decisão do dono (18/11/2026): só arte própria por enquanto.** Ícones oficiais de itens, aspects,
-classes ou qualquer outro asset da CDN da Wynncraft só entram no site **depois de autorização
-escrita da Wynncraft** (pedido pelo Discord de desenvolvedores linkado em `docs.wynncraft.com`;
-pendência em `docs/PENDENCIAS.md`). Até lá, use prints próprias e ícones abertos (abaixo).
+**Decisão do dono, revista em 18/11/2026:** ícones oficiais de itens, aspects e classes seguem a regra
+das imagens de terceiros (acima): baixados para `public/terceiros/wynncraft/`, listados na tabela e
+com crédito; **nunca puxados direto da CDN** (hotlink). A autorização escrita da Wynncraft continua
+desejável (pendência em `docs/PENDENCIAS.md`) e, se vier, nada mais precisa mudar.
 
 Exceção herdada: o guia de Leveling (modelo antigo) ainda usa ícones da CDN na rota de armas
 (`buildLevelingItemGuideIconUrl`). Sai ou é trocado quando o Leveling for refeito.
