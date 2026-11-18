@@ -76,6 +76,17 @@ export const festivaisSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const modosSecoes: GuiaSecao[] = [
+  { id: "como-funciona", titulo: "Como escolher um modo", busca: "criar personagem gamemode irreversível" },
+  { id: "comparacao", titulo: "Comparação rápida" },
+  { id: "hardcore", titulo: "Hardcore", busca: "morte vida emblema vermelho cinza leaderboard" },
+  { id: "ironman", titulo: "Ironman e Ultimate Ironman", busca: "uim banco trade market /ironman" },
+  { id: "craftsman", titulo: "Craftsman", busca: "itens craftados crafting" },
+  { id: "hunted", titulo: "Hunted", busca: "pvp a hunter's calling xp" },
+  { id: "combinacoes", titulo: "Combinações e desafios", busca: "hic hich huich huic" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -157,10 +168,11 @@ export const guias: Guia[] = [
     slug: "modos-especiais",
     palavrasChave: "hardcore ironman craftsman hunted gamemode",
     titulo: "Modos especiais",
-    resumo: "Hardcore, Ironman, Craftsman, Hunted e combinações.",
+    resumo: "Hardcore, Ironman, Craftsman e Hunted: regras, como liberar e combinações.",
     grupo: "especiais",
     estado: "completo",
     rotaAntiga: "/modos-especiais",
+    secoes: modosSecoes,
   },
   {
     slug: "festivais",

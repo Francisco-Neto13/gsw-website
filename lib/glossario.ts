@@ -141,6 +141,21 @@ export const glossario = {
     tipo: "Gíria",
     explicacao: "Dead by Daylight: jogo de terror assimétrico em que um caçador persegue quatro sobreviventes. O Banish the Beyond segue a mesma ideia.",
   },
+  tradeMarket: {
+    termo: "Trade Market",
+    tipo: "Sistema de troca",
+    explicacao: "O mercado entre jogadores: você anuncia um item com preço e qualquer um compra, sem precisar estar online.",
+  },
+  contentBook: {
+    termo: "Content Book",
+    tipo: "Menu do jogo",
+    explicacao: "O livro que lista todo o conteúdo do jogo: quests, mini-quests, dungeons, caves e discoveries, com o que você já fez.",
+  },
+  legendaryIsland: {
+    termo: "Legendary Island",
+    tipo: "Desafio",
+    explicacao: "Ilha de combate de nível alto com ondas de inimigos e chefes, feita em grupo ou sozinho.",
+  },
   toughness: {
     termo: "Toughness",
     tipo: "Atributo de montaria",
