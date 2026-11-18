@@ -44,8 +44,8 @@ components/
                         atenção, dica), Coordenada (copiável), RecursoExterno, TextoGlitch,
                         FimDoGuia, Breadcrumb, SeloVersao,
                         GuiaEmConstrucao
-  <area>/pages|sections|data/   cada guia (Raids, Montarias, Festivais, Modos especiais, Dungeons e
-                                World Events no modelo novo; os outros com o miolo antigo)
+  <area>/pages|sections|data/   cada guia (todos os guias no modelo de Raids;
+                                só a Comunidade segue no modelo antigo)
 lib/
   site-content.ts       registro de guias e áreas: navegação, busca, redirects, metadata
   glossario.ts          termos do jogo com explicação própria (usados pelo <Termo>)
@@ -107,7 +107,6 @@ Nenhuma API em tempo de execução.
 - Miniaturas `i.ytimg.com` (liberadas em `images.remotePatterns`) e iframe `youtube.com/embed`,
   só depois do clique.
 - Google Fonts baixadas no build pelo `next/font`.
-- Leveling (modelo antigo) ainda usa ícones da CDN oficial; ver `docs/CREDITOS.md`.
 
 ## Configuração do Next (`next.config.ts`)
 

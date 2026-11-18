@@ -56,7 +56,6 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 
 | Prioridade | Item | Detalhe |
 |---|---|---|
-| Alta | Aplicar o modelo de Raids aos outros guias | Faltam Lootrun, Leveling, Profissões e Shares (Dungeons, World Events e Modos especiais já migraram). Cabeçalhos de seção, superfícies e alinhamento já seguem o sistema; falta o miolo: tabelas que são imagem (ranks do Lootrun, Profissões, Modos) viram `<table>`, cards dentro de painéis (camps do Lootrun) e grades com card sozinho (Bombas de XP, Camp 07, galeria do Shares) |
 | Média | Mídia solta na Raids | As 4 telas da fila de party têm alturas diferentes; a print ao lado da Dica em "Raids da guilda" fica órfã. Imagens soltas dos guias antigos ficam à esquerda no tamanho original (ampliar prints pequenas as borra) |
 | Alta | Comunidade | `/comunidade` como hub (história, membros, galeria, Shares, Discord). A galeria abre pelo teclado num <dialog> no padrão do site. A História já está na coluna de leitura e no sistema (linha do tempo em trilho, cards de membro, pilares); falta o índice "Nesta página" quando virar hub, e decidir se as citações em itálico continuam |
 | Alta | Conteúdo desatualizado restante | Leveling sem spots de Fruma; marcos de Profissões (115/117) e níveis de ferramenta; World Events (Subjugates, party de 10, Corrupted Cache); textos sem acento do bloco Membership do Shares (`docs/redesign/inventario-conteudo.md`) |
