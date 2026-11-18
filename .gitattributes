@@ -1,0 +1,4 @@
+# Hooks e scripts de shell rodam no Linux da CI e no sh do Git: CRLF quebra o shebang
+.githooks/* text eol=lf
+*.sh text eol=lf
+*.yml text eol=lf

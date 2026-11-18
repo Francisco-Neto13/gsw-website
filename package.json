@@ -7,6 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON \"tests/**/*.test.mjs\"",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build",
+    "prepare": "git config core.hooksPath .githooks || exit 0",
     "convert:webp": "node scripts/convert-to-webp.mjs"
   },
   "dependencies": {
