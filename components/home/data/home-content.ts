@@ -18,15 +18,15 @@ export const homeCategorias: Record<string, { resumo: string; imagem: { base: st
   progressao: {
     resumo: "Do nível 1 ao 121: onde upar, como montar a party e as profissões que sustentam o resto do jogo.",
     imagem: {
-      base: "/inicio/categorias/categoria-progressao-mineracao",
-      alt: "Personagem minerando Voidstone numa caverna de cristais roxos",
+      base: "/inicio/categorias/categoria-progressao-treino",
+      alt: "Personagem atacando um boneco de treino que mostra o dano médio por segundo",
     },
   },
   endgame: {
     resumo: "O conteúdo de nível máximo: lootruns, as cinco raids sala a sala, dungeons corrompidas e eventos no mapa.",
     imagem: {
-      base: "/inicio/categorias/categoria-endgame-lootrun",
-      alt: "Baú de recompensa azul e dourado ao fim de uma lootrun",
+      base: "/inicio/categorias/categoria-endgame-anathema",
+      alt: "A asa vermelha de Anathema, chefe da raid The Wartorn Palace, passando por cima de um jogador",
     },
   },
   economia: {
@@ -39,8 +39,8 @@ export const homeCategorias: Record<string, { resumo: string; imagem: { base: st
   especiais: {
     resumo: "Hardcore, Ironman, Craftsman e outros modos com regras próprias, além dos festivais de cada temporada.",
     imagem: {
-      base: "/inicio/categorias/categoria-especiais-pavao",
-      alt: "Noble Peacock, um pavão de penas azuis, num gramado à noite diante de uma cidade",
+      base: "/inicio/categorias/categoria-especiais-traje",
+      alt: "Personagem com traje cerimonial de cocar de penas e capa colorida num jardim de colunas brancas",
     },
   },
 };
