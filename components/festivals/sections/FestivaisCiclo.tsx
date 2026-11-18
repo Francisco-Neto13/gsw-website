@@ -31,9 +31,12 @@ export default function FestivaisCiclo() {
                   </span>
                 ) : null}
                 <span className="flex items-center gap-3 px-4 py-3">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-[color-mix(in_srgb,var(--festival)_45%,transparent)] bg-poco">
-                    <Icone aria-hidden size={20} strokeWidth={1.75} className="text-[var(--festival)]" />
-                  </span>
+                  {/* Com o logo acima, o ícone seria repetido: ele só aparece quando o logo não existe. */}
+                  {dimensoesDe(logo) ? null : (
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md border border-[color-mix(in_srgb,var(--festival)_45%,transparent)] bg-poco">
+                      <Icone aria-hidden size={20} strokeWidth={1.75} className="text-[var(--festival)]" />
+                    </span>
+                  )}
                   <span className="min-w-0">
                     <span className="block text-detalhe text-texto-3">{indice + 1}º do ano</span>
                     <span className="block font-titulo text-titulo-5 leading-tight text-texto">{festival.curto}</span>
