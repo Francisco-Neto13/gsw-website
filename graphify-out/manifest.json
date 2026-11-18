@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "components/home/data/home-content.ts": {
-    "mtime": 1795011437.9783735,
-    "seen": 1795012344.0767045,
-    "ast_hash": "274a4f6a4504219f93409b47d3d99e02",
+    "mtime": 1795012925.0427966,
+    "seen": 1795012982.7330062,
+    "ast_hash": "fe548ff57b58bf383992000aecfaeaca",
     "semantic_hash": ""
   },
   "components/home/pages/HomePage.tsx": {
@@ -558,9 +558,9 @@
     "semantic_hash": "f5161c48166d49358dcd19aac600e4d1"
   },
   "docs/PENDENCIAS.md": {
-    "mtime": 1795012301.3494313,
-    "seen": 1795012344.0768251,
-    "ast_hash": "24d786f2b76701c50f74eaab45f114fd",
+    "mtime": 1795012925.0438042,
+    "seen": 1795012982.733136,
+    "ast_hash": "05f4acd10cb24a2a1fbfe7d98a64e491",
     "semantic_hash": ""
   },
   "PRODUCT.md": {
@@ -576,9 +576,9 @@
     "semantic_hash": "156a91b590e28b048deed13b5ea8b95e"
   },
   "docs/CREDITOS.md": {
-    "mtime": 1795012301.3494313,
-    "seen": 1795012344.0768204,
-    "ast_hash": "2ea30efb07f54e8b0aa61142190674a5",
+    "mtime": 1795012925.0438042,
+    "seen": 1795012982.733131,
+    "ast_hash": "bd707a4032fe6c9e64a263d44f4dde85",
     "semantic_hash": ""
   },
   "docs/redesign/README.md": {
