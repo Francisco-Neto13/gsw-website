@@ -1,7 +1,6 @@
 {
   "1": "silverbull-shares-content.ts",
   "3": "professions-content.ts",
-  "4": "env",
   "5": "leveling-content.ts",
   "7": "world-events-content.ts",
   "8": "Inventário do conteúdo atual",
@@ -19,7 +18,6 @@
   "39": "Caixa de Item (proposed visual direction)",
   "41": "Sidebar dos guias",
   "43": "Grafo do projeto (Graphify) doc",
-  "44": "Mapa das pastas",
   "59": "Item image and icon options (own prints, CDN, AP",
   "60": "Game guides (Lootrun, Dungeons, Raids, World Eve",
   "61": "global.d.ts",

@@ -516,9 +516,9 @@
     "semantic_hash": "ab575e944f15d39a5486cf9fca385c5e"
   },
   "AGENTS.md": {
-    "mtime": 1795017426.0096817,
-    "seen": 1795017446.3629076,
-    "ast_hash": "d1439507404d1e42af61207ff32136a5",
+    "mtime": 1795021073.5952,
+    "seen": 1795021303.9787793,
+    "ast_hash": "c47b35316adedb0a967374fc611cad5a",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -558,9 +558,9 @@
     "semantic_hash": "f5161c48166d49358dcd19aac600e4d1"
   },
   "docs/PENDENCIAS.md": {
-    "mtime": 1795019920.8265638,
-    "seen": 1795019970.5811722,
-    "ast_hash": "e78cd5d03fc571b295fb8082b61ef424",
+    "mtime": 1795021094.0779054,
+    "seen": 1795021303.9787915,
+    "ast_hash": "0a480fdf439c4d31ea4a99acc6d76374",
     "semantic_hash": ""
   },
   "PRODUCT.md": {
@@ -576,9 +576,9 @@
     "semantic_hash": "156a91b590e28b048deed13b5ea8b95e"
   },
   "docs/CREDITOS.md": {
-    "mtime": 1795013840.8029213,
-    "seen": 1795013906.570969,
-    "ast_hash": "0d3524e55717a1c93c3e1a1931055250",
+    "mtime": 1795021085.6408625,
+    "seen": 1795021303.9787872,
+    "ast_hash": "88fa9c09b99a27c6731b64f12f46061e",
     "semantic_hash": ""
   },
   "docs/redesign/README.md": {
@@ -750,9 +750,9 @@
     "semantic_hash": ""
   },
   "components/guias/Figura.tsx": {
-    "mtime": 1795015879.596552,
-    "seen": 1795017446.3626876,
-    "ast_hash": "82528c04c72b90dc9f8432608d0e1fae",
+    "mtime": 1795021007.5964658,
+    "seen": 1795021303.9786398,
+    "ast_hash": "cff67710fa7244f0bdcbf02090932472",
     "semantic_hash": ""
   },
   "components/guias/FimDoGuia.tsx": {
@@ -984,15 +984,15 @@
     "semantic_hash": ""
   },
   "lib/dimensoes-imagens.json": {
-    "mtime": 1795019603.2824516,
-    "seen": 1795019893.8445382,
-    "ast_hash": "7bbe5bb5d495762cee1830adde9aae40",
+    "mtime": 1795021195.2253592,
+    "seen": 1795021303.9787571,
+    "ast_hash": "d8b31838ac4b53de1241946188aaa7a4",
     "semantic_hash": ""
   },
   "lib/imagens.ts": {
-    "mtime": 1795016528.502201,
-    "seen": 1795017446.362873,
-    "ast_hash": "81bedbabca3caaa3b97a6a73c240372d",
+    "mtime": 1795021006.4068055,
+    "seen": 1795021303.9787598,
+    "ast_hash": "219b64f2e15e5a9fb74dcc3d8c4b96b7",
     "semantic_hash": ""
   },
   "scripts/medir-imagens.mjs": {
@@ -1056,15 +1056,15 @@
     "semantic_hash": ""
   },
   "components/festivals/data/festivals-content.ts": {
-    "mtime": 1795019908.0455613,
-    "seen": 1795019970.580994,
-    "ast_hash": "486e50883b7814a8b9d2ce3754e9745f",
+    "mtime": 1795021015.4706993,
+    "seen": 1795021303.9786258,
+    "ast_hash": "8c3ec10b870ee0a55dc55ebe0fe5f37d",
     "semantic_hash": ""
   },
   "components/festivals/festivais-visual.ts": {
-    "mtime": 1795019694.6222086,
-    "seen": 1795019893.8444028,
-    "ast_hash": "8897486c0b1a18f97429815aefe52a77",
+    "mtime": 1795021015.7500703,
+    "seen": 1795021303.9786274,
+    "ast_hash": "dcc36b35505b3af7d4f5249f10946700",
     "semantic_hash": ""
   },
   "components/festivals/sections/FestivaisAbertura.tsx": {
@@ -1074,9 +1074,9 @@
     "semantic_hash": ""
   },
   "components/festivals/sections/FestivaisCiclo.tsx": {
-    "mtime": 1795019717.6562545,
-    "seen": 1795019893.8444064,
-    "ast_hash": "9de168ba865de66ca220dc2cdc326886",
+    "mtime": 1795021030.1612432,
+    "seen": 1795021303.978631,
+    "ast_hash": "ec029694cf819d785943d8709a179a8d",
     "semantic_hash": ""
   },
   "components/festivals/sections/FestivaisEstrutura.tsx": {
@@ -1086,9 +1086,9 @@
     "semantic_hash": ""
   },
   "components/festivals/sections/FestivalSecao.tsx": {
-    "mtime": 1795019747.7430294,
-    "seen": 1795019893.8444083,
-    "ast_hash": "c1f08358a6ef1c68b5797977ce5cb254",
+    "mtime": 1795021248.245613,
+    "seen": 1795021303.978633,
+    "ast_hash": "21eb4a7072648ed3f795e41a6cb2c662",
     "semantic_hash": ""
   },
   "components/guias/Coordenada.tsx": {
@@ -1107,6 +1107,12 @@
     "mtime": 1795019651.7675092,
     "seen": 1795019893.8444278,
     "ast_hash": "769d7981ed55106f8ad2501d5d8fc1a2",
+    "semantic_hash": ""
+  },
+  "tests/terceiros.test.mjs": {
+    "mtime": 1795021085.99682,
+    "seen": 1795021303.9787755,
+    "ast_hash": "a0fd5a1c810e34c40df7d30ad8efa656",
     "semantic_hash": ""
   },
   "package-lock.json": {
