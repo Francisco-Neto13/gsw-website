@@ -36,45 +36,45 @@
     "semantic_hash": "8532ada105209f476ac1b31781f69855"
   },
   "components/dungeons/data/dungeons-content.ts": {
-    "mtime": 1795022153.7906806,
-    "seen": 1795022355.7219682,
-    "ast_hash": "10a56e5e87f3a945a096424bd649fe4c",
+    "mtime": 1795036476.9883096,
+    "seen": 1795036688.795803,
+    "ast_hash": "1ac64a9fc48ea8020eb21a5e93d20146",
     "semantic_hash": ""
   },
   "components/dungeons/pages/DungeonsPage.tsx": {
-    "mtime": 1795004120.7970543,
-    "seen": 1795004894.5579643,
-    "ast_hash": "8df1e88ded61e1ab5c864e098cafff97",
+    "mtime": 1795036046.2231448,
+    "seen": 1795036688.795805,
+    "ast_hash": "52830ebf5c50845496f83cc43f63bcc2",
     "semantic_hash": ""
   },
   "components/dungeons/sections/DungeonsAccessSection.tsx": {
-    "mtime": 1795015879.5935664,
-    "seen": 1795017446.3626695,
-    "ast_hash": "86987be3dfce62d4d03012d5404c4a18",
+    "mtime": 1795036029.0918472,
+    "seen": 1795036688.795808,
+    "ast_hash": "e28ec1453343bdfbef8242872d603811",
     "semantic_hash": ""
   },
   "components/dungeons/sections/DungeonsExtrasSection.tsx": {
-    "mtime": 1795006163.0793674,
-    "seen": 1795006175.2737865,
-    "ast_hash": "043baf5f38ea888a3ca51cb912c5d0bd",
+    "mtime": 1795036031.9857194,
+    "seen": 1795036688.795809,
+    "ast_hash": "bfe1f802309ad3059ff918f22e3e7112",
     "semantic_hash": ""
   },
   "components/dungeons/sections/DungeonsForgerySection.tsx": {
-    "mtime": 1795016562.8580723,
-    "seen": 1795017446.3626738,
-    "ast_hash": "2952226dfed8381fcb0124c1c624c8e4",
+    "mtime": 1795036029.7809002,
+    "seen": 1795036688.7958102,
+    "ast_hash": "abe6ea8f7107539f90d20413c61543f8",
     "semantic_hash": ""
   },
   "components/dungeons/sections/DungeonsMerchantSection.tsx": {
-    "mtime": 1795015879.5950794,
-    "seen": 1795017446.3626773,
-    "ast_hash": "5bb52e4003c87d34404de03fd66256a3",
+    "mtime": 1795036436.1059065,
+    "seen": 1795036688.7958124,
+    "ast_hash": "0bedc6a366a60684bcbd3feb24f862b7",
     "semantic_hash": ""
   },
   "components/dungeons/sections/DungeonsRewardsSection.tsx": {
-    "mtime": 1795016562.8580723,
-    "seen": 1795017446.3626788,
-    "ast_hash": "64091bb18461177674580e1fcb9a0d52",
+    "mtime": 1795036031.37265,
+    "seen": 1795036688.7958136,
+    "ast_hash": "7acb4f9f52630bc7aed692c3f65676b4",
     "semantic_hash": ""
   },
   "components/festivals/pages/FestivalsPage.tsx": {
@@ -144,87 +144,87 @@
     "semantic_hash": ""
   },
   "components/leveling/data/leveling-content.ts": {
-    "mtime": 1794986479.9764268,
-    "seen": 1794989218.1700923,
-    "ast_hash": "2d8d7b9366737e6a50444102c2cb3e87",
-    "semantic_hash": "2d8d7b9366737e6a50444102c2cb3e87"
+    "mtime": 1795037591.295971,
+    "seen": 1795037890.950282,
+    "ast_hash": "703eca8ee1a0a29cc8590be94f311f44",
+    "semantic_hash": ""
   },
   "components/leveling/pages/LevelingPage.tsx": {
-    "mtime": 1795004120.7980554,
-    "seen": 1795004894.5580041,
-    "ast_hash": "1d452d84bf9746c0a2929d1fdd66295a",
+    "mtime": 1795037653.4748716,
+    "seen": 1795037890.9502833,
+    "ast_hash": "e06e735ae1cfe20692328c9c09d668be",
     "semantic_hash": ""
   },
   "components/leveling/sections/LevelingBuildsSection.tsx": {
-    "mtime": 1795011248.1878264,
-    "seen": 1795012344.0767107,
-    "ast_hash": "e7931bf2c30347bc5b75fb8ebf32ab7e",
+    "mtime": 1795037627.2496612,
+    "seen": 1795037890.9502873,
+    "ast_hash": "0b9115990a050a60320fa2514f1f7b4d",
     "semantic_hash": ""
   },
   "components/leveling/sections/LevelingPartySection.tsx": {
-    "mtime": 1795016562.857064,
-    "seen": 1795017446.362731,
-    "ast_hash": "756eb033ccc40f160e88c1b6bfe9d882",
+    "mtime": 1795037626.1361241,
+    "seen": 1795037890.950289,
+    "ast_hash": "78fba08cac7936df3cd6e828d1978cc8",
     "semantic_hash": ""
   },
   "components/leveling/sections/LevelingSpotsSection.tsx": {
-    "mtime": 1795015937.5300555,
-    "seen": 1795017446.3627322,
-    "ast_hash": "61ac78231aebb893c5e66a4c8daca034",
+    "mtime": 1795037626.7271686,
+    "seen": 1795037890.95029,
+    "ast_hash": "d715caf8c7470d65e3ae7caacaa55da8",
     "semantic_hash": ""
   },
   "components/lootrun/data/lootrun-content.ts": {
-    "mtime": 1794987173.8138728,
-    "seen": 1794989218.1700976,
-    "ast_hash": "2c79d326aeccc7490ef7c67b97cb3d84",
-    "semantic_hash": "2c79d326aeccc7490ef7c67b97cb3d84"
+    "mtime": 1795038376.8751469,
+    "seen": 1795038419.7624114,
+    "ast_hash": "527057582c9bdc4254e8e92be19783c7",
+    "semantic_hash": ""
   },
   "components/lootrun/pages/LootrunPage.tsx": {
-    "mtime": 1795004120.7980554,
-    "seen": 1795004894.55801,
-    "ast_hash": "1c596b4e547fd5bdaf10598ae49688e2",
+    "mtime": 1795038079.594542,
+    "seen": 1795038419.762413,
+    "ast_hash": "2bb7b884f810edd1e8efb55de699ab4b",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunAdvancedSystemsSection.tsx": {
-    "mtime": 1795016562.8555584,
-    "seen": 1795017446.3627377,
-    "ast_hash": "f4d1faaafde1edeba61d20ec47379992",
+    "mtime": 1795038029.2043517,
+    "seen": 1795038419.762417,
+    "ast_hash": "a723135f44dd0b1a0575d4c167d1adfd",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunBeaconsSection.tsx": {
-    "mtime": 1795022048.8435092,
-    "seen": 1795022355.7220325,
-    "ast_hash": "6968d4679ef61cbe4dd005c36db9566a",
+    "mtime": 1795038050.9054887,
+    "seen": 1795038419.7624183,
+    "ast_hash": "be172508190e30a968bbbebebffc3cf5",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunCampsSection.tsx": {
-    "mtime": 1795017231.1705966,
-    "seen": 1795017446.362741,
-    "ast_hash": "2d7b1e6fa478d31563c77cacb2d58465",
+    "mtime": 1795038031.2497897,
+    "seen": 1795038419.7624195,
+    "ast_hash": "e93b268a64d3ebd715caad0dc4a3b6c8",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunCombosSection.tsx": {
-    "mtime": 1795011237.16673,
-    "seen": 1795012344.0767202,
-    "ast_hash": "2e6a08cc980bdca120604e4d9ff3f5e0",
+    "mtime": 1795038077.9161794,
+    "seen": 1795038419.7624207,
+    "ast_hash": "14b8eef5dd8610febd1a353661a28d47",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunDivisionsSection.tsx": {
-    "mtime": 1795015810.3806937,
-    "seen": 1795017446.362744,
-    "ast_hash": "f04ecc3de51a373e6234fbe086d99bf5",
+    "mtime": 1795038376.8767056,
+    "seen": 1795038419.762422,
+    "ast_hash": "6c6c062ee6e13e2fea32956fecc76e8e",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunExtrasSection.tsx": {
-    "mtime": 1795015810.3832088,
-    "seen": 1795017446.3627455,
-    "ast_hash": "8e7f23257cfb5d092eabadb950206674",
+    "mtime": 1795038079.0883067,
+    "seen": 1795038419.762423,
+    "ast_hash": "6b9774b44301d160c3e76494f837fa69",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunMechanicsSection.tsx": {
-    "mtime": 1795016562.8555584,
-    "seen": 1795017446.3627472,
-    "ast_hash": "1fdce7e68b9627281420ede8d8fa6364",
+    "mtime": 1795038028.65366,
+    "seen": 1795038419.7624242,
+    "ast_hash": "b8a5a0867437092d796e2467137ef336",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunMediaPlaceholder.tsx": {
@@ -234,15 +234,15 @@
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunParticipationSection.tsx": {
-    "mtime": 1795015810.3796873,
-    "seen": 1795017446.3627503,
-    "ast_hash": "9a194cb8738fa71450a0c5aa61a67470",
+    "mtime": 1795038029.8524234,
+    "seen": 1795038419.7624269,
+    "ast_hash": "61ccec9bfabf0a52311345a7c36ac609",
     "semantic_hash": ""
   },
   "components/lootrun/sections/LootrunRewardsSection.tsx": {
-    "mtime": 1795011237.1677382,
-    "seen": 1795012344.0767264,
-    "ast_hash": "35db59ec17d44ed58cf1a49a7f2a734b",
+    "mtime": 1795038078.539926,
+    "seen": 1795038419.762428,
+    "ast_hash": "653396f54d1ae1250d3475b7cff9bf29",
     "semantic_hash": ""
   },
   "components/mounts/pages/MountsPage.tsx": {
@@ -252,45 +252,45 @@
     "semantic_hash": ""
   },
   "components/professions/data/professions-content.ts": {
-    "mtime": 1794986480.004958,
-    "seen": 1794989218.1701126,
-    "ast_hash": "d0d0ee3664cd635d9808200980c94df5",
-    "semantic_hash": "d0d0ee3664cd635d9808200980c94df5"
+    "mtime": 1795037381.2291536,
+    "seen": 1795037419.807337,
+    "ast_hash": "edd4356c7c5405c30ee25fd3f93e420f",
+    "semantic_hash": ""
   },
   "components/professions/pages/ProfessionsPage.tsx": {
-    "mtime": 1795004120.7980554,
-    "seen": 1795004894.5580251,
-    "ast_hash": "4326d7cfe047b576abb8fbd1c69ce77b",
+    "mtime": 1795037257.5785477,
+    "seen": 1795037419.807339,
+    "ast_hash": "ae0bae4d66261282047be86ac52563d0",
     "semantic_hash": ""
   },
   "components/professions/sections/ProfessionExtrasSection.tsx": {
-    "mtime": 1795006163.1014278,
-    "seen": 1795006175.2738426,
-    "ast_hash": "9058b689023414ae3a1cef5dee9cc387",
+    "mtime": 1795037256.882929,
+    "seen": 1795037419.8073432,
+    "ast_hash": "9ba40c3d5b85ffb6df669b0dc7bcd1fb",
     "semantic_hash": ""
   },
   "components/professions/sections/ProfessionGrindSpotsSection.tsx": {
-    "mtime": 1795011237.1692474,
-    "seen": 1795012344.0767322,
-    "ast_hash": "d3d99f900e4452e23469fa04fc8d835e",
+    "mtime": 1795037381.2363112,
+    "seen": 1795037419.8073447,
+    "ast_hash": "2014a07ffbf7998e7570510d5461cb5c",
     "semantic_hash": ""
   },
   "components/professions/sections/ProfessionToolsSection.tsx": {
-    "mtime": 1795015879.5986648,
-    "seen": 1795017446.3627627,
-    "ast_hash": "71940a5e787bee19cac9baebeb81981e",
+    "mtime": 1795037235.1432223,
+    "seen": 1795037419.8073459,
+    "ast_hash": "77c8263ac174919b1e02c3c952f8075f",
     "semantic_hash": ""
   },
   "components/professions/sections/ProfessionTypesSection.tsx": {
-    "mtime": 1795011237.1692474,
-    "seen": 1795012344.0767343,
-    "ast_hash": "5eec9007c4dff297f5f879079892f9e2",
+    "mtime": 1795037381.2347991,
+    "seen": 1795037419.8073473,
+    "ast_hash": "55faa936c5154f0b26acb44a575d1145",
     "semantic_hash": ""
   },
   "components/professions/sections/ProfessionWaypointsSection.tsx": {
-    "mtime": 1795011237.170253,
-    "seen": 1795012344.0767353,
-    "ast_hash": "f1fdff5e67bc1c4a2af1f17018dbb772",
+    "mtime": 1795037256.310744,
+    "seen": 1795037419.8073483,
+    "ast_hash": "a01bfe8bf7cb2cd2f2d04ba649ccb56a",
     "semantic_hash": ""
   },
   "components/raids/data/raids-content.ts": {
@@ -330,69 +330,63 @@
     "semantic_hash": ""
   },
   "components/silverbull-shares/data/silverbull-shares-content.ts": {
-    "mtime": 1795021969.4880824,
-    "seen": 1795022355.7220895,
-    "ast_hash": "e3c05e2a67aba7c8908ec168e2a9964c",
+    "mtime": 1795037056.198282,
+    "seen": 1795037080.3942997,
+    "ast_hash": "19194fd38770e9c1016eedf10368f4ed",
     "semantic_hash": ""
   },
   "components/silverbull-shares/pages/SilverbullSharesPage.tsx": {
-    "mtime": 1795004120.7990546,
-    "seen": 1795004894.5580695,
-    "ast_hash": "b81be5e8aabda09a4350588529bbff55",
+    "mtime": 1795036890.1966882,
+    "seen": 1795037080.3943014,
+    "ast_hash": "81d873ab6f2c41c555cd4f7ed7d97af4",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullBombsSection.tsx": {
-    "mtime": 1795021981.9712408,
-    "seen": 1795022355.7220929,
-    "ast_hash": "908ccd5b125aefa519b00564f8292257",
+    "mtime": 1795036887.9269373,
+    "seen": 1795037080.3943057,
+    "ast_hash": "8fe868026a4b9335d7f51ba8b2f762dd",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullCratesSection.tsx": {
-    "mtime": 1795006163.1120248,
-    "seen": 1795006175.2738798,
-    "ast_hash": "278524ddee4095789c96b938c8067105",
+    "mtime": 1795036887.3713381,
+    "seen": 1795037080.3943071,
+    "ast_hash": "56dff448f4bef8e71b22e43e425fca22",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullExtrasSection.tsx": {
-    "mtime": 1795006163.1120248,
-    "seen": 1795006175.2738807,
-    "ast_hash": "dcb73a55564d4039ca987adf77cbdbfa",
-    "semantic_hash": ""
-  },
-  "components/silverbull-shares/sections/SilverbullImageSlot.tsx": {
-    "mtime": 1795015879.5986648,
-    "seen": 1795017446.3628235,
-    "ast_hash": "6b066c5d04a0f5941d6a373d25e5a8ed",
+    "mtime": 1795036889.6408906,
+    "seen": 1795037080.394308,
+    "ast_hash": "a2883eefbb3cd5eb07db9e33027dff4f",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullMembershipSection.tsx": {
-    "mtime": 1795014451.7465146,
-    "seen": 1795015045.0319064,
-    "ast_hash": "afd01af23c142f8ec1ed0debe31875a9",
+    "mtime": 1795036886.800096,
+    "seen": 1795037080.3943093,
+    "ast_hash": "920f8c330b463e92d0564a8d2ca5f2c3",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullOverviewSection.tsx": {
-    "mtime": 1795006163.1145349,
-    "seen": 1795006175.2738848,
-    "ast_hash": "8fd09c97aea90874243aa41c5d14de80",
+    "mtime": 1795036885.689888,
+    "seen": 1795037080.394311,
+    "ast_hash": "ddd54673a2db90bd498bcac64fc3253d",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullPetsSection.tsx": {
-    "mtime": 1795014841.8114078,
-    "seen": 1795015045.0319085,
-    "ast_hash": "7f339c1627d4295861d83083a9cce34a",
+    "mtime": 1795036888.5163538,
+    "seen": 1795037080.394312,
+    "ast_hash": "c4bd7f427e396971571473865f5b1825",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullRanksSection.tsx": {
-    "mtime": 1795007770.6582184,
-    "seen": 1795007849.7737007,
-    "ast_hash": "23bfd29638fac4684db8f66d3f6b7d30",
+    "mtime": 1795037041.8981547,
+    "seen": 1795037080.3943129,
+    "ast_hash": "486ef4a3af5763a46c8acaedbaac30d6",
     "semantic_hash": ""
   },
   "components/silverbull-shares/sections/SilverbullTokensSection.tsx": {
-    "mtime": 1795016562.860098,
-    "seen": 1795017446.3628323,
-    "ast_hash": "aa2ab83afa38c6babfdcf76575552a4d",
+    "mtime": 1795036889.0793724,
+    "seen": 1795037080.394314,
+    "ast_hash": "a4956c9c7738839325fcb137d38b95b3",
     "semantic_hash": ""
   },
   "components/special-modes/data/special-modes-content.ts": {
@@ -408,45 +402,45 @@
     "semantic_hash": ""
   },
   "components/world-events/data/world-events-content.ts": {
-    "mtime": 1794986480.082122,
-    "seen": 1794989218.1701646,
-    "ast_hash": "b8847a4c78ed32fcc89eb9546b2751f0",
-    "semantic_hash": "b8847a4c78ed32fcc89eb9546b2751f0"
+    "mtime": 1795036156.7886128,
+    "seen": 1795036688.7959552,
+    "ast_hash": "10ecdc6b944da33d9fdb3c469878bdba",
+    "semantic_hash": ""
   },
   "components/world-events/pages/WorldEventsPage.tsx": {
-    "mtime": 1795004120.7990546,
-    "seen": 1795004894.5580997,
-    "ast_hash": "0f64b5826f8951520cec52c3eb19967a",
+    "mtime": 1795036196.621509,
+    "seen": 1795036688.7959561,
+    "ast_hash": "8cc2d9c436189563760c434dae7a041d",
     "semantic_hash": ""
   },
   "components/world-events/sections/WorldEventsAnnihilationSection.tsx": {
-    "mtime": 1795014841.8114078,
-    "seen": 1795015045.031919,
-    "ast_hash": "35e101ad571b3800c4b9ef95ac789b53",
+    "mtime": 1795036635.4862585,
+    "seen": 1795036688.7959588,
+    "ast_hash": "149224ecc246e6fe52d4ab05ba656744",
     "semantic_hash": ""
   },
   "components/world-events/sections/WorldEventsExtrasSection.tsx": {
-    "mtime": 1795006163.120056,
-    "seen": 1795006175.2738972,
-    "ast_hash": "e9df4df3d2d5bea3141435ce341dd218",
+    "mtime": 1795036195.9993134,
+    "seen": 1795036688.79596,
+    "ast_hash": "d61330d4236b33088bae5393738958dd",
     "semantic_hash": ""
   },
   "components/world-events/sections/WorldEventsMechanicsSection.tsx": {
-    "mtime": 1795006163.120056,
-    "seen": 1795006175.2738986,
-    "ast_hash": "60ed390f084f7b5cb6f3ecdbb2746f7b",
+    "mtime": 1795036194.293341,
+    "seen": 1795036688.7959611,
+    "ast_hash": "e8377543e65f75a0d96287cf416d8b31",
     "semantic_hash": ""
   },
   "components/world-events/sections/WorldEventsParticipationSection.tsx": {
-    "mtime": 1795015879.6016922,
-    "seen": 1795017446.3628583,
-    "ast_hash": "5e8fc83b2073c62acecad3bd73ed8e11",
+    "mtime": 1795036193.6407907,
+    "seen": 1795036688.795962,
+    "ast_hash": "d08a58df6f66bbd082e9f4488b1b3c77",
     "semantic_hash": ""
   },
   "components/world-events/sections/WorldEventsRewardsSection.tsx": {
-    "mtime": 1795016562.8580723,
-    "seen": 1795017446.3628604,
-    "ast_hash": "df5ca493ad653a8144ff3827af611593",
+    "mtime": 1795036195.420112,
+    "seen": 1795036688.795963,
+    "ast_hash": "a670055c8d6b56acab12ebcb0292a19b",
     "semantic_hash": ""
   },
   "eslint.config.mjs": {
@@ -462,9 +456,9 @@
     "semantic_hash": "0ed79c85de5bb2f1af5976079d448b19"
   },
   "lib/site-content.ts": {
-    "mtime": 1795021792.0882905,
-    "seen": 1795021870.3066013,
-    "ast_hash": "121df5e1e3bc6c850204a34327b0437d",
+    "mtime": 1795038080.7594705,
+    "seen": 1795038419.7625272,
+    "ast_hash": "82b45f5ad9a3e2c6c96a8ef281f7d8fd",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -522,9 +516,9 @@
     "semantic_hash": "416f42d13c08319479c63227b166b1c0"
   },
   "docs/ARQUITETURA.md": {
-    "mtime": 1795019883.3383553,
-    "seen": 1795019893.844565,
-    "ast_hash": "a144103768e015f17663d4afb47b2822",
+    "mtime": 1795038129.144978,
+    "seen": 1795038419.7625594,
+    "ast_hash": "37cbc8e7d39384dd5e9afad0e8574d97",
     "semantic_hash": ""
   },
   "docs/CI-CD.md": {
@@ -546,9 +540,9 @@
     "semantic_hash": "f5161c48166d49358dcd19aac600e4d1"
   },
   "docs/PENDENCIAS.md": {
-    "mtime": 1795022237.1253095,
-    "seen": 1795022355.722159,
-    "ast_hash": "3ddf9b3c2a79073ed2e080c57b91f21b",
+    "mtime": 1795038154.7302208,
+    "seen": 1795038419.7625713,
+    "ast_hash": "8ecbd0202c1bb42c0e4f5102c7266ee0",
     "semantic_hash": ""
   },
   "PRODUCT.md": {
@@ -564,9 +558,9 @@
     "semantic_hash": "156a91b590e28b048deed13b5ea8b95e"
   },
   "docs/CREDITOS.md": {
-    "mtime": 1795022153.7921877,
-    "seen": 1795022355.7221544,
-    "ast_hash": "90c962f99751d4bfc4b924ce63d93b48",
+    "mtime": 1795037548.2653694,
+    "seen": 1795037890.95043,
+    "ast_hash": "a77bd2d9daf58a0de97e565599339685",
     "semantic_hash": ""
   },
   "docs/redesign/README.md": {
@@ -618,10 +612,10 @@
     "semantic_hash": "9d15503a2f9895164901e52ba5f5e363"
   },
   "docs/redesign/inventario-conteudo.md": {
-    "mtime": 1794984721.750109,
-    "seen": 1794985453.4790018,
-    "ast_hash": "f04a19462821669e468b6866d33761b2",
-    "semantic_hash": "f04a19462821669e468b6866d33761b2"
+    "mtime": 1795037381.2379036,
+    "seen": 1795037419.8074765,
+    "ast_hash": "0392b269192f9493334fc1a6d03f32e9",
+    "semantic_hash": ""
   },
   "docs/redesign/navegacao.md": {
     "mtime": 1794984430.2189326,
@@ -714,9 +708,9 @@
     "semantic_hash": ""
   },
   "components/dungeons/sections/DungeonsListSection.tsx": {
-    "mtime": 1795022167.2447162,
-    "seen": 1795022355.7219748,
-    "ast_hash": "20d5871369121545142e53a08805e172",
+    "mtime": 1795036040.1077695,
+    "seen": 1795036688.7958114,
+    "ast_hash": "67503671767e1aeaeb32e09b5969e3bf",
     "semantic_hash": ""
   },
   "components/guias/Breadcrumb.tsx": {
@@ -774,15 +768,15 @@
     "semantic_hash": ""
   },
   "components/guias/Termo.tsx": {
-    "mtime": 1795009369.5174966,
-    "seen": 1795009378.5287287,
-    "ast_hash": "2dae6aadf5b3acc705568d19d9462fc4",
+    "mtime": 1795036476.986797,
+    "seen": 1795036688.7958436,
+    "ast_hash": "1de655499d3f60c22384a84ff7effc24",
     "semantic_hash": ""
   },
   "components/guias/TextoComTermos.tsx": {
-    "mtime": 1795019645.401362,
-    "seen": 1795019893.8444269,
-    "ast_hash": "f559eab39e06fabc91fe285615bd4ace",
+    "mtime": 1795036468.7353387,
+    "seen": 1795036688.7958448,
+    "ast_hash": "a48233f66e08aba509cf1327572d2028",
     "semantic_hash": ""
   },
   "components/home/sections/BotaoBuscar.tsx": {
@@ -882,9 +876,9 @@
     "semantic_hash": ""
   },
   "lib/glossario.ts": {
-    "mtime": 1795021621.3926792,
-    "seen": 1795021870.3065965,
-    "ast_hash": "d5f8ba1419a202e9ae3ec82caf90c219",
+    "mtime": 1795035992.7965176,
+    "seen": 1795036688.795968,
+    "ast_hash": "8a5dd0e1888721a5a1bd41ac11021913",
     "semantic_hash": ""
   },
   "scripts/gif-para-webp.mjs": {
@@ -900,9 +894,9 @@
     "semantic_hash": "9b71dcd3f6188562e8577590e13a78de"
   },
   "DESIGN.md": {
-    "mtime": 1795019883.3393602,
-    "seen": 1795019893.8445613,
-    "ast_hash": "45fa5209c30e3ea051495a85c0eafe03",
+    "mtime": 1795038129.1429398,
+    "seen": 1795038419.7625535,
+    "ast_hash": "bb8d0e202c376516ee475c20757348be",
     "semantic_hash": ""
   },
   "lib/tamanhos.ts": {
@@ -954,9 +948,9 @@
     "semantic_hash": ""
   },
   "lib/previas.ts": {
-    "mtime": 1795019761.0672033,
-    "seen": 1795019893.844543,
-    "ast_hash": "548eb0da75f79a608aaeb2177667cd20",
+    "mtime": 1795038090.1902707,
+    "seen": 1795038419.7625263,
+    "ast_hash": "6586d3d40464bd2f91460c945f23d480",
     "semantic_hash": ""
   },
   "components/guias/Galeria.tsx": {
@@ -972,9 +966,9 @@
     "semantic_hash": ""
   },
   "lib/dimensoes-imagens.json": {
-    "mtime": 1795022153.729369,
-    "seen": 1795022355.722122,
-    "ast_hash": "3e5cfecc11efebddde77b2cfdd12be95",
+    "mtime": 1795038379.1224456,
+    "seen": 1795038419.7625208,
+    "ast_hash": "4da52f84884028da55ac7b108d6ba0fe",
     "semantic_hash": ""
   },
   "lib/imagens.ts": {
@@ -1074,15 +1068,15 @@
     "semantic_hash": ""
   },
   "components/festivals/sections/FestivalSecao.tsx": {
-    "mtime": 1795021248.245613,
-    "seen": 1795021303.978633,
-    "ast_hash": "21eb4a7072648ed3f795e41a6cb2c662",
+    "mtime": 1795035984.8766098,
+    "seen": 1795036688.7958229,
+    "ast_hash": "fe066d0a176de5a26b7a18428f4be559",
     "semantic_hash": ""
   },
   "components/guias/Coordenada.tsx": {
-    "mtime": 1795019644.1738422,
-    "seen": 1795019893.8444107,
-    "ast_hash": "c406b8192820577703b261b6ae556c16",
+    "mtime": 1795037847.2493925,
+    "seen": 1795037890.9502432,
+    "ast_hash": "34e3052d4854bc5b4afe5a8d97ef063f",
     "semantic_hash": ""
   },
   "components/guias/RecursoExterno.tsx": {
@@ -1128,9 +1122,9 @@
     "semantic_hash": ""
   },
   "components/special-modes/sections/ModosComoFunciona.tsx": {
-    "mtime": 1795021676.791807,
-    "seen": 1795021870.306582,
-    "ast_hash": "1e4a56ab77e5ee23380f15cd12cdda18",
+    "mtime": 1795035984.8776598,
+    "seen": 1795036688.7959528,
+    "ast_hash": "2f78c0837ac99192d52e877b9e8a555b",
     "semantic_hash": ""
   },
   "components/special-modes/sections/ModosComparacao.tsx": {
@@ -1140,9 +1134,81 @@
     "semantic_hash": ""
   },
   "lib/terceiros.ts": {
-    "mtime": 1795022153.7921877,
-    "seen": 1795022355.7221308,
-    "ast_hash": "852cec0647cdd66805696887fce9f156",
+    "mtime": 1795037540.6690805,
+    "seen": 1795037890.9504054,
+    "ast_hash": "13a601936d863ed3a66d4c47e0d65fc8",
+    "semantic_hash": ""
+  },
+  "components/dungeons/sections/DungeonsAbertura.tsx": {
+    "mtime": 1795036028.4382665,
+    "seen": 1795036688.7958064,
+    "ast_hash": "fdae93312531d69623c88f1768484614",
+    "semantic_hash": ""
+  },
+  "components/guias/FiguraNoTamanho.tsx": {
+    "mtime": 1795035977.0934937,
+    "seen": 1795036688.7958333,
+    "ast_hash": "8146e845edad451e0ec63a86b93e50e3",
+    "semantic_hash": ""
+  },
+  "components/world-events/sections/WorldEventsAbertura.tsx": {
+    "mtime": 1795036206.2157352,
+    "seen": 1795036688.7959576,
+    "ast_hash": "7756ea2a2ada6c4e09c8a89aa6e1353d",
+    "semantic_hash": ""
+  },
+  "components/silverbull-shares/sections/SharesAbertura.tsx": {
+    "mtime": 1795036885.1417725,
+    "seen": 1795037080.3943043,
+    "ast_hash": "ee6b7cdff74dd8ad666750979ee023af",
+    "semantic_hash": ""
+  },
+  "components/professions/sections/IconeProfissao.tsx": {
+    "mtime": 1795037233.9594038,
+    "seen": 1795037419.8073409,
+    "ast_hash": "72c4c6bd7505c1cb2c180d527f8d0edf",
+    "semantic_hash": ""
+  },
+  "components/professions/sections/ProfessionCraftingSection.tsx": {
+    "mtime": 1795037235.7053452,
+    "seen": 1795037419.807342,
+    "ast_hash": "3100e5194954326b396cb54541f0af0e",
+    "semantic_hash": ""
+  },
+  "components/professions/sections/ProfessionsAbertura.tsx": {
+    "mtime": 1795037233.3862884,
+    "seen": 1795037419.8073494,
+    "ast_hash": "7d9722af46f16bd4605a8da1279f1ecd",
+    "semantic_hash": ""
+  },
+  "components/leveling/sections/LevelingAbertura.tsx": {
+    "mtime": 1795037625.6226497,
+    "seen": 1795037890.9502847,
+    "ast_hash": "c7c385c8ad8ac61a6749a263fb261c97",
+    "semantic_hash": ""
+  },
+  "components/leveling/sections/LevelingArmasSection.tsx": {
+    "mtime": 1795037862.039914,
+    "seen": 1795037890.9502861,
+    "ast_hash": "fb5e29f416ffc54069f3a3f8259e1910",
+    "semantic_hash": ""
+  },
+  "components/lootrun/sections/BlocosDaRun.tsx": {
+    "mtime": 1795038028.114742,
+    "seen": 1795038419.7624147,
+    "ast_hash": "3b716d1abf1a526214280c4198d50893",
+    "semantic_hash": ""
+  },
+  "components/lootrun/sections/LootrunAbertura.tsx": {
+    "mtime": 1795038027.0158901,
+    "seen": 1795038419.762416,
+    "ast_hash": "714ba13a2612c557e81b8cdb76bc7c26",
+    "semantic_hash": ""
+  },
+  "components/lootrun/sections/MidiasLootrun.tsx": {
+    "mtime": 1795038027.540964,
+    "seen": 1795038419.7624297,
+    "ast_hash": "176532bad17e72d8379a7d38ad90dd29",
     "semantic_hash": ""
   },
   "package-lock.json": {
