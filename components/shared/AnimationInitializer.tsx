@@ -33,9 +33,11 @@ export default function AnimationInitializer() {
     const viewportRevealThreshold = 0.74;
 
     const collectRevealTargets = () => {
-      const manualTargets = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
+      // Só dentro da raiz da História: sem isso, o observador marcava seções da próxima página ao navegar.
+      if (window.location.pathname !== "/historia") return [];
+      const manualTargets = Array.from(document.querySelectorAll<HTMLElement>("[data-revelar] .reveal-on-scroll"));
       // Só a abertura de cada seção anima (direção visual): o resto já nasce visível.
-      const autoSelectors = ["main section > div:first-child", "main section > header"].join(", ");
+      const autoSelectors = ["[data-revelar] section > div:first-child", "[data-revelar] section > header"].join(", ");
       const autoTargets = Array.from(document.querySelectorAll<HTMLElement>(autoSelectors)).filter(
         (element) => !element.closest("[data-reveal-ignore='true'], [data-reveal-ignore]")
       );
