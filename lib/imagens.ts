@@ -11,9 +11,11 @@ export const dimensoesDe = (src: string): [number, number] | null => tabela[src]
  * legenda. Para remover todas: apagar a pasta e rodar `node scripts/medir-imagens.mjs` (docs/CREDITOS.md).
  */
 export const creditoDe = (src: string) => {
-  if (!src.startsWith("/terceiros/wynncraft/")) return null;
   const href = origemDasImagens[src.split("/").pop() ?? ""];
-  return { texto: "© Wynncraft", href };
+  if (src.startsWith("/terceiros/wynncraft/")) return { texto: "© Wynncraft", href };
+  // Prévias de sites da comunidade: a imagem é do próprio site e pertence aos criadores dele.
+  if (src.startsWith("/terceiros/sites/")) return { texto: "© criadores do site", href };
+  return null;
 };
 
 /**

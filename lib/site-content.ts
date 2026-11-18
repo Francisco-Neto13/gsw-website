@@ -6,7 +6,7 @@ export type SitePageLink = {
   href: string;
 };
 
-export type GrupoId = "progressao" | "endgame" | "economia" | "especiais";
+export type GrupoId = "progressao" | "endgame" | "economia" | "especiais" | "ferramentas";
 
 export type GuiaSecao = {
   id: string;
@@ -38,6 +38,7 @@ export const grupos: { id: GrupoId; titulo: string }[] = [
   { id: "endgame", titulo: "Endgame" },
   { id: "economia", titulo: "Economia" },
   { id: "especiais", titulo: "Especiais" },
+  { id: "ferramentas", titulo: "Ferramentas" },
 ];
 
 export const raidsSecoes: GuiaSecao[] = [
@@ -150,6 +151,20 @@ export const lootrunSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const sitesUteisSecoes: GuiaSecao[] = [
+  { id: "guia-rapido", titulo: "Guia rápido", busca: "categorias builds economia wiki estatísticas crafting avançado" },
+  { id: "sites", titulo: "Os sites" },
+  { id: "site-wynnbuilder", titulo: "WynnBuilder", nivel: 3, busca: "build simulador dano dps ability tree" },
+  { id: "site-wynnxr", titulo: "WynnXR", nivel: 3, busca: "market preço economia lootrun raid" },
+  { id: "site-wynncraft", titulo: "Wynncraft (site oficial)", nivel: 3, busca: "oficial perfil ranking guilda notícias" },
+  { id: "site-wiki", titulo: "Wynncraft Wiki", nivel: 3, busca: "wiki quests mecânicas" },
+  { id: "site-wynnventory", titulo: "Wynnventory", nivel: 3, busca: "preço histórico mercado trade market" },
+  { id: "site-wynnpool", titulo: "Wynnpool", nivel: 3, busca: "estatísticas jogadores aspects ranking" },
+  { id: "site-nori-fish", titulo: "nori.fish", nivel: 3, busca: "nori calculadora avançado" },
+  { id: "site-wynncrafter", titulo: "WynnCrafter", nivel: 3, busca: "crafter crafting ingredientes simulador" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -252,6 +267,16 @@ export const guias: Guia[] = [
     estado: "completo",
     rotaAntiga: "/festivais",
     secoes: festivaisSecoes,
+  },
+  {
+    slug: "sites-uteis",
+    palavrasChave: "sites ferramentas links wynnbuilder wynnxr wynnventory wynnpool nori wiki crafter",
+    titulo: "Sites úteis",
+    resumo: "As ferramentas da comunidade para builds, mercado, dados e crafting.",
+    grupo: "ferramentas",
+    estado: "completo",
+    rotaAntiga: "/sites-uteis",
+    secoes: sitesUteisSecoes,
   },
 ];
 

@@ -106,4 +106,11 @@ export const origemDasImagens: Record<string, string> = {
   "item-wand-thunder3.webp": `${ITEM}wand.thunder3.webp`,
   "item-wand-water1.webp": `${ITEM}wand.water1.webp`,
   "item-wand-water3.webp": `${ITEM}wand.water3.webp`,
+  // Prévias dos Sites úteis: imagem de compartilhamento (og:image) do site ou captura da página inicial
+  "site-wynncraft-logo.webp": "https://cdn.wynncraft.com/nextgen/themes/classic/assets/wynncraft_icon.png",
+  "wynnpool.webp": "https://www.wynnpool.com/images/og-image.png",
+  "nori-fish.webp": "https://nori.fish/resources/nori_logo.png",
+  "wynnbuilder.webp": "https://wynnbuilder.github.io/",
+  "wynnventory.webp": "https://www.wynnventory.com/",
+  "wynncrafter.webp": "https://wynnbuilder.github.io/crafter/",
 };
