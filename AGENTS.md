@@ -9,7 +9,7 @@ Portal da guilda GsW (Guardians of Wynn), do servidor de Minecraft Wynncraft: ho
 guilda e guias do jogo (Lootrun, Raids, Dungeons, World Events, Profissões, Leveling, Modos
 Especiais, Silverbull Shares, Montarias, Festivais, Sites úteis e Guild House). **Só front**: sem back-end, banco, API
 própria ou variáveis de ambiente. Todo o conteúdo é estático, versionado no repositório.
-Produto e público: `PRODUCT.md`.
+Produto e público: `docs/PRODUCT.md`.
 
 ## Grafo do projeto (Graphify)
 
@@ -35,11 +35,11 @@ instalação num clone novo e o que é versionado: `docs/GRAFO.md`.
 | TypeScript (`strict`) | 5 |
 | Tailwind CSS (via `@tailwindcss/postcss`) | 4 |
 | ESLint (`eslint-config-next` core-web-vitals + typescript) | 9 |
-| sharp (só no script de conversão de imagens) | 0.34 |
+| sharp (variantes das imagens no build e conversão) | 0.34 |
 | Lenis (rolagem suave, carregada sob demanda) | 1.3.27 |
 
-Hospedagem: a definir (a Vercel não será mais usada; o `deploy.yml` está desligado e precisa ser
-reescrito). Ver `docs/INFRAESTRUTURA.md`. Sistema visual: `DESIGN.md`.
+Hospedagem: export estático num contêiner Caddy na VPS própria, em `gsw.chiconeto.dev` (a Vercel saiu).
+Ver `docs/INFRAESTRUTURA.md` e as regras da VPS em `/srv/REGRAS-DA-VPS.md`. Sistema visual: `docs/DESIGN.md`.
 
 ## Comandos
 
@@ -49,7 +49,8 @@ npm run dev          # servidor local em http://localhost:3000
 npm run typecheck    # tsc --noEmit
 npm run lint         # eslint
 npm test             # node --test em tests/ (executor nativo do Node, sem dependência)
-npm run build        # next build
+npm run build        # next build (export em out/) + variantes das imagens e redirects
+npm start            # serve out/ como em produção, em http://localhost:3000
 npm run check        # typecheck + lint + test + build, a mesma sequência da CI
 npm run convert:webp # converte imagens de image-workbench/input/ para webp em output/
 ```
@@ -75,6 +76,7 @@ npm run convert:webp # converte imagens de image-workbench/input/ para webp em o
 | `graphify-out/` | Grafo do Graphify (`docs/GRAFO.md`) |
 | `docs/redesign/` | Diagnóstico e proposta do redesign |
 | `.github/workflows/` | `ci.yml` e `deploy.yml` |
+| `infra/` | Dockerfile, Caddy, compose, arquivo do proxy e scripts de deploy da VPS |
 | `docs/` | Documentação do projeto |
 
 Arquitetura completa: `docs/ARQUITETURA.md`.
@@ -100,7 +102,7 @@ type(scope): imperative lowercase summary in english
 ## Branches e PR
 
 ```text
-<tipo>/<assunto>  --PR + CI verde-->  develop  --CI verde-->  main  -->  deploy (desligado)
+<tipo>/<assunto>  --PR + CI verde-->  develop  --CI verde-->  main  -->  deploy na VPS
 ```
 
 - Branch nova sempre a partir da `develop`: `git switch -c feat/assunto origin/develop`.
@@ -114,9 +116,8 @@ type(scope): imperative lowercase summary in english
 
 - `ci.yml`, em todo PR para `develop`/`main` e push nelas: branch de origem, tipos, lint, testes,
   build e gitleaks no histórico; depois mescla na `develop` e promove a `main`.
-- `deploy.yml`: **obsoleto** (escrito para a Vercel, que não será mais usada), desligado por
-  `DEPLOY_HABILITADO`; reescrever para a hospedagem nova antes de ligar. Nada vai para a produção
-  por outro caminho.
+- `deploy.yml`: na `main`, chama o deploy na VPS por SSH (chave restrita ao comando `deploy`), travado
+  por `DEPLOY_HABILITADO`; modos `dry_run` e `voltar`. Nada vai para a produção por outro caminho.
 - `.githooks/pre-push`: recusa push em `main`/`develop` e roda tipos, lint e testes.
 
 ## Regras de trabalho

@@ -8,7 +8,9 @@ Raids). Ao resolver um item, apague-o daqui no mesmo PR.
 | Item | Detalhe |
 |---|---|
 | Contato do aviso de site não oficial | O rodapé aponta para as issues do repositório no GitHub, porque a guilda não tem e-mail próprio. As [Minecraft Usage Guidelines](https://www.minecraft.net/en-us/usage-guidelines) pedem um contato real e dizem que chat e fórum não valem; um e-mail seria o mais seguro. Se a Mojang cobrar, trocar `contato` em `lib/site-content.ts` |
-| Hospedagem de produção | A Vercel não será mais usada. O `deploy.yml` atual publica na Vercel e está desligado; precisa ser trocado pelo destino novo (provavelmente a VPS, como o Portfolio) antes de ligar o deploy |
+| Deploy automático na VPS | O site está na VPS (`gsw.chiconeto.dev`, 18/11/2026), com o primeiro deploy feito à mão. Falta: rodar `infra/servidor/configurar-deploy.sh` com a chave da CI, cadastrar os secrets `VPS_*` e ligar `DEPLOY_HABILITADO` (`docs/CI-CD.md`); registrar o projeto no repositório da VPS; excluir o projeto da Vercel depois (`docs/MIGRACAO-VPS.md`, 5.7) |
+| Fontes no build | O build baixa as fontes do Google (`next/font/google`) e o Turbopack às vezes falha com "queries have exactly one entry" (aconteceu localmente e no build da VPS em 18/11/2026). O `infra/Dockerfile` tenta de novo do zero. Solução definitiva: copiar as fontes para o projeto e usar `next/font/local` (sem rede no build) |
+| Animação nova no Lootrun | O `scripts/gif-para-webp.mjs` ainda gera WebP animado; a página agora toca MP4 (`AnimacaoSobDemanda`). Para uma animação nova, gerar o pôster com o script e o MP4 com ffmpeg (H.264, mudo, `yuv420p`, `+faststart`), ou adaptar o script |
 | Autorização da Wynncraft para ícones oficiais | Sem ela, nada da CDN oficial entra no site (`docs/CREDITOS.md`). Pedido pelo Discord de desenvolvedores |
 | Links das ferramentas de alimentação (Montarias) | Faltam o link da Tabela de Materiais e Atributos e o da Calculadora (Wynnhub); os cartões aparecem tracejados com "Link a definir". Preencher `href` em `recursosDeAlimentacao` |
 | Print do Totem of Tales (Festivais) | A print do Discord mostra nome e avatar de outro jogador; ficou fora. O preço citado (1 stx) já está no texto |
@@ -70,7 +72,6 @@ A wiki se contradiz nestes pontos; o site mostra a dúvida em vez de escolher um
 
 | Item | Detalhe |
 |---|---|
-| Otimizador de imagens do Next | Em 18/11/2026, um pedido (`raid-ui-bau-recompensa-1280.webp`, 384 px, qualidade 90, AVIF) travou no `next start` local e todo pedido igual ficou esperando o primeiro, até reiniciar o servidor. Não se repetiu depois. Na hospedagem nova, conferir se há timeout no otimizador ou usar `unoptimized` nas prints que já são geradas em AVIF/WebP |
 
 ## CI/CD e repositório
 

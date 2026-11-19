@@ -1,7 +1,7 @@
 # Arquitetura
 
 Estado em 18/11/2026, depois da primeira parte da Fase 3 do redesign (base, navegação, Início e o
-guia modelo de Raids). Sistema visual: `DESIGN.md`. Produto: `PRODUCT.md`.
+guia modelo de Raids). Sistema visual: `docs/DESIGN.md`. Produto: `docs/PRODUCT.md`.
 
 ## Stack
 
@@ -50,7 +50,9 @@ lib/
   site-content.ts       registro de guias e áreas: navegação, busca, redirects, metadata
   glossario.ts          termos do jogo com explicação própria (usados pelo <Termo>)
 public/<area>/          mídia de cada área; prints novas em public/inicio/ e public/raids/prints/
-scripts/                convert-to-webp.mjs, gif-para-webp.mjs
+scripts/                convert-to-webp.mjs, gif-para-webp.mjs, gerar-variantes.mjs (passo final do build:
+                        variantes, pré-compressão e redirects), servir-out.mjs (npm start), medir-imagens.mjs
+infra/                  Dockerfile, Caddyfile, docker-compose.prod.yml, proxy/gsw.caddy, servidor/ (deploy na VPS)
 tests/                  rotas.test.mjs
 ```
 

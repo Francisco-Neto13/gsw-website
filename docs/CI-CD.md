@@ -12,7 +12,8 @@
    commit, só o commit testado) e apaga a branch. PR em **rascunho** roda a CI sem mesclar.
 3. A `develop` roda a CI de novo sobre o commit mesclado. Verde, o job **Promover para a main**
    avança a `main` até esse commit (só fast-forward, nunca reescreve).
-4. Se `DEPLOY_HABILITADO = true`, a promoção dispara o workflow **Deploy**. Hoje está desligado.
+4. Se `DEPLOY_HABILITADO = true`, a promoção dispara o workflow **Deploy**, que publica na VPS. Desligado até a CI
+   ter a chave de deploy (seção "Ativar o deploy").
 
 Regras:
 
@@ -30,7 +31,7 @@ Regras:
 | Arquivo | Papel |
 |---|---|
 | `.github/workflows/ci.yml` | Jobs `origem`, `front`, `seguranca`, `mesclar` e `promover` |
-| `.github/workflows/deploy.yml` | Deploy na Vercel pela CLI, só na `main`, travado por `DEPLOY_HABILITADO` |
+| `.github/workflows/deploy.yml` | Deploy na VPS por SSH (comando forçado), só na `main`, travado por `DEPLOY_HABILITADO` |
 | `.githooks/pre-push` | Bloqueia push em `main`/`develop` e roda tipos, lint e testes |
 | `.gitattributes` | Força LF no hook e nos YAML (CRLF quebra no Linux) |
 | `tests/rotas.test.mjs` | Testes do `npm test`: navegação × rotas de `app/` |
@@ -60,25 +61,35 @@ Verificação nova entra como passo do job `front` (ou job novo no `needs` de `m
 
 ## Deploy
 
-> **Obsoleto desde 18/11/2026:** a Vercel não será mais usada. O `deploy.yml` abaixo continua
-> desligado e precisa ser reescrito para a hospedagem nova antes de qualquer ativação
-> (`docs/INFRAESTRUTURA.md`, `docs/PENDENCIAS.md`). Não cadastre os secrets da Vercel. Esta seção
-> descreve o arquivo como ele está hoje.
+O site vai para a VPS (`docs/INFRAESTRUTURA.md`, `docs/MIGRACAO-VPS.md`), no mesmo modelo do Portfolio:
 
-- `deploy.yml` roda só por `workflow_dispatch` na `main`: disparado pela promoção ou à mão.
-  Um deploy por vez (`concurrency: deploy-producao`).
-- Passos: confere `DEPLOY_HABILITADO` (exceto em `dry_run`), confere os secrets, `npm ci`,
-  `vercel pull --environment=production`, `vercel build --prod` e
-  `vercel deploy --prebuilt --prod`. Com `dry_run`, para antes de publicar.
-- CLI fixada em `vercel@65.9.0`; atualizar de propósito, num PR próprio.
-- O token entra só pela env `VERCEL_TOKEN`, nunca na linha de comando.
-- A integração Git da Vercel está **desligada** (18/11/2026): o workflow é o único caminho para a
-  produção. Não religue: a Vercel voltaria a publicar todo push, inclusive o que não passou na CI,
-  e criaria um preview para cada branch.
+- **Gatilho:** `deploy.yml` roda só por `workflow_dispatch` na `main`, disparado pela promoção ou à mão. Um
+  deploy por vez (`concurrency: deploy-producao`).
+- **Modos:**
+  - `deploy`, o normal;
+  - `dry_run`, que mostra o commit no ar e o que entraria, sem mudar nada;
+  - `voltar`, que põe no ar a imagem anterior.
+- **Passos:**
+  - confere `DEPLOY_HABILITADO` (exceto no `dry_run`);
+  - confere os secrets;
+  - abre o SSH com a chave da CI e manda só o comando (`deploy`, `deploy --dry-run` ou `deploy --voltar`).
+- **Na VPS:**
+  - a chave da CI pertence ao usuário `deploy-gsw` e só consegue rodar `/usr/local/sbin/gsw-deploy` (comando
+    forçado e sudo restrito, criados por `infra/servidor/configurar-deploy.sh`);
+  - esse script roda o `infra/servidor/implantar.sh` da `main`.
+- **O que o `implantar.sh` faz:**
+  - trava contra deploy duplo;
+  - confere o disco;
+  - `git fetch` raso e `reset`;
+  - guarda a imagem no ar como `gsw-web:anterior`;
+  - `docker compose build` e `up -d --wait`;
+  - instala `infra/proxy/gsw.caddy` no proxy só depois de `caddy validate`.
+- **Build:** roda na própria VPS, dentro do `docker build` (`infra/Dockerfile`). Se falhar, a versão no ar
+  continua.
 
-**Voltar à versão anterior às pressas:** no painel da Vercel, Deployments › deploy anterior ›
-**Promote to Production** (ou `vercel rollback`). Depois abra o PR de revert, para a `main` voltar
-a bater com o que está no ar.
+**Voltar à versão anterior às pressas:** Actions › Deploy › Run workflow com `voltar`, ou na VPS
+`sudo /usr/local/sbin/gsw-deploy --voltar`. Depois abra o PR de revert, para a `main` voltar a bater com o
+que está no ar.
 
 ## Secrets e variáveis do GitHub
 
@@ -87,9 +98,11 @@ repositório.
 
 | Nome | Tipo | Conteúdo |
 |---|---|---|
-| `VERCEL_TOKEN` | Secret | Token da Vercel (Account Settings › Tokens), escopo só da conta/time do projeto |
-| `VERCEL_ORG_ID` | Secret | `orgId` do `.vercel/project.json` gerado pelo `vercel link` |
-| `VERCEL_PROJECT_ID` | Secret | `projectId` do mesmo arquivo |
+| `VPS_HOST` | Secret | Endereço da VPS |
+| `VPS_PORT` | Secret | Porta do SSH |
+| `VPS_USER` | Secret | `deploy-gsw` |
+| `VPS_SSH_KEY` | Secret | Chave privada da CI (a pública fica no `authorized_keys` do `deploy-gsw`) |
+| `VPS_KNOWN_HOSTS` | Secret | Linha do `ssh-keyscan` da VPS, para conferir o servidor |
 | `DEPLOY_HABILITADO` | **Variável** (aba Variables) | `true` liga o deploy; ausente ou outro valor mantém desligado |
 
 A CI não precisa de nenhum secret. Os jobs `mesclar` e `promover` usam o `GITHUB_TOKEN` com
@@ -99,26 +112,26 @@ marque "Read and write permissions".
 
 ## Ativar o deploy
 
-1. **Ligar o projeto local à Vercel**, numa pasta fora do repositório ou apagando o `.vercel/`
-   depois: `npx vercel@65.9.0 link` e escolha o projeto `gsw-website`. O `.vercel/project.json`
-   traz o `orgId` e o `projectId`. (O `.vercel/` já está no `.gitignore`.)
-2. **Criar o token**: vercel.com › Account Settings › Tokens, com escopo do time do projeto e
-   validade definida.
-3. **Cadastrar os secrets**, sem colar valores em arquivo do repositório:
+1. **Gerar a chave da CI**, fora do repositório: `ssh-keygen -t ed25519 -f gsw-ci -C gsw-ci -N ""`.
+2. **Criar o usuário de deploy na VPS**, como root: `bash /srv/gsw/infra/servidor/configurar-deploy.sh
+   "$(cat gsw-ci.pub)"`.
+3. **Cadastrar os secrets** (o valor de `VPS_SSH_KEY` é o conteúdo de `gsw-ci`; o de `VPS_KNOWN_HOSTS`, a saída
+   de `ssh-keyscan -p <porta> <endereço>`):
 
    ```bash
-   gh secret set VERCEL_TOKEN
-   gh secret set VERCEL_ORG_ID
-   gh secret set VERCEL_PROJECT_ID
+   gh secret set VPS_HOST
+   gh secret set VPS_PORT
+   gh secret set VPS_USER
+   gh secret set VPS_SSH_KEY < gsw-ci
+   gh secret set VPS_KNOWN_HOSTS
    ```
 
-   Conferir: `gh secret list` mostra os três.
-4. **Testar sem publicar**: Actions › Deploy › Run workflow, na `main`, com `dry_run` marcado (ou
-   `gh workflow run deploy.yml --ref main -f dry_run=true`). Precisa terminar verde, com
-   "Nada foi publicado".
-5. **Ligar**: crie a variável `DEPLOY_HABILITADO` = `true`
-   (`gh variable set DEPLOY_HABILITADO --body true`). A próxima promoção para a `main` publica
-   sozinha; para publicar na hora, rode o workflow Deploy sem `dry_run`.
+   Conferir: `gh secret list` mostra os cinco. Depois apague o arquivo `gsw-ci` da máquina.
+4. **Testar sem publicar:** Actions › Deploy › Run workflow, na `main`, com `dry_run`
+   (`gh workflow run deploy.yml --ref main -f modo=dry_run`). Precisa terminar verde, com "Nada foi
+   alterado".
+5. **Ligar:** crie a variável `DEPLOY_HABILITADO` = `true`
+   (`gh variable set DEPLOY_HABILITADO --body true`). A próxima promoção para a `main` publica sozinha.
 
 Para desligar de novo, apague a variável (`gh variable delete DEPLOY_HABILITADO`) ou mude o valor.
 
@@ -163,8 +176,7 @@ Adaptado, e por quê:
 | `scripts/ci/checks.sh` | `npm run check` e passos diretos no workflow | Uma única parte; não precisa de script |
 | Vitest/Playwright/testes do backend | `node --test` com `tests/rotas.test.mjs` | Não havia teste; o executor nativo do Node não adiciona dependência |
 | Semgrep, `npm audit`, Dependabot | Fora, por enquanto | Sem código de servidor nem entrada de usuário; ver `docs/PENDENCIAS.md` |
-| Deploy por SSH na VPS com usuário restrito e `implantar.sh` | Vercel CLI (`pull` → `build` → `deploy --prebuilt`) | O site roda na Vercel, não na VPS |
-| Secrets `VPS_*` | `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` | Idem |
-| `dry_run` chama `implantar.sh --dry-run` | `dry_run` faz `pull` e `build` e não publica | Valida token, projeto e build sem tocar na produção |
+| Deploy por SSH na VPS com usuário restrito e `implantar.sh` | Igual (modelo do Portfolio), com o modo `voltar` a mais | Desde 18/11/2026 o site roda na VPS; a Vercel saiu |
+| Secrets `VPS_*` | Igual | Idem |
 | Hook pula push só de imagens | Pula também `svg`, `avif`, `mp4` e `webm` | `public/` é quase toda mídia |
 | `actions/checkout@v7`, `setup-node@v7`, Node 24 | Igual | Mesmas versões do `muda` |

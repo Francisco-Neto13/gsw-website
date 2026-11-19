@@ -1,8 +1,8 @@
 # Migração da Vercel para a VPS: análise e plano
 
-> **Status: aguardando aprovação.** Nada foi alterado na VPS, no DNS nem na Vercel. Levantamento feito
-> em 18/11/2026 só com leitura (`ssh vps`, `vps-espaco`, `docker stats`, `sar`, arquivos de `/srv/proxy`
-> e de `/srv/servidor/docs`), seguindo `/srv/REGRAS-DA-VPS.md`.
+> **Status: no ar em https://gsw.chiconeto.dev desde 18/11/2026** (seção 6). O levantamento abaixo foi feito
+> antes, só com leitura (`ssh vps`, `vps-espaco`, `docker stats`, `sar`, arquivos de `/srv/proxy` e de
+> `/srv/servidor/docs`), seguindo `/srv/REGRAS-DA-VPS.md`. Falta a parte da CI e a saída da Vercel (seção 6).
 
 ## Resumo
 
@@ -350,3 +350,61 @@ continua no ar em `gsw-website.vercel.app` durante todo o processo.
 4. Apagar as referências à Vercel que ainda restarem nas docs.
 
 Se algum link público ainda apontar para `gsw-website.vercel.app`, é melhor trocá-lo antes do passo 2.
+
+## 6. Implantação (18/11/2026)
+
+### O que foi feito
+
+1. **DNS:** registro `A gsw → 13.140.208.115` (TTL 600) na Porkbun, criado pelo dono.
+2. **Animações do Lootrun:** viraram MP4 H.264. Elas foram de 80 MB para 16,5 MB; o Lootrun rolado até o fim
+   caiu de 82 MB para ~20 MB. Testei antes WebP com perda, que só cortava 38%.
+3. **Export estático:** carregador próprio de imagens, variantes no build (2.023 arquivos, 47 MB, ~30 s) e
+   redirects gerados a partir do registro.
+4. **Infra:** `infra/` com o Dockerfile em dois estágios, o Caddy interno, o compose `gsw-prod`, `proxy/gsw.caddy`
+   e os scripts `servidor/`.
+5. **Clone:** clone raso em `/srv/gsw` (260 MB).
+6. **Primeiro deploy:** feito à mão como root, a partir do ramo `feat/redesign-inicio-raids`, com
+   `bash infra/servidor/implantar.sh /srv/gsw deploy feat/redesign-inicio-raids`.
+
+### Problemas no caminho, já resolvidos
+
+| Problema | Causa | Correção |
+|---|---|---|
+| `npm ci` falhava na imagem | O `gifsicle` (só do script de GIFs) tenta compilar no Alpine | `npm ci --ignore-scripts`: o `sharp` e o compilador do Next usam binários prontos |
+| Contêiner reiniciando com "operation not permitted" | O binário oficial do Caddy pede uma capability, e o compose usa `cap_drop: ALL` e `no-new-privileges` | O Dockerfile copia o binário sem a capability; a porta é 8080, que não precisa dela |
+| Respostas 206 Partial Content | `file_server precompressed` no Caddy 2.10.2 | Compressão na hora, e a pré-compressão saiu do build |
+| 48 de 64 MB parado | Buffers do codificador zstd | Só gzip: 13 MB parado, 24 MB sob carga |
+| Build falhou uma vez com "next/font/google queries have exactly one entry" | Falha intermitente do Turbopack ao baixar as fontes | Segunda tentativa limpa no Dockerfile. A solução definitiva, fontes locais, está em `docs/PENDENCIAS.md` |
+| 404 nos `__next.*.txt` ao passar o mouse nos links | O export do Next 16 grava os arquivos de pré-carregamento com pastas, e o navegador pede com pontos | Tradução no `infra/Caddyfile` e no `npm start` |
+
+Cada falha de build parou antes de trocar o contêiner. Nenhum outro site da VPS foi afetado em nenhum momento:
+portfolio, gastos, muda e internship responderam normalmente durante todo o processo.
+
+### Medido depois
+
+| Item | Antes | Depois |
+|---|---|---|
+| Disco (`vps-espaco`) | 49 GB em uso, 145 GB livres | 51 GB em uso, 143 GB livres. Inclui a imagem atual e a anterior (~525 MB cada), o clone (260 MB) e o cache de build |
+| Memória em uso | 2,3 GB | ~2,6 GB (inclui cache; o contêiner usa 13 MB parado e 24 MB sob carga) |
+| Soma dos tetos de memória | 7,8 GB | 7,86 GB (`gsw-prod-web-1`: 64 MB, 0,5 CPU, 256 processos), abaixo dos 8 GB |
+| Contêineres | 12 | 13 |
+
+**Teste de carga:** 20 conexões por 20 s, com 562 pedidos, nenhum erro e nenhum processo morto por falta de
+memória.
+
+**Validação no ar:**
+- as 15 páginas em 390 px, sem estouro e sem erro no console;
+- nitidez das imagens em 1920 px sem nenhuma imagem borrada;
+- redirects 308 e 404;
+- cache de 1 ano na mídia e `no-cache` no HTML;
+- HSTS e cabeçalhos de segurança;
+- navegação entre páginas sem recarregar, busca e vídeos do Lootrun tocando.
+
+### O que falta
+
+1. **Deploy pela CI:** rodar `infra/servidor/configurar-deploy.sh` com a chave da CI, cadastrar os secrets
+   `VPS_*` e ligar `DEPLOY_HABILITADO` (`docs/CI-CD.md`, "Ativar o deploy"). Até lá, cada deploy é à mão.
+2. **Repositório da VPS:** registrar o projeto em `docs/SITES-E-SERVICOS.md`, na tabela de memória das regras e no
+   `vps-saude` (repositório `vps-chiconeto`).
+3. **Main:** quando a PR entrar na `main`, o próximo deploy passa a ser do ramo `main` (o padrão do script).
+4. **Vercel:** sai depois que um deploy pela CI der certo (seção 5.7).
