@@ -126,8 +126,9 @@ export default function Efeitos() {
     let quadro = 0;
     const medir = () => {
       quadro = 0;
+      // Folga entre ligar (24 px) e desligar (8 px): a rolagem suave chegando ao topo não fica trocando o vidro.
       if (window.scrollY > 24) raiz.setAttribute("data-rolou", "");
-      else raiz.removeAttribute("data-rolou");
+      else if (window.scrollY < 8) raiz.removeAttribute("data-rolou");
       for (const trilho of trilhos) {
         const caixa = trilho.getBoundingClientRect();
         const percurso = Math.max(1, caixa.height - window.innerHeight);
