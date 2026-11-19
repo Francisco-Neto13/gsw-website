@@ -1,0 +1,25 @@
+# Site da GsW no proxy compartilhado da VPS (/srv/proxy). O infra/servidor/implantar.sh instala este arquivo em
+# /srv/proxy/sites/gsw.caddy e recarrega o proxy só depois de validar. O contêiner já manda cache, cabeçalhos de
+# segurança e arquivos pré-comprimidos (infra/Caddyfile).
+gsw.chiconeto.dev {
+	# Sem "Via: 1.1 Caddy" nas respostas (apagar com - já vale depois do reverse_proxy)
+	header -Via
+	# O HTTPS termina aqui; o navegador não volta mais para http neste domínio
+	header Strict-Transport-Security "max-age=31536000"
+	# Site só de leitura: nenhum formulário envia corpo
+	request_body {
+		max_size 64KB
+	}
+	# Log de acesso no do contêiner do proxy (rotacionado pelo Docker), sem cabeçalhos
+	log {
+		format filter {
+			wrap json
+			fields {
+				request>headers delete
+				resp_headers delete
+			}
+		}
+	}
+	# Nome do contêiner, não do serviço (/srv/REGRAS-DA-VPS.md)
+	reverse_proxy gsw-prod-web-1:8080
+}

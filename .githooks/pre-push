@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# Roda antes de qualquer coisa sair da máquina. Instalado pelo `npm install` (script prepare) ou à
+# mão, uma vez por clone: git config core.hooksPath .githooks
+#
+# DEVELOP E MAIN NUNCA RECEBEM PUSH DIRETO. A develop só muda por PR com a CI verde, e a main só
+# pela promoção automática (docs/CI-CD.md). A única exceção é CRIAR a develop pela primeira vez.
+#
+# O git envia, por linha: <ref local> <sha local> <ref remota> <sha remota>.
+ZEROS=0000000000000000000000000000000000000000
+# Arquivos dos commits que vão sair, para decidir se as verificações precisam rodar
+ARQUIVOS=$(mktemp)
+trap 'rm -f "$ARQUIVOS"' EXIT
+while read -r _ SHA_LOCAL REF_REMOTA SHA_REMOTA; do
+  if [ "$SHA_LOCAL" != "$ZEROS" ]; then
+    if [ "$SHA_REMOTA" = "$ZEROS" ]; then
+      git log --format= --name-only "$SHA_LOCAL" --not --remotes >> "$ARQUIVOS"
+    else
+      git log --format= --name-only "$SHA_REMOTA..$SHA_LOCAL" >> "$ARQUIVOS"
+    fi
+  fi
+  case "$REF_REMOTA" in
+    refs/heads/main|refs/heads/develop)
+      if [ "$REF_REMOTA" = "refs/heads/develop" ] && [ "$SHA_REMOTA" = "$ZEROS" ]; then
+        continue
+      fi
+      echo "[pre-push] push direto para ${REF_REMOTA#refs/heads/} recusado."
+      echo "[pre-push] Abra um PR de uma branch de trabalho para a develop;"
+      echo "[pre-push] a main recebe a develop sozinha quando a CI passa."
+      exit 1 ;;
+  esac
+done
+
+# Push que só apaga branch ou só traz mídia (public/ tem centenas de imagens) não tem código para
+# verificar. Não use --no-verify: se o hook atrapalhar um caso legítimo, ajuste este arquivo.
+if ! grep -qv '^$' "$ARQUIVOS" || ! grep -v '^$' "$ARQUIVOS" | grep -qviE '\.(png|jpe?g|gif|webp|avif|svg|mp4|webm)$'; then
+  echo "[pre-push] só mídia ou nenhuma mudança de arquivo: verificações não precisam rodar."
+  exit 0
+fi
+
+# A parte rápida da CI. O build fica com a CI remota, que roda tudo no PR de qualquer jeito.
+cd "$(git rev-parse --show-toplevel)" || exit 1
+echo "[pre-push] tipos, lint e testes"
+npm run --silent typecheck && npm run --silent lint && npm test --silent > /dev/null || {
+  echo ""
+  echo "[pre-push] push cancelado: a CI falharia. Rode npm run typecheck, npm run lint e npm test."
+  exit 1
+}

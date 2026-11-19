@@ -1,62 +1,32 @@
-import Image from "next/image";
+import FiguraNoTamanho from "@/components/guias/FiguraNoTamanho";
+import SecaoGuia from "@/components/guias/SecaoGuia";
+import TextoComTermos from "@/components/guias/TextoComTermos";
 import {
-  rewardCards,
-  rewardChestCaption,
-  rewardChestImage,
-  worldEventsRewardsIntro,
+  recompensas,
+  recompensasAnnihilation,
+  recompensasImagem,
+  recompensasIntro,
 } from "@/components/world-events/data/world-events-content";
-import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
+import { tamanhos } from "@/lib/tamanhos";
 
 export default function WorldEventsRewardsSection() {
   return (
-    <section className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
-      <div className="pointer-events-none absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full bg-gsw/5 blur-[120px]" />
-
-      <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            {worldEventsRewardsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            {worldEventsRewardsIntro.title}
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {worldEventsRewardsIntro.description}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-          {rewardCards.map((item, index) => (
-            <article
-              key={item.title}
-              className="group relative rounded-2xl border border-white/10 bg-black/40 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-gsw/40 sm:p-8"
-            >
-              <span className="absolute right-4 bottom-3 select-none text-4xl font-black italic text-white/5 transition-colors duration-300 group-hover:text-gsw/10">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-3 text-lg font-bold tracking-tight text-white sm:text-xl">{item.title}</h3>
-              <p className="text-sm leading-relaxed text-zinc-400">{item.description}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 sm:mt-10">
-          <ClickableImagePreview src={rewardChestImage.src} alt={rewardChestImage.alt}>
-            <div className="relative aspect-video w-full">
-              <Image
-                src={rewardChestImage.src}
-                alt={rewardChestImage.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 42rem"
-                className="object-cover"
-              />
+    <SecaoGuia id="recompensas" titulo="Recompensas" introducao={recompensasIntro}>
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+        <dl className="grid gap-4 sm:grid-cols-2">
+          {recompensas.map((item) => (
+            <div key={item.titulo} className="rounded-md border border-linha bg-carvao px-5 py-4">
+              <dt className="font-bold text-texto">{item.titulo}</dt>
+              <dd className="mt-1 text-texto-2">{item.texto}</dd>
             </div>
-          </ClickableImagePreview>
-          <p className="px-4 py-3 text-center text-xs text-zinc-500 sm:px-5">
-            {rewardChestCaption}
-          </p>
-        </div>
+          ))}
+        </dl>
+        <FiguraNoTamanho imagem={recompensasImagem} sizes={tamanhos.lateral} />
       </div>
-    </section>
+      <h3 className="mt-10 text-titulo-4 font-bold text-texto">No Annihilation</h3>
+      <p className="mt-3 max-w-leitura text-texto-2">
+        <TextoComTermos texto={recompensasAnnihilation} />
+      </p>
+    </SecaoGuia>
   );
 }

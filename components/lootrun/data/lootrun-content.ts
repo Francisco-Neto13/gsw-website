@@ -1,14 +1,22 @@
-﻿export type MediaPlaceholder = {
+export type MediaPlaceholder = {
   name: string;
   src?: string;
   alt?: string;
   caption?: string;
   note?: string;
+  /** Animação WebP com pôster <nome>.poster.webp; só carrega no clique (scripts/gif-para-webp.mjs). */
+  animado?: boolean;
 };
 
 export type LootrunCamp = {
   name: string;
+  /** Cidade ou marco perto do camp (wiki, Lootrunning). */
+  perto: string;
   coordinates: string;
+  /** Segundos ganhos ao chegar e ao concluir um desafio (wiki). */
+  tempo: [number, number];
+  /** Quanto os mobs ganham de dano e de vida a cada desafio (wiki). */
+  escala: [string, string];
   difficulty: "Fácil" | "Médio" | "Difícil" | "Infernal";
   notes: string[];
   dangerousChallenges?: string[];
@@ -30,7 +38,13 @@ export type LootrunMechanicBlock = {
 
 export type LootrunBeacon = {
   color: string;
+  /** Cor do beacon no jogo (marcador desenhado no site, no lugar do emoji). "arco-iris" vira gradiente. */
+  hex: string;
   effect: string;
+  /** Valor nos 4 tiers (T0 base, T1, T2, T3). Beacon Vibrant e o Aqua sobem o tier. */
+  tiers: [string, string, string, string];
+  libera: string;
+  usos?: string;
   notes?: string[];
 };
 
@@ -45,16 +59,21 @@ export type LootrunCombo = {
 };
 
 export const lootrunGuideIntro = {
-  eyebrow: "Guia Oficial",
   title: "Lootrunning",
   paragraphs: [
     "Lootrunning é uma atividade de endgame focada em saquear cavernas, concluir desafios e maximizar recompensas como míticos, esmeraldas e itens valiosos.",
-    "Este guia foi reformulado para cobrir o fluxo completo: participação, divisões, lootcamps, mecânicas (tempo, desafios, beacons, curses, boons, missões e trials), recompensas, combos e extras.",
+    "Aqui está o fluxo completo: como se inscrever, as divisões, os camps, as mecânicas da run (tempo, desafios, beacons, curses, boons, missões e trials), as recompensas e os combos que a guilda usa.",
   ],
 };
 
+export const lootrunResumo = [
+  "Inscreva-se na divisão de Lootrun do Silverbull, a leste de Cinfras.",
+  "A run acaba quando o tempo zera ou quando você atinge o limite de desafios (12 no começo, até 100).",
+  "Depois de cada desafio você escolhe um beacon; ele define o que a run ganha a seguir.",
+  "Curses deixam os mobs mais fortes, mas aumentam os pulls do baú final.",
+];
+
 export const lootrunParticipation = {
-  eyebrow: "Primeiros passos",
   title: "Como Participar",
   paragraphs: [
     "Para começar, vá ao Centro de Divisão Silverbull, ao leste de Cinfras, e faça sua inscrição na divisão de Lootrun.",
@@ -79,7 +98,10 @@ export const lootrunParticipation = {
 export const lootrunCamps: LootrunCamp[] = [
   {
     name: "Canyon of the Lost Excursion (South)",
-    coordinates: "-1560, 97, -2675",
+    perto: "Thesead",
+    tempo: [60, 90],
+    escala: ["5%", "15%"],
+    coordinates: "575, 78, -5025",
     difficulty: "Médio",
     notes: [
       "Rota estável para progressão intermediária.",
@@ -87,11 +109,14 @@ export const lootrunCamps: LootrunCamp[] = [
     ],
     media: [
       { name: "Canyon Camp", src: "/lootrun/canyon_camp.webp", alt: "Lootcamp Canyon" },
-      { name: "Jump Pads", src: "/lootrun/jump_pads.gif", alt: "Jump pads em Canyon" },
+      { name: "Jump Pads", src: "/lootrun/jump_pads.webp", animado: true, alt: "Jump pads em Canyon" },
     ],
   },
   {
     name: "The Corkus Traversal",
+    perto: "Corkus City",
+    tempo: [60, 120],
+    escala: ["5%", "15%"],
     coordinates: "-1560, 97, -2675",
     difficulty: "Difícil",
     notes: [
@@ -106,11 +131,14 @@ export const lootrunCamps: LootrunCamp[] = [
     ],
     media: [
       { name: "Corkus Camp", src: "/lootrun/corkus_camp.webp", alt: "Lootcamp Corkus" },
-      { name: "Fast Travels em Corkus", src: "/lootrun/fast_travels_corkus.gif", alt: "Atalhos de Corkus" },
+      { name: "Fast Travels em Corkus", src: "/lootrun/fast_travels_corkus.webp", animado: true, alt: "Atalhos de Corkus" },
     ],
   },
   {
     name: "Molten Heights Hike",
+    perto: "Rodoroc",
+    tempo: [60, 90],
+    escala: ["10%", "20%"],
     coordinates: "1270, 10, -5130",
     difficulty: "Médio",
     notes: [
@@ -119,11 +147,14 @@ export const lootrunCamps: LootrunCamp[] = [
     ],
     media: [
       { name: "Molten Camp", src: "/lootrun/molten_camp.webp", alt: "Lootcamp Molten Heights" },
-      { name: "Rota em Molten", src: "/lootrun/gif_molten.gif", alt: "Exemplo de rota em Molten Heights" },
+      { name: "Rota em Molten", src: "/lootrun/gif_molten.webp", animado: true, alt: "Exemplo de rota em Molten Heights" },
     ],
   },
   {
     name: "Sky Islands Exploration",
+    perto: "Ahmsord",
+    tempo: [60, 90],
+    escala: ["5%", "15%"],
     coordinates: "1035, 135, -4420",
     difficulty: "Médio",
     notes: [
@@ -143,6 +174,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "Silent Expanse Expedition",
+    perto: "Lutho",
+    tempo: [60, 90],
+    escala: ["10%", "15%"],
     coordinates: "990, 77, -785",
     difficulty: "Médio",
     notes: [
@@ -163,6 +197,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "The Fruma Foray (West)",
+    perto: "Industrial District",
+    tempo: [90, 210],
+    escala: ["5%", "5%"],
     coordinates: "-2002, 4, -775",
     difficulty: "Difícil",
     notes: [
@@ -174,6 +211,9 @@ export const lootrunCamps: LootrunCamp[] = [
   },
   {
     name: "The Fruma Foray (East)",
+    perto: "Hyloch",
+    tempo: [90, 210],
+    escala: ["5%", "5%"],
     coordinates: "-1294, 75, -1146",
     difficulty: "Infernal",
     notes: [
@@ -186,7 +226,6 @@ export const lootrunCamps: LootrunCamp[] = [
 ];
 
 export const lootrunCampsIntro = {
-  eyebrow: "Lootcamps",
   title: "Campos e Desbloqueios",
   description:
     "Depois da inscrição, o próximo passo é escolher em qual lootcamp rodar. Cada campo tem requisitos de quests e cavernas para liberação completa.",
@@ -205,7 +244,6 @@ export const lootrunCampsIntro = {
 };
 
 export const lootrunDivisions = {
-  eyebrow: "Progressão",
   title: "Divisões e Desbloqueios",
   description:
     "A progressão de Lootrun funciona por XP próprio da atividade. Completar runs libera divisões e melhora sua capacidade de controlar as escolhas da run.",
@@ -216,17 +254,29 @@ export const lootrunDivisions = {
     "As divisões possuem faixas I, II e III, com exceções nos ranks mais altos.",
     "A progressão de rank libera mais consistência para controlar decisões da run.",
   ],
-  media: [
-    {
-      name: "Tela de divisões de Lootrun",
-      src: "/lootrun/Niveis.webp",
-      alt: "Tela de níveis e divisões de lootrun",
-    },
-  ],
 };
 
+/** Divisões da Lootrun: XP total para chegar e o que cada uma libera (wiki, Lootrunning). */
+export const lootrunDivisoesTabela = [
+  { rank: "Rookie I", xpTotal: 0, libera: "—" },
+  { rank: "Rookie II", xpTotal: 100, libera: "Beacon Aqua" },
+  { rank: "Rookie III", xpTotal: 200, libera: "Beacon Orange" },
+  { rank: "Assistant I", xpTotal: 300, libera: "+1 reroll de beacon por run" },
+  { rank: "Assistant II", xpTotal: 400, libera: "Beacon Green" },
+  { rank: "Assistant III", xpTotal: 520, libera: "+50% de velocidade nos interlúdios; 5% de chance de beacon Vibrant" },
+  { rank: "Sentinel I", xpTotal: 670, libera: "Beacon Dark Grey" },
+  { rank: "Sentinel II", xpTotal: 860, libera: "+1 opção de beacon e +1 opção de boon" },
+  { rank: "Sentinel III", xpTotal: 1100, libera: "Beacon White" },
+  { rank: "Elite I", xpTotal: 1400, libera: "Beacon Grey" },
+  { rank: "Elite II", xpTotal: 1780, libera: "Vibrant sobe para 10%; 1 reroll grátis por dia da recompensa final" },
+  { rank: "Elite III", xpTotal: 2260, libera: "Beacon Red" },
+  { rank: "Admiral", xpTotal: 2860, libera: "Beacon Pink; +1 reroll de beacon por run" },
+  { rank: "Commander", xpTotal: 3610, libera: "Beacon Rainbow" },
+  { rank: "Master", xpTotal: 4610, libera: "Beacon Crimson" },
+  { rank: "Grandmaster", xpTotal: 8610, libera: "—" },
+];
+
 export const lootrunMechanicsIntro = {
-  eyebrow: "Mecânicas",
   title: "Fundamentos da Run",
   description:
     "As mecânicas abaixo definem o ritmo, o risco e o potencial de recompensa da sua lootrun.",
@@ -243,22 +293,22 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
       "Ao atingir o limite total de desafios, a run encerra.",
     ],
     media: [
-      { name: "HUD de desafios", src: "/lootrun/icones_lootrun.gif", alt: "Ícones de desafios da lootrun" },
+      { name: "HUD de desafios", src: "/lootrun/icones_lootrun.webp", animado: true, alt: "Ícones de desafios da lootrun" },
       {
         name: "Aumento de limite de desafios",
-        src: "/lootrun/limite_desafios.gif",
+        src: "/lootrun/limite_desafios.webp", animado: true,
         alt: "Aumento de limite de desafios por beacon",
         caption: "Beacons vermelho e branco podem ampliar o limite máximo de desafios da run.",
       },
       {
         name: "Contador de desafios",
-        src: "/lootrun/desafio_gidf.gif",
+        src: "/lootrun/desafio_gidf.webp", animado: true,
         alt: "Exemplo de progressão do contador de desafios",
         caption: "Cada desafio concluído soma no contador até alcançar o limite da run.",
       },
       {
         name: "Fim por limite de desafios",
-        src: "/lootrun/lootrun_acabando.gif",
+        src: "/lootrun/lootrun_acabando.webp", animado: true,
         alt: "Lootrun encerrando ao atingir limite",
         caption: "Quando o limite de desafios é atingido, a lootrun é finalizada automaticamente.",
       },
@@ -278,13 +328,13 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
       { name: "Timer da lootrun", src: "/lootrun/timer.webp", alt: "Timer da lootrun no HUD" },
       {
         name: "Tempo ao chegar no desafio",
-        src: "/lootrun/GanhandoTempoChegando_no_desafio.gif",
+        src: "/lootrun/GanhandoTempoChegando_no_desafio.webp", animado: true,
         alt: "Ganho de tempo ao chegar no desafio",
         caption: "Você também recebe tempo ao alcançar o ponto do desafio.",
       },
       {
         name: "Tempo ao concluir desafio",
-        src: "/lootrun/GanhandoTempo_Terminando_o_desafio_2.gif",
+        src: "/lootrun/GanhandoTempo_Terminando_o_desafio_2.webp", animado: true,
         alt: "Ganho de tempo ao completar desafio",
         caption: "Concluir o objetivo do desafio adiciona tempo ao cronômetro.",
       },
@@ -296,13 +346,13 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
       },
       {
         name: "Penalidade ao morrer em desafio",
-        src: "/lootrun/morrendo_desafio.gif",
+        src: "/lootrun/morrendo_desafio.webp", animado: true,
         alt: "Redução de tempo ao morrer em desafio",
         caption: "Morrer/falhar durante desafio aplica penalidade de tempo e pode reduzir desafios máximos.",
       },
       {
         name: "Penalidade de tempo ao morrer",
-        src: "/lootrun/tempo_diminuindo_ao_morrer.gif",
+        src: "/lootrun/tempo_diminuindo_ao_morrer.webp", animado: true,
         alt: "Tempo diminuindo ao morrer",
         caption: "A morte fora de desafio ainda consome tempo da run.",
       },
@@ -319,7 +369,6 @@ export const lootrunMechanicBlocks: LootrunMechanicBlock[] = [
 ];
 
 export const lootrunAdvancedSystemsIntro = {
-  eyebrow: "Sistemas da Run",
   title: "Rerolls, Curses, Boons e Trials",
   description:
     "Depois de dominar desafios, timer e beacons, estes sistemas definem o teto da sua run.",
@@ -337,7 +386,7 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
     media: [
       {
         name: "Interface de beacon reroll",
-        src: "/lootrun/beacon_rr.gif",
+        src: "/lootrun/beacon_rr.webp", animado: true,
         alt: "Beacon rerolls no interlúdio",
       },
     ],
@@ -349,7 +398,7 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
       "Curses podem aumentar vida, dano, resistência, radiant chance e radiant power dos inimigos.",
       "Os efeitos acumulam; Enemy Resistance tem cap de 70%.",
       "Com Radiant Power alto, mobs radiantes se tornam mais perigosos e podem espalhar pressão.",
-      "Limpeza de curse pode vir de missões/trials como Cleasing Greed, Inner Peace e Chronotrigger.",
+      "Limpeza de curse pode vir de missões/trials como Cleansing Greed, Inner Peace e Chronotrigger.",
     ],
     media: [
       {
@@ -369,7 +418,7 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
       "Missões/trials podem consumir ou enfraquecer boons; escolha com cuidado.",
     ],
     media: [
-      { name: "Seleção de boons", src: "/lootrun/boons_escolhas.gif", alt: "Escolha de boons na lootrun" },
+      { name: "Seleção de boons", src: "/lootrun/boons_escolhas.webp", animado: true, alt: "Escolha de boons na lootrun" },
       { name: "Boons gerais", src: "/lootrun/boons_gerais.webp", alt: "Visão geral de boons ativos" },
       { name: "Boons detalhe 1", src: "/lootrun/boon1.webp", alt: "Detalhes de boons (exemplo 1)" },
       { name: "Boons detalhe 2", src: "/lootrun/boon2.webp", alt: "Detalhes de boons (exemplo 2)" },
@@ -390,84 +439,34 @@ export const lootrunAdvancedSystems: LootrunMechanicBlock[] = [
 ];
 
 export const lootrunBeaconsIntro = {
-  eyebrow: "Beacons",
-  title: "Cores e Efeitos",
+  title: "Beacons",
   description:
-    "Efeitos listados no formato Base / Vibrante / Vibrante + Aqua, quando aplicável.",
+    "Depois de cada desafio, o jogo oferece beacons para escolher. Cada beacon tem 4 tiers: o tier base e mais três. Um beacon pode vir Vibrant (+1 tier), e o Aqua sobe o tier do próximo beacon; os dois acumulam até o tier máximo.",
 };
 
+export const lootrunBeaconsRegras = [
+  "Vibrant: a partir de Assistant III, cada beacon oferecido tem 5% de chance de vir Vibrant; em Elite II, 10% no total.",
+  "Aqua: +1 tier no próximo beacon (+2 se o Aqua for Vibrant), acumulando até o tier 3. Morrer perde o bônus.",
+  "Na tela aparecem 2 opções de beacon (3 a partir de Sentinel II), até o máximo de 6 com Orange.",
+];
+
 export const lootrunBeacons: LootrunBeacon[] = [
-  {
-    color: "Blue",
-    effect: "Escolha 1 Boon entre 4 opções. Potência: 100% / 200% / 600%.",
-  },
-  {
-    color: "Purple",
-    effect: "+1 / +2 / +6 Curses e +1 / +2 / +6 Pulls.",
-  },
-  {
-    color: "Yellow",
-    effect: "Gera 1 / 2 / 6 Flying Chests.",
-  },
-  {
-    color: "Pink",
-    effect: "Concede 1 / 2 / 6 Beacon Rerolls.",
-  },
-  {
-    color: "Aqua",
-    effect: "+100% / +200% de efeito no próximo beacon escolhido.",
-    notes: ["Não pode aparecer duas vezes seguidas."],
-  },
-  {
-    color: "Orange",
-    effect: "+1 opção de beacon por 5 / 10 / 30 desafios.",
-    notes: ["Cap total de opções simultâneas: 6."],
-  },
-  {
-    color: "Green",
-    effect: "+120 / +240 / +720 segundos; sem buffs de mobs por 1 / 2 / 3 desafios.",
-    notes: ["Não pode aparecer duas vezes seguidas."],
-  },
-  {
-    color: "Dark Grey",
-    effect: "+3 / +6 / +18 Curses e +3 / +6 / +18 Pulls.",
-    notes: ["Só pode ser escolhido 1 vez por lootrun."],
-  },
-  {
-    color: "White",
-    effect: "+5 / +10 / +30 desafios para a lootrun.",
-    notes: ["Só pode ser escolhido 1 vez por lootrun."],
-  },
-  {
-    color: "Grey",
-    effect: "Escolha 1 Missão entre 3 / 4 / 5 opções.",
-    notes: [
-      "Cap de 4 missões por lootrun.",
-      "Primeiro Grey surge após o desafio 4.",
-    ],
-  },
-  {
-    color: "Red",
-    effect: "+3 / +5 / +15 desafios; sem ganho de tempo durante essa janela.",
-    notes: ["Não pode aparecer duas vezes seguidas."],
-  },
-  {
-    color: "Crimson",
-    effect: "Escolha 1 Trial entre 2 / 3 / 4 opções.",
-    notes: [
-      "Cap de 2 Crimsons por run.",
-      "Só aparece depois do challenge 20.",
-    ],
-  },
-  {
-    color: "Rainbow",
-    effect: "Deixa beacons Vibrantes por 10 / 20 / 60 desafios.",
-    notes: ["Para de aparecer ao acumular muitos desafios vibrantes."],
-  },
+  { color: "Blue", hex: "#5555FF", effect: "Escolha 1 Boon com potência aumentada.", tiers: ["100%", "200%", "300%", "400%"], libera: "Rookie I", usos: "até 30 por run", notes: ["Fica mais raro em runs longas."] },
+  { color: "Purple", hex: "#FF55FF", effect: "Adiciona curses e pulls de recompensa final.", tiers: ["+2", "+4", "+6", "+8"], libera: "Rookie I", notes: ["O mesmo número vale para curses e para pulls."] },
+  { color: "Yellow", hex: "#FFFF55", effect: "Gera baús voadores (Flying Chests).", tiers: ["2", "3", "4", "5"], libera: "Rookie I", notes: ["As próximas opções só aparecem depois de abrir os baús."] },
+  { color: "Aqua", hex: "#55FFFF", effect: "Sobe o tier do próximo beacon escolhido.", tiers: ["+1 tier", "+1 tier", "+1 tier", "+1 tier"], libera: "Rookie II", notes: ["Vibrant: +2 tiers. Não é afetado por outro Aqua."] },
+  { color: "Orange", hex: "#FFAA00", effect: "+1 opção de beacon durante N desafios.", tiers: ["10", "15", "20", "25"], libera: "Rookie III", notes: ["Limite de 6 opções na tela; cada Orange tem a própria contagem."] },
+  { color: "Green", hex: "#55FF55", effect: "Tempo extra; os mobs ficam sem buff só no desafio deste beacon.", tiers: ["+210 s", "+330 s", "+450 s", "+570 s"], libera: "Assistant II", notes: ["Nunca aparece duas vezes seguidas.", "É o único que passa do teto de 15 minutos do timer."] },
+  { color: "Dark Grey", hex: "#777777", effect: "Muitas curses e muitos pulls de uma vez.", tiers: ["+5", "+10", "+15", "+20"], libera: "Sentinel I", usos: "1 por run", notes: ["O mesmo número vale para curses e para pulls. Fica raro depois do desafio 10."] },
+  { color: "White", hex: "#FFFFFF", effect: "Desafios extras na run.", tiers: ["+15", "+20", "+25", "+30"], libera: "Sentinel III", usos: "1 por run", notes: ["Fica raro depois do desafio 10."] },
+  { color: "Grey", hex: "#AAAAAA", effect: "Escolha 1 Missão entre N opções.", tiers: ["3", "4", "5", "5"], libera: "Elite I", usos: "3 por run", notes: ["São 4 missões por run: 1 grátis depois do desafio 4 e 3 por Grey.", "Some entre os desafios 35 e 50."] },
+  { color: "Red", hex: "#FF5555", effect: "Desafios extras, sem ganho de tempo.", tiers: ["+6", "+9", "+12", "+15"], libera: "Elite III", notes: ["Nunca aparece duas vezes seguidas.", "Sai do jogo ao bater o teto de 100 desafios."] },
+  { color: "Pink", hex: "#FA71AF", effect: "Rerolls de beacon.", tiers: ["+2", "+3", "+4", "+5"], libera: "Admiral", notes: ["Adicionado na 2.2."] },
+  { color: "Crimson", hex: "#F94242", effect: "Escolha 1 Trial entre N opções.", tiers: ["2", "3", "4", "4"], libera: "Admiral ou Master (a wiki se contradiz)", usos: "2 por run", notes: ["Só aparece depois do desafio 20 e some por volta do 70."] },
+  { color: "Rainbow", hex: "arco-iris", effect: "Beacons Vibrant garantidos durante N desafios.", tiers: ["15", "20", "25", "30"], libera: "Commander ou Master (a wiki se contradiz)", notes: ["Só aparece a partir do desafio 10."] },
 ];
 
 export const lootrunRewardsIntro = {
-  eyebrow: "Recompensas",
   title: "Fim da Lootrun",
   lead: "Ao concluir a run, você volta para o início do camp e resgata o baú final.",
   body:
@@ -487,14 +486,14 @@ export const lootrunRewardMedia = {
   videos: <LootrunRewardVideo[]>[
     {
       id: "XqDErIU1fQU",
-      title: "Vídeo I - Abrindo o baú final da LR",
+      title: "Abrindo o baú final (vídeo antigo)",
       description:
-        "O vídeo é um pouco antigo, mas a temática continua a mesma. Mas de qualquer forma, vou colocar outro vídeo logo abaixo mostrando um mais recente.",
+        "Um vídeo mais antigo: o baú mudou pouco desde então.",
     },
     {
       id: "pv5HhUWO79k",
-      title: "Vídeo II - Abrindo o baú final da LR",
-      description: "Esse vídeo já é um pouco mais recente, como podem ver não tem tanta diferença assim.",
+      title: "Abrindo o baú final (vídeo recente)",
+      description: "Um vídeo mais recente, para comparar.",
     },
   ],
   image: {
@@ -506,10 +505,9 @@ export const lootrunRewardMedia = {
 };
 
 export const lootrunCombosIntro = {
-  eyebrow: "Combos",
   title: "Sinergias de Missões e Trials",
   description:
-    "As combinações abaixo são baseadas no seu material e servem como base de execução. Ajuste conforme ofertas reais de beacons/missões/trials durante a run.",
+    "As combinações que a guilda usa como ponto de partida. Ajuste conforme os beacons, missões e trials que aparecerem na run.",
 };
 
 export const lootrunCombos: LootrunCombo[] = [
@@ -578,12 +576,8 @@ export const lootrunCombos: LootrunCombo[] = [
   },
 ];
 
-export const lootrunExtrasIntro = {
-  eyebrow: "Informações adicionais",
-  title: "Extra",
-  description:
-    "Checklist final para evitar perda de run por preparo incompleto, má leitura de sistema ou execução fora da área jogável.",
-};
+export const lootrunExtrasIntro =
+  "O que vale saber antes de começar, para não perder a run por falta de preparo ou por sair da área.";
 
 export const lootrunExtras = [
   "Ao entrar em uma lootrun, seu inventário é bloqueado. Leve todos os itens essenciais antes de começar.",
@@ -598,38 +592,15 @@ export const lootrunExtras = [
   "Inscrição Silverbull dobra os valores do bônus diário de lootrun.",
 ];
 
-export const lootrunExtraHighlights = [
-  {
-    title: "Preparo antes de iniciar",
-    description:
-      "Com inventário bloqueado e sem compra de poções durante a run, tudo precisa estar pronto antes do primeiro desafio.",
-  },
-  {
-    title: "Tempo e cooldown",
-    description:
-      "Sair da área jogável ou finalizar cedo pode encerrar a run e ativar cooldown, afetando ritmo de progressão.",
-  },
-  {
-    title: "Leitura de status",
-    description:
-      "Rank, XP, curses, boons, missões e histórico de beacons devem ser acompanhados para decisões melhores no interlúdio.",
-  },
-];
-
-export const lootrunExtrasLabels = {
-  highlight: "Destaque",
-  note: "Nota",
-};
-
 export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   {
     name: "Mensagem de área jogável",
-    src: "/lootrun/area_jogavel.gif",
+    src: "/lootrun/area_jogavel.webp", animado: true,
     alt: "Aviso para retornar à área jogável da lootrun",
   },
   {
     name: "Finalização por sair da área",
-    src: "/lootrun/area_jogavel2.gif",
+    src: "/lootrun/area_jogavel2.webp", animado: true,
     alt: "Finalização da lootrun por sair da área jogável",
   },
   {
@@ -639,7 +610,7 @@ export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   },
   {
     name: "Rank/XP de lootrun na bússola",
-    src: "/lootrun/checando_rank.gif",
+    src: "/lootrun/checando_rank.webp", animado: true,
     alt: "Consulta de rank e XP de lootrun na bússola",
   },
   {
@@ -659,3 +630,8 @@ export const lootrunExtraSupportMedia: MediaPlaceholder[] = [
   },
 ];
 
+
+export const lootrunFontes = [
+  { rotulo: "Lootrunning, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Lootrunning" },
+  { rotulo: "Lootrun Beacons, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Lootrunning#Beacons" },
+];

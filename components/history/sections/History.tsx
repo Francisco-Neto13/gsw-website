@@ -1,6 +1,7 @@
 "use client";
 
-import GuideIntro from "@/components/shared/GuideIntro";
+import type { CSSProperties } from "react";
+import TextoAnimado from "@/components/shared/TextoAnimado";
 
 interface Era {
   year: string;
@@ -26,7 +27,7 @@ export default function History() {
       year: "2022 - 2023",
       title: "O Nascimento do Warteam e a Brazucoin",
       description:
-        "Um marco histórico: a fundação do Warteam oficial. Unindo veteranos e novos prodígios, a GsW tornou-se temida pelos seus Dry Snipes. Criamos a Brazucoin, uma moeda de influência que ditava o ritmo das conquistas.",
+        "Um marco histórico: a fundação do Warteam da guilda. Unindo veteranos e novos prodígios, a GsW tornou-se temida pelos seus Dry Snipes. Criamos a Brazucoin, uma moeda de influência que ditava o ritmo das conquistas.",
     },
     {
       year: "2024",
@@ -50,86 +51,48 @@ export default function History() {
 
   return (
     <>
-      <GuideIntro
-        id="historia"
-        eyebrow="Guia Oficial"
-        title={
-          <>
-            História da <span className="text-gsw">GsW</span>
-          </>
-        }
-        paragraphs={[
-          "Mais do que uma linha do tempo, esta página guarda a memória da GsW: os períodos de ascensão, as guerras que marcaram a guilda, os líderes que conduziram cada era e os membros que ajudaram a transformar a comunidade em uma das presenças brasileiras mais fortes de Wynncraft.",
-          "Aqui ficam registrados os momentos que definiram a identidade da guilda, desde as primeiras chamas até a fase atual, para que cada conquista, ruptura e renascimento continue fazendo parte do legado da GsW.",
-        ]}
-        sectionClassName="bg-black"
-      />
+      <header id="historia" className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-y-5 pb-12 pt-8 lg:pt-10">
+        <div>
+          <h1 className="text-titulo-1 text-texto">
+            <TextoAnimado texto="História da GsW" />
+          </h1>
+        </div>
+          <div className="entra flex max-w-leitura flex-col gap-4 text-lede text-texto-2" style={{ "--i": 4 } as CSSProperties}>
+            <p>Mais do que uma linha do tempo, esta página guarda a memória da GsW: os períodos de ascensão, as guerras que marcaram a guilda, os líderes que conduziram cada era e os membros que ajudaram a transformar a comunidade em uma das presenças brasileiras mais fortes de Wynncraft.</p>
+            <p>Aqui ficam registrados os momentos que definiram a identidade da guilda, desde as primeiras chamas até a fase atual, para que cada conquista, ruptura e renascimento continue fazendo parte do legado da GsW.</p>
+          </div>
+      </header>
 
-      <section className="relative overflow-hidden bg-zinc-950 px-4 pb-16 pt-16 sm:px-6 sm:pb-32 sm:pt-24">
-        <div className="relative z-10 mx-auto max-w-5xl">
-          <div className="reveal-on-scroll mb-16 text-center sm:mb-28">
-            <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-              Documento Oficial
-            </span>
-            <h2 className="mb-6 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-              Crônicas de <span className="text-gsw">Wynn</span>
+      <section className="border-t border-linha py-16 sm:py-20">
+        <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+          <div className="mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
+            <h2 className="text-titulo-2 text-texto">
+              Crônicas de Wynn
             </h2>
-            <p className="mx-auto max-w-xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
+            <p className="mt-3 text-texto-2">
               &ldquo;Um registro eterno das eras, das alianças e do sangue derramado pelos
               Guardiões na busca pela paz nas províncias.&rdquo;
             </p>
           </div>
+          <div className="min-w-0">
 
-          <div className="relative">
-            <div className="history-timeline-line-desktop absolute bottom-0 top-0 left-1/2 hidden w-px -translate-x-1/2 bg-gradient-to-b from-gsw/40 via-white/10 to-transparent sm:block" />
-            <div className="history-timeline-line-mobile absolute bottom-0 top-0 left-4 w-px bg-gradient-to-b from-gsw/40 via-white/10 to-transparent sm:hidden" />
+          <ol className="grid gap-x-12 xl:grid-cols-2">
+            {eras.map((era) => (
+              <li key={era.year} className="trilho-desenha relative pb-10 pl-6 sm:pl-8">
+                <span aria-hidden className="absolute -left-[5px] top-2 h-[9px] w-[9px] rounded-full border-2 border-violeta-borda bg-chao" />
+                <p className="numeros font-mono text-apoio text-violeta">{era.year}</p>
+                <h3 className="text-titulo-4 mt-1 font-titulo text-texto">{era.title}</h3>
+                <p className="mt-2 text-texto-2">{era.description}</p>
+              </li>
+            ))}
+          </ol>
 
-            <div className="space-y-12 sm:space-y-28">
-              {eras.map((era, index) => (
-                <div
-                  key={index}
-                  className={`reveal-on-scroll group history-era-group relative flex flex-col items-start gap-4 sm:flex-row sm:gap-12 ${
-                    index % 2 === 0 ? "sm:flex-row-reverse" : ""
-                  }`}
-                >
-                  <div className="absolute left-4 top-2 z-20 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-gsw bg-zinc-950 sm:hidden" />
-                  <div className="absolute left-1/2 top-8 z-20 hidden h-3 w-3 -translate-x-1/2 rounded-full border-2 border-gsw bg-zinc-950 transition-transform duration-500 group-hover:scale-150 group-hover:bg-gsw sm:block" />
-
-                  <div
-                    className={`hidden w-full sm:block sm:w-1/2 ${
-                      index % 2 === 0 ? "sm:pl-12 sm:text-left" : "sm:pr-12 sm:text-right"
-                    }`}
-                  >
-                    <span className="history-year-emphasis mb-4 block transform-gpu text-3xl font-black italic text-gsw/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-110 group-hover:text-gsw">
-                      {era.year}
-                    </span>
-                  </div>
-
-                  <div className={`history-era-card history-sheen-card history-tilt-timeline w-full rounded-2xl border border-white/10 bg-black p-5 pl-10 transition-all duration-500 group-hover:border-gsw/40 group-hover:bg-zinc-900/50 sm:w-1/2 sm:p-8 sm:pl-8 ${
-                    index % 2 === 0 ? "history-tilt-right" : "history-tilt-left"
-                  }`}>
-                    <div className="history-era-card-inner transform-gpu transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105">
-                      <span className="history-year-emphasis mb-2 block transform-gpu text-sm font-black italic text-gsw/60 transition-all duration-500 group-hover:scale-110 group-hover:text-gsw sm:hidden">
-                        {era.year}
-                      </span>
-                      <h4 className="mb-3 text-base font-bold uppercase tracking-tight text-white transition-colors duration-500 group-hover:text-gsw sm:mb-4 sm:text-xl">
-                        {era.title}
-                      </h4>
-                      <p className="text-sm leading-relaxed text-zinc-300 transition-colors duration-500 group-hover:text-white">
-                        {era.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="reveal-on-scroll mt-16 text-center sm:mt-24">
-            <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic text-zinc-500 sm:px-12 sm:pt-12">
+          <div className="mt-12 max-w-leitura">
+            <p className="border-l border-linha-forte pl-4 italic text-texto-2">
               &ldquo;O valor de um guardião não se mede apenas pelo seu nível, mas pela sua
               lealdade à bandeira.&rdquo;
             </p>
+          </div>
           </div>
         </div>
       </section>

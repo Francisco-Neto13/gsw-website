@@ -1,0 +1,26 @@
+# Site estático da GsW: build do Next (export) + variantes das imagens, servido pelo Caddy (docs/MIGRACAO-VPS.md).
+# Build a partir da raiz do repositório: docker build -f infra/Dockerfile .
+
+FROM node:24-alpine AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+# Sem scripts de instalação: o sharp e o compilador do Next usam binários prontos, e o gifsicle (só do script de
+# GIFs, fora do build) tentaria compilar sem as ferramentas da imagem. O `prepare` (hook do git) também não serve aqui.
+RUN npm ci --no-audit --no-fund --ignore-scripts
+COPY . .
+# next build (precisa de internet para o Google Fonts) e scripts/gerar-variantes.mjs. O Turbopack às vezes falha
+# ao baixar as fontes ("next/font/google queries have exactly one entry"); uma segunda tentativa limpa resolve.
+RUN npm run build || (echo "Build falhou; tentando de novo do zero." && rm -rf .next out && npm run build)
+
+FROM caddy:2.10-alpine
+LABEL app=gsw
+# O binário oficial vem com a capability de abrir portas baixas. Com cap_drop: ALL e no-new-privileges (compose),
+# o kernel recusa executar binário que pede capability ("operation not permitted"); aqui a porta é 8080, então
+# uma cópia sem o atributo basta (o cp não preserva a capability).
+RUN cp /usr/bin/caddy /tmp/caddy && mv /tmp/caddy /usr/bin/caddy
+COPY infra/Caddyfile /etc/caddy/Caddyfile
+COPY --from=build /app/infra/gerado/redirects.caddy /etc/caddy/redirects.caddy
+COPY --from=build /app/out /srv
+# Sem root: a porta 8080 não precisa de privilégio (infra/Caddyfile)
+USER 1000:1000
+EXPOSE 8080

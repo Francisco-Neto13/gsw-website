@@ -1,89 +1,95 @@
-﻿# GsW Website
+﻿<div align="center">
+  <img src="./public/icon.webp" width="96" alt="Logo da GsW">
 
-<div align="center">
-  <img src="./public/icon.webp" width="120" alt="GsW Logo" style="border-radius: 50%">
-  <p>Portal oficial da comunidade GsW.</p>
-  <a href="https://gsw-website.vercel.app/"><strong>Acessar site</strong></a>
+  <h1>GsW · Guardians of Wynn</h1>
+
+  <p><strong>Guias de Wynncraft em português, feitos pela guilda.</strong><br>O portal da GsW: a nossa história e o que aprendemos jogando.</p>
+
+  <a href="https://gsw.chiconeto.dev/"><strong>gsw.chiconeto.dev</strong></a>
+
+  <br><br>
+
+  <img src="https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 16">
+  <img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React 19">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4">
+  <img src="https://img.shields.io/badge/Caddy-1F88C0?style=for-the-badge&logo=caddy&logoColor=white" alt="Caddy">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
 </div>
 
-<br />
+<br>
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
-</div>
+![O site da GsW no ar](./.github/assets/preview.webp)
 
----
+## O projeto
 
-## Visão geral
+A GsW é uma guilda brasileira de Wynncraft, o MMORPG dentro do Minecraft, desde 2017. Este site reúne o que a guilda sabe sobre o jogo em guias passo a passo, em português, e guarda a nossa história: os membros, a galeria e a Guild House.
 
-O site da GsW funciona como o portal oficial da comunidade. Ele reúne a identidade da guilda, preserva sua história e organiza guias que ajudam membros novos e antigos a navegar melhor pelo universo de Wynncraft.
+É um site de fãs. Não é oficial e não tem vínculo com a Wynncraft, a Mojang ou a Microsoft.
 
-Mais do que uma landing page, o projeto foi pensado como um ponto central de referência da comunidade: um lugar onde história, guias e conteúdo institucional convivem dentro da mesma linguagem visual.
+## O que há para ver
 
-## O que o site entrega
+- **Raids sala a sala:** as cinco raids com cada variação explicada e vídeos em POV da guilda.
+- **Guias do jogo:** Leveling, Profissões, Montarias, Lootrun, Dungeons, World Events, Silverbull Shares, Modos especiais e Festivais, com fatos conferidos na wiki e as fontes no fim.
+- **Sites úteis:** as ferramentas que a comunidade usa, com filtro por categoria.
+- **Guild House:** a nossa sede, com um mapa da ilha em que cada setor é clicável.
+- **Caixa de item:** os termos do jogo abrem uma explicação no estilo da interface do Wynncraft.
+- **Busca com Ctrl+K:** encontra guias e seções inteiras, por nome, sigla ou sinônimo.
 
-- uma página inicial que apresenta a proposta do portal e o posicionamento da GsW
-- uma página de história dedicada ao legado da guilda, com crônicas, pilares, membros e galeria
-- guias públicos de progressão, endgame e modos especiais
-- uma seção dedicada à economia da guilda em Silverbull Shares
-- navegação simples entre páginas e também por seções dentro de cada guia
-- conteúdo visual local, sem dependência de painel administrativo
+## Stack
 
-## Guias do jogo
+| Área | Tecnologias |
+|---|---|
+| Base | Next.js 16 (App Router, export estático), React 19, TypeScript |
+| Estilo | Tailwind CSS 4 com tokens próprios (direção visual "Caixa de Item") |
+| Movimento | CSS e IntersectionObserver; Lenis para a rolagem suave, baixado sob demanda |
+| Conteúdo | Dados tipados em arquivos `*-content.ts`, sem banco e sem painel |
+| Imagens | `sharp` no build: variantes responsivas em WebP, vídeos MP4 no lugar de animações pesadas |
+| Infraestrutura | Caddy num contêiner sem root, em VPS própria, atrás de um proxy com HTTPS automático |
+| Entrega | GitHub Actions: CI em toda PR e deploy a partir da `main` |
 
-O projeto mantém guias detalhados para as principais atividades de Wynncraft diretamente no repositório, para que o conteúdo continue acessível e fácil de evoluir.
+## Decisões técnicas
 
-### Lootrun
+**Só arquivos estáticos.** O site inteiro é gerado no build. Não há servidor de aplicação no ar: o contêiner é um Caddy que serve arquivos com teto de 64 MB de memória.
 
-Guia completo sobre o sistema de Lootrun, incluindo participação, divisions, camps, mecânicas, beacons, combos e recompensas.
+**Imagens no tamanho de cada tela, sem otimizador em tempo real.** Um carregador próprio do `next/image` aponta para variantes geradas no build. As páginas pesam o mesmo que com o otimizador do Next, sem o custo de memória dele.
 
-### Dungeons
+**Compressão feita uma vez.** HTML, JS e CSS saem do build já em zstd, brotli e gzip. O servidor escolhe a versão certa e não comprime nada a cada visita.
 
-Informações sobre acesso, forgery, merchant, recompensas e materiais de apoio para diferentes níveis de progressão.
+**Conteúdo em dados, layout em componentes.** Todo texto de guia mora em `data/`. Um guia novo segue o mesmo modelo (ficha, índice "Nesta página", seções, fontes) e o teste falha se faltar algo no registro.
 
-### Raids
+**Acessível por padrão.** As animações respeitam `prefers-reduced-motion`, todo estado tem ícone e texto (nunca só cor), e a navegação funciona inteira pelo teclado.
 
-Cobertura das raids da guilda com primeiros passos, estrutura, guias por raid, recompensas e extras.
+**Imagens de terceiros isoladas.** O que vem da wiki ou da Wynncraft fica numa pasta própria, com crédito e link em cada legenda. Para remover tudo de uma vez, basta apagar a pasta.
 
-### World Events
+**Deploy sem acesso amplo.** A chave da CI só consegue disparar o deploy. Se o build falhar, a versão no ar continua, e voltar para a anterior leva segundos.
 
-Guia sobre participação, mecânicas, annihilation, recompensas e orientações complementares.
+## Estrutura
 
-### Professions
+```
+app/                      # Rotas: cada page.tsx só renderiza o componente da página
+components/
+├── <area>/               # Um guia por pasta: pages/, sections/ e data/ (o texto)
+├── guias/                # Peças do modelo de guia: ficha, seção, galeria, termo, busca
+└── shared/               # Top bar, rodapé, imagens, vídeo e animações
+lib/                      # Registro dos guias, glossário, variantes das imagens
+infra/                    # Dockerfile, Caddy, compose e scripts de deploy da VPS
+docs/                     # Arquitetura, design, produto, padrões, CI/CD e infraestrutura
+```
 
-Conteúdo sobre tipos de profissão, ferramentas, spots de grind, waypoints e extras.
+## Rodando localmente
 
-### Leveling
+```bash
+npm install
+npm run dev     # servidor de desenvolvimento em http://localhost:3000
+npm run check   # tipos, lint, testes e o build estático
+npm start       # serve a pasta out/ como em produção
+```
 
-Guia de evolução com foco em party, spots e builds ao longo da progressão.
+A documentação completa está em [`docs/`](./docs), e as regras para quem trabalha no código, em [`AGENTS.md`](./AGENTS.md).
 
-### Modos Especiais
+## Autoria e licença
 
-Documentação sobre os modos especiais do jogo, incluindo proposta de desafio e visão geral de cada modo.
+Criado e mantido pela **GsW**.
 
-### Silverbull Shares
-
-Seção dedicada à economia da guilda no Silverbull, com overview, ranks, membership, crates, bombs, pets, tokens e extras.
-
-### Montarias
-
-Área reservada para o guia de montarias, com estrutura já publicada para receber o conteúdo oficial.
-
-### Festivais
-
-Área reservada para festivais e eventos sazonais, com estrutura já publicada para receber o conteúdo oficial.
-
-## Direção atual do projeto
-
-Hoje o site está intencionalmente orientado à experiência pública do portal. A proposta é continuar evoluindo com novas páginas, guias e conteúdos institucionais, mantendo a manutenção simples e a identidade visual da comunidade.
-
-## Licença
-
-Este projeto é fechado e protegido por direitos autorais.
-
-© 2024-2026 GsW. Todos os direitos reservados.
-
-Consulte o arquivo `LICENSE` para os termos completos de uso e restrição.
+© 2024-2026 GsW. Todos os direitos reservados. O código está público para consulta, mas não pode ser copiado, modificado ou redistribuído sem autorização. Veja a [licença](./LICENSE). Wynncraft e seus assets © Wynncraft Studios; Minecraft © Mojang AB.

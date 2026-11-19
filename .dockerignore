@@ -1,0 +1,12 @@
+# Só o que o build precisa (infra/Dockerfile)
+.git
+.github
+.next
+out
+node_modules
+graphify-out
+image-workbench
+infra/gerado
+*.log
+.env*
+.vercel

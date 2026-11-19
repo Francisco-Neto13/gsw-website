@@ -1,84 +1,109 @@
-import { lootrunBeacons, lootrunBeaconsIntro } from "@/components/lootrun/data/lootrun-content";
+import Image from "next/image";
+import CreditoImagem from "@/components/guias/CreditoImagem";
+import SecaoGuia from "@/components/guias/SecaoGuia";
+import { dimensoesDe } from "@/lib/imagens";
+import {
+  lootrunBeacons,
+  lootrunBeaconsIntro,
+  lootrunBeaconsRegras,
+  type LootrunBeacon,
+} from "@/components/lootrun/data/lootrun-content";
 
-function getBeaconEmoji(color: string) {
-  switch (color) {
-    case "Blue":
-      return "\u{1F7E6}";
-    case "Purple":
-      return "\u{1F7EA}";
-    case "Yellow":
-      return "\u{1F7E8}";
-    case "Pink":
-      return "\u{1F7EA}";
-    case "Aqua":
-      return "\u{1F7E6}";
-    case "Orange":
-      return "\u{1F7E7}";
-    case "Green":
-      return "\u{1F7E9}";
-    case "Dark Grey":
-      return "\u{2B1B}";
-    case "White":
-      return "\u{2B1C}";
-    case "Grey":
-      return "\u{25FB}\u{FE0F}";
-    case "Red":
-      return "\u{1F7E5}";
-    case "Crimson":
-      return "\u{1F7E5}";
-    case "Rainbow":
-      return "\u{1F308}";
-    default:
-      return "\u{1F7E7}";
+/** Ícone do beacon no jogo (wiki, public/terceiros/): "Dark Grey" vira beacon-dark-gray.webp. */
+const iconeDoBeacon = (beacon: LootrunBeacon) =>
+  `/terceiros/wynncraft/beacon-${beacon.color.toLowerCase().replace(/grey/, "gray").replace(/\s+/g, "-")}.webp`;
+
+/** Ícone do jogo; sem ele (pasta de terceiros removida), o marcador desenhado na cor do beacon. */
+function MarcadorBeacon({ beacon }: { beacon: LootrunBeacon }) {
+  const icone = iconeDoBeacon(beacon);
+  if (dimensoesDe(icone)) {
+    return <Image src={icone} alt="" width={32} height={32} sizes="32px" quality={90} className="h-8 w-8 shrink-0 [image-rendering:pixelated]" />;
   }
+  return <MarcadorDesenhado beacon={beacon} />;
+}
+
+function MarcadorDesenhado({ beacon }: { beacon: LootrunBeacon }) {
+  const fundo =
+    beacon.hex === "arco-iris"
+      ? "linear-gradient(135deg, #ff5555, #ffaa00, #ffff55, #55ff55, #55ffff, #5555ff, #ff55ff)"
+      : beacon.hex;
+  return (
+    <span aria-hidden className="relative flex h-9 w-6 shrink-0 items-end justify-center">
+      <span className="absolute bottom-0 h-3 w-6 rounded-sm border border-black/40 bg-[#3a3a3a]" />
+      <span className="absolute bottom-3 h-6 w-2 rounded-t-sm opacity-90" style={{ background: fundo }} />
+    </span>
+  );
 }
 
 export default function LootrunBeaconsSection() {
   return (
-    <section className="bg-zinc-950 px-4 py-16 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            {lootrunBeaconsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            {lootrunBeaconsIntro.title}
-          </h2>
-          <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {lootrunBeaconsIntro.description}
-          </p>
-        </div>
+    <SecaoGuia id="beacons" titulo="Beacons" introducao={lootrunBeaconsIntro.description}>
+      <ul className="flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+        {lootrunBeaconsRegras.map((regra) => (
+          <li key={regra}>{regra}</li>
+        ))}
+      </ul>
 
-        <div className="space-y-3 sm:space-y-4">
-          {lootrunBeacons.map((beacon) => (
-            <article
-              key={beacon.color}
-              className="rounded-2xl border border-white/10 bg-black/35 px-5 py-4 sm:px-7 sm:py-5"
-            >
-              <div className="mb-2 flex items-start gap-4">
-                <span className="select-none text-2xl sm:text-3xl" aria-label={`Beacon ${beacon.color}`}>
-                  {getBeaconEmoji(beacon.color)}
-                </span>
-                <div>
-                  <h3 className="text-base font-bold text-white sm:text-lg">{beacon.color}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-zinc-400 sm:text-base">{beacon.effect}</p>
-                </div>
-              </div>
-
-              {beacon.notes && beacon.notes.length > 0 ? (
-                <div className="space-y-1.5 pl-10 sm:pl-12">
-                  {beacon.notes.map((note) => (
-                    <p key={note} className="text-xs leading-relaxed text-zinc-500 sm:text-sm">
-                      - {note}
-                    </p>
+      <div className="mt-8 max-w-[60rem] overflow-x-auto rounded-md border border-linha">
+        <table className="w-full min-w-[44rem] border-collapse text-left text-apoio">
+          <caption className="sr-only">Beacons da lootrun: efeito, valores por tier e rank que libera</caption>
+          <thead className="bg-carvao text-texto">
+            <tr>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Beacon
+              </th>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Efeito
+              </th>
+              {["T0", "T1", "T2", "T3"].map((tier) => (
+                <th key={tier} scope="col" className="px-3 py-2.5 text-right font-bold">
+                  {tier}
+                </th>
+              ))}
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Libera em
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {lootrunBeacons.map((beacon) => (
+              <tr key={beacon.color} className="border-t border-linha align-top">
+                <th scope="row" className="px-4 py-3 font-normal">
+                  <span className="flex items-center gap-3">
+                    <MarcadorBeacon beacon={beacon} />
+                    <span className="font-medium text-texto">{beacon.color}</span>
+                  </span>
+                </th>
+                <td className="px-4 py-3 text-texto-2">
+                  {beacon.effect}
+                  {beacon.usos ? <span className="block text-apoio text-texto-3">Limite: {beacon.usos}</span> : null}
+                  {beacon.notes?.map((nota) => (
+                    <span key={nota} className="mt-1 block text-apoio text-texto-3">
+                      {nota}
+                    </span>
                   ))}
-                </div>
-              ) : null}
-            </article>
-          ))}
-        </div>
+                </td>
+                {beacon.tiers.map((valor, indice) => (
+                  <td key={indice} className="numeros whitespace-nowrap px-3 py-3 text-right font-mono text-texto">
+                    {valor}
+                  </td>
+                ))}
+                <td className="px-4 py-3 text-texto-2">{beacon.libera}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </section>
+      <p className="mt-2 max-w-leitura text-apoio text-texto-3">
+        Valores conferidos na wiki da Wynncraft para a versão 2.2.4.{" "}
+        {dimensoesDe(iconeDoBeacon(lootrunBeacons[0])) ? (
+          <>
+            Ícones dos beacons: <CreditoImagem src={iconeDoBeacon(lootrunBeacons[0])} />, da wiki.
+          </>
+        ) : (
+          "A cor do Crimson é aproximada."
+        )}
+      </p>
+    </SecaoGuia>
   );
 }
-

@@ -46,31 +46,26 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
   const imageSrc = member.img?.trim() ? normalizeImageSrc(member.img.trim()) : fallbackSrc;
 
   return (
-    <div className="history-sheen-card history-tilt-soft group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-4 transition-colors duration-200 hover:border-gsw/40">
-      <div className="history-tilt-media relative mb-4 aspect-square w-full overflow-hidden rounded-xl bg-zinc-900 sm:mb-6">
-        <Image
+    <div data-revelar-item data-inclinar className="holofote rounded-md border border-linha bg-carvao p-3">
+      <div className="relative mb-3 aspect-square w-full overflow-hidden rounded bg-elevada">
+        <Image quality={90}
           src={imageSrc}
           alt={member.name}
           fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 10rem"
           className="object-cover object-top"
           unoptimized={imageSrc.startsWith("data:")}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
       </div>
-      <div className="text-center">
-        <span className="mb-1 block text-[10px] font-bold uppercase tracking-widest text-gsw/80">
-          {member.role}
-        </span>
-        <h3 className="mb-3 text-lg font-black italic tracking-tight text-white transition-colors duration-200 group-hover:text-gsw sm:mb-4 sm:text-xl">
-          {member.name}
-        </h3>
+      <div>
+        <h3 className="text-titulo-4 font-bold text-texto">{member.name}</h3>
+        <p className="text-apoio text-texto-3">{member.role}</p>
         {member.tags && member.tags.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
+          <div className="mt-3 flex flex-wrap gap-1.5">
             {member.tags.map((tag) => (
               <span
                 key={`${member.name}-${tag}`}
-                className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-zinc-300"
+                className="rounded border border-linha px-1.5 py-px text-detalhe text-texto-2"
               >
                 {tag}
               </span>
@@ -84,41 +79,39 @@ const MemberCard = memo(function MemberCard({ member }: { member: Member }) {
 
 export default function MembersSection() {
   return (
-    <section id="membros" className="relative overflow-hidden bg-zinc-950 px-4 py-16 sm:px-6 sm:py-32">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(113,22,173,0.03)_0%,transparent_50%)]" />
-      <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mb-10 text-center sm:mb-20">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-4">
-            Elite de Wynn
-          </span>
-          <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-            Os <span className="text-gsw">Guardiões Principais</span>
+    <section id="membros" className="border-t border-linha py-16 sm:py-20">
+      <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div className="mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
+          <h2 className="text-titulo-2 text-texto">
+            Os Guardiões Principais
           </h2>
-          <p className="mx-auto max-w-2xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             &ldquo;Não são apenas nomes em uma lista, são as lendas que escrevem as crônicas da
             GsW a cada batalha.&rdquo;
           </p>
         </div>
+        <div className="min-w-0">
 
         {members.length > 0 ? (
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 2xl:grid-cols-7">
             {members.map((member) => (
               <MemberCard key={member.name} member={member} />
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border border-dashed border-white/10 bg-black/30 px-6 py-12 text-center sm:px-10 sm:py-16">
-            <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <div className="rounded-md border border-dashed border-linha bg-carvao px-6 py-12 text-center sm:px-10 sm:py-16">
+            <p className="text-texto-2">
               Adicione os retratos em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/members</code>{" "}
+              <code className="rounded bg-gsw/15 px-1.5 py-0.5 text-detalhe text-violeta">public/members</code>{" "}
               e preencha a lista em{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
+              <code className="rounded bg-gsw/15 px-1.5 py-0.5 text-detalhe text-violeta">
                 components/history/data/members.ts
               </code>
               .
             </p>
           </div>
         )}
+        </div>
       </div>
     </section>
   );

@@ -1,114 +1,64 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import { useState } from "react";
 import { galleryPhotos } from "@/components/history/data/gallery";
+import GaleriaDialogo, { TAMANHO_DA_MINIATURA } from "@/components/history/sections/GaleriaDialogo";
 
 export default function GallerySection() {
   const photos = galleryPhotos;
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number | null>(null);
 
-  const selectedPhoto = selectedPhotoIndex !== null ? photos[selectedPhotoIndex] : null;
-  const modalTitleId =
-    selectedPhotoIndex !== null ? `history-gallery-modal-title-${selectedPhotoIndex}` : undefined;
-  const modalDescriptionId =
-    selectedPhotoIndex !== null ? `history-gallery-modal-description-${selectedPhotoIndex}` : undefined;
-
-  const goToNext = useCallback(() => {
-    if (photos.length === 0) return;
-
-    setSelectedPhotoIndex((prev) => (prev !== null ? (prev + 1) % photos.length : null));
-  }, [photos.length]);
-
-  const goToPrev = useCallback(() => {
-    if (photos.length === 0) return;
-
-    setSelectedPhotoIndex((prev) =>
-      prev !== null ? (prev - 1 + photos.length) % photos.length : null
-    );
-  }, [photos.length]);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (selectedPhotoIndex === null) return;
-
-      if (event.key === "Escape") {
-        setSelectedPhotoIndex(null);
-      } else if (event.key === "ArrowRight") {
-        goToNext();
-      } else if (event.key === "ArrowLeft") {
-        goToPrev();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedPhotoIndex, goToNext, goToPrev]);
-
-  useEffect(() => {
-    if (selectedPhotoIndex === null) {
-      return;
-    }
-
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = originalOverflow;
-    };
-  }, [selectedPhotoIndex]);
-
   return (
-    <section id="galeria" className="relative overflow-hidden bg-black px-4 py-16 sm:px-6 sm:py-32">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_bottom,rgba(113,22,173,0.03)_0%,transparent_50%)]" />
+    <section id="galeria" className="border-t border-linha py-16 sm:py-20">
 
-      <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="reveal-on-scroll mb-10 text-center sm:mb-20">
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-4">
-            Memórias Eternas
-          </span>
-          <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:mb-8 sm:text-5xl lg:text-7xl">
-            Galeria dos <span className="text-gsw">Guardiões</span>
+      <div className="casca grid gap-x-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+        <div className="mb-10 max-w-leitura lg:sticky lg:top-24 lg:mb-0 lg:self-start">
+          <h2 className="text-titulo-2 text-texto">
+            Galeria dos Guardiões
           </h2>
-          <p className="mx-auto max-w-2xl px-2 text-sm italic leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-3 text-texto-2">
             &ldquo;Cada imagem conta uma história, cada momento eternizado na memória dos
             Guardiões.&rdquo;
           </p>
         </div>
+        <div className="min-w-0">
 
-        <div className="history-gallery-frame reveal-on-scroll rounded-3xl border border-white/10 bg-black/35 p-3 sm:p-5 lg:p-6">
+        <div>
           {photos.length > 0 ? (
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-4">
               {photos.map((photo, index) => (
-                <div
+                <button
+                  type="button"
                   key={`${photo.title}-${index}`}
-                  className="history-sheen-card history-tilt-gallery group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-zinc-900 transition-colors duration-200 hover:border-gsw/35 sm:aspect-video"
+                  data-revelar-item
+                  aria-label={`Abrir foto: ${photo.title}`}
+                  className="group relative block aspect-[3/2] cursor-zoom-in overflow-hidden rounded-md border border-linha bg-elevada text-left transition-colors duration-[var(--dur-ui)] hover:border-violeta-borda sm:aspect-video"
                   onClick={() => setSelectedPhotoIndex(index)}
                 >
-                  <Image
+                  <Image quality={90}
                     src={photo.thumbSrc || photo.src}
                     alt={photo.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                    className="history-tilt-media object-cover transition-transform duration-300 group-hover:scale-110"
+                    sizes={TAMANHO_DA_MINIATURA}
+                    className="object-cover transition-transform duration-[900ms] ease-[var(--ease-saida)] group-hover:scale-105"
                   />
                   <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 sm:p-4">
-                    <h3 className="mb-1 text-xs font-bold text-white sm:text-sm">{photo.title}</h3>
+                    <span className="block font-bold text-texto">{photo.title}</span>
                     {photo.description && (
-                      <p className="hidden text-xs text-zinc-300 sm:block">{photo.description}</p>
+                      <span className="hidden text-apoio text-texto-2 sm:block">{photo.description}</span>
                     )}
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-white/10 bg-zinc-900/20 px-6 py-12 text-center sm:px-10 sm:py-16">
-              <p className="text-sm leading-relaxed text-zinc-400 sm:text-base">
+            <div className="rounded-md border border-dashed border-linha bg-carvao px-6 py-12 text-center sm:px-10 sm:py-16">
+              <p className="text-texto-2">
                 Adicione as imagens em{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">public/gallery</code>{" "}
+                <code className="rounded bg-gsw/15 px-1.5 py-0.5 text-detalhe text-violeta">public/gallery</code>{" "}
                 e preencha a lista em{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs text-gsw">
+                <code className="rounded bg-gsw/15 px-1.5 py-0.5 text-detalhe text-violeta">
                   components/history/data/gallery.ts
                 </code>
                 .
@@ -117,106 +67,17 @@ export default function GallerySection() {
           )}
         </div>
 
-        <div className="reveal-on-scroll mt-16 text-center sm:mt-24">
-          <p className="inline-block border-t border-white/5 px-6 pt-10 text-sm italic leading-relaxed text-zinc-500 sm:px-12 sm:pt-12">
+        <div className="mt-12 max-w-leitura">
+          <p className="border-l border-linha-forte pl-4 italic text-texto-2">
             &ldquo;Onde houver uma batalha, haverá um{" "}
-            <span className="text-sm font-bold uppercase tracking-widest text-gsw/60">Guardião</span>.
+            <span className="font-medium text-texto">Guardião</span>.
             O legado da GsW é eterno.&rdquo;
           </p>
         </div>
+        </div>
       </div>
 
-      {selectedPhoto && typeof document !== "undefined"
-        ? createPortal(
-            <div
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby={modalTitleId}
-              aria-describedby={modalDescriptionId}
-              className="history-gallery-modal-overlay fixed inset-0 z-[110] flex items-center justify-center p-2 sm:p-4 md:p-6 lg:p-8"
-              onClick={() => setSelectedPhotoIndex(null)}
-            >
-              <div
-                className="history-gallery-modal-shell relative w-full max-w-6xl"
-                onClick={(event) => event.stopPropagation()}
-              >
-                <div className="history-gallery-modal-frame relative flex max-h-[92vh] w-full flex-col overflow-y-auto rounded-3xl border border-white/10 bg-black/55 p-2.5 sm:max-h-[90vh] sm:p-4 md:max-h-[88vh] lg:p-6">
-                  <div className="history-gallery-modal-header mb-2.5 flex items-center justify-between border-b border-white/10 pb-2.5 sm:mb-3 sm:pb-3">
-                    <div className="min-w-0">
-                      <p className="history-gallery-modal-label text-[10px] font-bold uppercase tracking-[0.35em] sm:text-xs">
-                        Arquivo Visual
-                      </p>
-                      <p className="history-gallery-modal-counter mt-1 text-xs font-semibold sm:text-sm">
-                        {selectedPhotoIndex !== null && `${selectedPhotoIndex + 1} de ${photos.length}`}
-                      </p>
-                    </div>
-
-                    <button
-                      className="history-gallery-modal-close-button inline-flex items-center gap-2 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors sm:text-sm"
-                      onClick={() => setSelectedPhotoIndex(null)}
-                      aria-label="Fechar"
-                      type="button"
-                    >
-                      <span className="hidden sm:inline">Fechar</span>
-                      <span aria-hidden="true">×</span>
-                    </button>
-                  </div>
-
-                  <div className="history-gallery-modal-content grid gap-3 md:grid-cols-[minmax(0,1.15fr)_minmax(220px,0.85fr)] lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.55fr)]">
-                    <div className="history-gallery-modal-media relative flex items-center justify-center">
-                      <div className="history-gallery-modal-canvas relative h-[33vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/45 sm:h-[40vh] md:h-[44vh] lg:h-[60vh]">
-                        <Image
-                          src={selectedPhoto.src}
-                          alt={selectedPhoto.title}
-                          fill
-                          sizes="(max-width: 1024px) 92vw, 72vw"
-                          className="object-contain p-2 sm:p-4"
-                        />
-                      </div>
-                    </div>
-
-                    <aside className="history-gallery-modal-info rounded-2xl border border-white/10 bg-black/35 p-3 sm:p-4 lg:p-5">
-                      <h3
-                        id={modalTitleId}
-                        className="mb-1.5 text-base font-black tracking-tight text-white sm:mb-2 sm:text-xl lg:text-2xl"
-                      >
-                        {selectedPhoto.title}
-                      </h3>
-
-                      <p id={modalDescriptionId} className="mb-3 text-xs leading-relaxed text-zinc-300 sm:mb-4 sm:text-sm">
-                        {selectedPhoto.description || "Registro histórico da galeria oficial da GsW."}
-                      </p>
-
-                      <div className="history-gallery-modal-meta mb-3 hidden flex-wrap gap-2 sm:mb-4 sm:flex">
-                        <span className="history-gallery-modal-chip">←/→ Navegar</span>
-                        <span className="history-gallery-modal-chip">ESC Fechar</span>
-                        <span className="history-gallery-modal-chip">Clique fora para sair</span>
-                      </div>
-
-                      <div className="history-gallery-modal-actions flex flex-col gap-2">
-                        <button
-                          className="history-gallery-modal-action-btn"
-                          onClick={goToNext}
-                          type="button"
-                        >
-                          Próxima →
-                        </button>
-                        <button
-                          className="history-gallery-modal-action-btn"
-                          onClick={goToPrev}
-                          type="button"
-                        >
-                          ← Anterior
-                        </button>
-                      </div>
-                    </aside>
-                  </div>
-                </div>
-              </div>
-            </div>,
-            document.body
-          )
-        : null}
+      <GaleriaDialogo fotos={photos} indice={selectedPhotoIndex} aoMudar={setSelectedPhotoIndex} />
     </section>
   );
 }

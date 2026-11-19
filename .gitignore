@@ -49,3 +49,21 @@ next-env.d.ts
 
 # local backups
 /backup/
+
+# graphify: versiona o grafo, o relatório, o manifesto, os rótulos e o cache semântico (docs/GRAFO.md)
+/graphify-out/*
+!/graphify-out/graph.json
+!/graphify-out/GRAPH_REPORT.md
+!/graphify-out/manifest.json
+!/graphify-out/.graphify_labels.json
+!/graphify-out/cache/
+/graphify-out/cache/*
+!/graphify-out/cache/semantic/
+
+# hooks do graphify e config local do Claude Code: têm caminhos desta máquina; cada clone instala os seus
+/.githooks/post-*
+/.claude/settings.json
+/.claude/settings.local.json
+
+# Redirects do Caddy gerados no build (scripts/gerar-variantes.mjs)
+/infra/gerado/

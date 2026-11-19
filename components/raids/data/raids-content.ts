@@ -1,8 +1,13 @@
-﻿export type RaidCatalogItem = {
+export type RaidCatalogItem = {
+  /** Âncora da seção no guia (#notg, #nol...). */
+  id: "notg" | "nol" | "tcc" | "tna" | "twp";
+  sigla: string;
   name: string;
-  level: string;
+  /** Nível de combate mínimo (wiki: Raids, conferido em 18/11/2026, jogo 2.2.4). */
+  level: number;
   quest: string;
   rune: string;
+  boss: string;
   image: string;
   location?: string;
 };
@@ -38,11 +43,11 @@ export type RaidCaptionImage = {
 };
 
 export const raids: RaidCatalogItem[] = [
-  { name: "Nest of the Grootslangs", level: "Lvl 55+", quest: "Realm of Light I - The Worm Holes", rune: "Az Rune", image: "/raids/notg.webp", location: "X: -1977, Z: -5661" },
-  { name: "Orphion's Nexus of Light", level: "Lvl 80+", quest: "Realm of Light I até o V", rune: "Uth Rune", image: "/raids/nol.webp", location: "X: -732, Z: -6499" },
-  { name: "The Canyon Colossus", level: "Lvl 97+", quest: "The Thanos Repository, Dwarves and Doguns I-IV, The Envoy I e II, The Breaking Point", rune: "Tol Rune", image: "/raids/tcc.webp", location: "X: 721, Z: -4452" },
-  { name: "The Nameless Anomaly", level: "Lvl 103+", quest: "A Journey Beyond e A Journey Further", rune: "Tol Rune", image: "/raids/tna.webp", location: "X: 1071, Z: -830" },
-  { name: "The Wartorn Palace", level: "Lvl 119+", quest: "Apotheosis", rune: "Ek Rune", image: "/raids/twp.webp", location: "X: -1625, Z: -674" },
+  { id: "notg", sigla: "NOTG", name: "Nest of the Grootslangs", level: 54, quest: "Realm of Light I - The Worm Holes", rune: "Az", boss: "Grootslang Wyrmling", image: "/raids/notg.webp", location: "X: -1977, Z: -5661" },
+  { id: "nol", sigla: "NOL", name: "Orphion's Nexus of Light", level: 79, quest: "Realm of Light I até o V", rune: "Uth", boss: "Orphion e The Parasite", image: "/raids/nol.webp", location: "X: -732, Z: -6499" },
+  { id: "tcc", sigla: "TCC", name: "The Canyon Colossus", level: 95, quest: "The Thanos Repository, Dwarves and Doguns I-IV, The Envoy I e II, The Breaking Point", rune: "Tol", boss: "The Canyon Colossus", image: "/raids/tcc.webp", location: "X: 721, Z: -4452" },
+  { id: "tna", sigla: "TNA", name: "The Nameless Anomaly", level: 103, quest: "A Journey Beyond e A Journey Further (por personagem)", rune: "Tol", boss: "The Nameless", image: "/raids/tna.webp", location: "X: 1071, Z: -830" },
+  { id: "twp", sigla: "TWP", name: "The Wartorn Palace", level: 119, quest: "Apotheosis", rune: "Ek", boss: "Anathema", image: "/raids/twp.webp", location: "X: -1625, Z: -674" },
 ];
 
 export const queueSteps: RaidStepImage[] = [
@@ -85,7 +90,7 @@ export const notgRooms: RaidGuideRoom[] = [
           "Uma pessoa sobe na plataforma verde enquanto as outras impedem os ovos de contaminarem o centro, matando os ovos que aparecem ao redor da arena.",
         videoId: "43TcYLyjnEM",
         points: [
-          "A pessoa com maior EHP ou maior alcance costuma ficar no centro.",
+          "A pessoa com maior [[ehp|EHP]] ou maior alcance costuma ficar no centro.",
           "Os ovos surgem a cada 10 segundos em um dos 6 spawns possíveis e precisam ser destruídos em até 5 segundos.",
           "Se o ovo não for morto a tempo, ele contamina a plataforma central por 5 segundos e obriga o jogador a sair dela temporariamente.",
           "As outras 3 pessoas precisam acompanhar o aviso no chat, localizar o ovo com glowing e eliminá-lo rápido.",
@@ -530,7 +535,7 @@ export const twpRooms: RaidGuideRoom[] = [
     room: "Sala 1",
     title: "Desbloqueie as Portas Elementais ou Exploda os Mobs com Luz",
     description:
-      "A primeira sala da TWP possui duas rotas possiveis: Caminho (portas elementais) e Raio (Sonic Amplifier).",
+      "A primeira sala da TWP possui duas rotas possíveis: Caminho (portas elementais) e Raio (Sonic Amplifier).",
         variants: [
           {
             name: "Caminho",
@@ -608,285 +613,208 @@ export const twpRooms: RaidGuideRoom[] = [
   },
 ];
 
-export const upcomingRaidGuides: string[] = [];
+// ---------------------------------------------------------------------------------------------
+// Textos do guia. Fatos de mecânica conferidos na wiki (Raids) e na API oficial em 18/11/2026,
+// jogo 2.2.4; reescritos com palavras da guilda (docs/CREDITOS.md).
 
-export const extras = [
-  "Entre na raid com todos os itens que precisar. Depois de começar, o inventário é bloqueado e não é possível adicionar nem remover nada.",
-  "Cada raid tem um tipo mítico diferente de aspect, que muda toda sexta-feira às 14h no horário de Brasília. As rotações também afetam versões fabled e lendária.",
-  "Só é possível utilizar 1 aspect mítico por classe.",
-  "Qualquer aspect obtido pode ser usado em todas as classes compatíveis com aquele aspect.",
-  "É possível aumentar a quantidade de aspects e recompensas ativando os Gambits na tela inicial da raid. Cada gambit traz um desafio ou consequência.",
-  "Os Gambits são aleatórios, funcionam para todas as raids e mudam diariamente.",
-  "Todos têm acesso ao primeiro gambit. O segundo e o terceiro só são liberados nos ranks Admiral e Master.",
-  "Para verificar seu ranking de raid, clique na bússola e passe o mouse no ícone de machado.",
-  "Para subir no ranking, basta completar raids e ganhar XP. Sem concluir a run, não há progresso.",
-  "Todos os rankings têm 3 divisões, exceto a partir de Admiral: Admiral, Mestre e Grão-Mestre.",
-];
-
-export const supportImages: RaidStepImage[] = [
-  { src: "/raids/start_raid.webp", alt: "Tela de iniciar raid", caption: "Party completa com 4 jogadores." },
-  { src: "/raids/gambit.webp", alt: "Tela com os slots de gambit", caption: "Tela inicial com os slots de gambit disponíveis para a run." },
-  { src: "/raids/character_info.webp", alt: "Acesso ao menu de informações do personagem", caption: "Área usada para consultar informações e progresso relacionados às raids." },
-  { src: "/raids/nivel_raid.webp", alt: "Nível e rank da raid", caption: "Visualização do nível de raid e posição no ranking." },
-  { src: "/raids/raid_completa.webp", alt: "Mensagem de raid concluída", caption: "Confirmação visual de uma run concluída com sucesso." },
-];
-
-export type RaidInfoCard = {
+export type RaidStep = {
   title: string;
   description: string;
-};
-
-export type SectionIntro = {
-  eyebrow: string;
-  title: string;
-  description?: string;
 };
 
 export type RaidGuideGroup = {
-  eyebrow: string;
-  shortName: string;
+  id: RaidCatalogItem["id"];
   description: string;
   rooms: RaidGuideRoom[];
+  /** Print própria (public/raids/prints), quando existe. */
+  print?: { base: string; alt: string; legenda: string };
+};
+
+export type RaidRank = {
+  rank: string;
+  xpTotal: string;
+  libera: string;
 };
 
 export const raidsIntroParagraphs = [
-  "Raids são conteúdos em grupo com salas de desafio, buffs intermediários e um chefe final. Além da dificuldade própria de cada mapa, elas também entregam recompensas únicas que não aparecem em outras partes do jogo.",
-  "Aqui você encontra o essencial para começar: como entrar, o que cada raid exige, como funciona a progressão interna e o que esperar das recompensas no final.",
+  "Raids são conteúdos para 4 jogadores: três salas de desafio, intervalos com buffs e um chefe final. Entregam recompensas que não aparecem em nenhum outro lugar do jogo, como os aspects.",
+];
+
+export const raidsResumo = [
+  "Registre-se no [[silverbull|Centro de Divisão Silverbull]], a leste de Cinfras.",
+  "Monte uma [[party|party]] de 4, com o nível, a quest e a [[runa|runa]] de cada raid.",
+  "Cada raid tem 3 salas e um chefe; falhar em qualquer etapa encerra a run e gasta a runa.",
+  "Sala concluída sem mortes rende mais [[pull|pulls]] e um [[aspectPull|aspect pull]] a mais.",
 ];
 
 export const raidFirstStepsDescription =
-  "Antes de entrar em qualquer raid, você precisa se registrar no Centro de Divisão Silverbull, localizado a leste de Cinfras. Depois disso, basta ter uma party com 4 pessoas, o nível e as quests exigidas, além da runa correta para cada entrada.";
-
-export const raidFirstStepsIntro: SectionIntro = {
-  eyebrow: "Primeiros passos",
-  title: "Como Participar",
-  description: raidFirstStepsDescription,
-};
-
-export const raidFirstStepsLabels = {
-  quest: "Quest",
-  rune: "Runa",
-  location: "Localização",
-};
+  "Antes da primeira raid, fale com o Raid Chief no Centro de Divisão Silverbull, a leste de Cinfras. Abaixo do nível 65 dá para jogar sem entrar na divisão; do 65 em diante o registro é obrigatório. Depois disso, basta uma party de 4 pessoas com o nível, as quests e a runa da raid escolhida.";
 
 export const raidFirstStepsSupportImages: RaidStepImage[] = [
   {
     src: "/raids/runas.webp",
     alt: "Tipos de runa das raids",
-    caption: "Tipos de runa usados nas raids: Az, Uth, Tol e Ek.",
+    caption: "Runas usadas para entrar nas raids: Az, Uth, Tol e Ek.",
   },
 ];
 
-export const raidStructureDescription =
-  "Todas as raids seguem a mesma base: três salas de desafio, intervalos com buffs entre elas e um boss final. O que realmente muda é a mecânica específica de cada mapa.";
-
-export const raidStructureIntro: SectionIntro = {
-  eyebrow: "Dentro da raid",
-  title: "Estrutura",
-  description: raidStructureDescription,
-};
-
-export const raidStructureCards: RaidInfoCard[] = [
+export const raidStructureSteps: RaidStep[] = [
   {
-    title: "Desafios",
+    title: "Três salas de desafio",
     description:
-      "São três salas com objetivos próprios. Em algumas raids, a dificuldade cresce; em outras, a ordem das salas pesa mais que o dano bruto.",
+      "Cada sala tem um objetivo próprio. Em algumas raids a dificuldade cresce sala a sala; em outras, a ordem e a coordenação pesam mais que o dano.",
   },
   {
-    title: "Buffs",
+    title: "Buffs entre as salas",
     description:
-      "Entre uma sala e outra existem baús de buffs. Escolher bem esses bônus ajuda bastante no boss final e em salas mais punidoras.",
+      "No intervalo, a party escolhe [[buff|buffs]] em baús. Escolher bem aqui facilita muito o chefe e as salas mais punitivas.",
   },
   {
-    title: "Chefe",
-    description:
-      "Depois das três salas, a equipe enfrenta o chefe da raid. Cada chefe pede leitura de mecânica, posicionamento e ritmo diferentes.",
+    title: "Chefe final",
+    description: "Depois das três salas vem o chefe. Cada um pede leitura de mecânica, posicionamento e ritmo diferentes.",
   },
   {
-    title: "Falha",
-    description:
-      "Se a party falhar em qualquer etapa, a raid termina ali. A runa é consumida e você perde a recompensa de conclusão.",
+    title: "Falha encerra a run",
+    description: "Se a party falhar em qualquer etapa, a raid acaba ali: a runa já foi gasta e não há recompensa final.",
   },
 ];
 
 export const guildRaidsDescription =
-  "A versão da raid feita com membros da guilda aumenta a dificuldade, mas também melhora as recompensas entregues para a comunidade e para os participantes.";
+  "Quando a party inteira é da mesma guilda, a opção de [[guildRaid|guild raid]] aparece na entrada. Ela é mais difícil e rende para a guilda: XP de guilda, pontos de temporada (Season Rating) e [[aspect|aspects]] que ficam guardados com a guilda, até 40.";
 
-export const guildRaidsIntro: SectionIntro = {
-  eyebrow: "Conteúdo de guilda",
-  title: "Guild Raids",
-  description: guildRaidsDescription,
-};
-
-export const guildRaidCardTitles = {
-  rewards: "Recompensas da Guilda",
-  aspects: "Distribuição de Aspects",
-};
-
-export const guildRaidRewards = [
-  "2048 esmeraldas, equivalentes a 32 blocos, por raid completa.",
-  "2 aspects distribuídos entre os participantes da guild raid.",
-  "As esmeraldas vão para o cofre da guilda como investimento comunitário.",
-  "Os aspects são entregues por um Chief ou Líder em ordem de requisição.",
-];
-
+/** Regras internas da GsW para distribuir os aspects das guild raids (não são regras do jogo). */
 export const guildRaidAspectDistribution = [
-  "Um Chief ou Líder precisa estar online para realizar a distribuição.",
-  "O limite de estoque para distribuição é 10.",
-  "A entrega segue a ordem de requisição combinada pela guilda.",
-  "Apenas jogadores que completaram a raid participam da decisão final.",
+  "Um Chief ou Líder precisa estar online para fazer a distribuição.",
+  "A entrega segue a ordem de pedido combinada pela guilda.",
+  "Só quem completou a raid participa da decisão final.",
 ];
 
-export const raidGuidesDescription =
-  "A partir daqui, cada raid passa a ter uma explicação própria com foco em salas, variações e vídeos.";
-
-export const raidGuidesIntro: SectionIntro = {
-  eyebrow: "Guias das raids",
-  title: "Salas e Bossfights",
-  description: raidGuidesDescription,
-};
+export const raidGuideGroups: RaidGuideGroup[] = [
+  {
+    id: "notg",
+    description:
+      "A primeira raid do jogo. Salas com variações sorteadas, foco em controle de área e em proteger quem cumpre a mecânica.",
+    rooms: notgRooms,
+  },
+  {
+    id: "nol",
+    description:
+      "Mais coordenação, movimentação e reação rápida. A Sala 1 é fixa; a Sala 2 e a Sala 3 têm duas variações cada.",
+    rooms: nolRooms,
+    print: {
+      base: "/raids/prints/raid-nol-palacio-nexus",
+      alt: "Salão do palácio de Orphion, com colunas e ornamentos em azul e dourado",
+      legenda: "O palácio da NOL. Print da guilda.",
+    },
+  },
+  {
+    id: "tcc",
+    description:
+      "Divisão de caminhos, controle de mobs e funções bem definidas dentro da party. Errar a ordem custa caro.",
+    rooms: tccRooms,
+  },
+  {
+    id: "tna",
+    description: "Cegueira, orientação pela party, coleta de recursos e salas que punem qualquer desorganização.",
+    rooms: tnaRooms,
+  },
+  {
+    id: "twp",
+    description:
+      "A raid mais recente, de nível 119. Os vídeos são de raid normal; na guild raid, mobs têm mais vida e algumas resistências mudam.",
+    rooms: twpRooms,
+    print: {
+      base: "/raids/prints/raid-twp-chefe-anathema",
+      alt: "Anathema, chefe da TWP: criatura alada vermelha e preta numa arena clara",
+      legenda: "Anathema, o chefe da TWP. Print da guilda.",
+    },
+  },
+];
 
 export const raidGuidesLabels = {
   variant: "Variação",
   extraVideo: "Vídeo extra",
-  upcoming: "Próxima",
-  upcomingDescription: "Estrutura reservada para receber a explicação completa dessa raid depois.",
 };
-
-export const raidGuideGroups: RaidGuideGroup[] = [
-  {
-    eyebrow: "Nest of the Grootslangs",
-    shortName: "NOTG",
-    description:
-      "Aqui fica a leitura completa da raid: as variações de cada sala, o que cada player precisa fazer e os vídeos de apoio para ver a execução na prática.",
-    rooms: notgRooms,
-  },
-  {
-    eyebrow: "Orphion's Nexus of Light",
-    shortName: "NOL",
-    description:
-      "A NOL mantém a mesma lógica de leitura por salas, mas com foco maior em coordenação, movimentação e reação rápida. A Sala 1 é fixa, enquanto a Sala 2 e a Sala 3 possuem duas variações cada.",
-    rooms: nolRooms,
-  },
-  {
-    eyebrow: "The Canyon Colossus",
-    shortName: "TCC",
-    description:
-      "A TCC entra no mesmo formato de leitura por salas, mas com uma dinâmica mais pesada em coordenação de caminhos, controle de mobs e divisão de funções dentro da party finder.",
-    rooms: tccRooms,
-  },
-  {
-    eyebrow: "The Nameless Anomaly",
-    shortName: "TNA",
-    description:
-      "A TNA fecha o ciclo das raids com uma mistura forte de cegueira, guidagem, coleta de recursos e salas que punem muito qualquer desorganização da party.",
-    rooms: tnaRooms,
-  },
-  {
-    eyebrow: "The Wartorn Palace",
-    shortName: "TWP",
-    description:
-      "A TWP segue o mesmo padrão por Salas. As gravações de referência são em raid normal e, na prática, a maior diferença para guild raid fica em vida dos mobs e alguns ajustes de resistência.",
-    rooms: twpRooms,
-  },
-];
 
 export const raidRewardsDescription =
-  "Depois de concluir a raid, a party é enviada para a sala de recompensa. É ali que entram os pulls finais, os aspects e os drops mais valiosos da run. O resultado muda conforme o desempenho da equipe ao longo das salas.";
-
-export const raidRewardsIntro: SectionIntro = {
-  eyebrow: "Ao final da raid",
-  title: "Recompensas",
-  description: raidRewardsDescription,
-};
-
-export const raidRewardsLabels = {
-  finalPulls: "Pulls Finais",
-  aspects: "Aspects",
-  aspectExamples: "Exemplos de efeito",
-};
+  "Ao concluir a raid, a party vai para a sala de recompensa. O baú final usa os [[pull|pulls]] e [[aspectPull|aspect pulls]] acumulados durante a run: quanto melhor o desempenho nas salas, mais tentativas.";
 
 export const raidRewardOutcomes = [
   {
-    label: "Run Perfeita",
-    value: "+3 pulls por sala + 1 aspect",
-    description:
-      "Concluir a raid sem perder desempenho nas salas mantém o ganho máximo de pulls em cada etapa e libera o aspect no baú final.",
+    label: "Sala sem mortes",
+    value: "+3 pulls e +1 aspect pull",
+    description: "Cada sala concluída com a party inteira viva rende o máximo.",
   },
   {
-    label: "Run com morte",
-    value: "+2 pulls por sala",
-    description:
-      "Se a party completa a raid com falha em algum desafio, cada sala passa a render menos pulls e o aspect deixa de cair.",
+    label: "Sala com morte",
+    value: "+2 pulls",
+    description: "A sala conta, mas rende menos e não dá aspect pull.",
   },
   {
     label: "Run falhada",
     value: "Sem baú final",
-    description: "Sem conclusão, não existe recompensa final. A runa já foi consumida e a tentativa termina ali.",
+    description: "Sem conclusão não há recompensa, e a runa já foi gasta.",
   },
 ];
 
-export const raidFinalPullsTips = [
-  "Os pulls não dependem só do baú final: o desempenho da party ao longo das salas define o valor acumulado da run.",
-  "Manter a raid limpa preserva o total de pulls por sala e transforma cada clear em uma farm mais eficiente.",
-  "No fechamento da run, o baú ainda pode entregar tomes, esmeraldas, acessórios únicos, powders, corkian amplifier e outros drops relevantes.",
-];
+export const raidDailyBonus =
+  "A primeira conclusão de cada raid no dia dá um bônus: +60 XP de divisão, +5 pulls, +1 aspect pull e +1 reroll. Renova à meia-noite de Nova York (ET). Com a assinatura Silverbull, o bônus dobra.";
 
 export const raidAspectDetails = [
-  "São aprimoramentos da árvore de habilidades e existem em versões mítica, fabled e lendária.",
-  "Variam do Tier I ao Tier IV. Quanto maior o tier, maior o bônus aplicado.",
-  "O aspect obtido não precisa ser da classe usada naquela run.",
-  "Eles podem ser usados em todas as classes compatíveis com o efeito.",
+  "Aspects melhoram habilidades da árvore e existem em versões mítica, fabled e lendária, do Tier I ao IV.",
+  "O aspect que sai no baú não precisa ser da classe que você usou na run, e serve em todas as classes compatíveis.",
+  "Só dá para usar 1 aspect mítico por classe.",
+  "O pool de aspects de cada raid (3 míticos, 5 ou 6 fabled e 8 ou 9 lendários) troca toda sexta às 13h de Nova York: 15h de Brasília de novembro a março, 14h no resto do ano.",
 ];
 
-export const raidAspectExamples = [
-  "Área extra no Bash",
-  "Anjos e summons",
-  "Ice Snakes",
-  "Clones",
-  "Duração de Totem",
-];
+export const raidAspectExamples = ["Área extra no Bash", "Anjos e summons", "Ice Snakes", "Clones", "Duração de Totem"];
 
 export const raidRewardImages: RaidStepImage[] = [
   {
     src: "/raids/reward_chest.webp",
     alt: "Local do baú final da raid",
-    caption: "Baú final disponível na sala de recompensa após concluir a raid.",
+    caption: "O baú final, na sala de recompensa.",
   },
   {
     src: "/raids/rewards_raid.webp",
-    alt: "Baú final aberto com rewards",
-    caption: "Exemplo do conteúdo de um baú final com aspects, pulls e tomes.",
+    alt: "Baú final aberto com recompensas",
+    caption: "Baú aberto com aspects, pulls e tomes.",
   },
 ];
 
-export const raidExtrasDescription =
-  "Essa parte reúne tudo o que não está preso a uma sala específica, mas ainda pesa muito na experiência de raid: gambits, ranking, restrições de inventário e detalhes que influenciam a preparação da party antes e depois da run.";
-
-export const raidExtrasIntro: SectionIntro = {
-  eyebrow: "Informações adicionais",
-  title: "Extra",
-  description: raidExtrasDescription,
+export const raidGambits = {
+  slots: "4 slots, liberados nos ranks Rookie I, Sentinel I, Admiral e Master.",
+  diarios: "Todo dia são sorteados 4 [[gambit|gambits]], os mesmos para todos os jogadores, trocados às 13h de Nova York.",
+  ativos:
+    "A wiki fala em até 3 gambits ativos por run (o bônus de recompensa para no 3º), apesar dos 4 slots. Confira no jogo antes de planejar um 4º.",
+  recompensa: "O 1º gambit dá +1 aspect pull e +1 pull; o 2º, +2 e +3; o 3º, +3 e +5.",
 };
 
-export const raidExtraHighlights: RaidInfoCard[] = [
-  {
-    title: "Gambits",
-    description: "Modificadores diários que aumentam o risco da run e podem melhorar o volume de recompensa.",
-  },
-  {
-    title: "Raid Ranking",
-    description: "Seu progresso sobe conforme você conclui raids. Sem clear, não existe avanço real no ranking.",
-  },
-  {
-    title: "Gestão da run",
-    description:
-      "Itens, inventory lock, composição de party e leitura da mecânica impactam muito mais do que parece.",
-  },
+export const raidRanks: RaidRank[] = [
+  { rank: "Rookie I", xpTotal: "0", libera: "1º slot de gambit" },
+  { rank: "Rookie II", xpTotal: "150", libera: "+1 aspect pull em guild raids" },
+  { rank: "Rookie III", xpTotal: "450", libera: "+1 opção de buff (3 baús na sala de buff)" },
+  { rank: "Sentinel I", xpTotal: "950", libera: "+2 pulls base e 2º slot de gambit" },
+  { rank: "Sentinel II", xpTotal: "1.700", libera: "+1 aspect pull em guild raids" },
+  { rank: "Sentinel III", xpTotal: "2.850", libera: "+1 slot de aspect" },
+  { rank: "Admiral", xpTotal: "4.550", libera: "3º slot de gambit" },
+  { rank: "Commander", xpTotal: "6.950", libera: "+2 pulls base" },
+  { rank: "Master", xpTotal: "10.350", libera: "4º slot de gambit" },
+  { rank: "Grandmaster", xpTotal: "20.700", libera: "Topo do ranking" },
 ];
 
-export const raidExtrasLabels = {
-  highlight: "Destaque",
-  note: "Nota",
-};
+export const extras = [
+  "Entre com tudo o que vai precisar: depois que a raid começa, o inventário fica travado.",
+  "Cada conclusão dá 100 XP de divisão; run falhada não dá XP.",
+  "Para ver seu rank, abra a bússola do menu e passe o mouse no ícone de machado.",
+];
 
+export const supportImages: RaidStepImage[] = [
+  { src: "/raids/gambit.webp", alt: "Tela com os slots de gambit", caption: "Tela inicial com os slots de gambit." },
+  { src: "/raids/nivel_raid.webp", alt: "Nível e rank da raid", caption: "Nível de raid e posição no ranking." },
+];
+
+export const raidFontes = [
+  { rotulo: "Raids, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Raids" },
+  { rotulo: "Mapa oficial da Wynncraft", href: "https://map.wynncraft.com/" },
+];

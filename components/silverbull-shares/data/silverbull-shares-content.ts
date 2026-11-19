@@ -1,511 +1,215 @@
-﻿export type SectionIntro = {
-  eyebrow: string;
-  title: string;
-  description?: string;
-};
+// Guia de Silverbull Shares. Fatos conferidos na wiki (páginas Silverbull Share, Ranks, Silverbull Subscription,
+// Bombs, Loot Crates e Pets) em 18/11/2026, jogo 2.2.4, reescritos com as nossas palavras. Preço em Shares de
+// assinatura e pets vem do texto antigo da guilda (a wiki não traz); ver docs/PENDENCIAS.md.
+// Marcações: [[chave]] abre a caixa de item do glossário.
 
-export type InfoCard = {
-  title: string;
-  description: string;
-};
-
-export type RankCard = {
-  name: string;
-  costShares: number;
-  summary: string;
-  bestFor: string;
-  badge: {
-    src: string;
-    alt: string;
-  };
-  highlights: string[];
-};
+export type Imagem = { src: string; alt: string; legenda?: string };
 
 export type BombCard = {
   icon: string;
   name: string;
   description: string;
+  /** Ilustração da loja (wiki, public/terceiros/); sem ela, o cartão mostra o ícone. */
+  imagem?: string;
 };
 
-export type MembershipBenefit = {
-  icon: string;
-  title: string;
-  description: string;
-};
+export const sharesIntroParagraphs = [
+  "Silverbull Share é a moeda premium do Wynncraft. Com ela você compra ranks permanentes, a assinatura Silverbull, crates de cosméticos, bombas, pets e tokens, tudo pela loja dentro do jogo.",
+  "Não é preciso gastar dinheiro de verdade: as Shares negociáveis são vendidas no Trade Market por esmeraldas. Este guia mostra o que cada compra entrega, para você decidir onde vale investir.",
+];
 
-export type PetBundleCard = {
-  colorLabel: string;
-  name: string;
-  notes: string[];
-  image: {
-    src: string;
-    alt: string;
-    label: string;
-  };
-};
+export const sharesResumo = [
+  "Na loja do site, 1 Share vale US$ 1. No jogo, ela é comprada e vendida por esmeraldas no [[tradeMarket|Trade Market]].",
+  "Shares negociáveis (Tradable) vão para o mercado; as não negociáveis (Untradable) só servem para comprar na loja.",
+  "Os ranks são permanentes e cumulativos: cada um traz tudo do anterior.",
+  "Tokens só podem ser comprados com Shares.",
+];
 
-export type MediaCard = {
-  src: string;
-  alt: string;
-  label: string;
-};
+// O que são
+export const oQueSaoIntro =
+  "Shares não existem como item no inventário. Para ver quantas você tem, abra a loja do jogo e passe o mouse sobre a sua cabeça, no canto inferior esquerdo.";
 
-export const silverbullGuideIntro = {
-  eyebrow: "Guia Oficial",
-  title: "Silverbull Shares",
-  paragraphs: [
-    "Silverbull Share é uma moeda alternativa do Wynncraft usada para adquirir cosméticos, consumíveis especiais, pets, ranks permanentes e assinatura mensal Silverbull.",
-    "Neste guia você encontra o essencial para decidir onde investir suas Shares, com foco em custo-benefício e uso prático no dia a dia.",
-  ],
-};
-
-export const silverbullOverviewIntro: SectionIntro = {
-  eyebrow: "Fundamentos",
-  title: "O Que São Shares",
-  description:
-    "Shares podem ser obtidas no Trade Market com esmeraldas ou na loja virtual com dinheiro real.",
-};
-
-export const acquisitionCards: InfoCard[] = [
+export const tiposDeShare = [
   {
-    title: "Trade Market",
-    description:
-      "Forma mais comum: comprar Shares com esmeraldas. Valor aproximado mencionado no guia: 30 liquid emeralds por Share.",
+    titulo: "Tradable Shares",
+    texto:
+      "Compradas no site ou no Trade Market. Podem ser vendidas por esmeraldas pelo botão próprio no fim do menu de venda do mercado (não dá para passar direto para outro jogador).",
   },
   {
-    title: "Loja Virtual",
-    description:
-      "Pacotes pagos com dinheiro real. Exemplo citado: 10 Tradable Shares por 12 dólares.",
+    titulo: "Untradable Shares",
+    texto:
+      "Vêm da assinatura Silverbull (5 por mês) e de alguns pacotes do site. Compram itens na loja, mas não podem ser vendidas.",
   },
 ];
 
-export const tradableVsUntradable: InfoCard[] = [
-  {
-    title: "Tradable Shares",
-    description:
-      "Podem ser vendidas no Trade Market e usadas normalmente em cosméticos e consumíveis. ? o tipo mais comum.",
-  },
-  {
-    title: "Untradable Shares",
-    description:
-      "Não podem ser vendidas no Trade Market e possui restrições em compras específicas, como assinatura mensal Silverbull.",
-  },
+export const comoConseguir = [
+  "Trade Market: o jeito mais comum, pagando em esmeraldas. O preço muda com o mercado; quando este guia foi escrito, girava em torno de 30 [[le|LE]] por Share.",
+  "Loja do site: pacotes pagos com dinheiro real, na proporção de 1 Share por US$ 1.",
 ];
 
-export const inGameStoreIntro: SectionIntro = {
-  eyebrow: "Loja",
-  title: "Loja In-game",
-  description:
-    "Este guia foca na loja dentro do jogo (cosméticos e consumíveis), sem impedir compras diretas pela loja virtual.",
-};
-
-export const storeEntryImages: MediaCard[] = [
-  {
-    src: "/shares/loja_ingame.webp",
-    alt: "Tela da loja in-game do Wynncraft",
-    label: "Loja In-game",
-  },
-  {
-    src: "/shares/loja_virtual.webp",
-    alt: "Tela da loja virtual do Wynncraft",
-    label: "Loja Virtual",
-  },
+export const lojaImagens: Imagem[] = [
+  { src: "/shares/silverbull.webp", alt: "Menu Silverbull no jogo, com o saldo de Shares e o botão para adicionar", legenda: "O saldo de Shares no menu Silverbull." },
+  { src: "/shares/loja_ingame.webp", alt: "Tela inicial da loja do jogo com uma oferta de 20%", legenda: "A loja no jogo, com a oferta do momento." },
+  { src: "/shares/loja_virtual.webp", alt: "Categorias da loja no site da Wynncraft: ranks, crates, shares, Silverbull, bombas, pets e gift cards", legenda: "As categorias da loja no site." },
 ];
 
-export const inGameStoreCategoryImages: MediaCard[] = [
-  {
-    src: "/shares/bombs.webp",
-    alt: "Aba de bombas na loja in-game",
-    label: "Bombs",
-  },
-  {
-    src: "/shares/chests.webp",
-    alt: "Aba de chests e crates na loja in-game",
-    label: "Chests e Crates",
-  },
-  {
-    src: "/shares/pets.webp",
-    alt: "Aba de pets na loja in-game",
-    label: "Pets",
-  },
-  {
-    src: "/shares/tokens.webp",
-    alt: "Aba de tokens na loja in-game",
-    label: "Tokens",
-  },
+// Ranks
+export const ranksIntro =
+  "Ranks são permanentes e funcionam como um VIP: cada um tem tudo do anterior e mais alguma coisa. Quem já tem um rank paga só a diferença para subir.";
+
+export type Rank = { nome: string; shares: number; badge: string };
+
+export const ranks: Rank[] = [
+  { nome: "VIP", shares: 15, badge: "/shares/vip.webp" },
+  { nome: "VIP+", shares: 28, badge: "/shares/vip+.webp" },
+  { nome: "HERO", shares: 60, badge: "/shares/hero.webp" },
+  { nome: "HERO+", shares: 100, badge: "/shares/hero+.webp" },
+  { nome: "CHAMPION", shares: 171, badge: "/shares/champion.webp" },
 ];
 
-export const inGameStoreSupportImage: MediaCard = {
-  src: "/shares/silverbull.webp",
-  alt: "Tela principal do menu de shares",
-  label: "Silverbull",
-};
-
-export const offerImage: MediaCard = {
-  src: "/shares/ofertas.webp",
-  alt: "Tela de oferta aleatoria na loja",
-  label: "Ofertas aleatorias",
-};
-
-export const localAccessImage: MediaCard = {
-  src: "/shares/local.webp",
-  alt: "Acesso local da loja em cidade",
-  label: "Acesso local em cidades",
-};
-
-export const offerNote =
-  "A aba de ofertas exibe promoções aleatórias de tempos em tempos para cada jogador, podendo incluir rank, bombs, tokens e outros itens. Nesta print, a oferta ativa é de tokens.";
-
-export const sharesExtrasDescription =
-  "Essa parte reúne tudo o que não fica preso a uma categoria fixa da loja, mas ainda influencia bastante o uso diário das Shares: ofertas rotativas, acesso local nas cidades e leitura de oportunidade para cada perfil de jogador.";
-
-export const sharesExtrasIntro: SectionIntro = {
-  eyebrow: "Informações adicionais",
-  title: "Extra",
-  description: sharesExtrasDescription,
-};
-
-export const sharesExtraHighlights: InfoCard[] = [
-  {
-    title: "Ofertas Rotativas",
-    description:
-      "As ofertas mudam de tempos em tempos e podem destacar categorias diferentes, como ranks, bombs, bundles ou tokens.",
-  },
-  {
-    title: "Valor Contextual",
-    description:
-      "A utilidade de cada oferta depende do seu momento no jogo: progressão, cosméticos, eventos ativos e objetivos pessoais.",
-  },
-  {
-    title: "Exemplo Atual",
-    description:
-      "No exemplo desta página, a oferta exibida e focada em tokens, mantendo o mesmo padrão visual da loja in-game.",
-  },
+/** Linhas da tabela de ranks (wiki, Ranks); um valor por rank, na ordem de `ranks`. */
+export const ranksTabela: { rotulo: string; valores: string[] }[] = [
+  { rotulo: "Slots de personagem", valores: ["7", "8", "10", "13", "15"] },
+  { rotulo: "Slots no Trade Market", valores: ["5", "10", "15", "18", "21"] },
+  { rotulo: "Crate diária", valores: ["—", "Tier 1", "Tier 2", "Tier 2", "Tier 2"] },
+  { rotulo: "Mob Totems por dia", valores: ["2", "4", "6", "7", "8"] },
+  { rotulo: "Gathering Totems por dia", valores: ["—", "—", "—", "1", "2"] },
+  { rotulo: "Pets invocados juntos", valores: ["1", "2", "3", "3", "3"] },
+  { rotulo: "Fila para entrar", valores: ["Normal", "Normal", "Prioridade", "Prioridade", "Super prioridade"] },
 ];
 
-export const sharesOfferNotes = [
-  "Confira com frequencia para aproveitar janelas de compra melhores sem depender apenas da aba fixa.",
-  "Se estiver focando em progressão, priorize ofertas que impactam utilidade direta no seu ciclo de jogo.",
-  "Em algumas cidades existe um ponto de acesso local para abrir a loja in-game, checar ofertas e coletar caixas diárias.",
+export const ranksDestaques = [
+  { rank: "VIP+", texto: "Skins de classe, /rename e /changetag, ícones de personagem e o jukebox com a trilha do jogo." },
+  { rank: "HERO", texto: "Comando /switch (troca de mundo sem passar pelo lobby), acesso ao beta das atualizações e /relore." },
+  { rank: "HERO+", texto: "Apelido por personagem, warp para world events, exclusão instantânea e backup de personagem." },
+  { rank: "CHAMPION", texto: "Aviso de bomba em outros mundos e uma barraca temporária que vende seus itens do Trade Market." },
 ];
 
-export const sharesExtrasLabels = {
-  highlight: "Destaque",
-  note: "Nota",
-};
+export const dicaDeRank =
+  "Para a maioria dos jogadores, o HERO (60 Shares) tem o melhor custo-benefício: fila prioritária, /switch e o beta, sem pagar o preço do CHAMPION.";
 
-export const rankIntro: SectionIntro = {
-  eyebrow: "Rank Permanente",
-  title: "Ranks",
-  description:
-    "Ranks funcionam como VIP no Wynncraft e acumulam benefícios conforme você sobe de tier.",
-};
+// Assinatura
+export const assinaturaIntro =
+  "A assinatura Silverbull é um complemento ao rank, não um rank permanente. Pela loja do jogo, custa 6 Tradable Shares a cada 14 dias; no site, US$ 11,99 por mês.";
 
-export const rankCards: RankCard[] = [
-  {
-    name: "VIP",
-    costShares: 15,
-    summary: "Primeiro tier pago, focado em qualidade de vida básica.",
-    bestFor: "Jogador novo que quer começar com utilidades sem alto investimento.",
-    badge: {
-      src: "/shares/vip.webp",
-      alt: "Rank VIP",
-    },
-    highlights: [
-      "Acesso a Mob Totems diário.",
-      "+1 slot de classe (até 7 no total no VIP).",
-    ],
-  },
-  {
-    name: "VIP+",
-    costShares: 28,
-    summary: "Upgrade direto do VIP com mais economia no dia a dia.",
-    bestFor: "Quem joga com frequência e quer fluxo constante de crates e mercado.",
-    badge: {
-      src: "/shares/vip+.webp",
-      alt: "Rank VIP+",
-    },
-    highlights: [
-      "Crate diária.",
-      "Class Skins.",
-      "+5 slots no Trade Market (10 no total).",
-    ],
-  },
-  {
-    name: "HERO",
-    costShares: 60,
-    summary: "Tier de meio de progressão com ferramentas muito usadas.",
-    bestFor: "Perfil ativo que troca de servidor e quer praticidade em atualizações.",
-    badge: {
-      src: "/shares/hero.webp",
-      alt: "Rank HERO",
-    },
-    highlights: [
-      "Prioridade de fila.",
-      "Acesso beta de updates.",
-      "Comando /switch para trocar de mundo sem lobby.",
-    ],
-  },
-  {
-    name: "HERO+",
-    costShares: 100,
-    summary: "Expande o HERO com mais personalização e gestão de classe.",
-    bestFor: "Jogador veterano que roda várias classes e valoriza conveniência premium.",
-    badge: {
-      src: "/shares/hero+.webp",
-      alt: "Rank HERO+",
-    },
-    highlights: [
-      "Nick customizado por classe.",
-      "World Event Warp.",
-      "Melhor gestão de classes (delete instantâneo e backup).",
-    ],
-  },
-  {
-    name: "CHAMPION",
-    costShares: 171,
-    summary: "Tier máximo com foco em status e utilidade global.",
-    bestFor: "Quem quer acesso completo ao topo dos benefícios permanentes.",
-    badge: {
-      src: "/shares/champion.webp",
-      alt: "Rank CHAMPION",
-    },
-    highlights: [
-      "Aviso de bombas em outros mundos.",
-      "Loja do Trade Market como bau em cidades principais.",
-      "Super-prioridade de fila.",
-    ],
-  },
+export const assinaturaBeneficios = [
+  { titulo: "Taxa menor no Trade Market", texto: "A taxa de compra e venda cai 2 pontos percentuais." },
+  { titulo: "Shares de graça", texto: "5 Untradable Shares por mês, a partir do segundo mês seguido de assinatura." },
+  { titulo: "Recompensas diárias em dobro", texto: "Crate diária e totems do rank dobram. Em festival, as crates das missões diárias e semanais também." },
+  { titulo: "Bônus diário em dobro", texto: "O bônus diário de lootrun e de raid conta em dobro enquanto a assinatura estiver ativa." },
+  { titulo: "Scrap mais barato", texto: "Bastam 3 cosméticos iguais, em vez de 5, para trocar por um de tier acima." },
+  { titulo: "Visual", texto: "Esconder peças da armadura e aplicar glints em armas e armaduras (mais glints quanto mais tempo assinando)." },
+  { titulo: "Guild Boost", texto: "As Shares também servem para impulsionar a sua guilda e liberar vantagens extras para ela." },
+  { titulo: "Tag no chat e beta", texto: "A tag da assinatura nas mensagens e acesso ao beta das atualizações, quando houver." },
 ];
 
-export const rankTip =
-  "Dica GsW: HERO tende a ser o melhor custo-benefício para a maioria dos jogadores (60 Shares), cobrindo os benefícios mais usados sem pagar o valor completo do Champion.";
-
-export const membershipIntro: SectionIntro = {
-  eyebrow: "Silverbull",
-  title: "Silverbull Membership",
-  description:
-    "E por fim, a queridinha de todos. Se quer estar na moda, vale conferir se voce ja e membro premium da maior organizacao capitalista do mundo.",
-};
-
-export const membershipSummary = [
-  "A assinatura e um rank nao permanente que custa 6 Tradable Shares e dura 14 dias.",
-  "Diferente dos demais ranks, ela traz beneficios unicos nao essenciais para a gameplay, mas que melhoram bastante a experiencia no dia a dia.",
-];
-
-export const membershipBenefits: MembershipBenefit[] = [
-  {
-    icon: "01",
-    title: "Chat Tag",
-    description: "Mostra a tag da assinatura em cada mensagem enviada no chat.",
-  },
-  {
-    icon: "02",
-    title: "Taxa menor do Trade Market",
-    description: "A taxa padrao de 5% dos itens comprados no Trade Market cai para 3%.",
-  },
-  {
-    icon: "03",
-    title: "Rodar mais cosmeticos",
-    description: "Agora sao necessarios apenas 3 cosmeticos para combinar em uma skin de tier maior.",
-  },
-  {
-    icon: "04",
-    title: "Crates em dobro",
-    description: "As crates gratis de eventos ou de ranks sao dobradas enquanto a assinatura estiver ativa.",
-  },
-  {
-    icon: "05",
-    title: "Bonus em dobro",
-    description: "Os bonus diarios de Lootrun ou Raid sao dobrados com a Membership ativa.",
-  },
-  {
-    icon: "06",
-    title: "Esconder armadura e visuais",
-    description: "Libera glints, chromas para cosmeticos e a opcao de esconder pecas da armadura.",
-  },
-  {
-    icon: "07",
-    title: "Shares gratis",
-    description: "Concede 5 shares mensais gratis, exigindo assinaturas ativas em sequencia.",
-  },
-  {
-    icon: "08",
-    title: "Acesso ao BETA",
-    description: "Garante acesso ao BETA fechado de futuras atualizacoes quando ele estiver ativo.",
-  },
-];
-
-export const membershipImage: MediaCard = {
+export const assinaturaImagem: Imagem = {
   src: "/shares/assinatura_silverbull.webp",
-  alt: "Beneficios da assinatura Silverbull",
-  label: "Beneficios da assinatura Silverbull",
+  alt: "Lista de benefícios da assinatura Silverbull na loja do jogo",
+  legenda: "Os benefícios da assinatura na loja.",
 };
 
-export const cratesIntro: SectionIntro = {
-  eyebrow: "Crates",
-  title: "Caixas e Tiers",
-  description:
-    "Crates entregam cosméticos aleatórios (com exceção de exclusivos sazonais e bundles), e o Tier influencia diretamente sua chance de itens raros.",
-};
+// Crates
+export const cratesIntro =
+  "Crates dão um cosmético aleatório (exceto os exclusivos de festival e de pacotes). Quanto maior o tier da crate, maior a chance de um cosmético raro.";
 
-export const crateSources: InfoCard[] = [
-  { title: "Crate Grátis", description: "Aparece ocasionalmente na loja." },
-  { title: "Ranks", description: "Todos os ranks concedem crate diária." },
-  {
-    title: "Eventos Sazonais",
-    description: "Missões de eventos como Heroes, Bonfire, Spirits e Blizzard podem dar crates temáticas.",
-  },
-  {
-    title: "Assinatura Silverbull",
-    description: "Dobra crates diária de rank e evento enquanto ativa.",
-  },
+export const cratesOrigem = [
+  "Crate diária dos ranks: Tier 1 no VIP+, Tier 2 do HERO em diante.",
+  "Uma crate grátis por mês, resgatada na loja do site.",
+  "Crates temáticas das missões de festival (Heroes, Bonfire, Spirits e Blizzard).",
+  "Tiers 3 e 4 só saem comprando, ou como a crate grátis do mês.",
 ];
 
-export const cratePricingNotes = [
-  "Regra base: 1 Share = 1 Crate.",
-  "Pacotes maiores costumam compensar mais por garantirem mais crates de tier alto.",
-  "Exemplo do guia: dois pacotes menores podem sair piores que um pacote maior no mesmo custo total.",
+/** Chance de cada raridade por tier de crate (wiki, Loot Crates). */
+export const cratesChances = [
+  { tier: "Tier 1", valores: ["75%", "20%", "4%", "1%", "0%"] },
+  { tier: "Tier 2", valores: ["45%", "47%", "7%", "1%", "0%"] },
+  { tier: "Tier 3", valores: ["0%", "50%", "25%", "24%", "1%"] },
+  { tier: "Tier 4", valores: ["0%", "0%", "34%", "33%", "33%"] },
+];
+export const raridades = ["Common", "Rare", "Epic", "Godly", "Black Market"];
+
+export const scrap =
+  "Cosméticos repetidos não se perdem: 5 da mesma raridade (3 com a assinatura) viram 1 aleatório da raridade acima. Um Black Market pode ser desfeito em 10 Epic.";
+
+export const dicaDeCrate =
+  "Se for comprar crates, prefira um pacote maior a vários pequenos: pelo mesmo total, ele garante mais crates de tier alto.";
+
+export const cratesImagens: Imagem[] = [
+  { src: "/shares/crates.webp", alt: "Tabela de tiers e pacotes de crates na loja", legenda: "Tiers e pacotes de crates." },
+  { src: "/shares/chests.webp", alt: "Aba de crates na loja do jogo", legenda: "A aba de crates na loja." },
+  { src: "/shares/crates_gratuitas.webp", alt: "Crate grátis disponível na loja", legenda: "Crate grátis." },
+  { src: "/shares/caixa_evento_sazonal.webp", alt: "Crate de um festival", legenda: "Crate de festival." },
 ];
 
-export const crateTierImage = {
-  src: "/shares/crates.webp",
-  alt: "Tabela de tiers e pacotes de crates",
-  label: "Tiers e pacotes de Crates",
-};
+// Bombas
+export const bombasIntro =
+  "Bombas dão um bônus para todo mundo que está no mesmo mundo de quem usou. Não precisa comprar para aproveitar: basta entrar num mundo com bomba ativa.";
 
-export const chestStoreImage = {
-  src: "/shares/chests.webp",
-  alt: "Secao de chests na loja in-game",
-  label: "Aba de Chests na loja in-game",
-};
-
-export const crateExtraImages: MediaCard[] = [
-  {
-    src: "/shares/crates_gratuitas.webp",
-    alt: "Exemplo de crate gratuita na loja",
-    label: "Crate Gratuita",
-  },
-  {
-    src: "/shares/caixa_evento_sazonal.webp",
-    alt: "Exemplo de crate de evento sazonal",
-    label: "Crate de Evento Sazonal",
-  },
-];
-
-export const bombsIntro: SectionIntro = {
-  eyebrow: "Bombs",
-  title: "Bombas Globais",
-  description:
-    "Bombas aplicam bônus para todo o mundo. Mesmo sem comprar, você pode aproveitar mundos com bombas ativas.",
-};
-
-export const bombStoreImage = {
-  src: "/shares/bombs.webp",
-  alt: "Secao de bombs na loja in-game",
-  label: "Aba de Bombs na loja in-game",
-};
+export const bombasImagem: Imagem = { src: "/shares/bombs.webp", alt: "Aba de bombas na loja do jogo", legenda: "A aba de bombas na loja." };
 
 export const bombCards: BombCard[] = [
-{ icon: "\u2694\uFE0F", name: "Combat XP Bomb", description: "Dobra XP de mobs por 20 minutos." },
-  { icon: "\u26CF\uFE0F", name: "Profession XP Bomb", description: "Dobra XP de profissões por 20 minutos." },
-  { icon: "\u26CF\uFE0F\uD83D\uDCA8", name: "Profession Speed Bomb", description: "Acelera coleta e crafting por 10 minutos e reduz custo de craft." },
-  { icon: "\uD83D\uDCAC", name: "Shout Bomb", description: "Mensagem no chat global para todos online." },
-  { icon: "\uD83D\uDCA0", name: "Loot Bomb", description: "Dobra loot dropado por mobs por 20 minutos." },
-  { icon: "\uD83D\uDCE8", name: "Item Bomb", description: "Entrega bau com itens aleatórios no mundo." },
-  { icon: "\uD83D\uDD11", name: "Dungeon Bomb", description: "Entrada grátis em dungeons por 10 minutos." },
-  { icon: "\uD83D\uDCE6", name: "Loot Chest Bomb", description: "Aumenta quantidade de itens em baús por 20 minutos." },
-  { icon: "\uD83C\uDF10", name: "World Event Bomb", description: "Ativa world events comuns (sem Annihilation)." },
-  { icon: "\uD83D\uDCDC", name: "Scroll Charge Bomb", description: "Restaura 2 cargas de teleport scrolls." },
-  { icon: "\uD83C\uDF44", name: "Ingredient Bomb", description: "Envia 16 ingredientes aleatórios para todos no mundo." },
-  { icon: "\uD83C\uDF89", name: "Party Crackers", description: "Evento visual de celebração no entorno do jogador." },
+  { icon: "espadas", name: "Combat XP Bomb", imagem: "/terceiros/wynncraft/bomba-combat-xp.webp", description: "XP de mobs em dobro por 20 minutos (triplo num fim de semana de XP em dobro)." },
+  { icon: "picareta", name: "Profession XP Bomb", imagem: "/terceiros/wynncraft/bomba-profession-xp.webp", description: "XP de coleta e crafting em dobro por 20 minutos." },
+  { icon: "velocidade", name: "Profession Speed Bomb", imagem: "/terceiros/wynncraft/bomba-profession-speed.webp", description: "Por 10 minutos, coleta e crafting duas vezes mais rápidos, recursos voltam na metade do tempo e o craft gasta metade do material." },
+  { icon: "grito", name: "Shout Bomb", imagem: "/terceiros/wynncraft/bomba-shout.webp", description: "Manda uma mensagem para toda a rede da Wynncraft. Dá para cancelar se usar sem querer." },
+  { icon: "gema", name: "Loot Bomb", imagem: "/terceiros/wynncraft/bomba-loot.webp", description: "Drop de mobs em dobro por 20 minutos." },
+  { icon: "presente", name: "Item Bomb", imagem: "/terceiros/wynncraft/bomba-item.webp", description: "Cada jogador no mundo ganha dois itens aleatórios perto do próprio nível." },
+  { icon: "chave", name: "Dungeon Bomb", imagem: "/terceiros/wynncraft/bomba-dungeon.webp", description: "Entrada grátis em qualquer dungeon por 10 minutos." },
+  { icon: "bau", name: "Loot Chest Bomb", description: "Mais itens nos baús do mapa por 20 minutos." },
+  { icon: "mundo", name: "World Event Bomb", description: "Faz todos os world events do mundo começarem a contagem, exceto o Annihilation." },
+  { icon: "pergaminho", name: "Scroll Charge Bomb", imagem: "/terceiros/wynncraft/bomba-scroll-charge.webp", description: "Dá 2 cargas de teleport scroll a cada jogador, até o máximo de 3." },
+  { icon: "ingrediente", name: "Ingredient Bomb", imagem: "/terceiros/wynncraft/bomba-ingredient.webp", description: "Cada jogador ganha 2 ingredientes e 6 materiais aleatórios, perto do próprio nível de profissão." },
+  { icon: "festa", name: "Party Crackers", imagem: "/terceiros/wynncraft/bomba-party-crackers.webp", description: "Uma festa em volta de quem usou, com direito a guerra de bolas de neve." },
 ];
 
-export const petsIntro: SectionIntro = {
-  eyebrow: "Pets",
-  title: "Bundles",
-  description:
-    "A loja oferece 3 bundles de pets. Em geral, pets custam 15 Shares, com exceção dos Dragonlings (25 Shares).",
-};
+// Pets
+export const petsIntro =
+  "Pets acompanham você e atacam junto. A loja vende três pacotes de quatro pets cada; avulso, cada pet custa 15 Shares, e os Dragonlings, 25. O pacote completo sai por 35.";
 
-export const petsStoreImage = {
-  src: "/shares/pets.webp",
-  alt: "Secao de pets na loja in-game",
-  label: "Aba de Pets na loja in-game",
-};
-
-export const bundlesStoreImage = {
-  src: "/shares/bundle.webp",
-  alt: "Vitrine de bundles na loja",
-  label: "Vitrine de Bundles",
-};
-
-export const petBundles: PetBundleCard[] = [
-  {
-    colorLabel: "Crimson",
-    name: "Crimson Bundle",
-    notes: ["Pacote completo custa 35 Shares.", "Fiery Dragonling custa 25 Shares (demais pets: 15)."],
-    image: {
-      src: "/shares/crimson_bundles.webp",
-      alt: "Crimson bundle de pets",
-      label: "Crimson Bundle",
-    },
-  },
-  {
-    colorLabel: "Frostpaw",
-    name: "Frostpaw Bundle",
-    notes: ["Pacote completo custa 35 Shares.", "Water Dragonling custa 25 Shares (demais pets: 15)."],
-    image: {
-      src: "/shares/Frostpaw_bundles.webp",
-      alt: "Frostpaw bundle de pets",
-      label: "Frostpaw Bundle",
-    },
-  },
-  {
-    colorLabel: "Verdant",
-    name: "Verdant Bundle",
-    notes: ["Pacote completo custa 35 Shares.", "Emerald Dragonling custa 25 Shares (demais pets: 15)."],
-    image: {
-      src: "/shares/Verdant_bundles.webp",
-      alt: "Verdant bundle de pets",
-      label: "Verdant Bundle",
-    },
-  },
+export const petBundles = [
+  { nome: "Crimson Bundle", pets: "Fiery Dragonling, Rat, Singing Tiger e The Eye", imagem: { src: "/shares/crimson_bundles.webp", alt: "Os quatro pets do Crimson Bundle" } },
+  { nome: "Frostpaw Bundle", pets: "Water Dragonling, Baby Penguin, Colossal Rat e Dusk Kantyr Calf", imagem: { src: "/shares/Frostpaw_bundles.webp", alt: "Os quatro pets do Frostpaw Bundle" } },
+  { nome: "Verdant Bundle", pets: "Emerald Dragonling, Playful Bear, Rolling Potato e Top Hat Alligator", imagem: { src: "/shares/Verdant_bundles.webp", alt: "Os quatro pets do Verdant Bundle" } },
 ];
 
-export const tokensIntro: SectionIntro = {
-  eyebrow: "Tokens",
-  title: "Consumíveis Especiais",
-  description:
-    "Tokens são itens de uso específico para ajustes avançados em progressão, guilda e bônus diário.",
-};
+export const petsRank =
+  "Todo pet sobe até o nível 100, mas o rank limita até onde valem as vantagens dele: nível 30 sem rank ou no VIP, 40 no VIP+, 60 no HERO, 80 no HERO+ e 100 no CHAMPION.";
 
-export const tokenStoreImage = {
-  src: "/shares/tokens.webp",
-  alt: "Secao de tokens na loja in-game",
-  label: "Aba de Tokens na loja in-game",
-};
+export const petsImagem: Imagem = { src: "/shares/bundle.webp", alt: "Vitrine de pacotes de pets na loja", legenda: "A vitrine de pacotes." };
+
+// Tokens
+export const tokensIntro = "Tokens são itens de uso único para ajustes específicos. Só podem ser comprados com Shares.";
 
 export const tokenCards: BombCard[] = [
-  {
-    icon: "\uD83D\uDFE1",
-    name: "Traker Reroll Token",
-    description: "Rerolla o identificador shiny de uma mítica para outro valor aleatório.",
-  },
-  {
-    icon: "\uD83D\uDD34",
-    name: "Traker Reset Token",
-    description: "Reseta o identificador shiny de uma mítica para 0.",
-  },
-  {
-    icon: "\uD83D\uDD35",
-    name: "Guild Rename Token",
-    description: "Permite renomear uma guilda.",
-  },
-  {
-    icon: "\uD83D\uDFE2",
-    name: "Daily Bonus Refresh",
-    description: "Reseta bônus diário de Lootrun ou Raid. Com Silverbull ativa, efeito é dobrado.",
-  },
+  { icon: "rerolar", name: "Tracker Reroll Token", description: "Sorteia um novo valor para o contador shiny de um mítico." },
+  { icon: "resetar", name: "Tracker Reset Token", description: "Zera o contador shiny de um mítico." },
+  { icon: "renomear", name: "Guild Rename Token", description: "Troca o nome de uma guilda." },
+  { icon: "recarregar", name: "Daily Bonus Refresh", description: "Renova o bônus diário de lootrun ou de raid." },
 ];
 
+export const tokensImagem: Imagem = { src: "/shares/tokens.webp", alt: "Aba de tokens na loja do jogo", legenda: "A aba de tokens na loja." };
+
+// Dicas
+export const sharesDicas = [
+  "A aba de ofertas mostra promoções que mudam de tempos em tempos e são diferentes para cada jogador: ranks, bombas, tokens ou pacotes. Vale olhar antes de comprar avulso.",
+  "Algumas cidades têm um ponto de acesso à loja, onde dá para abrir a loja, ver as ofertas e pegar as caixas diárias.",
+];
+
+export const dicaDaGuilda =
+  "Confira a loja com frequência para pegar as melhores ofertas. Se o foco é progressão, priorize o que ajuda no dia a dia antes dos cosméticos.";
+
+export const dicasImagens: Imagem[] = [
+  { src: "/shares/ofertas.webp", alt: "Oferta aleatória na loja do jogo", legenda: "Uma oferta da semana." },
+  { src: "/shares/local.webp", alt: "Ponto de acesso à loja dentro de uma cidade", legenda: "Ponto de acesso à loja numa cidade." },
+];
+
+export const sharesFontes = [
+  { rotulo: "Silverbull Share, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Silverbull_Share" },
+  { rotulo: "Ranks, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Ranks" },
+  { rotulo: "Silverbull Subscription, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Silverbull_Subscription" },
+  { rotulo: "Bombs, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Bombs" },
+  { rotulo: "Loot Crates, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Loot_Crates" },
+  { rotulo: "Pets, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Pets" },
+  { rotulo: "Ranks na loja oficial", href: "https://wynncraft.com/store/ranks" },
+];

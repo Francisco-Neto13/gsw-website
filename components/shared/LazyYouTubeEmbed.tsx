@@ -1,5 +1,6 @@
 "use client";
 
+import { Play } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -20,8 +21,10 @@ export default function LazyYouTubeEmbed({
 
   if (isPlaying) {
     return (
-      <div className="relative aspect-[2/1] overflow-hidden rounded-xl border border-white/10 bg-zinc-900 sm:aspect-video">
+      <div className="relative aspect-video overflow-hidden rounded-md border border-linha bg-carvao">
         <iframe
+          // Ao dar play, o foco vai para o vídeo (antes caía no <body>).
+          ref={(iframe) => iframe?.focus()}
           src={embedSrc}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -36,21 +39,22 @@ export default function LazyYouTubeEmbed({
     <button
       type="button"
       onClick={() => setIsPlaying(true)}
-      className="group relative aspect-[2/1] w-full overflow-hidden rounded-xl border border-white/10 bg-zinc-900 sm:aspect-video"
-      aria-label={`Reproduzir vídeo: ${title}`}
+      className="group relative aspect-video w-full overflow-hidden rounded-md border border-linha bg-carvao"
+      aria-label={`Assistir vídeo: ${title}`}
     >
-      <Image
+      <Image quality={90}
         src={thumbnail}
-        alt={title}
+        alt=""
         fill
         priority={priority}
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
-        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+        sizes="(min-width: 1024px) 22rem, 100vw"
+        className="h-full w-full object-cover"
       />
-      <span className="pointer-events-none absolute inset-0 bg-black/30 transition-colors group-hover:bg-black/40" />
+      <span className="pointer-events-none absolute inset-0 bg-black/35 transition-colors duration-150 group-hover:bg-black/15" />
       <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <span className="rounded-full bg-black/65 px-5 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white">
-          Play
+        <span className="flex items-center gap-2 rounded-md bg-gsw px-3 py-2 text-apoio font-medium text-white shadow-[0_8px_24px_-8px_rgba(0,0,0,0.8)]">
+          <Play aria-hidden size={16} strokeWidth={1.75} fill="currentColor" />
+          Ver POV
         </span>
       </span>
     </button>

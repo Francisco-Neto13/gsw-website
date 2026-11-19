@@ -1,8 +1,6 @@
-import Footer from "@/components/shared/Footer";
-import GuideIntro from "@/components/shared/GuideIntro";
-import InPageNavigation from "@/components/shared/InPageNavigation";
-import Navbar from "@/components/shared/Navbar";
-import { lootrunGuideIntro } from "@/components/lootrun/data/lootrun-content";
+import FimDoGuia from "@/components/guias/FimDoGuia";
+import { lootrunFontes } from "@/components/lootrun/data/lootrun-content";
+import LootrunAbertura from "@/components/lootrun/sections/LootrunAbertura";
 import LootrunAdvancedSystemsSection from "@/components/lootrun/sections/LootrunAdvancedSystemsSection";
 import LootrunBeaconsSection from "@/components/lootrun/sections/LootrunBeaconsSection";
 import LootrunCampsSection from "@/components/lootrun/sections/LootrunCampsSection";
@@ -13,37 +11,21 @@ import LootrunMechanicsSection from "@/components/lootrun/sections/LootrunMechan
 import LootrunParticipationSection from "@/components/lootrun/sections/LootrunParticipationSection";
 import LootrunRewardsSection from "@/components/lootrun/sections/LootrunRewardsSection";
 
+/** Guia de Lootrun, no modelo de Raids (docs/redesign/estrutura-do-guia.md). */
 export default function LootrunPage() {
   return (
-    <>
-      <Navbar currentPath="/lootrun" />
-      <main className="min-h-screen bg-black">
-        <GuideIntro
-          eyebrow={lootrunGuideIntro.eyebrow}
-          title={lootrunGuideIntro.title}
-          paragraphs={lootrunGuideIntro.paragraphs}
-          sectionClassName="bg-zinc-950"
-          decorations={
-            <>
-              <div className="pointer-events-none absolute top-0 right-0 h-[400px] w-[400px] rounded-full bg-gsw/5 blur-[150px]" />
-              <div className="pointer-events-none absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-gsw/5 blur-[130px]" />
-            </>
-          }
-        />
-
-        <InPageNavigation />
-
-        <LootrunParticipationSection />
-        <LootrunDivisionsSection />
-        <LootrunCampsSection />
-        <LootrunMechanicsSection />
-        <LootrunBeaconsSection />
-        <LootrunAdvancedSystemsSection />
-        <LootrunCombosSection />
-        <LootrunRewardsSection />
-        <LootrunExtrasSection />
-      </main>
-      <Footer />
-    </>
+    <article>
+      <LootrunAbertura />
+      <LootrunParticipationSection />
+      <LootrunDivisionsSection />
+      <LootrunCampsSection />
+      <LootrunMechanicsSection />
+      <LootrunBeaconsSection />
+      <LootrunAdvancedSystemsSection />
+      <LootrunCombosSection />
+      <LootrunRewardsSection />
+      <LootrunExtrasSection />
+      <FimDoGuia slug="lootrun" fontes={lootrunFontes} />
+    </article>
   );
 }

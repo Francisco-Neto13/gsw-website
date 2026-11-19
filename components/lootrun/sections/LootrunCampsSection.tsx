@@ -1,140 +1,102 @@
-import {
-  lootrunCamps,
-  lootrunCampsIntro,
-} from "@/components/lootrun/data/lootrun-content";
-import LootrunMediaPlaceholder from "@/components/lootrun/sections/LootrunMediaPlaceholder";
+import Coordenada from "@/components/guias/Coordenada";
+import SecaoGuia from "@/components/guias/SecaoGuia";
+import { lootrunCamps, lootrunCampsIntro } from "@/components/lootrun/data/lootrun-content";
+import MidiasLootrun from "@/components/lootrun/sections/MidiasLootrun";
 
-function isGif(src?: string) {
-  return Boolean(src && src.toLowerCase().endsWith(".gif"));
-}
+const idDoCamp = (nome: string) => `camp-${nome.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-$/, "")}`;
 
 export default function LootrunCampsSection() {
   return (
-    <section className="bg-black px-4 py-16 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-10 text-center sm:mb-16">
-          <span className="mb-4 block text-xs font-bold uppercase tracking-[0.6em] text-gsw sm:mb-6">
-            {lootrunCampsIntro.eyebrow}
-          </span>
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            {lootrunCampsIntro.title}
-          </h2>
-          <p className="mx-auto mt-5 max-w-3xl px-2 text-sm leading-relaxed text-zinc-400 sm:text-base">
-            {lootrunCampsIntro.description}
-          </p>
-        </div>
-
-        <div className="mb-8 rounded-2xl border border-white/10 bg-zinc-950/60 p-5 sm:p-7">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-gsw/80">Lista literal de camps</p>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {lootrunCamps.map((camp, index) => (
-              <article
-                key={`${camp.name}-${camp.coordinates}`}
-                className="rounded-xl border border-white/10 bg-black/35 px-4 py-3"
-              >
-                <div className="mb-1.5 flex items-center justify-between gap-3">
-                  <span className="text-xs font-bold uppercase tracking-[0.3em] text-gsw/80">
-                    Camp {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs font-semibold text-zinc-300">
-                    {camp.difficulty}
-                  </span>
-                </div>
-                <p className="text-sm font-semibold leading-relaxed text-zinc-200">{camp.name}</p>
-                <p className="mt-1 text-xs text-zinc-400 sm:text-sm">[{camp.coordinates}]</p>
-              </article>
+    <SecaoGuia id="camps" titulo="Camps" introducao={lootrunCampsIntro.description}>
+      <div className="overflow-x-auto rounded-md border border-linha">
+        <table className="w-full min-w-[46rem] border-collapse text-left text-apoio">
+          <caption className="sr-only">
+            Lootcamps: onde ficam, dificuldade, tempo ganho por desafio e quanto os mobs ficam mais fortes a cada desafio
+          </caption>
+          <thead className="bg-carvao text-texto">
+            <tr>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Camp
+              </th>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Coordenadas
+              </th>
+              <th scope="col" className="px-4 py-2.5 font-bold">
+                Dificuldade
+              </th>
+              <th scope="col" className="px-4 py-2.5 text-right font-bold">
+                Tempo por desafio
+              </th>
+              <th scope="col" className="px-4 py-2.5 text-right font-bold">
+                Mobs por desafio
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {lootrunCamps.map((camp) => (
+              <tr key={camp.name} className="border-t border-linha align-top">
+                <th scope="row" className="px-4 py-2.5 font-medium">
+                  <a href={`#${idDoCamp(camp.name)}`} className="text-texto underline decoration-violeta/40 hover:decoration-violeta">
+                    {camp.name}
+                  </a>
+                  <span className="block font-normal text-texto-3">perto de {camp.perto}</span>
+                </th>
+                <td className="px-4 py-2.5">
+                  <Coordenada valor={camp.coordinates} />
+                </td>
+                <td className="px-4 py-2.5 text-texto-2">{camp.difficulty}</td>
+                <td className="numeros px-4 py-2.5 text-right text-texto-2">
+                  +{camp.tempo[0]} s ao chegar
+                  <span className="block">+{camp.tempo[1]} s ao concluir</span>
+                </td>
+                <td className="numeros px-4 py-2.5 text-right text-texto-2">
+                  +{camp.escala[0]} de dano
+                  <span className="block">+{camp.escala[1]} de vida</span>
+                </td>
+              </tr>
             ))}
-          </div>
-        </div>
-
-        {lootrunCampsIntro.media.length > 0 ? (
-          <div className="mb-8 grid grid-cols-1 gap-4">
-            {lootrunCampsIntro.media.map((item) => (
-              <LootrunMediaPlaceholder key={item.name} item={item} />
-            ))}
-          </div>
-        ) : null}
-
-        <div className="mb-8 rounded-2xl border border-white/10 bg-zinc-950/60 p-5 sm:p-7">
-          <div className="space-y-3">
-            {lootrunCampsIntro.notes.map((note) => (
-              <div key={note} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
-                <span>{note}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          {lootrunCamps.map((camp, index) => {
-            const media = camp.media ?? [];
-            const featuredMedia = media.find((item) => !isGif(item.src)) ?? media[0];
-            const secondaryMedia = media.filter((item) => item !== featuredMedia);
-
-            return (
-              <article key={camp.name} className="rounded-2xl border border-white/10 bg-zinc-900/20 p-4 sm:p-5">
-                <div className="mb-3 flex flex-wrap items-center gap-3">
-                  <span className="text-xs font-bold uppercase tracking-[0.35em] text-gsw/80">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-base font-bold text-white sm:text-lg">{camp.name}</h3>
-                  <span className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-zinc-300">
-                    {camp.difficulty}
-                  </span>
-                </div>
-
-                <p className="text-sm text-zinc-400 sm:text-base">
-                  Coordenadas: <span className="font-medium text-zinc-200">{camp.coordinates}</span>
-                </p>
-
-                <div className="mt-3 space-y-2">
-                  {camp.notes.map((note) => (
-                    <div key={note} className="flex gap-3 text-sm leading-relaxed text-zinc-400 sm:text-base">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gsw" />
-                      <span>{note}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {featuredMedia ? (
-                  <div className="mt-4 space-y-4">
-                    <LootrunMediaPlaceholder item={featuredMedia} />
-
-                    {secondaryMedia.length > 0 ? (
-                      <div
-                        className={`grid gap-4 ${
-                          secondaryMedia.length > 1
-                            ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-3"
-                            : "grid-cols-1 sm:grid-cols-2"
-                        }`}
-                      >
-                        {secondaryMedia.map((item) => (
-                          <LootrunMediaPlaceholder key={item.name} item={item} compact />
-                        ))}
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-
-                {camp.dangerousChallenges && camp.dangerousChallenges.length > 0 ? (
-                  <div className="mt-4 rounded-xl border border-white/10 bg-zinc-900/40 p-3 sm:p-4">
-                    <p className="text-xs font-bold uppercase tracking-[0.3em] text-gsw/80">Desafios de atenção</p>
-                    <div className="mt-2 space-y-1.5">
-                      {camp.dangerousChallenges.map((challenge) => (
-                        <p key={challenge} className="text-sm text-zinc-400 sm:text-base">
-                          - {challenge}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-              </article>
-            );
-          })}
-        </div>
+          </tbody>
+        </table>
       </div>
-    </section>
+      <p className="mt-2 max-w-leitura text-apoio text-texto-3">
+        Tempo e força dos mobs conferidos na wiki da Wynncraft. A dificuldade é a avaliação da guilda.
+      </p>
+
+      <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+        <ul className="flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+          {lootrunCampsIntro.notes.map((nota) => (
+            <li key={nota}>{nota}</li>
+          ))}
+        </ul>
+        <MidiasLootrun itens={lootrunCampsIntro.media} />
+      </div>
+
+      <div className="mt-12 flex flex-col gap-12">
+        {lootrunCamps.map((camp) => (
+          <div key={camp.name} id={idDoCamp(camp.name)} className="scroll-mt-12 xl:scroll-mt-0">
+            <h3 className="text-titulo-4 font-bold text-texto">{camp.name}</h3>
+            <p className="mt-1 text-apoio text-texto-3">
+              {camp.difficulty} · perto de {camp.perto}
+            </p>
+            <ul className="mt-3 flex max-w-leitura list-disc flex-col gap-1.5 pl-5 text-texto-2 marker:text-violeta">
+              {camp.notes.map((nota) => (
+                <li key={nota}>{nota}</li>
+              ))}
+            </ul>
+            {camp.dangerousChallenges && camp.dangerousChallenges.length > 0 ? (
+              <>
+                <p className="mt-4 font-bold text-texto">Desafios que pedem atenção</p>
+                <ul className="mt-2 flex max-w-leitura list-disc flex-col gap-1 pl-5 text-texto-2 marker:text-ambar">
+                  {camp.dangerousChallenges.map((desafio) => (
+                    <li key={desafio}>{desafio}</li>
+                  ))}
+                </ul>
+              </>
+            ) : null}
+            <MidiasLootrun itens={camp.media ?? []} className="mt-6" />
+          </div>
+        ))}
+      </div>
+    </SecaoGuia>
   );
 }
-

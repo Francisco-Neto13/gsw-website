@@ -1,14 +1,11 @@
-﻿export type GatheringProfession = {
-  name: string;
-  resources: string;
-  tool: string;
-};
+// Guia de Profissões. Fatos conferidos na wiki (páginas Professions, Gathering Tools e Crafting) em 18/11/2026,
+// jogo 2.2.4, reescritos com as nossas palavras. Spots de ingrediente e waypoints são da guilda.
+// Marcações: [[chave]] abre a caixa de item do glossário.
 
-export type CraftingProfession = {
-  name: string;
-  produces: string;
-  resources: string;
-};
+export type Imagem = { src: string; alt: string; legenda?: string };
+
+export type GatheringProfession = { name: string; icone: string; resources: string; tool: string; usadoPor: string };
+export type CraftingProfession = { name: string; icone: string; produces: string; resources: string };
 
 export type GrindSpot = {
   level: string;
@@ -24,110 +21,117 @@ export type ProfessionSpots = {
   spots: GrindSpot[];
 };
 
-export type SectionIntro = {
-  eyebrow: string;
-  title: string;
-  description: string;
-};
-
 export const professionsIntroParagraphs = [
-  "Existem dois tipos de profissões no Wynncraft: Gathering e Crafting. As de Gathering são niveladas coletando recursos espalhados pelo mapa, cujo nível varia de acordo com a região. As de Crafting utilizam esses recursos combinados com ingredients dropados de mobs para produzir itens consumíveis e equipamentos.",
-  "Nossa recomendação é sempre deixar as profissões para o fim da sua trajetória no jogo. ? um conteúdo opcional que não afeta diretamente a gameplay e pode consumir bastante tempo. Se precisar de algum item craftado antes disso, peça ajuda aos membros mais experientes da guilda.",
+  "As profissões do Wynncraft se dividem em dois grupos. As de coleta (gathering) sobem colhendo recursos espalhados pelo mapa. As de criação (crafting) usam esses recursos, junto com ingredientes que caem de mobs, para fazer equipamentos e consumíveis.",
+  "Profissões são opcionais e sobem separadas do nível de combate. Todas vão até o nível 132, mas os últimos desbloqueios importantes ficam no 115 (coleta) e no 117 (crafting).",
 ];
 
-export const professionTypesIntro: SectionIntro = {
-  eyebrow: "Visão geral",
-  title: "Tipos de Profissão",
-  description:
-    "Gathering coleta os recursos brutos do mundo. Crafting transforma esses recursos, combinados com ingredients de mobs, em itens utilizáveis.",
-};
+export const professionsResumo = [
+  "4 profissões de coleta e 8 de crafting, cada uma com o próprio nível.",
+  "Um material novo libera a cada 10 níveis de coleta, e ele fica mais rápido e mais confiável nos 10 níveis seguintes.",
+  "A ferramenta só muda a velocidade da coleta; dá para colher material de nível alto com ferramenta básica.",
+  "No crafting, o XP vem de criar itens, e usar ingredientes aumenta bastante o ganho.",
+];
 
-export const professionCategoryTitles = {
-  gathering: "Gathering",
-  crafting: "Crafting",
-};
-
-export const professionToolsIntro: SectionIntro = {
-  eyebrow: "Otimização",
-  title: "Ferramentas e Bombas",
-  description:
-    "A ferramenta certa e as bombas certas fazem uma diferença enorme no tempo gasto para avançar nas profissões.",
-};
-
-export const professionToolsCardTitles = {
-  tools: "Ferramentas",
-  bombs: "Bombas de Prof",
-  craftingXp: "XP de Crafting",
-};
-
-export const professionGrindSpotsIntro: SectionIntro = {
-  eyebrow: "Crafting",
-  title: "Grind Spots de Ingredients",
-  description:
-    "Melhores spots por profissão com nível e coordenadas. NPC indica item comprado de vendedor. Até 10 indica que o spot funciona até cerca de 10 níveis além do indicado.",
-};
-
-export const professionGrindSpotsTableHeaders = {
-  level: "Nível",
-  ingredient: "Ingrediente",
-  coords: "Coordenadas",
-  tags: "Tags",
-  npcTag: "NPC",
-  maxLevelTag: "Até 10",
-};
-
-export const professionWaypointsIntro: SectionIntro = {
-  eyebrow: "Wynntils",
-  title: "Waypoints de Profissão",
-  description:
-    "Se você usa o Wynntils, importe os waypoints de recursos diretamente pelo Content Book para facilitar a visualização no mapa.",
-};
-
-export const professionWaypointsLabels = {
-  importTitle: "Como importar",
-  fileTitle: "profwaypoints.txt",
-  download: "Download",
-  preview:
-    "Prévia do conteúdo. O arquivo .txt completo está disponível para download acima.",
-};
+// Tipos
+export const tiposIntro =
+  "Cada recurso de coleta tem dois produtos (clique com o botão direito ou o esquerdo), e cada profissão de crafting usa os materiais de duas de coleta.";
 
 export const gatheringProfessions: GatheringProfession[] = [
-  { name: "Farming", resources: "Colheita e Linha", tool: "Foice" },
-  { name: "Fishing", resources: "Peixe e ?leo", tool: "Vara de Pesca" },
-  { name: "Mining", resources: "Minério e Gema", tool: "Picareta" },
-  { name: "Woodcutting", resources: "Madeira e Papel", tool: "Machado" },
+  { name: "Mining", icone: "/professions/mining.webp", resources: "Lingote e gema", tool: "Picareta", usadoPor: "Weaponsmithing, Armouring, Tailoring e Jeweling" },
+  { name: "Woodcutting", icone: "/professions/woodcuting.webp", resources: "Madeira e papel", tool: "Machado", usadoPor: "Weaponsmithing, Woodworking, Armouring e Scribing" },
+  { name: "Farming", icone: "/professions/farming.webp", resources: "Linha e grão", tool: "Foice", usadoPor: "Tailoring, Woodworking, Cooking e Alchemism" },
+  { name: "Fishing", icone: "/professions/fishing.webp", resources: "Óleo e carne", tool: "Vara de pesca", usadoPor: "Woodworking, Jeweling, Alchemism, Scribing e Cooking" },
 ];
 
 export const craftingProfessions: CraftingProfession[] = [
-  { name: "Cooking", produces: "Comidas", resources: "Fishing + Farming" },
-  { name: "Alchemism", produces: "Poções", resources: "Fishing + Farming" },
-  { name: "Scribing", produces: "Pergaminhos", resources: "Woodcutting + Fishing" },
-  { name: "Jeweling", produces: "Anéis, Braceletes e Colares", resources: "Mining + Fishing" },
-  { name: "Armouring", produces: "Capacetes e Peitorais", resources: "Mining + Woodcutting" },
-  { name: "Tailoring", produces: "Calças e Botas", resources: "Mining + Farming" },
-  { name: "Weaponsmithing", produces: "Lanças e Adagas", resources: "Woodcutting + Mining" },
-  { name: "Woodworking", produces: "Arcos, Cajados e Reliks", resources: "Woodcutting + Farming" },
+  { name: "Armouring", icone: "/professions/armouring.webp", produces: "Capacetes e peitorais", resources: "Mining + Woodcutting" },
+  { name: "Tailoring", icone: "/professions/tailoring.webp", produces: "Calças e botas", resources: "Mining + Farming" },
+  { name: "Weaponsmithing", icone: "/professions/weaponsmithing.webp", produces: "Lanças e adagas", resources: "Mining + Woodcutting" },
+  { name: "Woodworking", icone: "/professions/woodworking.webp", produces: "Arcos e cajados (Farming); reliks (Fishing)", resources: "Woodcutting + Farming ou Fishing" },
+  { name: "Jeweling", icone: "/professions/jeweling.webp", produces: "Anéis, braceletes e colares", resources: "Mining + Fishing" },
+  { name: "Alchemism", icone: "/professions/alchemism.webp", produces: "Poções", resources: "Fishing + Farming" },
+  { name: "Scribing", icone: "/professions/scribing.webp", produces: "Pergaminhos", resources: "Fishing + Woodcutting" },
+  { name: "Cooking", icone: "/professions/cooking.webp", produces: "Comidas", resources: "Fishing + Farming" },
 ];
 
-export const toolTips = [
-  "Niveladas de 1 a 100, sempre em múltiplos de 5 (1, 5, 10, 15...).",
-  "Ferramentas de nível mais alto aumentam a chance de sucesso ao coletar um recurso.",
-  "Carregar mais de uma ferramenta do mesmo tipo no inventário, mesmo de níveis diferentes, diminui a eficiência de produção.",
-  "Use as estatísticas Gather XP e Gather Speed presentes em armaduras e consumíveis craftados para multiplicar o XP geral.",
+// Coleta e ferramentas
+export const coletaIntro =
+  "Para coletar, você precisa de uma ferramenta do tipo certo e do nível de profissão exigido pelo material.";
+
+export const coletaRegras = [
+  "Um material novo libera nos níveis 1, 10, 20 e assim por diante.",
+  "Logo que libera, o material é lento de colher e o refino acerta 70% das vezes. A cada nível o refino sobe 2%, até 90%, e a velocidade também melhora, as duas coisas até 10 níveis depois do desbloqueio.",
+  "Por isso o 125 é, na prática, o último nível que melhora a coleta (10 depois do último material, no 115).",
+  "Quando o refino dá certo, o material sai em um de três tiers: Tier 1 (89%), Tier 2 (10%) ou Tier 3 (1%). O tier melhora o dano, a vida, a durabilidade ou a duração do item criado.",
+  "A velocidade de coleta sobe com ferramenta melhor, com Profession Speed Bomb e com acessórios e consumíveis que tenham ingredientes de gather speed. A chance de refino não muda com nada disso.",
 ];
 
-export const bombTips = [
-  "Prof XP: aumenta a experiência ganha ao farmar um recurso ou craftar um item.",
-  "Prof Speed: reduz pela metade o tempo gasto para farmar ou craftar. Ao craftar, os materiais consumidos também são reduzidos à metade.",
-  "Pergunte no /g se há alguma bomba ativa nos mundos. Jogadores com rank Champion conseguem ver as bombas globalmente e sempre repassam a informação.",
+/** Ferramentas por tier (wiki, Gathering Tools). */
+export const ferramentas = [
+  { tier: "T1", nome: "Wooden", nivel: 1, origem: "Tool Merchant" },
+  { tier: "T2", nome: "Stone", nivel: 5, origem: "Tool Merchant" },
+  { tier: "T3", nome: "Copper", nivel: 15, origem: "Dungeon Merchant" },
+  { tier: "T4", nome: "Bronze", nivel: 25, origem: "Dungeon Merchant" },
+  { tier: "T5", nome: "Golden", nivel: 35, origem: "Dungeon Merchant" },
+  { tier: "T6", nome: "Iron", nivel: 45, origem: "Dungeon Merchant" },
+  { tier: "T7", nome: "Steel", nivel: 55, origem: "Dungeon Merchant" },
+  { tier: "T8", nome: "Cobalt", nivel: 65, origem: "Dungeon Merchant" },
+  { tier: "T9", nome: "Diamond", nivel: 75, origem: "Dungeon Merchant" },
+  { tier: "T10", nome: "Molten", nivel: 85, origem: "Dungeon Merchant" },
+  { tier: "T11", nome: "Void", nivel: 95, origem: "Dungeon Merchant" },
+  { tier: "T12", nome: "Dernic", nivel: 105, origem: "Dungeon Merchant" },
+  { tier: "T13", nome: "Titanium", nivel: 115, origem: "Dungeon Merchant" },
 ];
 
-export const craftingXpTips = [
-  "O XP nas profissões de Crafting é ganho craftando itens, não coletando.",
-  "Sempre use ingredients na composição dos itens, eles aumentam significativamente a experiência ganha.",
-  "Para farmar ingredients, use builds com Loot Bônus, já que essa estatística também se aplica no drop de ingredients.",
-  "Os ingredients também podem ser comprados no Trade Market, mas costumam ter preço elevado.",
-  "A guilda tem receitas de itens craftados otimizados em Loot Bônus, confira no nosso servidor do Discord.",
+export const ferramentasNotas = [
+  "Toda ferramenta tem durabilidade. Zerada, o refino nunca dá certo (o XP continua vindo). Conserte no Blacksmith com esmeraldas.",
+  "Qualquer tier também sai no Trade Market, e o Item Upgrader sobe a ferramenta um tier usando fragmentos de dungeon.",
+  "Pela experiência da guilda, carregar mais de uma ferramenta do mesmo tipo no inventário, mesmo de níveis diferentes, deixa a coleta menos eficiente.",
+];
+
+export const coletaImagens: Imagem[] = [
+  { src: "/professions/tools.webp", alt: "As quatro ferramentas de coleta: foice, picareta, machado e vara", legenda: "As ferramentas de coleta." },
+];
+
+// Crafting
+export const craftingIntro =
+  "O crafting acontece nas Crafting Stations, quase sempre em cidades. A receita leva os materiais da coleta e até 6 ingredientes.";
+
+export const craftingRegras = [
+  "Os materiais definem a faixa de nível do item: material de nível 20 faz itens do nível 20 ao 29. Ingrediente não tem essa trava.",
+  "Ingredientes vêm de drops de mobs, baús, quests e alguns merchants. Precisam servir para aquela profissão e respeitar o nível da receita.",
+  "[[powders|Powders]] entram no craft de armas, armaduras e acessórios: dão efeito elemental, mas reduzem a durabilidade. Do tier 3 para cima, também podem aumentar o requisito de skill points.",
+  "Equipamento craftado tem durabilidade e perde força quando ela fica baixa; consumível funciona por cargas ou por tempo.",
+];
+
+export const craftingXp = [
+  "No crafting, o XP vem de criar itens, não de coletar.",
+  "Use ingredientes sempre que puder: eles aumentam muito o XP do craft.",
+  "Para farmar ingredientes, use build com Loot Bonus, que também vale para o drop deles.",
+  "Ingredientes também estão à venda no Trade Market, mas costumam sair caros.",
+];
+
+export const bombasDeProfissao = [
+  "Profession XP Bomb: XP de coleta e crafting em dobro por 20 minutos.",
+  "Profession Speed Bomb: por 10 minutos, coleta e crafting duas vezes mais rápidos, recursos voltando na metade do tempo e craft gastando metade do material.",
+  "Pergunte no chat da guilda se há bomba ativa em algum mundo: quem tem CHAMPION recebe o aviso de todas.",
+];
+
+export const craftingImagens: Imagem[] = [
+  { src: "/professions/materiais.webp", alt: "Materiais refinados das profissões de coleta", legenda: "Materiais da coleta." },
+  { src: "/professions/ingredientes.webp", alt: "Ingredientes de crafting no inventário", legenda: "Ingredientes." },
+  { src: "/professions/exemplo_de_craftado.webp", alt: "Item craftado com os efeitos dos ingredientes", legenda: "O item pronto." },
+];
+
+// Spots
+export const spotsIntro =
+  "Os melhores lugares para farmar os ingredientes de cada profissão, com nível e coordenadas (clique para copiar). \"NPC\" é item comprado de vendedor; \"Até +10\" é spot que rende até uns 10 níveis acima do indicado.";
+
+export const spotsImagens: Imagem[] = [
+  { src: "/professions/spot1.webp", alt: "Spot de farm de ingredientes com mobs agrupados", legenda: "Exemplo de spot." },
+  { src: "/professions/spot2.webp", alt: "Área aberta com mobs que deixam ingredientes", legenda: "Exemplo de spot." },
+  { src: "/professions/spot3.webp", alt: "Outro spot de farm de ingredientes", legenda: "Exemplo de spot." },
 ];
 
 export const grindSpots: ProfessionSpots[] = [
@@ -152,7 +156,7 @@ export const grindSpots: ProfessionSpots[] = [
     profession: "Scribing",
     resources: "Woodcutting + Fishing",
     spots: [
-      { level: "1", name: "Costal Sand", coords: "-691, 34, -2038" },
+      { level: "1", name: "Coastal Sand", coords: "-691, 34, -2038" },
       { level: "5", name: "Fresh Water", coords: "1290, 31, -1267", isNpc: true },
       { level: "14", name: "Bone Ash", coords: "-438, 70, -1306" },
       { level: "26", name: "Blaze Powder", coords: "271, 30, -1290" },
@@ -258,12 +262,17 @@ export const grindSpots: ProfessionSpots[] = [
   },
 ];
 
+// Waypoints (Wynntils)
+export const waypointsIntro =
+  "Se você usa o mod Wynntils, dá para colocar no mapa os pontos de coleta de todas as profissões com o arquivo da guilda.";
+
 export const waypointImportSteps = [
+  "Baixe o arquivo e copie todo o conteúdo dele",
   "Abra o Content Book",
   "Clique em Overlay Management",
   'Busque por "Info Box"',
   "Escolha uma das 7 disponíveis",
-  'Cole o texto na parte "Info Box Content"',
+  'Cole o texto em "Info Box Content"',
 ];
 
 export const waypointSnippet = `[{
@@ -274,90 +283,18 @@ export const waypointSnippet = `[{
   "location": { ... }
 }]`;
 
-export type ProfessionExtraCard = {
-  title: string;
-  description: string;
-};
-
-export type ProfessionExtraReference = {
-  label: string;
-  href: string;
-  source: string;
-};
-
-export type ProfessionExtraMedia = {
-  src: string;
-  alt: string;
-  caption: string;
-};
-
-export const professionExtrasIntro: SectionIntro = {
-  eyebrow: "Informações adicionais",
-  title: "Extra",
-  description:
-    "Regras e detalhes de profissões que normalmente passam batido, mas impactam muito o planejamento de rota, crafting e economia.",
-};
-
-export const professionExtraHighlights: ProfessionExtraCard[] = [
-  {
-    title: "Marcos de Level",
-    description:
-      "O último grande unlock é level 110 em Gathering e 103 em Crafting. Depois disso ainda dá para subir até 132, mas sem novos desbloqueios importantes.",
-  },
-  {
-    title: "Tiers de Material",
-    description:
-      "Materiais de gathering vêm em tiers diferentes e isso influencia força do craft. A distribuição padrão é majoritariamente Tier 1, com Tier 2 e Tier 3 mais raros.",
-  },
-  {
-    title: "Receita e Ingredientes",
-    description:
-      "Cada craft usa materiais da receita e até 6 ingredientes. Os ingredientes precisam ser compatíveis com a profissão e respeitar o nível da receita.",
-  },
+// Dicas
+export const professionsDicas = [
+  "Suba a profissão de coleta 10 níveis além do material que você mais usa: é aí que ele atinge a velocidade e o refino máximos.",
+  "Guarde as bombas de profissão para sessões longas de crafting: a Speed Bomb corta pela metade o material gasto.",
 ];
 
-export const professionExtraNotes = [
-  "Crafting acontece em Crafting Stations espalhadas pelo mapa, principalmente em cidades.",
-  "Ingredients podem vir de mob drops, loot chests, quests e também de merchants específicos.",
-  "Use ingredients no craft sempre que possível: eles aumentam bastante o XP de Crafting.",
-  "Powders funcionam no craft de equipamentos (armas, armaduras e acessórios), aplicam efeito elemental e reduzem durabilidade.",
-  "Em powders Tier 3+, também podem aumentar requirement de skill points no item craftado.",
-  "Itens craftados de equipamento têm durabilidade e perdem eficiência quando a durabilidade cai muito; consumíveis funcionam por cargas/duração.",
-];
+export const dicaDaGuilda =
+  "Nossa recomendação é deixar as profissões para o fim da sua jornada: são opcionais, não mudam a gameplay e tomam bastante tempo. Se precisar de um item craftado antes, peça a um membro mais experiente. A guilda tem receitas de itens craftados com Loot Bonus no Discord.";
 
-export const professionExtraReferences: ProfessionExtraReference[] = [
-  {
-    label: "Professions",
-    href: "https://wynncraft.wiki.gg/wiki/Professions",
-    source: "wiki.gg",
-  },
-  {
-    label: "Crafting Ingredients",
-    href: "https://wynncraft.wiki.gg/wiki/Crafting_Ingredients",
-    source: "wiki.gg",
-  },
-  {
-    label: "Crafting",
-    href: "https://wynncraft.wiki.gg/wiki/Crafting",
-    source: "wiki.gg",
-  },
+export const professionsFontes = [
+  { rotulo: "Professions, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Professions" },
+  { rotulo: "Gathering Tools, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Gathering_Tools" },
+  { rotulo: "Crafting, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Crafting" },
+  { rotulo: "Crafting Ingredients, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Crafting_Ingredients" },
 ];
-
-export const professionExtraSupportImages: ProfessionExtraMedia[] = [
-  {
-    src: "/professions/professions.webp",
-    alt: "Visão geral das profissões de crafting",
-    caption: "Resumo das profissões e tipos de item craftado.",
-  },
-  {
-    src: "/professions/ingredientes.webp",
-    alt: "Ingredientes de crafting em professions",
-    caption: "Exemplo de ingredients usados para gerar efeitos no craft.",
-  },
-  {
-    src: "/professions/exemplo_de_craftado.webp",
-    alt: "Exemplo de item craftado em professions",
-    caption: "Resultado final com materiais e ingredients aplicados.",
-  },
-];
-

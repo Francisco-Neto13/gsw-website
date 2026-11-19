@@ -1,0 +1,1574 @@
+{
+ "/abilitytree/abilityTree.acolyte_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.acrobat_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.arcanist_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.battleMonk_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.boltslinger_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.fallen_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.lightBender_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.paladin_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.ritualist_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.shadestepper_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.sharpshooter_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.summoner_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.trapper_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/abilityTree.trickster_active.webp": [
+  32,
+  32
+ ],
+ "/abilitytree/riftwalker.webp": [
+  32,
+  32
+ ],
+ "/bg-guilda.webp": [
+  1824,
+  866
+ ],
+ "/dungeons/corrupted_key.webp": [
+  372,
+  231
+ ],
+ "/dungeons/dungeon_merchangt.webp": [
+  359,
+  420
+ ],
+ "/dungeons/forgery_chest.webp": [
+  719,
+  371
+ ],
+ "/dungeons/key.webp": [
+  348,
+  157
+ ],
+ "/dungeons/merchant_itens.webp": [
+  637,
+  275
+ ],
+ "/dungeons/rewards.webp": [
+  243,
+  103
+ ],
+ "/festivais/bonfire-hearthflame.webp": [
+  816,
+  816
+ ],
+ "/festivais/heroes-aster.webp": [
+  418,
+  451
+ ],
+ "/festivais/heroes-scavenger-hunt.webp": [
+  570,
+  570
+ ],
+ "/festivais/spirits-detlas.webp": [
+  1280,
+  720
+ ],
+ "/gallery/2_cache_annihilation.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/annihilation.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/annihilation2.webp": [
+  1919,
+  961
+ ],
+ "/gallery/anti_afk.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/evento_pagu.webp": [
+  1600,
+  829
+ ],
+ "/gallery/faye_trem.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/final_season_2.webp": [
+  1920,
+  1001
+ ],
+ "/gallery/final_season_3.webp": [
+  1366,
+  707
+ ],
+ "/gallery/final_season-1.webp": [
+  1365,
+  660
+ ],
+ "/gallery/final_season.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/ghousing.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/lideres.webp": [
+  1920,
+  1129
+ ],
+ "/gallery/mesa.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/mitica_misteriosa.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/natal_gsw.webp": [
+  1920,
+  1081
+ ],
+ "/gallery/old_old_warteam.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/old_warteam.webp": [
+  1920,
+  1009
+ ],
+ "/gallery/orphion_bugado.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/primeira_ghousing.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/primordios.webp": [
+  1366,
+  768
+ ],
+ "/gallery/reuniao_ilha.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/reuniao_ilha2.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/reuniao_ilha3.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/reuniao_na_frente_de_ragni.webp": [
+  1365,
+  684
+ ],
+ "/gallery/reuniao_no_gelo.webp": [
+  2560,
+  1080
+ ],
+ "/gallery/reunidos_na_arvore.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/sala_de_gambling.webp": [
+  1920,
+  1080
+ ],
+ "/gallery/war_antiga.webp": [
+  1366,
+  705
+ ],
+ "/gamemodes/gamemodes.webp": [
+  1094,
+  316
+ ],
+ "/guild-house/guild-house-acesso-balao.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-acesso-menu-guild-island.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-bosque.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-coliseu-arena.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-coliseu-dummies.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-coliseu-santuario-warteam.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-entrada-destaque.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-esgoto.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-fazenda.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-hall-servicos-1.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-hall-servicos-2.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-hall-servicos-3.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-labirinto.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-mapa-da-ilha.webp": [
+  1479,
+  1494
+ ],
+ "/guild-house/guild-house-parkour.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-praca-1.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-praca-2.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-praca-3.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-praca-4.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-praca-feira.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-sede-cemiterio.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-sede-memorial.webp": [
+  1920,
+  1121
+ ],
+ "/guild-house/guild-house-sede.webp": [
+  1920,
+  1121
+ ],
+ "/icon.webp": [
+  1856,
+  1856
+ ],
+ "/inicio/categorias/categoria-economia-token-1280.avif": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-economia-token-1280.webp": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-economia-token-640.avif": [
+  640,
+  360
+ ],
+ "/inicio/categorias/categoria-economia-token-640.webp": [
+  640,
+  360
+ ],
+ "/inicio/categorias/categoria-endgame-silhueta-1280.avif": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-endgame-silhueta-1280.webp": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-endgame-silhueta-640.avif": [
+  640,
+  360
+ ],
+ "/inicio/categorias/categoria-endgame-silhueta-640.webp": [
+  640,
+  360
+ ],
+ "/inicio/categorias/categoria-especiais-traje-1280.avif": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-especiais-traje-1280.webp": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-especiais-traje-640.avif": [
+  640,
+  360
+ ],
+ "/inicio/categorias/categoria-especiais-traje-640.webp": [
+  640,
+  360
+ ],
+ "/inicio/categorias/categoria-progressao-trono-1280.avif": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-progressao-trono-1280.webp": [
+  1280,
+  720
+ ],
+ "/inicio/categorias/categoria-progressao-trono-640.avif": [
+  640,
+  360
+ ],
+ "/inicio/categorias/categoria-progressao-trono-640.webp": [
+  640,
+  360
+ ],
+ "/inicio/inicio-hero-ilha-cerejeiras-1280.avif": [
+  1280,
+  549
+ ],
+ "/inicio/inicio-hero-ilha-cerejeiras-1280.webp": [
+  1280,
+  549
+ ],
+ "/inicio/inicio-hero-ilha-cerejeiras-1920.avif": [
+  1920,
+  823
+ ],
+ "/inicio/inicio-hero-ilha-cerejeiras-1920.webp": [
+  1920,
+  823
+ ],
+ "/inicio/inicio-hero-ilha-cerejeiras-640.avif": [
+  640,
+  274
+ ],
+ "/inicio/inicio-hero-ilha-cerejeiras-640.webp": [
+  640,
+  274
+ ],
+ "/leveling/archer.webp": [
+  283,
+  324
+ ],
+ "/leveling/assassin.webp": [
+  283,
+  324
+ ],
+ "/leveling/bat_cave.webp": [
+  1920,
+  1081
+ ],
+ "/leveling/church.webp": [
+  1920,
+  1080
+ ],
+ "/leveling/emerald_trail.webp": [
+  1920,
+  1081
+ ],
+ "/leveling/flesh-cave.webp": [
+  1920,
+  1080
+ ],
+ "/leveling/herb_cave.webp": [
+  1920,
+  1080
+ ],
+ "/leveling/llevigar_spiders.webp": [
+  1920,
+  1080
+ ],
+ "/leveling/mage.webp": [
+  283,
+  324
+ ],
+ "/leveling/mount_wynn.webp": [
+  1920,
+  1081
+ ],
+ "/leveling/party_finder.webp": [
+  1920,
+  1081
+ ],
+ "/leveling/pigman_ravine.webp": [
+  1920,
+  1080
+ ],
+ "/leveling/saints_row.webp": [
+  1920,
+  1081
+ ],
+ "/leveling/scrapward.webp": [
+  1920,
+  1081
+ ],
+ "/leveling/shaman.webp": [
+  283,
+  324
+ ],
+ "/leveling/warrior.webp": [
+  283,
+  324
+ ],
+ "/leveling/waterfall.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/area_jogavel.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/area_jogavel2.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/bau_final.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/beacon_rr.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/boon1.webp": [
+  384,
+  260
+ ],
+ "/lootrun/boon2.webp": [
+  436,
+  267
+ ],
+ "/lootrun/boons_escolhas.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/boons_gerais.webp": [
+  1374,
+  655
+ ],
+ "/lootrun/canyon_camp.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/challenge_reward.webp": [
+  693,
+  737
+ ],
+ "/lootrun/checando_rank.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/Cinfras_silverbull.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/cooldown_lootrun.webp": [
+  308,
+  178
+ ],
+ "/lootrun/corkus_camp.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/desafio_gidf.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/fast_travels_corkus.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/flying_chest.webp": [
+  280,
+  283
+ ],
+ "/lootrun/fool_eater1.webp": [
+  275,
+  253
+ ],
+ "/lootrun/fool_eater2.webp": [
+  945,
+  857
+ ],
+ "/lootrun/fruma_east_camp.webp": [
+  1151,
+  649
+ ],
+ "/lootrun/fruma_west_camp.webp": [
+  1146,
+  646
+ ],
+ "/lootrun/GanhandoTempo_Terminando_o_desafio_2.poster.webp": [
+  960,
+  540
+ ],
+ "/lootrun/GanhandoTempoChegando_no_desafio.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/gif_molten.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/icones_lootrun.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/jump_pads.poster.webp": [
+  360,
+  203
+ ],
+ "/lootrun/limite_desafios.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/lootrun_acabando.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/lootrun_start.webp": [
+  292,
+  254
+ ],
+ "/lootrun/missao_exemplo.webp": [
+  310,
+  321
+ ],
+ "/lootrun/missoes_necessarias.webp": [
+  332,
+  430
+ ],
+ "/lootrun/molten_camp.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/morrendo_desafio.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/NPCCinfras_silverbull.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/nuvens_espalhadas.webp": [
+  355,
+  309
+ ],
+ "/lootrun/pulls_salvas.webp": [
+  331,
+  434
+ ],
+ "/lootrun/radiance.webp": [
+  351,
+  262
+ ],
+ "/lootrun/se_camp.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/sky_camp.webp": [
+  1920,
+  1080
+ ],
+ "/lootrun/tempo_diminuindo_ao_morrer.poster.webp": [
+  480,
+  270
+ ],
+ "/lootrun/timer_13minutos.webp": [
+  225,
+  122
+ ],
+ "/lootrun/timer_15_minutos.webp": [
+  246,
+  122
+ ],
+ "/lootrun/timer_15+_minutos.webp": [
+  231,
+  119
+ ],
+ "/lootrun/timer.webp": [
+  1920,
+  1080
+ ],
+ "/members/atmisuki.webp": [
+  632,
+  800
+ ],
+ "/members/bigouslino.webp": [
+  682,
+  682
+ ],
+ "/members/cavalheri.webp": [
+  800,
+  704
+ ],
+ "/members/closerapha.webp": [
+  473,
+  485
+ ],
+ "/members/eduus.webp": [
+  370,
+  370
+ ],
+ "/members/fallingo.webp": [
+  800,
+  600
+ ],
+ "/members/faye.webp": [
+  303,
+  227
+ ],
+ "/members/felipe.webp": [
+  639,
+  674
+ ],
+ "/members/frame.webp": [
+  800,
+  800
+ ],
+ "/members/furionspeed.webp": [
+  800,
+  800
+ ],
+ "/members/fustaco.webp": [
+  604,
+  604
+ ],
+ "/members/gst3.webp": [
+  512,
+  512
+ ],
+ "/members/julinho.webp": [
+  800,
+  800
+ ],
+ "/members/killer.webp": [
+  800,
+  800
+ ],
+ "/members/kotae.webp": [
+  768,
+  768
+ ],
+ "/members/kw.webp": [
+  366,
+  585
+ ],
+ "/members/maninja.webp": [
+  800,
+  600
+ ],
+ "/members/mor7ee.webp": [
+  800,
+  800
+ ],
+ "/members/p4gu.webp": [
+  400,
+  533
+ ],
+ "/members/pandade.webp": [
+  750,
+  650
+ ],
+ "/members/radicchi.webp": [
+  800,
+  800
+ ],
+ "/members/rafaelgomes.webp": [
+  645,
+  645
+ ],
+ "/members/rfl.webp": [
+  269,
+  269
+ ],
+ "/members/sixl.webp": [
+  800,
+  800
+ ],
+ "/members/victo.webp": [
+  800,
+  800
+ ],
+ "/members/volkzz.webp": [
+  800,
+  800
+ ],
+ "/members/yasuo.webp": [
+  800,
+  565
+ ],
+ "/montarias/montaria-adasaur.webp": [
+  436,
+  475
+ ],
+ "/montarias/montaria-atributos-level-limit-max.webp": [
+  298,
+  445
+ ],
+ "/montarias/montaria-cavalo.webp": [
+  670,
+  637
+ ],
+ "/montarias/montaria-wyvern.webp": [
+  596,
+  418
+ ],
+ "/montarias/powerup-aceleracao.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-altitude.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-boost.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-controle.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-energia.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-energy-boost.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-resistencia.webp": [
+  187,
+  162
+ ],
+ "/montarias/powerup-speed-boost.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-treinamento.webp": [
+  215,
+  215
+ ],
+ "/montarias/powerup-velocidade.webp": [
+  215,
+  215
+ ],
+ "/professions/alchemism.webp": [
+  240,
+  300
+ ],
+ "/professions/armouring.webp": [
+  200,
+  180
+ ],
+ "/professions/cooking.webp": [
+  320,
+  320
+ ],
+ "/professions/exemplo_de_craftado.webp": [
+  352,
+  521
+ ],
+ "/professions/farming.webp": [
+  240,
+  320
+ ],
+ "/professions/fishing.webp": [
+  280,
+  240
+ ],
+ "/professions/ingredientes.webp": [
+  460,
+  160
+ ],
+ "/professions/jeweling.webp": [
+  220,
+  220
+ ],
+ "/professions/materiais.webp": [
+  440,
+  150
+ ],
+ "/professions/mining.webp": [
+  260,
+  260
+ ],
+ "/professions/scribing.webp": [
+  300,
+  280
+ ],
+ "/professions/spot1.webp": [
+  1205,
+  875
+ ],
+ "/professions/spot2.webp": [
+  1919,
+  964
+ ],
+ "/professions/spot3.webp": [
+  1919,
+  1006
+ ],
+ "/professions/tailoring.webp": [
+  200,
+  220
+ ],
+ "/professions/tools.webp": [
+  512,
+  128
+ ],
+ "/professions/weaponsmithing.webp": [
+  240,
+  240
+ ],
+ "/professions/woodcuting.webp": [
+  240,
+  320
+ ],
+ "/professions/woodworking.webp": [
+  300,
+  300
+ ],
+ "/raids/character_info.webp": [
+  749,
+  515
+ ],
+ "/raids/gambit.webp": [
+  535,
+  343
+ ],
+ "/raids/guild_raid.webp": [
+  246,
+  209
+ ],
+ "/raids/iniciar_raid.webp": [
+  739,
+  470
+ ],
+ "/raids/nivel_raid.webp": [
+  787,
+  279
+ ],
+ "/raids/nol.webp": [
+  1920,
+  1080
+ ],
+ "/raids/notg.webp": [
+  1920,
+  1080
+ ],
+ "/raids/party_queue.webp": [
+  583,
+  288
+ ],
+ "/raids/party_queue2.webp": [
+  444,
+  491
+ ],
+ "/raids/prints/raid-nol-palacio-nexus-1280.avif": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-nol-palacio-nexus-1280.webp": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-nol-palacio-nexus-640.avif": [
+  640,
+  360
+ ],
+ "/raids/prints/raid-nol-palacio-nexus-640.webp": [
+  640,
+  360
+ ],
+ "/raids/prints/raid-twp-chefe-anathema-1280.avif": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-twp-chefe-anathema-1280.webp": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-twp-chefe-anathema-1920.avif": [
+  1920,
+  1080
+ ],
+ "/raids/prints/raid-twp-chefe-anathema-1920.webp": [
+  1920,
+  1080
+ ],
+ "/raids/prints/raid-twp-chefe-anathema-640.avif": [
+  640,
+  360
+ ],
+ "/raids/prints/raid-twp-chefe-anathema-640.webp": [
+  640,
+  360
+ ],
+ "/raids/prints/raid-ui-aspecto-mitico-1280.avif": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-ui-aspecto-mitico-1280.webp": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-ui-aspecto-mitico-640.avif": [
+  640,
+  360
+ ],
+ "/raids/prints/raid-ui-aspecto-mitico-640.webp": [
+  640,
+  360
+ ],
+ "/raids/prints/raid-ui-bau-recompensa-1280.avif": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-ui-bau-recompensa-1280.webp": [
+  1280,
+  720
+ ],
+ "/raids/prints/raid-ui-bau-recompensa-640.avif": [
+  640,
+  360
+ ],
+ "/raids/prints/raid-ui-bau-recompensa-640.webp": [
+  640,
+  360
+ ],
+ "/raids/raid_chief.webp": [
+  1920,
+  991
+ ],
+ "/raids/raid_completa.webp": [
+  733,
+  212
+ ],
+ "/raids/raid_encontrada.webp": [
+  494,
+  298
+ ],
+ "/raids/reward_chest.webp": [
+  1920,
+  1080
+ ],
+ "/raids/rewards_raid.webp": [
+  520,
+  444
+ ],
+ "/raids/runas.webp": [
+  1920,
+  1080
+ ],
+ "/raids/start_raid.webp": [
+  382,
+  208
+ ],
+ "/raids/tcc.webp": [
+  1920,
+  1080
+ ],
+ "/raids/tna.webp": [
+  1920,
+  1080
+ ],
+ "/raids/twp.webp": [
+  1920,
+  991
+ ],
+ "/shares/assinatura_silverbull.webp": [
+  374,
+  359
+ ],
+ "/shares/bombs.webp": [
+  364,
+  315
+ ],
+ "/shares/bundle.webp": [
+  335,
+  402
+ ],
+ "/shares/caixa_evento_sazonal.webp": [
+  446,
+  299
+ ],
+ "/shares/champion.webp": [
+  382,
+  545
+ ],
+ "/shares/chests.webp": [
+  378,
+  317
+ ],
+ "/shares/crates_gratuitas.webp": [
+  451,
+  318
+ ],
+ "/shares/crates.webp": [
+  524,
+  279
+ ],
+ "/shares/crimson_bundles.webp": [
+  1050,
+  291
+ ],
+ "/shares/Frostpaw_bundles.webp": [
+  1052,
+  309
+ ],
+ "/shares/hero.webp": [
+  382,
+  545
+ ],
+ "/shares/hero+.webp": [
+  382,
+  552
+ ],
+ "/shares/local.webp": [
+  1920,
+  991
+ ],
+ "/shares/loja_ingame.webp": [
+  366,
+  257
+ ],
+ "/shares/loja_virtual.webp": [
+  556,
+  482
+ ],
+ "/shares/ofertas.webp": [
+  310,
+  219
+ ],
+ "/shares/pets.webp": [
+  364,
+  298
+ ],
+ "/shares/silverbull.webp": [
+  360,
+  313
+ ],
+ "/shares/tokens.webp": [
+  360,
+  315
+ ],
+ "/shares/Verdant_bundles.webp": [
+  1054,
+  324
+ ],
+ "/shares/vip.webp": [
+  382,
+  545
+ ],
+ "/shares/vip+.webp": [
+  382,
+  545
+ ],
+ "/terceiros/sites/nori-fish.webp": [
+  600,
+  598
+ ],
+ "/terceiros/sites/wynnbuilder.webp": [
+  1200,
+  630
+ ],
+ "/terceiros/sites/wynncrafter.webp": [
+  1200,
+  630
+ ],
+ "/terceiros/sites/wynnpool.webp": [
+  1280,
+  720
+ ],
+ "/terceiros/sites/wynnventory.webp": [
+  1200,
+  630
+ ],
+ "/terceiros/wynncraft/beacon-aqua.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-blue.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-crimson.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-dark-gray.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-gray.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-green.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-orange.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-pink.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-purple.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-rainbow.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-red.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-white.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/beacon-yellow.webp": [
+  160,
+  160
+ ],
+ "/terceiros/wynncraft/blizzard-brawl-mapa.webp": [
+  519,
+  692
+ ],
+ "/terceiros/wynncraft/blizzard-convites.webp": [
+  991,
+  991
+ ],
+ "/terceiros/wynncraft/blizzard-the-traveler.webp": [
+  905,
+  905
+ ],
+ "/terceiros/wynncraft/bomba-combat-xp.webp": [
+  210,
+  175
+ ],
+ "/terceiros/wynncraft/bomba-dungeon.webp": [
+  412,
+  276
+ ],
+ "/terceiros/wynncraft/bomba-ingredient.webp": [
+  416,
+  275
+ ],
+ "/terceiros/wynncraft/bomba-item.webp": [
+  210,
+  175
+ ],
+ "/terceiros/wynncraft/bomba-loot.webp": [
+  210,
+  175
+ ],
+ "/terceiros/wynncraft/bomba-party-crackers.webp": [
+  210,
+  175
+ ],
+ "/terceiros/wynncraft/bomba-profession-speed.webp": [
+  416,
+  275
+ ],
+ "/terceiros/wynncraft/bomba-profession-xp.webp": [
+  416,
+  275
+ ],
+ "/terceiros/wynncraft/bomba-scroll-charge.webp": [
+  416,
+  275
+ ],
+ "/terceiros/wynncraft/bomba-shout.webp": [
+  210,
+  175
+ ],
+ "/terceiros/wynncraft/bonfire-keeper.webp": [
+  707,
+  707
+ ],
+ "/terceiros/wynncraft/dungeon-decrepit-sewers-corrompida.webp": [
+  1920,
+  1080
+ ],
+ "/terceiros/wynncraft/dungeon-decrepit-sewers.webp": [
+  1920,
+  991
+ ],
+ "/terceiros/wynncraft/dungeon-eldritch-outlook.webp": [
+  1920,
+  1015
+ ],
+ "/terceiros/wynncraft/dungeon-fallen-factory.webp": [
+  1080,
+  1080
+ ],
+ "/terceiros/wynncraft/dungeon-galleons-graveyard-corrompida.webp": [
+  1920,
+  991
+ ],
+ "/terceiros/wynncraft/dungeon-galleons-graveyard.webp": [
+  1920,
+  1057
+ ],
+ "/terceiros/wynncraft/dungeon-ice-barrows-corrompida.webp": [
+  1331,
+  880
+ ],
+ "/terceiros/wynncraft/dungeon-ice-barrows.webp": [
+  1920,
+  1080
+ ],
+ "/terceiros/wynncraft/dungeon-infested-pit-corrompida.webp": [
+  1920,
+  1080
+ ],
+ "/terceiros/wynncraft/dungeon-infested-pit.webp": [
+  1920,
+  991
+ ],
+ "/terceiros/wynncraft/dungeon-lost-sanctuary-corrompida.webp": [
+  1369,
+  765
+ ],
+ "/terceiros/wynncraft/dungeon-sand-swept-tomb-corrompida.webp": [
+  1920,
+  1009
+ ],
+ "/terceiros/wynncraft/dungeon-sand-swept-tomb.webp": [
+  1264,
+  999
+ ],
+ "/terceiros/wynncraft/dungeon-timelost-sanctum.webp": [
+  2880,
+  1800
+ ],
+ "/terceiros/wynncraft/dungeon-undergrowth-ruins-corrompida.webp": [
+  1920,
+  991
+ ],
+ "/terceiros/wynncraft/dungeon-undergrowth-ruins.webp": [
+  1920,
+  991
+ ],
+ "/terceiros/wynncraft/dungeon-underworld-crypt-corrompida.webp": [
+  1078,
+  1078
+ ],
+ "/terceiros/wynncraft/dungeon-underworld-crypt.webp": [
+  1920,
+  1080
+ ],
+ "/terceiros/wynncraft/festival-blizzard-logo.webp": [
+  698,
+  355
+ ],
+ "/terceiros/wynncraft/festival-bonfire-logo.webp": [
+  693,
+  368
+ ],
+ "/terceiros/wynncraft/festival-bonfire-promocional.webp": [
+  1400,
+  700
+ ],
+ "/terceiros/wynncraft/festival-heroes-logo.webp": [
+  611,
+  440
+ ],
+ "/terceiros/wynncraft/festival-spirits-logo.webp": [
+  633,
+  341
+ ],
+ "/terceiros/wynncraft/hunted-aledar.webp": [
+  831,
+  831
+ ],
+ "/terceiros/wynncraft/hunted-npc-inicio.webp": [
+  820,
+  820
+ ],
+ "/terceiros/wynncraft/item-bow-air3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bow-earth2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bow-earth3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bow-multi2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bow-multi3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bow-thunder3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bow-water3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bracelet-basic-iron.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bracelet-multi2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bracelet-water1.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-bracelet-water2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-dagger-air3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-dagger-fire2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-dagger-multi2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-dagger-thunder1.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-dagger-thunder2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-dagger-thunder3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-dagger-water3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-necklace-basic-cross.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-necklace-earth1.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-necklace-multi2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-relik-air2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-relik-basic-gold.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-relik-earth2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-relik-fire3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-relik-thunder3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-relik-water1.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-relik-water3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-ring-basic-gem.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-ring-fire2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-ring-thunder2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-spear-air2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-spear-air3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-spear-fire3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-spear-multi3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-spear-water1.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-spear-water2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-spear-water3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-air3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-basic-gold.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-multi1.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-multi2.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-multi3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-thunder3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-water1.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/item-wand-water3.webp": [
+  64,
+  64
+ ],
+ "/terceiros/wynncraft/modos-icones-chat.webp": [
+  400,
+  158
+ ],
+ "/terceiros/wynncraft/site-wiki.webp": [
+  1200,
+  630
+ ],
+ "/terceiros/wynncraft/site-wynncraft-logo.webp": [
+  600,
+  600
+ ],
+ "/terceiros/wynncraft/spirits-alma.webp": [
+  303,
+  412
+ ],
+ "/worldevents/annihilation_portal.webp": [
+  1920,
+  1080
+ ],
+ "/worldevents/Annihilation.webp": [
+  767,
+  767
+ ],
+ "/worldevents/bau_final_we.webp": [
+  1920,
+  1080
+ ],
+ "/worldevents/we_2.webp": [
+  1920,
+  1009
+ ],
+ "/worldevents/we.webp": [
+  1920,
+  1080
+ ]
+}
