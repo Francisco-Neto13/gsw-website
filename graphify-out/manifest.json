@@ -12,10 +12,10 @@
     "semantic_hash": "10edb5023057bccc35bc29bf125d5024"
   },
   ".github/workflows/deploy.yml": {
-    "mtime": 1794983354.7605762,
-    "seen": 1794983892.9540746,
-    "ast_hash": "2e11896aa6ac1ef156424f6996255143",
-    "semantic_hash": "2e11896aa6ac1ef156424f6996255143"
+    "mtime": 1795052111.226935,
+    "seen": 1795052206.431329,
+    "ast_hash": "ea0eaa4300b85da999c17ba6d9611044",
+    "semantic_hash": ""
   },
   "app/historia/page.tsx": {
     "mtime": 1794982463.7363997,
@@ -462,15 +462,15 @@
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1795007723.6938922,
-    "seen": 1795007849.7737255,
-    "ast_hash": "29bdab7df9c63f39d1616536f84a8010",
+    "mtime": 1795051420.0764658,
+    "seen": 1795052206.431574,
+    "ast_hash": "978466d76741f9891a8f4f5fbc71649d",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1795009369.547714,
-    "seen": 1795009378.5288603,
-    "ast_hash": "48aa041b02c6624b98b3c175e6240cf3",
+    "mtime": 1795051421.4845195,
+    "seen": 1795052206.4315753,
+    "ast_hash": "83727610807bd4799f61e3195d695f8d",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -498,9 +498,9 @@
     "semantic_hash": "ab575e944f15d39a5486cf9fca385c5e"
   },
   "AGENTS.md": {
-    "mtime": 1795046418.3898787,
-    "seen": 1795046424.6731756,
-    "ast_hash": "6107280b820d7dd156710943325e0390",
+    "mtime": 1795055149.4839008,
+    "seen": 1795055152.3193595,
+    "ast_hash": "9e6f507fa8d8c6b9a768150c90262710",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -510,46 +510,40 @@
     "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
   },
   "README.md": {
-    "mtime": 1794982463.7313695,
-    "seen": 1794983892.9541967,
-    "ast_hash": "416f42d13c08319479c63227b166b1c0",
-    "semantic_hash": "416f42d13c08319479c63227b166b1c0"
+    "mtime": 1795052410.9197576,
+    "seen": 1795053519.5206838,
+    "ast_hash": "0500f61bd193fb680d7251fdc0abe95a",
+    "semantic_hash": ""
   },
   "docs/ARQUITETURA.md": {
-    "mtime": 1795048453.3011863,
-    "seen": 1795048457.4443254,
-    "ast_hash": "f23c39130deef15530d7abd95275e455",
+    "mtime": 1795052508.3404932,
+    "seen": 1795053519.520686,
+    "ast_hash": "4e87dea34e14ba059d331ed28a9aa2ad",
     "semantic_hash": ""
   },
   "docs/CI-CD.md": {
-    "mtime": 1794988293.558041,
-    "seen": 1794989218.170195,
-    "ast_hash": "c3313d6744c9f3db01c0e7fd800fa10f",
-    "semantic_hash": "c3313d6744c9f3db01c0e7fd800fa10f"
-  },
-  "docs/INFRAESTRUTURA.md": {
-    "mtime": 1794988286.4954433,
-    "seen": 1794989218.1701984,
-    "ast_hash": "3fe8632400463d00edde33a1a7e20def",
-    "semantic_hash": "3fe8632400463d00edde33a1a7e20def"
-  },
-  "docs/PADROES.md": {
-    "mtime": 1794988309.175718,
-    "seen": 1794989218.170211,
-    "ast_hash": "f5161c48166d49358dcd19aac600e4d1",
-    "semantic_hash": "f5161c48166d49358dcd19aac600e4d1"
-  },
-  "docs/PENDENCIAS.md": {
-    "mtime": 1795039484.9280717,
-    "seen": 1795039566.2583373,
-    "ast_hash": "bce6d584717f2a809846d48ad2aa3b7d",
+    "mtime": 1795052446.082397,
+    "seen": 1795053519.5206878,
+    "ast_hash": "320f6c758faf02bf9b322cbfca7625e7",
     "semantic_hash": ""
   },
-  "PRODUCT.md": {
-    "mtime": 1794983845.5617626,
-    "seen": 1794985453.4789863,
-    "ast_hash": "d7c4dcf0045cbad7a4ed896a3eeb0df8",
-    "semantic_hash": "d7c4dcf0045cbad7a4ed896a3eeb0df8"
+  "docs/INFRAESTRUTURA.md": {
+    "mtime": 1795055035.0189283,
+    "seen": 1795055152.3193712,
+    "ast_hash": "702db1da209afc2ef0006c4962242b02",
+    "semantic_hash": ""
+  },
+  "docs/PADROES.md": {
+    "mtime": 1795052383.5762424,
+    "seen": 1795053519.520702,
+    "ast_hash": "9cfe29f065065367950bf13380bbc741",
+    "semantic_hash": ""
+  },
+  "docs/PENDENCIAS.md": {
+    "mtime": 1795053598.8978553,
+    "seen": 1795055152.3193753,
+    "ast_hash": "6239dd5775551f63b34ac396a0213e72",
+    "semantic_hash": ""
   },
   "docs/GRAFO.md": {
     "mtime": 1794984007.1738696,
@@ -558,15 +552,15 @@
     "semantic_hash": "156a91b590e28b048deed13b5ea8b95e"
   },
   "docs/CREDITOS.md": {
-    "mtime": 1795046418.3883688,
-    "seen": 1795046424.6731842,
-    "ast_hash": "90d311a767d614f9a2c9c2a9c8bef027",
+    "mtime": 1795048837.3803961,
+    "seen": 1795048892.5083098,
+    "ast_hash": "413022ccf2f47e3adaeffec8515a6adb",
     "semantic_hash": ""
   },
   "docs/redesign/README.md": {
-    "mtime": 1795009375.1426396,
-    "seen": 1795009378.5288868,
-    "ast_hash": "2519e17c18ef7fa57f4300b63aedfd10",
+    "mtime": 1795052383.578499,
+    "seen": 1795053519.52071,
+    "ast_hash": "6e018c91551e4bae6f76e9812b055e2f",
     "semantic_hash": ""
   },
   "docs/redesign/diagnostico.md": {
@@ -576,16 +570,16 @@
     "semantic_hash": "3cf2cfb1937ebf1aef5912e9dfe9737b"
   },
   "docs/redesign/direcao-visual.md": {
-    "mtime": 1794984875.5401654,
-    "seen": 1794985453.4789941,
-    "ast_hash": "1c2d2f7356a203ea35ce02e026afb32a",
-    "semantic_hash": "1c2d2f7356a203ea35ce02e026afb32a"
+    "mtime": 1795052383.5774503,
+    "seen": 1795053519.5207143,
+    "ast_hash": "07ec072ee526cf0a0f55493b67e3316e",
+    "semantic_hash": ""
   },
   "docs/redesign/estrutura-do-guia.md": {
-    "mtime": 1794984764.1187196,
-    "seen": 1794985453.4789958,
-    "ast_hash": "3606a2e6ac6f753a904d9926d5055252",
-    "semantic_hash": "3606a2e6ac6f753a904d9926d5055252"
+    "mtime": 1795052383.5779696,
+    "seen": 1795053519.5207164,
+    "ast_hash": "d576c8046b712d1d3c9aea8df8d7e218",
+    "semantic_hash": ""
   },
   "docs/redesign/fontes-e-licencas.md": {
     "mtime": 1794984455.3695242,
@@ -834,9 +828,9 @@
     "semantic_hash": ""
   },
   "components/shared/AnimacaoSobDemanda.tsx": {
-    "mtime": 1795016203.8054316,
-    "seen": 1795017446.3627882,
-    "ast_hash": "8b1e08f20178a82349865207fa34c098",
+    "mtime": 1795051811.0150554,
+    "seen": 1795052206.4314978,
+    "ast_hash": "719bb853b509c60873e789956a45804d",
     "semantic_hash": ""
   },
   "components/shared/Busca.tsx": {
@@ -893,16 +887,10 @@
     "ast_hash": "9b71dcd3f6188562e8577590e13a78de",
     "semantic_hash": "9b71dcd3f6188562e8577590e13a78de"
   },
-  "DESIGN.md": {
-    "mtime": 1795038129.1429398,
-    "seen": 1795038419.7625535,
-    "ast_hash": "bb8d0e202c376516ee475c20757348be",
-    "semantic_hash": ""
-  },
   "lib/tamanhos.ts": {
-    "mtime": 1795015775.996184,
-    "seen": 1795017446.3628829,
-    "ast_hash": "f6dedbbae68b7372ade6fdf67d359d8a",
+    "mtime": 1795052383.5751984,
+    "seen": 1795053519.5206406,
+    "ast_hash": "9d110c6227fefe735d75d66bd44e9f2e",
     "semantic_hash": ""
   },
   "components/shared/Efeitos.tsx": {
@@ -966,9 +954,9 @@
     "semantic_hash": ""
   },
   "lib/dimensoes-imagens.json": {
-    "mtime": 1795046083.5556552,
-    "seen": 1795046424.6731503,
-    "ast_hash": "c06fa4c5969ac9b1eebdf43d2b203aad",
+    "mtime": 1795051332.3572555,
+    "seen": 1795052206.4315627,
+    "ast_hash": "8eab94b24cae430db50a40416af043e6",
     "semantic_hash": ""
   },
   "lib/imagens.ts": {
@@ -1248,9 +1236,9 @@
     "semantic_hash": ""
   },
   "components/guild-house/data/guild-house-content.ts": {
-    "mtime": 1795046154.5936742,
-    "seen": 1795046424.6729994,
-    "ast_hash": "8c260068e08c41e6d821c4541977af4c",
+    "mtime": 1795048814.813231,
+    "seen": 1795048892.5081162,
+    "ast_hash": "3610fbf3de30260eba18e5ee081ae227",
     "semantic_hash": ""
   },
   "components/guild-house/pages/GuildHousePage.tsx": {
@@ -1272,9 +1260,9 @@
     "semantic_hash": ""
   },
   "components/guild-house/sections/GuildHouseArquitetura.tsx": {
-    "mtime": 1795046235.969809,
-    "seen": 1795046424.6730042,
-    "ast_hash": "be37c42266874257032bb1c7c712110d",
+    "mtime": 1795048814.8157413,
+    "seen": 1795048892.508122,
+    "ast_hash": "b8c8de549c554dbe1860d016140929ba",
     "semantic_hash": ""
   },
   "components/guild-house/sections/GuildHouseFuncionalidades.tsx": {
@@ -1317,6 +1305,84 @@
     "mtime": 1795048328.7414958,
     "seen": 1795048457.4438844,
     "ast_hash": "75052b5cb2e2e101a56adfdad01fc870",
+    "semantic_hash": ""
+  },
+  "components/shared/RostoDoJogador.tsx": {
+    "mtime": 1795048813.8910744,
+    "seen": 1795048892.5082245,
+    "ast_hash": "55b86034f1c66cddfce3bdcbbdf1e5f5",
+    "semantic_hash": ""
+  },
+  "docs/MIGRACAO-VPS.md": {
+    "mtime": 1795055035.0209339,
+    "seen": 1795055152.319373,
+    "ast_hash": "19be9ec62d4f5393451f6a9f17f19777",
+    "semantic_hash": ""
+  },
+  "infra/docker-compose.prod.yml": {
+    "mtime": 1795052055.3299944,
+    "seen": 1795052206.431558,
+    "ast_hash": "2c2baed845d8f88238e75882806cca8e",
+    "semantic_hash": ""
+  },
+  "infra/servidor/configurar-deploy.sh": {
+    "mtime": 1795052086.643975,
+    "seen": 1795052206.431559,
+    "ast_hash": "8f67120ae70abdaad89e1ffcab050582",
+    "semantic_hash": ""
+  },
+  "infra/servidor/implantar.sh": {
+    "mtime": 1795052085.8164272,
+    "seen": 1795052206.4315605,
+    "ast_hash": "2e1aa77e7d7d28b43534c4340c04df56",
+    "semantic_hash": ""
+  },
+  "lib/carregador-de-imagem.ts": {
+    "mtime": 1795051397.6285048,
+    "seen": 1795052206.4315615,
+    "ast_hash": "2e3fa121189939463215c3a10ba324a1",
+    "semantic_hash": ""
+  },
+  "lib/variantes.ts": {
+    "mtime": 1795051397.194921,
+    "seen": 1795052206.431573,
+    "ast_hash": "4a0028d21a97cdef0bca5872cc942d4f",
+    "semantic_hash": ""
+  },
+  "scripts/gerar-variantes.mjs": {
+    "mtime": 1795053487.931691,
+    "seen": 1795053519.5206559,
+    "ast_hash": "69accb467490ab5f27f4a8f53c4772a2",
+    "semantic_hash": ""
+  },
+  "scripts/servir-out.mjs": {
+    "mtime": 1795051810.5637276,
+    "seen": 1795052206.4315825,
+    "ast_hash": "c7fbf06447ba583677aa6bb64fcac028",
+    "semantic_hash": ""
+  },
+  "tests/variantes.test.mjs": {
+    "mtime": 1795051989.1796947,
+    "seen": 1795052206.4315884,
+    "ast_hash": "faaca069734bdeefdd3912f895f8ee42",
+    "semantic_hash": ""
+  },
+  "docs/DESIGN.md": {
+    "mtime": 1795038129.1429398,
+    "seen": 1795053519.520693,
+    "ast_hash": "bb8d0e202c376516ee475c20757348be",
+    "semantic_hash": ""
+  },
+  "docs/PRODUCT.md": {
+    "mtime": 1794983845.5617626,
+    "seen": 1795053519.5207055,
+    "ast_hash": "d7c4dcf0045cbad7a4ed896a3eeb0df8",
+    "semantic_hash": ""
+  },
+  ".github/assets/preview.webp": {
+    "mtime": 1795055004.891,
+    "seen": 1795055152.3193936,
+    "ast_hash": "77d4b4b87006e0f098cefb8ca8d7516f",
     "semantic_hash": ""
   },
   "package-lock.json": {
