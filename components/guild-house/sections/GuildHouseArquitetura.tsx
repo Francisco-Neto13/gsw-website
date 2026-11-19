@@ -1,5 +1,6 @@
 import { Eye, Hammer, Landmark, PenTool } from "lucide-react";
 import SecaoGuia from "@/components/guias/SecaoGuia";
+import RostoDoJogador from "@/components/shared/RostoDoJogador";
 import { arquitetura, arquiteturaIntro, convite, segredos } from "@/components/guild-house/data/guild-house-content";
 
 export default function GuildHouseArquitetura() {
@@ -19,16 +20,23 @@ export default function GuildHouseArquitetura() {
           <PenTool aria-hidden size={18} strokeWidth={1.75} className="text-violeta" />
           Projeto
         </dt>
-        <dd className="font-titulo text-titulo-4 text-texto">{arquitetura.projeto}</dd>
+        <dd className="flex items-center gap-2.5 font-titulo text-titulo-4 text-texto">
+          <RostoDoJogador nick={arquitetura.projeto.nick} uuid={arquitetura.projeto.uuid} tamanho={32} />
+          {arquitetura.projeto.nick}
+        </dd>
         <dt className="flex items-center gap-2 text-apoio text-texto-3">
           <Hammer aria-hidden size={18} strokeWidth={1.75} className="text-violeta" />
           Execução
         </dt>
         <dd>
           <ul className="flex flex-wrap gap-2">
-            {arquitetura.execucao.map((nome) => (
-              <li key={nome} className="rounded border border-linha bg-poco px-2 py-0.5 text-texto">
-                {nome}
+            {arquitetura.execucao.map((jogador) => (
+              <li
+                key={jogador.nick}
+                className="flex items-center gap-2 rounded border border-linha bg-poco py-1 pl-1 pr-2.5 text-texto"
+              >
+                <RostoDoJogador nick={jogador.nick} uuid={jogador.uuid} tamanho={22} />
+                {jogador.nick}
               </li>
             ))}
           </ul>

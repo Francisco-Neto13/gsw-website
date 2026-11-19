@@ -234,10 +234,21 @@ export const outrosPontos: { id: PontoId; titulo: string; texto: string; imagem:
 export const arquiteturaIntro =
   "Nossa sede é um projeto de destaque, com uma estética planejada com cuidado para refletir a identidade da guilda.";
 
-export const arquitetura = {
+/** Jogador creditado: o nick e o UUID da conta (o rosto continua certo se a pessoa trocar de nick). */
+export type Jogador = { nick: string; uuid: string };
+
+export const arquitetura: { conceito: string; projeto: Jogador; execucao: Jogador[] } = {
   conceito: "A arquitetura foi inteiramente baseada em Thesead, o que dá um visual único e imersivo ao nosso espaço.",
-  projeto: "Eduus",
-  execucao: ["Atmisuki", "iYasuo_", "Julinho", "Mor7ee", "RafaelGomes", "Victuwu", "Volkzz101"],
+  projeto: { nick: "Eduus", uuid: "c695f15210d24adca48650c4b308358b" },
+  execucao: [
+    { nick: "Atmisuki", uuid: "df94e4ddbfe74ba789ffd0b45ca7db92" },
+    { nick: "iYasuo_", uuid: "81672dbf1ddf415ba6352444424d2cbd" },
+    { nick: "Julinho", uuid: "9fca7262d45c44b89403a1e726e92e2b" },
+    { nick: "Mor7ee", uuid: "44ecf926f4034f188044f1b3ea3945f5" },
+    { nick: "RafaelGomes", uuid: "265ed9bdaf064e3b9c5158ec7c25b8a6" },
+    { nick: "Victuwu", uuid: "6004d21407504313a5ef3f565b17a21e" },
+    { nick: "Volkzz101", uuid: "40e11f26081e48189b3b19e81db2793d" },
+  ],
 };
 
 export const convite =
