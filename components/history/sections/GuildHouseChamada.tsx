@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { guildHouseChamada, guildHouseDestaque } from "@/components/guild-house/data/guild-house-content";
 import { dimensoesDe } from "@/lib/imagens";
-import { guiaHref } from "@/lib/site-content";
 
 /** Na página da Comunidade: chamada para o guia da Guild House, a sede da guilda. */
 export default function GuildHouseChamada() {
@@ -15,7 +14,7 @@ export default function GuildHouseChamada() {
           <h2 className="text-titulo-2 text-texto">{guildHouseChamada.titulo}</h2>
           <p className="mt-3 text-texto-2">{guildHouseChamada.texto}</p>
           <Link
-            href={guiaHref("guild-house")}
+            href="/historia/guild-house"
             className="mt-6 inline-flex items-center gap-2 rounded-md border border-violeta-borda px-4 py-2 font-bold text-violeta transition-colors hover:bg-violeta/10"
           >
             {guildHouseChamada.acao}
@@ -24,7 +23,7 @@ export default function GuildHouseChamada() {
         </div>
         {medida ? (
           <Link
-            href={guiaHref("guild-house")}
+            href="/historia/guild-house"
             data-revelar-item
             className="zoom-hover holofote relative block overflow-hidden rounded-md border border-linha"
             aria-label={guildHouseChamada.acao}

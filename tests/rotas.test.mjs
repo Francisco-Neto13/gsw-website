@@ -4,7 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readdirSync } from "node:fs";
 import { join, relative, sep } from "node:path";
-import { areas, guias, guiaHref, redirecionamentos, sitePageLinks } from "../lib/site-content.ts";
+import { areas, guias, guiaHref, paginasDaComunidade, redirecionamentos, sitePageLinks } from "../lib/site-content.ts";
 
 const raiz = join(import.meta.dirname, "..");
 const app = join(raiz, "app");
@@ -39,7 +39,8 @@ test("hrefs de sitePageLinks e slugs de guia não se repetem", () => {
 });
 
 test("toda rota antiga redireciona para um guia que existe, e nenhuma ainda tem página própria", () => {
-  assert.equal(redirecionamentos.length, guias.length);
+  const antigas = paginasDaComunidade.reduce((soma, pagina) => soma + pagina.rotasAntigas.length, 0);
+  assert.equal(redirecionamentos.length, guias.length + antigas);
   for (const { source, destination, permanent } of redirecionamentos) {
     assert.equal(permanent, true, `${source} deveria ser redirect permanente`);
     assert.ok(temPagina(destination), `redirect de ${source} para ${destination}, que não existe`);

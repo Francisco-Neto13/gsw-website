@@ -3,7 +3,7 @@
 import { CornerDownLeft, FileText, Hash, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { guiaHref, guiasEmOrdem } from "@/lib/site-content";
+import { guiaHref, guiasEmOrdem, paginasDaComunidade } from "@/lib/site-content";
 
 type ItemDeBusca = {
   href: string;
@@ -17,9 +17,14 @@ const semAcento = (texto: string) =>
   texto.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
 
 // Índice montado dos dados do site (lib/site-content.ts); sem servidor.
-const indice: ItemDeBusca[] = guiasEmOrdem.flatMap((guia) => [
+const paginas = [
+  ...guiasEmOrdem.map((guia) => ({ ...guia, href: guiaHref(guia.slug) })),
+  ...paginasDaComunidade,
+];
+
+const indice: ItemDeBusca[] = paginas.flatMap((guia) => [
   {
-    href: guiaHref(guia.slug),
+    href: guia.href,
     titulo: guia.titulo,
     contexto: guia.resumo,
     tipo: "guia" as const,
@@ -28,7 +33,7 @@ const indice: ItemDeBusca[] = guiasEmOrdem.flatMap((guia) => [
   ...(guia.secoes ?? [])
     .filter((secao) => secao.id !== "fontes")
     .map((secao) => ({
-      href: `${guiaHref(guia.slug)}#${secao.id}`,
+      href: `${guia.href}#${secao.id}`,
       titulo: secao.titulo,
       contexto: guia.titulo,
       tipo: "secao" as const,

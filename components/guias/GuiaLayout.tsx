@@ -4,7 +4,7 @@ import { ArrowUp, ChevronDown, History } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import GuiaNavLista from "@/components/shared/GuiaNavLista";
-import { guias, guiaHref, type GuiaSecao } from "@/lib/site-content";
+import { guias, guiaHref, paginasDaComunidade, type GuiaSecao } from "@/lib/site-content";
 
 const CHAVE_ONDE_PAREI = "gsw:onde-parei:";
 
@@ -51,7 +51,12 @@ const gravarOndeParei = (caminho: string, id: string) => {
 export default function GuiaLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const conteudoRef = useRef<HTMLDivElement>(null);
-  const guia = useMemo(() => guias.find((item) => guiaHref(item.slug) === pathname), [pathname]);
+  // Guia do jogo ou página da Comunidade no formato de guia (/historia/...): as duas têm as seções no registro.
+  const guia = useMemo(
+    () => guias.find((item) => guiaHref(item.slug) === pathname) ?? paginasDaComunidade.find((item) => item.href === pathname),
+    [pathname],
+  );
+  const ehGuiaDoJogo = pathname.startsWith("/guias");
   // Cada estado guarda a rota a que pertence: ao trocar de guia ele simplesmente deixa de valer,
   // sem precisar ser zerado dentro de um efeito.
   const [dom, setDom] = useState<{ caminho: string; secoes: GuiaSecao[] }>({ caminho: "", secoes: [] });
@@ -157,11 +162,14 @@ export default function GuiaLayout({ children }: { children: ReactNode }) {
 
   return (
     <div className="mx-auto flex w-full max-w-[var(--casca-max)] lg:px-[var(--casca-x)]">
-      <aside className="sticky top-[var(--topbar-h)] -ml-6 hidden h-[calc(100vh-var(--topbar-h))] w-64 shrink-0 overflow-y-auto border-r border-linha px-3 py-8 lg:block">
-        <nav aria-label="Guias">
-          <GuiaNavLista />
-        </nav>
-      </aside>
+      {/* A sidebar lista os guias do jogo: só aparece dentro de /guias. */}
+      {ehGuiaDoJogo ? (
+        <aside className="sticky top-[var(--topbar-h)] -ml-6 hidden h-[calc(100vh-var(--topbar-h))] w-64 shrink-0 overflow-y-auto border-r border-linha px-3 py-8 lg:block">
+          <nav aria-label="Guias">
+            <GuiaNavLista />
+          </nav>
+        </aside>
+      ) : null}
 
       <div className="min-w-0 flex-1">
         {secoes.length > 0 ? (

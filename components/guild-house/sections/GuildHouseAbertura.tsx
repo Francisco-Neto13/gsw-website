@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Breadcrumb from "@/components/guias/Breadcrumb";
+import { Trilha } from "@/components/guias/Breadcrumb";
 import FichaGuia from "@/components/guias/FichaGuia";
-import SeloVersao from "@/components/guias/SeloVersao";
 import TextoComTermos from "@/components/guias/TextoComTermos";
 import ClickableImagePreview from "@/components/shared/ClickableImagePreview";
 import TextoAnimado from "@/components/shared/TextoAnimado";
@@ -13,10 +12,7 @@ import {
   setores,
 } from "@/components/guild-house/data/guild-house-content";
 import { dimensoesDe } from "@/lib/imagens";
-import { guias } from "@/lib/site-content";
 import { tamanhos } from "@/lib/tamanhos";
-
-const guia = guias.find((item) => item.slug === "guild-house")!;
 
 export default function GuildHouseAbertura() {
   const medida = dimensoesDe(guildHouseDestaque.src);
@@ -25,7 +21,7 @@ export default function GuildHouseAbertura() {
       <div className="grid gap-x-12 xl:grid-cols-[minmax(0,1fr)_minmax(20rem,26rem)]">
         <div className="max-w-leitura xl:col-start-1">
           <div className="entra">
-            <Breadcrumb guia={guia} />
+            <Trilha passos={[{ rotulo: "Comunidade", href: "/historia" }, { rotulo: "Guild House" }]} />
           </div>
           <h1 className="mt-3 text-titulo-1 text-texto">
             <TextoAnimado texto="Guild House" inicio={1} />
@@ -46,7 +42,6 @@ export default function GuildHouseAbertura() {
               { rotulo: "Serviços", valor: "Banco, Trade Market, Item Identifier, Blacksmith, Bookshelf e Misc. Bucket" },
               { rotulo: "Estilo", valor: "Inspirada em Thesead" },
             ]}
-            rodape={<SeloVersao guia={guia} />}
           />
         </div>
 

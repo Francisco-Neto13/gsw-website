@@ -6,7 +6,7 @@ export type SitePageLink = {
   href: string;
 };
 
-export type GrupoId = "progressao" | "endgame" | "economia" | "especiais" | "ferramentas" | "comunidade";
+export type GrupoId = "progressao" | "endgame" | "economia" | "especiais" | "ferramentas";
 
 export type GuiaSecao = {
   id: string;
@@ -39,7 +39,6 @@ export const grupos: { id: GrupoId; titulo: string }[] = [
   { id: "economia", titulo: "Economia" },
   { id: "especiais", titulo: "Especiais" },
   { id: "ferramentas", titulo: "Ferramentas" },
-  { id: "comunidade", titulo: "Comunidade" },
 ];
 
 export const raidsSecoes: GuiaSecao[] = [
@@ -292,16 +291,6 @@ export const guias: Guia[] = [
     rotaAntiga: "/sites-uteis",
     secoes: sitesUteisSecoes,
   },
-  {
-    slug: "guild-house",
-    palavrasChave: "guild house sede ilha housing casa da guilda hq",
-    titulo: "Guild House",
-    resumo: "A sede da GsW: NPCs, como chegar, os cinco setores e os segredos da ilha.",
-    grupo: "comunidade",
-    estado: "completo",
-    rotaAntiga: "/guild-house",
-    secoes: guildHouseSecoes,
-  },
 ];
 
 export const guiaHref = (slug: string) => `/guias/${slug}`;
@@ -323,18 +312,46 @@ export const areas: SitePageLink[] = [
   { label: "Comunidade", href: "/historia" },
 ];
 
+/**
+ * Páginas da área Comunidade no formato de guia (índice "Nesta página" e seções na busca), mas fora da lista de
+ * guias do jogo: ficam em /historia/<slug> e não entram na sidebar de guias.
+ */
+export type PaginaDaComunidade = Pick<Guia, "slug" | "titulo" | "resumo" | "palavrasChave" | "secoes"> & {
+  href: string;
+  /** Endereços antigos, com redirect permanente para o atual. */
+  rotasAntigas: string[];
+};
+
+export const paginasDaComunidade: PaginaDaComunidade[] = [
+  {
+    slug: "guild-house",
+    titulo: "Guild House",
+    resumo: "A sede da GsW: NPCs, como chegar, os cinco setores e os segredos da ilha.",
+    palavrasChave: "guild house sede ilha housing casa da guilda hq comunidade",
+    href: "/historia/guild-house",
+    rotasAntigas: ["/guild-house", "/guias/guild-house"],
+    secoes: guildHouseSecoes,
+  },
+];
+
 export const sitePageLinks: SitePageLink[] = [
   { label: "Início", href: "/" },
   { label: "Guias", href: "/guias" },
   { label: "História", href: "/historia" },
   ...guias.map((guia) => ({ label: guia.titulo, href: guiaHref(guia.slug) })),
+  ...paginasDaComunidade.map((pagina) => ({ label: pagina.titulo, href: pagina.href })),
 ];
 
-export const redirecionamentos = guias.map((guia) => ({
-  source: guia.rotaAntiga,
-  destination: guiaHref(guia.slug),
-  permanent: true,
-}));
+export const redirecionamentos = [
+  ...guias.map((guia) => ({
+    source: guia.rotaAntiga,
+    destination: guiaHref(guia.slug),
+    permanent: true,
+  })),
+  ...paginasDaComunidade.flatMap((pagina) =>
+    pagina.rotasAntigas.map((source) => ({ source, destination: pagina.href, permanent: true })),
+  ),
+];
 
 export const discordUrl = "https://discord.gg/Ec2YPWTN9E";
 

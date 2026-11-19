@@ -1,7 +1,9 @@
 import GuildHousePage from "@/components/guild-house/pages/GuildHousePage";
-import { metadataDoGuia } from "@/lib/site-content";
 
-export const metadata = metadataDoGuia("guild-house");
+export const metadata = {
+  title: "Guild House",
+  description: "A sede da GsW: NPCs de serviço, como chegar, os cinco setores e os segredos da ilha.",
+};
 
 export default function Pagina() {
   return <GuildHousePage />;
