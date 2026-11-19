@@ -187,7 +187,7 @@ export default function HomePage() {
           })}
         </div>
 
-        {/* Grupos sem arte de categoria (Ferramentas, Comunidade): faixa compacta abaixo da grade, sem card sozinho na última linha. */}
+        {/* Grupos sem arte de categoria (Ferramentas): faixa compacta abaixo da grade, sem card sozinho na última linha. */}
         {grupos
           .filter((grupo) => !homeCategorias[grupo.id] && homeFaixas[grupo.id])
           .map((grupo) => {

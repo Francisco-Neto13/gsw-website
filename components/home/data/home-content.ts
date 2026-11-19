@@ -13,15 +13,11 @@ export const homeComeco = {
   texto: "Os guias seguem a ordem do jogo. Escolha a etapa em que você está.",
 };
 
-/** Faixas compactas na Início para os grupos sem arte de categoria (Ferramentas e Comunidade). */
+/** Faixas compactas na Início para os grupos sem arte de categoria (hoje, Ferramentas). */
 export const homeFaixas: Record<string, { texto: string; imagem: { src: string; alt: string } }> = {
   ferramentas: {
     texto: "Os sites que a comunidade usa para montar builds, acompanhar o mercado e consultar dados.",
     imagem: { src: "/terceiros/sites/wynnbuilder.webp", alt: "Prévia do WynnBuilder, o simulador de builds" },
-  },
-  comunidade: {
-    texto: "A nossa sede: NPCs de serviço, cinco setores, um coliseu, um labirinto e segredos para achar.",
-    imagem: { src: "/guild-house/guild-house-entrada-destaque.webp", alt: "Entrada da Guild House da GsW" },
   },
 };
 
