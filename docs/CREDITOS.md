@@ -193,6 +193,7 @@ O Leveling usava ícones da CDN direto na rota de armas; desde 18/11/2026 eles s
 | Item | Onde | Licença | Crédito exigido |
 |---|---|---|---|
 | [Lucide](https://lucide.dev) (`lucide-react` 1.66.0) | Todos os ícones de interface, bombas e tokens do Shares | ISC | Não |
+| [Visage](https://visage.surgeplay.com) (VZGE) | Rosto do personagem do Minecraft ao lado dos nicks creditados (`RostoDoJogador`), carregado do serviço na hora, pelo UUID | Uso público do serviço; a skin é de cada jogador | Não |
 | [Lenis](https://github.com/darkroomengineering/lenis) (`lenis` 1.3.27) | Rolagem suave no desktop | MIT | Não |
 | [Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans) | Títulos e selos | SIL OFL 1.1 | Não no site; a licença acompanha a fonte |
 | [Alegreya Sans](https://fonts.google.com/specimen/Alegreya+Sans) | Texto | SIL OFL 1.1 | Idem |

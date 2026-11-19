@@ -34,7 +34,7 @@ app/
   historia/page.tsx     Comunidade (ainda no modelo antigo)
   styles/               foundation (tokens, base, caixa-item), motion, efeitos dos modelos antigos
 components/
-  shared/               TopBar, Busca, GuiaNavLista, SiteFooter, ImagemDoJogo, AnimacaoSobDemanda,
+  shared/               TopBar, Busca, GuiaNavLista, SiteFooter, ImagemDoJogo, AnimacaoSobDemanda, RostoDoJogador,
                         ClickableImagePreview, LazyYouTubeEmbed, GuideIntro, Efeitos (motor de
                         movimento), TransicaoDePagina, TextoAnimado
   (lib/previas.ts)      tópicos e tempo de leitura de cada guia, tirados do conteúdo, para a Início
