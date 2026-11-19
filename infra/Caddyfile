@@ -1,0 +1,69 @@
+# Servidor do site estático da GsW, dentro do contêiner gsw-prod-web-1 (docs/MIGRACAO-VPS.md).
+# O HTTPS, o HSTS e o log de acesso ficam no proxy da VPS (infra/proxy/gsw.caddy); aqui chega HTTP puro pela rede
+# "borda". Porta 8080: sem root e com no-new-privileges, o Caddy não abre portas abaixo de 1024.
+{
+	# Sem API de administração nem HTTPS automático: a configuração não muda em execução
+	admin off
+	auto_https off
+	persist_config off
+}
+
+:8080 {
+	root * /srv
+
+	# Redirects 308 das rotas antigas, gerados no build a partir de lib/site-content.ts
+	import /etc/caddy/redirects.caddy
+
+	# Pré-carregamento do Next 16 no export: o navegador pede __next.guias.raids.__PAGE__.txt, e o arquivo é
+	# __next.guias/raids/__PAGE__.txt (o 1º segmento fica no nome, os seguintes viram pastas).
+	@segmento2 {
+		path_regexp s2 ^(.*)/__next\.([^./]+)\.([^./]+)\.txt$
+		not file
+	}
+	rewrite @segmento2 {re.s2.1}/__next.{re.s2.2}/{re.s2.3}.txt
+	@segmento3 {
+		path_regexp s3 ^(.*)/__next\.([^./]+)\.([^./]+)\.([^./]+)\.txt$
+		not file
+	}
+	rewrite @segmento3 {re.s3.1}/__next.{re.s3.2}/{re.s3.3}/{re.s3.4}.txt
+	@segmento4 {
+		path_regexp s4 ^(.*)/__next\.([^./]+)\.([^./]+)\.([^./]+)\.([^./]+)\.txt$
+		not file
+	}
+	rewrite @segmento4 {re.s4.1}/__next.{re.s4.2}/{re.s4.3}/{re.s4.4}/{re.s4.5}.txt
+
+	# /guias/raids -> guias/raids.html
+	try_files {path} {path}.html {path}/index.html
+
+	# Cache: arquivo com nome que muda a cada versão (JS, CSS, variantes) ou mídia (que ganha nome novo quando muda,
+	# docs/INFRAESTRUTURA.md) fica 1 ano; HTML e os .txt do Next revalidam a cada visita (o deploy aparece na hora).
+	@imutavel path /_next/static/* /_v/* *.webp *.avif *.png *.jpg *.svg *.ico *.mp4 *.woff2
+	header @imutavel Cache-Control "public, max-age=31536000, immutable"
+	@revalida path *.html *.txt / /guias /guias/* /historia /historia/*
+	header @revalida Cache-Control "no-cache"
+
+	# Os mesmos cabeçalhos de segurança que o next.config.ts aplicava
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Cross-Origin-Opener-Policy same-origin
+		Cross-Origin-Resource-Policy same-site
+		X-DNS-Prefetch-Control off
+		X-Permitted-Cross-Domain-Policies none
+		-Server
+	}
+
+	# HTML, JS e CSS já saem comprimidos do build (scripts/gerar-variantes.mjs): nada é comprimido na hora
+	file_server {
+		precompressed zstd br gzip
+	}
+
+	handle_errors 404 {
+		rewrite * /404.html
+		file_server {
+			precompressed zstd br gzip
+		}
+	}
+}
