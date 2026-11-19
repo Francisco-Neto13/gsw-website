@@ -5,13 +5,17 @@ import { type CSSProperties, useEffect, useRef, useState, useSyncExternalStore }
 import dimensoes from "@/lib/dimensoes-imagens.json";
 
 type AnimacaoSobDemandaProps = {
-  /** Animação WebP sem perda; o pôster fica ao lado com o sufixo .poster.webp. */
+  /**
+   * Nome-base da animação (`<nome>.webp` nos dados). Ao lado ficam o pôster `<nome>.poster.webp` e o vídeo
+   * `<nome>.mp4` (H.264, mudo, em loop): o vídeo pesa ~1/5 do WebP animado sem perda que existia antes.
+   */
   src: string;
   alt: string;
   className?: string;
 };
 
 const posterDe = (src: string) => src.replace(/\.webp$/, ".poster.webp");
+const videoDe = (src: string) => src.replace(/\.webp$/, ".mp4");
 const tabela = dimensoes as unknown as Record<string, [number, number]>;
 
 const CONSULTA_MOVIMENTO = "(prefers-reduced-motion: reduce)";
@@ -23,7 +27,7 @@ const assinarMovimento = (avisar: () => void) => {
 };
 
 /**
- * Pôster sem perda na hora; a animação (sem perda, até alguns MB) só baixa quando chega perto da tela,
+ * Pôster sem perda na hora; o vídeo da animação (MP4, de 0,2 a 3 MB) só baixa quando chega perto da tela,
  * entra por cima do pôster com fade quando termina de carregar e é descarregada quando sai para longe.
  * Com movimento reduzido, não toca sozinha: o leitor pede.
  */
@@ -61,13 +65,23 @@ export default function AnimacaoSobDemanda({ src, alt, className = "" }: Animaca
       {/* eslint-disable-next-line @next/next/no-img-element -- pôster sem perda gerado por scripts/gif-para-webp.mjs */}
       <img src={posterDe(src)} alt={tocar ? "" : alt} className={classeImagem} loading="lazy" decoding="async" />
       {tocar ? (
-        // eslint-disable-next-line @next/next/no-img-element -- animação WebP servida como está; o otimizador do Next não anima
-        <img
-          src={src}
-          alt={alt}
-          decoding="async"
-          onLoad={() => setCarregada(true)}
-          className={`absolute inset-0 transition-opacity duration-500 ease-[var(--ease-saida)] ${carregada ? "opacity-100" : "opacity-0"} ${classeImagem}`}
+        <video
+          // O React não grava `muted` como atributo, e sem ele o navegador barra o autoplay: liga na mão e toca.
+          ref={(video) => {
+            if (video) video.muted = true;
+          }}
+          src={videoDe(src)}
+          aria-label={alt}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          onLoadedData={(evento) => {
+            setCarregada(true);
+            evento.currentTarget.play().catch(() => {});
+          }}
+          className={`absolute inset-0 object-contain transition-opacity duration-500 ease-[var(--ease-saida)] [image-rendering:pixelated] ${carregada ? "opacity-100" : "opacity-0"} ${classeImagem}`}
         />
       ) : null}
       </div>
