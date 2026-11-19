@@ -226,6 +226,14 @@ Prints, GIFs e vídeos em `public/` e os vídeos do YouTube embutidos foram feit
 GsW. Retratos e galeria da Comunidade (`public/members/`, `public/gallery/`) também. Mídia nova de
 terceiro entra nesta página antes de ir para `public/`.
 
+### Guild House (18/11/2026)
+
+As 23 prints de `public/guild-house/` são da nossa ilha, feitas pela guilda. Vieram em PNG (3 a 9 MB) e foram
+convertidas para WebP de qualidade 90 com 1920 px (o mapa, 1479 px e qualidade 92); o Next serve AVIF/WebP no
+tamanho da tela. Os nomes nas estátuas do Memorial dos antigos Owners fazem parte da homenagem e não foram
+desfocados. A ilha foi projetada por Eduus e construída por Atmisuki, iYasuo_, Julinho, Mor7ee, RafaelGomes,
+Victuwu e Volkzz101, como o guia credita.
+
 ### Prints novas (18/11/2026)
 
 Escolhidas entre as 187 prints do dono (pasta de screenshots do perfil Wynncraft do Modrinth),

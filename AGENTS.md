@@ -7,7 +7,7 @@ Detalhes ficam em `docs/`; este arquivo traz só o que vale em toda tarefa.
 
 Portal da guilda GsW (Guardians of Wynn), do servidor de Minecraft Wynncraft: home, história da
 guilda e guias do jogo (Lootrun, Raids, Dungeons, World Events, Profissões, Leveling, Modos
-Especiais, Silverbull Shares, Montarias, Festivais e Sites úteis). **Só front**: sem back-end, banco, API
+Especiais, Silverbull Shares, Montarias, Festivais, Sites úteis e Guild House). **Só front**: sem back-end, banco, API
 própria ou variáveis de ambiente. Todo o conteúdo é estático, versionado no repositório.
 Produto e público: `PRODUCT.md`.
 
