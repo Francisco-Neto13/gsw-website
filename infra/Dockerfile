@@ -8,8 +8,9 @@ COPY package.json package-lock.json ./
 # GIFs, fora do build) tentaria compilar sem as ferramentas da imagem. O `prepare` (hook do git) também não serve aqui.
 RUN npm ci --no-audit --no-fund --ignore-scripts
 COPY . .
-# next build (precisa de internet para o Google Fonts) e scripts/gerar-variantes.mjs
-RUN npm run build
+# next build (precisa de internet para o Google Fonts) e scripts/gerar-variantes.mjs. O Turbopack às vezes falha
+# ao baixar as fontes ("next/font/google queries have exactly one entry"); uma segunda tentativa limpa resolve.
+RUN npm run build || (echo "Build falhou; tentando de novo do zero." && rm -rf .next out && npm run build)
 
 FROM caddy:2.10-alpine
 LABEL app=gsw
