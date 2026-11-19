@@ -174,8 +174,15 @@ inteiro:
 | 2.000 | ~25 GB | ~10 GB |
 | 10.000 | ~120 GB | ~50 GB |
 
-Planos de VPS da Contabo costumam ter franquia de dezenas de TB por mês. **Confira a do seu plano**, mas
-por esses números a banda não é problema.
+**Plano da VPS (Contabo Cloud VPS 6, conferido pelo dono):**
+- **Franquia:** tráfego ilimitado, com política de uso justo. A franquia não é problema.
+- **Porta:** o limite que importa é a porta de **300 Mbit/s (~37 MB/s)**, dividida entre todos os sites da
+  VPS. Uma página comum (~1 MB) não pesa.
+- **Lootrun hoje:** rolar o Lootrun inteiro (82 MB) ocupa a porta toda por ~2,2 s. Com 10 pessoas fazendo
+  isso juntas, a porta satura por ~20 s, e Portfolio, Gastos, Muda e Internship ficam lentos nesse
+  intervalo.
+- **Lootrun com as animações reconvertidas:** o mesmo caso cai para ~3 s. É o principal motivo da
+  recomendação 1 da seção 3.4.
 
 ### 3.4 Duas recomendações de peso
 
