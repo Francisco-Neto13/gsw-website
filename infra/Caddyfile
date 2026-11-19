@@ -56,8 +56,9 @@
 	}
 
 	# Comprime na hora (texto; imagem e vídeo já vêm comprimidos). O `precompressed` do file_server respondia 206
-	# Partial Content a pedidos sem Range nesta versão do Caddy, então ficou de fora.
-	encode zstd gzip
+	# Partial Content a pedidos sem Range nesta versão do Caddy, então ficou de fora. Só gzip: com zstd, os buffers do
+	# codificador levavam o contêiner a 48 dos 64 MB parado.
+	encode gzip
 	file_server
 
 	handle_errors 404 {
