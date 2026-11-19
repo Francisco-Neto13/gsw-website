@@ -6,7 +6,7 @@ calculados (WCAG 2.1) e serão medidos de novo na tela durante a Fase 3.
 ## Ponto de partida
 
 - **Mecanismo do produto:** guia em pt-BR escrito por jogadores de uma guilda ativa, com POVs
-  próprios, organizado como passo a passo (`PRODUCT.md`).
+  próprios, organizado como passo a passo (`docs/PRODUCT.md`).
 - **Cena:** jogador brasileiro, à noite, com o Wynncraft aberto em outra tela ou com o celular do
   lado, conferindo uma sala de raid ou um beacon de Lootrun no meio da partida.
 - **Modo das superfícies:** guias = leitura (*Read*), a maior parte do site; Início = convencer

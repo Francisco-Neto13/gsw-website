@@ -3,7 +3,7 @@
 Estado: **aprovada em 18/11/2026**. Decisões do dono: direção Caixa de Item; só escuro; guias em
 `/guias/<guia>` com redirect permanente das rotas antigas; só arte própria até a Wynncraft autorizar
 os ícones oficiais; Raids como guia modelo. Fase 3 em andamento: base, navegação, Início e Raids
-feitos (ver `docs/PENDENCIAS.md` para o que segue). O sistema construído está em `DESIGN.md`.
+feitos (ver `docs/PENDENCIAS.md` para o que segue). O sistema construído está em `docs/DESIGN.md`.
 
 ## Leia nesta ordem
 
@@ -18,7 +18,7 @@ feitos (ver `docs/PENDENCIAS.md` para o que segue). O sistema construído está 
 | `impeccable/` | Relatórios completos das três avaliações |
 
 O registro permanente de créditos e licenças fica em `docs/CREDITOS.md`; o produto e o público,
-em `PRODUCT.md` na raiz.
+em `docs/PRODUCT.md`.
 
 ## Decisões para aprovar
 
@@ -34,7 +34,7 @@ em `PRODUCT.md` na raiz.
 
 ## Como foi feito
 
-- Graphify para navegar no código; Impeccable `init` (com `PRODUCT.md`), `critique` (duas
+- Graphify para navegar no código; Impeccable `init` (com `docs/PRODUCT.md`), `critique` (duas
   avaliações isoladas) e `audit`, com o site rodando em modo produção.
 - Sorteio de direção do Impeccable no modo leitura (`seed:658dcb521c289a54`), com seis
   desafiantes de catálogo pesados contra a direção sorteada.

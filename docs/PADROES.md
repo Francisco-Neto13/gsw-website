@@ -105,7 +105,7 @@ Toda área segue `pages/` + `sections/` + `data/` (introduzido em
 - Termos do jogo no texto de `data/`: `[[chave]]` ou `[[chave|texto exibido]]`, com a chave em
   `lib/glossario.ts`. Marque só a primeira aparição por bloco.
 
-### Estilo (detalhes em `DESIGN.md`)
+### Estilo (detalhes em `docs/DESIGN.md`)
 
 - Só escuro. Cores por token (`text-texto`, `text-texto-2`, `text-violeta`, `bg-carvao`...),
   nunca hex solto no componente.

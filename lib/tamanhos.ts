@@ -1,5 +1,5 @@
 /**
- * `sizes` das imagens dentro do artigo de um guia, derivados do layout (DESIGN.md, Layout):
+ * `sizes` das imagens dentro do artigo de um guia, derivados do layout (docs/DESIGN.md, Layout):
  * a partir de 1280 px o artigo é a tela menos casca (2×2 rem), sidebar (16 rem), índice (15 rem) e
  * o respiro da seção (2×2,5 rem); entre 1024 e 1279 não há índice; acima de 1920 px a casca para de crescer.
  * Com o `sizes` certo, a tela grande e a de alta densidade recebem a versão grande, sem imagem esticada.

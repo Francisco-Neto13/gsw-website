@@ -39,7 +39,7 @@ guias à Comunidade.
 ## Modelo de página de guia
 
 Todo guia, novo ou reescrito, segue o mesmo esqueleto. É o que garante o princípio "crescer sem
-quebrar" do `PRODUCT.md`.
+quebrar" do `docs/PRODUCT.md`.
 
 1. **Breadcrumb**: `Guias › Endgame › Raids`.
 2. **Título** e uma frase que diz para que serve o guia.
@@ -91,7 +91,7 @@ junto as correções de dado do inventário, no mesmo PR.
 
 ### Como o conteúdo é mantido
 
-- Continua em arquivos de dados no repositório, editados por você (decisão do `PRODUCT.md`).
+- Continua em arquivos de dados no repositório, editados por você (decisão do `docs/PRODUCT.md`).
   Se outros membros forem escrever, a migração natural é para MDX; não é necessária agora.
 - Cada guia ganha no arquivo de dados: `versaoDoJogo`, `atualizadoEm`, `nivelRecomendado`,
   `fontes[]` e `estado` (`completo` | `em-construcao`). A sidebar, o `/guias` e o selo de versão

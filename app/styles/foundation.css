@@ -48,7 +48,7 @@
   /* Medida de leitura (max-w-leitura): dentro da faixa de 65 a 75ch para texto corrido. */
   --container-leitura: 70ch;
 
-  /* Escala de tipo por papel (DESIGN.md, Typography). Componentes usam o papel, nunca um tamanho solto. */
+  /* Escala de tipo por papel (docs/DESIGN.md, Typography). Componentes usam o papel, nunca um tamanho solto. */
   --text-exibicao: clamp(2.25rem, 5vw, 3.75rem);
   --text-exibicao--line-height: 1.05;
   --text-titulo-1: clamp(2rem, 4vw, 2.75rem);
