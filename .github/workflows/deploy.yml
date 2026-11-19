@@ -1,77 +1,75 @@
 name: Deploy
 
-# O que está na main vai para a produção na Vercel. A CI inicia este workflow logo depois de
-# promover a develop para a main (ci.yml), então a main só tem commits que passaram na CI. Também
-# roda à mão, com dry_run para validar token e projeto sem publicar nada.
+# O que está na main vai para a produção na VPS (docs/MIGRACAO-VPS.md, docs/CI-CD.md). A CI inicia este workflow
+# logo depois de promover a develop para a main (ci.yml), então a main só tem commits que passaram na CI. Também
+# roda à mão: dry_run mostra o que entraria, sem mudar nada; voltar põe no ar a versão anterior.
+#
+# Modelo do Portfolio: a chave da CI só consegue chamar "deploy" no servidor (comando forçado do usuário
+# deploy-gsw, infra/servidor/configurar-deploy.sh). O build roda na VPS, dentro do docker build.
 #
 # DESABILITADO até ser validado: o deploy de verdade só roda com a variável de repositório
-# DEPLOY_HABILITADO = true. O dry_run funciona sempre (docs/CI-CD.md, "Ativar o deploy").
-#
-# A integração Git da Vercel está desligada: este workflow é o único caminho para a produção.
+# DEPLOY_HABILITADO = true. O dry_run funciona sempre.
 on:
   workflow_dispatch:
     inputs:
-      dry_run:
-        description: "Baixar a configuração e montar o build sem publicar"
-        type: boolean
-        default: false
+      modo:
+        description: "deploy, dry_run (simular) ou voltar (versão anterior)"
+        type: choice
+        options: [deploy, dry_run, voltar]
+        default: deploy
 
 concurrency:
   group: deploy-producao
   cancel-in-progress: false
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   deploy:
     name: Deploy para a produção
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      VERCEL_TELEMETRY_DISABLED: 1
-      NEXT_TELEMETRY_DISABLED: 1
-      DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+      VPS_HOST: ${{ secrets.VPS_HOST }}
+      VPS_PORT: ${{ secrets.VPS_PORT }}
+      VPS_USER: ${{ secrets.VPS_USER }}
+      VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+      VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+      MODO: ${{ inputs.modo || 'deploy' }}
       DEPLOY_HABILITADO: ${{ vars.DEPLOY_HABILITADO }}
     steps:
       - name: Conferir se o deploy está habilitado
         run: |
-          if [ "$DRY_RUN" != "true" ] && [ "$DEPLOY_HABILITADO" != "true" ]; then
-            echo "::error::Deploy desabilitado. Rode com dry_run ou defina a variável DEPLOY_HABILITADO = true (docs/CI-CD.md)."
+          if [ "$MODO" != "dry_run" ] && [ "$DEPLOY_HABILITADO" != "true" ]; then
+            echo "::error::Deploy desabilitado. Rode com dry_run ou defina a variável DEPLOY_HABILITADO = true."
             exit 1
           fi
 
-      - name: Validar os secrets do deploy
+      - name: Conferir os secrets
         run: |
-          missing=()
-          for name in VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
-            [ -n "${!name}" ] || missing+=("$name")
+          faltam=()
+          for nome in VPS_HOST VPS_PORT VPS_USER VPS_SSH_KEY VPS_KNOWN_HOSTS; do
+            [ -n "${!nome}" ] || faltam+=("$nome")
           done
-          if [ "${#missing[@]}" -gt 0 ]; then
-            echo "::error::Secrets ausentes: ${missing[*]}. Cadastre em Settings > Secrets and variables > Actions."
+          if [ "${#faltam[@]}" -gt 0 ]; then
+            echo "::error::Secrets ausentes: ${faltam[*]}. Cadastre em Settings > Secrets and variables > Actions."
             exit 1
           fi
 
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-      - run: npm ci
+      - name: Configurar o SSH
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
 
-      # CLI fixada: atualizar de propósito, num PR próprio. O token vai pela env VERCEL_TOKEN,
-      # nunca na linha de comando (apareceria no log de processos).
-      - name: Baixar a configuração do projeto
-        run: npx --yes vercel@65.9.0 pull --yes --environment=production
-      - name: Build
-        run: npx --yes vercel@65.9.0 build --prod
-      - name: Publicar
-        if: env.DRY_RUN != 'true'
-        run: npx --yes vercel@65.9.0 deploy --prebuilt --prod
-      - name: Resumo do dry run
-        if: env.DRY_RUN == 'true'
-        run: echo "dry_run - configuração baixada e build montado. Nada foi publicado."
+      - name: Deploy
+        run: |
+          case "$MODO" in
+            dry_run) comando="deploy --dry-run" ;;
+            voltar) comando="deploy --voltar" ;;
+            *) comando="deploy" ;;
+          esac
+          ssh -i ~/.ssh/deploy_key -p "$VPS_PORT" -o StrictHostKeyChecking=yes -o ServerAliveInterval=30 \
+            "$VPS_USER@$VPS_HOST" "$comando"
