@@ -6,7 +6,7 @@ export type SitePageLink = {
   href: string;
 };
 
-export type GrupoId = "progressao" | "endgame" | "economia" | "especiais" | "ferramentas";
+export type GrupoId = "progressao" | "endgame" | "economia" | "especiais" | "ferramentas" | "comunidade";
 
 export type GuiaSecao = {
   id: string;
@@ -39,6 +39,7 @@ export const grupos: { id: GrupoId; titulo: string }[] = [
   { id: "economia", titulo: "Economia" },
   { id: "especiais", titulo: "Especiais" },
   { id: "ferramentas", titulo: "Ferramentas" },
+  { id: "comunidade", titulo: "Comunidade" },
 ];
 
 export const raidsSecoes: GuiaSecao[] = [
@@ -164,6 +165,20 @@ export const sitesUteisSecoes: GuiaSecao[] = [
   { id: "fontes", titulo: "Fontes" },
 ];
 
+export const guildHouseSecoes: GuiaSecao[] = [
+  { id: "funcionalidades", titulo: "Funcionalidades e vantagens", busca: "npc banco trade market blacksmith bookshelf misc bucket afk annihilation" },
+  { id: "acesso", titulo: "Como acessar", busca: "balão housing island guild island" },
+  { id: "mapa", titulo: "Mapa da ilha", busca: "setores mapa" },
+  { id: "hall", titulo: "1. Hall de Entrada", nivel: 3, busca: "serviços item identifier" },
+  { id: "fazenda", titulo: "2. Fazenda", nivel: 3 },
+  { id: "praca", titulo: "3. Praça Central", nivel: 3, busca: "fonte taverna cassino feira profissões" },
+  { id: "coliseu", titulo: "4. Coliseu", nivel: 3, busca: "pvp arena dummies warteam" },
+  { id: "sede", titulo: "5. Sede", nivel: 3, busca: "owners memorial cemitério" },
+  { id: "outros", titulo: "Outros pontos de interesse", busca: "esgoto teleporte parkour labirinto bosque fogueira" },
+  { id: "arquitetura", titulo: "Arquitetura e design", busca: "thesead eduus construção" },
+  { id: "fontes", titulo: "Fontes" },
+];
+
 export const guias: Guia[] = [
   {
     slug: "leveling",
@@ -276,6 +291,16 @@ export const guias: Guia[] = [
     estado: "completo",
     rotaAntiga: "/sites-uteis",
     secoes: sitesUteisSecoes,
+  },
+  {
+    slug: "guild-house",
+    palavrasChave: "guild house sede ilha housing casa da guilda hq",
+    titulo: "Guild House",
+    resumo: "A sede da GsW: NPCs, como chegar, os cinco setores e os segredos da ilha.",
+    grupo: "comunidade",
+    estado: "completo",
+    rotaAntiga: "/guild-house",
+    secoes: guildHouseSecoes,
   },
 ];
 
