@@ -24,21 +24,23 @@ export default function FimDoGuia({ slug, fontes, introducao }: FimDoGuiaProps) 
             {introducao ??
               "Texto escrito pela GsW. Números e regras do jogo conferidos nas fontes abaixo; se algo mudou num patch, avise a guilda no Discord."}
           </p>
-          <ul className="mt-4 flex flex-col gap-2">
-            {fontes.map((fonte) => (
-              <li key={fonte.href}>
-                <a
-                  href={fonte.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-violeta underline decoration-violeta/40 hover:decoration-violeta"
-                >
-                  {fonte.rotulo}
-                  <ExternalLink aria-hidden size={14} strokeWidth={1.75} />
-                </a>
-              </li>
-            ))}
-          </ul>
+          {fontes.length > 0 ? (
+            <ul className="mt-4 flex flex-col gap-2">
+              {fontes.map((fonte) => (
+                <li key={fonte.href}>
+                  <a
+                    href={fonte.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-violeta underline decoration-violeta/40 hover:decoration-violeta"
+                  >
+                    {fonte.rotulo}
+                    <ExternalLink aria-hidden size={14} strokeWidth={1.75} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </section>
 
