@@ -4,8 +4,9 @@
 FROM node:24-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
-# O `prepare` liga o hook do git, que não existe aqui: a falha é ignorada pelo próprio script
-RUN npm ci --no-audit --no-fund
+# Sem scripts de instalação: o sharp e o compilador do Next usam binários prontos, e o gifsicle (só do script de
+# GIFs, fora do build) tentaria compilar sem as ferramentas da imagem. O `prepare` (hook do git) também não serve aqui.
+RUN npm ci --no-audit --no-fund --ignore-scripts
 COPY . .
 # next build (precisa de internet para o Google Fonts) e scripts/gerar-variantes.mjs
 RUN npm run build
