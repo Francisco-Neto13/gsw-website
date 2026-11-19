@@ -1,11 +1,9 @@
 // Passo final do build estático (npm run build): roda depois do `next build` e completa a pasta out/.
 //   1. Variantes responsivas de cada imagem de public/ em out/_v/ (lib/variantes.ts), em WebP 82.
-//   2. Versões zstd, brotli e gzip de HTML, JS, CSS, JSON, SVG e TXT, para o Caddy servir já comprimido.
-//   3. infra/gerado/redirects.caddy: os redirects 308 das rotas antigas, tirados do registro.
+//   2. infra/gerado/redirects.caddy: os redirects 308 das rotas antigas, tirados do registro.
 // Uso: node scripts/gerar-variantes.mjs   (o `npm run build` já chama)
-import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import zlib from "node:zlib";
 import sharp from "sharp";
 import { largurasPara, caminhoDaVariante, geraVariante } from "../lib/variantes.ts";
 import { redirecionamentos } from "../lib/site-content.ts";
@@ -53,20 +51,6 @@ async function variantes() {
   console.log(`Variantes: ${geradas} de ${imagens.length} imagens, ${(bytes / 1048576).toFixed(1)} MB, ${((Date.now() - inicio) / 1000).toFixed(0)} s`);
 }
 
-async function comprimir() {
-  const alvos = (await arquivos(SAIDA)).filter((f) => /\.(html|js|css|json|svg|txt|xml|webmanifest)$/.test(f));
-  let feitos = 0;
-  for (const arquivo of alvos) {
-    if ((await stat(arquivo)).size < 1024) continue;
-    const dados = await readFile(arquivo);
-    await writeFile(`${arquivo}.zst`, zlib.zstdCompressSync(dados, { params: { [zlib.constants.ZSTD_c_compressionLevel]: 19 } }));
-    await writeFile(`${arquivo}.br`, zlib.brotliCompressSync(dados, { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 11 } }));
-    await writeFile(`${arquivo}.gz`, zlib.gzipSync(dados, { level: 9 }));
-    feitos += 1;
-  }
-  console.log(`Pré-compressão: ${feitos} arquivos em zstd, brotli e gzip`);
-}
-
 async function redirects() {
   const linhas = [
     "# Gerado por scripts/gerar-variantes.mjs a partir de lib/site-content.ts (redirecionamentos). Não editar.",
@@ -79,5 +63,4 @@ async function redirects() {
 }
 
 await variantes();
-await comprimir();
 await redirects();

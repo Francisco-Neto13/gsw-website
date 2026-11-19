@@ -55,15 +55,13 @@
 		-Server
 	}
 
-	# HTML, JS e CSS já saem comprimidos do build (scripts/gerar-variantes.mjs): nada é comprimido na hora
-	file_server {
-		precompressed zstd br gzip
-	}
+	# Comprime na hora (texto; imagem e vídeo já vêm comprimidos). O `precompressed` do file_server respondia 206
+	# Partial Content a pedidos sem Range nesta versão do Caddy, então ficou de fora.
+	encode zstd gzip
+	file_server
 
 	handle_errors 404 {
 		rewrite * /404.html
-		file_server {
-			precompressed zstd br gzip
-		}
+		file_server
 	}
 }
