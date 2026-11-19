@@ -64,3 +64,6 @@ next-env.d.ts
 /.githooks/post-*
 /.claude/settings.json
 /.claude/settings.local.json
+
+# Redirects do Caddy gerados no build (scripts/gerar-variantes.mjs)
+/infra/gerado/

@@ -1,52 +1,18 @@
 import type { NextConfig } from "next";
-import { redirecionamentos } from "./lib/site-content";
+import { LARGURAS } from "./lib/variantes";
 
+// Site estático (docs/MIGRACAO-VPS.md): o `next build` gera out/ e o scripts/gerar-variantes.mjs completa com
+// as variantes das imagens, a pré-compressão e os redirects. Redirects, cache e cabeçalhos de segurança ficam
+// no Caddy (infra/Caddyfile e infra/gerado/redirects.caddy), não aqui: o export estático não os aplica.
 const nextConfig: NextConfig = {
+  output: "export",
   poweredByHeader: false,
-  async redirects() {
-    return redirecionamentos;
-  },
   images: {
-    // Prints do jogo têm texto e bordas de pixel: 90 em vez do padrão 75, que borrava a interface.
-    qualities: [75, 90],
-    formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.ytimg.com",
-        port: "",
-        pathname: "/vi/**",
-      },
-    ],
-  },
-  async headers() {
-    return [
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
-      {
-        source: "/:path*\\.(png|jpg|jpeg|webp|avif|gif|svg|ico|woff|woff2|ttf|otf)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
-      {
-        source: '/(.*)',
-        headers: [
-          { key: 'X-Frame-Options', value: 'DENY' },
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'X-DNS-Prefetch-Control', value: 'off' },
-          { key: 'X-Permitted-Cross-Domain-Policies', value: 'none' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
-          { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
-          { key: 'Cross-Origin-Resource-Policy', value: 'same-site' },
-        ],
-      },
-    ];
+    // As variantes saem do build; o carregador só escolhe a largura (lib/carregador-de-imagem.ts).
+    loader: "custom",
+    loaderFile: "./lib/carregador-de-imagem.ts",
+    deviceSizes: LARGURAS.filter((largura) => largura >= 384),
+    imageSizes: LARGURAS.filter((largura) => largura < 384),
   },
 };
 
