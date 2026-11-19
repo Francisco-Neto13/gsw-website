@@ -13,6 +13,10 @@ RUN npm run build
 
 FROM caddy:2.10-alpine
 LABEL app=gsw
+# O binário oficial vem com a capability de abrir portas baixas. Com cap_drop: ALL e no-new-privileges (compose),
+# o kernel recusa executar binário que pede capability ("operation not permitted"); aqui a porta é 8080, então
+# uma cópia sem o atributo basta (o cp não preserva a capability).
+RUN cp /usr/bin/caddy /tmp/caddy && mv /tmp/caddy /usr/bin/caddy
 COPY infra/Caddyfile /etc/caddy/Caddyfile
 COPY --from=build /app/infra/gerado/redirects.caddy /etc/caddy/redirects.caddy
 COPY --from=build /app/out /srv
