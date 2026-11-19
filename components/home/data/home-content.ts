@@ -13,10 +13,16 @@ export const homeComeco = {
   texto: "Os guias seguem a ordem do jogo. Escolha a etapa em que você está.",
 };
 
-/** Faixa dos grupos sem arte própria na Início (hoje, Ferramentas). */
-export const homeFerramentas = {
-  texto: "Os sites que a comunidade usa para montar builds, acompanhar o mercado e consultar dados.",
-  imagem: { src: "/terceiros/sites/wynnbuilder.webp", alt: "Prévia do WynnBuilder, o simulador de builds" },
+/** Faixas compactas na Início para os grupos sem arte de categoria (Ferramentas e Comunidade). */
+export const homeFaixas: Record<string, { texto: string; imagem: { src: string; alt: string } }> = {
+  ferramentas: {
+    texto: "Os sites que a comunidade usa para montar builds, acompanhar o mercado e consultar dados.",
+    imagem: { src: "/terceiros/sites/wynnbuilder.webp", alt: "Prévia do WynnBuilder, o simulador de builds" },
+  },
+  comunidade: {
+    texto: "A nossa sede: NPCs de serviço, cinco setores, um coliseu, um labirinto e segredos para achar.",
+    imagem: { src: "/guild-house/guild-house-entrada-destaque.webp", alt: "Entrada da Guild House da GsW" },
+  },
 };
 
 /** Prévia de cada grupo de guias na Início: o que a pessoa aprende e uma print do jogo (docs/CREDITOS.md). */

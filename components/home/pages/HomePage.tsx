@@ -5,7 +5,7 @@ import Link from "next/link";
 import { members } from "@/components/history/data/members";
 import BotaoBuscar from "@/components/home/sections/BotaoBuscar";
 import CreditoImagem from "@/components/guias/CreditoImagem";
-import { homeCategorias, homeComeco, homeComunidade, homeDestaque, homeFerramentas, homeHero } from "@/components/home/data/home-content";
+import { homeCategorias, homeComeco, homeComunidade, homeDestaque, homeFaixas, homeHero } from "@/components/home/data/home-content";
 import { raidGuideGroups, raids } from "@/components/raids/data/raids-content";
 import ImagemDoJogo from "@/components/shared/ImagemDoJogo";
 import TextoAnimado from "@/components/shared/TextoAnimado";
@@ -187,18 +187,20 @@ export default function HomePage() {
           })}
         </div>
 
-        {/* Grupos sem arte de categoria (Ferramentas): faixa compacta abaixo da grade, sem card sozinho na última linha. */}
+        {/* Grupos sem arte de categoria (Ferramentas, Comunidade): faixa compacta abaixo da grade, sem card sozinho na última linha. */}
         {grupos
-          .filter((grupo) => !homeCategorias[grupo.id])
-          .map((grupo) => (
+          .filter((grupo) => !homeCategorias[grupo.id] && homeFaixas[grupo.id])
+          .map((grupo) => {
+            const faixa = homeFaixas[grupo.id];
+            return (
             <div
               key={grupo.id}
               className="holofote mt-6 flex flex-col overflow-hidden rounded-md border border-linha bg-carvao sm:flex-row sm:items-center"
             >
               <div className="zoom-hover relative aspect-[1200/630] w-full shrink-0 overflow-hidden border-b border-linha bg-poco sm:w-56 sm:border-b-0 sm:border-r">
                 <Image
-                  src={homeFerramentas.imagem.src}
-                  alt={homeFerramentas.imagem.alt}
+                  src={faixa.imagem.src}
+                  alt={faixa.imagem.alt}
                   fill
                   sizes="(min-width: 640px) 14rem, calc(100vw - 2rem)"
                   className="object-cover object-left-top"
@@ -207,9 +209,9 @@ export default function HomePage() {
               <div className="flex flex-1 flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
                 <div>
                   <h3 className="font-titulo text-titulo-4 text-texto">{grupo.titulo}</h3>
-                  <p className="mt-0.5 text-apoio text-texto-3">{homeFerramentas.texto}</p>
+                  <p className="mt-0.5 text-apoio text-texto-3">{faixa.texto}</p>
                   <p className="mt-1">
-                    <CreditoImagem src={homeFerramentas.imagem.src} rotulo="Prévia:" />
+                    <CreditoImagem src={faixa.imagem.src} rotulo="Prévia:" />
                   </p>
                 </div>
                 <ul className="flex flex-wrap gap-x-5 gap-y-2">
@@ -227,7 +229,8 @@ export default function HomePage() {
                 </ul>
               </div>
             </div>
-          ))}
+            );
+          })}
       </section>
 
       {/* Guia em destaque: painel carvão (a caixa de item fica só para informação de consulta). */}
