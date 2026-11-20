@@ -1,6 +1,5 @@
 import { BookOpen, Gamepad2, Gem, ScrollText, Store, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
-import DicaGsw from "@/components/guias/DicaGsw";
 import Destaque from "@/components/guias/Destaque";
 import FiguraNoTamanho from "@/components/guias/FiguraNoTamanho";
 import RecursoExterno from "@/components/guias/RecursoExterno";
@@ -130,7 +129,7 @@ export default function FestivalSecao({ festival }: { festival: Festival }) {
                 </p>
                 {item.opiniao ? (
                   <p className="mt-3 border-t border-linha pt-3 text-apoio text-texto-2">
-                    <span className="font-bold text-texto">Recomendação da GsW: </span>
+                    <span className="font-bold text-texto">Recomendação: </span>
                     <TextoComTermos texto={item.opiniao} />
                   </p>
                 ) : null}
@@ -139,11 +138,7 @@ export default function FestivalSecao({ festival }: { festival: Festival }) {
           </ul>
         ) : null}
         {recompensas.observacao ? (
-          <div className="mt-5">
-            <DicaGsw titulo="Vale a pena?">
-              <TextoComTermos texto={recompensas.observacao} />
-            </DicaGsw>
-          </div>
+          <Destaque className="mt-5" tipo="dica" titulo="Vale a pena?" texto={recompensas.observacao} />
         ) : null}
       </div>
 

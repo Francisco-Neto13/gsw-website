@@ -1,4 +1,4 @@
-import DicaGsw from "@/components/guias/DicaGsw";
+import Destaque from "@/components/guias/Destaque";
 import Galeria from "@/components/guias/Galeria";
 import SecaoGuia from "@/components/guias/SecaoGuia";
 import {
@@ -57,9 +57,7 @@ export default function SilverbullCratesSection() {
       </div>
       <p className="mt-4 max-w-leitura text-texto-2">{scrap}</p>
 
-      <div className="mt-8">
-        <DicaGsw titulo="Dica da GsW">{dicaDeCrate}</DicaGsw>
-      </div>
+      <Destaque className="mt-8" tipo="dica" titulo="Dica" texto={dicaDeCrate} />
 
       {imagens.length > 0 ? <Galeria className="mt-8" proporcao="3 / 2" itens={imagens} /> : null}
     </SecaoGuia>
