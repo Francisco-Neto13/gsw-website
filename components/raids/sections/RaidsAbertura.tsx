@@ -23,7 +23,7 @@ export default function RaidsAbertura() {
           <TextoAnimado texto="Raids" inicio={1} />
         </h1>
         <p className="entra mt-3 text-lede text-texto-2" style={{ "--i": 2 } as CSSProperties}>
-          As cinco raids do Wynncraft sala a sala, com as variações de cada uma e vídeos em POV da guilda.
+          As cinco raids do Wynncraft sala a sala, com as versões de cada uma e vídeos em POV gravados pela guilda.
         </p>
       </div>
 

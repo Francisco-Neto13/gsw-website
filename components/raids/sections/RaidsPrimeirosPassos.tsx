@@ -30,7 +30,7 @@ export default function RaidsPrimeirosPassos() {
                 Runa
               </th>
               <th scope="col" className="px-4 py-2.5 font-bold">
-                Quest exigida
+                Quest
               </th>
             </tr>
           </thead>

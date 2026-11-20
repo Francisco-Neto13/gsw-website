@@ -42,7 +42,7 @@ function Variacao({ sala, variacao, rotulo }: { sala: string; variacao: RaidGuid
         ) : (
           <p className="flex items-center gap-2 rounded-md border border-dashed border-linha-forte px-4 py-6 text-texto-3">
             <Clapperboard aria-hidden size={18} strokeWidth={1.75} />
-            {variacao.videoPlaceholder ?? "Vídeo desta variação em produção."}
+            {variacao.videoPlaceholder ?? "Vídeo desta versão ainda em produção."}
           </p>
         )}
         {variacao.secondaryVideoId ? (
@@ -113,7 +113,7 @@ function BlocoDaRaid({ grupo }: { grupo: RaidGuideGroup }) {
           <div className="flex items-center gap-1.5">
             <dt>
               <Skull aria-hidden size={15} strokeWidth={1.75} className="text-texto-3" />
-              <span className="sr-only">Chefe</span>
+              <span className="sr-only">Boss</span>
             </dt>
             <dd className="text-texto">{raid.boss}</dd>
           </div>
@@ -168,7 +168,7 @@ export default function RaidsGuiaPorRaid() {
     <SecaoGuia
       id="guia-por-raid"
       titulo="Guia sala a sala"
-      introducao="Cada raid em ordem de nível. As salas aparecem na ordem da run; quando uma sala tem variações, o jogo sorteia qual vai aparecer. Os vídeos são POVs gravados pela guilda."
+      introducao="Cada raid em ordem de nível. As salas aparecem na ordem da run; quando uma sala tem mais de uma versão, o jogo sorteia qual vai cair. Os vídeos são POVs gravados pela guilda."
     >
       <div className="divide-y divide-linha">
         {raidGuideGroups.map((grupo) => (

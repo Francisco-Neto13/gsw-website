@@ -28,7 +28,7 @@ export default function RaidsExtras() {
 
       <h3 className="text-titulo-4 mt-10 max-w-leitura font-bold text-texto">Ranking da divisão de raids</h3>
       <p className="mt-2 max-w-leitura text-texto-2">
-        O rank sobe com XP de divisão, ganho a cada raid concluída. Depois de Sentinel vem Admiral: na divisão de
+        O rank sobe com XP de divisão, que você ganha a cada raid completa. Depois de Sentinel vem Admiral: na divisão de
         raids não existe Elite.
       </p>
       <div className="mt-4 overflow-x-auto rounded-md border border-linha">

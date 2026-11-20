@@ -6,40 +6,40 @@ export type Imagem = { src: string; alt: string; legenda?: string };
 export type Destaque = { tipo: "info" | "aviso" | "dica"; titulo: string; texto: string };
 
 export const dungeonsIntroParagraphs = [
-  "Dungeons são masmorras com fases de parkour, combate e mecânicas próprias, que terminam num chefe. Vencer o chefe conclui a dungeon e rende esmeraldas, fragmentos e um Boss Token, trocados por equipamento no Dungeon Merchant da entrada.",
-  "Cada dungeon normal tem uma versão corrompida, mais difícil, que fica na Forgery. Concluir corrompidas diferentes enche o Forgery Chest, a principal fonte de runas e uma das chances de item mítico do jogo.",
+  "Dungeons são masmorras com parkour, combate e mecânicas próprias, e no fim de cada uma tem um boss. Matar o boss fecha a dungeon e dá esmeraldas, fragmentos e um Boss Token, que você troca por equipamento no Dungeon Merchant da entrada.",
+  "Cada dungeon normal tem uma versão corrompida, mais difícil, que fica na Forgery. Cada corrompida diferente que você fecha soma no Forgery Chest, o lugar que mais dá runas e uma das poucas chances de mítico do jogo.",
 ];
 
 export const dungeonsResumo = [
-  "Toda entrada gasta uma chave, que vale para até 4 jogadores.",
-  "As chaves caem dos [[keyGuardian|Key Guardians]] perto de cada dungeon e de world events.",
+  "Cada entrada gasta uma chave, e uma chave leva até 4 jogadores.",
+  "As chaves dropam dos [[keyGuardian|Key Guardians]] perto de cada dungeon e de world events.",
   "As corrompidas começam no nível 65, ficam na Forgery e não têm Second Chance.",
-  "No Forgery Chest, só conta dungeon corrompida diferente; morrer ou passar 3 horas sem concluir uma zera o baú.",
+  "No Forgery Chest só conta corrompida diferente. Se você morrer ou passar 3 horas sem fechar uma, o baú zera.",
 ];
 
 // Lista
 export const dungeonsListaIntro =
-  "Desde a 2.1, as dungeons normais não exigem quest, exceto Fallen Factory e Eldritch Outlook. Clique numa imagem para ampliar.";
+  "Desde a 2.1, as dungeons normais não pedem quest, tirando Fallen Factory e Eldritch Outlook. Clique numa imagem para ampliar.";
 
 // Como entrar
 export const acessoIntro =
-  "Toda dungeon abre com uma chave própria, entregue ao Key Collector na entrada. Uma chave leva até 4 jogadores.";
+  "Cada dungeon tem a sua chave, que você entrega ao Key Collector na entrada. Uma chave leva até 4 jogadores.";
 
 export const acessoModos = [
   {
     titulo: "Dungeon normal",
     passos: [
-      "Derrote o [[keyGuardian|Key Guardian]] da dungeon: um inimigo raro que aparece em áreas de nível parecido e sempre deixa 1 chave.",
-      "Ou ganhe a chave num world event, ou compre no [[tradeMarket|Trade Market]].",
-      "Fallen Factory e Eldritch Outlook pedem antes a quest da linha principal (veja a tabela).",
+      "Mate o [[keyGuardian|Key Guardian]] da dungeon: um mob raro que aparece em áreas de nível parecido e sempre dropa 1 chave.",
+      "Ela também sai de world events, ou dá para comprar no [[tradeMarket|Trade Market]].",
+      "Fallen Factory e Eldritch Outlook pedem uma quest da história principal antes (veja a tabela).",
     ],
   },
   {
     titulo: "Dungeon corrompida",
     passos: [
-      "A chave cai dos Key Guardians, de lootruns ou de world events, mas chega quebrada.",
-      "Leve a chave ao Key Forge Merchant, na Forgery, e pague o conserto em runas (Nii, Uth ou Tol).",
-      "Corrompidas não pedem quest. As runas vêm do próprio Forgery Chest e dos guardiões de runa de Gavel.",
+      "A chave dropa dos Key Guardians, de lootruns ou de world events, mas vem quebrada.",
+      "Leve a chave ao Key Forge Merchant, na Forgery, e pague o conserto com runas (Nii, Uth ou Tol).",
+      "Corrompidas não pedem quest. As runas saem do próprio Forgery Chest e dos guardiões de runa de Gavel.",
     ],
   },
 ];
@@ -53,18 +53,18 @@ export const secondChance: Destaque = {
   tipo: "info",
   titulo: "Second Chance",
   texto:
-    "Nas dungeons normais, morrer não encerra a run: você volta para o começo ou para a sala antes do chefe, conforme onde caiu. As corrompidas não têm essa segunda chance.",
+    "Nas dungeons normais, morrer não acaba com a run: você volta para o começo ou para a sala antes do boss, dependendo de onde morreu. As corrompidas não têm essa segunda chance.",
 };
 
 // Forgery
 export const forgeryIntro =
-  "A Forgery é uma ilha flutuante sobre a borda leste da Light Forest, a caminho de Cinfras. Você sobe por um teletransporte logo abaixo dela. Lá ficam os portões das 8 corrompidas, o Key Forge Merchant e o Forgery Chest.";
+  "A Forgery é uma ilha flutuante em cima da ponta leste da Light Forest, no caminho para Cinfras. Para subir, use o teleporte que fica logo embaixo dela. Lá estão os portões das 8 corrompidas, o Key Forge Merchant e o Forgery Chest.";
 
 export const forgeryRegras = [
-  "Cada corrompida diferente concluída soma 1 ao baú, até 8/8. Repetir a mesma dungeon não soma.",
-  "Para contar, além de vencer o chefe, é preciso matar um número mínimo de inimigos lá dentro. O número muda de dungeon para dungeon, e o contador aparece na tela.",
-  "Morrer, ou passar 3 horas sem concluir uma corrompida, zera o baú.",
-  "Dá para abrir o baú a qualquer momento na Forgery. A recompensa é a da contagem em que ele estiver.",
+  "Cada corrompida diferente que você fecha soma 1 no baú, até 8/8. Repetir a mesma não conta.",
+  "Para contar, não basta matar o boss: também é preciso matar um mínimo de mobs lá dentro. Esse mínimo muda de uma dungeon para outra, e o contador aparece na tela.",
+  "Se você morrer, ou passar 3 horas sem fechar uma corrompida, o baú zera.",
+  "Dá para abrir o baú na Forgery quando quiser. A recompensa é a da contagem em que ele estiver.",
 ];
 
 /** Recompensa média do Forgery Chest por contagem (wiki, The Forgery). */
@@ -83,11 +83,11 @@ export const forgeryMitico: Destaque = {
   tipo: "info",
   titulo: "Chance de mítico acumulada",
   texto:
-    "Em 8/8, cada baú aberto sem mítico multiplica a chance do próximo por 1,01. Quando sai um mítico, a chance volta ao início.",
+    "Em 8/8, cada baú aberto sem mítico multiplica a chance do próximo por 1,01. Quando sai um mítico, a chance volta ao valor inicial.",
 };
 
 export const forgeryExtras = [
-  "Blood Melange: consumível que pode sair do baú e soma 8 abates ao contador da dungeon.",
+  "Blood Melange: consumível que pode sair do baú e soma 8 kills no contador da dungeon.",
   "Forgery Chain Piece: troféu que só sai do baú em 8/8.",
   "Equipamentos lendários exclusivos do baú, como Cerid's Ingenuity, Gale's Sight e Tisaun's Valor.",
 ];
@@ -100,22 +100,22 @@ export const forgeryImagem: Imagem = {
 
 // Dungeon Merchant
 export const merchantIntro =
-  "Na entrada de cada dungeon há um Dungeon Merchant. Ele vende itens intransferíveis em troca do que a dungeon dá ao ser concluída.";
+  "Na entrada de cada dungeon tem um Dungeon Merchant. Ele vende itens intransferíveis, pagos com o que a dungeon dá quando você fecha.";
 
 export const merchantMoedas = [
   {
     titulo: "Boss Token",
     texto:
-      "O item do chefe (a Witherhead's Rib, na Decrepit Sewers, por exemplo). Cada conclusão dá 1. Compra as armas, armaduras e acessórios da dungeon, por 1 a 3 tokens cada.",
+      "O item do boss (a Witherhead's Rib, na Decrepit Sewers, por exemplo). Cada run completa dá 1. Com eles você compra as armas, armaduras e acessórios da dungeon, de 1 a 3 tokens cada.",
   },
   {
     titulo: "Fragmentos",
     texto:
-      "Cada conclusão dá 3 fragmentos daquela dungeon. Compram [[powders]] e ferramentas de coleta; nas corrompidas, as ferramentas também custam esmeraldas.",
+      "Cada run completa dá 3 fragmentos daquela dungeon. Com eles você compra [[powders]] e ferramentas de coleta; nas corrompidas, as ferramentas também custam esmeraldas.",
   },
   {
     titulo: "Teleport Scroll",
-    texto: "Alguns merchants vendem um pergaminho que leva de volta à dungeon (ou à Forgery, no caso das corrompidas).",
+    texto: "Alguns merchants vendem um scroll que leva de volta à dungeon (ou à Forgery, no caso das corrompidas).",
   },
 ];
 
@@ -125,12 +125,12 @@ export const merchantImagens: Imagem[] = [
 ];
 
 // Recompensas
-export const recompensasIntro = "O que cada conclusão rende, e o que a sequência de corrompidas soma no Forgery Chest:";
+export const recompensasIntro = "O que cada run dá, e o que a sequência de corrompidas soma no Forgery Chest:";
 
 export const recompensas = [
-  { titulo: "Esmeraldas", texto: "Espalhadas em pilhas na entrada da dungeon depois do chefe; o valor sobe com o nível." },
-  { titulo: "Boss Token e fragmentos", texto: "1 token e 3 fragmentos por conclusão, gastos no Dungeon Merchant." },
-  { titulo: "Equipamento", texto: "Comprado no merchant; os lendários do Forgery Chest só saem do baú." },
+  { titulo: "Esmeraldas", texto: "Ficam em pilhas na entrada da dungeon depois do boss; o valor sobe com o nível." },
+  { titulo: "Boss Token e fragmentos", texto: "1 token e 3 fragmentos por run, para gastar no Dungeon Merchant." },
+  { titulo: "Equipamento", texto: "Você compra no merchant; os lendários do Forgery Chest só saem do baú." },
   { titulo: "Runas e mítico", texto: "Só no Forgery Chest: runas desde 1/8; tokens e chance de mítico a partir de 3/8." },
 ];
 
@@ -142,13 +142,11 @@ export const recompensasImagem: Imagem = {
 
 // Dicas
 export const dungeonsDicas = [
-  "Se o chefe cair e a dungeon não contar para o baú, faltou o mínimo de abates. Olhe o contador antes de entrar na sala do chefe.",
-  "Planeje a sequência das 8 corrompidas antes de começar: cada conclusão abre um novo prazo de 3 horas para a próxima.",
-  "Conserte as chaves corrompidas antes de começar a sequência, para não perder tempo do prazo na Forgery.",
+  "Se você matou o boss e a dungeon não contou para o baú, faltou o mínimo de kills. Confira o contador antes de entrar na sala do boss.",
+  "Planeje a ordem das 8 corrompidas antes de começar: cada uma que você fecha reinicia o prazo de 3 horas para a próxima.",
+  "Conserte todas as chaves corrompidas antes de começar a sequência, para não gastar o prazo na Forgery.",
+  "Com uma party organizada, uma run completa leva uns 30 minutos. Para fechar o 8/8, jogue com quem já conhece as salas.",
 ];
-
-export const dicaDaGuilda =
-  "Em grupo organizado, uma run completa costuma levar uns 30 minutos. Para buscar o 8/8, jogue com quem já conhece as salas.";
 
 export const dungeonsFontes = [
   { rotulo: "Dungeons, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Dungeons" },
