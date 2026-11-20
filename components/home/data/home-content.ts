@@ -60,7 +60,7 @@ export const homeDestaque = {
   acao: "Abrir o guia de Raids",
   imagem: {
     base: "/raids/prints/raid-twp-chefe-anathema",
-    alt: "Anathema, chefe da The Wartorn Palace: criatura alada vermelha e preta",
+    alt: "Anathema, boss da The Wartorn Palace: criatura alada vermelha e preta",
   },
 };
 

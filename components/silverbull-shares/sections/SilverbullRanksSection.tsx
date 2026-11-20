@@ -1,4 +1,4 @@
-import DicaGsw from "@/components/guias/DicaGsw";
+import Destaque from "@/components/guias/Destaque";
 import Image from "next/image";
 import SecaoGuia from "@/components/guias/SecaoGuia";
 import { dicaDeRank, ranks, ranksDestaques, ranksIntro, ranksTabela } from "@/components/silverbull-shares/data/silverbull-shares-content";
@@ -61,9 +61,7 @@ export default function SilverbullRanksSection() {
         ))}
       </dl>
 
-      <div className="mt-8">
-        <DicaGsw titulo="Dica da GsW">{dicaDeRank}</DicaGsw>
-      </div>
+      <Destaque className="mt-8" tipo="dica" titulo="Dica" texto={dicaDeRank} />
     </SecaoGuia>
   );
 }

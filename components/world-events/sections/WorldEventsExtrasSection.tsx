@@ -1,7 +1,6 @@
 import Destaque from "@/components/guias/Destaque";
-import DicaGsw from "@/components/guias/DicaGsw";
 import SecaoGuia from "@/components/guias/SecaoGuia";
-import { dicaDaGuilda, worldEventsDicas } from "@/components/world-events/data/world-events-content";
+import { worldEventsDicas } from "@/components/world-events/data/world-events-content";
 
 export default function WorldEventsExtrasSection() {
   return (
@@ -10,9 +9,6 @@ export default function WorldEventsExtrasSection() {
         {worldEventsDicas.map((dica) => (
           <Destaque key={dica} tipo="dica" titulo="Dica" texto={dica} />
         ))}
-      </div>
-      <div className="mt-6">
-        <DicaGsw titulo="Dica da GsW">{dicaDaGuilda}</DicaGsw>
       </div>
     </SecaoGuia>
   );

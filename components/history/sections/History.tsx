@@ -15,37 +15,37 @@ export default function History() {
       year: "2017 - 2019",
       title: "As Primeiras Chamas",
       description:
-        "Sob a liderança de BadBoyCJ, a GsW nasceu da vontade de reunir o povo brasileiro sob uma única bandeira em Wynncraft. Foram anos de busca e resistência, quando os primeiros Guardiões começaram a moldar o que viria a ser o maior reduto lusófono do servidor.",
+        "Com BadBoyCJ na liderança, a GsW nasceu da vontade de juntar os brasileiros do Wynncraft numa guilda só. Foram anos de luta para crescer, e foi nessa época que os primeiros Guardiões começaram a montar o que viraria a maior casa de quem fala português no servidor.",
     },
     {
       year: "2020 - 2021",
       title: "A Ascensão Política e as Grandes Guerras",
       description:
-        "Com a transição para a liderança de Julinho, a GsW deixou de ser apenas um refúgio para se tornar uma potência bélica. Pela primeira vez, marchamos para as Guerras de Território. Foi a era das grandes alianças, quando defendemos com ação e diplomacia regiões como Corkus e os vastos oceanos.",
+        "Quando Julinho assumiu a liderança, a GsW deixou de ser só um ponto de encontro e virou uma guilda de guerra. Pela primeira vez entramos nas Guerras de Território. Foi a época das grandes alianças, em que defendemos regiões como Corkus e os oceanos, na luta e na diplomacia.",
     },
     {
       year: "2022 - 2023",
       title: "O Nascimento do Warteam e a Brazucoin",
       description:
-        "Um marco histórico: a fundação do Warteam da guilda. Unindo veteranos e novos prodígios, a GsW tornou-se temida pelos seus Dry Snipes. Criamos a Brazucoin, uma moeda de influência que ditava o ritmo das conquistas.",
+        "Um marco: nasceu o Warteam da guilda. Juntando veteranos e novatos talentosos, a GsW ficou conhecida e temida pelos Dry Snipes. Também criamos a Brazucoin, uma moeda interna que movimentava as conquistas da guilda.",
     },
     {
       year: "2024",
       title: "A Grande Comunidade e os Pilares",
       description:
-        "A guilda evoluiu para um ecossistema completo. Estruturamos os 5 Pilares: Warteam, Moderação, Eventos, Conteúdo e Desenvolvimento. Apesar das traições políticas, a GsW provou sua resiliência ao forjar novas alianças e criar o maior guia em português já visto em Wynn.",
+        "A guilda cresceu e se organizou nos 5 Pilares: Warteam, Moderação, Eventos, Conteúdo e Desenvolvimento. Mesmo com traições políticas no caminho, a GsW se reergueu, fez novas alianças e criou o maior guia em português de Wynn.",
     },
     {
       year: "2025",
       title: "A Era da Tecnologia e o Futuro",
       description:
-        "Hoje, sob o comando de RafaelGomes, a GsW transcende o jogo. Com bots próprios de última geração e uma loja in-game, transformamos a experiência dos membros enquanto o mundo aguarda as Crônicas de Fruma.",
+        "Hoje, com RafaelGomes no comando, a GsW vai além do jogo. Com bots próprios e uma loja in-game, mudamos a experiência dos membros enquanto todo mundo esperava Fruma.",
     },
     {
       year: "2026 - O Despertar",
       title: "A Promessa de Fruma e o Renascimento",
       description:
-        "Após anos de espera, os portões de Fruma finalmente se abriram. O anúncio da nova província convocou antigos heróis de volta ao lar, e a GsW ressurge com novos rostos, vontade renovada e uma chama que nunca se apagou.",
+        "Depois de anos de espera, Fruma finalmente chegou. A nova província trouxe muita gente antiga de volta para casa, e a GsW volta com caras novas, vontade renovada e a mesma chama de sempre.",
     },
   ];
 
@@ -58,8 +58,8 @@ export default function History() {
           </h1>
         </div>
           <div className="entra flex max-w-leitura flex-col gap-4 text-lede text-texto-2" style={{ "--i": 4 } as CSSProperties}>
-            <p>Mais do que uma linha do tempo, esta página guarda a memória da GsW: os períodos de ascensão, as guerras que marcaram a guilda, os líderes que conduziram cada era e os membros que ajudaram a transformar a comunidade em uma das presenças brasileiras mais fortes de Wynncraft.</p>
-            <p>Aqui ficam registrados os momentos que definiram a identidade da guilda, desde as primeiras chamas até a fase atual, para que cada conquista, ruptura e renascimento continue fazendo parte do legado da GsW.</p>
+            <p>Esta página guarda a memória da GsW: as fases de crescimento, as guerras que marcaram a guilda, os líderes de cada era e os membros que fizeram dela uma das guildas brasileiras mais fortes do Wynncraft.</p>
+            <p>Aqui ficam os momentos que fizeram a guilda ser o que é, do começo até hoje: as conquistas, as brigas e as voltas por cima.</p>
           </div>
       </header>
 
@@ -70,8 +70,8 @@ export default function History() {
               Crônicas de Wynn
             </h2>
             <p className="mt-3 text-texto-2">
-              &ldquo;Um registro eterno das eras, das alianças e do sangue derramado pelos
-              Guardiões na busca pela paz nas províncias.&rdquo;
+              &ldquo;As eras, as alianças e as batalhas dos Guardiões pelas
+              províncias de Wynn.&rdquo;
             </p>
           </div>
           <div className="min-w-0">

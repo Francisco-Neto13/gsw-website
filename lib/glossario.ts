@@ -18,28 +18,28 @@ export const glossario = {
     termo: "Pull",
     tipo: "Recompensa de raid",
     explicacao:
-      "Cada tentativa de tirar um item do baú final. A run acumula pulls a cada sala concluída; quanto melhor a party joga, mais pulls no fim.",
+      "Cada tentativa de tirar um item do baú final. A run junta pulls a cada sala completa; quanto melhor a party joga, mais pulls no fim.",
   },
   aspectPull: {
     termo: "Aspect pull",
     tipo: "Recompensa de raid",
-    explicacao: "Tentativa específica de tirar um aspect no baú final. Vem das salas concluídas sem mortes e de alguns ranks.",
+    explicacao: "Tentativa específica de tirar um aspect no baú final. Vem das salas completas sem mortes e de alguns ranks.",
   },
   gambit: {
     termo: "Gambit",
     tipo: "Modificador diário",
     explicacao:
-      "Desafio opcional ativado antes da raid. Deixa a run mais difícil em troca de mais pulls e aspect pulls. Os gambits do dia são os mesmos para todo mundo.",
+      "Desafio opcional que você liga antes da raid. Deixa a run mais difícil, mas dá mais pulls e aspect pulls. Os gambits do dia são os mesmos para todo mundo.",
   },
   runa: {
     termo: "Runa",
     tipo: "Item de entrada",
-    explicacao: "Item gasto para abrir a raid: Az, Uth, Tol ou Ek, conforme a raid. Se a run falhar, a runa já foi consumida.",
+    explicacao: "Item gasto para abrir a raid: Az, Uth, Tol ou Ek, dependendo da raid. Se a run falhar, a runa já foi gasta.",
   },
   buff: {
     termo: "Buff",
     tipo: "Bônus temporário",
-    explicacao: "Bônus escolhido nos baús entre as salas da raid. Vale até o fim da run e pesa muito contra o chefe.",
+    explicacao: "Bônus escolhido nos baús entre as salas da raid. Vale até o fim da run e faz muita diferença no boss.",
   },
   ehp: {
     termo: "EHP",
@@ -50,7 +50,7 @@ export const glossario = {
   party: {
     termo: "Party",
     tipo: "Grupo",
-    explicacao: "Grupo de jogadores que entra junto no conteúdo. As raids exigem uma party de 4.",
+    explicacao: "Grupo de jogadores que joga junto. As raids pedem uma party de 4.",
   },
   guildRaid: {
     termo: "Guild raid",
@@ -62,13 +62,13 @@ export const glossario = {
     termo: "Silverbull",
     tipo: "Lugar",
     explicacao:
-      "Centro de Divisão Silverbull, a leste de Cinfras. É onde se registra nas divisões de raid e de lootrun e onde fica a fila de party.",
+      "Centro de Divisão Silverbull, a leste de Cinfras. É onde você se inscreve nas divisões de raid e de lootrun e onde fica a fila de party.",
   },
   feeder: {
     termo: "Feeder",
     tipo: "Bloco do curral",
     explicacao:
-      "Cocho do curral de cada tipo de montaria. É nele que se guarda a montaria para treinar e onde se alimenta com materiais de crafting.",
+      "Cocho do curral de cada tipo de montaria. É nele que você guarda a montaria para treinar e dá materiais de crafting para ela comer.",
   },
   powerup: {
     termo: "PowerUp",
@@ -123,7 +123,7 @@ export const glossario = {
   powders: {
     termo: "Powders",
     tipo: "Material",
-    explicacao: "Pós elementais que se aplicam em armas e armaduras para somar dano ou defesa de um elemento. Vão do tier 1 ao 6.",
+    explicacao: "Pós elementais que você aplica em armas e armaduras para somar dano ou defesa de um elemento. Vão do tier 1 ao 6.",
   },
   abilityShards: {
     termo: "Ability Shards",
@@ -134,7 +134,7 @@ export const glossario = {
   war: {
     termo: "War",
     tipo: "Atividade de guilda",
-    explicacao: "Batalha de guilda pelo controle de territórios no mapa. Trinkets que fortalecem a equipe são muito procurados para isso.",
+    explicacao: "Batalha de guilda pelo controle de territórios no mapa. Trinkets que fortalecem o time são muito procurados para isso.",
   },
   dbd: {
     termo: "dbd",
@@ -154,12 +154,12 @@ export const glossario = {
   legendaryIsland: {
     termo: "Legendary Island",
     tipo: "Desafio",
-    explicacao: "Ilha de combate de nível alto com ondas de inimigos e chefes, feita em grupo ou sozinho.",
+    explicacao: "Ilha de combate de nível alto com ondas de mobs e bosses, para jogar de party ou sozinho.",
   },
   keyGuardian: {
     termo: "Key Guardian",
-    tipo: "Inimigo raro",
-    explicacao: "Inimigo mais forte que os comuns, que aparece em áreas de nível parecido com o da dungeon e sempre deixa 1 chave dela.",
+    tipo: "Mob raro",
+    explicacao: "Mob mais forte que os comuns, que aparece em áreas de nível parecido com o da dungeon e sempre dropa 1 chave dela.",
   },
   toughness: {
     termo: "Toughness",

@@ -100,7 +100,7 @@ Toda área segue `pages/` + `sections/` + `data/` (introduzido em
 - Abertura: breadcrumb, H1, uma frase, `FichaGuia` (a caixa de item, **uma por página**), resumo.
 - Cada seção é um `SecaoGuia` com `id` igual ao declarado em `guia.secoes` do registro.
 - Fatos do jogo conferidos e datados; quando as fontes se contradizem, o texto diz isso.
-- Regra da guilda separada de regra do jogo, em `DicaGsw`.
+- Dicas, inclusive as da experiência da guilda, em `Destaque` do tipo `dica`; nada de bloco separado de "Dica da GsW".
 - Termina com `FimDoGuia` (fontes consultadas + anterior/próximo).
 - Termos do jogo no texto de `data/`: `[[chave]]` ou `[[chave|texto exibido]]`, com a chave em
   `lib/glossario.ts`. Marque só a primeira aparição por bloco.

@@ -15,36 +15,36 @@ export type BombCard = {
 
 export const sharesIntroParagraphs = [
   "Silverbull Share é a moeda premium do Wynncraft. Com ela você compra ranks permanentes, a assinatura Silverbull, crates de cosméticos, bombas, pets e tokens, tudo pela loja dentro do jogo.",
-  "Não é preciso gastar dinheiro de verdade: as Shares negociáveis são vendidas no Trade Market por esmeraldas. Este guia mostra o que cada compra entrega, para você decidir onde vale investir.",
+  "Não precisa gastar dinheiro de verdade: as Shares negociáveis são vendidas por esmeraldas no Trade Market. Este guia mostra o que cada compra dá, para você decidir onde vale a pena gastar.",
 ];
 
 export const sharesResumo = [
-  "Na loja do site, 1 Share vale US$ 1. No jogo, ela é comprada e vendida por esmeraldas no [[tradeMarket|Trade Market]].",
+  "Na loja do site, 1 Share vale US$ 1. No jogo, você compra e vende Shares por esmeraldas no [[tradeMarket|Trade Market]].",
   "Shares negociáveis (Tradable) vão para o mercado; as não negociáveis (Untradable) só servem para comprar na loja.",
-  "Os ranks são permanentes e cumulativos: cada um traz tudo do anterior.",
+  "Os ranks são permanentes e acumulam: cada um tem tudo do anterior.",
   "Tokens só podem ser comprados com Shares.",
 ];
 
 // O que são
 export const oQueSaoIntro =
-  "Shares não existem como item no inventário. Para ver quantas você tem, abra a loja do jogo e passe o mouse sobre a sua cabeça, no canto inferior esquerdo.";
+  "Shares não aparecem como item no inventário. Para ver quantas você tem, abra a loja do jogo e passe o mouse na sua cabeça, no canto inferior esquerdo.";
 
 export const tiposDeShare = [
   {
     titulo: "Tradable Shares",
     texto:
-      "Compradas no site ou no Trade Market. Podem ser vendidas por esmeraldas pelo botão próprio no fim do menu de venda do mercado (não dá para passar direto para outro jogador).",
+      "Você compra no site ou no Trade Market. Dá para vender por esmeraldas pelo botão delas no fim do menu de venda do mercado (não dá para passar direto para outro jogador).",
   },
   {
     titulo: "Untradable Shares",
     texto:
-      "Vêm da assinatura Silverbull (5 por mês) e de alguns pacotes do site. Compram itens na loja, mas não podem ser vendidas.",
+      "Vêm da assinatura Silverbull (5 por mês) e de alguns pacotes do site. Servem para comprar na loja, mas não dá para vender.",
   },
 ];
 
 export const comoConseguir = [
-  "Trade Market: o jeito mais comum, pagando em esmeraldas. O preço muda com o mercado; quando este guia foi escrito, girava em torno de 30 [[le|LE]] por Share.",
-  "Loja do site: pacotes pagos com dinheiro real, na proporção de 1 Share por US$ 1.",
+  "Trade Market: o jeito mais comum, pagando com esmeraldas. O preço muda com o mercado; quando este guia foi escrito, estava por volta de 30 [[le|LE]] por Share.",
+  "Loja do site: pacotes pagos com dinheiro de verdade, a 1 Share por US$ 1.",
 ];
 
 export const lojaImagens: Imagem[] = [
@@ -90,16 +90,16 @@ export const dicaDeRank =
 
 // Assinatura
 export const assinaturaIntro =
-  "A assinatura Silverbull é um complemento ao rank, não um rank permanente. Pela loja do jogo, custa 6 Tradable Shares a cada 14 dias; no site, US$ 11,99 por mês.";
+  "A assinatura Silverbull é um extra em cima do rank, não um rank permanente. Pela loja do jogo, custa 6 Tradable Shares a cada 14 dias; no site, US$ 11,99 por mês.";
 
 export const assinaturaBeneficios = [
   { titulo: "Taxa menor no Trade Market", texto: "A taxa de compra e venda cai 2 pontos percentuais." },
   { titulo: "Shares de graça", texto: "5 Untradable Shares por mês, a partir do segundo mês seguido de assinatura." },
   { titulo: "Recompensas diárias em dobro", texto: "Crate diária e totems do rank dobram. Em festival, as crates das missões diárias e semanais também." },
   { titulo: "Bônus diário em dobro", texto: "O bônus diário de lootrun e de raid conta em dobro enquanto a assinatura estiver ativa." },
-  { titulo: "Scrap mais barato", texto: "Bastam 3 cosméticos iguais, em vez de 5, para trocar por um de tier acima." },
+  { titulo: "Scrap mais barato", texto: "Bastam 3 cosméticos iguais, em vez de 5, para trocar por um do tier de cima." },
   { titulo: "Visual", texto: "Esconder peças da armadura e aplicar glints em armas e armaduras (mais glints quanto mais tempo assinando)." },
-  { titulo: "Guild Boost", texto: "As Shares também servem para impulsionar a sua guilda e liberar vantagens extras para ela." },
+  { titulo: "Guild Boost", texto: "As Shares também servem para dar boost na sua guilda e liberar vantagens extras para ela." },
   { titulo: "Tag no chat e beta", texto: "A tag da assinatura nas mensagens e acesso ao beta das atualizações, quando houver." },
 ];
 
@@ -111,7 +111,7 @@ export const assinaturaImagem: Imagem = {
 
 // Crates
 export const cratesIntro =
-  "Crates dão um cosmético aleatório (exceto os exclusivos de festival e de pacotes). Quanto maior o tier da crate, maior a chance de um cosmético raro.";
+  "Crates dão um cosmético aleatório (menos os exclusivos de festival e de pacotes). Quanto maior o tier da crate, maior a chance de um cosmético raro.";
 
 export const cratesOrigem = [
   "Crate diária dos ranks: Tier 1 no VIP+, Tier 2 do HERO em diante.",
@@ -133,7 +133,7 @@ export const scrap =
   "Cosméticos repetidos não se perdem: 5 da mesma raridade (3 com a assinatura) viram 1 aleatório da raridade acima. Um Black Market pode ser desfeito em 10 Epic.";
 
 export const dicaDeCrate =
-  "Se for comprar crates, prefira um pacote maior a vários pequenos: pelo mesmo total, ele garante mais crates de tier alto.";
+  "Se for comprar crates, pegue um pacote grande em vez de vários pequenos: pelo mesmo total, ele garante mais crates de tier alto.";
 
 export const cratesImagens: Imagem[] = [
   { src: "/shares/crates.webp", alt: "Tabela de tiers e pacotes de crates na loja", legenda: "Tiers e pacotes de crates." },
@@ -144,7 +144,7 @@ export const cratesImagens: Imagem[] = [
 
 // Bombas
 export const bombasIntro =
-  "Bombas dão um bônus para todo mundo que está no mesmo mundo de quem usou. Não precisa comprar para aproveitar: basta entrar num mundo com bomba ativa.";
+  "Bombas dão um bônus para todo mundo que está no mesmo mundo de quem soltou. Não precisa comprar para aproveitar: é só entrar num mundo com bomba ativa.";
 
 export const bombasImagem: Imagem = { src: "/shares/bombs.webp", alt: "Aba de bombas na loja do jogo", legenda: "A aba de bombas na loja." };
 
@@ -157,15 +157,15 @@ export const bombCards: BombCard[] = [
   { icon: "presente", name: "Item Bomb", imagem: "/terceiros/wynncraft/bomba-item.webp", description: "Cada jogador no mundo ganha dois itens aleatórios perto do próprio nível." },
   { icon: "chave", name: "Dungeon Bomb", imagem: "/terceiros/wynncraft/bomba-dungeon.webp", description: "Entrada grátis em qualquer dungeon por 10 minutos." },
   { icon: "bau", name: "Loot Chest Bomb", description: "Mais itens nos baús do mapa por 20 minutos." },
-  { icon: "mundo", name: "World Event Bomb", description: "Faz todos os world events do mundo começarem a contagem, exceto o Annihilation." },
+  { icon: "mundo", name: "World Event Bomb", description: "Faz todos os world events do mundo começarem a contagem, menos o Annihilation." },
   { icon: "pergaminho", name: "Scroll Charge Bomb", imagem: "/terceiros/wynncraft/bomba-scroll-charge.webp", description: "Dá 2 cargas de teleport scroll a cada jogador, até o máximo de 3." },
   { icon: "ingrediente", name: "Ingredient Bomb", imagem: "/terceiros/wynncraft/bomba-ingredient.webp", description: "Cada jogador ganha 2 ingredientes e 6 materiais aleatórios, perto do próprio nível de profissão." },
-  { icon: "festa", name: "Party Crackers", imagem: "/terceiros/wynncraft/bomba-party-crackers.webp", description: "Uma festa em volta de quem usou, com direito a guerra de bolas de neve." },
+  { icon: "festa", name: "Party Crackers", imagem: "/terceiros/wynncraft/bomba-party-crackers.webp", description: "Uma festa em volta de quem soltou, com direito a guerra de bola de neve." },
 ];
 
 // Pets
 export const petsIntro =
-  "Pets acompanham você e atacam junto. A loja vende três pacotes de quatro pets cada; avulso, cada pet custa 15 Shares, e os Dragonlings, 25. O pacote completo sai por 35.";
+  "Pets andam com você e atacam junto. A loja vende três pacotes de quatro pets cada; avulso, cada pet custa 15 Shares, e os Dragonlings, 25. O pacote completo sai por 35.";
 
 export const petBundles = [
   { nome: "Crimson Bundle", pets: "Fiery Dragonling, Rat, Singing Tiger e The Eye", imagem: { src: "/shares/crimson_bundles.webp", alt: "Os quatro pets do Crimson Bundle" } },
@@ -193,11 +193,9 @@ export const tokensImagem: Imagem = { src: "/shares/tokens.webp", alt: "Aba de t
 // Dicas
 export const sharesDicas = [
   "A aba de ofertas mostra promoções que mudam de tempos em tempos e são diferentes para cada jogador: ranks, bombas, tokens ou pacotes. Vale olhar antes de comprar avulso.",
-  "Algumas cidades têm um ponto de acesso à loja, onde dá para abrir a loja, ver as ofertas e pegar as caixas diárias.",
+  "Algumas cidades têm um ponto da loja, onde dá para abrir a loja, ver as ofertas e pegar as crates diárias.",
+  "Confira a loja com frequência para pegar as melhores ofertas. Se o foco é progressão, priorize o que ajuda no dia a dia antes dos cosméticos.",
 ];
-
-export const dicaDaGuilda =
-  "Confira a loja com frequência para pegar as melhores ofertas. Se o foco é progressão, priorize o que ajuda no dia a dia antes dos cosméticos.";
 
 export const dicasImagens: Imagem[] = [
   { src: "/shares/ofertas.webp", alt: "Oferta aleatória na loja do jogo", legenda: "Uma oferta da semana." },

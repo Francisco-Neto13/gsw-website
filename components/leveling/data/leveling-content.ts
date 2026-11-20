@@ -37,12 +37,12 @@ export type WeaponRoute = {
 
 export const levelingIntroParagraphs = [
   "Um roteiro para subir de nível matando mobs, do 1 ao 121: onde upar em cada faixa, como montar a party e quais árvores, armas e armaduras aceleram o grind.",
-  "As recomendações focam em XP Bonus. Se for sua primeira classe, faça antes as quests, caves e discoveries: além de XP, elas ensinam o mapa.",
+  "O foco aqui é XP Bonus. Se for a sua primeira classe, faça antes as quests, caves e discoveries: além do XP, elas te ensinam o mapa.",
 ];
 
 export const levelingResumo = [
   "Upe em [[party]]: o XP aumenta e a chance de sobreviver também. Use /pfinder para achar uma.",
-  "Healer vira essencial a partir dos spots de nível 20 a 35.",
+  "Do spot de nível 20 a 35 em diante, healer vira essencial.",
   "Totems (de quem tem rank) e bombas de XP aceleram muito a party.",
   "Priorize dano em área e XP Bonus na build.",
 ];
@@ -61,12 +61,12 @@ export const partyPapeis = [
   {
     titulo: "Healers",
     texto:
-      "Normalmente jogadores de nível 120 ou 121 com build de cura (quase sempre Shaman ou Mage). Em party de nível baixo, costumam usar itens que reduzem o próprio dano para não roubar XP.",
+      "Normalmente são jogadores de nível 120 ou 121 com build de cura (quase sempre Shaman ou Mage). Em party de nível baixo, eles usam itens que diminuem o próprio dano para não roubar XP.",
   },
   {
     titulo: "Totems",
     texto:
-      "Quem tem rank recebe totems todo dia e usa com /totem. Cada totem dura 5 minutos e aumenta muito o spawn de mobs, e com isso o XP da party.",
+      "Quem tem rank ganha totems todo dia e usa com /totem. Cada totem dura 5 minutos e aumenta muito o spawn de mobs, e junto o XP da party.",
   },
   {
     titulo: "Bombas de XP",
@@ -77,7 +77,7 @@ export const partyPapeis = [
 
 // Spots
 export const spotsIntro =
-  "Alguns spots se sobrepõem em nível. Não existe regra fixa para trocar: se um spot estiver difícil ou lento para a sua party, mude para o próximo.";
+  "Alguns spots têm faixas de nível que se cruzam. Não tem regra fixa para trocar: se o spot estiver difícil ou lento para a sua party, vá para o próximo.";
 
 export const levelingSpots: LevelingSpot[] = [
   {
@@ -86,9 +86,9 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-753, -1574",
     image: "/leveling/emerald_trail.webp",
     notes: [
-      "Fica logo após os portões de Ragni e funciona como área inicial de leveling.",
-      "Nesses primeiros levels, o XP sobe muito rápido e totem ainda não é necessário.",
-      "Basta limpar os mobs da região e seguir a progressão.",
+      "Fica logo depois dos portões de Ragni e é o primeiro lugar para upar.",
+      "Nos primeiros níveis o XP sobe muito rápido, e ainda não precisa de totem.",
+      "É só limpar os mobs da região e seguir em frente.",
     ],
   },
   {
@@ -97,9 +97,9 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-818, -1260",
     image: "/leveling/pigman_ravine.webp",
     notes: [
-      "Aqui vale estar bem equipado, porque os mobs conseguem matar com facilidade.",
-      "É o primeiro spot onde totems ficam realmente importantes para manter o ritmo.",
-      "Healer e party completa ainda não são obrigatórios nesse ponto.",
+      "Aqui vale estar bem equipado, porque os mobs matam fácil.",
+      "É o primeiro spot em que os totems fazem diferença de verdade no ritmo.",
+      "Aqui ainda não precisa de healer nem de party completa.",
       "Tome cuidado com o Pigman Overlord, que tem mais dano e vida que os mobs comuns.",
     ],
   },
@@ -111,7 +111,7 @@ export const levelingSpots: LevelingSpot[] = [
     notes: [
       "Mais seguro que Saint's Row, mas com ganho de XP menor.",
       "Tome cuidado com a Spider Tamer e com as teias jogadas pelas aranhas.",
-      "A partir daqui, healer começa a ser essencial para manter consistência.",
+      "Daqui em diante, healer começa a ser essencial para a party não morrer toda hora.",
     ],
   },
   {
@@ -120,10 +120,10 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "320, -2048",
     image: "/leveling/saints_row.webp",
     notes: [
-      "Spot com XP muito alto, mas quase todos os mobs podem te matar muito rápido.",
-      "Precisa completar a quest Grave Digger para acessar.",
+      "XP muito alto, mas quase todo mob aqui te mata rápido.",
+      "Precisa da quest Grave Digger para entrar.",
       "Healer aqui é praticamente obrigatório.",
-      "Classes com bom alcance conseguem limpar mobs de fora do cemitério.",
+      "Classes com bom alcance conseguem limpar os mobs de fora do cemitério.",
     ],
   },
   {
@@ -132,8 +132,8 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-2151, -4717",
     image: "/leveling/llevigar_spiders.webp",
     notes: [
-      "É recomendado começar no level 35 para já descobrir Llevigar e respawnar lá em caso de morte.",
-      "Fique atento ao Holehold Orc Marathon, que pode spawnar após uso de totem.",
+      "Vale começar no nível 35 para já ter descoberto Llevigar e renascer lá se morrer.",
+      "Fique de olho no Holehold Orc Marathon, que pode spawnar depois que alguém usa totem.",
     ],
   },
   {
@@ -142,9 +142,9 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-499, -810",
     image: "/leveling/herb_cave.webp",
     notes: [
-      "Spot muito forte que pode ser usado por bastante tempo, dividido em parte superior e inferior.",
-      "A parte de baixo costuma render mais XP.",
-      "Se a party estiver sofrendo, usar a parte de cima ainda funciona bem.",
+      "Spot muito bom, que dá para usar por bastante tempo. Tem uma parte de cima e uma de baixo.",
+      "A parte de baixo costuma dar mais XP.",
+      "Se a party estiver sofrendo, a parte de cima ainda funciona bem.",
     ],
   },
   {
@@ -155,7 +155,7 @@ export const levelingSpots: LevelingSpot[] = [
     notes: [
       "Como é uma cave, os mobs podem dropar itens e esmeraldas durante o grind.",
       "Fique de olho em drops como The Jingling Jester e Suppression.",
-      "Use totem no corredor estreito antes do bau para maximizar spawn.",
+      "Use o totem no corredor estreito antes do baú para spawnar o máximo de mobs.",
     ],
   },
   {
@@ -164,9 +164,9 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-106, -4592",
     image: "/leveling/waterfall.webp",
     notes: [
-      "Tem XP superior a Flesh Cave, mas é bem mais difícil de sobreviver.",
-      "Healer é altamente necessário e a party deve ficar próximo dele no meio.",
-      "Os mobs têm muita vida, então dano total da party faz muita diferença.",
+      "Dá mais XP que a Flesh Cave, mas é bem mais difícil de sobreviver.",
+      "Healer é obrigatório, e a party deve ficar perto dele, no meio.",
+      "Os mobs têm muita vida, então o dano da party inteira faz muita diferença.",
     ],
   },
   {
@@ -175,8 +175,8 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-1445, -2522",
     image: "/leveling/scrapward.webp",
     notes: [
-      "Pode ser usado com tranquilidade até o level 105.",
-      "Cuidado com inimigos ao redor do spot, que podem matar rápido se puxar errado.",
+      "Dá para usar tranquilo até o nível 105.",
+      "Cuidado com os mobs em volta do spot: se você puxar errado, eles matam rápido.",
       "Totens rendem melhor na parte esquerda do spot.",
     ],
   },
@@ -186,9 +186,9 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "1023, -390",
     image: "/leveling/church.webp",
     notes: [
-      "Spot pouco usado por causa da popularidade de Scrapyard e Bat Cave.",
-      "Exige a quest A Journey Beyond para acesso.",
-      "A partir daqui, healer também pode ajudar no dano sem prejudicar a run.",
+      "Pouca gente usa, porque Scrapyard e Bat Cave são mais populares.",
+      "Precisa da quest A Journey Beyond para entrar.",
+      "Daqui em diante, o healer também pode ajudar no dano sem atrapalhar a party.",
     ],
   },
   {
@@ -197,25 +197,25 @@ export const levelingSpots: LevelingSpot[] = [
     coords: "-1714, -994",
     image: "/leveling/bat_cave.webp",
     notes: [
-      "Recomendado grindar em party maior por causa da vida alta dos mobs.",
-      "Exige as quests Queen's Recruit e A Journey Home para liberar o acesso.",
+      "Melhor grindar em party maior, porque os mobs têm muita vida.",
+      "Precisa das quests Queen's Recruit e A Journey Home para entrar.",
     ],
   },
 ];
 
 // Árvores
 export const arvoresIntro =
-  "As árvores abaixo estão no nível 120, com todos os pontos. Vá montando aos poucos, conforme os pontos que você tem no seu nível. O foco é dano em área.";
+  "As árvores abaixo estão no nível 120, com todos os pontos. Vá montando aos poucos, com os pontos que você tiver no seu nível. O foco é dano em área.";
 
 export const xpBonus =
-  "XP Bonus é o atributo mais importante deste guia. Mesmo com itens caros, compre o que realmente acelera a sua party.";
+  "XP Bonus é o atributo mais importante deste guia. Mesmo que os itens sejam caros, compre o que realmente acelera a sua party.";
 
 // Armas
 export const armasIntro =
   "Uma arma por faixa de nível, por classe. Clique no nome para ver o item no guia oficial.";
 
 export const levelingWeaponTip =
-  "No nível 1, use a arma inicial com uma powder de tier 7 para dano extra. Ela segura bem até a primeira arma da rota.";
+  "No nível 1, use a arma inicial com uma powder de tier 7 para ter dano extra. Ela aguenta bem até a primeira arma da rota.";
 
 const ITEM_PAGINA = "https://wynncraft.com/item";
 
@@ -234,8 +234,8 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     icon: "/abilitytree/abilityTree.acrobat_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000mrJox1-5-Tpp50",
     notes: [
-      "Pegue Weightless, Righting Reflex e Wall Jump para manter mana com mobilidade aérea.",
-      "Pegue Swan Dive e Jasmine Bloom para maximizar dano em área.",
+      "Pegue Weightless, Righting Reflex e Wall Jump para recuperar mana enquanto se move pelo ar.",
+      "Pegue Swan Dive e Jasmine Bloom para ter o máximo de dano em área.",
     ],
   },
   {
@@ -244,8 +244,8 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     icon: "/abilitytree/abilityTree.boltslinger_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000WrJo-uz3pu1V740",
     notes: [
-      "Priorize Guardian Angels e Arrow Wall para ampliar AOE.",
-      "Basaltic Trap e Homing Shots ajudam a manter fluxo de kills e XP.",
+      "Priorize Guardian Angels e Arrow Wall para aumentar o AOE.",
+      "Basaltic Trap e Homing Shots ajudam a manter as kills e o XP sempre vindo.",
       "A ultimate de Boltslinger é excelente para grind.",
     ],
   },
@@ -254,7 +254,7 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     archetype: "Arcanist",
     icon: "/abilitytree/abilityTree.arcanist_active.webp",
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000WsJoxnNtsyFE",
-    notes: ["Pegue Arcane Transfer e Chaos Explosion o mais cedo possível para dano e sustain de mana."],
+    notes: ["Pegue Arcane Transfer e Chaos Explosion o mais cedo possível, para ter dano e não ficar sem mana."],
   },
   {
     className: "Warrior",
@@ -263,8 +263,8 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT000000000000000000000GsJIl-q-UR4T1",
     notes: [
       "Pegue Blood Pact cedo para castar spells sem depender de mana.",
-      "Pegue Enraged Blow rápido para elevar o dano total.",
-      "Brink of Madness é útil para evitar mortes em spots mais agressivos.",
+      "Pegue Enraged Blow cedo para aumentar o seu dano.",
+      "Brink of Madness ajuda a não morrer nos spots mais pesados.",
     ],
   },
   {
@@ -274,7 +274,7 @@ export const levelingAbilityTrees: AbilityTreeRoute[] = [
     treeUrl: "https://wynnbuilder-beta.github.io/builder/#CT0000000000000000000000sJI-JDy7cNQo0",
     notes: [
       "Priorize Double Totem, Triple Totem, Rebound e Storm Dance para aumentar AOE.",
-      "Pegue Regeneration para melhorar sua sobrevivência.",
+      "Pegue Regeneration para morrer menos.",
     ],
   },
 ];
@@ -477,8 +477,8 @@ export const levelingWeapons: WeaponRoute[] = [
 ];
 
 export const levelingArmorNotes = [
-  "A maioria das peças abaixo pode ser comprada no Trade Market ou dropada em grind. Itens de origem específica estão anotados na própria linha.",
-  "Algumas peças ficam caras com roll alto de XP Bonus, então compre apenas o que fizer sentido para o seu caixa.",
+  "A maioria das peças abaixo dá para comprar no Trade Market ou dropar no grind. Quando o item vem de um lugar específico, isso está anotado na linha dele.",
+  "Algumas peças ficam caras com roll alto de XP Bonus, então compre só o que couber no seu bolso.",
 ];
 
 export const levelingArmorPieces = [

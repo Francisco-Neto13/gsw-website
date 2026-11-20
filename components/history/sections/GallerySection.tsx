@@ -18,8 +18,8 @@ export default function GallerySection() {
             Galeria dos Guardiões
           </h2>
           <p className="mt-3 text-texto-2">
-            &ldquo;Cada imagem conta uma história, cada momento eternizado na memória dos
-            Guardiões.&rdquo;
+            &ldquo;Cada foto tem uma história, e os Guardiões lembram de
+            todas.&rdquo;
           </p>
         </div>
         <div className="min-w-0">
@@ -69,9 +69,8 @@ export default function GallerySection() {
 
         <div className="mt-12 max-w-leitura">
           <p className="border-l border-linha-forte pl-4 italic text-texto-2">
-            &ldquo;Onde houver uma batalha, haverá um{" "}
-            <span className="font-medium text-texto">Guardião</span>.
-            O legado da GsW é eterno.&rdquo;
+            &ldquo;Onde tiver batalha, vai ter um{" "}
+            <span className="font-medium text-texto">Guardião</span>.&rdquo;
           </p>
         </div>
         </div>

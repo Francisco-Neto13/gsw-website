@@ -10,21 +10,21 @@ export default function Essence() {
             Além de uma Guilda
           </h2>
           <p className="mt-3 text-texto-2">
-            &ldquo;O que começou como pixels e estratégias se transformou em algo que transcende qualquer tela.&rdquo;
+            &ldquo;O que começou com pixels e estratégia virou algo que vai muito além da tela.&rdquo;
           </p>
         </div>
         <div className="min-w-0">
 
         <div className="mb-12 max-w-leitura space-y-4 text-texto-2">
           <p>
-            Na <span className="font-semibold text-texto">GsW</span>, as fronteiras entre o virtual e o real se dissiparam há muito tempo.
-            O que começou em 2017 como um grupo de brasileiros em busca de territórios em Wynncraft evoluiu
-            naturalmente para algo muito maior: <span className="font-medium text-texto">uma irmandade viva, pulsante e verdadeira.</span>
+            Na <span className="font-semibold text-texto">GsW</span>, faz tempo que o jogo e a vida real se misturaram.
+            O que começou em 2017 como um grupo de brasileiros atrás de territórios no Wynncraft virou,
+            sem ninguém planejar, algo muito maior: <span className="font-medium text-texto">uma irmandade de verdade.</span>
           </p>
           <p>
-            Não somos apenas jogadores que se encontram online. Somos pessoas que compartilham conquistas,
-            derrotas, risadas em calls de madrugada, discussões acaloradas sobre builds, e também os silêncios
-            confortáveis de quem sabe que há alguém ali, mesmo sem palavras.
+            A gente não é só um bando de jogadores que se encontra online. Dividimos conquistas,
+            derrotas, risadas em call de madrugada, discussões acaloradas sobre builds e também aquele silêncio
+            tranquilo de quem sabe que tem alguém ali, mesmo sem falar nada.
             <span className="font-medium text-texto"> Construímos laços que não dependem de ping, servidor ou conexão.</span>
           </p>
         </div>
@@ -41,10 +41,10 @@ export default function Essence() {
             </div>
             <h3 className="text-titulo-4 mb-2 font-titulo text-texto">Conexões Reais</h3>
             <p className="text-texto-2">
-              Alguns já se encontraram pessoalmente. Outros planejam o próximo encontro. Porque o que
-              criamos aqui não é efêmero - é vínculo genuíno, amizade que resiste ao teste do tempo
-              e da distância. Já celebramos aniversários juntos, apoiamos uns aos outros em momentos
-              difíceis e compartilhamos vitórias que vão além do jogo.
+              Alguns já se encontraram pessoalmente. Outros estão planejando o próximo encontro. O que
+              a gente criou aqui não passa: é amizade de verdade, que aguenta o tempo
+              e a distância. Já comemoramos aniversários juntos, seguramos a barra uns dos outros em momentos
+              difíceis e dividimos vitórias que vão além do jogo.
             </p>
           </div>
 
@@ -57,10 +57,10 @@ export default function Essence() {
             </div>
             <h3 className="text-titulo-4 mb-2 font-titulo text-texto">Evolução Constante</h3>
             <p className="text-texto-2">
-              De simples jogadores a estrategistas, líderes, criadores de conteúdo e desenvolvedores.
-              A GsW estimula cada membro a crescer, explorar novos talentos e se superar. Nossos Pilares
-              não são apenas estruturas organizacionais - são caminhos para que cada Guardião encontre
-              seu propósito e contribua de forma única para o coletivo.
+              Muita gente chegou só para jogar e virou estrategista, líder, criador de conteúdo ou desenvolvedor.
+              A GsW incentiva cada membro a crescer, descobrir o que faz bem e se superar. Os Pilares
+              não são só organização: são o jeito de cada Guardião achar o seu lugar
+              e ajudar a guilda do seu jeito.
             </p>
           </div>
 
@@ -72,37 +72,37 @@ export default function Essence() {
             </div>
             <h3 className="text-titulo-4 mb-2 font-titulo text-texto">Além de Mundos</h3>
             <p className="text-texto-2">
-              Wynncraft foi nossa origem, mas não nosso limite. Exploramos inúmeros universos juntos,
-              enfrentamos novos desafios em diferentes jogos e sempre levamos a essência da GsW conosco.
-              Porque não importa o mundo virtual - nossa comunidade permanece unida, nossa identidade
-              se mantém forte, e nossa bandeira continua tremulando.
+              O Wynncraft foi onde tudo começou, mas não onde parou. Já jogamos muitos outros jogos juntos
+              e sempre levamos o jeito da GsW com a gente.
+              Não importa o jogo: a comunidade continua unida e a nossa bandeira
+              continua de pé.
             </p>
           </div>
         </div>
 
         <div className="max-w-leitura space-y-4 text-texto-2">
           <p>
-            Nossa jornada não foi linear nem perfeita. Já passamos por vitórias grandiosas que nos
-            encheram de orgulho, e derrotas amargas que testaram nossa determinação. Já discutimos
-            ferozmente sobre estratégias, discordamos sobre decisões difíceis, rimos até perder o ar
-            em calls memoráveis, e também estivemos presentes nos dias silenciosos, quando alguém
-            precisava apenas de companhia.
+            O caminho não foi reto nem perfeito. Tivemos vitórias enormes que nos
+            encheram de orgulho e derrotas amargas que testaram a nossa vontade. Já brigamos
+            feio por estratégia, discordamos em decisões difíceis, rimos até perder o ar
+            em call e também estivemos lá nos dias quietos, quando alguém
+            só precisava de companhia.
           </p>
           <p>
-            Atravessamos traições políticas, perdemos membros queridos, vimos &ldquo;maçãs podres&rdquo; tentarem
-            minar nossa unidade. Mas em cada teste, em cada tempestade, a GsW emergiu mais forte.
+            Passamos por traições políticas, perdemos membros queridos, vimos &ldquo;maçãs podres&rdquo; tentarem
+            rachar a guilda. Mas a cada crise, a GsW saiu mais forte.
             <span className="font-medium text-texto"> Porque aqui aprendemos que ninguém caminha sozinho.</span> Quando
-            um Guardião tropeça, há sempre uma mão estendida. Quando alguém celebra, todos celebram junto.
+            um Guardião tropeça, sempre tem alguém para ajudar a levantar. Quando um comemora, todo mundo comemora junto.
           </p>
           <p>
-            É assim que a GsW vive desde 2017. Mais do que uma guilda de Minecraft, mais do que um nome
-            sob um nickname - somos uma <span className="font-semibold text-texto">história coletiva escrita todos os dias</span>,
-            feita de pessoas reais, sentimentos autênticos e memórias que continuam crescendo a cada novo amanhecer.
+            É assim que a GsW vive desde 2017. Mais do que uma guilda de Minecraft, mais do que uma tag
+            no nick, somos uma <span className="font-semibold text-texto">história escrita junto, todo dia</span>,
+            feita de gente real e de memórias que não param de crescer.
           </p>
           <p>
-            Olhamos para trás e vemos as batalhas vencidas, os amigos conquistados, as lições aprendidas.
-            Olhamos para frente e vemos um futuro cheio de possibilidades, novos desafios a enfrentar,
-            novos capítulos a escrever. Mas acima de tudo, olhamos ao nosso lado e vemos irmãos -
+            Olhando para trás, vemos as batalhas que vencemos, os amigos que fizemos e o que aprendemos.
+            Olhando para frente, vemos muita coisa ainda por vir.
+            Mas, acima de tudo, olhamos para o lado e vemos irmãos,
             <span className="font-medium text-texto"> e isso é o que realmente importa.</span>
           </p>
         </div>

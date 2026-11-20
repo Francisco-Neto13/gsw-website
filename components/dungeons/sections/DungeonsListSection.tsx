@@ -22,7 +22,7 @@ function TabelaDeDungeons({ titulo, lista }: { titulo: string; lista: DungeonDaL
               Nível
             </th>
             <th scope="col" className="px-4 py-2 font-medium">
-              Chefe final
+              Boss final
             </th>
             <th scope="col" className="px-4 py-2 font-medium">
               Onde
@@ -67,7 +67,7 @@ export default function DungeonsListSection() {
         <ImagensDasDungeons lista={dungeonsCorrompidas} />
       </div>
       <p className="mt-2 max-w-leitura text-apoio text-texto-3">
-        Níveis mínimos e chefes conferidos na wiki da Wynncraft para a versão 2.2.4.
+        Níveis mínimos e bosses conferidos na wiki da Wynncraft para a versão 2.2.4.
       </p>
     </SecaoGuia>
   );

@@ -298,9 +298,9 @@ Diretos e sem enfeite.
 ### Caixa de Item (componente assinatura)
 Fundo `caixa`, borda dupla, 6 px de canto. Usada só para informação de consulta e para o que flutua sobre a página:
 - **Ficha do guia:** uma por página, logo abaixo do H1. Nome em Pixelify violeta, tipo em itálico terciário, linhas de atributo em ordem fixa (rótulo terciário, valor principal) em duas colunas a partir de 640 px, selo de versão no rodapé.
-- **Dica da GsW:** opinião ou regra da guilda, separada dos fatos do jogo, com o emblema de 28 px, em painel carvão com borda `linha` (não em caixa de item).
+- **Dicas:** toda dica usa o `Destaque` do tipo `dica` (lâmpada dourada, painel carvão), inclusive as que vêm da experiência da guilda. Não existe mais um bloco separado de "Dica da GsW": a GsW escreve o guia inteiro, então separar a opinião dela não fazia sentido.
 - **Termo do jogo:** palavra do glossário sublinhada em pontilhado violeta; ao passar o mouse, focar ou tocar, abre uma caixa de 288 px com nome, tipo e explicação em português. Esc fecha; a caixa recua para caber na tela. Os textos marcam termos com `[[chave]]` ou `[[chave|texto]]` nos arquivos de dados; o glossário fica em `lib/glossario.ts`, e uma chave desconhecida sai como texto simples.
-- **Também:** páginas de caixa única: o bloco "O que este guia vai cobrir" do guia em construção e a 404. Dica da GsW, busca e o destaque da Início ficam em painel carvão, para a caixa continuar significando "informação de consulta".
+- **Também:** páginas de caixa única: o bloco "O que este guia vai cobrir" do guia em construção e a 404. Destaques, busca e o destaque da Início ficam em painel carvão, para a caixa continuar significando "informação de consulta".
 
 ### Ícones
 Lucide em toda a interface, traço de 1,75 px, em 14, 16, 18 ou 22 px, sempre `aria-hidden` com texto ao lado. O Discord é o único SVG de marca, desenhado à mão. Nada de emoji.

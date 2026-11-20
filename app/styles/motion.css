@@ -206,6 +206,12 @@ html.js :is(main figure, main picture):not([data-visto]):not([data-sem-revelar] 
   transform: scale(1.12);
 }
 
+/* O clip-path esconde a imagem ampliada, mas ela ainda alargava a página no celular (rolagem lateral de ~5 px).
+   `clip` corta sem criar área de rolagem, então o sticky do índice continua funcionando. */
+html.js main {
+  overflow-x: clip;
+}
+
 html.js :is(main figure, main picture)[data-visto]:not([data-sem-revelar] *) img {
   transition: transform 1400ms var(--ease-saida);
 }

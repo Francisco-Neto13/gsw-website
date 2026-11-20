@@ -32,7 +32,7 @@ export default function MontariasAbertura() {
               { rotulo: "Tipos", valor: tiposDeMontaria.map((tipo) => tipo.nomeIngles).join(" · ") },
               {
                 rotulo: "Nível",
-                valor: <span className="numeros">{tiposDeMontaria.map((tipo) => tipo.nivel).join(", ")}, conforme o tipo</span>,
+                valor: <span className="numeros">{tiposDeMontaria.map((tipo) => tipo.nivel).join(", ")}, dependendo do tipo</span>,
               },
               { rotulo: "Onde", valor: tiposDeMontaria.map((tipo) => `${tipo.curral} (${tipo.regiao})`).join(", ") },
               { rotulo: "Custo", valor: <span className="numeros">1536 esmeraldas (24 blocos)</span> },

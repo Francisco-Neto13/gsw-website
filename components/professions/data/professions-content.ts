@@ -22,20 +22,20 @@ export type ProfessionSpots = {
 };
 
 export const professionsIntroParagraphs = [
-  "As profissões do Wynncraft se dividem em dois grupos. As de coleta (gathering) sobem colhendo recursos espalhados pelo mapa. As de criação (crafting) usam esses recursos, junto com ingredientes que caem de mobs, para fazer equipamentos e consumíveis.",
-  "Profissões são opcionais e sobem separadas do nível de combate. Todas vão até o nível 132, mas os últimos desbloqueios importantes ficam no 115 (coleta) e no 117 (crafting).",
+  "As profissões do Wynncraft se dividem em dois grupos. As de coleta (gathering) você upa coletando recursos espalhados pelo mapa. As de crafting usam esses recursos, junto com ingredientes que dropam de mobs, para fazer equipamentos e consumíveis.",
+  "Profissões são opcionais e upam separadas do nível de combate. Todas vão até o nível 132, mas o último desbloqueio importante fica no 115 (coleta) e no 117 (crafting).",
 ];
 
 export const professionsResumo = [
   "4 profissões de coleta e 8 de crafting, cada uma com o próprio nível.",
-  "Um material novo libera a cada 10 níveis de coleta, e ele fica mais rápido e mais confiável nos 10 níveis seguintes.",
-  "A ferramenta só muda a velocidade da coleta; dá para colher material de nível alto com ferramenta básica.",
-  "No crafting, o XP vem de criar itens, e usar ingredientes aumenta bastante o ganho.",
+  "A cada 10 níveis de coleta libera um material novo, que fica mais rápido de coletar e mais confiável nos 10 níveis seguintes.",
+  "A ferramenta só muda a velocidade da coleta; dá para coletar material de nível alto com ferramenta básica.",
+  "No crafting, o XP vem de craftar itens, e usar ingredientes aumenta bem o ganho.",
 ];
 
 // Tipos
 export const tiposIntro =
-  "Cada recurso de coleta tem dois produtos (clique com o botão direito ou o esquerdo), e cada profissão de crafting usa os materiais de duas de coleta.";
+  "Cada recurso de coleta dá dois produtos (um com o botão direito, outro com o esquerdo), e cada profissão de crafting usa os materiais de duas de coleta.";
 
 export const gatheringProfessions: GatheringProfession[] = [
   { name: "Mining", icone: "/professions/mining.webp", resources: "Lingote e gema", tool: "Picareta", usadoPor: "Weaponsmithing, Armouring, Tailoring e Jeweling" },
@@ -57,13 +57,13 @@ export const craftingProfessions: CraftingProfession[] = [
 
 // Coleta e ferramentas
 export const coletaIntro =
-  "Para coletar, você precisa de uma ferramenta do tipo certo e do nível de profissão exigido pelo material.";
+  "Para coletar, você precisa da ferramenta certa e do nível de profissão que o material pede.";
 
 export const coletaRegras = [
   "Um material novo libera nos níveis 1, 10, 20 e assim por diante.",
-  "Logo que libera, o material é lento de colher e o refino acerta 70% das vezes. A cada nível o refino sobe 2%, até 90%, e a velocidade também melhora, as duas coisas até 10 níveis depois do desbloqueio.",
+  "Logo que libera, o material é lento de coletar e o refino dá certo 70% das vezes. A cada nível o refino sobe 2%, até 90%, e a velocidade também melhora; as duas coisas param de subir 10 níveis depois do desbloqueio.",
   "Por isso o 125 é, na prática, o último nível que melhora a coleta (10 depois do último material, no 115).",
-  "Quando o refino dá certo, o material sai em um de três tiers: Tier 1 (89%), Tier 2 (10%) ou Tier 3 (1%). O tier melhora o dano, a vida, a durabilidade ou a duração do item criado.",
+  "Quando o refino dá certo, o material sai em um de três tiers: Tier 1 (89%), Tier 2 (10%) ou Tier 3 (1%). O tier melhora o dano, a vida, a durabilidade ou a duração do item craftado.",
   "A velocidade de coleta sobe com ferramenta melhor, com Profession Speed Bomb e com acessórios e consumíveis que tenham ingredientes de gather speed. A chance de refino não muda com nada disso.",
 ];
 
@@ -85,7 +85,7 @@ export const ferramentas = [
 ];
 
 export const ferramentasNotas = [
-  "Toda ferramenta tem durabilidade. Zerada, o refino nunca dá certo (o XP continua vindo). Conserte no Blacksmith com esmeraldas.",
+  "Toda ferramenta tem durabilidade. Se zerar, o refino nunca dá certo (o XP continua vindo). Conserte no Blacksmith com esmeraldas.",
   "Qualquer tier também sai no Trade Market, e o Item Upgrader sobe a ferramenta um tier usando fragmentos de dungeon.",
   "Pela experiência da guilda, carregar mais de uma ferramenta do mesmo tipo no inventário, mesmo de níveis diferentes, deixa a coleta menos eficiente.",
 ];
@@ -96,26 +96,26 @@ export const coletaImagens: Imagem[] = [
 
 // Crafting
 export const craftingIntro =
-  "O crafting acontece nas Crafting Stations, quase sempre em cidades. A receita leva os materiais da coleta e até 6 ingredientes.";
+  "Você crafta nas Crafting Stations, que ficam quase sempre nas cidades. A receita leva os materiais da coleta e até 6 ingredientes.";
 
 export const craftingRegras = [
   "Os materiais definem a faixa de nível do item: material de nível 20 faz itens do nível 20 ao 29. Ingrediente não tem essa trava.",
-  "Ingredientes vêm de drops de mobs, baús, quests e alguns merchants. Precisam servir para aquela profissão e respeitar o nível da receita.",
-  "[[powders|Powders]] entram no craft de armas, armaduras e acessórios: dão efeito elemental, mas reduzem a durabilidade. Do tier 3 para cima, também podem aumentar o requisito de skill points.",
-  "Equipamento craftado tem durabilidade e perde força quando ela fica baixa; consumível funciona por cargas ou por tempo.",
+  "Ingredientes dropam de mobs e saem de baús, quests e alguns merchants. Eles precisam ser daquela profissão e caber no nível da receita.",
+  "[[powders|Powders]] entram no craft de armas, armaduras e acessórios: dão efeito elemental, mas tiram durabilidade. Do tier 3 para cima, também podem aumentar o requisito de skill points.",
+  "Equipamento craftado tem durabilidade e fica mais fraco quando ela está baixa; consumível funciona por cargas ou por tempo.",
 ];
 
 export const craftingXp = [
-  "No crafting, o XP vem de criar itens, não de coletar.",
+  "No crafting, o XP vem de craftar itens, não de coletar.",
   "Use ingredientes sempre que puder: eles aumentam muito o XP do craft.",
   "Para farmar ingredientes, use build com Loot Bonus, que também vale para o drop deles.",
-  "Ingredientes também estão à venda no Trade Market, mas costumam sair caros.",
+  "Ingredientes também são vendidos no Trade Market, mas costumam sair caros.",
 ];
 
 export const bombasDeProfissao = [
   "Profession XP Bomb: XP de coleta e crafting em dobro por 20 minutos.",
   "Profession Speed Bomb: por 10 minutos, coleta e crafting duas vezes mais rápidos, recursos voltando na metade do tempo e craft gastando metade do material.",
-  "Pergunte no chat da guilda se há bomba ativa em algum mundo: quem tem CHAMPION recebe o aviso de todas.",
+  "Pergunte no chat da guilda se tem bomba ativa em algum mundo: quem tem CHAMPION recebe o aviso de todas.",
 ];
 
 export const craftingImagens: Imagem[] = [
@@ -126,7 +126,7 @@ export const craftingImagens: Imagem[] = [
 
 // Spots
 export const spotsIntro =
-  "Os melhores lugares para farmar os ingredientes de cada profissão, com nível e coordenadas (clique para copiar). \"NPC\" é item comprado de vendedor; \"Até +10\" é spot que rende até uns 10 níveis acima do indicado.";
+  "Os melhores lugares para farmar os ingredientes de cada profissão, com nível e coordenadas (clique para copiar). \"NPC\" é item que você compra de vendedor; \"Até +10\" é spot que serve até uns 10 níveis acima do indicado.";
 
 export const spotsImagens: Imagem[] = [
   { src: "/professions/spot1.webp", alt: "Spot de farm de ingredientes com mobs agrupados", legenda: "Exemplo de spot." },
@@ -285,12 +285,10 @@ export const waypointSnippet = `[{
 
 // Dicas
 export const professionsDicas = [
-  "Suba a profissão de coleta 10 níveis além do material que você mais usa: é aí que ele atinge a velocidade e o refino máximos.",
+  "Upe a profissão de coleta até 10 níveis acima do material que você mais usa: é aí que ele chega na velocidade e no refino máximos.",
   "Guarde as bombas de profissão para sessões longas de crafting: a Speed Bomb corta pela metade o material gasto.",
+  "A gente recomenda deixar as profissões para depois: são opcionais, não mudam a gameplay e tomam muito tempo. Se precisar de um item craftado antes disso, peça para um membro mais experiente. A guilda tem receitas de itens craftados com Loot Bonus no Discord.",
 ];
-
-export const dicaDaGuilda =
-  "Nossa recomendação é deixar as profissões para o fim da sua jornada: são opcionais, não mudam a gameplay e tomam bastante tempo. Se precisar de um item craftado antes, peça a um membro mais experiente. A guilda tem receitas de itens craftados com Loot Bonus no Discord.";
 
 export const professionsFontes = [
   { rotulo: "Professions, na wiki da Wynncraft", href: "https://wynncraft.wiki.gg/wiki/Professions" },

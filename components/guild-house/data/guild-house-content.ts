@@ -15,8 +15,8 @@ export const guildHouseDestaque = img(
 );
 
 export const guildHouseIntroParagraphs = [
-  "A Guild House é o nosso ponto de encontro oficial e um refúgio exclusivo dentro do servidor. Localizada nas Sedes de Guilda (como em Cinfras), ela funciona como um hub privado onde os membros se reúnem para socializar, relaxar e aproveitar as facilidades do espaço, longe da movimentação das cidades públicas.",
-  "Neste guia, detalhamos as principais utilidades da nossa sede: a conveniência dos NPCs, o uso estratégico para eventos e o espaço de convivência para os membros.",
+  "A Guild House é a casa da guilda dentro do servidor: o lugar onde a gente se encontra. Ela fica numa ilha de Housing (você chega pelo balão de cidades como Cinfras) e funciona como um hub só nosso, para conversar, relaxar e usar os serviços da ilha, longe do movimento das cidades.",
+  "Neste guia você vê para que ela serve: os NPCs de serviço, o encontro antes dos eventos e os espaços para ficar com a galera.",
 ];
 
 export const guildHouseResumo = [
@@ -28,40 +28,40 @@ export const guildHouseResumo = [
 
 // Funcionalidades
 export const funcionalidadesIntro =
-  "A nossa casa vai muito além de um espaço decorativo: ela oferece benefícios reais para a rotina no servidor.";
+  "A ilha não é só decoração: ela ajuda de verdade no dia a dia do jogo.";
 
 export type Funcionalidade = { id: "npcs" | "encontro" | "annihilation" | "afk"; titulo: string; texto: string };
 
 export const funcionalidades: Funcionalidade[] = [
   {
     id: "npcs",
-    titulo: "Praticidade com NPCs",
+    titulo: "NPCs de serviço",
     texto:
-      "Para facilitar a sua jornada, instalamos NPCs de serviços essenciais: acesso rápido ao Banco, ao [[tradeMarket|Trade Market]], ao Item Identifier e ao Blacksmith, além da Bookshelf e do Misc. Bucket, que só existem dentro de Housings.",
+      "Colocamos na ilha os NPCs que todo mundo usa: Banco, [[tradeMarket|Trade Market]], Item Identifier e Blacksmith, além da Bookshelf e do Misc. Bucket, que só existem dentro de Housings.",
   },
   {
     id: "encontro",
     titulo: "Ponto de encontro e conversa",
     texto:
-      "É o nosso quartel-general social. Um ambiente tranquilo para trocar ideias no chat, combinar atividades com outros jogadores ou simplesmente relaxar entre uma missão e outra.",
+      "É onde a galera se junta. Um lugar tranquilo para conversar no chat, combinar o que jogar com o pessoal ou só dar uma pausa entre uma quest e outra.",
   },
   {
     id: "annihilation",
     titulo: "Encontro para o Annihilation",
     texto:
-      "A Guild House é o lugar ideal para o \"pre-game\". Os membros costumam se reunir aqui para esperar o início do Annihilation, para que todos os participantes estejam juntos e organizados antes de partir para o evento.",
+      "Antes do Annihilation, o pessoal costuma se juntar aqui para esperar o evento começar. Assim a party já sai junta e organizada para a luta.",
   },
   {
     id: "afk",
     titulo: "AFK seguro",
     texto:
-      "Precisa se afastar do computador, mas quer continuar logado? O Housing é o melhor lugar para ficar AFK: dá para permanecer por longos períodos sem ser desconectado por inatividade e voltar à ação na hora.",
+      "Vai sair do PC, mas quer continuar logado? O Housing é o melhor lugar para ficar AFK: dá para ficar parado por muito tempo sem ser desconectado por inatividade e voltar a jogar na hora.",
   },
 ];
 
 // Como acessar
 export const acessoIntro =
-  "Entrar na nossa sede é simples: o acesso é pelas Housing Islands das principais cidades (como Detlas, Cinfras e Rodoroc).";
+  "Chegar na nossa sede é fácil: você entra pelas Housing Islands das cidades principais (como Detlas, Cinfras e Rodoroc).";
 
 export const acessoPassos = [
   { titulo: "Vá até o balão", texto: "Procure o balão colorido estacionado na cidade." },
@@ -81,7 +81,7 @@ export const acessoImagens: Imagem[] = [
 export type SetorId = "hall" | "fazenda" | "praca" | "coliseu" | "sede";
 
 export const mapaIntro =
-  "Nossa Guild House é dividida em 5 setores principais, cada um com uma função para o dia a dia e para a história da guilda. Clique num número do mapa para ir ao setor.";
+  "A ilha tem 5 setores principais, cada um com uma função no dia a dia ou na história da guilda. Clique num número do mapa para ir ao setor.";
 
 export const mapaImagem = img(
   "mapa-da-ilha",
@@ -108,7 +108,7 @@ export const setores: Setor[] = [
     nome: "Hall de Entrada",
     posicao: { x: 49.5, y: 76.5 },
     resumo:
-      "Logo no início da ilha, é o ponto de conveniência imediata: perfeito para quem precisa de um acesso rápido sem se deslocar muito.",
+      "Fica logo na chegada da ilha, para quem quer usar os serviços rápido, sem andar muito.",
     itens: [{ rotulo: "Serviços", texto: "Banco, Trade Market, Bookshelf, Misc. Bucket, Item Identifier e Blacksmith." }],
     imagens: [
       img("hall-servicos-1", "NPCs de serviço no Hall de Entrada, entre árvores e estandartes roxos"),
@@ -121,10 +121,10 @@ export const setores: Setor[] = [
     numero: 2,
     nome: "Fazenda",
     posicao: { x: 74, y: 58.5 },
-    resumo: "Uma propriedade privada destinada à produção e ao descanso, com uma das vistas mais bonitas da ilha.",
+    resumo: "Uma propriedade particular, para plantar e descansar, com uma das vistas mais bonitas da ilha.",
     itens: [],
     aviso:
-      "Mantenha distância: é uma área restrita. Não invada, ou você pode acabar se tornando a próxima vítima da colheita.",
+      "Área restrita, mantenha distância. Se invadir, você pode virar a próxima vítima da colheita.",
     imagens: [img("fazenda", "Casa da fazenda entre plantações de girassóis")],
   },
   {
@@ -133,14 +133,14 @@ export const setores: Setor[] = [
     nome: "Praça Central",
     posicao: { x: 49.5, y: 49.5 },
     resumo:
-      "O coração pulsante da nossa Housing. Construída em volta da Fonte Central, a praça concentra a maior parte da nossa vida social e os serviços avançados.",
+      "O centro da ilha. A praça fica em volta da Fonte Central e é onde rola quase toda a vida social da guilda, além dos serviços mais completos.",
     itens: [
       {
         rotulo: "Destaques",
         texto:
           "Dentro da praça ficam a Taverna, o Cassino, o Banco Central, a Casa do Trade Market e a Casa do Ferreiro. Nos arredores fica a Feira, com todas as estações de profissões.",
       },
-      { rotulo: "Residencial", texto: "É nesta área que ficam as residências de muitos dos nossos Chiefs e Strategists." },
+      { rotulo: "Residencial", texto: "Aqui ficam as casas de muitos dos nossos Chiefs e Strategists." },
     ],
     imagens: [
       img("praca-1", "Praça Central com a fonte e as fachadas das casas em volta"),
@@ -155,14 +155,14 @@ export const setores: Setor[] = [
     numero: 4,
     nome: "Coliseu",
     posicao: { x: 21, y: 49.5 },
-    resumo: "O setor dedicado ao treinamento, ao combate e à honra.",
+    resumo: "O setor de treino, de combate e de honra.",
     itens: [
-      { rotulo: "Arena PvP", texto: "O local oficial para disputas entre membros." },
-      { rotulo: "Área de Dummies", texto: "Logo ao lado, ideal para testar o dano total e refinar as builds." },
+      { rotulo: "Arena PvP", texto: "Onde os membros resolvem as disputas entre si." },
+      { rotulo: "Área de Dummies", texto: "Logo ao lado, ótima para testar o dano e ajustar as builds." },
       {
         rotulo: "Santuário do WarTeam",
         texto:
-          "Acessado pela parte de trás, este memorial é dedicado aos guerreiros que enfrentaram as sofridas batalhas por territórios.",
+          "Com entrada pelos fundos, este memorial homenageia os guerreiros que encararam as guerras mais pesadas por território.",
       },
     ],
     imagens: [
@@ -176,13 +176,13 @@ export const setores: Setor[] = [
     numero: 5,
     nome: "Sede",
     posicao: { x: 49.5, y: 31 },
-    resumo: "O ponto mais alto e respeitado da nossa ilha.",
+    resumo: "O ponto mais alto e mais respeitado da ilha.",
     itens: [
-      { rotulo: "Lar dos Owners", texto: "A sede principal serve de residência para os atuais líderes da guilda." },
-      { rotulo: "Memorial", texto: "Um espaço dedicado a todos os antigos Owners que ajudaram a construir a nossa história." },
+      { rotulo: "Lar dos Owners", texto: "É onde moram os líderes atuais da guilda." },
+      { rotulo: "Memorial", texto: "Uma homenagem a todos os antigos Owners que ajudaram a construir a nossa história." },
       {
         rotulo: "Cemitério",
-        texto: "Ao lado da sede, prestamos homenagem aos jogadores antigos que foram peças fundamentais na nossa trajetória.",
+        texto: "Ao lado da sede, homenageamos os jogadores antigos que foram peças-chave na nossa trajetória.",
       },
     ],
     imagens: [
@@ -195,7 +195,7 @@ export const setores: Setor[] = [
 
 // Outros pontos de interesse
 export const outrosIntro =
-  "Além dos setores principais, a ilha esconde segredos, desafios e atalhos que deixam a exploração muito mais dinâmica.";
+  "Além dos setores principais, a ilha tem segredos, desafios e atalhos que deixam o passeio bem mais divertido.";
 
 export type PontoId = "esgoto" | "parkour" | "labirinto" | "bosque";
 
@@ -204,41 +204,41 @@ export const outrosPontos: { id: PontoId; titulo: string; texto: string; imagem:
     id: "esgoto",
     titulo: "Esgoto (hub de teleporte)",
     texto:
-      "O subsolo da ilha guarda um sistema de esgotos que funciona. Ele é o hub central de transporte: com teleportes estratégicos, leva rápido a qualquer ponto da ilha. É a forma mais eficiente de se deslocar.",
+      "Embaixo da ilha tem um esgoto que funciona de verdade. Ele é o hub de transporte: os teleportes de lá levam rápido para qualquer ponto da ilha. É o jeito mais rápido de se mover por ela.",
     imagem: img("esgoto", "Túnel do esgoto, com canal de água e passagens dos dois lados"),
   },
   {
     id: "parkour",
     titulo: "Parkour",
     texto:
-      "Para quem gosta de agilidade, um percurso desafiador. Ele serpenteia pela arquitetura da ilha e leva até o ponto mais alto da Housing, com uma vista panorâmica sem igual.",
+      "Para quem curte parkour, um percurso difícil. Ele passa por cima das construções da ilha e termina no ponto mais alto da Housing, com uma vista de tudo.",
     imagem: img("parkour", "Vista do alto da ilha, com torres, telhados e balões ao fundo"),
   },
   {
     id: "labirinto",
     titulo: "Labirinto",
     texto:
-      "Numa área reservada, um desafio de paciência e percepção. O percurso é extremamente difícil, e poucos membros conseguiram de fato chegar ao fim. Você aceita o desafio?",
+      "Escondido numa área separada, é um desafio de paciência e atenção. O percurso é muito difícil, e poucos membros chegaram ao fim. Topa o desafio?",
     imagem: img("labirinto", "Entrada de pedra escondida entre árvores, marcada com um bloco verde"),
   },
   {
     id: "bosque",
     titulo: "Bosque",
     texto:
-      "Para um momento de paz, o bosque é o lugar ideal: cercado de natureza, perfeito para descansar, aproveitar a fogueira com outros membros e apreciar a tranquilidade da ilha.",
+      "Para ter um pouco de paz, o bosque é o lugar: cercado de árvores, bom para descansar, sentar na fogueira com o pessoal e curtir a calma da ilha.",
     imagem: img("bosque", "Bosque de árvores altas com luz entrando entre as folhas"),
   },
 ];
 
 // Arquitetura
 export const arquiteturaIntro =
-  "Nossa sede é um projeto de destaque, com uma estética planejada com cuidado para refletir a identidade da guilda.";
+  "A sede foi planejada com cuidado, para ter a cara da guilda.";
 
 /** Jogador creditado: o nick e o UUID da conta (o rosto continua certo se a pessoa trocar de nick). */
 export type Jogador = { nick: string; uuid: string };
 
 export const arquitetura: { conceito: string; projeto: Jogador; execucao: Jogador[] } = {
-  conceito: "A arquitetura foi inteiramente baseada em Thesead, o que dá um visual único e imersivo ao nosso espaço.",
+  conceito: "A arquitetura toda foi inspirada em Thesead, o que dá à ilha um visual único.",
   projeto: { nick: "Eduus", uuid: "c695f15210d24adca48650c4b308358b" },
   execucao: [
     { nick: "Atmisuki", uuid: "df94e4ddbfe74ba789ffd0b45ca7db92" },
@@ -252,7 +252,7 @@ export const arquitetura: { conceito: string; projeto: Jogador; execucao: Jogado
 };
 
 export const convite =
-  "Convidamos todos os membros a explorar cada detalhe das construções e das decorações temáticas que fazem da nossa casa um dos lugares mais impressionantes do servidor.";
+  "Vale a pena explorar cada detalhe das construções e da decoração: a nossa casa é um dos lugares mais bonitos do servidor.";
 
 export const segredos = "Também temos alguns segredos e lugares escondidos… será que você consegue achar todos?";
 
