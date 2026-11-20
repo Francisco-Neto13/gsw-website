@@ -100,7 +100,7 @@ export const dungeonsSecoes: GuiaSecao[] = [
 
 export const worldEventsSecoes: GuiaSecao[] = [
   { id: "participar", titulo: "Como participar", busca: "aviso chat região quest world event bomb" },
-  { id: "como-funciona", titulo: "Como funciona", busca: "ondas waves party chefe baú" },
+  { id: "como-funciona", titulo: "Como funciona", busca: "ondas waves party chefe boss baú" },
   { id: "annihilation", titulo: "Annihilation", busca: "new sun subjugate corruption portal 3 dias prelude" },
   { id: "recompensas", titulo: "Recompensas", busca: "corrupted cache mítico le runas ingredientes" },
   { id: "dicas", titulo: "Dicas" },

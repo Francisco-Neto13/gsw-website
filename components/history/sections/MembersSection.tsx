@@ -86,8 +86,8 @@ export default function MembersSection() {
             Os Guardiões Principais
           </h2>
           <p className="mt-3 text-texto-2">
-            &ldquo;Não são apenas nomes em uma lista, são as lendas que escrevem as crônicas da
-            GsW a cada batalha.&rdquo;
+            &ldquo;Não são só nomes numa lista: são as pessoas que escrevem a história
+            da GsW a cada batalha.&rdquo;
           </p>
         </div>
         <div className="min-w-0">
