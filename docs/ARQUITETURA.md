@@ -38,7 +38,7 @@ components/
                         ClickableImagePreview, LazyYouTubeEmbed, GuideIntro, Efeitos (motor de
                         movimento), TransicaoDePagina, TextoAnimado
   (lib/previas.ts)      tópicos e tempo de leitura de cada guia, tirados do conteúdo, para a Início
-  guias/                peças do modelo de guia: GuiaLayout, FichaGuia, DicaGsw, Termo,
+  guias/                peças do modelo de guia: GuiaLayout, FichaGuia, Destaque, Termo,
                         TextoComTermos ([[termo]] e {{x, y, z}}), SecaoGuia, Figura, FiguraNoTamanho (print solta no
                         tamanho real), Galeria, Destaque (informação,
                         atenção, dica), Coordenada (copiável), RecursoExterno, TextoGlitch,
